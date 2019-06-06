@@ -1,0 +1,43 @@
+Each node compare separately. Match node by node, no need scoring, we're creating a descr based on nodes from different loops.
+
+-180 in phipsi correspond to 180 (torus). But this also brings in the issue of difference in "cost" between say changes in 100 => 120 of phipsi vs 80 => 100, or phi vs psi. Also, other discrete factors, e.g. b-b hbond less "far" than B-S hbonds
+
+Discussion notes 0506:
+For hbonds, we will eventually move on to a function, where instead of me having to match a node with a hbond, with another node with that hbond, we'll match based on possibility, in that if the old node has a hbond but the new one don't have one, can the old one survive without having one?
+
+Also, general cleaning up and documentation of project. 
+
+Energy for Rosetta:
+http://scc.acad.bg/ncsa/articles/library/Library2016_Supercomputers-at-Work/Rosetta3.4_Protein-proteinIteraction/PyRosetta_Manual.pdf
+(somewhere in middle)
+
+Top 4 terms:
+core.scoring: 
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       1.000   -4240.991   -4240.991
+ fa_rep                       0.550    4336.451    2385.048
+ fa_sol                       1.000    2798.424    2798.424
+ fa_intra_rep                 0.005    3034.836      15.174
+ fa_intra_sol_xover4          1.000     180.944     180.944
+ lk_ball_wtd                  1.000     -56.460     -56.460
+ fa_elec                      1.000    -933.702    -933.702
+ pro_close                    1.250     270.565     338.206
+ hbond_sr_bb                  1.000    -181.224    -181.224
+ hbond_lr_bb                  1.000    -130.586    -130.586
+ hbond_bb_sc                  1.000     -58.168     -58.168
+ hbond_sc                     1.000     -38.850     -38.850
+ dslf_fa13                    1.250       0.000       0.000
+ omega                        0.400     149.145      59.658
+ fa_dun                       0.700    4635.733    3245.013
+ p_aa_pp                      0.600    -101.427     -60.856
+ yhh_planarity                0.625       0.000       0.000
+ ref                          1.000     188.455     188.455
+ rama_prepro                  0.450     591.830     266.324
+---------------------------------------------------
+ Total weighted score:                     3776.412
+
+
+Question to ask: 
+For rosetta's scoring function, 

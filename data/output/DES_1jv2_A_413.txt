@@ -1,0 +1,434 @@
+#DESCRIPTOR V0.1
+HEADER 1jv2 A 403 436
+
+NODE 403
+NODE.RESN SER
+NODE.ROLE 
+NODE.CA 2.11, 40.56, 12.77
+NODE.DIHEDRAL 360.00, 360.00, , 
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.EXT.HBOND D; R_O; 0.19, -1.67, 1.75; 2.91, -2.61, 1.10
+NODE.INT.HBOND A; N_O; -3.52, 3.48, 0.36; -0.75, 2.23, 0.53
+
+NODE 404
+NODE.RESN PHE
+NODE.ROLE 
+NODE.CA -0.43, 42.32, 10.52
+NODE.DIHEDRAL -66.74, 128.57, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.EXT.HBOND D; N_O; 0.99, -1.07, 0.02; 2.13, -3.03, 2.26
+NODE.EXT.HBOND D; N_R; 0.99, -1.07, 0.02; 2.34, 0.09, 1.98
+NODE.EXT.HBOND D; R_O; -4.21, 0.57, 4.84; -6.61, 0.60, 3.39
+NODE.EXT.HBOND D; R_O; -4.21, 0.57, 4.84; -5.13, -2.03, 3.31
+NODE.EXT.HBOND D; R_R; -2.28, 1.00, 6.01; -4.42, -0.18, 8.05
+
+NODE 405
+NODE.RESN GLY
+NODE.ROLE 
+NODE.CA -2.35, 44.74, 12.64
+NODE.DIHEDRAL 90.72, -0.23, 11, ~l
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+
+NODE 406
+NODE.RESN TYR
+NODE.ROLE 
+NODE.CA 0.37, 44.86, 15.29
+NODE.DIHEDRAL -64.91, -33.05, 4, A
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND D; N_O; -0.63, -0.20, 1.30; -2.84, -2.18, 0.64
+
+NODE 407
+NODE.RESN SER
+NODE.ROLE 
+NODE.CA 0.69, 48.59, 14.66
+NODE.DIHEDRAL -136.78, 131.81, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.EXT.HBOND D; R_O; 0.80, 0.19, -2.26; 1.97, 0.09, -4.51
+NODE.INT.HBOND A; N_O; -2.63, -0.66, -4.05; -1.70, 0.25, -1.64
+
+NODE 408
+NODE.RESN MET
+NODE.ROLE 
+NODE.CA -1.97, 50.79, 13.12
+NODE.DIHEDRAL -157.00, 150.67, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND A; R_O; -0.87, -4.70, 0.32; 0.08, -2.40, 0.00
+
+NODE 409
+NODE.RESN LYS
+NODE.ROLE 
+NODE.CA -3.10, 54.39, 12.82
+NODE.DIHEDRAL -144.02, 147.28, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.EXT.HBOND D; R_R; -2.95, 3.32, -3.12; -5.38, 1.58, -3.89
+NODE.INT.HBOND D; N_O; 0.56, -1.31, 0.31; 0.07, -3.11, 2.51
+NODE.INT.HBOND A; N_O; -1.45, -1.58, 4.26; -0.90, 0.02, 2.23
+NODE.INT.HBOND A; N_R; 2.12, -0.99, 0.20; -0.55, -2.87, 1.29
+
+NODE 410
+NODE.RESN GLY
+NODE.ROLE 
+NODE.CA -6.10, 56.09, 11.36
+NODE.DIHEDRAL -174.58, 133.77, 3, b
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND D; N_R; -1.43, 0.11, -0.14; -4.08, -1.01, 1.75
+
+NODE 411
+NODE.RESN ALA
+NODE.ROLE 
+NODE.CA -7.90, 59.37, 12.05
+NODE.DIHEDRAL 168.60, -12.98, 9, ~b
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+
+NODE 412
+NODE.RESN THR
+NODE.ROLE 
+NODE.CA -6.74, 61.64, 9.27
+NODE.DIHEDRAL -116.31, 148.23, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND A; N_R; 2.18, -0.57, 0.88; -0.90, 0.58, 2.18
+NODE.INT.HBOND D; R_O; -4.15, 2.54, -2.28; -6.23, 2.04, -3.60
+NODE.INT.HBOND A; N_O; -1.21, -3.15, 3.68; -0.02, -1.15, 2.11
+
+NODE 413
+NODE.RESN ASP
+NODE.ROLE 
+NODE.CA -8.05, 61.49, 5.72
+NODE.DIHEDRAL -97.47, 106.78, 2, B
+NODE.HET_CONTACT 5
+NODE.HET_COVALENT 1
+NODE.INT.HBOND D; N_R; 1.01, -0.82, 0.64; 4.23, -1.46, -0.70
+
+NODE 414
+NODE.RESN ILE
+NODE.ROLE 
+NODE.CA -5.25, 60.97, 3.21
+NODE.DIHEDRAL -70.25, -35.19, 4, A
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND D; N_R; -1.00, 0.56, -0.90; -2.70, 2.76, -0.40
+NODE.INT.HBOND D; N_O; -1.20, -0.83, -0.02; -1.36, -3.28, 1.70
+NODE.INT.HBOND A; N_O; 1.22, -4.75, 1.17; 1.10, -2.08, 0.32
+
+NODE 415
+NODE.RESN ASP
+NODE.ROLE 
+NODE.CA -7.41, 61.12, 0.07
+NODE.DIHEDRAL -90.93, -164.81, 3, b
+NODE.HET_CONTACT 5
+NODE.HET_COVALENT 1
+NODE.INT.HBOND A; R_R; 0.12, -3.85, 3.69; 0.51, -1.16, 3.45
+NODE.EXT.HBOND D; N_O; -1.41, 0.11, -0.30; -2.71, 2.34, -2.23
+
+NODE 416
+NODE.RESN LYS
+NODE.ROLE 
+NODE.CA -10.03, 63.54, -1.30
+NODE.DIHEDRAL -66.05, -67.00, 4, A
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND D; N_O; 1.11, 0.84, 0.45; 2.68, 1.84, -1.92
+NODE.INT.HBOND A; N_O; 3.69, -1.11, -2.57; 1.69, -1.42, -0.89
+
+NODE 417
+NODE.RESN ASN
+NODE.ROLE 
+NODE.CA -13.32, 62.33, 0.27
+NODE.DIHEDRAL -35.16, 157.90, 3, b
+NODE.HET_CONTACT 5
+NODE.HET_COVALENT 1
+NODE.EXT.HBOND D; R_O; -0.28, -1.48, 3.36; -1.81, -1.32, 6.11
+NODE.INT.HBOND A; N_R; -2.39, 2.98, 2.12; -0.12, 0.69, 2.84
+NODE.EXT.HBOND A; N_O; -0.97, 4.70, 0.67; 0.13, 2.37, 0.25
+NODE.EXT.HBOND D; R_R; 4.05, 0.53, -4.11; 7.04, 0.86, -4.94
+NODE.EXT.HBOND D; N_O; -1.38, 0.20, -0.42; -2.14, 3.03, -1.37
+NODE.INT.HBOND D; R_O; 4.05, 0.53, -4.11; 5.86, -0.42, -2.41
+
+NODE 418
+NODE.RESN GLY
+NODE.ROLE 
+NODE.CA -14.78, 63.41, 3.62
+NODE.DIHEDRAL -81.63, 13.31, 4, A
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND A; N_O; 3.69, 1.52, 3.39; 2.23, 0.40, 0.79
+
+NODE 419
+NODE.RESN TYR
+NODE.ROLE 
+NODE.CA -14.24, 60.00, 5.29
+NODE.DIHEDRAL -111.12, 139.28, 2, B
+NODE.HET_CONTACT 5
+NODE.HET_COVALENT 1
+NODE.INT.HBOND D; N_R; -0.06, -0.18, 1.46; 1.76, 2.37, 2.49
+NODE.EXT.HBOND A; N_R; -6.57, 4.40, 0.05; -6.10, 1.29, 1.53
+NODE.EXT.HBOND D; N_O; -1.29, -0.63, 0.20; -3.47, -0.44, -1.25
+
+NODE 420
+NODE.RESN PRO
+NODE.ROLE 
+NODE.CA -11.14, 58.98, 7.39
+NODE.DIHEDRAL -48.06, -159.23, 9, ~b
+NODE.HET_CONTACT 4
+NODE.HET_COVALENT 1
+
+NODE 421
+NODE.RESN ASP
+NODE.ROLE 
+NODE.CA -8.66, 56.23, 6.56
+NODE.DIHEDRAL -164.20, 179.06, 2, B
+NODE.HET_CONTACT 6
+NODE.HET_COVALENT 2
+NODE.INT.HBOND A; N_R; 2.40, 4.59, 2.24; 1.25, 3.18, 0.08
+NODE.EXT.HBOND A; N_R; 0.19, 0.84, -4.63; 1.46, 2.02, -1.77
+NODE.INT.HBOND A; R_O; 4.01, 2.57, 0.99; 2.03, 0.80, 0.99
+NODE.INT.HBOND D; N_O; -0.42, 1.37, -0.27; 1.29, 2.53, -2.69
+
+NODE 422
+NODE.RESN LEU
+NODE.ROLE 
+NODE.CA -6.49, 53.53, 8.12
+NODE.DIHEDRAL -150.82, 134.47, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND D; N_O; -1.29, -0.01, 0.67; -1.51, 0.29, 3.85
+NODE.INT.HBOND A; N_O; 0.75, -1.47, 4.31; 1.14, -1.39, 1.58
+NODE.EXT.HBOND D; R_R; 3.76, -4.12, 2.78; 3.01, -2.76, 5.72
+
+NODE 423
+NODE.RESN ILE
+NODE.ROLE 
+NODE.CA -2.91, 52.40, 8.01
+NODE.DIHEDRAL -115.14, 127.23, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND A; N_O; 2.00, 2.95, 2.93; 1.19, 0.33, 2.03
+NODE.INT.HBOND D; N_O; -1.06, 0.85, 0.49; -0.28, 3.21, 1.42
+NODE.EXT.HBOND A; N_R; 4.23, -0.60, 3.71; 3.30, -0.61, 0.62
+
+NODE 424
+NODE.RESN VAL
+NODE.ROLE 
+NODE.CA -2.12, 48.93, 9.17
+NODE.DIHEDRAL -116.66, 148.63, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND D; N_O; -0.19, 1.31, -0.57; -0.19, 2.35, -3.29
+NODE.INT.HBOND A; N_O; 2.39, 0.99, -3.69; 2.09, 0.03, -1.18
+NODE.EXT.HBOND D; N_R; 0.78, -1.13, -0.48; 2.02, -3.19, 1.51
+NODE.INT.HBOND A; N_O; -1.23, 0.94, 4.79; 0.62, -0.49, 2.25
+
+NODE 425
+NODE.RESN GLY
+NODE.ROLE 
+NODE.CA 1.34, 47.50, 9.71
+NODE.DIHEDRAL -126.53, 111.07, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND D; N_O; -1.35, 0.45, 0.27; -1.22, 1.74, 2.68
+NODE.INT.HBOND A; N_O; -0.16, 4.52, 0.89; -1.21, 2.04, -0.47
+NODE.INT.HBOND D; N_O; 1.32, 0.36, 0.50; 1.35, 2.55, 1.95
+
+NODE 426
+NODE.RESN ALA
+NODE.ROLE 
+NODE.CA 2.40, 43.92, 9.05
+NODE.DIHEDRAL -101.31, 89.09, 3, b
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND D; N_O; -1.37, 0.41, -0.28; -3.22, -1.66, 0.57
+NODE.INT.HBOND A; N_O; 2.62, -4.38, 1.38; -0.06, -2.35, 0.44
+NODE.INT.HBOND A; N_O; -2.35, -4.22, 1.24; -0.06, -2.35, 0.44
+NODE.INT.HBOND D; N_O; 0.50, -1.30, 0.43; 3.39, -3.19, 0.54
+
+NODE 427
+NODE.RESN PHE
+NODE.ROLE 
+NODE.CA 6.05, 43.95, 10.00
+NODE.DIHEDRAL -81.03, 7.72, 4, A
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND A; N_O; 3.01, -1.44, 3.62; 0.47, -0.60, 2.26
+NODE.INT.HBOND D; N_O; 1.34, 0.27, -0.49; 3.19, -1.21, 1.00
+
+NODE 428
+NODE.RESN GLY
+NODE.ROLE 
+NODE.CA 6.60, 40.22, 9.53
+NODE.DIHEDRAL -90.05, -18.75, 4, A
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.EXT.HBOND D; N_O; -0.65, 1.30, -0.12; 0.61, 2.53, -2.24
+NODE.EXT.HBOND A; N_O; -4.91, 2.48, 0.27; -2.21, 0.38, 0.82
+
+NODE 429
+NODE.RESN VAL
+NODE.ROLE 
+NODE.CA 6.42, 40.71, 5.79
+NODE.DIHEDRAL -119.52, 11.40, 4, A
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND D; N_O; 0.85, -0.26, -1.15; 3.95, 1.13, -0.39
+NODE.INT.HBOND D; N_O; 1.38, -0.43, -0.11; 2.71, -0.42, 2.37
+
+NODE 430
+NODE.RESN ASP
+NODE.ROLE 
+NODE.CA 7.80, 44.25, 6.13
+NODE.DIHEDRAL 50.21, 72.02, 7, l
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.EXT.HBOND A; N_O; 4.88, 1.05, 1.14; 2.32, -0.58, 0.14
+NODE.EXT.HBOND A; N_R; -2.23, 2.75, 4.99; -1.14, 0.82, 3.28
+NODE.EXT.HBOND A; N_R; -2.44, 4.88, 0.74; -1.92, 1.70, 1.43
+NODE.EXT.HBOND A; N_O; -3.74, 0.59, 3.31; -1.96, 0.72, 1.20
+NODE.EXT.HBOND D; N_O; 0.64, 0.63, 1.15; -0.19, 0.01, 4.05
+
+NODE 431
+NODE.RESN ARG
+NODE.ROLE 
+NODE.CA 4.85, 46.31, 4.91
+NODE.DIHEDRAL -162.71, 159.09, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND A; N_O; -0.14, 2.51, -4.38; -0.85, 0.97, -2.02
+NODE.EXT.HBOND D; R_R; 2.81, 1.85, 2.94; 0.48, 1.98, 5.33
+NODE.INT.HBOND D; N_O; 0.96, -0.76, -0.80; 2.14, 0.69, -3.23
+
+NODE 432
+NODE.RESN ALA
+NODE.ROLE 
+NODE.CA 2.15, 48.84, 5.79
+NODE.DIHEDRAL -133.21, 148.98, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.EXT.HBOND A; N_O; 1.30, 2.91, -4.09; -0.16, 1.36, -1.96
+NODE.EXT.HBOND D; N_O; 1.24, -0.44, -0.65; 2.74, 0.95, -2.77
+NODE.EXT.HBOND A; R_R; 3.47, -2.31, 0.00; 2.85, 0.04, 1.65
+NODE.EXT.HBOND A; R_R; 2.36, -2.94, 1.93; 2.85, 0.04, 1.65
+NODE.EXT.HBOND D; N_O; -0.61, -0.62, -1.16; -1.32, 0.49, -3.64
+
+NODE 433
+NODE.RESN ILE
+NODE.ROLE 
+NODE.CA -1.26, 49.23, 4.14
+NODE.DIHEDRAL -129.96, 143.39, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND A; N_O; -2.20, -0.33, 3.88; -1.79, 0.94, 1.29
+NODE.INT.HBOND D; N_O; 0.80, -0.43, 1.14; 0.14, -1.59, 3.49
+
+NODE 434
+NODE.RESN LEU
+NODE.ROLE 
+NODE.CA -3.64, 52.04, 3.42
+NODE.DIHEDRAL -106.21, 122.74, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.EXT.HBOND A; N_O; 2.68, 2.42, 2.10; 0.78, 2.22, -0.00
+NODE.EXT.HBOND D; N_O; 1.31, -0.57, -0.14; 3.55, -0.52, 1.73
+
+NODE 435
+NODE.RESN TYR
+NODE.ROLE 
+NODE.CA -7.35, 51.33, 3.62
+NODE.DIHEDRAL -107.44, 113.63, 2, B
+NODE.HET_CONTACT 
+NODE.HET_COVALENT 
+NODE.INT.HBOND A; N_O; 2.90, 3.08, 2.09; 0.01, 1.98, 1.27
+NODE.INT.HBOND D; N_O; 1.08, 0.39, -0.90; 3.57, 1.05, 0.07
+
+NODE 436
+NODE.RESN ARG
+NODE.ROLE 
+NODE.CA -9.46, 54.02, 2.02
+NODE.DIHEDRAL 360.00, 360.00, , 
+NODE.HET_CONTACT 3
+NODE.HET_COVALENT 
+NODE.EXT.HBOND A; N_O; -0.51, 1.01, 4.68; -1.13, 0.68, 2.00
+NODE.INT.HBOND D; R_R; -2.23, -3.55, -1.74; -2.79, -1.31, -3.21
+NODE.EXT.HBOND D; R_O; -3.09, -5.50, -0.86; -5.19, -6.96, 0.80
+
+
+MATRIX.PEPT 	403	404	405	406	407	408	409	410	411	412	413	414	415	416	417	418	419	420	421	422	423	424	425	426	427	428	429	430	431	432	433	434	435	436
+MATRIX.DATA 	403	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	404	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	405	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	406	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	407	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	408	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	409	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	410	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	411	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	412	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	413	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	414	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	415	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	416	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	417	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	418	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	419	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	420	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	421	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	422	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	423	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	424	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	425	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	426	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	427	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.	.
+MATRIX.DATA 	428	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	.
+MATRIX.DATA 	429	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.
+MATRIX.DATA 	430	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.
+MATRIX.DATA 	431	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.
+MATRIX.DATA 	432	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.
+MATRIX.DATA 	433	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.
+MATRIX.DATA 	434	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.
+MATRIX.DATA 	435	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1
+MATRIX.DATA 	436	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+
+
+MATRIX.CONT 	403	404	405	406	407	408	409	410	411	412	413	414	415	416	417	418	419	420	421	422	423	424	425	426	427	428	429	430	431	432	433	434	435	436
+MATRIX.DATA 	403	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	.	.	.	.	.	.	.	.
+MATRIX.DATA 	404	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	.	.	.	.	.	.	1	.	1	.
+MATRIX.DATA 	405	1	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	406	1	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	.	1	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	407	1	.	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	408	.	.	1	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	409	.	.	.	.	1	1	1	1	1	.	.	.	.	.	.	.	.	.	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	410	.	.	.	.	.	1	1	1	1	1	.	.	.	.	.	.	.	.	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	411	.	.	.	.	.	.	1	1	1	1	1	.	.	.	.	.	.	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	412	.	.	.	.	.	.	.	1	1	1	1	1	.	.	.	.	.	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	413	.	.	.	.	.	.	.	.	1	1	1	1	1	1	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	414	.	.	.	.	.	.	.	.	.	1	1	1	1	1	.	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	1	.	.
+MATRIX.DATA 	415	.	.	.	.	.	.	.	.	.	.	1	1	1	1	1	.	1	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1
+MATRIX.DATA 	416	.	.	.	.	.	.	.	.	.	.	1	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	417	.	.	.	.	.	.	.	.	.	.	1	.	1	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1
+MATRIX.DATA 	418	.	.	.	.	.	.	.	.	.	.	1	.	.	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	419	.	.	.	.	.	.	.	.	.	.	1	.	1	.	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	420	.	.	.	.	.	.	.	.	1	1	1	.	.	.	1	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.
+MATRIX.DATA 	421	.	.	.	.	.	.	1	1	1	1	1	1	1	.	.	.	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	1	1	1
+MATRIX.DATA 	422	.	.	.	.	.	1	1	1	.	.	.	.	.	.	.	.	.	1	1	1	1	1	.	.	.	.	.	.	.	.	1	1	1	.
+MATRIX.DATA 	423	.	.	.	.	1	1	1	1	.	.	.	.	.	.	.	.	.	.	1	1	1	1	1	.	.	.	.	.	.	1	1	1	1	.
+MATRIX.DATA 	424	.	1	1	.	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	1	.	.	.	.	1	1	1	.	1	.
+MATRIX.DATA 	425	1	1	1	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	1	.	.	.	1	1	1	.	.	.
+MATRIX.DATA 	426	1	1	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	1	1	1	1	1	.	.	.	.
+MATRIX.DATA 	427	1	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	1	1	1	.	.	.	.	.
+MATRIX.DATA 	428	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	1	.	.	.	.	.	.
+MATRIX.DATA 	429	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	1	1	.	.	.	.	.
+MATRIX.DATA 	430	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	1	1	1	.	.	.	.
+MATRIX.DATA 	431	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	.	1	1	1	1	1	.	.	.
+MATRIX.DATA 	432	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	.	.	.	1	1	1	1	1	.	.
+MATRIX.DATA 	433	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	.	.	.	.	.	1	1	1	1	1	.
+MATRIX.DATA 	434	.	.	.	.	.	.	.	.	.	.	.	1	.	.	.	.	.	.	1	1	1	.	.	.	.	.	.	.	.	1	1	1	1	1
+MATRIX.DATA 	435	.	1	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1	1	.	.	.	.	.	.	.	.	1	1	1	1
+MATRIX.DATA 	436	.	.	.	.	.	.	.	.	.	.	.	.	1	.	1	.	.	.	1	.	.	.	.	.	.	.	.	.	.	.	.	1	1	1

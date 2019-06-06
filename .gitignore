@@ -1,0 +1,10 @@
+**.pkl
+pdbtools
+
+**/ignored
+
+**/.idea
+**/__pycache__
+*.so
+hbonds/bin/
+*.pyc
