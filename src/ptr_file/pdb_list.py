@@ -17,43 +17,104 @@ listed and labelled (e.g. pname_A, pname_b,...)
 
 """
 import logging
-import pickle
+import matplotlib.pyplot as plt
+import numpy as np
 import os
+import pickle
 import re
+import subprocess
+import sys
 from urllib.request import urlopen
 
 from global_config import input_dir
 import ptr_utils
+from utils.seq_logo import Logo
 
 pdb_folder = os.path.join(input_dir, "pdb_files")
+pdb_folder_datalon = os.path.join(input_dir, "pdb_files_datalon")
 fasta_filename = os.path.join(input_dir, "tmp_prosite_seqs.fasta")
 prosite_extract_path = os.path.join(input_dir, "prosite_extract.txt")
-meme_output = os.path.join(input_dir, "meme_out")
+datalon_path = os.path.join(input_dir, "allid_reso3.0_len50_nr40.txt")
 
-def get_pdb_list(pdb_folder, extract_file, pdb_list, output_path,
-                 type='prosite_extract'):
-    pname_cid_map = parse_prosite_extract(extract_file, pdb_list)
-    download_pdb_files_for(pdb_list, pdb_folder, replace_existing=False)
-    seqs = extract_sequence(pdb_folder, pname_cid_map)
-    write_to_file(seqs, fasta_filename)
-    delete_short_seqs(fasta_filename, threshold=30)
-    # run meme
-    command = f"meme -w 13 -protein -nmotifs 1 -mod anr -oc {meme_output} " \
-        f"{fasta_filename}"
-    meme_txt_path = os.path.join(meme_output, "meme.txt")
-    seq_motif_map = get_motif_diagram(meme_txt_path)
-    seq_motif_map = adjust_motif_diagram(seq_motif_map)
-    seq_motif_map = delete_gapped_motifs(seq_motif_map, fasta_filename)
+meme_output = os.path.join(input_dir, "meme_out")
+meme_txt_path = os.path.join(meme_output, "meme.txt")
+
+mast_output = os.path.join(input_dir, "mast_out")
+mast_txt_path = os.path.join(mast_output, "mast.txt")
+
+output_path = os.path.join(input_dir, "datalon.pkl")
+
+def get_pdb_list(pdb_folder, ptr_file, output_path,
+                 type='prosite_extract', pdb_list=None):
+    if type == 'prosite_extract':
+        assert pdb_list is not None
+        pname_cid_map = parse_prosite_extract(ptr_file, pdb_list)
+        download_pdb_files(pname_cid_map, pdb_folder, replace_existing=False)
+        seqs = extract_sequence(pdb_folder, pname_cid_map)
+        write_to_file(seqs, fasta_filename)
+        delete_short_seqs(fasta_filename, threshold=30)
+        run_meme(meme_output, fasta_filename, replace_existing=False)
+        seq_motif_map = get_motif_diagram_meme(meme_txt_path)
+        seq_motif_map = adjust_motif_diagram(seq_motif_map)
+        seq_motif_map = delete_gapped_motifs(seq_motif_map, fasta_filename)
+    elif type == 'datalon':
+        pname_cid_map = parse_datalon(ptr_file)
+        # download_pdb_files(pname_cid_map, pdb_folder, replace_existing=False)
+        seqs = extract_sequence(pdb_folder, pname_cid_map)
+        write_to_file(seqs, fasta_filename)
+        delete_short_seqs(fasta_filename, threshold=30)
+
+        # todo: meme for this should be mast instead. Then get_motif_diagram
+        #  need to be for mast output.
+        assert os.path.isfile(meme_txt_path)
+        run_mast(mast_output, meme_txt_path, fasta_filename,
+                 replace_existing=True)
+
+        seq_motif_map = get_motif_diagram_mast(mast_txt_path)
+        print(seq_motif_map)
+        seq_motif_map = adjust_motif_diagram(seq_motif_map)
+        motifs = _get_labelled_motifs(seq_motif_map, pname_cid_map, pdb_folder)
+        seq_motif_map = delete_gapped_motifs(seq_motif_map, fasta_filename)
+        print(seq_motif_map)
+        ptr_properties = dict()
+        for pname, motif_pos in seq_motif_map.items():
+            ptr_properties[pname] = dict()
+            ptr_properties[pname]['sno_markers'] = motif_pos
+            ptr_properties[pname]['cid'] = pname_cid_map[pname]
+
+        print(ptr_properties)
+        plt.figure()
+
+        converted_motifs = []
+        extracted_motifs = np.array([list(i) for i in motifs])
+        # for i in extracted_motifs:
+        #     print(len(i))
+        for AA_per_pos in extracted_motifs.T:
+            AA, counts = np.unique(AA_per_pos, return_counts=True)
+            sorted_i = np.argsort(counts)
+            counts = counts[sorted_i]
+            AA = AA[sorted_i]
+            probs = counts / np.sum(counts)
+            motif_this_pos = []
+            for aa, prob in zip(AA, probs):
+                motif_this_pos.append([aa, prob])
+            converted_motifs.append(motif_this_pos)
+
+        Logo(converted_motifs, -1, convert_AA3=False)
+        plt.show()
+    else:
+        raise
     with open(output_path, 'wb') as file:
-        pickle.dump(seq_motif_map, file, -1)
+        print(seq_motif_map)
+        pickle.dump(ptr_properties, file, -1)
     return True
 
 # ----------------------------------
 # We take as input a prosite extract, and obtain from it the mapping between
 # pname and cid to be used.
 
-def parse_prosite_extract(extract_file, pdb_list):
-    with open(extract_file, 'r') as file:
+def parse_prosite_extract(ptr_file, pdb_list):
+    with open(ptr_file, 'r') as file:
         cids = []
         for line in file:
             if re.search("MOL_ID: 1", line):
@@ -69,13 +130,35 @@ def parse_prosite_extract(extract_file, pdb_list):
     return pname_cid_map
 
 # ----------------------------------
+# We take as input the datalon pdb list, and obtain from it the mapping between
+# pname and cid to be used.
+#
+# Example: 1abqA\n => pname, cid = line[:4], line[4]
+
+def parse_datalon(ptr_file):
+    pname_cid_map = dict()
+    with open(ptr_file, 'r') as file:
+        for line in file:
+            line = line.strip()
+            if line:
+                assert len(line) == 5
+                pname, cid = line[:4], line[4]
+                pname_cid_map[pname] = cid
+    return pname_cid_map
+
+# ----------------------------------
 # This downloads the .pdb files listed in pdb_list, from rcsb server.
-def download_pdb_files_for(pdb_list, output_folder, replace_existing=True,
+
+
+def download_pdb_files(pname_cid_map, output_folder, replace_existing=True,
                            file_suffix='.pdb',
                            url_template='https://files.rcsb.org/view/{}.pdb'):
-    for pdb_code in pdb_list:
-        url = url_template.format(pdb_code.strip())
-        output_path = os.path.join(output_folder, pdb_code+file_suffix)
+    # todo: check if pdb_code upper and lower makes a diff, since
+    #  prosite_extract does upper, but datalon does lower. Then, standardise
+    #  for the rest of the code.
+    for pname in pname_cid_map.keys():
+        url = url_template.format(pname.strip())
+        output_path = os.path.join(output_folder, pname+file_suffix)
         if replace_existing or not os.path.isfile(output_folder):
             with urlopen(url) as contents:
                 with open(output_path, 'w') as output_file:
@@ -91,12 +174,12 @@ def download_pdb_files_for(pdb_list, output_folder, replace_existing=True,
 
 def extract_sequence(pdb_folder, pname_cid_map):
     seqs = []
-    for pdb_filename in os.listdir(pdb_folder):
-        pname = pdb_filename.split(".")[0]
+    for pname in pname_cid_map.keys():
+        pname = pname.split(".")[0]
         cid = pname_cid_map[pname]
         assert len(cid) == 1
         seq = [">{}\n".format(pname)]
-        pdb_filepath = os.path.join(pdb_folder, pdb_filename)
+        pdb_filepath = os.path.join(pdb_folder, pname+".pdb")
         with open(pdb_filepath, 'r') as pdb_file:
             current_atom_count = 1
             for line in pdb_file:
@@ -147,6 +230,27 @@ def write_to_file(data, filename):
     return
 
 # ----------------------------------
+# meme/mast portion
+
+def run_meme(meme_output, fasta_filename, replace_existing=False):
+    # parallelise this eventually, with a merge_meme_output function.
+    if replace_existing or not os.path.isdir(meme_output):
+        command = f"meme -w 13 -protein -nmotifs 1 -mod anr -oc {meme_output} " \
+            f"{fasta_filename}"
+        subprocess.run(command, shell=True)
+    return True
+
+def run_mast(mast_output, meme_txt, fasta_filename, replace_existing=False):
+    if replace_existing or not os.path.isdir(mast_output):
+        print('kick')
+        print(mast_output)
+        command = f"mast -oc {mast_output} {meme_txt} " \
+            f"{fasta_filename}"
+        subprocess.run(command, shell=True)
+    return True
+
+
+# ----------------------------------
 # We obtain from meme output (meme.txt) the motif diagram, showing the
 # location of the matched motifs for each pname sequence. We then adjust it
 # such that the location are absolute, relative to the start of the sequence
@@ -154,7 +258,7 @@ def write_to_file(data, filename):
 # are also deleted, mainly because the subsequent descriptor code assumes a
 # continuous sequence for the len-30 analysis segment.
 
-def get_motif_diagram(meme_txt):
+def get_motif_diagram_meme(meme_txt):
     seq_motif_map = dict()
     count = 0
     with open(meme_txt, 'r') as rfile:
@@ -172,6 +276,38 @@ def get_motif_diagram(meme_txt):
             if in_area:
                 seq_name, motif_diagram = line[:8], line[43:]
                 raw_motif_positions = motif_diagram.split("_[1]_")
+                motif_positions = []
+                count += len(raw_motif_positions) - 1
+                for pos in raw_motif_positions[:-1]:
+                    if pos == "":
+                        motif_positions.append(0)
+                    else:
+                        motif_positions.append(int(pos))
+                seq_motif_map[seq_name] = motif_positions
+    return seq_motif_map
+
+
+def get_motif_diagram_mast(mast_txt):
+    seq_motif_map = dict()
+    count = 0
+    with open(mast_txt, 'r') as rfile:
+        correct_segment = False
+        in_area = False
+        for line in rfile:
+            # print(line)
+            if line.startswith("SECTION II: MOTIF DIAGRAMS"):
+                correct_segment = True
+                continue
+            if correct_segment and line.startswith("-------------       "):
+                in_area = True
+                continue
+            if in_area and not line.strip():
+                break
+            if in_area:
+                seq_name, motif_diagram = line[:4], line[45:]
+                if "-[1]-" not in motif_diagram:
+                    continue
+                raw_motif_positions = motif_diagram.split("-[1]-")
                 motif_positions = []
                 count += len(raw_motif_positions) - 1
                 for pos in raw_motif_positions[:-1]:
@@ -233,8 +369,12 @@ def delete_gapped_motifs(prev_map, fasta_fname):
 
 def _get_labelled_motifs(seq_motif_map, pname_cid_map, pdb_folder):
     labelled_motifs = []
+    i = 0
     for seq_name, motif_pos in seq_motif_map.items():
-        pdb_filename = os.path.join(pdb_folder, seq_name)
+        i += 1
+        if i == 4:
+            break
+        pdb_filename = os.path.join(pdb_folder, seq_name+".pdb")
         cid = pname_cid_map[seq_name]
         sno_res_map = dict()
 
@@ -255,3 +395,7 @@ def _get_labelled_motifs(seq_motif_map, pname_cid_map, pdb_folder):
                 motif += res
             labelled_motifs.append(motif)
     return labelled_motifs
+
+if __name__ == '__main__':
+    # os.mkdir(pdb_folder_datalon)
+    get_pdb_list(pdb_folder, datalon_path, output_path, type='datalon')

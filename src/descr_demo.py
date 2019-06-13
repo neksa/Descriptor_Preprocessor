@@ -14,11 +14,11 @@ if __name__ == "__main__":
     set_logging_level()
 
     timecheck = time()
-    ptr_filename = os.path.join(input_dir, 'assembed_ptr_data.pkl')
+    ptr_filename = os.path.join(input_dir, 'datalon.pkl')
 
     ptr_data = load_pointer_file(ptr_filename)
 
-    with open("ptr_data.pkl", 'wb') as file:
+    with open("ptr_data2.pkl", 'wb') as file:
         pickle.dump(ptr_data, file, -1)
 
     descrs = calc_descrs(ptr_data)

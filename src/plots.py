@@ -350,7 +350,7 @@ if __name__ == '__main__':
     #           "r") as jsonfile:
     #     df = pd.read_json(jsonfile)
 
-    with open(os.path.join(store_dir, "current.pkl"),
+    with open(os.path.join(store_dir, "current2.pkl"),
               "rb") as pklfile:
         df = pkl.load(pklfile)
 

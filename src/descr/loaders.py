@@ -92,13 +92,13 @@ def load_pointer_file(ptr_file):
     print(len(ptr_properties))
     for i, (p_name, properties) in enumerate(ptr_properties.items()):
         print(f"{i}: {p_name}")
-        if p_name == "2LLU.pdb":
-            start = True
+        # if p_name == "2LLU.pdb":
+        #     start = True
             # continue
         # if not start:
         #     continue
         try:
-            filepath = os.path.join(pdb_files_dir, p_name)
+            filepath = os.path.join(pdb_files_dir, p_name+".pdb")
             if 'sno_markers' not in properties:
                 print(f"sno_markers not in properties, for file {p_name}.")
                 raise AssertionError
