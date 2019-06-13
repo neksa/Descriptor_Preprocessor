@@ -1,5 +1,5 @@
 # Parameters
-offsets = (-10, 24)
+offsets = (-8, 22)
 HC_THRESHOLD = 5.
 CC_THRESHOLD = 2.8
 

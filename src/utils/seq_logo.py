@@ -24,13 +24,14 @@ class Res(Enum):
     hydrophobic=auto()
 
 class Logo:
-    def __init__(self, data, init_pos, figsize=(20, 3)):
+    def __init__(self, data, init_pos, figsize=(20, 3), convert_AA3=True):
         self._init_pos = init_pos
+        self._convert_AA3 = convert_AA3
         self._AA3_to_AA1 = self.get_AA3_to_AA1()
         self._colorcode = self.get_colorcode()
         self._res_grp_map = self.get_res_grp_map()
         self._letter_to_glyph = self.get_letter_to_glyph()
-        self._figsize=figsize
+        self._figsize = figsize
         self.plot = self.get_plot(data)
 
     def get_AA3_to_AA1(self):
@@ -92,6 +93,7 @@ class Logo:
         for per_position in data:
             y = 0
             for AA3, proportion in per_position:
+            # for AA3, proportion in per_position[0], per_position[1]:
                 ax = self.add_patch(AA3, x, y, proportion, ax)
                 y += proportion
             x += 1
@@ -104,7 +106,10 @@ class Logo:
         return ax
 
     def add_patch(self, AA3, x, y, yscale, ax):
-        AA1 = self._AA3_to_AA1[AA3]
+        if self._convert_AA3:
+            AA1 = self._AA3_to_AA1[AA3]
+        else:
+            AA1 = AA3
         glyph = self._letter_to_glyph[AA1]
         res_group = self._res_grp_map[AA1]
         globscale = 1.35

@@ -120,15 +120,13 @@ class ATOMParser(BaseParser):
 
         # strip() changes " " to ""
         assert line["_AChar"] == ""
-        assert line["_charge"] == ""
 
         # terminating atom, but may have other cid below.
         if line["aname"] == "OXT":
             return False
 
         if line["_altLoc"] != " ":
-            values = (line['aname'], line['res'],
-                      line['cid'], line['sno'])
+            values = (line['aname'], line['res'], line['cid'], line['sno'])
             if values not in self._check_for_duplicate:
                 self._check_for_duplicate.append(values)
             else:
@@ -136,18 +134,19 @@ class ATOMParser(BaseParser):
 
         assert re.fullmatch("[0-9]+", line["ano"]) \
                and line["ano"] != "0"
-        assert re.fullmatch("[NCOSH][ABGDEZH]?([0-3][0-3]?)?",
-                            line["aname"])
+        assert re.fullmatch("[NCOSH][ABGDEZH]?[XT]?([0-3][0-3]?)?",
+                            line["aname"]), line
         assert line["res"] in amino_acids
-        # assert re.fullmatch("[ABCDEFGHPI]", line["cid"]), line['cid']  # I from
+        assert re.fullmatch("[A-Z0-9]", line["cid"]), line['cid']  # I from
         # 1kap
-        assert re.fullmatch("[0-9]+", line["sno"]), line["sno"]
+        assert re.fullmatch("-?[0-9]+", line["sno"]), line["sno"]
         assert re.fullmatch("-?[0-9]{1,3}\.[0-9]{3}", line["coord"][0])
         assert re.fullmatch("-?[0-9]{1,3}\.[0-9]{3}", line["coord"][1])
         assert re.fullmatch("-?[0-9]{1,3}\.[0-9]{3}", line["coord"][2])
         assert re.fullmatch("[01]\.[0-9]{2}", line["occupancy"])
         assert re.fullmatch("[0-9]{1,2}\.[0-9]{2}", line["tempfactor"])
         assert re.fullmatch("[NCOSH]", line["elementsymbol"])
+        assert re.fullmatch("[1-9+\-]?", line["_charge"])
         return True
 
     def remove_tmp_keys(self, line):
@@ -212,7 +211,6 @@ class HETATMParser(BaseParser):
         :return: Bool
         """
         assert line["_AChar"] == ""
-        assert line["_charge"] == ""
 
         if line["_altLoc"] != " ":
             values = (line['aname'], line['res'],
@@ -226,13 +224,14 @@ class HETATMParser(BaseParser):
         assert line["ano"] != "0"
         # No aname check.
         # No residue check.
-        # assert re.fullmatch("[ABCDEFGHPI]", line["cid"]), line['cid']
+        assert re.fullmatch("[A-Z0-9]", line["cid"])
         assert re.fullmatch("[0-9]+", line["sno"]), line["sno"]
         assert re.fullmatch("-?[0-9]{1,3}\.[0-9]{3}", line["coord"][0])
         assert re.fullmatch("-?[0-9]{1,3}\.[0-9]{3}", line["coord"][1])
         assert re.fullmatch("-?[0-9]{1,3}\.[0-9]{3}", line["coord"][2])
         assert re.fullmatch("[01]\.[0-9]{2}", line["occupancy"])
         assert re.fullmatch("[0-9]{1,2}\.[0-9]{2}", line["tempfactor"])
+        assert re.fullmatch("[1-9+\-]?", line["_charge"])
         # No elementsymbol check.
         return True
 

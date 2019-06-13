@@ -4,22 +4,12 @@ import pandas as pd
 from .exceptions import BreakToNextFile
 from .get_descr import get_descr
 from .descr_config import offsets
-from .loaders import load_all, load_all_after, load_specific
+# from .loaders import load_all, load_all_after, load_specific
 from .write_descr import write_descr
-
-
-def load_pointer_file(ptr_file, specified_file, to_load_after):
-    if specified_file and to_load_after:
-        data = load_all_after(ptr_file, specified_file)
-    elif specified_file:
-        data = load_specific(ptr_file, specified_file)
-    else:
-        data = load_all(ptr_file)
-    return data
 
 def calc_descrs(data):
     descrs = pd.DataFrame()
-    for (filename, sno_markers), dfs in data.items():
+    for (filename, sno_markers, cids), dfs in data.items():
         print(filename)
         logging.info(filename)
         try:
@@ -27,7 +17,8 @@ def calc_descrs(data):
             if hb2.empty:
                 logging.warning("{} has empty hbonds.".format(filename))
                 raise BreakToNextFile
-            param_to_consider = _get_param_to_consider(ATOM, sno_markers)
+            # cids = ATOM[ATOM.aname == "CA"].cid.unique()
+            param_to_consider = _get_param_to_consider(ATOM, sno_markers, cids)
             for param in param_to_consider:
                 logging.info(param)
                 cid, dsr_snos, seq_marker = param
@@ -42,21 +33,21 @@ def calc_descrs(data):
             continue
     return descrs
 
-def calc_descrs_wrapped(filename=False, after=False, to_write=False):
-    """
-    Convenience legacy method.
-    """
-    data = load_pointer_file(ptr_file, specified_file, to_load_after)
-    descrs = calc_descrs(data)
-    if to_write:
-        for __, descr in descrs.groupby(['filename', 'cid', 'seq_marker']):
-            write_descr(descr)
-    return descrs
+# def calc_descrs_wrapped(filename=False, after=False, to_write=False):
+#     """
+#     Convenience legacy method.
+#     """
+#     data = load_pointer_file(ptr_file)
+#     descrs = calc_descrs(data)
+#     if to_write:
+#         for __, descr in descrs.groupby(['filename', 'cid', 'seq_marker']):
+#             write_descr(descr)
+#     return descrs
 
-def _get_param_to_consider(ATOM, sno_markers):
+def _get_param_to_consider(ATOM, sno_markers, cids):
     param_to_consider = []
-    unique_cids = ATOM[ATOM.aname == "CA"].cid.unique()
-    for cid in unique_cids:
+
+    for cid in cids:
         for marker in sno_markers:
             dsr_snos = _get_sno_range(ATOM, cid, marker)
             if not dsr_snos:
@@ -68,7 +59,7 @@ def _get_sno_range(ATOM, cid, seq_marker):
     start_sno = seq_marker + offsets[0]
     end_sno = seq_marker + offsets[1]
     while ATOM[(ATOM.cid == cid) & (ATOM.sno == start_sno)].empty:
-        # start_sno += 13
+        start_sno += 1
         if start_sno == end_sno:
             msg = "No ATOM lines found in dsr_snos range {}-{}.".format(
                 seq_marker + offsets[0], seq_marker + offsets[1])

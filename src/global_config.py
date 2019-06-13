@@ -6,8 +6,9 @@ root = src.rsplit(os.sep, 1)[0]
 ##############################################################################
 # Common File Directories
 # input_dir = os.path.join(root, 'data', 'input')
-pdb_files_dir = os.path.join(root, 'pdb_files')
 input_dir = os.path.join(root, 'data', 'input')
+pdb_files_dir = os.path.join(input_dir, 'pdb_files')
+
 store_dir = os.path.join(root, 'data', 'store')
 output_dir = os.path.join(root, 'data', 'output')
 

@@ -8,8 +8,8 @@ import pickle as pkl
 import seaborn
 import os
 
-# todo: change plots for dihedral/phipsi, to be absolute rather than scaling.
-#  Also figure out what that last point is.
+
+# todo: settle magnesium now.
 
 _aa_index = [('ALA', 'A'),
              ('CYS', 'C'),
@@ -52,7 +52,7 @@ def plot_dihedral_for_diff_res(df, sno_position):
         ax = plt.subplot(num_row, num_col, ax_count)
         ax_count += 1
         ax.set_title(str(res))
-        ax.scatter(phi, psi, marker='x')
+        ax.scatter(phi, psi, marker='.', s=1)
         ax.set_xlabel("phi")
         ax.set_ylabel('psi')
         ax.set_xlim([-180, 180])
@@ -203,7 +203,7 @@ def plot_dihedral(df, remove_labels=True, add_filename=False):
 
         ax = plt.subplot(num_row, num_col, ax_count)
         ax.set_title(str(relative_sno))
-        ax.scatter(phi, psi, marker='x')
+        ax.scatter(phi, psi, marker='x', s=1)
         ax.set_xlabel("phi")
         ax.set_ylabel('psi')
         ax.set_xlim([-180, 180])
@@ -362,7 +362,7 @@ if __name__ == '__main__':
     plot_hbonds_raw(df)
     # plot_hbonds_percentage(df)
     plot_contacts(df)
-    plot_dihedral_for_diff_res(df, -3)
+    # plot_dihedral_for_diff_res(df, 0)
     plt.show()
 
 

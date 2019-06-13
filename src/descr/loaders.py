@@ -2,8 +2,8 @@ import os
 import numpy as np
 
 from global_config import pdb_files_dir
-from .parsers.loader import Loader
-from .parsers.pdb_list_parser import parse_ptr_file
+from parsers.loader import Loader
+from parsers.pdb_list_parser import parse_ptr_file
 
 ##############################################################################
 # AA3_to_AA1
@@ -76,25 +76,27 @@ def _load_data(file_path_no_suffix):
         ATOM_res = ATOM.res.copy()
         ATOM.res = _MODRES_sub(ATOM_res, MODRES.res, MODRES.std_res_name)
 
-    # ATOM.res, ATOM.sno = _inplace_AA3_substitution(
-    # copy.deepcopy(ATOM.res), copy.deepcopy(ATOM.sno), AA3_TO_AA1)
     return ATOM, HETATM, hb2
 
-def load_all(ptr_file):
+def load_pointer_file(ptr_file):
     ptr_properties = parse_ptr_file(ptr_file)
-    top_5 = list(ptr_properties.keys())[:10]
-    ptr_properties2 = dict()
-    for key in top_5:
-        ptr_properties2[key] = ptr_properties[key]
-    ptr_properties = ptr_properties2
+    # top_5 = list(ptr_properties.keys())[:10]
+    # ptr_properties2 = dict()
+    # for key in top_5:
+    #     ptr_properties2[key] = ptr_properties[key]
+    # ptr_properties = ptr_properties2
 
-    # print(ptr_properties)
-    # import sys
-    # sys.exit()
     return_data = dict()
     to_delete = []
-    for p_name, properties in ptr_properties.items():
-        print(p_name)
+    start = False
+    print(len(ptr_properties))
+    for i, (p_name, properties) in enumerate(ptr_properties.items()):
+        print(f"{i}: {p_name}")
+        if p_name == "2LLU.pdb":
+            start = True
+            # continue
+        # if not start:
+        #     continue
         try:
             filepath = os.path.join(pdb_files_dir, p_name)
             if 'sno_markers' not in properties:
@@ -102,6 +104,7 @@ def load_all(ptr_file):
                 raise AssertionError
             if not os.path.isfile(filepath):
                 print(f"File {p_name} not found.")
+                print(filepath)
                 continue
             try:
                 file_data = _load_data(filepath)
@@ -109,63 +112,16 @@ def load_all(ptr_file):
                 print(f"{e} | Flagged: {p_name}")
                 continue
             ATOM, HETATM, hb2 = file_data
-            if 'cid' in properties:
-                ATOM = ATOM[ATOM.cid == properties['cid']]
-                # HETATM = HETATM[HETATM.cid == properties['cid']]
-            return_data[(p_name, tuple(properties['sno_markers']))] = (ATOM,
-                                                                       HETATM, hb2)
-        except:
+            # if 'cid' in properties:
+            #     ATOM = ATOM[ATOM.cid == properties['cid']]
+            return_data[(p_name, tuple(properties['sno_markers']),
+                         properties['cid'])] = \
+                (ATOM, HETATM, hb2)
+        except Exception as e:
+            print(e)
+            print("kick")
             to_delete.append(p_name)
     print(f"<{to_delete}>")
     for i in to_delete:
         del ptr_properties[i]
-        # print(properties['sno_markers'])
-        # print(list(ATOM.sno))
-        # print("end")
-        #
-        # for i in properties['sno_markers']:
-        #     print(i)
-        #     print(ATOM[ATOM.sno == i-1])
-        #     print(list(ATOM[ATOM.sno == i-1].res)[0])
-        #     print(list(ATOM[ATOM.sno == i].res)[0])
-        #     print(list(ATOM[ATOM.sno == i+1].res)[0])
-        #     print("")
-        # print("\n")
-    return return_data
-
-def load_specific(ptr_file, specified_file):
-    ptr_properties = parse_ptr_file(ptr_file)
-    properties = ptr_properties[specified_file]
-    assert 'sno_markers' in properties
-    try:
-        file_data = _load_data(os.path.join(pdb_files_dir, specified_file))
-    except AssertionError as e:
-        print(f"{e} | Flagged: {specified_file}")
-        raise e
-    ATOM, HETATM, hb2 = file_data
-    if 'cid' in properties:
-        ATOM = ATOM[ATOM.cid == properties['cid']]
-        HETATM = HETATM[HETATM.cid == properties['cid']]
-        hb2 = hb2[hb2.cid == properties['cid']]
-    return_data = dict()
-    return_data[(specified_file, properties['sno_markers'])] = \
-        (ATOM, HETATM, hb2)
-    return return_data
-
-def load_all_after(ptr_file, specified_file):
-    ptr_properties = parse_ptr_file(ptr_file)
-    return_data = dict()
-    start = False
-    for p_name, properties in ptr_properties.items():
-        if p_name == specified_file:
-            start = True
-        if start:
-            file_data = _load_data(os.path.join(pdb_files_dir, p_name))
-            ATOM, HETATM, hb2 = file_data
-            if 'cid' in properties:
-                ATOM = ATOM[ATOM.cid == properties['cid']]
-                HETATM = HETATM[HETATM.cid == properties['cid']]
-                hb2 = hb2[hb2.cid == properties['cid']]
-            return_data[(p_name, properties['sno_markers'])] = \
-                (ATOM, HETATM, hb2)
     return return_data
