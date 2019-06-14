@@ -23,8 +23,8 @@ REFERENCE
 DATABASE AND MOTIFS
 ********************************************************************************
 	DATABASE tmp_prosite_seqs.fasta (peptide)
-	Last updated on Thu Jun 13 20:04:56 2019
-	Database contains 103 sequences, 84827 residues
+	Last updated on Fri Jun 14 15:54:33 2019
+	Database contains 103 sequences, 85143 residues
 
 	MOTIFS meme.txt (peptide)
 	MOTIF ID            ALT ID WIDTH BEST POSSIBLE MATCH
@@ -41,7 +41,7 @@ DATABASE AND MOTIFS
 ********************************************************************************
 SECTION I: HIGH-SCORING SEQUENCES
 ********************************************************************************
-	- Each of the following 13 sequences has E-value less than 10.
+	- Each of the following 14 sequences has E-value less than 10.
 	- The E-value of a sequence is the expected number of sequences
 	  in a random database of the same size that would match the motifs as
 	  well as the sequence does and is equal to the combined p-value of the
@@ -65,19 +65,20 @@ SECTION I: HIGH-SCORING SEQUENCES
 
 SEQUENCE NAME                      DESCRIPTION                   E-VALUE  LENGTH
 -------------                      -----------                   -------- ------
-3hs0                                                                 0.13    735
-3k8k                                                                 0.63    680
+3hs0                                                                 0.13    740
+3k8k                                                                 0.64    692
 4neh                                                                  1.3   1084
-4c7y                                                                  1.5    906
+4c7y                                                                  1.5    907
 1wpg                                                                  1.7    994
-1we3                                                                  2.2    528
-2ww8                                                                  3.2    859
-1g8x                                                                  4.4   1009
-3f2b                                                                    6   1440
-3ahc                                                                  6.5    805
-2xt6                                                                  6.5   1222
-3ufk                                                                  9.3    842
-2hfz                                                                  9.5    896
+1we3                                                                  2.2    529
+2ww8                                                                  3.2    860
+2xj9                                                                  3.8    270
+1g8x                                                                  4.4   1010
+3f2b                                                                    6   1444
+3ahc                                                                  6.5    806
+2xt6                                                                  6.6   1227
+3ufk                                                                  9.3    843
+2hfz                                                                  9.5    899
 
 ********************************************************************************
 
@@ -106,19 +107,20 @@ SECTION II: MOTIF DIAGRAMS
 
 SEQUENCE NAME                      E-VALUE   MOTIF DIAGRAM
 -------------                      --------  -------------
-3hs0                                   0.13  246-[1]-476
-3k8k                                   0.63  71-[1]-596
+3hs0                                   0.13  248-[1]-479
+3k8k                                   0.64  72-[1]-607
 4neh                                    1.3  135-[1]-936
-4c7y                                    1.5  718-[1]-175
+4c7y                                    1.5  719-[1]-175
 1wpg                                    1.7  348-[1]-8-[1]-612
-1we3                                    2.2  81-[1]-434
-2ww8                                    3.2  691-[1]-155
-1g8x                                    4.4  202-[1]-794
-3f2b                                      6  1192-[1]-235
-3ahc                                    6.5  681-[1]-111
-2xt6                                    6.5  233-[1]-976
-3ufk                                    9.3  842
-2hfz                                    9.5  896
+1we3                                    2.2  82-[1]-434
+2ww8                                    3.2  692-[1]-155
+2xj9                                    3.8  270
+1g8x                                    4.4  203-[1]-794
+3f2b                                      6  1196-[1]-235
+3ahc                                    6.5  682-[1]-111
+2xt6                                    6.6  235-[1]-979
+3ufk                                    9.3  843
+2hfz                                    9.5  899
 
 ********************************************************************************
 
@@ -151,31 +153,31 @@ SECTION III: ANNOTATED SEQUENCES
 
 
 3hs0
-  LENGTH = 735  COMBINED P-VALUE = 1.25e-03  E-VALUE =     0.13
-  DIAGRAM: 246-[1]-476
+  LENGTH = 740  COMBINED P-VALUE = 1.26e-03  E-VALUE =     0.13
+  DIAGRAM: 248-[1]-479
 
-                          [1]
-                          1.7e-06
-                          DKDGDGTISFPEF
-                            ++++ + +  +
-226  XXXXXXRKIVLDPSGSMNIYLVLDGSGSIGASDFTGAKKCLVNLIEKVASYGVKPRYGLVTYATYPKIWVKVSEA
+                            [1]
+                            1.7e-06
+                            DKDGDGTISFPEF
+                              ++++ + +  +
+226  XXXXXXXKRKIVLDPSGSMNIYLVLDGSGSIGASDFTGAKKCLVNLIEKVASYGVKPRYGLVTYATYPKIWVKVS
 
 
 3k8k
-  LENGTH = 680  COMBINED P-VALUE = 6.09e-03  E-VALUE =     0.63
-  DIAGRAM: 71-[1]-596
+  LENGTH = 692  COMBINED P-VALUE = 6.20e-03  E-VALUE =     0.64
+  DIAGRAM: 72-[1]-607
 
-                                                                            [1]
-                                                                            9.2e
-                                                                            DKDG
-                                                                            + ++
-1    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXWTALTASPDTWDETKRADISYQLLLYSFADSDG
+                                                                             [1]
+                                                                             9.2
+                                                                             DKD
+                                                                             + +
+1    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXQWTALTASPDTWDETKRADISYQLLLYSFADSD
 
      
-     -06
-     DGTISFPEF
-     +++ + +
-76   DGYGDLNGVTQKLDYLNQLGVKALWLSPIHPCXYHGYDVTDYTKVNPQLGTESDFDRLVTEAHNRGIKIYLDYVX
+     e-06
+     GDGTISFPEF
+     ++++ + +
+76   GDGYGDLNGVTQKLDYLNQLGVKALWLSPIHPCXSYHGYDVTDYTKVNPQLGTESDFDRLVTEAHNRGIKIYLDY
 
 
 4neh
@@ -190,14 +192,14 @@ SECTION III: ANNOTATED SEQUENCES
 
 
 4c7y
-  LENGTH = 906  COMBINED P-VALUE = 1.48e-02  E-VALUE =      1.5
-  DIAGRAM: 718-[1]-175
+  LENGTH = 907  COMBINED P-VALUE = 1.48e-02  E-VALUE =      1.5
+  DIAGRAM: 719-[1]-175
 
-                                                [1]
-                                                1.7e-05
-                                                DKDGDGTISFPEF
-                                                 + + ++ +++++
-676  EKIKFTWPNTATTPNSGPSGGSRQQVMTGNAIRVACENLLKACEKPGGGYYTYDELKAADKPTKITGNWTASGAT
+                                                 [1]
+                                                 1.7e-05
+                                                 DKDGDGTISFPEF
+                                                  + + ++ +++++
+676  PEKIKFTWPNTATTPNSGPSGGSRQQVMTGNAIRVACENLLKACEKPGGGYYTYDELKAADKPTKITGNWTASGA
 
 
 1wpg
@@ -218,90 +220,95 @@ SECTION III: ANNOTATED SEQUENCES
 
 
 1we3
-  LENGTH = 528  COMBINED P-VALUE = 2.14e-02  E-VALUE =      2.2
-  DIAGRAM: 81-[1]-434
+  LENGTH = 529  COMBINED P-VALUE = 2.15e-02  E-VALUE =      2.2
+  DIAGRAM: 82-[1]-434
 
-           [1]
-           4.2e-05
-           DKDGDGTISFPEF
-           +  ++++ ++  +
-76   VASKTNDVAGDGTTTATVLAQAIVREGLKNVAAGANPLALKRGIEKAVEAAVEKIKALAIPVEDRKAIEEVATIS
+            [1]
+            4.2e-05
+            DKDGDGTISFPEF
+            +  ++++ ++  +
+76   EVASKTNDVAGDGTTTATVLAQAIVREGLKNVAAGANPLALKRGIEKAVEAAVEKIKALAIPVEDRKAIEEVATI
 
 
 2ww8
-  LENGTH = 859  COMBINED P-VALUE = 3.07e-02  E-VALUE =      3.2
-  DIAGRAM: 691-[1]-155
+  LENGTH = 860  COMBINED P-VALUE = 3.08e-02  E-VALUE =      3.2
+  DIAGRAM: 692-[1]-155
 
-                     [1]
-                     3.7e-05
-                     DKDGDGTISFPEF
-                     + ++  ++  ++
-676  TYNVRLNDEFVSNKFYDTNGRTTLHPKEVEQNTVRDFPIPKIRDVRKYPEITISKEKKLGDIEFIKVNKNDKKPL
+                      [1]
+                      3.7e-05
+                      DKDGDGTISFPEF
+                      + ++  ++  ++
+676  LTYNVRLNDEFVSNKFYDTNGRTTLHPKEVEQNTVRDFPIPKIRDVRKYPEITISKEKKLGDIEFIKVNKNDKKP
+
+
+2xj9
+  LENGTH = 270  COMBINED P-VALUE = 3.66e-02  E-VALUE =      3.8
+  DIAGRAM: 270
 
 
 1g8x
-  LENGTH = 1009  COMBINED P-VALUE = 4.27e-02  E-VALUE =      4.4
-  DIAGRAM: 202-[1]-794
+  LENGTH = 1010  COMBINED P-VALUE = 4.27e-02  E-VALUE =      4.4
+  DIAGRAM: 203-[1]-794
 
-                                                         [1]
-                                                         4.4e-05
-                                                         DKDGDGTISFPEF
-                                                          +++++ +  + +
-151  APHIFAISDVAYRSMLDDRQNQSLLITGESGAGKTENTKKVIQYLASVAGRNQANGSGVLEQQILQANPILEAFG
+                                                          [1]
+                                                          4.4e-05
+                                                          DKDGDGTISFPEF
+                                                           +++++ +  + +
+151  VAPHIFAISDVAYRSMLDDRQNQSLLITGESGAGKTENTKKVIQYLASVAGRNQANGSGVLEQQILQANPILEAF
 
 
 3f2b
-  LENGTH = 1440  COMBINED P-VALUE = 5.81e-02  E-VALUE =        6
-  DIAGRAM: 1192-[1]-235
+  LENGTH = 1444  COMBINED P-VALUE = 5.83e-02  E-VALUE =        6
+  DIAGRAM: 1196-[1]-235
 
-                                                                        [1]
-                                                                        4.2e-05
-                                                                        DKDGDGTI
-                                                                            ++++
-1126 MGIFSSTEPLGVTPEQIMCNVGTIGIPEFGTRFVRQMLEETRPKTFSELVQISGLSHGTDVWLGNAQELIQNGTC
+                                                                            [1]
+                                                                            4.2e
+                                                                            DKDG
+     
+1126 DPDVMGIFSSTEPLGVTPEQIMCNVGTIGIPEFGTRFVRQMLEETRPKTFSELVQISGLSHGTDVWLGNAQELIQ
 
      
-     
-     SFPEF
-     +  +
-1201 TLSEVIGCRDDIMVYLIYRGLEPSLAFKIMESVRKGKGLTPEFEAEMRKHDVPEWYIDSCKKIKYMFPKAHAAAY
+     -05
+     DGTISFPEF
+     +++++  +
+1201 NGTCTLSEVIGCRDDIMVYLIYRGLEPSLAFKIMESVRKGKGLTPEFEAEMRKHDVPEWYIDSCKKIKYMFPKAH
 
 
 3ahc
-  LENGTH = 805  COMBINED P-VALUE = 6.30e-02  E-VALUE =      6.5
-  DIAGRAM: 681-[1]-111
+  LENGTH = 806  COMBINED P-VALUE = 6.31e-02  E-VALUE =      6.5
+  DIAGRAM: 682-[1]-111
 
-           [1]
-           8.2e-05
-           DKDGDGTISFPEF
-             +++  ++ +++
-676  LLKLQSRENNDEALTDEEFTELFTADKPVLFAYHSYAQDVRGLIYDRPNHDNFHVVGYKEQGSTTTPFDMVRVND
+            [1]
+            8.2e-05
+            DKDGDGTISFPEF
+              +++  ++ +++
+676  DLLKLQSRENNDEALTDEEFTELFTADKPVLFAYHSYAQDVRGLIYDRPNHDNFHVVGYKEQGSTTTPFDMVRVN
 
 
 2xt6
-  LENGTH = 1222  COMBINED P-VALUE = 6.34e-02  E-VALUE =      6.5
-  DIAGRAM: 233-[1]-976
+  LENGTH = 1227  COMBINED P-VALUE = 6.37e-02  E-VALUE =      6.6
+  DIAGRAM: 235-[1]-979
 
-             [1]
-             5.4e-05
-             DKDGDGTISFPEF
-              +  +++++++ +
-226  IAAYEDIVRRARDGKLTAEDFSGVTISLTNPXXXXXXXXXXXXQGQGAIIGAGAMEYPAEFQGASEERIADLGIG
+               [1]
+               5.4e-05
+               DKDGDGTISFPEF
+                +  +++++++ +
+226  QFIAAYEDIVRRARDGKLTAEDFSGVTISLTNPXXXXXXXXXXXXMQGQGAIIGAGAMEYPAEFQGASEERIADL
 
 
 3ufk
-  LENGTH = 842  COMBINED P-VALUE = 9.01e-02  E-VALUE =      9.3
-  DIAGRAM: 842
+  LENGTH = 843  COMBINED P-VALUE = 9.02e-02  E-VALUE =      9.3
+  DIAGRAM: 843
 
 
 2hfz
-  LENGTH = 896  COMBINED P-VALUE = 9.20e-02  E-VALUE =      9.5
-  DIAGRAM: 896
+  LENGTH = 899  COMBINED P-VALUE = 9.23e-02  E-VALUE =      9.5
+  DIAGRAM: 899
 
 ********************************************************************************
 
 
 CPU: melvin-GE72-2QF
-Time 0.022 secs.
+Time 0.025 secs.
 
-mast -oc /home/melvin/Desktop/Predictive_for_efhand/data/input/mast_out /home/melvin/Desktop/Predictive_for_efhand/data/input/meme_out/meme.txt /home/melvin/Desktop/Predictive_for_efhand/data/input/tmp_prosite_seqs.fasta
+mast -oc /home/melvin/Desktop/Predictive_for_efhand/data/input/mast_out -mt 0.0001 /home/melvin/Desktop/Predictive_for_efhand/data/input/meme_out/meme.txt /home/melvin/Desktop/Predictive_for_efhand/data/input/tmp_prosite_seqs.fasta

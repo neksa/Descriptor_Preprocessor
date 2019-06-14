@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <mast version="5.0.1" release="Thu Jul 26 17:15:19 2018 -0700">
-	<command_line><arg>mast</arg><arg>-oc</arg><arg>/home/melvin/Desktop/Predictive_for_efhand/data/input/mast_out</arg><arg>/home/melvin/Desktop/Predictive_for_efhand/data/input/meme_out/meme.txt</arg><arg>/home/melvin/Desktop/Predictive_for_efhand/data/input/tmp_prosite_seqs.fasta</arg></command_line>
+	<command_line><arg>mast</arg><arg>-oc</arg><arg>/home/melvin/Desktop/Predictive_for_efhand/data/input/mast_out</arg><arg>-mt</arg><arg>0.0001</arg><arg>/home/melvin/Desktop/Predictive_for_efhand/data/input/meme_out/meme.txt</arg><arg>/home/melvin/Desktop/Predictive_for_efhand/data/input/tmp_prosite_seqs.fasta</arg></command_line>
 	<settings strand_handling="unstranded" max_correlation="0.60" remove_correlated="n" max_seq_evalue="10" adjust_hit="n" max_hit_pvalue="0.0001" max_weak_pvalue="0.0001"/>
 	<alphabet name="Protein" like="protein">
 		<letter id="A" symbol="A" name="Alanine" colour="0000CC"/>
@@ -54,26 +54,26 @@
 	<correlations>
 	</correlations>
 	<sequence_dbs>
-		<sequence_db source="/home/melvin/Desktop/Predictive_for_efhand/data/input/tmp_prosite_seqs.fasta" last_mod_date="Thu Jun 13 20:04:56 2019" seq_count="103" residue_count="84827"/>
+		<sequence_db source="/home/melvin/Desktop/Predictive_for_efhand/data/input/tmp_prosite_seqs.fasta" last_mod_date="Fri Jun 14 15:54:33 2019" seq_count="103" residue_count="85143"/>
 	</sequence_dbs>
 	<sequences>
-		<sequence db="0" name="3hs0" comment="" length="735">
-			<score strand="both" combined_pvalue="1.25e-03" evalue="0.13"/>
+		<sequence db="0" name="3hs0" comment="" length="740">
+			<score strand="both" combined_pvalue="1.26e-03" evalue="0.13"/>
 			<seg start="226">
 				<data>
-XXXXXXRKIVLDPSGSMNIYLVLDGSGSIGASDFTGAKKCLVNLIEKVASYGVKPRYGLVTYATYPKIWVKVSEA
+XXXXXXXKRKIVLDPSGSMNIYLVLDGSGSIGASDFTGAKKCLVNLIEKVASYGVKPRYGLVTYATYPKIWVKVS
 				</data>
-				<hit pos="247" idx="0" pvalue="1.7e-06" match="  ++++ + +  +"/>
+				<hit pos="249" idx="0" pvalue="1.7e-06" match="  ++++ + +  +"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="3k8k" comment="" length="680">
-			<score strand="both" combined_pvalue="6.09e-03" evalue="0.63"/>
+		<sequence db="0" name="3k8k" comment="" length="692">
+			<score strand="both" combined_pvalue="6.20e-03" evalue="0.64"/>
 			<seg start="1">
 				<data>
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXWTALTASPDTWDETKRADISYQLLLYSFADSDG
-DGYGDLNGVTQKLDYLNQLGVKALWLSPIHPCXYHGYDVTDYTKVNPQLGTESDFDRLVTEAHNRGIKIYLDYVX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXQWTALTASPDTWDETKRADISYQLLLYSFADSD
+GDGYGDLNGVTQKLDYLNQLGVKALWLSPIHPCXSYHGYDVTDYTKVNPQLGTESDFDRLVTEAHNRGIKIYLDY
 				</data>
-				<hit pos="72" idx="0" pvalue="9.2e-06" match="+ +++++ + +  "/>
+				<hit pos="73" idx="0" pvalue="9.2e-06" match="+ +++++ + +  "/>
 			</seg>
 		</sequence>
 		<sequence db="0" name="4neh" comment="" length="1084">
@@ -85,13 +85,13 @@ SLASTTSPSQLLACGPTVHHECGRNMYLTGLCFLLGPTQLTQRLPVSRQECPRQEQDIVFLIDGSGSISSRNFAT
 				<hit pos="136" idx="0" pvalue="1.2e-05" match=" +++++ ++   +"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="4c7y" comment="" length="906">
+		<sequence db="0" name="4c7y" comment="" length="907">
 			<score strand="both" combined_pvalue="1.48e-02" evalue="1.5"/>
 			<seg start="676">
 				<data>
-EKIKFTWPNTATTPNSGPSGGSRQQVMTGNAIRVACENLLKACEKPGGGYYTYDELKAADKPTKITGNWTASGAT
+PEKIKFTWPNTATTPNSGPSGGSRQQVMTGNAIRVACENLLKACEKPGGGYYTYDELKAADKPTKITGNWTASGA
 				</data>
-				<hit pos="719" idx="0" pvalue="1.7e-05" match=" + + ++ +++++"/>
+				<hit pos="720" idx="0" pvalue="1.7e-05" match=" + + ++ +++++"/>
 			</seg>
 		</sequence>
 		<sequence db="0" name="1wpg" comment="" length="994">
@@ -105,67 +105,70 @@ FCSLNEFSITGSTYAPEGEVLKNDKPIRSGQFDGLVELATICALCNDSSLDFNETKGVYEKVGEATETALTTLVE
 				<hit pos="370" idx="0" pvalue="7.0e-05" match="++     ++ +++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="1we3" comment="" length="528">
-			<score strand="both" combined_pvalue="2.14e-02" evalue="2.2"/>
+		<sequence db="0" name="1we3" comment="" length="529">
+			<score strand="both" combined_pvalue="2.15e-02" evalue="2.2"/>
 			<seg start="76">
 				<data>
-VASKTNDVAGDGTTTATVLAQAIVREGLKNVAAGANPLALKRGIEKAVEAAVEKIKALAIPVEDRKAIEEVATIS
+EVASKTNDVAGDGTTTATVLAQAIVREGLKNVAAGANPLALKRGIEKAVEAAVEKIKALAIPVEDRKAIEEVATI
 				</data>
-				<hit pos="82" idx="0" pvalue="4.2e-05" match="+  ++++ ++  +"/>
+				<hit pos="83" idx="0" pvalue="4.2e-05" match="+  ++++ ++  +"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="2ww8" comment="" length="859">
-			<score strand="both" combined_pvalue="3.07e-02" evalue="3.2"/>
+		<sequence db="0" name="2ww8" comment="" length="860">
+			<score strand="both" combined_pvalue="3.08e-02" evalue="3.2"/>
 			<seg start="676">
 				<data>
-TYNVRLNDEFVSNKFYDTNGRTTLHPKEVEQNTVRDFPIPKIRDVRKYPEITISKEKKLGDIEFIKVNKNDKKPL
+LTYNVRLNDEFVSNKFYDTNGRTTLHPKEVEQNTVRDFPIPKIRDVRKYPEITISKEKKLGDIEFIKVNKNDKKP
 				</data>
-				<hit pos="692" idx="0" pvalue="3.7e-05" match="+ ++  ++  ++ "/>
+				<hit pos="693" idx="0" pvalue="3.7e-05" match="+ ++  ++  ++ "/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="1g8x" comment="" length="1009">
+		<sequence db="0" name="2xj9" comment="" length="270">
+			<score strand="both" combined_pvalue="3.66e-02" evalue="3.8"/>
+		</sequence>
+		<sequence db="0" name="1g8x" comment="" length="1010">
 			<score strand="both" combined_pvalue="4.27e-02" evalue="4.4"/>
 			<seg start="151">
 				<data>
-APHIFAISDVAYRSMLDDRQNQSLLITGESGAGKTENTKKVIQYLASVAGRNQANGSGVLEQQILQANPILEAFG
+VAPHIFAISDVAYRSMLDDRQNQSLLITGESGAGKTENTKKVIQYLASVAGRNQANGSGVLEQQILQANPILEAF
 				</data>
-				<hit pos="203" idx="0" pvalue="4.4e-05" match=" +++++ +  + +"/>
+				<hit pos="204" idx="0" pvalue="4.4e-05" match=" +++++ +  + +"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="3f2b" comment="" length="1440">
-			<score strand="both" combined_pvalue="5.81e-02" evalue="6"/>
+		<sequence db="0" name="3f2b" comment="" length="1444">
+			<score strand="both" combined_pvalue="5.83e-02" evalue="6"/>
 			<seg start="1126">
 				<data>
-MGIFSSTEPLGVTPEQIMCNVGTIGIPEFGTRFVRQMLEETRPKTFSELVQISGLSHGTDVWLGNAQELIQNGTC
-TLSEVIGCRDDIMVYLIYRGLEPSLAFKIMESVRKGKGLTPEFEAEMRKHDVPEWYIDSCKKIKYMFPKAHAAAY
+DPDVMGIFSSTEPLGVTPEQIMCNVGTIGIPEFGTRFVRQMLEETRPKTFSELVQISGLSHGTDVWLGNAQELIQ
+NGTCTLSEVIGCRDDIMVYLIYRGLEPSLAFKIMESVRKGKGLTPEFEAEMRKHDVPEWYIDSCKKIKYMFPKAH
 				</data>
-				<hit pos="1193" idx="0" pvalue="4.2e-05" match="    +++++  + "/>
+				<hit pos="1197" idx="0" pvalue="4.2e-05" match="    +++++  + "/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="3ahc" comment="" length="805">
-			<score strand="both" combined_pvalue="6.30e-02" evalue="6.5"/>
+		<sequence db="0" name="3ahc" comment="" length="806">
+			<score strand="both" combined_pvalue="6.31e-02" evalue="6.5"/>
 			<seg start="676">
 				<data>
-LLKLQSRENNDEALTDEEFTELFTADKPVLFAYHSYAQDVRGLIYDRPNHDNFHVVGYKEQGSTTTPFDMVRVND
+DLLKLQSRENNDEALTDEEFTELFTADKPVLFAYHSYAQDVRGLIYDRPNHDNFHVVGYKEQGSTTTPFDMVRVN
 				</data>
-				<hit pos="682" idx="0" pvalue="8.2e-05" match="  +++  ++ +++"/>
+				<hit pos="683" idx="0" pvalue="8.2e-05" match="  +++  ++ +++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="2xt6" comment="" length="1222">
-			<score strand="both" combined_pvalue="6.34e-02" evalue="6.5"/>
+		<sequence db="0" name="2xt6" comment="" length="1227">
+			<score strand="both" combined_pvalue="6.37e-02" evalue="6.6"/>
 			<seg start="226">
 				<data>
-IAAYEDIVRRARDGKLTAEDFSGVTISLTNPXXXXXXXXXXXXQGQGAIIGAGAMEYPAEFQGASEERIADLGIG
+QFIAAYEDIVRRARDGKLTAEDFSGVTISLTNPXXXXXXXXXXXXMQGQGAIIGAGAMEYPAEFQGASEERIADL
 				</data>
-				<hit pos="234" idx="0" pvalue="5.4e-05" match=" +  +++++++ +"/>
+				<hit pos="236" idx="0" pvalue="5.4e-05" match=" +  +++++++ +"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="3ufk" comment="" length="842">
-			<score strand="both" combined_pvalue="9.01e-02" evalue="9.3"/>
+		<sequence db="0" name="3ufk" comment="" length="843">
+			<score strand="both" combined_pvalue="9.02e-02" evalue="9.3"/>
 		</sequence>
-		<sequence db="0" name="2hfz" comment="" length="896">
-			<score strand="both" combined_pvalue="9.20e-02" evalue="9.5"/>
+		<sequence db="0" name="2hfz" comment="" length="899">
+			<score strand="both" combined_pvalue="9.23e-02" evalue="9.5"/>
 		</sequence>
 	</sequences>
-	<runtime host="melvin-GE72-2QF" when="Thu Jun 13 20:04:56 2019" cycles="21679" seconds="0.022"/>
+	<runtime host="melvin-GE72-2QF" when="Fri Jun 14 15:54:34 2019" cycles="25298" seconds="0.025"/>
 </mast>
