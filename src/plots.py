@@ -4,36 +4,12 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 from operator import itemgetter
+import os
 import pickle as pkl
 import seaborn
-import os
 
+import config
 
-# todo: settle magnesium now.
-
-_aa_index = [('ALA', 'A'),
-             ('CYS', 'C'),
-             ('ASP', 'D'),
-             ('GLU', 'E'),
-             ('PHE', 'F'),
-             ('GLY', 'G'),
-             ('HIS', 'H'),
-             ('HSE', 'H'),
-             ('HSD', 'H'),
-             ('ILE', 'I'),
-             ('LYS', 'K'),
-             ('LEU', 'L'),
-             ('MET', 'M'),
-             ('MSE', 'M'),
-             ('ASN', 'N'),
-             ('PRO', 'P'),
-             ('GLN', 'Q'),
-             ('ARG', 'R'),
-             ('SER', 'S'),
-             ('THR', 'T'),
-             ('VAL', 'V'),
-             ('TRP', 'W'),
-             ('TYR', 'Y')]
 
 def plot_dihedral_for_diff_res(df, sno_position):
     df = df.groupby('relative_sno')
@@ -58,6 +34,7 @@ def plot_dihedral_for_diff_res(df, sno_position):
         ax.set_xlim([-180, 180])
         ax.set_ylim([-180, 180])
     print(ax_count)
+    return
 
 
 
@@ -117,7 +94,6 @@ def plot_signature_logo(df, num_res_considered=4):
     Logo(to_logo, min_sno)
     return
 
-
 def plot_signature_bar(df, num_res_considered=2):
     """
     :param num_res_considered: Number of top-count res to show per relative
@@ -157,10 +133,9 @@ def plot_signature_bar(df, num_res_considered=2):
 
     # Convert to single-letter code (AA3=>AA1)
 
-    AA3_TO_AA1 = dict(_aa_index)
     _labels = []
     for label in labels:
-        _labels.append(AA3_TO_AA1[label] + " / " + label)
+        _labels.append(config.AA3_to_AA1[label] + " / " + label)
     labels = _labels
 
     # Sort labels
@@ -340,7 +315,7 @@ def plot_contacts(df):
 
 if __name__ == '__main__':
     import pandas as pd
-    from global_config import store_dir
+    from config import store_dir
     """
     Input df should have these keys:
     ['sno', 'contact', 'covalent', 'phi', 'psi', 'region', 'ss', 'ext', 'role',

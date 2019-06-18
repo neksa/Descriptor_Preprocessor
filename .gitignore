@@ -1,8 +1,6 @@
 **.pkl
 pdbtools
-
 **/ignored
-
 **/.idea
 **/__pycache__
 *.so

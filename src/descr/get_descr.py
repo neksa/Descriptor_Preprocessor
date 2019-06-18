@@ -2,10 +2,7 @@ from collections import defaultdict
 import numpy as np
 import pandas as pd
 
-from .descr_contacts import get_contacts
-from .descr_dihedrals import get_descr_dihedrals
-from .descr_hb import get_descr_hb
-
+from descr import contacts, dihedrals, hbonds
 
 def get_descr(ATOM, HETATM, hb2, dsr_snos, cid):
     """
@@ -18,12 +15,12 @@ def get_descr(ATOM, HETATM, hb2, dsr_snos, cid):
     # For filling descr df
     res_CA = _get_res_CA(res, CA, dsr_snos)
 
-    angles, CA = get_descr_dihedrals(C, CA, N, dsr_snos)
+    angles, CA = dihedrals.get_descr_dihedrals(C, CA, N, dsr_snos)
 
-    hbond_descr = get_descr_hb(hb2, ATOM, HETATM, dsr_snos)
+    hbond_descr = hbonds.get_descr_hb(hb2, ATOM, HETATM, dsr_snos)
 
     hetatom_contacts, hetatom_covalent, heavy_atom_contacts = \
-        get_contacts(ATOM, HETATM, cid, dsr_snos)
+        contacts.get_contacts(ATOM, HETATM, cid, dsr_snos)
 
     descr = _assemble_descr(hetatom_contacts, hetatom_covalent,
                                  heavy_atom_contacts, angles, hbond_descr,

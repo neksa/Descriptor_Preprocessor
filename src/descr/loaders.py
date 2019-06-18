@@ -1,9 +1,10 @@
 import os
+import logging
 import numpy as np
 
-from global_config import pdb_files_dir
-from parsers.loader import Loader
-from parsers.pdb_list_parser import parse_ptr_file
+import config
+from descr.parsers import loader
+from descr.parsers import pdb_list_parser
 
 ##############################################################################
 # AA3_to_AA1
@@ -21,7 +22,7 @@ _aa_index = [('ALA', 'A'),
              ('HSD', 'H'),
              ('ILE', 'I'),
              ('LYS', 'K'),
-             ('LEU', 'L'),
+             ('LEU', 'L'),gl
              ('MET', 'M'),
              ('MSE', 'M'),
              ('ASN', 'N'),
@@ -64,7 +65,7 @@ def _load_data(file_path_no_suffix):
     For AA3_to_AA1, copy makes it much faster, because otherwise df will
     update itself with every change.
     """
-    pdf_files = Loader(file_path_no_suffix)
+    pdf_files = loader.Loader(file_path_no_suffix)
     # hb2_files = Loader(file_path_no_suffix + ".hb2")
 
     ATOM = pdf_files.parse_with('ATOMParser')
@@ -79,7 +80,9 @@ def _load_data(file_path_no_suffix):
     return ATOM, HETATM, hb2
 
 def load_pointer_file(ptr_file):
-    ptr_properties = parse_ptr_file(ptr_file)
+    # todo: fix parse_ptr_file so it either retrieve .pkl if exists, or rerun
+    #  it from a main ptr script somewhere
+    ptr_properties = pdb_list_parser.parse_ptr_file(ptr_file)
     # top_5 = list(ptr_properties.keys())[:10]
     # ptr_properties2 = dict()
     # for key in top_5:
@@ -88,19 +91,13 @@ def load_pointer_file(ptr_file):
 
     return_data = dict()
     to_delete = []
-    start = False
-    print(len(ptr_properties))
     for i, (p_name, properties) in enumerate(ptr_properties.items()):
         print(f"{i}: {p_name}")
-        # if p_name == "2LLU.pdb":
-        #     start = True
-            # continue
-        # if not start:
-        #     continue
         try:
-            filepath = os.path.join(pdb_files_dir, p_name+".pdb")
+            filepath = os.path.join(config.pdb_files_dir, p_name+".pdb")
             if 'sno_markers' not in properties:
-                print(f"sno_markers not in properties, for file {p_name}.")
+                logging.error(f"sno_markers not in properties, for "
+                              f"file {p_name}.")
                 raise AssertionError
             if not os.path.isfile(filepath):
                 print(f"File {p_name} not found.")

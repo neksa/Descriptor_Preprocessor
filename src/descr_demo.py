@@ -1,41 +1,40 @@
 import logging
 import os
-from pandas.testing import assert_frame_equal
+import pandas.testing
 import pickle as pkl
 from time import time
 
-from descr.calc_descr import calc_descrs, write_descr
-from global_config import store_dir, input_dir
-from utils.logs import set_logging_level
-from loaders import load_pointer_file
+from descr import calc_descr, loaders
+import config
+from utils import logs
 import pickle
 
 if __name__ == "__main__":
-    set_logging_level()
+    logs.set_logging_level()
 
     timecheck = time()
-    ptr_filename = os.path.join(input_dir, 'datalon.pkl')
+    ptr_filename = os.path.join(config.input_dir, 'datalon.pkl')
 
-    ptr_data = load_pointer_file(ptr_filename)
+    ptr_data = loaders.load_pointer_file(ptr_filename)
 
     with open("ptr_data2.pkl", 'wb') as file:
         pickle.dump(ptr_data, file, -1)
 
-    descrs = calc_descrs(ptr_data)
+    descrs = calc_descr.calc_descrs(ptr_data)
     # for __, descr in descrs.groupby(['filename', 'cid', 'seq_marker']):
-    #     write_descr(descr)
+    #     calc_descr.write_descr(descr)
 
     logging.debug(time() - timecheck)
 
     # Switching back to pkl to avoid false float comparison failures.
-    with open(os.path.join(store_dir, "current2.pkl"), "wb") \
+    with open(os.path.join(config.store_dir, "current2.pkl"), "wb") \
             as pklfile:
         pkl.dump(descrs, pklfile, protocol=-1)
 
-    with open(os.path.join(store_dir, "reference.pkl"), "rb") \
+    with open(os.path.join(config.store_dir, "reference.pkl"), "rb") \
             as pklfile:
         reference = pkl.load(pklfile)
 
-    assert_frame_equal(descrs, reference)
+    pandas.testing.assert_frame_equal(descrs, reference)
 
     pass

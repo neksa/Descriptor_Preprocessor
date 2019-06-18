@@ -2,7 +2,7 @@ import numpy as np
 import os
 import pickle as pkl
 
-from global_config import store_dir
+from config import store_dir
 from matchers.matcher import Matcher
 import sys
 
