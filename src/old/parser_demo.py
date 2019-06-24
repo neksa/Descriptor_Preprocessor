@@ -13,8 +13,6 @@ output filenames to create multiple Loader instances, with directory added
 to the front of filename to create full filepath.
 """
 
-# todo: spawn multiprocessing for this
-
 import os
 
 import config

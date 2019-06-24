@@ -1,7 +1,7 @@
 import re
 import logging
 
-def parse_prosite_extract(ptr_file, pdb_list):
+def parse_prosite(ptr_file, pdb_list):
     with open(ptr_file, 'r') as file:
         cids = []
         for line in file:
@@ -19,12 +19,12 @@ def parse_prosite_extract(ptr_file, pdb_list):
     return pname_cid_map
 
 # ----------------------------------
-# We take as input the datalon pdb list, and obtain from it the mapping between
+# We take as input the ioncom pdb list, and obtain from it the mapping between
 # pname and cid to be used.
 #
 # Example: 1abqA\n => pname, cid = line[:4], line[4]
 
-def parse_datalon(ptr_file):
+def parse_ioncom(ptr_file):
     pname_cid_map = dict()
     with open(ptr_file, 'r') as file:
         for line in file:

@@ -80,8 +80,6 @@ def _load_data(file_path_no_suffix):
     return ATOM, HETATM, hb2
 
 def load_pointer_file(ptr_file):
-    # todo: fix parse_ptr_file so it either retrieve .pkl if exists, or rerun
-    #  it from a main ptr script somewhere
     ptr_properties = pdb_list_parser.parse_ptr_file(ptr_file)
     # top_5 = list(ptr_properties.keys())[:10]
     # ptr_properties2 = dict()

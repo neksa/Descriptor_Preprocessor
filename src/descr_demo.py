@@ -13,7 +13,7 @@ if __name__ == "__main__":
     logs.set_logging_level()
 
     timecheck = time()
-    ptr_filename = os.path.join(config.input_dir, 'datalon.pkl')
+    ptr_filename = os.path.join(config.input_dir, 'ioncom.pkl')
 
     ptr_data = loaders.load_pointer_file(ptr_filename)
 

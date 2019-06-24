@@ -46,12 +46,12 @@ _aa_index = [('ALA', 'A'),
 AA3_to_AA1 = dict(_aa_index)
 
 prosite_extract_path = os.path.join(input_dir, "prosite_extract.txt")
-datalon_path = os.path.join(input_dir, "allid_reso3.0_len50_nr40.txt")
+ioncom_path = os.path.join(input_dir, "allid_reso3.0_len50_nr40.txt")
 
 pname_cid_path = os.path.join(store_dir, "pname_cid_map.pkl")
 
 pdb_folder = os.path.join(store_dir, "pdb_files")
-pdb_folder_datalon = os.path.join(store_dir, "pdb_files_datalon")
+pdb_folder_ioncom = os.path.join(store_dir, "pdb_files_ioncom")
 fasta_fpath = os.path.join(store_dir, "prosite_seqs.fasta")
 
 meme_out = os.path.join(store_dir, "meme_out")
@@ -62,15 +62,15 @@ mast_txt_path = os.path.join(mast_out, "mast.txt")
 
 ptr_data_path = os.path.join(store_dir, "ptr_data.pkl")
 
-prosite_pdb_list = ['1A03', '1A29', '1A2X', '1A75', '1AHR', '1AJ4', '1AJ5',
-'1AK8',
-            '1ALV', '1ALW', '1AP4', '1AUI', '1AVS', '1B1G', '1B4C', '1B7T',
-            '1B8C', '1B8L', '1B8R', '1B9A', '1BJF', '1BLQ', '1BMO', '1BOC',
-            '1BOD', '1BU3', '1C07', '1C7V', '1C7W', '1CB1', '1CDL', '1CDM',
-            '1CDN', '1CDP', '1CFC', '1CFD', '1CFF', '1CFP', '1CKK', '1CLB',
-            '1CLL', '1CLM', '1CM1', '1CM4', '1CMF', '1CMG', '1CNP', '1CTA',
-            '1CTD', '1CTR', '1DEG', '1DF0', '1DFK', '1DFL', '1DGU', '1DGV',
-            '1DJG', '1DJH', '1DJI', '1DJW', '1DJX', '1DJY', '1DJZ', '1DMO',
+prosite_pdb_list = [
+    '1A03', '1A29', '1A2X', '1A75', '1AHR', '1AJ4', '1AJ5', '1AK8', '1ALV',
+    '1ALW', '1AP4', '1AUI', '1AVS', '1B1G', '1B4C', '1B7T', '1B8C', '1B8L',
+    '1B8R', '1B9A', '1BJF', '1BLQ', '1BMO', '1BOC',  '1BOD', '1BU3', '1C07',
+    '1C7V', '1C7W', '1CB1', '1CDL', '1CDM', '1CDN', '1CDP', '1CFC', '1CFD',
+    '1CFF', '1CFP', '1CKK', '1CLB', '1CLL', '1CLM', '1CM1', '1CM4', '1CMF',
+    '1CMG', '1CNP', '1CTA',  '1CTD', '1CTR', '1DEG', '1DF0', '1DFK', '1DFL',
+    '1DGU', '1DGV',  '1DJG', '1DJH', '1DJI', '1DJW', '1DJX', '1DJY', '1DJZ',
+    '1DMO',
             '1DT7', '1DTL', '1DVI', '1EH2', '1EJ3', '1EL4', '1EXR', '1F4O',
             '1F4Q', '1F54', '1F55', '1F70', '1F71', '1F8H', '1FF1', '1FI5',
             '1FI6', '1FPW', '1FW4', '1G33', '1G4Y', '1G8I', '1GGW', '1GGZ',
