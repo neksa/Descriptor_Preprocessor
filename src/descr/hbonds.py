@@ -6,17 +6,22 @@ from utils import geometry
 
 def get_descr_hb(df_hb2, df_ATOM, df_HETATM, dsr_snos):
     df_ATOM = df_ATOM.filter(items=["cid", "sno", 'aname', 'coord'])
-    df_HETATM = df_HETATM.filter(items=["cid", "sno", 'aname', 'coord'])
     # df_hb2 = df_hb2.filter(items=["d_cid", "d_sno", 'd_aname',
     #                               "a_cid", "a_sno", 'a_aname',
     #                               'atom_category', ''])
-
-    ATOM_HETATM = df_ATOM.append(df_HETATM, ignore_index=True)
-    ATOM_HETATM = ATOM_HETATM.set_index(['cid', 'sno', 'aname'])
+    if df_HETATM is None:
+        ATOM_HETATM = df_ATOM
+    else:
+        df_HETATM = df_HETATM.filter(items=["cid", "sno", 'aname', 'coord'])
+        ATOM_HETATM = df_ATOM.append(df_HETATM, ignore_index=True)
+        ATOM_HETATM = ATOM_HETATM.set_index(['cid', 'sno', 'aname'])
     df_ATOM = df_ATOM.set_index(['cid', 'sno'])
     df_ATOM = df_ATOM[df_ATOM.aname.isin(("N", "C", "CA"))]
 
     hb_descr_raw = defaultdict(list)
+    # if df_hb2.empty:
+    #     hb_descr = _screen_duplicate(hb_descr_raw, dsr_snos)
+    #     return hb_descr
 
     for __, hb2_line in df_hb2.iterrows():
         if hb2_line.d_sno not in dsr_snos and hb2_line.a_sno not in dsr_snos:
@@ -46,7 +51,23 @@ def get_descr_hb(df_hb2, df_ATOM, df_HETATM, dsr_snos):
             hb_descr_raw[sno].append(addition)
 
     hb_descr = _screen_duplicate(hb_descr_raw, dsr_snos)
+    return hb_descr
 
+def _fill_with_empty(hb_descr, sno):
+    hb_attributes = ['role', 'donor', 'acc', 'ext', 'pdb_id', 'd_cid', 'd_res',
+                  'd_sno', 'd_aname', 'a_cid', 'a_res', 'a_sno', 'a_aname',
+                  'd_a_dist', 'a_d_dd', 'd_a_aa', 'planar1', 'planar2',
+                  'category']
+    hb_descr['sno'].append(sno)
+    for attr in hb_attributes:
+        hb_descr[attr].append([])
+    return hb_descr
+
+def build_empty_hb_descr(snos):
+    hb_descr = defaultdict(list)
+    for sno in snos:
+        hb_descr = _fill_with_empty(hb_descr, sno)
+    hb_descr = dict(hb_descr)
     return hb_descr
 
 def _screen_duplicate(hb_descr_raw, dsr_snos):
@@ -126,8 +147,6 @@ def _screen_duplicate(hb_descr_raw, dsr_snos):
         hb_descr['planar2'].append(planar2)
         hb_descr['category'].append(atom_category)
 
-
-
     if __debug__:
         for category in hb_descr.values():
             assert len(category) == len(hb_descr['sno'])
@@ -136,6 +155,7 @@ def _screen_duplicate(hb_descr_raw, dsr_snos):
         for sno, per_sno in enumerate(by_sno):
             for per_hbond in per_sno:
                 assert len(per_hbond) == len(per_sno[0])
+    hb_descr = dict(hb_descr)
     return hb_descr
 
 def _set_hb_descr(df_ATOM, hbond_vector, dsr_snos, d_info, a_info, role,

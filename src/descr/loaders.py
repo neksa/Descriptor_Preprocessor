@@ -1,6 +1,7 @@
 import os
 import logging
 import numpy as np
+import traceback
 
 import config
 from descr.parsers import loader
@@ -22,7 +23,7 @@ _aa_index = [('ALA', 'A'),
              ('HSD', 'H'),
              ('ILE', 'I'),
              ('LYS', 'K'),
-             ('LEU', 'L'),gl
+             ('LEU', 'L'),
              ('MET', 'M'),
              ('MSE', 'M'),
              ('ASN', 'N'),
@@ -76,47 +77,30 @@ def _load_data(file_path_no_suffix):
     if not MODRES.empty:
         ATOM_res = ATOM.res.copy()
         ATOM.res = _MODRES_sub(ATOM_res, MODRES.res, MODRES.std_res_name)
-
+    if HETATM.empty:
+        HETATM = None
+    if hb2.empty:
+        hb2 = None
     return ATOM, HETATM, hb2
 
-def load_pointer_file(ptr_file):
-    ptr_properties = pdb_list_parser.parse_ptr_file(ptr_file)
-    # top_5 = list(ptr_properties.keys())[:10]
-    # ptr_properties2 = dict()
-    # for key in top_5:
-    #     ptr_properties2[key] = ptr_properties[key]
-    # ptr_properties = ptr_properties2
-
-    return_data = dict()
-    to_delete = []
-    for i, (p_name, properties) in enumerate(ptr_properties.items()):
+def load_pdb_info(motif_map, pdb_dir=config.pdb_files_dir):
+    """
+    Original form have these lines: "ATOM", "ANISOU", "HETATM", "TER", but
+    ANISOU and TER are not used, so only keeping ATOM and HETATM.
+    """
+    pdb_info_data_map = dict()
+    for i, (p_name, properties) in enumerate(motif_map.items()):
         print(f"{i}: {p_name}")
+        filepath = os.path.join(pdb_dir, p_name+".pdb")
+        sno_markers, cid = properties['sno_markers'], properties['cid']
         try:
-            filepath = os.path.join(config.pdb_files_dir, p_name+".pdb")
-            if 'sno_markers' not in properties:
-                logging.error(f"sno_markers not in properties, for "
-                              f"file {p_name}.")
-                raise AssertionError
-            if not os.path.isfile(filepath):
-                print(f"File {p_name} not found.")
-                print(filepath)
-                continue
-            try:
-                file_data = _load_data(filepath)
-            except AssertionError as e:
-                print(f"{e} | Flagged: {p_name}")
-                continue
-            ATOM, HETATM, hb2 = file_data
-            # if 'cid' in properties:
-            #     ATOM = ATOM[ATOM.cid == properties['cid']]
-            return_data[(p_name, tuple(properties['sno_markers']),
-                         properties['cid'])] = \
-                (ATOM, HETATM, hb2)
+            file_data = _load_data(filepath)
         except Exception as e:
-            print(e)
-            print("kick")
-            to_delete.append(p_name)
-    print(f"<{to_delete}>")
-    for i in to_delete:
-        del ptr_properties[i]
-    return return_data
+            logging.error(f"_load_data() fails for file {filepath}. Skipping.")
+            logging.error(f"Traceback: <{traceback.format_exc()}>")
+            logging.error(f"Error_msg: <{e}>\n\n")
+            continue
+        ATOM, HETATM, hb2 = file_data
+        for marker in sno_markers:
+            pdb_info_data_map[(p_name, marker, cid)] = (ATOM, HETATM, hb2)
+    return pdb_info_data_map
