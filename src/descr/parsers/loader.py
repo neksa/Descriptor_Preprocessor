@@ -1,7 +1,7 @@
 import logging
 import os
-from . import pdb_parser
-from .pdb_parser import BaseParser
+
+from descr.parsers import pdb_parser
 
 class Loader:
     def __init__(self, filepath):
@@ -17,10 +17,10 @@ class Loader:
         assert isinstance(parser_name, str)
         if hasattr(pdb_parser, parser_name):
             parser = getattr(pdb_parser, parser_name)
-            assert issubclass(parser, BaseParser), \
-                "{} is not a parser in module pdb_parser".format(parser_name)
+            assert issubclass(parser, pdb_parser.BaseParser), \
+                f"{parser_name} is not a parser in module pdb_parser"
         else:
-            logging.error("{} is not in module pdb_parser".format(parser_name))
+            logging.error(f"{parser_name} is not in module pdb_parser")
             raise Exception
         return parser
 

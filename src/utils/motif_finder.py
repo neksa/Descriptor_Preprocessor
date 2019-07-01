@@ -110,6 +110,7 @@ def _extract_sequence(pdb_folder, pname_cid_map, AA3_to_AA1=config.AA3_to_AA1):
         seq = "".join(seq)
         seqs.append(seq)
     return seqs
+# pylint: enable=invalid-name
 
 def _delete_short_seqs(fasta_fname, threshold=30):
     """

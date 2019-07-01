@@ -1,11 +1,12 @@
 import abc
-import numpy as np
 import os
-import pandas as pd
 import re
 import subprocess
 
+import numpy as np
+import pandas as pd
 
+# pylint: disable=anomalous-backslash-in-string, arguments-differ
 class BaseParser(abc.ABC):
     @abc.abstractmethod
     def split_line(self, arg):
@@ -75,19 +76,19 @@ class ATOMParser(BaseParser):
         :param line: str
         :return: Dict[str, str]
         """
-        splitted = dict(_record_name = line[:6],
-                        ano = line[6:11],
-                        aname = line[12:16],
-                        _altLoc = line[16],
-                        res = line[17:20],
-                        cid = line[21],
-                        sno = line[22:26],
-                        _AChar = line[27],
-                        coord = tuple([line[31:38], line[39:46], line[47:54]]),
-                        occupancy = line[55:60],
-                        tempfactor = line[61:66],
-                        elementsymbol = line[77:78],
-                        _charge = line[79:80])
+        splitted = dict(_record_name=line[:6],
+                        ano=line[6:11],
+                        aname=line[12:16],
+                        _altLoc=line[16],
+                        res=line[17:20],
+                        cid=line[21],
+                        sno=line[22:26],
+                        _AChar=line[27],
+                        coord=tuple([line[31:38], line[39:46], line[47:54]]),
+                        occupancy=line[55:60],
+                        tempfactor=line[61:66],
+                        elementsymbol=line[77:78],
+                        _charge=line[79:80])
 
         for key, value in splitted.items():
             if key != "coord":
@@ -171,19 +172,19 @@ class HETATMParser(BaseParser):
         :param line: str
         :return: Dict[str, str]
         """
-        splitted = dict(_record_name = line[:6],
-                        ano = line[6:11],
-                        aname = line[12:16],
-                        _altLoc = line[16],
-                        res = line[17:20],
-                        cid = line[21],
-                        sno = line[22:26],
-                        _AChar = line[27],
-                        coord = tuple([line[31:38], line[39:46], line[47:54]]),
-                        occupancy = line[55:60],
-                        tempfactor = line[61:66],
-                        elementsymbol = line[77:78],
-                        _charge = line[79:80])
+        splitted = dict(_record_name=line[:6],
+                        ano=line[6:11],
+                        aname=line[12:16],
+                        _altLoc=line[16],
+                        res=line[17:20],
+                        cid=line[21],
+                        sno=line[22:26],
+                        _AChar=line[27],
+                        coord=tuple([line[31:38], line[39:46], line[47:54]]),
+                        occupancy=line[55:60],
+                        tempfactor=line[61:66],
+                        elementsymbol=line[77:78],
+                        _charge=line[79:80])
 
         for key, value in splitted.items():
             if key != "coord":
@@ -245,7 +246,7 @@ class HETATMParser(BaseParser):
 
 ###############################################################################
 
-class Hb2Parser(BaseParser):
+class hbParser(BaseParser):
     def __init__(self, file_data):
         """
         Check self.record_name with file data manually to make sure it tally,
@@ -260,9 +261,9 @@ class Hb2Parser(BaseParser):
         :param line: str
         :return: Dict[str, str]
         """
-        splitted = dict(d_cid = line[0],
-                        d_sno = line[1:5],
-                        _d_insertion_code = line[5],
+        splitted = dict(d_cid=line[0],
+                        d_sno=line[1:5],
+                        _d_insertion_code=line[5],
                         d_res=line[6:9],
                         d_aname=line[10:14],
 
@@ -276,11 +277,11 @@ class Hb2Parser(BaseParser):
                         atom_category=line[33:36],
                         d_a_gap=line[36:39],
                         d_a_CA_dist=line[40:45],
-                        d_a_angle_at_H = line[46:51],
-                        H_a_dist = line[52:57],
-                        H_a_antecedent_angle_at_a = line[58:63],
-                        d_a_antecedent_angle_at_a = line[64:69],
-                        hb_count = line[70:75])
+                        d_a_angle_at_H=line[46:51],
+                        H_a_dist=line[52:57],
+                        H_a_antecedent_angle_at_a=line[58:63],
+                        d_a_antecedent_angle_at_a=line[64:69],
+                        hb_count=line[70:75])
 
         for key, value in splitted.items():
             splitted[key] = value.strip()
@@ -322,13 +323,15 @@ class Hb2Parser(BaseParser):
         :return: Bool
          """
         # ZN from 1h71, which has P as starting
+        # pylint: disable=invalid-name
         amino_acids_and_H2O = frozenset(["ALA", "CYS", "ASP", "GLU", "PHE",
                                          "GLY", "HIS", "ILE", "LYS", "LEU",
                                          "MET", "ASN", "PRO", "GLN", "ARG",
                                          "SER", "THR", "VAL", "TRP", "TYR",
                                          "HOH", "NAG", "NDG", "ACG", "GDP",
-                                         "SO4", "MES", 'MIS','MPD', 'BMA',
+                                         "SO4", "MES", 'MIS', 'MPD', 'BMA',
                                          'NO3', 'GOL', 'ZN'])
+        # pylint: enable=invalid-name
 
         assert line["_d_insertion_code"] == "-"
         assert line["_a_insertion_code"] == "-"
@@ -415,6 +418,7 @@ class HbondParser(BaseParser):
         return line
 
     def check_validity(self, line):
+        del line
         return True
 
     def remove_tmp_keys(self, line):
@@ -433,14 +437,14 @@ class MODRESParser(BaseParser):
         self.parsed = self.parse_filedata(file_data, record_name)
 
     def split_line(self, line):
-        splitted = dict(_record_name = line[:6],
-                        id_code = line[7:11],
-                        res = line[12:15],
-                        cid = line[16],
-                        sno = line[18:22],
-                        _AChar = line[22],
-                        std_res_name = line[24:27],
-                        description = line[29:70])
+        splitted = dict(_record_name=line[:6],
+                        id_code=line[7:11],
+                        res=line[12:15],
+                        cid=line[16],
+                        sno=line[18:22],
+                        _AChar=line[22],
+                        std_res_name=line[24:27],
+                        description=line[29:70])
         for key, value in splitted.items():
             splitted[key] = value.strip()
         return splitted
@@ -469,3 +473,4 @@ class MODRESParser(BaseParser):
         assert len(line) == 6
         return line
 
+# pylint: enable=anomalous-backslash-in-string, arguments-differ

@@ -4,7 +4,6 @@
 # A set of geometry functions for manipulating pdb files.
 ###############################################################################
 
-
 from math import sqrt, cos, sin, acos, pi
 import numpy as np
 import scipy.spatial
@@ -165,7 +164,7 @@ def calcHG(CB_coord,SG_coord):
 
     return HG_coord
 
-def calcDihedrals(prevCO,currN,currCA,currCO,nextN):
+def calcDihedrals(prevCO, currN, currCA, currCO, nextN):
     """
     Calculates phi and psi angles for an individual residue.
     Requires coord tuple of each atom.
@@ -199,15 +198,13 @@ def calcDihedrals(prevCO,currN,currCA,currCO,nextN):
         psi = -psi
     return phi, psi
 
-
-def calcHN(prevCO,prevO,currN,currCA):  # currCA not needed?
+def calcHN(prevCO,prevO,currN):
     """
     Calculate the position of the amide hydrogen.
     """
     prevCO = np.array(prevCO)
     prevO = np.array(prevO)
     currN = np.array(currN)
-    currCA = np.array(currCA)
 
     CO_bond = prevO - prevCO
     CN_bond = currN - prevCO

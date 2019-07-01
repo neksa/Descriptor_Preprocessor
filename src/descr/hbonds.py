@@ -1,39 +1,38 @@
 from collections import defaultdict
-from decimal import Decimal
+import decimal
 import numpy as np
 
 from utils import geometry
 
-def get_descr_hb(df_hb2, df_ATOM, df_HETATM, dsr_snos):
+def get_descr_hb(df_hb, df_ATOM, df_HETATM, dsr_snos):
+    if df_hb is None:
+        hbond_descr = _build_empty_hb_descr(dsr_snos)
+        return hbond_descr
+
+    assert not df_hb.empty
     df_ATOM = df_ATOM.filter(items=["cid", "sno", 'aname', 'coord'])
-    # df_hb2 = df_hb2.filter(items=["d_cid", "d_sno", 'd_aname',
-    #                               "a_cid", "a_sno", 'a_aname',
-    #                               'atom_category', ''])
     if df_HETATM is None:
         ATOM_HETATM = df_ATOM
     else:
         df_HETATM = df_HETATM.filter(items=["cid", "sno", 'aname', 'coord'])
         ATOM_HETATM = df_ATOM.append(df_HETATM, ignore_index=True)
-        ATOM_HETATM = ATOM_HETATM.set_index(['cid', 'sno', 'aname'])
+    ATOM_HETATM = ATOM_HETATM.set_index(['cid', 'sno', 'aname'])
     df_ATOM = df_ATOM.set_index(['cid', 'sno'])
     df_ATOM = df_ATOM[df_ATOM.aname.isin(("N", "C", "CA"))]
 
     hb_descr_raw = defaultdict(list)
-    # if df_hb2.empty:
-    #     hb_descr = _screen_duplicate(hb_descr_raw, dsr_snos)
-    #     return hb_descr
 
-    for __, hb2_line in df_hb2.iterrows():
-        if hb2_line.d_sno not in dsr_snos and hb2_line.a_sno not in dsr_snos:
+    for _, hb_line in df_hb.iterrows():
+        if hb_line.d_sno not in dsr_snos and hb_line.a_sno not in dsr_snos:
             continue
-        d_info = (hb2_line.d_cid, hb2_line.d_sno, hb2_line.d_aname)
-        a_info = (hb2_line.a_cid, hb2_line.a_sno, hb2_line.a_aname)
+        d_info = (hb_line.d_cid, hb_line.d_sno, hb_line.d_aname)
+        a_info = (hb_line.a_cid, hb_line.a_sno, hb_line.a_aname)
 
-        other_hb2_info = (
-            hb2_line.pdb_id, hb2_line.d_cid, hb2_line.d_res, hb2_line.d_sno,
-            hb2_line.d_aname, hb2_line.a_cid, hb2_line.a_res, hb2_line.a_sno,
-            hb2_line.a_aname, hb2_line.d_a_dist, hb2_line.a_d_dd, hb2_line.d_a_aa,
-            hb2_line.planar1, hb2_line.planar2, hb2_line.atom_category)
+        other_hb_info = (
+            hb_line.pdb_id, hb_line.d_cid, hb_line.d_res, hb_line.d_sno,
+            hb_line.d_aname, hb_line.a_cid, hb_line.a_res, hb_line.a_sno,
+            hb_line.a_aname, hb_line.d_a_dist, hb_line.a_d_dd, hb_line.d_a_aa,
+            hb_line.planar1, hb_line.planar2, hb_line.atom_category)
 
         # Determine vector will point from doner => acceptor
         hbond_vector = _get_hbond_vector(d_info, a_info, ATOM_HETATM)
@@ -41,33 +40,33 @@ def get_descr_hb(df_hb2, df_ATOM, df_HETATM, dsr_snos):
         if d_info[1] in dsr_snos:
             role = "D"
             sno, addition = _set_hb_descr(df_ATOM, hbond_vector, dsr_snos,
-                                     d_info, a_info, role, other_hb2_info)
+                                          d_info, a_info, role, other_hb_info)
             hb_descr_raw[sno].append(addition)
 
         if a_info[1] in dsr_snos:
             role = "A"
             sno, addition = _set_hb_descr(df_ATOM, hbond_vector, dsr_snos,
-                                     a_info, d_info, role, other_hb2_info)
+                                          a_info, d_info, role, other_hb_info)
             hb_descr_raw[sno].append(addition)
 
     hb_descr = _screen_duplicate(hb_descr_raw, dsr_snos)
     return hb_descr
 
-def _fill_with_empty(hb_descr, sno):
-    hb_attributes = ['role', 'donor', 'acc', 'ext', 'pdb_id', 'd_cid', 'd_res',
-                  'd_sno', 'd_aname', 'a_cid', 'a_res', 'a_sno', 'a_aname',
-                  'd_a_dist', 'a_d_dd', 'd_a_aa', 'planar1', 'planar2',
-                  'category']
-    hb_descr['sno'].append(sno)
-    for attr in hb_attributes:
-        hb_descr[attr].append([])
-    return hb_descr
-
-def build_empty_hb_descr(snos):
+def _build_empty_hb_descr(snos):
     hb_descr = defaultdict(list)
     for sno in snos:
         hb_descr = _fill_with_empty(hb_descr, sno)
     hb_descr = dict(hb_descr)
+    return hb_descr
+
+def _fill_with_empty(hb_descr, sno):
+    hb_attributes = ['role', 'donor', 'acc', 'ext', 'pdb_id', 'd_cid', 'd_res',
+                     'd_sno', 'd_aname', 'a_cid', 'a_res', 'a_sno', 'a_aname',
+                     'd_a_dist', 'a_d_dd', 'd_a_aa', 'planar1', 'planar2',
+                     'category']
+    hb_descr['sno'].append(sno)
+    for attr in hb_attributes:
+        hb_descr[attr].append([])
     return hb_descr
 
 def _screen_duplicate(hb_descr_raw, dsr_snos):
@@ -80,26 +79,7 @@ def _screen_duplicate(hb_descr_raw, dsr_snos):
 
     for sno in dsr_snos:
         if sno not in hb_descr_raw:
-            hb_descr['sno'].append(sno)
-            hb_descr['role'].append([])
-            hb_descr['donor'].append([])
-            hb_descr['acc'].append([])
-            hb_descr['ext'].append([])
-            hb_descr['pdb_id'].append([])
-            hb_descr['d_cid'].append([])
-            hb_descr['d_res'].append([])
-            hb_descr['d_sno'].append([])
-            hb_descr['d_aname'].append([])
-            hb_descr['a_cid'].append([])
-            hb_descr['a_res'].append([])
-            hb_descr['a_sno'].append([])
-            hb_descr['a_aname'].append([])
-            hb_descr['d_a_dist'].append([])
-            hb_descr['a_d_dd'].append([])
-            hb_descr['d_a_aa'].append([])
-            hb_descr['planar1'].append([])
-            hb_descr['planar2'].append([])
-            hb_descr['category'].append([])
+            hb_descr = _fill_with_empty(hb_descr, sno)
             continue
 
         values = hb_descr_raw[sno]
@@ -129,7 +109,6 @@ def _screen_duplicate(hb_descr_raw, dsr_snos):
         hb_descr['role'].append(roles)
         hb_descr['donor'].append(donors)
         hb_descr['acc'].append(accs)
-
         hb_descr['ext'].append(ext)
         hb_descr['pdb_id'].append(pdb_id)
         hb_descr['d_cid'].append(d_cid)
@@ -159,7 +138,7 @@ def _screen_duplicate(hb_descr_raw, dsr_snos):
     return hb_descr
 
 def _set_hb_descr(df_ATOM, hbond_vector, dsr_snos, d_info, a_info, role,
-                  other_hb2_info):
+                  other_hb_info):
     d_cid, d_sno = d_info[:2]
     a_cid, a_sno = a_info[:2]
     residue = df_ATOM.loc[d_cid, d_sno]
@@ -169,12 +148,12 @@ def _set_hb_descr(df_ATOM, hbond_vector, dsr_snos, d_info, a_info, role,
         ext = "INT"
     else:
         ext = "EXT"
-    return d_sno, [role, doner_trans, acc_trans, [ext, *other_hb2_info]]
+    return d_sno, [role, doner_trans, acc_trans, [ext, *other_hb_info]]
 
 def _transform_hbond_vector(hbond_vector, residue):
     """
     Transform hbond vector to a standardised coordinate frame, described by
-    N, C, CA in ATOM, for res specified in hb2. First translate, then rotate.
+    N, C, CA in ATOM, for res specified in hb. First translate, then rotate.
     """
     N_coord, C_coord, CA_coord = _get_coordinates(residue)
 
@@ -186,9 +165,9 @@ def _transform_hbond_vector(hbond_vector, residue):
     doner_transformed = np.dot(doner_translated, rotation_matrix)
     acc_transformed = np.dot(acc_translated, rotation_matrix)
 
-    doner_transformed = np.array([round(Decimal(val), 2)
+    doner_transformed = np.array([round(decimal.Decimal(val), 2)
                                   for val in doner_transformed])
-    acc_transformed = np.array([round(Decimal(val), 2)
+    acc_transformed = np.array([round(decimal.Decimal(val), 2)
                                 for val in acc_transformed])
 
     return doner_transformed, acc_transformed
@@ -240,15 +219,15 @@ def _get_hbond_vector(d_info, a_info, ATOM_HETATM):
 ##############################################################################
 
 #
-# def get_descr_hb_old(df_hb2, df_ATOM, df_HETATM, dsr_snos):
+# def get_descr_hb_old(df_hb, df_ATOM, df_HETATM, dsr_snos):
 #     """
 #     Deprecated.
 #
-#     For old .hb2 files.
+#     For old .hb files.
 #     """
 #     df_ATOM = df_ATOM.filter(items=["cid", "sno", 'aname', 'coord'])
 #     df_HETATM = df_HETATM.filter(items=["cid", "sno", 'aname', 'coord'])
-#     df_hb2 = df_hb2.filter(items=["d_cid", "d_sno", 'd_aname',
+#     df_hb = df_hb.filter(items=["d_cid", "d_sno", 'd_aname',
 #                                   "a_cid", "a_sno", 'a_aname',
 #                                   'atom_category', ''])
 #
@@ -259,13 +238,13 @@ def _get_hbond_vector(d_info, a_info, ATOM_HETATM):
 #
 #     hb_descr_raw = defaultdict(list)
 #
-#     for __, hb2_line in df_hb2.iterrows():
-#         if hb2_line.d_sno not in dsr_snos and hb2_line.a_sno not in dsr_snos:
+#     for __, hb_line in df_hb.iterrows():
+#         if hb_line.d_sno not in dsr_snos and hb_line.a_sno not in dsr_snos:
 #             continue
-#         d_info = (hb2_line.d_cid, hb2_line.d_sno, hb2_line.d_aname)
-#         a_info = (hb2_line.a_cid, hb2_line.a_sno, hb2_line.a_aname)
+#         d_info = (hb_line.d_cid, hb_line.d_sno, hb_line.d_aname)
+#         a_info = (hb_line.a_cid, hb_line.a_sno, hb_line.a_aname)
 #
-#         atom_category = hb2_line.atom_category
+#         atom_category = hb_line.atom_category
 #
 #         # Determine vector will point from doner => acceptor
 #         hbond_vector = _get_hbond_vector(d_info, a_info, ATOM_HETATM)
@@ -292,7 +271,7 @@ def _get_hbond_vector(d_info, a_info, ATOM_HETATM):
 #     """
 #     Deprecated.
 #
-#     For old .hb2 files.
+#     For old .hb files.
 #     """
 #     d_cid, d_sno = d_info[:2]
 #     a_cid, a_sno = a_info[:2]

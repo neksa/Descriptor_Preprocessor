@@ -22,6 +22,8 @@ the pname+cid directly, so there's no need for a separate pdb_list.
 
 Run setup_pname_cid_map_prosite/ioncom() before
 setup_motif_finder_prosite/ioncom(), as motif_finder requires pname_cid_map.
+
+Run plot_ref.py after to visualise the seq logo of the derived descr.
 """
 import os
 import pickle

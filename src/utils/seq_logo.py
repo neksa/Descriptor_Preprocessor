@@ -1,10 +1,3 @@
-from enum import Enum, auto
-from matplotlib.font_manager import FontProperties
-from matplotlib.patches import PathPatch
-from matplotlib.transforms import Affine2D
-from matplotlib.text import TextPath
-import matplotlib.pyplot as plt
-
 """
 To use: Logo(to_logo, min_sno); plt.show()
 to_logo of form [[(res, proportion),... for 0th position] for nth position]
@@ -12,8 +5,15 @@ min_sno = first relative position of sno, for xaxis labels.
 Call _to_align to align each individual text character.
 
 Adapted from https://stackoverflow.com/questions/42615527/sequence-logos-in-
-matplotlib-aligning-xticks, with color properties taken from weblogo. 
+matplotlib-aligning-xticks, with color properties taken from weblogo.
 """
+
+from enum import Enum, auto
+from matplotlib.font_manager import FontProperties
+from matplotlib.patches import PathPatch
+from matplotlib.transforms import Affine2D
+from matplotlib.text import TextPath
+import matplotlib.pyplot as plt
 
 # Class definition kept in global so pickle works fine.
 class Res(Enum):
@@ -24,7 +24,9 @@ class Res(Enum):
     hydrophobic=auto()
 
 class Logo:
-    def __init__(self, data, init_pos, figsize=(20, 3), convert_AA3=True):
+    def __init__(self, data, init_pos, figsize=(20, 3), convert_AA3=True,
+                 title=None):
+        self._title = title
         self._init_pos = init_pos
         self._convert_AA3 = convert_AA3
         self._AA3_to_AA1 = self.get_AA3_to_AA1()
@@ -103,6 +105,8 @@ class Logo:
         for name, value in self._colorcode.items():
             plt.scatter(0, 2, label=name.name, s=100, color=value)
         plt.legend()
+        if self._title:
+            plt.title(self._title)
         return ax
 
     def add_patch(self, AA3, x, y, yscale, ax):

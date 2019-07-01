@@ -61,17 +61,18 @@ def plot_CA(descr_full):
             for i, sno in enumerate(snos):
                 if sno == seq_marker:
                     ax.text(xs[i], ys[i], zs[i], sno)
+# pylint: enable=invalid-name
 
 def _for_sort(x):
     return -x[1], x[0]
 
-def plot_signature_logo(descr_full, num_res_considered=4):
+def plot_signature_logo(descr_full, num_res_considered=4, title=None):
     descr_filtered = descr_full.filter(['relative_sno', 'res'])
     min_sno = min(descr_filtered.relative_sno)
     descr_sno_grouped = descr_filtered.groupby('relative_sno')
-    to_logo = [[] for __ in range(len(descr_sno_grouped))]
-    for i, (_, descr_per_sno) in enumerate(descr_sno_grouped):
-        # key is sno
+    to_logo = [[] for _ in range(len(descr_sno_grouped))]
+    for i, (sno, descr_per_sno) in enumerate(descr_sno_grouped):
+        del sno
         res_unsorted = descr_per_sno.res.values
         res_unique = list(np.unique(res_unsorted, return_counts=True))
         num_seqs = sum(res_unique[1])
@@ -83,9 +84,11 @@ def plot_signature_logo(descr_full, num_res_considered=4):
         res_percents = list([i/num_seqs for i in res_counts])
         for name, percent in zip(res_names, res_percents):
             to_logo[i].append((name, percent))
-    seq_logo.Logo(to_logo, min_sno)
+    seq_logo.Logo(to_logo, min_sno, title=title)
 
-def plot_signature_bar(descr, num_res_considered=2):
+# pylint: disable=invalid-name
+def plot_signature_bar(descr, num_res_considered=2,
+                       AA3_to_AA1=config.AA3_to_AA1):
     """
     :param num_res_considered: Number of top-count res to show per relative
     sno position.
@@ -123,10 +126,10 @@ def plot_signature_bar(descr, num_res_considered=2):
     handles, labels = ax.get_legend_handles_labels()
 
     # Convert to single-letter code (AA3=>AA1)
-    _labels = []
+    single_letter_labels = []
     for label in labels:
-        _labels.append(config.AA3_to_AA1[label] + " / " + label)
-    labels = _labels
+        single_letter_labels.append(AA3_to_AA1[label] + " / " + label)
+    labels = single_letter_labels
 
     # Sort labels
     labels, handles = zip(*sorted(zip(labels, handles), key=itemgetter(0)))
@@ -134,15 +137,17 @@ def plot_signature_bar(descr, num_res_considered=2):
     handles = list(handles)
 
     # Remove duplicates
-    _history = []
+    history = []
     assert len(labels) == len(handles)
     for i in range(len(labels))[::-1]:
-        if labels[i] not in _history:
-            _history.append(labels[i])
+        if labels[i] not in history:
+            history.append(labels[i])
         else:
             del labels[i]
             del handles[i]
     ax.legend(handles, labels)
+
+# pylint: enable=invalid-name
 
 def plot_dihedral(descr_full, remove_labels=True, add_filename=False):
     descr_grouped = descr_full.groupby('relative_sno')

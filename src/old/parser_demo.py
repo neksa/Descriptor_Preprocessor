@@ -5,7 +5,7 @@ To Use:
 Call Loader, supplying filepath. This loads filelines but does not parse them
 yet. Calling the returned instance with parse_with(parser_in_str) returns the
 DF. parser_in_str can be ATOMParser, HETATMParser, MODRESParser, HbondParser
-for .pdb files, or Hb2Parser for .hb2 files. Multiple parse_with() can be
+for .pdb files, or hbParser for .hb2 files. Multiple parse_with() can be
 called with a single Loader instance, reducing IO load.
 
 If multiple files are required, make multiple calls using os.listdir and feed
@@ -26,7 +26,7 @@ input_dir = os.path.join(config.input_dir, "pdb_files")
 if __name__ == "__main__":
     files = os.listdir(input_dir)
     pdb_files = []
-    hb2_files = []
+    hb_files = []
     for file in files:
         if file.endswith('.pdb'):
             pdb_files.append(file)
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     MODRES_lines = []
     HB_lines = []
 
-    hb2_lines = []
+    hb_lines = []
     start = False
     for pdb_file in pdb_files:
         pdb_loaded = loader.Loader(os.path.join(input_dir, pdb_file))
@@ -51,12 +51,12 @@ if __name__ == "__main__":
         HB_lines.append(pdb_HB)
 
 
-    for hb2_file in hb2_files:
-        hb2_loaded = loader.Loader(os.path.join(input_dir, hb2_file))
-        hb2 = hb2_loaded.parse_with('Hb2Parser')
-        hb2_lines.append(hb2)
+    for hb_file in hb_files:
+        hb_loaded = loader.Loader(os.path.join(input_dir, hb_file))
+        hb = hb_loaded.parse_with('hbParser')
+        hb_lines.append(hb)
 
-    # logging.info(type(hb2_lines[0]))   # pd.DataFrame
+    # logging.info(type(hb_lines[0]))   # pd.DataFrame
     # logging.info(type(ATOM_lines[0]))  # pd.DataFrame
     # logging.info(len(HETATM_lines[0])) # Number of files in directory ending
     # logging.info(len(MODRES_lines))    # with .pdb

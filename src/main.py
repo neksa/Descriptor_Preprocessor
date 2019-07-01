@@ -1,14 +1,12 @@
 import logging
 import os
-import pandas.testing
-import pickle as pkl
+import pickle
 from time import time
 
-from descr import descr_main, loaders
 import config
-from utils import logs
-import pickle
-from utils import extract_parser, motif_finder
+from descr import descr_main, loaders
+from utils import extract_parser, motif_finder, logs
+import plots
 
 def main():
     logs.set_logging_level()
@@ -58,7 +56,7 @@ def main():
             pickle.dump(pname_cid_map, file, -1)
 
     if to_load_motif_pos:
-        assert os.path.isfile(motif_pos_path)p
+        assert os.path.isfile(motif_pos_path)
         with open(motif_pos_path, 'rb') as file:
             motif_pos = pickle.load(file)
     else:
@@ -100,12 +98,11 @@ def main():
 
     # Switching back to pkl to avoid false float comparison failures.
     with open(os.path.join(store_, "descrs.pkl"), "wb") as pklfile:
-        pkl.dump(descrs, pklfile, -1)
+        pickle.dump(descrs, pklfile, -1)
 
-    with open(os.path.join(store_, "reference.pkl"), "rb") as pklfile:
-        reference = pkl.load(pklfile)
+    plots.plot_signature_logo(descrs)
 
-    pandas.testing.assert_frame_equal(descrs, reference)
+
 
 if __name__ == "__main__":
     main()

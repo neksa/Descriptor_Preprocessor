@@ -1,16 +1,14 @@
-import logging
+# todo: need to test loaders.load_pdb_info
+
+# import logging
 import unittest
 import os
 import pickle
-import shutil
 
-from descr import descr_main, loaders
-from utils import extract_parser, motif_finder
-import config
 import pandas as pd
 
-# todo: loaders.load_pdb_info also need to test
-
+from descr import descr_main, loaders
+import config
 
 class TestDescrCalculate(unittest.TestCase):
     def setUp(self):
@@ -51,12 +49,12 @@ class TestDescrCalculate(unittest.TestCase):
 
     def test_prosite_mast(self):
         pdb_info = loaders.load_pdb_info(self.input_prosite_mast,
-                                                  pdb_dir=self.pdb_folder_path)
+                                         pdb_dir=self.pdb_folder_path)
         descrs = descr_main.calculate(pdb_info)
         pd.testing.assert_frame_equal(descrs, self.ref_prosite_mast)
 
     def test_ioncom_mast(self):
         pdb_info = loaders.load_pdb_info(self.input_ioncom_mast,
-                                                  pdb_dir=self.pdb_folder_path)
+                                         pdb_dir=self.pdb_folder_path)
         descrs = descr_main.calculate(pdb_info)
         pd.testing.assert_frame_equal(descrs, self.ref_ioncom_mast)
