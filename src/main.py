@@ -1,6 +1,7 @@
 import logging
 import os
 import pickle
+import shutil
 from time import time
 
 import config
@@ -13,19 +14,31 @@ def main():
     timecheck = time()
 
     # paths
-    input_ = os.path.join(config.ROOT, 'data', 'input')
-    store_ = os.path.join(config.ROOT, 'data', 'store')
+    input_dir = os.path.join(config.ROOT, 'data', 'input')
+    store_dir = os.path.join(config.ROOT, 'data', 'store')
 
-    prosite_extract_path = os.path.join(input_, 'prosite', 'prosite_extract.txt')
-    ioncom_path = os.path.join(input_, 'ioncom','ioncom.txt')
-    pdb_folder = os.path.join(input_, 'pdb_files')
-    ref_meme_txt = os.path.join(input_, 'meme.txt')
-    pname_cid_path = os.path.join(store_, 'pname_cid_map.pkl')
-    motif_pos_path = os.path.join(store_, 'motif_pos.pkl')
-    pdb_info_data_path = os.path.join(store_, 'pdb_info_data.pkl')
+    if os.path.isdir(store_dir):
+        logging.warning("Store dir exists, deleting.")
+        shutil.rmtree(store_dir)
+    os.mkdir(store_dir)
+
+    prosite_extract_path = os.path.join(input_dir, 'prosite',
+                                        'prosite_extract.txt')
+    ioncom_path = os.path.join(input_dir, 'ioncom','ioncom.txt')
+    pdb_folder = os.path.join(input_dir, 'pdb_files')
+    ref_meme_txt = os.path.join(input_dir, 'meme.txt')
+    pname_cid_path = os.path.join(store_dir, 'pname_cid_map.pkl')
+    motif_pos_path = os.path.join(store_dir, 'motif_pos.pkl')
+    pdb_info_data_path = os.path.join(store_dir, 'pdb_info_data.pkl')
+
+    # todo: set up local tmp folder, for calculate. Otherwise
+    #  delete_intermediate_store now deletes my files. Or, somehow output it
+    #  into output rather than keeping it in store.
+
+    # todo: remember igor's point about re-generating the motifs from ioncom.
 
     # config
-    source = 'prosite'
+    source = 'ioncom'
     to_load_pname_cid = False
     to_load_motif_pos = False
     to_load_pdb_info = False
@@ -66,17 +79,19 @@ def main():
             process = 'mast'
         else:
             raise Exception
+        tmp_dir = os.path.join(config.ROOT, 'data', 'tmp')
         motif_pos = motif_finder.find_motif_pos(pname_cid_map,
                                                 pdb_folder,
                                                 process,
                                                 replace_existing=True,
-                                                delete_intermediate_store=True,
+                                                delete_intermediate_store=False,
+                                                store_dir=tmp_dir,
                                                 ref_meme_txt=ref_meme_txt)
         if os.path.isfile(motif_pos_path):
             logging.warning(f"motif_pos in <{motif_pos_path}> exists. "
                             f"Replacing.")
         with open(motif_pos_path, 'wb') as file:
-            pickle.load(motif_pos, file, -1)
+            pickle.dump(motif_pos, file, -1)
 
     if to_load_pdb_info:
         assert os.path.isfile(pdb_info_data_path)
@@ -88,7 +103,7 @@ def main():
             logging.warning(f"pdb_info_data in <{pdb_info_data_path}> exists. "
                             f"Replacing.")
         with open(pdb_info_data_path, 'wb') as file:
-            pickle.load(pdb_info_data_map, file, -1)
+            pickle.dump(pdb_info_data_map, file, -1)
 
     descrs = descr_main.calculate(pdb_info_data_map)
     # for __, descr in descrs.groupby(['filename', 'cid', 'seq_marker']):
@@ -97,7 +112,7 @@ def main():
     logging.debug(time() - timecheck)
 
     # Switching back to pkl to avoid false float comparison failures.
-    with open(os.path.join(store_, "descrs.pkl"), "wb") as pklfile:
+    with open(os.path.join(store_dir, "descrs.pkl"), "wb") as pklfile:
         pickle.dump(descrs, pklfile, -1)
 
     plots.plot_signature_logo(descrs)

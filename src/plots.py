@@ -5,10 +5,8 @@ import os
 import pickle as pkl
 
 import matplotlib.pyplot as plt
-# from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
-# import seaborn
 import config
 from utils import seq_logo
 
@@ -86,7 +84,7 @@ def plot_signature_logo(descr_full, num_res_considered=4, title=None):
             to_logo[i].append((name, percent))
     seq_logo.Logo(to_logo, min_sno, title=title)
 
-# pylint: disable=invalid-name
+# pylint: disable=invalid-name, dangerous-default-value
 def plot_signature_bar(descr, num_res_considered=2,
                        AA3_to_AA1=config.AA3_to_AA1):
     """
@@ -146,8 +144,7 @@ def plot_signature_bar(descr, num_res_considered=2,
             del labels[i]
             del handles[i]
     ax.legend(handles, labels)
-
-# pylint: enable=invalid-name
+# pylint: enable=invalid-name, dangerous-default-value
 
 def plot_dihedral(descr_full, remove_labels=True, add_filename=False):
     descr_grouped = descr_full.groupby('relative_sno')
@@ -162,8 +159,6 @@ def plot_dihedral(descr_full, remove_labels=True, add_filename=False):
         if ax_count in (0, len(descr_grouped) - 1):
             # Screen off first, last position, invalid dihedral values
             continue
-        # if ax_count not in (10, 11):
-        #     continue
         phis = df_per_sno.phi.values
         psis = df_per_sno.psi.values
         filenames = df_per_sno.filename.values
@@ -274,7 +269,7 @@ def main():
     ['sno', 'contact', 'covalent', 'phi', 'psi', 'region', 'ss', 'ext', 'role',
      'category', 'donor', 'acc', 'res', 'CA', 'filename', 'seq_marker', 'cid']
     """
-    with open(os.path.join(config.store_dir, "current2.pkl"),
+    with open(os.path.join(config.store_dir, "descrs.pkl"),
               "rb") as pklfile:
         df = pkl.load(pklfile)
     # df.sort_index(inplace=True)
@@ -286,7 +281,7 @@ def main():
     # plot_hbonds_percentage(df)
     plot_contacts(df)
     plot_covalents(df)
-    plot_h_contacts(df)
+    # plot_h_contacts(df)
     # plot_dihedral_for_diff_res(df, 0)
     plt.show()
 

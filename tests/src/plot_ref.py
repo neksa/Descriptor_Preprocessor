@@ -12,6 +12,7 @@ def plot_prosite_meme():
     with open(prosite_meme_descr_path, 'rb') as file:
         prosite_meme_descr = pickle.load(file)
     plots.plot_signature_logo(prosite_meme_descr, title='prosite_meme_descr')
+    plots.plot_dihedral(prosite_meme_descr)
 
 def plot_prosite_mast():
     ref_ = os.path.join(config.ROOT, 'tests', 'data', 'ref')
@@ -29,6 +30,6 @@ def plot_ioncom_mast():
 
 if __name__ == "__main__":
     plot_prosite_meme()
-    plot_prosite_mast()
-    plot_ioncom_mast()
+    # plot_prosite_mast()
+    # plot_ioncom_mast()
     plt.show()

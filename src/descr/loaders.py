@@ -5,7 +5,7 @@ import traceback
 # import numpy as np
 
 import config
-from descr.parsers import loader
+from parsers import loader
 # from descr.parsers import pdb_list_parser
 
 # pylint: disable=invalid-name
@@ -22,9 +22,13 @@ def load_pdb_info(motif_map, pdb_dir=config.pdb_files_dir):
         try:
             file_data = _load_data(filepath)
         except Exception as e:
-            logging.error(f"_load_data() fails for file {filepath}. Skipping.")
-            logging.error(f"Traceback: <{traceback.format_exc()}>")
-            logging.error(f"Error_msg: <{e}>\n\n")
+            # logging.error(f"_load_data() fails for file {filepath}. Skipping.")
+            # logging.error(f"Traceback: <{traceback.format_exc()}>")
+            # logging.error(f"Error_msg: <{e}>\n\n")
+            print(f"_load_data() fails for file {filepath}. Skipping.")
+            print(f"Traceback: <{traceback.format_exc()}>")
+            print(f"Error_msg: <{e}>\n\n")
+            # print("kick")
             continue
         ATOM, HETATM, hb = file_data
         for marker in sno_markers:

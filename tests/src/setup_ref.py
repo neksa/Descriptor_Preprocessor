@@ -33,9 +33,6 @@ import config
 from utils import extract_parser, motif_finder
 from descr import loaders, descr_main
 
-# todo: actually there isn't a diff between prosite and ioncom past
-#  pname_cid. It's only a diff between whether we run meme or mast.
-
 def setup_pname_cid_map_prosite(input_html_extract_path, pdb_list, output):
     pname_cid_map_prosite = extract_parser.parse_prosite(
         input_html_extract_path, pdb_list)
@@ -137,15 +134,15 @@ def setup_all():
     prosite_mast_descr = os.path.join(ref_, 'descr_prosite_mast.pkl')
     ioncom_mast_descr = os.path.join(ref_, 'descr_ioncom_mast.pkl')
 
-    # setup_pname_cid_map_prosite(prosite_extract_path, config.prosite_pdb_list,
-    #                             pname_cid_prosite)
-    # setup_pname_cid_map_ioncom(ioncom_path, pname_cid_ioncom)
-    # setup_motif_finder_prosite(pname_cid_prosite, pdb_folder_path,
-    #                            prosite_motif_pos)
-    # setup_motif_finder_ioncom(pname_cid_ioncom, meme_txt_path,
-    #                           pdb_folder_path, ioncom_motif_pos)
-    # setup_motif_finder_prosite_mast(pname_cid_prosite, meme_txt_path,
-    #                                 pdb_folder_path, prosite_mast_motif_pos)
+    setup_pname_cid_map_prosite(prosite_extract_path, config.prosite_pdb_list,
+                                pname_cid_prosite)
+    setup_pname_cid_map_ioncom(ioncom_path, pname_cid_ioncom)
+    setup_motif_finder_prosite(pname_cid_prosite, pdb_folder_path,
+                               prosite_motif_pos)
+    setup_motif_finder_ioncom(pname_cid_ioncom, meme_txt_path,
+                              pdb_folder_path, ioncom_motif_pos)
+    setup_motif_finder_prosite_mast(pname_cid_prosite, meme_txt_path,
+                                    pdb_folder_path, prosite_mast_motif_pos)
 
     setup_descr(prosite_motif_pos, pdb_folder_path, prosite_meme_descr)
     setup_descr(prosite_mast_motif_pos, pdb_folder_path, prosite_mast_descr)
