@@ -5,7 +5,7 @@ from parsers import pdb_parser
 
 class Loader:
     def __init__(self, filepath):
-        assert isinstance(filepath, str) and os.path.isfile(filepath), filepath
+        assert isinstance(filepath, str) and os.path.isfile(filepath)
         self.filepath = filepath
 
     def _load_file(self, filepath):

@@ -124,7 +124,6 @@ class Logo:
         ax.add_patch(p)
         return ax
 
-
 def _to_align():
     AA3_to_AA1 = dict(ALA='A', CYS='C', ASP='D', GLU='E', PHE='F', GLY='G',
                       HIS='H', HSE='H', HSD='H', ILE='I', LYS='K', LEU='L',

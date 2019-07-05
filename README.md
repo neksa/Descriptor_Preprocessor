@@ -1,3 +1,1 @@
 # Descriptor of Elementary Function
-
-

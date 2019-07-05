@@ -140,8 +140,7 @@ class ATOMParser(BaseParser):
         assert re.fullmatch("[NCOSHP][ABGDEZH]?[XT]?([0-3][0-3]?)?",
                             line["aname"]), line
         assert line["res"] in amino_acids
-        assert re.fullmatch("[A-Z0-9]", line["cid"]), line['cid']  # I from
-        # 1kap
+        assert re.fullmatch("[A-Z0-9]", line["cid"]), line['cid']
         assert re.fullmatch("-?[0-9]+", line["sno"]), line["sno"]
         assert re.fullmatch("-?[0-9]{1,3}\.[0-9]{3}", line["coord"][0])
         assert re.fullmatch("-?[0-9]{1,3}\.[0-9]{3}", line["coord"][1])
@@ -248,7 +247,7 @@ class HETATMParser(BaseParser):
 
 ###############################################################################
 
-class hbParser(BaseParser):
+class HbParser(BaseParser):
     def __init__(self, file_data):
         """
         Check self.record_name with file data manually to make sure it tally,
@@ -384,7 +383,6 @@ class HbondParser(BaseParser):
     def get_hbond_data(self, filepath):
         filepath = os.path.abspath(filepath)
         hbonds_fname = "query.hbonds"
-        curdir = os.getcwd()
         pdb_fname = os.path.abspath(filepath)
         hb_exec = os.path.join(config.ROOT, 'src', 'parsers', 'hb',
                                'hb_calculator')
@@ -392,9 +390,9 @@ class HbondParser(BaseParser):
         if process.returncode != 0:
             msg = "Could not prepare hydrogen bonds results for %s" % pdb_fname
             raise RuntimeError(msg)
-        with open(hbonds_fname) as f:
+        with open(hbonds_fname, 'r') as f:
             file_data = [line for line in f]
-        # os.remove(hbonds_fname)
+        os.remove(hbonds_fname)
         return file_data
 
     def split_line(self, line):

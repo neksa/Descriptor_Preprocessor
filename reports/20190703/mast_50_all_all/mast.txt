@@ -1,0 +1,244 @@
+********************************************************************************
+MAST - Motif Alignment and Search Tool
+********************************************************************************
+	MAST version 5.0.1 (Release date: Thu Jul 26 17:15:19 2018 -0700)
+
+	For further information on how to interpret these results or to get
+	a copy of the MAST software please access http://meme-suite.org .
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+	If you use this program in your research, please cite:
+
+	Timothy L. Bailey and Michael Gribskov,
+	"Combining evidence using p-values: application to sequence homology
+	searches", Bioinformatics, 14(48-54), 1998.
+********************************************************************************
+
+
+********************************************************************************
+DATABASE AND MOTIFS
+********************************************************************************
+	DATABASE fasta_template.fasta (peptide)
+	Last updated on Thu Jul  4 12:49:28 2019
+	Database contains 1 sequences, 5 residues
+
+	MOTIFS meme_mg_50_all_all.txt (peptide)
+	MOTIF ID                                                 ALT ID  WIDTH BEST POSSIBLE MATCH
+	----- -------------------------------------------------- ------- ----- -------------------
+	    1 VIVGPTASGKTALAIELAKRLNGEIISADSMQVYRGMDIGTAKPTKEERA MEME-1     50 VIMGPTASGKTALAIELAQRFNGEIISADSMQVYRGMDIGTAKPTPEEQA
+	    2 HLYTADLPDPDLJIRTSGEQRJSNFLLWQSAYSELYFTDVLWPDFDK    MEME-2     47 HLYTADMPDPDLLIRTSGEQRISNFLLWQSAYSELYFTDTLWPDFDK
+	    3 DVVFPALHGPYGEDGTIQGLLELLGIPYVGSGVLASAIAMDKVVTKR    MEME-3     47 DVVFPALHGPYGEDGTIQGLLEMMGIPYTGCGVLASAICMDKDMTKR
+	    4 YFRQJLSALEYLHSNGIVHRDLKPENJLL                      MEME-4     29 YFWQILSGLHYCHSHWIVHRDLKPENILC
+	    5 GYDPDLPAMKAIGYKEILPYLEGEISLEEAIELIKRBTRRYAKRQL     MEME-5     46 GYHPDLPSMQAIGYKEICPYLNGEISLEEAIELIKRNTRHYAKRQL
+	    6 ALVGRPNAGKSTLJ                                     MEME-6     14 ALVGPPNVGKSTLI
+	    7 VPHHLIDIVDPDESFSVAEFQEDALAAIKEILARGKJPJLVGGTGLYL   MEME-7     48 VPHHLIDICDPDESYSVADFQRDARQAIKDIHARGKIPILVGGTGLYF
+	    8 TEDGEIYINEINTLPGFTSISMYPKLWEASGLSYPELIDRLIELALE    MEME-8     47 TEDGEIYINEINTMPGFTSISMYPKMWQASGISYPELIDRLIELALE
+	    9 DGNGRWAKKRGLPRVEGHKAGVEAVREIVEACLELGIKYLTLYAFSTENW MEME-9     50 DGNGRWAKQRGLPRVFGHKAGVETVRRIVEWCSELGIKYLTLYAFSTENW
+	   10 AIYPGSFDPITNGHLDIIERAAKJFDEVIVAVAINPSKKPLFSLEERV   MEME-10    48 AIYPGTFDPITNGHLDIIERASKLFDHVIVAVANNPNKKPLFSLEERV
+	   11 TPYYMAPEVJRRKGYNKKVDIWSLGVILY                      MEME-11    29 TPYYMAPEVCQRQPYNKKCDWWSLGCILY
+	   12 TATQMLESMIKNPRPTRAEVSDVANAVLDGADAVMLSGETAKGKYPVEAV MEME-12    50 CATQMLESMIKNPRPTRAEVSDVANAVLDGTDCVMLSGETAKGKYPVEAV
+	   13 TKIVCTIGPATRSVEMJEKLIKAGMNVARLNFSHGDHEYH           MEME-13    40 TKIVCTIGPATNSVEMIWKMIKAGMNVARMNFSHGDHEYH
+	   14 KIESHNHPSYVDPYQGAATGVGGIVRBILSMGARPIALLDSLRFGNPEDP MEME-14    50 KMECHNHPSYVDPYQGAATGVGGIWRDIFCMGARPIALTDCLNFGNPDDP
+	   15 LKLGQARGVALLAAAQRGJPVFEYTPSZVKKAVTGYGRADKEQVQEMV   MEME-15    48 MKLGQARGVAMLAAAQRGIPVFEYTPNQVKQAVTGYGHADKEQVQHMV
+	   16 VEIKKSTIGKGSKANHLSYJGDAEIGEGVNIGAGTITCNYDGKNKHKTII MEME-16    50 VEIKKSTIGKGSKANHLTYIGDAEIGENVNIGCGTITCNYDGKNKHKTII
+	   17 HTFFVHSYKRPTFCDHCGELLWGLIRQGLKCEDCGLNCHKRCANKVPNNC MEME-17    50 HTFFVHSYTQPTFCHHCGELLWGLIRQGCKCRNCGFNCHKRCANKVPNNC
+	   18 IGIGFLFAPLYHPAMKHVAPVRKELGIRTIFNJLGPLTN            MEME-18    39 TGICFMFAPQYHPAMKHVMPVRKELGIRTIFNILGPLTN
+	   19 LTNLRELBLSNNKLTSLP                                 MEME-19    18 CTNLRHLNLSNNNLTTLP
+	   20 LLNRAPTLHRLGIQAFEPVLVEGKAIQLHPLVCTAFNADFDGDQMAVH   MEME-20    48 LLNRAPTLHRLGIQAFEPVLVEGKAIQLHPLVCTAFNADFDGDQMAVH
+	   21 QQQQQQQQQQQ                                        MEME-21    11 QQQQQQQQQQQ
+	   22 LKGKQGRFRQNLLGKRVDYSGRSVIVVGPELKLHQCGLPKEMALELFK   MEME-22    48 LKGKQGRFRQNLLGKRVDYSGRSVIVVGPNLKMHQCGLPKEMALELFK
+	   23 NGSSSMASVCGSTLALMDAGVPIKAPVAGIAMGLIK               MEME-23    36 NGSSSMASVCGSTLALMDAGVPIKAPVAGIAMGLIK
+	   24 PSPLWLQERLRAAGIRPINNVVDITNYVMLELGQPLHAFD           MEME-24    40 PSPLWMQRRLRRCGMRPINNVVDITNYVMLELGQPMHAFD
+	   25 SPEAKDLIKKCLQKDPEKRPTAEZLLKHP                      MEME-25    29 SPECKDFIKRCLQKDPNKRPTAEQCLQHP
+	   26 FHHYALAVPLYTHFTSPIRRYADVIVHR                       MEME-26    28 WHHYGLAVPHYTHFTSPIRRYADVIVHR
+	   27 SPYBFLKIGLNMDREELYERINQRVDK                        MEME-27    27 PPYDFLYICLNMDREELYDRINQRVDQ
+	   28 FPDRFFDVGIAEQHAVTFAAGLACEGLKPVVAIYSTFLQRAYDQLIHDVA MEME-28    50 FPDRFFDVGIAEQHAVTFAAGMACEGMKPVCAIYSTFLQRAYDQVIHDVC
+	   29 FAPGRVNLIGEHTDYNDGFVFPCAJTYGTYVAARKRDDGIVRLYSA     MEME-29    46 FAPGRVNLIGEHTDYNDGFVFPCAINYGTYVAARKRDDHIVRLYSA
+	   30 FYDYETKYTDGRAELHIPARJPPEVSEKIKELA                  MEME-30    33 FYDYETKYTDGRTELHIPARIPPEVSEKIREMA
+	   31 VETLGSVTYICSDKTGTLTQNQMTVVK                        MEME-31    27 CETMGCVTYICSDKTGTLTQNQMTFKK
+	   32 IFTEELLNLHRGQGMDLYWRDTLTCPTEEEYJEMVSNKTGGLFRLAVRLM MEME-32    50 IFTEELLNLHRGQGMDLYWRDTLTCPTEEEYIRMVMNKTGGLFRMAVRLM
+	   33 VVSKTGGHLASNLGVVELTVALHYVFDSPKDKJIWDVGHQAYVHK      MEME-33    45 VVSQTGGHFGSNLGVVELTVALHYVFDSPKDKIIWDVGHQCYPHK
+	   34 IEEFLDGEEASFFAFVDGETVLPMPTAQDHKRAGDGDTGPNTGGMGAYSP MEME-34    50 IEEFLDGEEFSFFAFCDGEHVYPMPTAQDHKRAYDGDTGPNTGGMGAYSP
+	   35 ARTSKTPGRTQLINFFEVNDSFYLVDLPGYGYAKVPKEMKKKWQ       MEME-35    44 ARTSKTPGRTQLINFFEVNDQFYLVDLPGYGYAKVPKEMKKQWQ
+	   36 NQZGVDNFDEILEASDGIMVARGDLGVEIPAEKVFJAQKMMIKKCNRAGK MEME-36    50 NQQGVNNFDEILEASDGIMVARGDLGVEIPAEKVFLAQKMMIKKCNRAGK
+	   37 HYNFPPFSVGETGPLRGPGRREIGHGALA                      MEME-37    29 HYNFPPFSVGETGPMRGPGRREIGHGALA
+	   38 DPESAKRIHPNDLQRIIRALEVYYJTGKP                      MEME-38    29 DPESAQRIHPNDQQRIIRALEVYYLTGKP
+	   39 EWWIDEDRKITPLKELQGLIWEZGYENGELKGHVYPDVVPALKRW      MEME-39    45 QWWMDQDRKITPLKQLQGHIWEQGYENGELKGHVYPDVPPALKRW
+	   40 KPANEGSSVGISKVKNEEELEAAJELAFRYDRKVLVEQFIEGREJEVAVL MEME-40    50 KPANQGSSVGISKVHNEEELEAAIEEAFQYDRKVLVEQWINGREIECAVL
+	   41 DQEIEKRTGKSIPEIFEEEGEAGFRDREEEVJAELLZKDGIVLATGGGAV MEME-41    50 DQEIEKRTGMSIPWIFEEEGEAGFRDRESEMIAELCQQQNIVLATGGGAV
+	   42 SFSGLLVDFAKEQGANVJVRGLRAVSDFEYEFQLALMNRKLAP        MEME-42    43 SFSGLLVDFARQHGANVIVRGLRAVSDFEYEFQMAHMNRHLWP
+	   43 DHLGDMDFKVAGTRDGITALQMDIKIDGJ                      MEME-43    29 DHLGDMDFKVAGTRDGITALQMDIKIDGI
+	   44 KPETINYRTLKPERDGLFCERIFGPTKDWECACGK                MEME-44    35 KPETINYRTFKPERDGLFCERIFGPTKDWECHCGK
+	   45 LVVPWDYRIPKIRISTQQAETLQDYRVVVRIDSWESTSVYPNGHF      MEME-45    45 LFTPWDYRIPKIRISTQQAETLQDYRVVVRIDSWESTSVYPNGHF
+	   46 SGNRPEWMILDVJPVJPPDLRPMVQLDGGRFATSDLNDLYRRVIN      MEME-46    45 SGNRPEWMIMDVIPVIPPDLRPMVQLDGGRFATSDLNDLYRRVIN
+	   47 MLHNASLLIDDIZDNSPLRRGKPVAHSIFGVAQTINSANYV          MEME-47    41 MLHNASLLIDDIQDNSPLRRGKPVAHSIYGVPQTINSANYV
+	   48 QEAENQFVGVNCGIMDQLIAALGKKDHALLJDCR                 MEME-48    34 QHAENQFVGCNCGIMDQFIAAMGKKDHAMLIDCR
+	   49 FGGRSAEHEVSLQSAKSVJEAJDKEKYDV                      MEME-49    29 FGGRSAEHEVSLQSAQSVLNALDKEKYDV
+	   50 GIRIDGRKLDEIRPJSIEVGVLPRAHGSALFTRGZTQALVVTTLGT     MEME-50    46 GIRIDGRKLDEIRPIWCEVGVLPRTHGSALFTRGQTQALVVCTLGT
+
+	PAIRWISE MOTIF CORRELATIONS:
+	MOTIF     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15    16    17    18    19    20    21    22    23    24    25    26    27    28    29    30    31    32    33    34    35    36    37    38    39    40    41    42    43    44    45    46    47    48    49
+	----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+	   2   0.12
+	   3   0.20  0.14
+	   4   0.17  0.18  0.19
+	   5   0.18  0.10  0.14  0.19
+	   6   0.68  0.25  0.29  0.24  0.23
+	   7   0.15  0.13  0.12  0.32  0.18  0.20
+	   8   0.14  0.10  0.17  0.23  0.14  0.33  0.15
+	   9   0.20  0.18  0.13  0.27  0.20  0.26  0.18  0.12
+	  10   0.14  0.12  0.13  0.19  0.12  0.35  0.11  0.16  0.09
+	  11   0.16  0.26  0.13  0.14  0.18  0.25  0.16  0.28  0.13  0.15
+	  12   0.16  0.11  0.12  0.15  0.09  0.25  0.11  0.12  0.12  0.16  0.18
+	  13   0.15  0.16  0.17  0.20  0.19  0.30  0.15  0.12  0.20  0.13  0.16  0.16
+	  14   0.14  0.12  0.15  0.16  0.14  0.39  0.14  0.15  0.17  0.16  0.16  0.15  0.19
+	  15   0.20  0.14  0.15  0.21  0.15  0.45  0.14  0.18  0.14  0.14  0.14  0.15  0.16  0.17
+	  16   0.14  0.10  0.16  0.14  0.14  0.33  0.15  0.11  0.10  0.14  0.17  0.16  0.13  0.13  0.13
+	  17   0.13  0.10  0.13  0.19  0.18  0.24  0.13  0.12  0.13  0.11  0.18  0.13  0.16  0.14  0.18  0.15
+	  18   0.17  0.15  0.16  0.16  0.20  0.33  0.18  0.15  0.20  0.19  0.15  0.18  0.14  0.16  0.17  0.14  0.13
+	  19   0.21  0.28  0.23  0.29  0.21  0.15  0.27  0.23  0.29  0.29  0.16  0.25  0.25  0.22  0.24  0.19  0.22  0.16
+	  20   0.10  0.10  0.07  0.16  0.10  0.22  0.10  0.18  0.16  0.10  0.20  0.13  0.10  0.09  0.18  0.13  0.10  0.15  0.23
+	  21   0.14  0.19  0.09  0.14  0.25 -0.01  0.17  0.14  0.26  0.17  0.16  0.17  0.14  0.10  0.17  0.15  0.22  0.17  0.16  0.19
+	  22   0.12  0.10  0.13  0.15  0.14  0.23  0.10  0.12  0.12  0.12  0.21  0.09  0.13  0.10  0.11  0.17  0.13  0.12  0.14  0.12  0.17
+	  23   0.20  0.13  0.18  0.18  0.17  0.31  0.13  0.22  0.18  0.20  0.17  0.22  0.20  0.23  0.18  0.16  0.15  0.17  0.17  0.14  0.06  0.21
+	  24   0.14  0.16  0.12  0.19  0.13  0.20  0.17  0.19  0.19  0.16  0.21  0.21  0.15  0.16  0.16  0.15  0.14  0.18  0.21  0.11  0.14  0.16  0.20
+	  25   0.16  0.15  0.21  0.20  0.29  0.16  0.20  0.22  0.27  0.20  0.11  0.24  0.18  0.16  0.17  0.12  0.22  0.17  0.21  0.12  0.21  0.14  0.13  0.21
+	  26   0.22  0.19  0.14  0.12  0.13  0.18  0.13  0.18  0.14  0.19  0.16  0.18  0.15  0.17  0.19  0.12  0.15  0.16  0.18  0.14  0.10  0.17  0.13  0.13  0.11
+	  27   0.21  0.13  0.15  0.13  0.19  0.20  0.20  0.24  0.17  0.22  0.13  0.18  0.19  0.14  0.16  0.12  0.16  0.13  0.16  0.17  0.24  0.15  0.06  0.14  0.18  0.17
+	  28   0.20  0.15  0.15  0.17  0.11  0.29  0.20  0.14  0.11  0.17  0.16  0.15  0.17  0.20  0.15  0.13  0.16  0.24  0.18  0.09  0.14  0.10  0.21  0.22  0.13  0.20  0.19
+	  29   0.14  0.12  0.14  0.19  0.12  0.27  0.13  0.11  0.16  0.15  0.17  0.10  0.15  0.13  0.18  0.14  0.13  0.16  0.21  0.12  0.11  0.23  0.15  0.13  0.17  0.22  0.20  0.17
+	  30   0.15  0.12  0.17  0.14  0.15  0.23  0.19  0.26  0.19  0.14  0.14  0.18  0.20  0.16  0.13  0.19  0.19  0.13  0.23  0.18  0.16  0.18  0.15  0.16  0.20  0.17  0.22  0.17  0.22
+	  31   0.19  0.17  0.23  0.13  0.21  0.23  0.18  0.21  0.13  0.25  0.14  0.22  0.19  0.19  0.18  0.15  0.14  0.19  0.23  0.12  0.17  0.20  0.19  0.13  0.16  0.15  0.11  0.20  0.14  0.16
+	  32   0.12  0.10  0.12  0.18  0.20  0.23  0.13  0.13  0.15  0.12  0.23  0.12  0.13  0.12  0.13  0.10  0.17  0.14  0.18  0.10  0.19  0.11  0.16  0.17  0.17  0.17  0.14  0.16  0.14  0.18  0.20
+	  33   0.12  0.11  0.12  0.17  0.15  0.27  0.14  0.15  0.15  0.15  0.20  0.11  0.19  0.13  0.20  0.13  0.11  0.14  0.23  0.10  0.15  0.16  0.18  0.14  0.16  0.22  0.13  0.20  0.15  0.16  0.16  0.12
+	  34   0.12  0.10  0.12  0.17  0.15  0.26  0.14  0.13  0.10  0.16  0.18  0.12  0.15  0.14  0.21  0.13  0.10  0.12  0.19  0.13  0.20  0.09  0.15  0.17  0.12  0.14  0.18  0.12  0.15  0.13  0.13  0.17  0.16
+	  35   0.18  0.15  0.12  0.19  0.13  0.34  0.16  0.13  0.11  0.11  0.15  0.08  0.14  0.15  0.17  0.17  0.16  0.11  0.25  0.12  0.22  0.11  0.11  0.17  0.16  0.12  0.14  0.11  0.16  0.23  0.17  0.15  0.17  0.15
+	  36   0.13  0.13  0.18  0.23  0.17  0.31  0.17  0.16  0.19  0.12  0.15  0.20  0.15  0.13  0.21  0.14  0.11  0.15  0.20  0.13  0.20  0.14  0.18  0.18  0.17  0.18  0.18  0.13  0.13  0.16  0.17  0.13  0.15  0.11  0.13
+	  37   0.15  0.14  0.12  0.16  0.19  0.26  0.17  0.14  0.11  0.13  0.13  0.13  0.13  0.20  0.15  0.13  0.17  0.15  0.17  0.11  0.08  0.14  0.14  0.10  0.12  0.15  0.10  0.14  0.19  0.13  0.19  0.16  0.15  0.16  0.14  0.11
+	  38   0.16  0.16  0.13  0.16  0.19  0.22  0.21  0.20  0.23  0.17  0.14  0.16  0.12  0.12  0.16  0.17  0.13  0.14  0.21  0.16  0.20  0.11  0.12  0.16  0.16  0.12  0.16  0.17  0.14  0.15  0.12  0.15  0.15  0.13  0.16  0.19  0.11
+	  39   0.10  0.13  0.12  0.17  0.17  0.19  0.18  0.17  0.13  0.12  0.13  0.12  0.13  0.13  0.14  0.18  0.21  0.12  0.21  0.11  0.21  0.08  0.15  0.20  0.16  0.20  0.13  0.14  0.11  0.25  0.16  0.17  0.09  0.14  0.21  0.15  0.09  0.13
+	  40   0.17  0.12  0.13  0.20  0.20  0.27  0.16  0.16  0.18  0.13  0.17  0.19  0.15  0.12  0.17  0.13  0.11  0.14  0.17  0.08  0.17  0.10  0.17  0.13  0.19  0.14  0.20  0.14  0.13  0.18  0.22  0.11  0.15  0.18  0.12  0.19  0.13  0.18  0.15
+	  41   0.13  0.10  0.17  0.19  0.16  0.28  0.29  0.15  0.16  0.13  0.15  0.14  0.14  0.14  0.14  0.14  0.14  0.13  0.17  0.09  0.24  0.10  0.15  0.16  0.22  0.11  0.18  0.17  0.12  0.17  0.21  0.12  0.13  0.20  0.12  0.15  0.14  0.20  0.16  0.16
+	  42   0.17  0.14  0.14  0.20  0.19  0.32  0.16  0.15  0.17  0.14  0.17  0.16  0.21  0.14  0.17  0.14  0.15  0.18  0.28  0.13  0.20  0.10  0.18  0.17  0.20  0.16  0.13  0.15  0.13  0.16  0.21  0.17  0.18  0.11  0.12  0.12  0.20  0.20  0.15  0.18  0.16
+	  43   0.18  0.13  0.24  0.15  0.17  0.28  0.14  0.17  0.14  0.21  0.11  0.16  0.17  0.23  0.18  0.20  0.18  0.15  0.17  0.11  0.01  0.18  0.19  0.17  0.12  0.10  0.15  0.30  0.14  0.16  0.22  0.14  0.15  0.17  0.15  0.17  0.14  0.16  0.21  0.14  0.19  0.19
+	  44   0.10  0.12  0.10  0.16  0.11  0.14  0.10  0.11  0.12  0.10  0.11  0.13  0.13  0.13  0.08  0.14  0.15  0.12  0.15  0.10  0.15  0.12  0.09  0.12  0.10  0.11  0.16  0.10  0.13  0.10  0.13  0.11  0.10  0.13  0.12  0.08  0.15  0.14  0.17  0.11  0.12  0.11  0.12
+	  45   0.20  0.13  0.14  0.22  0.12  0.32  0.12  0.13  0.18  0.16  0.16  0.18  0.15  0.11  0.14  0.12  0.13  0.13  0.30  0.15  0.28  0.14  0.10  0.16  0.21  0.17  0.22  0.12  0.14  0.19  0.18  0.13  0.14  0.11  0.10  0.12  0.13  0.19  0.13  0.11  0.13  0.15  0.15  0.14
+	  46   0.16  0.13  0.13  0.19  0.13  0.24  0.12  0.18  0.12  0.14  0.17  0.11  0.13  0.15  0.11  0.16  0.11  0.20  0.24  0.10  0.14  0.09  0.13  0.19  0.17  0.16  0.15  0.15  0.10  0.18  0.16  0.12  0.13  0.15  0.14  0.17  0.19  0.15  0.11  0.12  0.12  0.16  0.11  0.08  0.14
+	  47   0.14  0.15  0.17  0.22  0.12  0.29  0.14  0.11  0.14  0.16  0.18  0.16  0.15  0.15  0.15  0.16  0.15  0.17  0.21  0.13  0.18  0.11  0.19  0.19  0.12  0.13  0.13  0.17  0.15  0.14  0.18  0.15  0.14  0.13  0.12  0.19  0.12  0.12  0.15  0.14  0.18  0.19  0.12  0.11  0.15  0.23
+	  48   0.24  0.15  0.21  0.21  0.15  0.36  0.17  0.15  0.16  0.19  0.15  0.23  0.18  0.20  0.18  0.13  0.15  0.15  0.20  0.14  0.21  0.17  0.18  0.24  0.16  0.23  0.14  0.18  0.19  0.12  0.17  0.17  0.14  0.17  0.18  0.17  0.10  0.11  0.18  0.18  0.15  0.19  0.24  0.12  0.15  0.16  0.12
+	  49   0.17  0.11  0.19  0.18  0.21  0.20  0.22  0.19  0.26  0.18  0.14  0.19  0.17  0.19  0.20  0.24  0.19  0.18  0.21  0.20  0.15  0.16  0.17  0.17  0.13  0.11  0.16  0.23  0.16  0.23  0.15  0.18  0.15  0.20  0.19  0.18  0.10  0.14  0.17  0.19  0.22  0.18  0.18  0.12  0.17  0.14  0.15  0.20
+	  50   0.12  0.10  0.13  0.18  0.08  0.29  0.12  0.13  0.19  0.13  0.17  0.21  0.17  0.17  0.14  0.15  0.13  0.15  0.24  0.16  0.09  0.13  0.15  0.18  0.16  0.13  0.13  0.14  0.14  0.19  0.18  0.11  0.10  0.12  0.11  0.15  0.13  0.17  0.12  0.13  0.21  0.12  0.17  0.11  0.19  0.18  0.16  0.16  0.15
+	Correlations above 0.60 may cause some combined p-values and
+	E-values to be underestimates.
+	Removing motif 6 from the query may be advisable.
+
+	Random model letter frequencies (from non-redundant database):
+	A 0.073 C 0.018 D 0.052 E 0.062 F 0.040 G 0.069 H 0.022 I 0.056 K 0.058 
+	L 0.092 M 0.023 N 0.046 P 0.051 Q 0.041 R 0.052 S 0.074 T 0.059 V 0.064 
+	W 0.013 Y 0.033 
+********************************************************************************
+
+
+********************************************************************************
+SECTION I: HIGH-SCORING SEQUENCES
+********************************************************************************
+	- Each of the following 1 sequences has E-value less than 10.
+	- The E-value of a sequence is the expected number of sequences
+	  in a random database of the same size that would match the motifs as
+	  well as the sequence does and is equal to the combined p-value of the
+	  sequence times the number of sequences in the database.
+	- The combined p-value of a sequence measures the strength of the
+	  match of the sequence to all the motifs and is calculated by
+	    o finding the score of the single best match of each motif
+	      to the sequence (best matches may overlap),
+	    o calculating the sequence p-value of each score,
+	    o forming the product of the p-values,
+	    o taking the p-value of the product.
+	- The sequence p-value of a score is defined as the
+	  probability of a random sequence of the same length containing
+	  some match with as good or better a score.
+	- The score for the match of a position in a sequence to a motif
+	  is computed by by summing the appropriate entry from each column of
+	  the position-dependent scoring matrix that represents the motif.
+	- Sequences shorter than one or more of the motifs are skipped.
+	- The table is sorted by increasing E-value.
+********************************************************************************
+
+SEQUENCE NAME                      DESCRIPTION                   E-VALUE  LENGTH
+-------------                      -----------                   -------- ------
+TMP                                                                     1      5
+
+********************************************************************************
+
+
+
+********************************************************************************
+SECTION II: MOTIF DIAGRAMS
+********************************************************************************
+	- The ordering and spacing of all non-overlapping motif occurrences
+	  are shown for each high-scoring sequence listed in Section I.
+	- A motif occurrence is defined as a position in the sequence whose
+	  match to the motif has POSITION p-value less than 0.0001.
+	- The POSITION p-value of a match is the probability of
+	  a single random subsequence of the length of the motif
+	  scoring at least as well as the observed match.
+	- For each sequence, all motif occurrences are shown unless there
+	  are overlaps.  In that case, a motif occurrence is shown only if its
+	  p-value is less than the product of the p-values of the other
+	  (lower-numbered) motif occurrences that it overlaps.
+	- The table also shows the E-value of each sequence.
+	- Spacers and motif occurences are indicated by
+	   o -d-    `d' residues separate the end of the preceding motif 
+		    occurrence and the start of the following motif occurrence
+	   o [n]  occurrence of motif `n' with p-value less than 0.0001.
+********************************************************************************
+
+SEQUENCE NAME                      E-VALUE   MOTIF DIAGRAM
+-------------                      --------  -------------
+TMP                                       1  5
+
+********************************************************************************
+
+
+
+********************************************************************************
+SECTION III: ANNOTATED SEQUENCES
+********************************************************************************
+	- The positions and p-values of the non-overlapping motif occurrences
+	  are shown above the actual sequence for each of the high-scoring
+	  sequences from Section I.
+	- A motif occurrence is defined as a position in the sequence whose
+	  match to the motif has POSITION p-value less than 0.0001 as 
+	  defined in Section II.
+	- For each sequence, the first line specifies the name of the sequence.
+	- The second (and possibly more) lines give a description of the 
+	  sequence.
+	- Following the description line(s) is a line giving the length, 
+	  combined p-value, and E-value of the sequence as defined in Section I.
+	- The next line reproduces the motif diagram from Section II.
+	- The entire sequence is printed on the following lines.
+	- Motif occurrences are indicated directly above their positions in the
+	  sequence on lines showing
+	   o the motif number of the occurrence,
+	   o the position p-value of the occurrence,
+	   o the best possible match to the motif, and
+	   o columns whose match to the motif has a positive score (indicated 
+	     by a plus sign).
+********************************************************************************
+
+
+TMP
+  LENGTH = 5  COMBINED P-VALUE = 1.00e+00  E-VALUE =        1
+  DIAGRAM: 5
+
+********************************************************************************
+
+
+CPU: melvin-GE72-2QF
+Time 0.882 secs.
+
+mast -o /home/melvin/Desktop/Predictive_for_efhand/mast /home/melvin/Desktop/Predictive_for_efhand/meme_mg_50_all_all.txt /home/melvin/Desktop/Predictive_for_efhand/fasta_template.fasta

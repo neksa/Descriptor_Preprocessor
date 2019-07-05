@@ -112,6 +112,7 @@ class TestMotifFinder(unittest.TestCase):
             shutil.rmtree(empty_pdb_folder)
         os.mkdir(empty_pdb_folder)
         shortened_pname_cid = dict()
+
         for i, key in enumerate(pname_cid_prosite.keys()):
             if i == 2:
                 break
@@ -123,6 +124,7 @@ class TestMotifFinder(unittest.TestCase):
                                     replace_existing=True,
                                     delete_intermediate_store=False)
         self.assertEqual(len(list(os.listdir(empty_pdb_folder))), 4)
+
         for file in os.listdir(empty_pdb_folder):
             path = os.path.join(empty_pdb_folder, file)
             self.assertTrue(os.path.isfile(path))

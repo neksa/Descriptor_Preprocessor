@@ -1,10 +1,12 @@
 import logging
 import sys
 
+# "DEBUG" < "INFO" < "WARNING" < "ERROR" < "CRITICAL"
 LOW_PASS_STREAM = sys.stdout
 HIGH_PASS_STREAM = sys.stderr
-LOG_LVL = logging.DEBUG  # "DEBUG" < "INFO" < "WARNING" < "ERROR" < "CRITICAL"
-FILTER_LVL = logging.WARNING  # Min inclusive log level for which messages will be sent to stderr
+LOG_LVL = logging.DEBUG
+# Min inclusive log level for which messages will be sent to stderr
+FILTER_LVL = logging.WARNING
 
 class LessThanFilter(logging.Filter):
     def __init__(self, max_level):

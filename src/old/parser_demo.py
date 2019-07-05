@@ -5,7 +5,7 @@ To Use:
 Call Loader, supplying filepath. This loads filelines but does not parse them
 yet. Calling the returned instance with parse_with(parser_in_str) returns the
 DF. parser_in_str can be ATOMParser, HETATMParser, MODRESParser, HbondParser
-for .pdb files, or hbParser for .hb2 files. Multiple parse_with() can be
+for .pdb files, or HbParser for .hb2 files. Multiple parse_with() can be
 called with a single Loader instance, reducing IO load.
 
 If multiple files are required, make multiple calls using os.listdir and feed
@@ -16,7 +16,7 @@ to the front of filename to create full filepath.
 import os
 
 import config
-from descr.parsers import loader
+from parsers import loader
 from utils import logs
 
 logs.set_logging_level()
@@ -50,10 +50,9 @@ if __name__ == "__main__":
         MODRES_lines.append(pdb_MODRES)
         HB_lines.append(pdb_HB)
 
-
     for hb_file in hb_files:
         hb_loaded = loader.Loader(os.path.join(input_dir, hb_file))
-        hb = hb_loaded.parse_with('hbParser')
+        hb = hb_loaded.parse_with('HbParser')
         hb_lines.append(hb)
 
     # logging.info(type(hb_lines[0]))   # pd.DataFrame
