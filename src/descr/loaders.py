@@ -4,12 +4,12 @@ import traceback
 
 # import numpy as np
 
-import config
+from config import paths
 from parsers import loader
 # from descr.parsers import pdb_list_parser
 
 # pylint: disable=invalid-name
-def load_pdb_info(motif_map, pdb_dir=config.pdb_files_dir):
+def load_pdb_info(motif_map, pdb_dir=paths.PDB_FOLDER):
     """
     Original form have these lines: "ATOM", "ANISOU", "HETATM", "TER", but
     ANISOU and TER are not used, so only keeping ATOM and HETATM.

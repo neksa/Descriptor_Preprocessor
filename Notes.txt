@@ -103,3 +103,13 @@ First, plot it out in 2D to see, then assume normal distribution for each? Plot 
 Task: Focus on building the plot first.
 
 ########################
+
+# 08/07/2019
+
+TODO:
+
+1. From Ioncom, cut out the seqs centering on the matched points
+2. Check converge to see if it exclude areas of seq that match to previous parts. If it does, turn off that bit.
+3. Remove duplicates from previous cut areas
+4. Run converge...?
+5. Check overlaps. Prioritise those with better matches, maybe. 

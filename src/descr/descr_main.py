@@ -4,7 +4,7 @@ import logging
 import numpy as np
 import pandas as pd
 
-import config
+from config import params
 from descr import dihedrals, contacts, hbonds
 
 def calculate(pdb_info_data_map):
@@ -45,8 +45,8 @@ def _get_param_to_consider(ATOM, marker, cids):
     return param_to_consider
 
 def _get_sno_range(ATOM, cid, seq_marker):
-    start_sno = seq_marker + config.offsets[0]
-    end_sno = seq_marker + config.offsets[1]
+    start_sno = seq_marker + params.OFFSETS[0]
+    end_sno = seq_marker + params.OFFSETS[1]
     ATOM_cid = ATOM[(ATOM.cid == cid)]
     while ATOM_cid[(ATOM.sno == start_sno)].empty:
         start_sno += 1

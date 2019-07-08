@@ -1,6 +1,6 @@
 import numpy as np
 
-import config
+from config import params
 
 # pylint: disable=invalid-name
 def get_contacts(ATOM, HETATM, cid, dsr_snos):
@@ -77,12 +77,12 @@ def get_contacts(ATOM, HETATM, cid, dsr_snos):
     hetatom_contacts = dict()
     hetatom_contacts['sno'] = dsr_snos
     hetatom_contacts['contact'] = _retrieve_num_bonds(
-        distance, config.HC_THRESHOLD, a1_snos, dsr_snos)
+        distance, params.HC_THRESHOLD, a1_snos, dsr_snos)
 
     hetatom_covalent = dict()
     hetatom_covalent['sno'] = dsr_snos
     hetatom_covalent['covalent'] = _retrieve_num_bonds(
-        distance, config.CC_THRESHOLD, a1_snos, dsr_snos)
+        distance, params.CC_THRESHOLD, a1_snos, dsr_snos)
 
     return heavy_atom_contacts, hetatom_contacts, hetatom_covalent
 
@@ -130,7 +130,7 @@ def _get_heavy_atom_contacts(a1_coords, a1_snos, a2_ATOM_coord, a2_ATOM_sno,
     # value.shape = (258, 258, 3)
     # distance.shape = (258, 258)
     distance = np.sqrt(np.einsum('ijk,ijk->ij', value, value))
-    contact_mask = distance < config.HC_THRESHOLD
+    contact_mask = distance < params.HC_THRESHOLD
 
     # remove duplicate contacts
     # masked_array mask if True, hence need to reverse, to mask the False ones

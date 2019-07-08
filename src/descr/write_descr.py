@@ -1,6 +1,6 @@
 import os
 
-import config
+from config import paths
 
 def write_descr(d):
     d = d.drop(columns=['a_aname', 'a_cid', 'a_d_dd', 'a_res', 'a_sno',
@@ -26,7 +26,7 @@ def write_descr(d):
     filename = filename[0]
     cid = cid[0]
     seq_marker = seq_marker[0]
-    fname = os.path.join(config.output_dir,
+    fname = os.path.join(paths.OUTPUT,
                          f"DES_{filename}_{cid}_{seq_marker}")
     with open(fname + ".txt", "w") as f:
         f.write("#DESCRIPTOR V0.1\n")

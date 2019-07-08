@@ -8,13 +8,13 @@ import pickle
 import pandas as pd
 
 from descr import descr_main, loaders
-import config
+from config import paths
 
 class TestDescrCalculate(unittest.TestCase):
     def setUp(self):
-        ref_ = os.path.join(config.ROOT, 'tests', 'data', 'ref')
+        ref_ = os.path.join(paths.ROOT, 'tests', 'data', 'ref')
 
-        self.pdb_folder_path = os.path.join(config.ROOT, 'data', 'input',
+        self.pdb_folder_path = os.path.join(paths.ROOT, 'data', 'input',
                                             'pdb_files')
 
         self.p_motif_pos_dir = os.path.join(ref_, 'motif_pos_prosite.pkl')

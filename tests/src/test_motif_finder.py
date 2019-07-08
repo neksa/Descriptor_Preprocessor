@@ -4,18 +4,18 @@ import pickle
 import shutil
 import unittest
 
-from utils import extract_parser, motif_finder
-import config
+from utils import extract_parser, motif_finder, generic
+from config import paths
 
 class TestIoncomExtract(unittest.TestCase):
     def setUp(self):
-        ref_pname_cid_path = os.path.join(config.ROOT, 'tests', 'data',
+        ref_pname_cid_path = os.path.join(paths.ROOT, 'tests', 'data',
                                           'ref', 'pname_cid_ioncom.pkl')
         with open(ref_pname_cid_path, 'rb') as file:
             self.ref_pname_cid = pickle.load(file)
 
     def test_parse_ioncom(self):
-        ioncom_input_path = os.path.join(config.ROOT, 'tests', 'data',
+        ioncom_input_path = os.path.join(paths.ROOT, 'tests', 'data',
                                          'input', 'ioncom.txt')
         self.assertTrue(os.path.isfile(ioncom_input_path))
         act_pname_cid_map = extract_parser.parse_ioncom(ioncom_input_path)
@@ -24,23 +24,23 @@ class TestIoncomExtract(unittest.TestCase):
 
 class TestPrositeExtract(unittest.TestCase):
     def setUp(self):
-        ref_pname_cid_path = os.path.join(config.ROOT, 'tests', 'data', 'ref',
+        ref_pname_cid_path = os.path.join(paths.ROOT, 'tests', 'data', 'ref',
                                           'pname_cid_prosite.pkl')
         with open(ref_pname_cid_path, 'rb') as file:
             self.ref_pname_cid = pickle.load(file)
 
     def test_parse_prosite(self):
-        prosite_input = os.path.join(config.ROOT, 'tests', 'data', 'input',
+        prosite_input = os.path.join(paths.ROOT, 'tests', 'data', 'input',
                                      'prosite_extract.txt')
         self.assertTrue(os.path.isfile(prosite_input))
         act_pname_cid_map = extract_parser.parse_prosite(
-            prosite_input, config.prosite_pdb_list)
+            prosite_input, generic.prosite_pdb_list)
         self.assertIsInstance(act_pname_cid_map, dict)
         self.assertDictEqual(self.ref_pname_cid, act_pname_cid_map)
 
 class TestMotifFinder(unittest.TestCase):
     def setUp(self):
-        self.tmp_dir = os.path.join(config.ROOT, 'tests', 'data',
+        self.tmp_dir = os.path.join(paths.ROOT, 'tests', 'data',
                                     'tmp_MotifFinder')
         if os.path.isdir(self.tmp_dir):
             logging.warning(f"Test {self.tmp_dir} folder not deleted "
@@ -52,7 +52,7 @@ class TestMotifFinder(unittest.TestCase):
         self.store_dir = os.path.join(self.tmp_dir, 'store')
         os.mkdir(self.store_dir)
 
-        ref_folder = os.path.join(config.ROOT, 'tests', 'data', 'ref')
+        ref_folder = os.path.join(paths.ROOT, 'tests', 'data', 'ref')
 
         self.pname_cid_ioncom_path = os.path.join(
             ref_folder, 'pname_cid_ioncom.pkl')
@@ -62,7 +62,7 @@ class TestMotifFinder(unittest.TestCase):
             ref_folder, 'pname_cid_prosite.pkl')
         self.assertTrue(os.path.isfile(self.pname_cid_prosite_path))
 
-        self.pdb_folder = os.path.join(config.ROOT, 'data', 'input',
+        self.pdb_folder = os.path.join(paths.ROOT, 'data', 'input',
                                        'pdb_files')
 
         self.motif_pos_prosite_path = os.path.join(
@@ -105,6 +105,8 @@ class TestMotifFinder(unittest.TestCase):
         with open(self.pname_cid_prosite_path, 'rb') as file:
             pname_cid_prosite = pickle.load(file)
 
+        num_files_to_download = 2
+
         empty_pdb_folder = os.path.join(self.tmp_dir, 'empty_pdb_files')
         if os.path.isdir(empty_pdb_folder):
             logging.warning(f"Empty_pdb_folder in <{empty_pdb_folder}> not "
@@ -114,7 +116,7 @@ class TestMotifFinder(unittest.TestCase):
         shortened_pname_cid = dict()
 
         for i, key in enumerate(pname_cid_prosite.keys()):
-            if i == 2:
+            if i == num_files_to_download:
                 break
             shortened_pname_cid[key] = pname_cid_prosite[key]
         motif_finder.find_motif_pos(shortened_pname_cid,
@@ -123,7 +125,8 @@ class TestMotifFinder(unittest.TestCase):
                                     store_dir=self.store_dir,
                                     replace_existing=True,
                                     delete_intermediate_store=False)
-        self.assertEqual(len(list(os.listdir(empty_pdb_folder))), 4)
+        self.assertEqual(len(list(os.listdir(empty_pdb_folder))),
+                         num_files_to_download)
 
         for file in os.listdir(empty_pdb_folder):
             path = os.path.join(empty_pdb_folder, file)

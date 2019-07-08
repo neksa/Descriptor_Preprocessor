@@ -29,8 +29,8 @@ import os
 import pickle
 import shutil
 
-import config
-from utils import extract_parser, motif_finder
+from config import paths
+from utils import extract_parser, motif_finder, generic
 from descr import loaders, descr_main
 
 def setup_pname_cid_map_prosite(input_html_extract_path, pdb_list, output):
@@ -45,7 +45,7 @@ def setup_pname_cid_map_ioncom(input_path, output):
         pickle.dump(pname_cid_map_ioncom, file, -1)
 
 def setup_motif_finder_prosite(pname_cid_path, pdb_folder_path, output):
-    tmp_folder_path = os.path.join(config.ROOT, 'data', 'tmp')
+    tmp_folder_path = os.path.join(paths.ROOT, 'data', 'tmp')
     if os.path.isdir(tmp_folder_path):
         shutil.rmtree(tmp_folder_path)
     os.mkdir(tmp_folder_path)
@@ -63,7 +63,7 @@ def setup_motif_finder_prosite(pname_cid_path, pdb_folder_path, output):
 
 def setup_motif_finder_ioncom(pname_cid_path, meme_txt_path, pdb_folder_path,
                               output):
-    tmp_folder_path = os.path.join(config.ROOT, 'data', 'tmp')
+    tmp_folder_path = os.path.join(paths.ROOT, 'data', 'tmp')
     if os.path.isdir(tmp_folder_path):
         shutil.rmtree(tmp_folder_path)
     os.mkdir(tmp_folder_path)
@@ -85,7 +85,7 @@ def setup_motif_finder_ioncom(pname_cid_path, meme_txt_path, pdb_folder_path,
 
 def setup_motif_finder_prosite_mast(pname_cid_path, meme_txt_path, pdb_folder_path,
                               output):
-    tmp_folder_path = os.path.join(config.ROOT, 'data', 'tmp')
+    tmp_folder_path = os.path.join(paths.ROOT, 'data', 'tmp')
     if os.path.isdir(tmp_folder_path):
         shutil.rmtree(tmp_folder_path)
     os.mkdir(tmp_folder_path)
@@ -114,8 +114,8 @@ def setup_descr(motif_pos_path, pdb_dir, output):
 
 
 def setup_all():
-    input_ = os.path.join(config.ROOT, 'tests', 'data', 'input')
-    ref_ = os.path.join(config.ROOT, 'tests', 'data', 'ref')
+    input_ = os.path.join(paths.ROOT, 'tests', 'data', 'input')
+    ref_ = os.path.join(paths.ROOT, 'tests', 'data', 'ref')
 
     prosite_extract_path = os.path.join(input_, 'prosite_extract.txt')
     pname_cid_prosite = os.path.join(ref_, 'pname_cid_prosite.pkl')
@@ -123,7 +123,7 @@ def setup_all():
     ioncom_path = os.path.join(input_, 'ioncom.txt')
     pname_cid_ioncom = os.path.join(ref_, 'pname_cid_ioncom.pkl')
     # In main data folder, not in tests, can share, downloading takes a while.
-    pdb_folder_path = os.path.join(config.ROOT, 'data', 'input', 'pdb_files')
+    pdb_folder_path = os.path.join(paths.ROOT, 'data', 'input', 'pdb_files')
     prosite_motif_pos = os.path.join(ref_, 'motif_pos_prosite.pkl')
 
     meme_txt_path = os.path.join(ref_, 'meme.txt')
@@ -134,7 +134,7 @@ def setup_all():
     prosite_mast_descr = os.path.join(ref_, 'descr_prosite_mast.pkl')
     ioncom_mast_descr = os.path.join(ref_, 'descr_ioncom_mast.pkl')
 
-    setup_pname_cid_map_prosite(prosite_extract_path, config.prosite_pdb_list,
+    setup_pname_cid_map_prosite(prosite_extract_path, generic.prosite_pdb_list,
                                 pname_cid_prosite)
     setup_pname_cid_map_ioncom(ioncom_path, pname_cid_ioncom)
     setup_motif_finder_prosite(pname_cid_prosite, pdb_folder_path,

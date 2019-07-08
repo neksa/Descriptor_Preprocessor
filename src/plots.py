@@ -7,8 +7,8 @@ import pickle as pkl
 import matplotlib.pyplot as plt
 import numpy as np
 
-import config
-from utils import seq_logo
+from config import paths
+from utils import seq_logo, generic
 
 def plot_dihedral_for_diff_res(descr_full, sno_position):
     descr_full = descr_full.groupby('relative_sno')
@@ -86,7 +86,7 @@ def plot_signature_logo(descr_full, num_res_considered=4, title=None):
 
 # pylint: disable=invalid-name, dangerous-default-value
 def plot_signature_bar(descr, num_res_considered=2,
-                       AA3_to_AA1=config.AA3_to_AA1):
+                       AA3_to_AA1=generic.AA3_to_AA1):
     """
     :param num_res_considered: Number of top-count res to show per relative
     sno position.
@@ -269,7 +269,7 @@ def main():
     ['sno', 'contact', 'covalent', 'phi', 'psi', 'region', 'ss', 'ext', 'role',
      'category', 'donor', 'acc', 'res', 'CA', 'filename', 'seq_marker', 'cid']
     """
-    with open(os.path.join(config.store_dir, "descrs.pkl"),
+    with open(os.path.join(paths.store_dir, "descrs.pkl"),
               "rb") as pklfile:
         df = pkl.load(pklfile)
     # df.sort_index(inplace=True)

@@ -4,9 +4,9 @@ import pickle
 import shutil
 from time import time
 
-import config
+from config import paths
 from descr import descr_main, loaders
-from utils import extract_parser, motif_finder, logs
+from utils import extract_parser, motif_finder, logs, generic
 import plots
 
 def main():
@@ -14,8 +14,8 @@ def main():
     timecheck = time()
 
     # paths
-    input_dir = os.path.join(config.ROOT, 'data', 'input')
-    store_dir = os.path.join(config.ROOT, 'data', 'store')
+    input_dir = os.path.join(paths.ROOT_PATH, 'data', 'input')
+    store_dir = os.path.join(paths.ROOT_PATH, 'data', 'store')
 
     if os.path.isdir(store_dir):
         logging.warning("Store dir exists, deleting.")
@@ -56,7 +56,7 @@ def main():
             pname_cid_map = pickle.load(file)
     else:
         if source == 'prosite':
-            pdb_list = config.prosite_pdb_list
+            pdb_list = generic.prosite_pdb_list
             pname_cid_map = extract_parser.parse_prosite(prosite_extract_path, pdb_list)
         elif source == 'ioncom':
             pname_cid_map = extract_parser.parse_ioncom(ioncom_path)
@@ -79,7 +79,7 @@ def main():
             process = 'mast'
         else:
             raise Exception
-        tmp_dir = os.path.join(config.ROOT, 'data', 'tmp')
+        tmp_dir = os.path.join(paths.ROOT, 'data', 'tmp')
         motif_pos = motif_finder.find_motif_pos(pname_cid_map,
                                                 pdb_folder,
                                                 process,

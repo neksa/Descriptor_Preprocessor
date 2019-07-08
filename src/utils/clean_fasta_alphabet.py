@@ -1,13 +1,14 @@
 import os
 
-import config
+from config import paths
+from utils import generic
 
 def screen():
     fasta_fname = "mg_50.fasta"
-    fasta_path = os.path.join(config.ROOT, 'data', 'input', 'mg_full',
+    fasta_path = os.path.join(paths.ROOT_PATH, 'data', 'input', 'mg_full',
                               fasta_fname)
     output = []
-    alphabets = set(config.AA3_to_AA1.values())
+    alphabets = set(generic.AA3_to_AA1.values())
     to_keep = True
     with open(fasta_path, 'r') as file:
         title = next(file)

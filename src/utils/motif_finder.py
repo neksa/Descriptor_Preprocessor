@@ -28,11 +28,11 @@ import subprocess
 import numpy as np
 import matplotlib.pyplot as plt
 
-import config
+from config import paths
 from utils import seq_logo, generic
 
 def find_motif_pos(seq_cid_map, pdb_folder, process='meme',
-                   store_dir=config.store_dir, replace_existing=False,
+                   store_dir=paths.STORE, replace_existing=False,
                    delete_intermediate_store=False, ref_meme_txt=None):
     assert process in ('meme', 'mast')
     if process == 'mast':
@@ -74,7 +74,7 @@ def _create_internal_dir(store_dir, replace_existing):
     return directory
 
 #pylint: disable=invalid-name
-def _extract_sequence(pdb_folder, pname_cid_map, AA3_to_AA1=config.AA3_to_AA1):
+def _extract_sequence(pdb_folder, pname_cid_map, AA3_to_AA1=generic.AA3_to_AA1):
     """
     Extracts the seq for each pname-cid from their .pdb file.
     """
@@ -317,7 +317,7 @@ def _get_labelled_motifs(seq_motif_map, fasta_filename):
     return labelled_motifs
 
 def _test_fasta_match_pdb(fasta_fname, pdb_folder, seq_cid_map,
-                          AA3_to_AA1=config.AA3_to_AA1):
+                          AA3_to_AA1=generic.AA3_to_AA1):
     pname = None
     with open(fasta_fname, 'r') as f_file:
         for f_line in f_file:
