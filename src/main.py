@@ -14,8 +14,8 @@ def main():
     timecheck = time()
 
     # paths
-    input_dir = os.path.join(paths.ROOT_PATH, 'data', 'input')
-    store_dir = os.path.join(paths.ROOT_PATH, 'data', 'store')
+    input_dir = os.path.join(paths.ROOT, 'data', 'input')
+    store_dir = os.path.join(paths.ROOT, 'data', 'store')
 
     if os.path.isdir(store_dir):
         logging.warning("Store dir exists, deleting.")
