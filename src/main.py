@@ -6,8 +6,7 @@ from time import time
 
 from config import paths
 from descr import descr_main, loaders
-from utils import extract_parser, motif_finder, logs, generic
-import plots
+from utils import extract_parser, motif_finder, logs, generic, plots
 
 def main():
     logs.set_logging_level()

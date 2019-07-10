@@ -16,7 +16,7 @@ def create_mast_output(meme_path=None, output_dir=None):
         logging.warning(f"Output dir <{output_dir}> is not empty. Deleting.")
         shutil.rmtree(output_dir)
     # mast creates its own output_dir so there's no need to mkdir().
-    seq_path = os.path.join(paths.ROOT, 'data', 'input',
+    seq_path = os.path.join(paths.ROOT, 'data', 'input', 'internal',
                             'fasta_template.fasta')
 
     command = f'mast -o {output_dir} {meme_path} {seq_path}'
@@ -24,4 +24,5 @@ def create_mast_output(meme_path=None, output_dir=None):
     assert os.path.isdir(output_dir)
 
 if __name__ == "__main__":
-    create_mast_output()
+    create_mast_output(paths.ROOT+"/output_mine.txt", paths.ROOT +
+                       "/mast_mine" )
