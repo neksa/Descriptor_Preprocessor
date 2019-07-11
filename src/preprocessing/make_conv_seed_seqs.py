@@ -1,13 +1,6 @@
-import os
 import re
 
-from config import paths
-
-def make_seed_seqs(ioncom_dir, seed_seq_path):
-    #     seed_seq_path = os.path.join(paths.ROOT, 'data', 'store',
-    #     'seed_seq.fasta')
-    #     ioncom_dir = os.path.join(paths.ROOT, "data", "input", 'ioncom',
-    #                               "allsulfate.txt")
+def make(ioncom_dir, seed_seq_path):
     seq_binding_sites = ioncom_parser(ioncom_dir)
     profiles = split_into_profiles(seq_binding_sites)
     profiles = sorted(profiles)

@@ -22,129 +22,42 @@ from collections import defaultdict
 import logging
 import os
 import re
-import shutil
 import subprocess
 
-import numpy as np
-import matplotlib.pyplot as plt
+from utils import generic
 
-from config import paths
-from utils import seq_logo, generic
-
-def find_motif_pos(seq_cid_map, pdb_folder, process='meme',
-                   store_dir=paths.STORE, replace_existing=False,
-                   delete_intermediate_store=False, ref_meme_txt=None):
+def find(pname_cid_map, process,
+         num_p, ref_meme_txt, mast_meme_folder, seq_file):
     assert process in ('meme', 'mast')
     if process == 'mast':
         assert isinstance(ref_meme_txt, str)
         assert os.path.isfile(ref_meme_txt)
-    directory = _create_internal_dir(store_dir, replace_existing)
-    _test_seq_cid_map(seq_cid_map)
-    generic.download_pdb_files(seq_cid_map, pdb_folder, replace_existing=False)
-    _test_pdb_files_present(seq_cid_map, pdb_folder)
-    seqs = _extract_sequence(pdb_folder, seq_cid_map)
-    with open(directory['fasta_fpath'], 'w') as file:
-        file.writelines(seqs)
-    _delete_short_seqs(directory['fasta_fpath'], threshold=30)
-    _test_fasta_match_pdb(directory['fasta_fpath'], pdb_folder, seq_cid_map)
-    seq_motif_map = _build_seq_motif_map(process, directory, replace_existing,
+    seq_motif_map = _build_seq_motif_map(process,
+                                         mast_meme_folder,
+                                         seq_file, num_p,
                                          ref_meme_txt=ref_meme_txt)
     seq_motif_map = _adjust_motif_diagram(seq_motif_map)
-    seq_motif_map = _delete_gapped_motifs(seq_motif_map,
-                                          directory['fasta_fpath'])
-    motif_pos = _assemble_motif_pos(seq_motif_map, seq_cid_map)
-    if delete_intermediate_store:
-        shutil.rmtree(store_dir)
+    seq_motif_map = _delete_gapped_motifs(seq_motif_map, seq_file)
+    motif_pos = _assemble_motif_pos(seq_motif_map, pname_cid_map)
     return motif_pos
 
-def _create_internal_dir(store_dir, replace_existing):
-    if not os.path.isdir(store_dir):
-        os.mkdir(store_dir)
-    elif replace_existing:
-        shutil.rmtree(store_dir)
-        os.mkdir(store_dir)
-    directory = dict()
-    fasta_fpath = os.path.join(store_dir, "prosite_seqs.fasta")
-    meme_out = os.path.join(store_dir, "meme_out")
-    mast_out = os.path.join(store_dir, "mast_out")
-
-    directory['fasta_fpath'] = fasta_fpath
-    directory['meme_out'] = meme_out
-    directory['mast_out'] = mast_out
-    return directory
-
-#pylint: disable=invalid-name
-def _extract_sequence(pdb_folder, pname_cid_map, AA3_to_AA1=generic.AA3_to_AA1):
-    """
-    Extracts the seq for each pname-cid from their .pdb file.
-    """
-    seqs = []
-    for pname in pname_cid_map.keys():
-        cid = pname_cid_map[pname]
-        assert len(cid) == 1
-        seq = [f">{pname}\n"]
-        pdb_filepath = os.path.join(pdb_folder, pname+".pdb")
-        with open(pdb_filepath, 'r') as pdb_file:
-            current_atom_count = 1
-            for line in pdb_file:
-                if line.startswith("MODEL        2"):
-                    break
-                if not line.startswith("ATOM"):
-                    continue
-                if line[21] != cid:
-                    continue
-                if line[26] != " ": # altloc
-                    continue
-                sno = int(line[22:26].strip())
-                if sno < current_atom_count:
-                    continue
-                elif sno > current_atom_count:
-                    num_spacer_res = sno - current_atom_count
-                    seq.append("X" * num_spacer_res)
-                    current_atom_count = sno
-                res = line[17:20].strip()
-                AA_single_letter = AA3_to_AA1[res]
-                seq.append(f"{AA_single_letter}")
-                current_atom_count += 1
-            seq.append("\n")
-        seq = "".join(seq)
-        seqs.append(seq)
-    return seqs
-# pylint: enable=invalid-name
-
-def _delete_short_seqs(fasta_fname, threshold=30):
-    """
-    Delete sequences with len < threshold.
-    # todo: change this s.t. it delete from data and not from fasta.
-    """
-    output_str = []
-    tmp = ""
-    with open(fasta_fname, 'r') as file:
-        for line in file:
-            if line.startswith(">"):
-                tmp = line
-                continue
-            if len(line) < threshold:
-                continue
-            else:
-                output_str.append(tmp + line)
-                continue
-    output_str = ''.join(output_str)
-    with open(fasta_fname, 'w') as file:
-        file.write(output_str)
-
-def _run_meme(meme_output, fasta_filename, replace_existing=False):
-    if replace_existing or not os.path.isdir(meme_output):
-        command = f"meme -w 13 -protein -nmotifs 1 -mod anr " \
-            f"-oc {meme_output} {fasta_filename}"
-        subprocess.run(command, shell=True)
+def _run_meme(meme_output, fasta_filename, num_p):
+    generic.quit_if_missing(fasta_filename)
+    generic.warn_if_exist(meme_output, filetype='folder', remove=True)
+    command = f"meme -w 13 -p {num_p} -protein -nmotifs 1 -mod anr " \
+        f"-oc {meme_output} {fasta_filename}"
+    subprocess.run(command, shell=True)
+    _test_successful_meme(meme_output)
     return True
 
-def _run_mast(mast_output, meme_txt, fasta_filename, replace_existing=False):
-    if replace_existing or not os.path.isdir(mast_output):
-        command = f"mast -oc {mast_output} -mt 0.0001 {meme_txt} " \
-            f"{fasta_filename}"
-        subprocess.run(command, shell=True)
+def _run_mast(mast_output, meme_txt, fasta_filename):
+    generic.quit_if_missing(meme_txt)
+    generic.quit_if_missing(fasta_filename)
+    generic.warn_if_exist(mast_output, filetype='folder', remove=True)
+    command = f"mast -oc {mast_output} -mt 0.0001 {meme_txt} " \
+        f"{fasta_filename}"
+    subprocess.run(command, shell=True)
+    _test_successful_mast(mast_output)
     return True
 
 def _get_motif_diagram(input_txt, source='meme'):
@@ -244,21 +157,17 @@ def _delete_gapped_motifs(prev_map, fasta_fname):
                     seq_motif_map[pname] = screened_motif_pos
     return seq_motif_map
 
-import pickle
-def _build_seq_motif_map(process, directory, replace_existing,
+def _build_seq_motif_map(process, tmp_output_folder, seq_file, num_p,
                          ref_meme_txt=None):
     if process == 'meme':
-        _run_meme(directory['meme_out'], directory['fasta_fpath'],
-                  replace_existing=replace_existing)
-        _test_successful_meme(directory['meme_out'])
-        meme_txt_path = os.path.join(directory['meme_out'], 'meme.txt')
+        _run_meme(tmp_output_folder, seq_file, num_p)
+        _test_successful_meme(tmp_output_folder)
+        meme_txt_path = os.path.join(tmp_output_folder, 'meme.txt')
         seq_motif_map = _get_motif_diagram(meme_txt_path, 'meme')
     elif process == 'mast':
-        _run_mast(directory['mast_out'], ref_meme_txt,
-                  directory['fasta_fpath'],
-                  replace_existing=replace_existing)
-        _test_successful_mast(directory['mast_out'])
-        mast_txt_path = os.path.join(directory['mast_out'], 'mast.txt')
+        _run_mast(tmp_output_folder, ref_meme_txt, seq_file)
+        _test_successful_mast(tmp_output_folder)
+        mast_txt_path = os.path.join(tmp_output_folder, 'mast.txt')
         seq_motif_map = _get_motif_diagram(mast_txt_path, 'mast')
     else:
         raise Exception
@@ -270,108 +179,6 @@ def _assemble_motif_pos(seq_motif_map, pname_cid_map):
         motif_positions[pname]['sno_markers'] = each_pname_motif_pos
         motif_positions[pname]['cid'] = pname_cid_map[pname]
     return motif_positions
-
-def plot_labelled_motifs(seq_motif_map, fasta_filename):
-    """
-    This debugging function displays the sequence logo of the identified
-    motifs.
-    """
-    motifs = _get_labelled_motifs(seq_motif_map, fasta_filename)
-    plt.figure()
-    converted_motifs = []
-    extracted_motifs = np.array([list(i) for i in motifs])
-    for AA_per_pos in extracted_motifs.T:
-        AA, counts = np.unique(AA_per_pos, return_counts=True)
-        sorted_i = np.argsort(counts)
-        counts = counts[sorted_i]
-        AA = AA[sorted_i]
-        probs = counts / np.sum(counts)
-        motif_this_pos = []
-        for aa, prob in zip(AA, probs):
-            motif_this_pos.append([aa, prob])
-        converted_motifs.append(motif_this_pos)
-    seq_logo.Logo(converted_motifs, -1, convert_AA3=False)
-
-def _get_labelled_motifs(seq_motif_map, fasta_filename):
-    labelled_motifs = []
-    pname = None
-    with open(fasta_filename, 'r') as file:
-        for line in file:
-            if line.startswith('>'):
-                pname = line[1:5]
-                continue
-            if pname in seq_motif_map:
-                motif_pos = seq_motif_map[pname]
-            else:
-                #   Might have been dropped because of gapped motif, etc
-                pname = None
-                continue
-            for pos in motif_pos:
-                if len(line) <= pos + 13:
-                    logging.error(
-                        f"Fasta seq is shorter than pos+13, for pos in "
-                        f"motif_pos. Fasta_seq: <{line}>, "
-                        f"motif_pos: <{motif_pos}>, illegal pos: <{pos}>.")
-                    raise Exception
-                labelled_motifs.append(line[pos - 1:pos + 12])
-    return labelled_motifs
-
-def _test_fasta_match_pdb(fasta_fname, pdb_folder, seq_cid_map,
-                          AA3_to_AA1=generic.AA3_to_AA1):
-    pname = None
-    with open(fasta_fname, 'r') as f_file:
-        for f_line in f_file:
-            if f_line.startswith(">"):
-                pname = f_line[1:5]
-                continue
-            if pname:
-                pdb_path = os.path.join(pdb_folder, pname+'.pdb')
-                cid = seq_cid_map[pname]
-                with open(pdb_path, 'r') as p_file:
-                    for p_line in p_file:
-                        if not p_line.startswith("ATOM"):
-                            continue
-                        if p_line[21] != cid:
-                            continue
-                        if p_line[26] != " ":  # altloc
-                            continue
-                        sno = int(p_line[22:26].strip())
-                        res = p_line[17:20]
-                        if sno < 1:
-                            continue
-                        if AA3_to_AA1[res] != f_line[sno-1]:
-                            logging.error(
-                                f"Mismatch between seq in pdb file and in "
-                                f"extracted fasta file. pdb_line: <{p_line}>, "
-                                f"fasta_line: <{f_line}>")
-                            raise Exception
-    return True
-
-def _test_seq_cid_map(seq_cid_map):
-    for pname, cid in seq_cid_map.items():
-        assert isinstance(pname, str)
-        assert isinstance(cid, str)
-        assert len(pname) == 4
-        assert len(cid) == 1
-    return True
-
-def _test_pdb_files_present(seq_cid_map, pdb_folder, can_contain_extra=True):
-    if not can_contain_extra:
-        assert len(seq_cid_map) == len(os.listdir(pdb_folder))
-    # check if all unique
-    assert len(seq_cid_map) == len(set(seq_cid_map))
-
-    fnames = []
-    for fname in os.listdir(pdb_folder):
-        split_fname = fname.split(".")
-        assert len(split_fname) == 2
-        pname = split_fname[0]
-        fnames.append(pname)
-    assert len(fnames) == len(set(fnames))
-    fnames = set(fnames)
-    for fname in seq_cid_map.keys():
-        assert fname in fnames
-    return True
 
 def _test_successful_meme(meme_out):
     assert os.path.isdir(meme_out)
