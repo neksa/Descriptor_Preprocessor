@@ -1,0 +1,229 @@
+
+			<td>MOL_ID: 1;                                                    MOLECULE: CALCYCLIN (RABBIT, CA2+);                          CHAIN: A, B;                                                 SYNONYM: 2A9, CACY, S100A6, PRA;                             ENGINEERED: YES;                                             OTHER_DETAILS: RABBIT, CA2+                                  </td>
+			<td>08-DEC-97</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1A29"><img src="http://www.pdb.org/pdb/images/1A29_bio_r_250.jpg" alt="1A29" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1A29">1A29</a></td>
+			<td>CALM_BOVIN&nbsp;(<a href="http://www.uniprot.org/uniprot/P62157">P62157</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: CALMODULIN;                                        CHAIN: A                                                     [2.74 &#197;] </td>
+			<td>19-JAN-98</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1A2X"><img src="http://www.pdb.org/pdb/images/1A2X_bio_r_250.jpg" alt="1A2X" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1A2X">1A2X</a></td>
+			<td>TNNC2_RABIT(<a href="http://www.uniprot.org/uniprot/P02586">P02586</a>)&nbsp;<br>
+TNNI2_RABIT(<a href="http://www.uniprot.org/uniprot/P02643">P02643</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: TROPONIN C;                                        CHAIN: A;                                                    ENGINEERED: YES;                                             MOL_ID: 2;                                                   MOLECULE: TROPONIN I;                                        CHAIN: B;                                                    FRAGMENT: RESIDUES 1 - 47;                                   ENGINEERED: YES                                              [2.30 &#197;] </td>
+			<td>13-JAN-98</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1A75"><img src="http://www.pdb.org/pdb/images/1A75_bio_r_250.jpg" alt="1A75" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1A75">1A75</a></td>
+			<td>PRVB_MERMR&nbsp;(<a href="http://www.uniprot.org/uniprot/P02621">P02621</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: PARVALBUMIN;                                       CHAIN: A;                                                    MOL_ID: 2;                                                   MOLECULE: PARVALBUMIN;                                       CHAIN: B                                                     [1.90 &#197;] </td>
+			<td>19-MAR-98</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AHR"><img src="http://www.pdb.org/pdb/images/1AHR_bio_r_250.jpg" alt="1AHR" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AHR">1AHR</a></td>
+			<td>CALM_CHICK&nbsp;(<a href="http://www.uniprot.org/uniprot/P62149">P62149</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: CALMODULIN;                                        CHAIN: A;                                                    ENGINEERED: YES;                                             MUTATION: YES                                                [1.80 &#197;] </td>
+			<td>10-APR-97</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AJ4"><img src="http://www.pdb.org/pdb/images/1AJ4_bio_r_250.jpg" alt="1AJ4" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AJ4">1AJ4</a></td>
+			<td>TNNC1_CHICK(<a href="http://www.uniprot.org/uniprot/P09860">P09860</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: TROPONIN C;                                        CHAIN: A;                                                    SYNONYM: CTNC;                                               ENGINEERED: YES;                                             MUTATION: YES;                                               OTHER_DETAILS: CARDIAC TROPONIN C, CALCIUM IONS BOUND AT     SITES II, III AND IV                                         </td>
+			<td>14-MAY-97</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AJ5"><img src="http://www.pdb.org/pdb/images/1AJ5_bio_r_250.jpg" alt="1AJ5" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AJ5">1AJ5</a></td>
+			<td>CPNS1_RAT&nbsp;&nbsp;(<a href="http://www.uniprot.org/uniprot/Q64537">Q64537</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: CALPAIN;                                           CHAIN: A, B;                                                 FRAGMENT: SMALL REGULATORY SUBUNIT, DOMAIN VI, MET 87 - SER  ENGINEERED: YES                                              [2.30 &#197;] </td>
+			<td>15-MAY-97</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AK8"><img src="http://www.pdb.org/pdb/images/1AK8_bio_r_250.jpg" alt="1AK8" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AK8">1AK8</a></td>
+			<td>CALM_BOVIN&nbsp;(<a href="http://www.uniprot.org/uniprot/P62157">P62157</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: CALMODULIN;                                        CHAIN: A;                                                    FRAGMENT: N-TERMINAL DOMAIN, TR1C;                           SYNONYM: CALMODULIN CERIUM TR1C-DOMAIN, RESIDUES 1 - 75;     ENGINEERED: YES;                                             OTHER_DETAILS: CERIUM-LOADED N-TERMINAL DOMAIN OF            VERTEBRATE CALMODULIN                                        </td>
+			<td>29-MAY-97</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1ALV"><img src="http://www.pdb.org/pdb/images/1ALV_bio_r_250.jpg" alt="1ALV" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1ALV">1ALV</a></td>
+			<td>CPNS1_PIG&nbsp;&nbsp;(<a href="http://www.uniprot.org/uniprot/P04574">P04574</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: CALPAIN;                                           CHAIN: A, B;                                                 FRAGMENT: CALCIUM BINDING DOMAIN VI;                         SYNONYM: S-CAMLD;                                            ENGINEERED: YES                                              [1.90 &#197;] </td>
+			<td>03-JUN-97</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1ALW"><img src="http://www.pdb.org/pdb/images/1ALW_bio_r_250.jpg" alt="1ALW" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1ALW">1ALW</a></td>
+			<td>CPNS1_PIG&nbsp;&nbsp;(<a href="http://www.uniprot.org/uniprot/P04574">P04574</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: CALPAIN;                                           CHAIN: A, B;                                                 FRAGMENT: INHIBITOR-BOUND CALCIUM BINDING DOMAIN VI;         SYNONYM: S-CAMLD;                                            ENGINEERED: YES                                              [2.03 &#197;] </td>
+			<td>04-JUN-97</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AP4"><img src="http://www.pdb.org/pdb/images/1AP4_bio_r_250.jpg" alt="1AP4" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AP4">1AP4</a></td>
+			<td>TNNC1_HUMAN(<a href="http://www.uniprot.org/uniprot/P63316">P63316</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: CARDIAC N-TROPONIN C;                              CHAIN: A;                                                    FRAGMENT: REGULATORY;                                        SYNONYM: CNTNC;                                              ENGINEERED: YES                                              </td>
+			<td>24-JUL-97</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AUI"><img src="http://www.pdb.org/pdb/images/1AUI_bio_r_250.jpg" alt="1AUI" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AUI">1AUI</a></td>
+			<td>CANB1_HUMAN(<a href="http://www.uniprot.org/uniprot/P63098">P63098</a>)&nbsp;<br>
+PP2BA_HUMAN(<a href="http://www.uniprot.org/uniprot/Q08209">Q08209</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: SERINE/THREONINE PHOSPHATASE 2B;                   CHAIN: A;                                                    SYNONYM: CALCINEURIN;                                        EC: 3.1.3.16;                                                ENGINEERED: YES;                                             MOL_ID: 2;                                                   MOLECULE: SERINE/THREONINE PHOSPHATASE 2B;                   CHAIN: B;                                                    SYNONYM: CALCINEURIN;                                        EC: 3.1.3.16;                                                ENGINEERED: YES                                              [2.10 &#197;] </td>
+			<td>27-AUG-97</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AVS"><img src="http://www.pdb.org/pdb/images/1AVS_bio_r_250.jpg" alt="1AVS" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1AVS">1AVS</a></td>
+			<td>TNNC2_CHICK(<a href="http://www.uniprot.org/uniprot/P02588">P02588</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: TROPONIN C;                                        CHAIN: A, B;                                                 FRAGMENT: N-TERMINAL DOMAIN, RESIDUES 1 - 90;                ENGINEERED: YES                                              [1.75 &#197;] </td>
+			<td>19-SEP-97</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B1G"><img src="http://www.pdb.org/pdb/images/1B1G_bio_r_250.jpg" alt="1B1G" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B1G">1B1G</a></td>
+			<td>S100G_BOVIN(<a href="http://www.uniprot.org/uniprot/P02633">P02633</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: PROTEIN (CALBINDIN D9K);                           CHAIN: A;                                                    SYNONYM: INTESTINAL CALCIUM-BINDING PROTEIN;                 ENGINEERED: YES;                                             MUTATION: YES                                                </td>
+			<td>20-NOV-98</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B4C"><img src="http://www.pdb.org/pdb/images/1B4C_bio_r_250.jpg" alt="1B4C" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B4C">1B4C</a></td>
+			<td>S100B_RAT&nbsp;&nbsp;(<a href="http://www.uniprot.org/uniprot/P04631">P04631</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: PROTEIN (S-100 PROTEIN, BETA CHAIN);               CHAIN: A, B;                                                 SYNONYM: S100B, S100BETA;                                    ENGINEERED: YES;                                             OTHER_DETAILS: S100B IS A HOMODIMER OF S100BETA SUBUNITS     </td>
+			<td>17-DEC-98</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B7T"><img src="http://www.pdb.org/pdb/images/1B7T_bio_r_250.jpg" alt="1B7T" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B7T">1B7T</a></td>
+			<td>MLE_ARGIR&nbsp;&nbsp;(<a href="http://www.uniprot.org/uniprot/P07291">P07291</a>)&nbsp;<br>
+MLR_ARGIR&nbsp;&nbsp;(<a href="http://www.uniprot.org/uniprot/P13543">P13543</a>)&nbsp;<br>
+MYS_ARGIR&nbsp;&nbsp;(<a href="http://www.uniprot.org/uniprot/P24733">P24733</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: MYOSIN HEAVY CHAIN;                                CHAIN: A;                                                    FRAGMENT: PAPAIN DIGESTED, SUBFRAGMENT 1 (S1);               MOL_ID: 2;                                                   MOLECULE: MYOSIN REGULATORY LIGHT CHAIN;                     CHAIN: Y;                                                    FRAGMENT: PAPAIN DIGESTED, SUBFRAGMENT 1 (S1);               MOL_ID: 3;                                                   MOLECULE: MYOSIN ESSENTIAL LIGHT CHAIN;                      CHAIN: Z;                                                    FRAGMENT: PAPAIN DIGESTED, SUBFRAGMENT 1 (S1)                [2.50 &#197;] </td>
+			<td>15-JAN-99</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B8C"><img src="http://www.pdb.org/pdb/images/1B8C_bio_r_250.jpg" alt="1B8C" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B8C">1B8C</a></td>
+			<td>PRVB_CYPCA&nbsp;(<a href="http://www.uniprot.org/uniprot/P02618">P02618</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: PROTEIN (PARVALBUMIN);                             CHAIN: A, B;                                                 ENGINEERED: YES;                                             MUTATION: YES                                                [2.00 &#197;] </td>
+			<td>29-JAN-99</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B8L"><img src="http://www.pdb.org/pdb/images/1B8L_bio_r_250.jpg" alt="1B8L" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B8L">1B8L</a></td>
+			<td>PRVB_CYPCA&nbsp;(<a href="http://www.uniprot.org/uniprot/P02618">P02618</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: PROTEIN (PARVALBUMIN);                             CHAIN: A;                                                    ENGINEERED: YES;                                             MUTATION: YES                                                [1.70 &#197;] </td>
+			<td>01-FEB-99</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B8R"><img src="http://www.pdb.org/pdb/images/1B8R_bio_r_250.jpg" alt="1B8R" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B8R">1B8R</a></td>
+			<td>PRVB_CYPCA&nbsp;(<a href="http://www.uniprot.org/uniprot/P02618">P02618</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: PROTEIN (PARVALBUMIN);                             CHAIN: A;                                                    ENGINEERED: YES;                                             MUTATION: YES                                                [1.90 &#197;] </td>
+			<td>02-FEB-99</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B9A"><img src="http://www.pdb.org/pdb/images/1B9A_bio_r_250.jpg" alt="1B9A" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1B9A">1B9A</a></td>
+			<td>PRVB_CYPCA&nbsp;(<a href="http://www.uniprot.org/uniprot/P02618">P02618</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: PROTEIN (PARVALBUMIN);                             CHAIN: A;                                                    ENGINEERED: YES;                                             MUTATION: YES                                                [2.00 &#197;] </td>
+			<td>10-FEB-99</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BJF"><img src="http://www.pdb.org/pdb/images/1BJF_bio_r_250.jpg" alt="1BJF" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BJF">1BJF</a></td>
+			<td>NCALD_BOVIN(<a href="http://www.uniprot.org/uniprot/P61602">P61602</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: NEUROCALCIN DELTA;                                 CHAIN: A, B;                                                 ENGINEERED: YES                                              [2.40 &#197;] </td>
+			<td>25-JUN-98</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BLQ"><img src="http://www.pdb.org/pdb/images/1BLQ_bio_r_250.jpg" alt="1BLQ" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BLQ">1BLQ</a></td>
+			<td>TNNC2_CHICK(<a href="http://www.uniprot.org/uniprot/P02588">P02588</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: N-TROPONIN C;                                      CHAIN: A;                                                    FRAGMENT: REGULATORY;                                        SYNONYM: SNTNC;                                              ENGINEERED: YES;                                             OTHER_DETAILS: COMPLEX OF SNTNC WITH TNI PEPTIDE             </td>
+			<td>19-JUL-98</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BMO"><img src="http://www.pdb.org/pdb/images/1BMO_bio_r_250.jpg" alt="1BMO" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BMO">1BMO</a></td>
+			<td>SPRC_HUMAN&nbsp;(<a href="http://www.uniprot.org/uniprot/P09486">P09486</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: BM-40;                                             CHAIN: A, B;                                                 FRAGMENT: FS/EC DOMAIN PAIR, RESIDUES 53 - 286;              SYNONYM: SPARC, OSTEONECTIN, BASEMENT MEMBRANE PROTEIN BM-4  ENGINEERED: YES                                              [3.10 &#197;] </td>
+			<td>25-MAR-97</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BOC"><img src="http://www.pdb.org/pdb/images/1BOC_bio_r_250.jpg" alt="1BOC" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BOC">1BOC</a></td>
+			<td>S100G_BOVIN(<a href="http://www.uniprot.org/uniprot/P02633">P02633</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: CALBINDIN D9K;                                     CHAIN: A;                                                    ENGINEERED: YES                                              </td>
+			<td>23-APR-93</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BOD"><img src="http://www.pdb.org/pdb/images/1BOD_bio_r_250.jpg" alt="1BOD" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BOD">1BOD</a></td>
+			<td>S100G_BOVIN(<a href="http://www.uniprot.org/uniprot/P02633">P02633</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: CALBINDIN D9K;                                     CHAIN: A;                                                    ENGINEERED: YES;                                             MUTATION: YES                                                </td>
+			<td>23-APR-93</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BU3"><img src="http://www.pdb.org/pdb/images/1BU3_bio_r_250.jpg" alt="1BU3" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1BU3">1BU3</a></td>
+			<td>PRVB_MERBI&nbsp;(<a href="http://www.uniprot.org/uniprot/P56503">P56503</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: CALCIUM-BINDING PROTEIN;                           CHAIN: A;                                                    FRAGMENT: CALCIUM-BINDING DOMAIN                             [1.65 &#197;] </td>
+			<td>30-AUG-98</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1C07"><img src="http://www.pdb.org/pdb/images/1C07_bio_r_250.jpg" alt="1C07" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1C07">1C07</a></td>
+			<td>EPS15_HUMAN(<a href="http://www.uniprot.org/uniprot/P42566">P42566</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: PROTEIN (EPIDERMAL GROWTH FACTOR RECEPTOR          PATHWAY SUBSTRATE 15);                                       CHAIN: A;                                                    FRAGMENT: EPS15 HOMOLOGY (EH) DOMAIN 3;                      ENGINEERED: YES                                              </td>
+			<td>14-JUL-99</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1C7V"><img src="http://www.pdb.org/pdb/images/1C7V_bio_r_250.jpg" alt="1C7V" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1C7V">1C7V</a></td>
+			<td>CAVP_BRALA&nbsp;(<a href="http://www.uniprot.org/uniprot/P04573">P04573</a>)&nbsp;<br>
+</td>
+			<td>MOL_ID: 1;                                                    MOLECULE: CALCIUM VECTOR PROTEIN;                            CHAIN: A;                                                    FRAGMENT: C-TERMINAL DOMAIN (RESIDUES 81-161);               SYNONYM: CAVP;                                               ENGINEERED: YES                                              </td>
+			<td>27-MAR-00</td>
+		</tr>
+		<tr>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1C7W"><img src="http://www.pdb.org/pdb/images/1C7W_bio_r_250.jpg" alt="1C7W" width=50 height=50 border=0></a></td>
+			<td><a href="/cgi-bin/pdb/pdb_structure_viewer.cgi?ps=PS00018&amp;pdb=1C7W">1C7W</a></td>
+			<td>CAVP_BRALA&nbsp;(<a href="http://www.uniprot.org/uniprot/P04573">P04573</a>)&nbsp;<br>
+</td>

@@ -60,7 +60,7 @@ def write_seed_seq_file(profiles, output_fname):
             file.write(profile)
     return
 
-from config import paths
-ioncom_dir = paths.ROOT + '/data/input/ioncom/allsulfate.txt'
-seed_seq_path = paths.ROOT + '/data/seed_seqs.fasta'
-make_seed_seqs(ioncom_dir, seed_seq_path)
+# from config import paths
+# ioncom_dir = paths.ROOT + '/data/input/ioncom/allsulfate.txt'
+# seed_seq_path = paths.ROOT + '/data/seed_seqs.fasta'
+# make_seed_seqs(ioncom_dir, seed_seq_path)

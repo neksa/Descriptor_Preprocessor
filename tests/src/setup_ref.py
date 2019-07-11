@@ -30,123 +30,219 @@ import pickle
 import shutil
 
 from config import paths
-from utils import extract_parser, motif_finder, generic
 from descr import loaders, descr_main
 
-def setup_pname_cid_map_prosite(input_html_extract_path, pdb_list, output):
-    pname_cid_map_prosite = extract_parser.parse_prosite(
-        input_html_extract_path, pdb_list)
-    with open(output, 'wb') as file:
-        pickle.dump(pname_cid_map_prosite, file, -1)
+from tests.src import paths_test
 
-def setup_pname_cid_map_ioncom(input_path, output):
-    pname_cid_map_ioncom = extract_parser.parse_ioncom(input_path)
-    with open(output, 'wb') as file:
-        pickle.dump(pname_cid_map_ioncom, file, -1)
+from preprocessing import preprocess
 
-def setup_motif_finder_prosite(pname_cid_path, pdb_folder_path, output):
-    tmp_folder_path = os.path.join(paths.ROOT, 'data', 'tmp')
-    if os.path.isdir(tmp_folder_path):
-        shutil.rmtree(tmp_folder_path)
-    os.mkdir(tmp_folder_path)
+# Preprocessing
+def setup_preprocessing():
+    setup_parse_extracts()
+    setup_create_seq()
+    setup_find_motif()
+    setup_run_all()
 
-    with open(pname_cid_path, 'rb') as file:
-        pname_cid_prosite = pickle.load(file)
+def setup_parse_extracts():
+    prosite_input = paths_test.PROSITE_EXTRACT
+    prosite_ref = paths_test.REF_PROSITE_EXTRACT_PNAME_CID
+    preprocess.parse_extracts('prosite', prosite_input, prosite_ref)
+    assert os.path.isfile(prosite_ref)
 
-    motif_pos_prosite = motif_finder.find_motif_pos(
-        pname_cid_prosite, pdb_folder_path, process='meme',
-        store_dir=tmp_folder_path, replace_existing=False,
-        delete_intermediate_store=False, ref_meme_txt=None)
-
-    with open(output, 'wb') as file:
-        pickle.dump(motif_pos_prosite, file, -1)
-
-def setup_motif_finder_ioncom(pname_cid_path, meme_txt_path, pdb_folder_path,
-                              output):
-    tmp_folder_path = os.path.join(paths.ROOT, 'data', 'tmp')
-    if os.path.isdir(tmp_folder_path):
-        shutil.rmtree(tmp_folder_path)
-    os.mkdir(tmp_folder_path)
-
-    with open(pname_cid_path, 'rb') as file:
-        pname_cid_ioncom = pickle.load(file)
-
-    motif_pos_ioncom = motif_finder.find_motif_pos(
-        pname_cid_ioncom,
-        pdb_folder_path,
-        process='mast',
-        store_dir=tmp_folder_path,
-        replace_existing=False,
-        delete_intermediate_store=False,
-        ref_meme_txt=meme_txt_path)
-
-    with open(output, 'wb') as file:
-        pickle.dump(motif_pos_ioncom, file, -1)
-
-def setup_motif_finder_prosite_mast(pname_cid_path, meme_txt_path, pdb_folder_path,
-                              output):
-    tmp_folder_path = os.path.join(paths.ROOT, 'data', 'tmp')
-    if os.path.isdir(tmp_folder_path):
-        shutil.rmtree(tmp_folder_path)
-    os.mkdir(tmp_folder_path)
-
-    with open(pname_cid_path, 'rb') as file:
-        pname_cid_prosite = pickle.load(file)
-
-    motif_pos_prosite = motif_finder.find_motif_pos(
-        pname_cid_prosite, pdb_folder_path, process='mast',
-        store_dir=tmp_folder_path, replace_existing=False,
-        delete_intermediate_store=False, ref_meme_txt=meme_txt_path)
-
-    with open(output, 'wb') as file:
-        pickle.dump(motif_pos_prosite, file, -1)
-
-def setup_descr(motif_pos_path, pdb_dir, output):
-    assert os.path.isfile(motif_pos_path)
-    with open(motif_pos_path, 'rb') as file:
-        motif_pos = pickle.load(file)
-
-    pdb_info_data_map = loaders.load_pdb_info(motif_pos, pdb_dir=pdb_dir)
-    descrs = descr_main.calculate(pdb_info_data_map)
-
-    with open(output, 'wb') as file:
-        pickle.dump(descrs, file, -1)
+    ioncom_input = paths_test.IONCOM_EXTRACT
+    ioncom_ref = paths_test.REF_IONCOM_EXTRACT_PNAME_CID
+    preprocess.parse_extracts('ioncom', ioncom_input, ioncom_ref)
+    assert os.path.isfile(ioncom_ref)
 
 
-def setup_all():
-    input_ = os.path.join(paths.ROOT, 'tests', 'data', 'input')
-    ref_ = os.path.join(paths.ROOT, 'tests', 'data', 'ref')
+def setup_create_seq():
+    input_1 = paths_test.REF_PROSITE_EXTRACT_PNAME_CID
+    input_2 = paths_test.REF_IONCOM_EXTRACT_PNAME_CID
+    seq_1 = paths_test.REF_CREATE_SEQ_1
+    seq_2 = paths_test.REF_CREATE_SEQ_2
+    preprocess.create_seq(pname_cid_path=input_1,
+                          pdb_folder=paths_test.PDB_FOLDER,
+                          seq_path=seq_1)
+    preprocess.create_seq(pname_cid_path=input_2,
+                          pdb_folder=paths_test.PDB_FOLDER,
+                          seq_path=seq_2)
+    assert os.path.isfile(seq_1)
+    assert os.path.isfile(seq_2)
 
-    prosite_extract_path = os.path.join(input_, 'prosite_extract.txt')
-    pname_cid_prosite = os.path.join(ref_, 'pname_cid_prosite.pkl')
 
-    ioncom_path = os.path.join(input_, 'ioncom.txt')
-    pname_cid_ioncom = os.path.join(ref_, 'pname_cid_ioncom.pkl')
-    # In main data folder, not in tests, can share, downloading takes a while.
-    pdb_folder_path = os.path.join(paths.ROOT, 'data', 'input', 'pdb_files')
-    prosite_motif_pos = os.path.join(ref_, 'motif_pos_prosite.pkl')
+def setup_find_motif():
+    input_1 = paths_test.REF_PROSITE_EXTRACT_PNAME_CID
+    input_2 = paths_test.REF_IONCOM_EXTRACT_PNAME_CID
+    seq_1 = paths_test.REF_CREATE_SEQ_1
+    seq_2 = paths_test.REF_CREATE_SEQ_2
+    output_1 = paths_test.REF_FIND_MOTIF_1
+    output_2 = paths_test.REF_FIND_MOTIF_2
+    preprocess.find_motifs('meme',
+                           pname_cid_path=input_1,
+                           ref_meme_txt=None,
+                           seq_file=seq_1,
+                           output=output_1,
+                           num_p=7)
+    preprocess.find_motifs('mast',
+                           pname_cid_path=input_2,
+                           ref_meme_txt=paths_test.REF_MEME_TXT,
+                           seq_file=seq_2,
+                           output=output_2,
+                           num_p=7)
+    assert os.path.isfile(output_1)
+    assert os.path.isfile(output_2)
 
-    meme_txt_path = os.path.join(ref_, 'meme.txt')
-    ioncom_motif_pos = os.path.join(ref_, 'motif_pos_ioncom.pkl')
 
-    prosite_mast_motif_pos = os.path.join(ref_, 'motif_pos_meme_prosite.pkl')
-    prosite_meme_descr = os.path.join(ref_, 'descr_prosite_meme.pkl')
-    prosite_mast_descr = os.path.join(ref_, 'descr_prosite_mast.pkl')
-    ioncom_mast_descr = os.path.join(ref_, 'descr_ioncom_mast.pkl')
+def setup_run_all():
+    input_1 = paths_test.PROSITE_EXTRACT
+    input_2 = paths_test.IONCOM_EXTRACT
+    output_1 = paths_test.REF_RUN_ALL_1
+    output_2 = paths_test.REF_RUN_ALL_2
+    output_3 = paths_test.REF_RUN_ALL_3
+    ref_meme_txt = paths_test.REF_MEME_TXT
+    preprocess.run_all(process='meme',
+                       source='prosite',
+                       num_p=7,
+                       extract_path=input_1,
+                       output=output_1)
+    preprocess.run_all(process='mast',
+                       source='prosite',
+                       extract_path=input_1,
+                       ref_meme_txt=ref_meme_txt,
+                       output=output_2)
+    preprocess.run_all(process='mast',
+                       source='ioncom',
+                       extract_path=input_2,
+                       ref_meme_txt=ref_meme_txt,
+                       output=output_3)
+    assert os.path.isfile(output_1)
+    assert os.path.isfile(output_2)
+    assert os.path.isfile(output_3)
 
-    setup_pname_cid_map_prosite(prosite_extract_path, generic.prosite_pdb_list,
-                                pname_cid_prosite)
-    setup_pname_cid_map_ioncom(ioncom_path, pname_cid_ioncom)
-    setup_motif_finder_prosite(pname_cid_prosite, pdb_folder_path,
-                               prosite_motif_pos)
-    setup_motif_finder_ioncom(pname_cid_ioncom, meme_txt_path,
-                              pdb_folder_path, ioncom_motif_pos)
-    setup_motif_finder_prosite_mast(pname_cid_prosite, meme_txt_path,
-                                    pdb_folder_path, prosite_mast_motif_pos)
+if __name__ == "__main__":
+    setup_preprocessing()
 
-    setup_descr(prosite_motif_pos, pdb_folder_path, prosite_meme_descr)
-    setup_descr(prosite_mast_motif_pos, pdb_folder_path, prosite_mast_descr)
-    setup_descr(ioncom_motif_pos, pdb_folder_path, ioncom_mast_descr)
-
-if __name__ == '__main__':
-    setup_all()
+# setup_parse_extracts()
+# setup_create_seq()
+# def setup_run_all():
+#     pdb_folder = paths_test.PDB_FOLDER
+#     seq_path = paths_test.FULL_SEQS
+#     ref_meme_txt = None
+#
+#
+#     preprocess.run_all(process='meme', num_p=7, extract_path=None,
+#             pname_cid_path=paths.PNAME_CID, pdb_folder=paths.PDB_FOLDER,
+#             seq_path=paths.FULL_SEQS, ref_meme_txt=paths.REF_MEME_TXT,
+#             mast_meme_folder=paths.MEME_MAST_FOLDER)
+#
+# def setup_pname_cid_map_ioncom(input_path, output):
+#     pname_cid_map_ioncom = extract_parser.parse_ioncom(input_path)
+#     with open(output, 'wb') as file:
+#         pickle.dump(pname_cid_map_ioncom, file, -1)
+#
+# def setup_motif_finder_prosite(pname_cid_path, pdb_folder_path, output):
+#     tmp_folder_path = os.path.join(paths.ROOT, 'data', 'tmp')
+#     if os.path.isdir(tmp_folder_path):
+#         shutil.rmtree(tmp_folder_path)
+#     os.mkdir(tmp_folder_path)
+#
+#     with open(pname_cid_path, 'rb') as file:
+#         pname_cid_prosite = pickle.load(file)
+#
+#     motif_pos_prosite = motif_finder.find_motif_pos(
+#         pname_cid_prosite, pdb_folder_path, process='meme',
+#         store_dir=tmp_folder_path, replace_existing=False,
+#         delete_intermediate_store=False, ref_meme_txt=None)
+#
+#     with open(output, 'wb') as file:
+#         pickle.dump(motif_pos_prosite, file, -1)
+#
+# def setup_motif_finder_ioncom(pname_cid_path, meme_txt_path, pdb_folder_path,
+#                               output):
+#     tmp_folder_path = os.path.join(paths.ROOT, 'data', 'tmp')
+#     if os.path.isdir(tmp_folder_path):
+#         shutil.rmtree(tmp_folder_path)
+#     os.mkdir(tmp_folder_path)
+#
+#     with open(pname_cid_path, 'rb') as file:
+#         pname_cid_ioncom = pickle.load(file)
+#
+#     motif_pos_ioncom = motif_finder.find_motif_pos(
+#         pname_cid_ioncom,
+#         pdb_folder_path,
+#         process='mast',
+#         store_dir=tmp_folder_path,
+#         replace_existing=False,
+#         delete_intermediate_store=False,
+#         ref_meme_txt=meme_txt_path)
+#
+#     with open(output, 'wb') as file:
+#         pickle.dump(motif_pos_ioncom, file, -1)
+#
+# def setup_motif_finder_prosite_mast(pname_cid_path, meme_txt_path, pdb_folder_path,
+#                               output):
+#     tmp_folder_path = os.path.join(paths.ROOT, 'data', 'tmp')
+#     if os.path.isdir(tmp_folder_path):
+#         shutil.rmtree(tmp_folder_path)
+#     os.mkdir(tmp_folder_path)
+#
+#     with open(pname_cid_path, 'rb') as file:
+#         pname_cid_prosite = pickle.load(file)
+#
+#     motif_pos_prosite = motif_finder.find_motif_pos(
+#         pname_cid_prosite, pdb_folder_path, process='mast',
+#         store_dir=tmp_folder_path, replace_existing=False,
+#         delete_intermediate_store=False, ref_meme_txt=meme_txt_path)
+#
+#     with open(output, 'wb') as file:
+#         pickle.dump(motif_pos_prosite, file, -1)
+#
+# def setup_descr(motif_pos_path, pdb_dir, output):
+#     assert os.path.isfile(motif_pos_path)
+#     with open(motif_pos_path, 'rb') as file:
+#         motif_pos = pickle.load(file)
+#
+#     pdb_info_data_map = loaders.load_pdb_info(motif_pos, pdb_dir=pdb_dir)
+#     descrs = descr_main.calculate(pdb_info_data_map)
+#
+#     with open(output, 'wb') as file:
+#         pickle.dump(descrs, file, -1)
+#
+#
+# def setup_all():
+#     input_ = os.path.join(paths.ROOT, 'tests', 'data', 'input')
+#     ref_ = os.path.join(paths.ROOT, 'tests', 'data', 'ref')
+#
+#     prosite_extract_path = os.path.join(input_, 'prosite_extract.txt')
+#     pname_cid_prosite = os.path.join(ref_, 'pname_cid_prosite.pkl')
+#
+#     ioncom_path = os.path.join(input_, 'ioncom.txt')
+#     pname_cid_ioncom = os.path.join(ref_, 'pname_cid_ioncom.pkl')
+#     # In main data folder, not in tests, can share, downloading takes a while.
+#     pdb_folder_path = os.path.join(paths.ROOT, 'data', 'input', 'pdb_files')
+#     prosite_motif_pos = os.path.join(ref_, 'motif_pos_prosite.pkl')
+#
+#     meme_txt_path = os.path.join(ref_, 'meme.txt')
+#     ioncom_motif_pos = os.path.join(ref_, 'motif_pos_ioncom.pkl')
+#
+#     prosite_mast_motif_pos = os.path.join(ref_, 'motif_pos_meme_prosite.pkl')
+#     prosite_meme_descr = os.path.join(ref_, 'descr_prosite_meme.pkl')
+#     prosite_mast_descr = os.path.join(ref_, 'descr_prosite_mast.pkl')
+#     ioncom_mast_descr = os.path.join(ref_, 'descr_ioncom_mast.pkl')
+#
+#     setup_pname_cid_map_prosite(prosite_extract_path, generic.prosite_pdb_list,
+#                                 pname_cid_prosite)
+#     setup_pname_cid_map_ioncom(ioncom_path, pname_cid_ioncom)
+#     setup_motif_finder_prosite(pname_cid_prosite, pdb_folder_path,
+#                                prosite_motif_pos)
+#     setup_motif_finder_ioncom(pname_cid_ioncom, meme_txt_path,
+#                               pdb_folder_path, ioncom_motif_pos)
+#     setup_motif_finder_prosite_mast(pname_cid_prosite, meme_txt_path,
+#                                     pdb_folder_path, prosite_mast_motif_pos)
+#
+#     setup_descr(prosite_motif_pos, pdb_folder_path, prosite_meme_descr)
+#     setup_descr(prosite_mast_motif_pos, pdb_folder_path, prosite_mast_descr)
+#     setup_descr(ioncom_motif_pos, pdb_folder_path, ioncom_mast_descr)
+#
+# if __name__ == '__main__':
+#     setup_all()

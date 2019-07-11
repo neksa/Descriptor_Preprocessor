@@ -165,6 +165,10 @@ def _build_seq_motif_map(process, tmp_output_folder, seq_file, num_p,
         meme_txt_path = os.path.join(tmp_output_folder, 'meme.txt')
         seq_motif_map = _get_motif_diagram(meme_txt_path, 'meme')
     elif process == 'mast':
+        print(tmp_output_folder)
+        print(ref_meme_txt)
+        print(seq_file)
+        print("\n")
         _run_mast(tmp_output_folder, ref_meme_txt, seq_file)
         _test_successful_mast(tmp_output_folder)
         mast_txt_path = os.path.join(tmp_output_folder, 'mast.txt')
