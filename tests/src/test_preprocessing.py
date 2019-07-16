@@ -1,10 +1,12 @@
-
+import os
+import pickle
 import unittest
 
 from preprocessing import preprocess
 from tests.src import paths_test
-import pickle
-import os
+
+class TestFindCid(unittest.TestCase):
+    pass
 
 
 class TestRunAll(unittest.TestCase):
@@ -24,7 +26,8 @@ class TestRunAll(unittest.TestCase):
                            source='prosite',
                            num_p=7,
                            extract_path=self.prosite_input,
-                           output=self.output)
+                           output=self.output,
+                           delete_intermediate=True)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
         with open(self.ref_output_1, 'rb') as file:
@@ -37,7 +40,8 @@ class TestRunAll(unittest.TestCase):
                            source='prosite',
                            extract_path=self.prosite_input,
                            ref_meme_txt=self.ref_meme_txt,
-                           output=self.output)
+                           output=self.output,
+                           delete_intermediate = True)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
         with open(self.ref_output_2, 'rb') as file:
@@ -50,7 +54,8 @@ class TestRunAll(unittest.TestCase):
                            source='ioncom',
                            extract_path=self.ioncom_input,
                            ref_meme_txt=self.ref_meme_txt,
-                           output=self.output)
+                           output=self.output,
+                           delete_intermediate=True)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
         with open(self.ref_output_3, 'rb') as file:
@@ -77,7 +82,7 @@ class TestParseExtract(unittest.TestCase):
     def test_prosite(self):
         preprocess.parse_extracts(source='prosite',
                                   input_file_path=self.prosite_input,
-                       pname_cid_path=self.output)
+                                  pname_cid_path=self.output)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
         with open(self.prosite_ref, 'rb') as file:

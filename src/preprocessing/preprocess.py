@@ -1,17 +1,165 @@
-import pickle
-import os
+import datetime
 import logging
+import os
+import pickle
+import shutil
 
 from config import paths
 from preprocessing import extract_parser, download_pdb_files, \
-    create_seq_file, filter_seqs, make_conv_seed_seqs, motif_finder, \
+    create_seq_file, filter_seqs, motif_finder, \
     prosite_pdb_list
-from utils import generic
+from preprocessing.converge import conv_interface
+from utils import generic, logs, run_mast_on_meme
+
+# Using Converge
+#############################################################
+# First, we have to derive the converge seed sequences somehow. This should
+# be stored in paths.CONV_SEED_SEQS.
+
+# Possible ways are:
+# 1. Manually
+# 2. By random sampling of a sequence file
+# 3. Based on Ioncom binding site
+
+# Next, with a provided seqs_file, and seed_seqs_file, we run converge.
+
+# Given a set of pnames, we need to
+# 1. download the relevant .pdb files
+# 2. if not inside, say so. If inside, give the cid. 
+
+# Then, converge's output is converted to meme_format.
+
+# Then, we run mast on that meme file, on the same or a different set of
+# sequences
+
+# Finally, we identify the motif positions based on the mast output,
+# and pickle.dump that.
+
+
+def run_converge(seq_path=paths.FULL_SEQS,
+                 output_path=paths.MOTIF_POS,
+                 binding_sites=paths.IONCOM_BINDING_SITES,
+                 seed_seqs_path=paths.CONV_SEED_SEQS,
+                 bash_exec=paths.BASH_EXEC,
+                 num_p=7,
+                 conv_meme_file=paths.CONV_MEME_FILE,
+                 mast_meme_folder=paths.MEME_MAST_FOLDER,
+                 delete_intermediate=False,
+                 storage_path=None):
+    assert isinstance(num_p, int)
+    assert num_p >= 1
+    assert os.path.isfile(seq_path)
+    generic.warn_if_exist(conv_meme_file)
+    filter_seq_file(seq_path)
+    conv_interface.run(seq_path, conv_meme_file, bash_exec, num_p,
+                       seed_seqs_path)
+    run_mast_on_meme.create(conv_meme_file, mast_meme_folder, seq_path)
+    seq_motif_map = motif_finder._build_seq_motif_map("mast", mast_meme_folder,
+                                                      seq_path,
+                                      num_p=1, ref_meme_txt=conv_meme_file)
+    generic.warn_if_exist(output_path)
+    with open(output_path, 'wb') as file:
+        pickle.dump(seq_motif_map, file, -1)
+    assert os.path.isfile(output_path)
+    if delete_intermediate:
+        os.remove(conv_meme_file)
+        shutil.rmtree(mast_meme_folder)
+    elif storage_path:
+        generic.warn_if_exist(storage_path, filetype='folder')
+        if not os.path.isdir(storage_path):
+            os.mkdir(storage_path)
+        shutil.move(conv_meme_file, storage_path)
+        shutil.move(mast_meme_folder, storage_path)
+
+    return
+
+
+#
+#     assert isinstance(num_p, int)
+#     assert num_p >= 1
+#     assert process in ('meme', 'mast')
+#     assert source in ('prosite', 'ioncom')
+#
+#     generic.quit_if_missing(paths.IONCOM_BINDING_SITES)
+#     generic.warn_if_exist(paths.CONV_SEED_SEQS)
+#     conv_interface.run(paths.IONCOM_BINDING_SITES, paths.CONV_SEED_SEQS)
+#
+#
+#     parse_extracts(source, extract_path, pname_cid_path)
+#     download_pdb(pname_cid_path, pdb_folder)
+#     trim_pnames_based_on_pdb(pname_cid_path, pdb_folder)
+#     create_seq(pname_cid_path, pdb_folder, seq_path)
+#
+#     filter_seq_file(seq_path)
+#     # create_conv_seed_seqs()
+#     find_motifs(process, pname_cid_path, ref_meme_txt, mast_meme_folder,
+#                 seq_path, output, num_p)
+#     if delete_intermediate:
+#         os.remove(pname_cid_path)
+#         os.remove(seq_path)
+#         shutil.rmtree(mast_meme_folder)
+#     elif storage_path:
+#         generic.warn_if_exist(storage_path, filetype='folder')
+#         if not os.path.isdir(storage_path):
+#             os.mkdir(storage_path)
+#         shutil.move(pname_cid_path, storage_path)
+#         shutil.move(seq_path, storage_path)
+#         shutil.move(mast_meme_folder, storage_path)
+#
+# def run_converge():
+#     # Make seed_seq_file
+
+
+
+
+def main():
+    logs.set_logging_level()
+    # Prosite, meme
+    timestamp = datetime.datetime.now().isoformat()
+    store_folder = os.path.join(paths.DEBUG, timestamp)
+    os.mkdir(store_folder)
+    output_path = os.path.join(paths.USER_OUTPUT, "prosite_meme_motif_pos.pkl")
+    run_all(process='meme',
+            source='prosite',
+            num_p=7,
+            extract_path=paths.PROSITE_EXTRACT,
+            output=output_path,
+            storage_path=store_folder)
+    assert os.path.isfile(output_path)
+    assert os.path.isdir(store_folder)
+
+    # # Prosite, mast
+    timestamp = datetime.datetime.now().isoformat()
+    store_folder = os.path.join(paths.DEBUG, timestamp)
+    os.mkdir(store_folder)
+    output_path = os.path.join(paths.USER_OUTPUT, "prosite_mast_motif_pos.pkl")
+    run_all(process='mast',
+            source='prosite',
+            extract_path=paths.PROSITE_EXTRACT,
+            output=output_path,
+            storage_path=store_folder)
+    assert os.path.isfile(output_path)
+    assert os.path.isdir(store_folder)
+
+    # Ioncom, mast
+    timestamp = datetime.datetime.now().isoformat()
+    store_folder = os.path.join(paths.DEBUG, timestamp)
+    os.mkdir(store_folder)
+    output_path = os.path.join(paths.USER_OUTPUT, "ioncom_mast_motif_pos.pkl")
+    run_all(process='mast',
+            source='ioncom',
+            extract_path=paths.IONCOM_EXTRACT,
+            output=output_path,
+            storage_path=store_folder)
+    assert os.path.isfile(output_path)
+    assert os.path.isdir(store_folder)
+
 
 def run_all(process='meme', source='prosite', num_p=7, extract_path=None,
             pname_cid_path=paths.PNAME_CID, pdb_folder=paths.PDB_FOLDER,
             seq_path=paths.FULL_SEQS, ref_meme_txt=paths.REF_MEME_TXT,
-            mast_meme_folder=paths.MEME_MAST_FOLDER, output=paths.MOTIF_POS):
+            mast_meme_folder=paths.MEME_MAST_FOLDER, output=paths.MOTIF_POS,
+            delete_intermediate=False, storage_path=None):
     assert isinstance(num_p, int)
     assert num_p >= 1
     assert process in ('meme', 'mast')
@@ -25,8 +173,18 @@ def run_all(process='meme', source='prosite', num_p=7, extract_path=None,
     filter_seq_file(seq_path)
     # create_conv_seed_seqs()
     find_motifs(process, pname_cid_path, ref_meme_txt, mast_meme_folder,
-                seq_path, output,
-                num_p)
+                seq_path, output, num_p)
+    if delete_intermediate:
+        os.remove(pname_cid_path)
+        os.remove(seq_path)
+        shutil.rmtree(mast_meme_folder)
+    elif storage_path:
+        generic.warn_if_exist(storage_path, filetype='folder')
+        if not os.path.isdir(storage_path):
+            os.mkdir(storage_path)
+        shutil.move(pname_cid_path, storage_path)
+        shutil.move(seq_path, storage_path)
+        shutil.move(mast_meme_folder, storage_path)
 
 
 def parse_extracts(source='prosite', input_file_path=None,
@@ -134,50 +292,4 @@ def _test_seq_cid_map(seq_cid_map):
         assert len(cid) == 1
     return True
 
-
-
-# def plot_labelled_motifs(seq_motif_map, fasta_filename):
-#     """
-#     This debugging function displays the sequence logo of the identified
-#     motifs.
-#     """
-#     motifs = _get_labelled_motifs(seq_motif_map, fasta_filename)
-#     plt.figure()
-#     converted_motifs = []
-#     extracted_motifs = np.array([list(i) for i in motifs])
-#     for AA_per_pos in extracted_motifs.T:
-#         AA, counts = np.unique(AA_per_pos, return_counts=True)
-#         sorted_i = np.argsort(counts)
-#         counts = counts[sorted_i]
-#         AA = AA[sorted_i]
-#         probs = counts / np.sum(counts)
-#         motif_this_pos = []
-#         for aa, prob in zip(AA, probs):
-#             motif_this_pos.append([aa, prob])
-#         converted_motifs.append(motif_this_pos)
-#     seq_logo.Logo(converted_motifs, -1, convert_AA3=False)
-#
-#
-# def _get_labelled_motifs(seq_motif_map, fasta_filename):
-#     labelled_motifs = []
-#     pname = None
-#     with open(fasta_filename, 'r') as file:
-#         for line in file:
-#             if line.startswith('>'):
-#                 pname = line[1:5]
-#                 continue
-#             if pname in seq_motif_map:
-#                 motif_pos = seq_motif_map[pname]
-#             else:
-#                 #   Might have been dropped because of gapped motif, etc
-#                 pname = None
-#                 continue
-#             for pos in motif_pos:
-#                 if len(line) <= pos + 13:
-#                     logging.error(
-#                         f"Fasta seq is shorter than pos+13, for pos in "
-#                         f"motif_pos. Fasta_seq: <{line}>, "
-#                         f"motif_pos: <{motif_pos}>, illegal pos: <{pos}>.")
-#                     raise Exception
-#                 labelled_motifs.append(line[pos - 1:pos + 12])
-#     return labelled_motifs
+main()

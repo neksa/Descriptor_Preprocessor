@@ -11,6 +11,7 @@ REF = os.path.join(DATA, 'ref')
 
 TMP = os.path.join(INTERNAL, 'tmp')
 TMP_FILE = os.path.join(TMP, 'tmp_file')
+TMP_FILE_TEMPLATE = os.path.join(TMP, 'tmp_file_{}')
 
 PROSITE_EXTRACT = os.path.join(USER_INPUT, 'prosite_extract.txt')
 IONCOM_EXTRACT = os.path.join(USER_INPUT, 'ioncom_extract.txt')
@@ -35,6 +36,12 @@ REF_FIND_MOTIF_2 = os.path.join(REF, 'find_motif_2.pkl')
 REF_RUN_ALL_1 = os.path.join(REF, 'run_all_1.pkl')
 REF_RUN_ALL_2 = os.path.join(REF, 'run_all_2.pkl')
 REF_RUN_ALL_3 = os.path.join(REF, 'run_all_3.pkl')
+
+# TestMemeConvConversion
+ORIG_MEME_FOR_CONVERT = os.path.join(USER_INPUT, 'orig_meme.txt')
+REF_CONV_MATRIX = os.path.join(REF, 'meme_to_conv_matrix.txt')
+REF_CONV_COMPOSITION = os.path.join(REF, 'meme_to_conv_compostion.txt')
+REF_MEME_FROM_CONV = os.path.join(REF, 'converted_meme.txt')
 
 
 PNAME_CID = os.path.join(INTERNAL, 'pname_cid_map.pkl')

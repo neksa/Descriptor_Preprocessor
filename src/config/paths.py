@@ -6,6 +6,7 @@ USER = os.path.join(DATA, 'user')
 USER_INPUT = os.path.join(USER, 'input')
 USER_OUTPUT = os.path.join(USER, 'output')
 INTERNAL = os.path.join(DATA, 'internal')
+DEBUG = os.path.join(DATA, 'debug')
 
 PROSITE_EXTRACT = os.path.join(USER_INPUT, 'prosite_extract.txt')
 IONCOM_EXTRACT = os.path.join(USER_INPUT, 'ioncom_extract.txt')
@@ -20,6 +21,10 @@ MEME_MAST_FOLDER = os.path.join(TMP, 'meme_mast')
 
 FULL_SEQS = os.path.join(INTERNAL, 'seqs.fasta')
 CONV_SEED_SEQS = os.path.join(INTERNAL, 'seed_seqs.fasta')
+CONV_MEME_FILE = os.path.join(INTERNAL, 'cov_meme.txt')
+TEMPLATE_SEQFILE = os.path.join(INTERNAL, 'seq_template.fasta')
+
+BASH_EXEC = "/bin/bash"
 
 # CONVERGE_EXEC = os.path.join(EXTERNAL, "converge")
 #

@@ -4,8 +4,7 @@ from config import paths
 
 def remove():
     fasta_fname = "mg_50.fasta"
-    fasta_path = os.path.join(paths.ROOT, 'data', 'input', 'mg_full',
-                              fasta_fname)
+    fasta_path = os.path.join(paths.ROOT, 'data', 'user', 'input', fasta_fname)
     output = []
     with open(fasta_path, 'r') as file:
         title = next(file)
