@@ -51,12 +51,13 @@ def run_converge(seq_path=paths.FULL_SEQS,
     assert os.path.isfile(seq_path)
     generic.warn_if_exist(conv_meme_file)
     filter_seq_file(seq_path)
-    conv_interface.run(seq_path, conv_meme_file, bash_exec, num_p,
+    conv_interface.run(seq_path, conv_meme_file, binding_sites, bash_exec,
+                       num_p,
                        seed_seqs_path)
     run_mast_on_meme.create(conv_meme_file, mast_meme_folder, seq_path)
-    seq_motif_map = motif_finder._build_seq_motif_map("mast", mast_meme_folder,
-                                                      seq_path,
-                                      num_p=1, ref_meme_txt=conv_meme_file)
+    seq_motif_map = motif_finder._build_seq_motif_map(
+        "mast", mast_meme_folder, seq_path, num_p=1,
+        ref_meme_txt=conv_meme_file)
     generic.warn_if_exist(output_path)
     with open(output_path, 'wb') as file:
         pickle.dump(seq_motif_map, file, -1)
@@ -70,47 +71,7 @@ def run_converge(seq_path=paths.FULL_SEQS,
             os.mkdir(storage_path)
         shutil.move(conv_meme_file, storage_path)
         shutil.move(mast_meme_folder, storage_path)
-
     return
-
-
-#
-#     assert isinstance(num_p, int)
-#     assert num_p >= 1
-#     assert process in ('meme', 'mast')
-#     assert source in ('prosite', 'ioncom')
-#
-#     generic.quit_if_missing(paths.IONCOM_BINDING_SITES)
-#     generic.warn_if_exist(paths.CONV_SEED_SEQS)
-#     conv_interface.run(paths.IONCOM_BINDING_SITES, paths.CONV_SEED_SEQS)
-#
-#
-#     parse_extracts(source, extract_path, pname_cid_path)
-#     download_pdb(pname_cid_path, pdb_folder)
-#     trim_pnames_based_on_pdb(pname_cid_path, pdb_folder)
-#     create_seq(pname_cid_path, pdb_folder, seq_path)
-#
-#     filter_seq_file(seq_path)
-#     # create_conv_seed_seqs()
-#     find_motifs(process, pname_cid_path, ref_meme_txt, mast_meme_folder,
-#                 seq_path, output, num_p)
-#     if delete_intermediate:
-#         os.remove(pname_cid_path)
-#         os.remove(seq_path)
-#         shutil.rmtree(mast_meme_folder)
-#     elif storage_path:
-#         generic.warn_if_exist(storage_path, filetype='folder')
-#         if not os.path.isdir(storage_path):
-#             os.mkdir(storage_path)
-#         shutil.move(pname_cid_path, storage_path)
-#         shutil.move(seq_path, storage_path)
-#         shutil.move(mast_meme_folder, storage_path)
-#
-# def run_converge():
-#     # Make seed_seq_file
-
-
-
 
 def main():
     logs.set_logging_level()
@@ -128,7 +89,7 @@ def main():
     assert os.path.isfile(output_path)
     assert os.path.isdir(store_folder)
 
-    # # Prosite, mast
+    # Prosite, mast
     timestamp = datetime.datetime.now().isoformat()
     store_folder = os.path.join(paths.DEBUG, timestamp)
     os.mkdir(store_folder)

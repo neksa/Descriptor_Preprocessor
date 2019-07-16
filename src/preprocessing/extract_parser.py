@@ -6,7 +6,6 @@ from page source.
 
 For ioncom, we download and parse the sequence-cid list directly.
 """
-
 import logging
 import re
 

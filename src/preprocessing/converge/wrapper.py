@@ -75,16 +75,3 @@ def run_conv(seed_seqs_path, seqs_path, conv_folder, output_path, bash_exec,
     os.remove(output_1_path)
     os.remove(output_4_path)
     os.remove(composition_path)
-    return
-
-
-from config import paths
-
-# seed_seqs_path = paths.ROOT + '/data/seed_seqs.fasta'
-# seqs_path = paths.ROOT + '/data/input/mg_full/mg_50.fasta'
-# conv_folder = paths.ROOT + '/external/converge'
-#
-# output_path = paths.ROOT + '/output_mine.txt'
-# bash_exec = "/bin/bash"
-# run_conv(seed_seqs_path, seqs_path, conv_folder, output_path, bash_exec,
-#          num_p=7)
