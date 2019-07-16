@@ -19,10 +19,8 @@ IONCOM_BINDING_SITES = os.path.join(USER_INPUT, 'ioncom_binding_sites.txt')
 REF_MEME_TXT = os.path.join(USER_INPUT, 'ref_meme.txt')
 
 # TestParseExtract
-REF_PROSITE_EXTRACT_PNAME_CID = os.path.join(REF,
-                                             'prosite_extract.pkl')
-REF_IONCOM_EXTRACT_PNAME_CID = os.path.join(REF,
-                                             'ioncom_extract.pkl')
+REF_PROSITE_EXTRACT_PNAME_CID = os.path.join(REF, 'prosite_extract.pkl')
+REF_IONCOM_EXTRACT_PNAME_CID = os.path.join(REF, 'ioncom_extract.pkl')
 
 # TestCreateSeq
 REF_CREATE_SEQ_1 = os.path.join(REF, 'create_seq_1.fasta')
@@ -42,7 +40,6 @@ ORIG_MEME_FOR_CONVERT = os.path.join(USER_INPUT, 'orig_meme.txt')
 REF_CONV_MATRIX = os.path.join(REF, 'meme_to_conv_matrix.txt')
 REF_CONV_COMPOSITION = os.path.join(REF, 'meme_to_conv_compostion.txt')
 REF_MEME_FROM_CONV = os.path.join(REF, 'converted_meme.txt')
-
 
 PNAME_CID = os.path.join(INTERNAL, 'pname_cid_map.pkl')
 PDB_FOLDER = os.path.join(ROOT, 'data', 'internal', 'pdb_files')

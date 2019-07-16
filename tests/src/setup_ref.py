@@ -115,11 +115,40 @@ def setup_run_all():
     assert os.path.isfile(output_2)
     assert os.path.isfile(output_3)
 
-def setup_meme_to_conv():
-    input_meme_file = paths_test.ORIG_MEME
-    ref_compositiom = paths_test.REF_CONV_COMP
-    ref_output = paths_test.REF_CONV_OUTPUT
-    preprocess.
+def setup_meme_to_conv_full():
+    meme_file = paths_test.ORIG_MEME_FOR_CONVERT
+    ref_composition = paths_test.REF_CONV_COMPOSITION
+    ref_matrix = paths_test.REF_CONV_MATRIX
+    preprocess.conv_interface.convert_meme_to_conv(meme_file, ref_composition,
+                                                   ref_matrix, minimal=False)
+    assert os.path.isfile(ref_composition)
+    assert os.path.isfile(ref_matrix)
+
+def setup_conv_to_meme():
+    input_composition = paths_test.REF_CONV_COMPOSITION
+    input_matrix = paths_test.REF_CONV_MATRIX
+    ref_meme = paths_test.REF_MEME_FROM_CONV
+    preprocess.conv_interface.convert_conv_to_meme(input_matrix,
+                                                   input_composition,
+                                                   ref_meme)
+
+def setup_meme_conv_converters():
+    setup_meme_to_conv_full()
+    setup_conv_to_meme()
+
+def setup_meme_to_conv_minimal():
+    """
+    Technically not required at this point, since earlier 2 setup funcs has
+    already made the necessary files. It also overwrites existing ref using a
+    different method.
+    """
+    meme_file = paths_test.REF_MEME_FROM_CONV
+    ref_composition = paths_test.REF_CONV_COMPOSITION
+    ref_matrix = paths_test.REF_CONV_MATRIX
+    preprocess.conv_interface.convert_meme_to_conv(meme_file, ref_composition,
+                                                   ref_matrix, minimal=False)
+    assert os.path.isfile(ref_composition)
+    assert os.path.isfile(ref_matrix)
 
 if __name__ == "__main__":
-    setup_preprocessing()
+    setup_meme_conv_converters()

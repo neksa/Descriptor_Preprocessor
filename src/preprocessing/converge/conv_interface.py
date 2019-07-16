@@ -43,5 +43,5 @@ def convert_conv_to_meme(matrix, composition, meme):
     generic.quit_if_missing(composition)
     generic.quit_if_missing(matrix)
     generic.warn_if_exist(meme)
-    conv_to_meme.convert(meme, composition, matrix)
+    conv_to_meme.convert(matrix, composition, meme)
     generic.quit_if_missing(meme)

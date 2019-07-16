@@ -20,7 +20,7 @@ def parse_prosite(ptr_file, pdb_list):
                 if value is None:
                     logging.warning(f"Valid cid not found in prosite_extract "
                                     f"for line <{line}>.")
-                cids.append(value.group(1))
+                cids.append(value[1])
     pname_cid_map = dict()
     for pname, cid in zip(pdb_list, cids):
         pname = pname.lower()

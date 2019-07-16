@@ -9,6 +9,7 @@ Biopython's meme parser (as of v1.73) is rather buggy, so skipping it for now.
 
 from collections import OrderedDict
 import os
+import re
 
 from config import paths
 
@@ -23,9 +24,9 @@ def convert_full(input_meme_path, output_composition, output_matrix):
     # composition='composition.txt'
     # output="meme_format.txt"
 
-    composition_map, matrices = _parse_full_meme_input(input_meme_path)
+    composition_map, matrices, n_sites = _parse_full_meme_input(input_meme_path)
     _write_composition(composition_map, output_composition)
-    _write_matrix(matrices, output_matrix)
+    _write_matrix(matrices, n_sites, output_matrix)
     return
 
 
@@ -38,9 +39,10 @@ def convert_minimal(input_meme_path, output_composition, output_matrix):
     # composition='composition.txt'
     # output="meme_format.txt"
 
-    composition_map, matrices = _parse_minimal_meme_input(input_meme_path)
+    composition_map, n_sites, matrices = _parse_minimal_meme_input(
+        input_meme_path)
     _write_composition(composition_map, output_composition)
-    _write_matrix(matrices, output_matrix)
+    _write_matrix(matrices, n_sites, output_matrix)
     return
 
 def _parse_minimal_meme_input(input_path):
@@ -83,14 +85,26 @@ def _parse_minimal_meme_input(input_path):
             prob = float(prob)
             alphabet_probs[alphabet] = prob
     assert len(alphabet_probs) == len(ALPHABETS)
-    return alphabet_probs, all_counts
 
-def _write_matrix(matrices, output_path):
+    # Extract n_sites
+    n_sites = None
+    for line in lines:
+        if not line.startswith("letter-probability matrix"):
+            continue
+        nsite_match = re.search(r"nsites= ([0-9]+)", line)
+        assert nsite_match is not None
+        n_sites = int(nsite_match[1])
+        break
+    assert n_sites is not None
+
+    return alphabet_probs, n_sites, all_counts
+
+def _write_matrix(matrices, n_sites, output_path):
     formatted_lines = []
     formatted_lines.append("PROFILE 4\n")
     formatted_lines.append("BEGIN\n")
     formatted_lines.append("ORIGIN\n")
-    formatted_lines.append("MATRIX ID = 0 K = 123 L = 30\n")
+    formatted_lines.append(f"MATRIX ID = 0 K = {n_sites} L = 30\n")
     formatted_lines.append("30        " + "        ".join(list(ALPHABETS)) + "\n")
     for i, probs in enumerate(matrices):
         line = ""
@@ -145,7 +159,17 @@ def _parse_full_meme_input(path):
             prob = float(prob)
             alphabet_probs[alphabet] = prob
     assert len(alphabet_probs) == len(ALPHABETS)
-    return alphabet_probs, all_counts
+    # Extract n_sites
+    n_sites = None
+    for line in lines:
+        if not re.search("sites =", line):
+            continue
+        n_sites_match = re.search("sites = ([0-9]+)", line)
+        assert n_sites_match is not None
+        n_sites = int(n_sites_match[1])
+        break
+    assert n_sites is not None
+    return alphabet_probs, all_counts, n_sites
 
 def _write_composition(composition_counts, output_path):
     composition_counts = OrderedDict(sorted(composition_counts.items(),

@@ -292,4 +292,4 @@ def _test_seq_cid_map(seq_cid_map):
         assert len(cid) == 1
     return True
 
-main()
+# main()

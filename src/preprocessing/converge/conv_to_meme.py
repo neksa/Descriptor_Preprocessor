@@ -34,10 +34,9 @@ def _parse_converge_output(filename):
                 continue
             if line.startswith("MATRIX"):
                 matrix_count += 1
-                match = re.search(r"K=([0-9]+)", line)
-                if match is None:
-                    raise AssertionError
-                nsite = int(match[1])
+                nsite_match = re.search(r"K = ([0-9]+)", line)
+                assert nsite_match is not None
+                nsite = int(nsite_match[1])
                 continue
             if (line.startswith("50") or line.startswith("30")):
                 if not alphabets:
@@ -108,11 +107,11 @@ def _format_minimal_from_conv(alphabets, composition_map, matrices, output):
             file.write("\n")
     return
 
-if __name__ == "__main__":
-    import os
-    from config import paths
-
-    input_conv_path = os.path.join(paths.ROOT, "output.4.matrix.0")
-    composition_path = os.path.join(paths.ROOT, "composition.txt")
-    output_path = os.path.join(paths.ROOT, "output_meme.txt")
-    convert(input_conv_path, composition_path, output_path)
+# if __name__ == "__main__":
+#     import os
+#     from config import paths
+#
+#     input_conv_path = os.path.join(paths.ROOT, "output.4.matrix.0")
+#     composition_path = os.path.join(paths.ROOT, "composition.txt")
+#     output_path = os.path.join(paths.ROOT, "output_meme.txt")
+#     convert(input_conv_path, composition_path, output_path)
