@@ -171,7 +171,6 @@ def run_all(process='meme', source='prosite', num_p=7, extract_path=None,
     create_seq(pname_cid_path, pdb_folder, seq_path)
 
     filter_seq_file(seq_path)
-    # create_conv_seed_seqs()
     find_motifs(process, pname_cid_path, ref_meme_txt, mast_meme_folder,
                 seq_path, output, num_p)
     if delete_intermediate:
@@ -276,14 +275,6 @@ def find_motifs(process,
     with open(output, 'wb') as file:
         pickle.dump(motif_pos, file, -1)
 
-
-def create_conv_seed_seqs(binding_site_path=paths.IONCOM_BINDING_SITES,
-                          seed_seq_path=paths.CONV_SEED_SEQS):
-    generic.quit_if_missing(binding_site_path)
-    generic.quit_if_missing(seed_seq_path)
-    make_conv_seed_seqs.make(binding_site_path, seed_seq_path)
-
-
 def _test_seq_cid_map(seq_cid_map):
     for pname, cid in seq_cid_map.items():
         assert isinstance(pname, str)
@@ -291,5 +282,3 @@ def _test_seq_cid_map(seq_cid_map):
         assert len(pname) == 4
         assert len(cid) == 1
     return True
-
-# main()
