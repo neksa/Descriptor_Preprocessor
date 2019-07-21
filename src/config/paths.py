@@ -1,12 +1,16 @@
 import os
 
-ROOT = "/home/melvin/Desktop/Predictive_for_efhand"
+# src = os.path.dirname(__file__)
+ROOT = "/home/yincp/Desktop/Predictive_for_efhand"
 DATA = os.path.join(ROOT, 'data')
 USER = os.path.join(DATA, 'user')
 USER_INPUT = os.path.join(USER, 'input')
 USER_OUTPUT = os.path.join(USER, 'output')
 INTERNAL = os.path.join(DATA, 'internal')
 DEBUG = os.path.join(DATA, 'debug')
+SRC = os.path.join(ROOT, 'src')
+PREPROCESS = os.path.join(SRC, 'preprocessing')
+MEME_SUITE = os.path.join(PREPROCESS, 'meme_suite')
 
 PROSITE_EXTRACT = os.path.join(USER_INPUT, 'prosite_extract.txt')
 IONCOM_EXTRACT = os.path.join(USER_INPUT, 'ioncom_extract.txt')
@@ -25,6 +29,8 @@ CONV_MEME_FILE = os.path.join(INTERNAL, 'cov_meme.txt')
 TEMPLATE_SEQFILE = os.path.join(INTERNAL, 'seq_template.fasta')
 
 BASH_EXEC = "/bin/bash"
+MEME_EXEC = os.path.join(MEME_SUITE, 'meme', 'bin', 'meme')
+MAST_EXEC = os.path.join(MEME_SUITE, 'meme', 'bin', 'mast')
 
 # CONVERGE_EXEC = os.path.join(EXTERNAL, "converge")
 #
