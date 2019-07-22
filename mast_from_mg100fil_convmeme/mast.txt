@@ -1,0 +1,539 @@
+********************************************************************************
+MAST - Motif Alignment and Search Tool
+********************************************************************************
+	MAST version 5.0.5 (Release date: Mon Mar 18 20:12:19 2019 -0700)
+
+	For further information on how to interpret these results please access http://meme-suite.org/.
+	To get a copy of the MAST software please access http://meme-suite.org.
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+	If you use this program in your research, please cite:
+
+	Timothy L. Bailey and Michael Gribskov,
+	"Combining evidence using p-values: application to sequence homology
+	searches", Bioinformatics, 14(48-54), 1998.
+********************************************************************************
+
+
+********************************************************************************
+DATABASE AND MOTIFS
+********************************************************************************
+	DATABASE mg_100_filtered.fasta (peptide)
+	Last updated on Fri Jul 19 17:43:46 2019
+	Database contains 41992 sequences, 17615462 residues
+
+	MOTIFS output_meme.txt (peptide)
+	MOTIF ID     ALT ID WIDTH BEST POSSIBLE MATCH
+	----- ------ ------ ----- -------------------
+	    1 MEME-1 -         30 YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+
+	Random model letter frequencies (from non-redundant database):
+	A 0.073 C 0.018 D 0.052 E 0.062 F 0.040 G 0.069 H 0.022 I 0.056 K 0.058 
+	L 0.092 M 0.023 N 0.046 P 0.051 Q 0.041 R 0.052 S 0.074 T 0.059 V 0.064 
+	W 0.013 Y 0.033 
+********************************************************************************
+
+
+********************************************************************************
+SECTION I: HIGH-SCORING SEQUENCES
+********************************************************************************
+	- Each of the following 19 sequences has E-value less than 10.
+	- The E-value of a sequence is the expected number of sequences
+	  in a random database of the same size that would match the motifs as
+	  well as the sequence does and is equal to the combined p-value of the
+	  sequence times the number of sequences in the database.
+	- The combined p-value of a sequence measures the strength of the
+	  match of the sequence to all the motifs and is calculated by
+	    o finding the score of the single best match of each motif
+	      to the sequence (best matches may overlap),
+	    o calculating the sequence p-value of each score,
+	    o forming the product of the p-values,
+	    o taking the p-value of the product.
+	- The sequence p-value of a score is defined as the
+	  probability of a random sequence of the same length containing
+	  some match with as good or better a score.
+	- The score for the match of a position in a sequence to a motif
+	  is computed by by summing the appropriate entry from each column of
+	  the position-dependent scoring matrix that represents the motif.
+	- Sequences shorter than one or more of the motifs are skipped.
+	- The table is sorted by increasing E-value.
+********************************************************************************
+
+SEQUENCE NAME                      DESCRIPTION                   E-VALUE  LENGTH
+-------------                      -----------                   -------- ------
+sp|P12815|PDCD6_MOUSE              Programmed cell death prot...  2.3e-24    191
+sp|O75340|PDCD6_HUMAN              Programmed cell death prot...  2.3e-24    191
+sp|G3V7W1|PDCD6_RAT                Programmed cell death prot...  7.8e-24    191
+sp|Q9N1R0|CABP1_BOVIN              Calcium-binding protein 1 ...  8.3e-21    226
+sp|Q9NZU7|CABP1_HUMAN              Calcium-binding protein 1 ...  1.4e-20    370
+sp|P40421|RDGC_DROME               Serine/threonine-protein p...  4.1e-16    661
+sp|Q3SWT6|PPE1_RAT                 Serine/threonine-protein p...    0.039    640
+sp|O14829|PPE1_HUMAN               Serine/threonine-protein p...     0.32    653
+sp|Q7MY25|PYRE_PHOLL               Orotate phosphoribosyltran...      2.2    213
+sp|O35655|PPE1_MOUSE               Serine/threonine-protein p...      3.1    650
+sp|Q9D9N5|CIB4_MOUSE               Calcium and integrin-bindi...      4.6    185
+sp|Q99828|CIB1_HUMAN               Calcium and integrin-bindi...        8    191
+sp|Q9R010|CIB1_RAT                 Calcium and integrin-bindi...        8    191
+sp|Q9Z0F4|CIB1_MOUSE               Calcium and integrin-bindi...        8    191
+sp|Q17QE5|CIB1_BOVIN               Calcium and integrin-bindi...        8    191
+sp|B1A8Z2|CIB1_SHEEP               Calcium and integrin-bindi...        8    191
+sp|A8EQZ2|GLMM_ARCB4               Phosphoglucosamine mutase ...      8.6    444
+sp|O67786|MTNC_AQUAE               Enolase-phosphatase E1 OS=...      8.8    223
+sp|Q8KER7|ILVC_CHLTE               Ketol-acid reductoisomeras...      9.2    330
+
+********************************************************************************
+
+
+
+********************************************************************************
+SECTION II: MOTIF DIAGRAMS
+********************************************************************************
+	- The ordering and spacing of all non-overlapping motif occurrences
+	  are shown for each high-scoring sequence listed in Section I.
+	- A motif occurrence is defined as a position in the sequence whose
+	  match to the motif has POSITION p-value less than 0.0001.
+	- The POSITION p-value of a match is the probability of
+	  a single random subsequence of the length of the motif
+	  scoring at least as well as the observed match.
+	- For each sequence, all motif occurrences are shown unless there
+	  are overlaps.  In that case, a motif occurrence is shown only if its
+	  p-value is less than the product of the p-values of the other
+	  (lower-numbered) motif occurrences that it overlaps.
+	- The table also shows the E-value of each sequence.
+	- Spacers and motif occurences are indicated by
+	   o -d-    `d' residues separate the end of the preceding motif 
+		    occurrence and the start of the following motif occurrence
+	   o [n]  occurrence of motif `n' with p-value less than 0.0001.
+********************************************************************************
+
+SEQUENCE NAME                      E-VALUE   MOTIF DIAGRAM
+-------------                      --------  -------------
+sp|P12815|PDCD6_MOUSE               2.3e-24  23-[1]-7-[1]-[1]-71
+sp|O75340|PDCD6_HUMAN               2.3e-24  23-[1]-7-[1]-[1]-71
+sp|G3V7W1|PDCD6_RAT                 7.8e-24  23-[1]-7-[1]-[1]-71
+sp|Q9N1R0|CABP1_BOVIN               8.3e-21  81-[1]-47-[1]-7-[1]-1
+sp|Q9NZU7|CABP1_HUMAN               1.4e-20  225-[1]-47-[1]-7-[1]-1
+sp|P40421|RDGC_DROME                4.1e-16  441-[1]-55-[1]-10-[1]-65
+sp|Q3SWT6|PPE1_RAT                    0.039  473-[1]-53-[1]-10-[1]-14
+sp|O14829|PPE1_HUMAN                   0.32  483-[1]-53-[1]-10-[1]-17
+sp|Q7MY25|PYRE_PHOLL                    2.2  162-[1]-21
+sp|O35655|PPE1_MOUSE                    3.1  484-[1]-53-[1]-10-[1]-13
+sp|Q9D9N5|CIB4_MOUSE                    4.6  97-[1]-12-[1]-16
+sp|Q99828|CIB1_HUMAN                      8  148-[1]-13
+sp|Q9R010|CIB1_RAT                        8  148-[1]-13
+sp|Q9Z0F4|CIB1_MOUSE                      8  103-[1]-15-[1]-13
+sp|Q17QE5|CIB1_BOVIN                      8  148-[1]-13
+sp|B1A8Z2|CIB1_SHEEP                      8  148-[1]-13
+sp|A8EQZ2|GLMM_ARCB4                    8.6  121-[1]-293
+sp|O67786|MTNC_AQUAE                    8.8  39-[1]-154
+sp|Q8KER7|ILVC_CHLTE                    9.2  279-[1]-21
+
+********************************************************************************
+
+
+
+********************************************************************************
+SECTION III: ANNOTATED SEQUENCES
+********************************************************************************
+	- The positions and p-values of the non-overlapping motif occurrences
+	  are shown above the actual sequence for each of the high-scoring
+	  sequences from Section I.
+	- A motif occurrence is defined as a position in the sequence whose
+	  match to the motif has POSITION p-value less than 0.0001 as 
+	  defined in Section II.
+	- For each sequence, the first line specifies the name of the sequence.
+	- The second (and possibly more) lines give a description of the 
+	  sequence.
+	- Following the description line(s) is a line giving the length, 
+	  combined p-value, and E-value of the sequence as defined in Section I.
+	- The next line reproduces the motif diagram from Section II.
+	- The entire sequence is printed on the following lines.
+	- Motif occurrences are indicated directly above their positions in the
+	  sequence on lines showing
+	   o the motif number of the occurrence,
+	   o the position p-value of the occurrence,
+	   o the best possible match to the motif, and
+	   o columns whose match to the motif has a positive score (indicated 
+	     by a plus sign).
+********************************************************************************
+
+
+sp|P12815|PDCD6_MOUSE
+  Programmed cell death protein 6 OS=Mus musculus OX=10090 GN=Pdcd6 PE=1 SV=2
+  LENGTH = 191  COMBINED P-VALUE = 5.42e-29  E-VALUE =  2.3e-24
+  DIAGRAM: 23-[1]-7-[1]-[1]-71
+
+                            [1]                                  [1]
+                            1.1e-09                              4.0e-05
+                            YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR       YHTDWQNAFRTFDRN
+                                + +++  ++++ ++ ++ +++ ++++            + ++ ++++
+1    MAAYSYRPGPGGGPGPAAGAALPDQSFLWNVFQRVDKDRSGVISDNELQQALSNGTWTPFNPVTVRSIISMFDRE
+
+                    [1]
+                    3.3e-31
+     NDGMIDCNEFKQCMRYHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+     +   ++++++     ++++++++++++++++++++++++++++++
+76   NKAGVNFSEFTGVWKYITDWQNVFRTYDRDNSGMIDKNELKQALSGFGYRLSDQFHDILIRKFDRQGRGQIAFDD
+
+
+sp|O75340|PDCD6_HUMAN
+  Programmed cell death protein 6 OS=Homo sapiens OX=9606 GN=PDCD6 PE=1 SV=1
+  LENGTH = 191  COMBINED P-VALUE = 5.42e-29  E-VALUE =  2.3e-24
+  DIAGRAM: 23-[1]-7-[1]-[1]-71
+
+                            [1]                                  [1]
+                            1.1e-08                              4.0e-05
+                            YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR       YHTDWQNAFRTFDRN
+                                + +++  ++++ ++ ++  ++ ++++            + ++ ++++
+1    MAAYSYRPGPGAGPGPAAGAALPDQSFLWNVFQRVDKDRSGVISDTELQQALSNGTWTPFNPVTVRSIISMFDRE
+
+                    [1]
+                    3.3e-31
+     NDGMIDCNEFKQCMRYHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+     +   ++++++     ++++++++++++++++++++++++++++++
+76   NKAGVNFSEFTGVWKYITDWQNVFRTYDRDNSGMIDKNELKQALSGFGYRLSDQFHDILIRKFDRQGRGQIAFDD
+
+
+sp|G3V7W1|PDCD6_RAT
+  Programmed cell death protein 6 OS=Rattus norvegicus OX=10116 GN=Pdcd6 PE=2 
+  SV=1
+  LENGTH = 191  COMBINED P-VALUE = 1.85e-28  E-VALUE =  7.8e-24
+  DIAGRAM: 23-[1]-7-[1]-[1]-71
+
+                            [1]                                  [1]
+                            1.1e-09                              4.0e-05
+                            YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR       YHTDWQNAFRTFDRN
+                                + +++  ++++ ++ ++ +++ ++++            + ++ ++++
+1    MAAYSYRPGPGAGPGPAAGAALPDQSFLWNVFQRVDKDRSGVISDNELQQALSNGTWTPFNPVTVRSIISMFDRE
+
+                    [1]
+                    1.1e-30
+     NDGMIDCNEFKQCMRYHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+     +   ++++++     ++++++++++++++++++++++++++++++
+76   NKAGVNFSEFTGVWKYITDWQNVFRTYDRDNSGMIDKHELKQALSGFGYRLSDQFHDILIRKFDRQGRGQIAFDD
+
+
+sp|Q9N1R0|CABP1_BOVIN
+  Calcium-binding protein 1 OS=Bos taurus OX=9913 GN=CABP1 PE=1 SV=3
+  LENGTH = 226  COMBINED P-VALUE = 1.98e-25  E-VALUE =  8.3e-21
+  DIAGRAM: 81-[1]-47-[1]-7-[1]-1
+
+           [1]
+           1.0e-27
+           YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+           ++++++++++++++++++++++++++++++
+76   RSLRPEEIEELREAFREFDKDKDGYINCRDLGNCMRTMGYMPTEMELIELSQQINMNLGGHVDFDDFVELMGPKL
+
+             [1]                                  [1]
+             1.3e-26                              1.1e-25
+             YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR       YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+             ++++++++++++++++++++++++++++++       ++++++++++++++++++++++++++++++
+151  LAETADMIGVKELRDAFREFDTNGDGEISTSELREAMRKLLGHQVGHRDIEEIIRDVDLNGDGRVDFEEFVRMMS
+
+
+sp|Q9NZU7|CABP1_HUMAN
+  Calcium-binding protein 1 OS=Homo sapiens OX=9606 GN=CABP1 PE=1 SV=5
+  LENGTH = 370  COMBINED P-VALUE = 3.42e-25  E-VALUE =  1.4e-20
+  DIAGRAM: 225-[1]-47-[1]-7-[1]-1
+
+     [1]
+     1.0e-27
+     YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+     ++++++++++++++++++++++++++++++
+226  EIEELREAFREFDKDKDGYINCRDLGNCMRTMGYMPTEMELIELSQQINMNLGGHVDFDDFVELMGPKLLAETAD
+
+       [1]                                  [1]
+       1.3e-26                              1.1e-25
+       YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR       YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+       ++++++++++++++++++++++++++++++       ++++++++++++++++++++++++++++++
+301  MIGVKELRDAFREFDTNGDGEISTSELREAMRKLLGHQVGHRDIEEIIRDVDLNGDGRVDFEEFVRMMSR
+
+
+sp|P40421|RDGC_DROME
+  Serine/threonine-protein phosphatase rdgC OS=Drosophila melanogaster OX=7227 
+  GN=rdgC PE=2 SV=1
+  LENGTH = 661  COMBINED P-VALUE = 9.85e-21  E-VALUE =  4.1e-16
+  DIAGRAM: 441-[1]-55-[1]-10-[1]-65
+
+                                                                       [1]
+                                                                       3.9e-06
+                                                                       YHTDWQNAF
+                                                                          ++++ +
+376  ITIFSASNYYAIGSNKGAYIRLNNQLMPHFVQYISAASQTKRLSFKQRMGIVESSALKELAVRMRDHRDELEDEF
+
+     
+     
+     RTFDRNNDGMIDCNEFKQCMR
+     + ++   +++++ +     +
+451  RKYDPKDSGYISISHWCKVMENVTKLGLPWRLLRDKLAPGTDSQKVNYNRTLDLLDTDVILEAEADGMSVMDALY
+
+      [1]                                     [1]
+      1.7e-06                                 1.6e-23
+      YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR          YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+       ++ +  ++   + ++++++   ++  +            +++++ +++++++++++++++ +++ ++++
+526  ANKASLVAIFNIIDADNSGEITLDEFETAIDLLVAHMPGAYSKAEMLEKCRMMDLNGDGKVDLNEFLEAFRLSDL
+
+
+sp|Q3SWT6|PPE1_RAT
+  Serine/threonine-protein phosphatase with EF-hands 1 OS=Rattus norvegicus 
+  OX=10116 GN=Ppef1 PE=2 SV=1
+  LENGTH = 640  COMBINED P-VALUE = 9.40e-07  E-VALUE =    0.039
+  DIAGRAM: 473-[1]-53-[1]-10-[1]-14
+
+                            [1]
+                            3.8e-05
+                            YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+                             ++++ +++   +    ++++       +
+451  PLYQRVNAMEFSAFRILKERMIARKTDLINAFELRDHSRTGKISLAQWAFSMESILGLNLPWRSLSSHLVSTDSS
+
+                                    [1]                                     [1]
+                                    6.3e-07                                 1.5e
+                                    YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR          YHTD
+                                    +  ++  ++   +++ ++ ++  +++ +
+526  GSVDYMSSFDDIHIEKPMKDMKSDLIETMYRYRSDLKIIFNIIDTDQSGLISMDEFRTMWKLFNAHYKVHIDDSQ
+
+     
+     -09
+     WQNAFRTFDRNNDGMIDCNEFKQCMR
+     + +   +++ ++++ ++++++ +++
+601  IDELASTMDSNKDGNIDFNEFLRAFYVVHKYETPESPLNK
+
+
+sp|O14829|PPE1_HUMAN
+  Serine/threonine-protein phosphatase with EF-hands 1 OS=Homo sapiens OX=9606 
+  GN=PPEF1 PE=1 SV=1
+  LENGTH = 653  COMBINED P-VALUE = 7.69e-06  E-VALUE =     0.32
+  DIAGRAM: 483-[1]-53-[1]-10-[1]-17
+
+                                      [1]
+                                      3.2e-05
+                                      YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+                                       + ++  ++   +  ++++ + +    ++
+451  YQVTKATCFQPLRQRVDTMENSAIKILRERVISRKSDLTRAFQLQDHRKSGKLSVSQWAFCMENILGLNLPWRSL
+
+                                              [1]
+                                              1.2e-08
+                                              YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+                                              +  +++ ++   +++ ++ ++ ++++ +
+526  SSNLVNIDQNGNVEYMSSFQNIRIEKPVQEAHSTLVETLYRYRSDLEIIFNAIDTDHSGLISVEEFRAMWKLFSS
+
+           [1]
+           8.5e-07
+           YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+                      +++++++ ++++++  ++
+601  HYNVHIDDSQVNKLANIMDLNKDGSIDFNEFLKAFYVVHRYEDLMKPDVTNLG
+
+
+sp|Q7MY25|PYRE_PHOLL
+  Orotate phosphoribosyltransferase OS=Photorhabdus luminescens subsp. 
+  laumondii (strain DSM 15139 / CIP 105565 / TT01) OX=243265 GN=pyrE PE=3 SV=1
+  LENGTH = 213  COMBINED P-VALUE = 5.17e-05  E-VALUE =      2.2
+  DIAGRAM: 162-[1]-21
+
+                 [1]
+                 2.8e-07
+                 YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+                 ++  ++++ +++       +  +++ + ++
+151  MICLDRQERGNGEISAIQEVERDYGCKVFSIITLNDLINYLSGQPEMKDHLDAVKAYRAQYGI
+
+
+sp|O35655|PPE1_MOUSE
+  Serine/threonine-protein phosphatase with EF-hands 1 OS=Mus musculus OX=10090 
+  GN=Ppef1 PE=2 SV=2
+  LENGTH = 650  COMBINED P-VALUE = 7.50e-05  E-VALUE =      3.1
+  DIAGRAM: 484-[1]-53-[1]-10-[1]-13
+
+                                       [1]
+                                       8.5e-07
+                                       YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+                                        ++++ +++   +   +++++  +    +
+451  QYQVTSTSCLNPLHQRMNAMESSAFKILKEKMISRKTDLINAFELRDHSRSGRISLAEWAFSMENILGLNLPWRS
+
+                                               [1]
+                                               3.9e-06
+                                               YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+                                               +  ++  ++   + + ++ ++  +++ +
+526  LSSHLVTIDSSGSVDYMSSFDDIRIEKPTKDMKSNLTETMYRYRSDLKIIFNIIDSDQSGLISMDEFRTMWKLFN
+
+            [1]
+            1.2e-07
+            YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+                + +    ++ ++++ ++++++  ++
+601  AHYKAHIDDSQIDELASIVDFNKDGNIDFNEFLKAFYVVHKYDKPGTSLA
+
+
+sp|Q9D9N5|CIB4_MOUSE
+  Calcium and integrin-binding family member 4 OS=Mus musculus OX=10090 GN=Cib4 
+  PE=2 SV=1
+  LENGTH = 185  COMBINED P-VALUE = 1.09e-04  E-VALUE =      4.6
+  DIAGRAM: 97-[1]-12-[1]-16
+
+                           [1]                                       [1]
+                           4.3e-06                                   7.0e-07
+                           YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR            YHTDWQNAFRT
+                               ++ +++ ++ +  + ++ +++ +                   +  +  +
+76   HDNVFSFEDVLGMASVFSEQACPSLKIEYAFRIYDFNENGFIDEEDLEEIVLRLLKSDDASEDLLMDVMHHVLSE
+
+     
+     
+     FDRNNDGMIDCNEFKQCMR
+      +++++ + +++++  ++
+151  SDLDNDSMLSFSEFEHAMAKSPDFMNSFRIHFWGC
+
+
+sp|Q99828|CIB1_HUMAN
+  Calcium and integrin-binding protein 1 OS=Homo sapiens OX=9606 GN=CIB1 PE=1 
+  SV=4
+  LENGTH = 191  COMBINED P-VALUE = 1.90e-04  E-VALUE =        8
+  DIAGRAM: 148-[1]-13
+
+                                                                              [1
+                                                                              1.
+                                                                              YH
+                                                                               +
+76   VFSTSPAKDSLSFEDFLDLLSVFSDTATPDIKSHYAFRIFDFDDDGTLNREDLSRLVNCLTGEGEDTRLSASEMK
+
+     ]
+     2e-06
+     TDWQNAFRTFDRNNDGMIDCNEFKQCMR
+       + ++  + + + ++ ++ +++    +
+151  QLIDNILEESDIDRDGTINLSEFQHVISRSPDFASSFKIVL
+
+
+sp|Q9R010|CIB1_RAT
+  Calcium and integrin-binding protein 1 OS=Rattus norvegicus OX=10116 GN=Cib1 
+  PE=1 SV=3
+  LENGTH = 191  COMBINED P-VALUE = 1.90e-04  E-VALUE =        8
+  DIAGRAM: 148-[1]-13
+
+                                                                              [1
+                                                                              1.
+                                                                              YH
+                                                                               +
+76   VFSTSPTRDSLSFEDFLDLLSVFSDTATPDIKSHYAFRIFDFDDDGTLDREDLSRLVNCLTGEGEDTRLSASEMK
+
+     ]
+     2e-06
+     TDWQNAFRTFDRNNDGMIDCNEFKQCMR
+       + ++  + + + ++ ++ +++    +
+151  QLIDNILEESDIDRDGTINLSEFQHVISRSPDFASSFKIVL
+
+
+sp|Q9Z0F4|CIB1_MOUSE
+  Calcium and integrin-binding protein 1 OS=Mus musculus OX=10090 GN=Cib1 PE=1 
+  SV=3
+  LENGTH = 191  COMBINED P-VALUE = 1.90e-04  E-VALUE =        8
+  DIAGRAM: 103-[1]-15-[1]-13
+
+                                 [1]                                          [1
+                                 9.5e-05                                      1.
+                                 YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR               YH
+                                        +++ ++ + ++  + +++ +                   +
+76   VFSTSPTRDSLSFEDFLDLLSVFSDTATPDIKSHYAFRIFDFDDDGTLDREDLSQLVNCLTGEGEDTRLSASEMK
+
+     ]
+     2e-06
+     TDWQNAFRTFDRNNDGMIDCNEFKQCMR
+       + ++  + + + ++ ++ +++    +
+151  QLIDNILEESDIDRDGTINLSEFQHVISRSPDFASSFKIVL
+
+
+sp|Q17QE5|CIB1_BOVIN
+  Calcium and integrin-binding protein 1 OS=Bos taurus OX=9913 GN=CIB1 PE=2 
+  SV=1
+  LENGTH = 191  COMBINED P-VALUE = 1.90e-04  E-VALUE =        8
+  DIAGRAM: 148-[1]-13
+
+                                                                              [1
+                                                                              1.
+                                                                              YH
+                                                                               +
+76   VFSTSPSRDSLSFEDFLDLLSVFSDTATPDIKSHYAFRIFDFDDDGTLNREDLSQLVNCLTGESEDTRLSASEMK
+
+     ]
+     2e-06
+     TDWQNAFRTFDRNNDGMIDCNEFKQCMR
+       + ++  + + + ++ ++ +++    +
+151  QLIDNILEESDIDRDGTINLSEFQHVISRSPDFASSFKIVL
+
+
+sp|B1A8Z2|CIB1_SHEEP
+  Calcium and integrin-binding protein 1 OS=Ovis aries OX=9940 GN=CIB1 PE=2 
+  SV=1
+  LENGTH = 191  COMBINED P-VALUE = 1.90e-04  E-VALUE =        8
+  DIAGRAM: 148-[1]-13
+
+                                                                              [1
+                                                                              1.
+                                                                              YH
+                                                                               +
+76   VFSTSPSRDSLSFEDFLDLLSVFSDTATPDIKSHYAFRIFDFDDDGTLNREDLSQLVNCLTGESEDTRLSASEMK
+
+     ]
+     2e-06
+     TDWQNAFRTFDRNNDGMIDCNEFKQCMR
+       + ++  + + + ++ ++ +++    +
+151  QLIDNILEESDIDRDGTINLSEFQHVISRSPDFASSFKIVL
+
+
+sp|A8EQZ2|GLMM_ARCB4
+  Phosphoglucosamine mutase OS=Arcobacter butzleri (strain RM4018) OX=367737 
+  GN=glmM PE=3 SV=1
+  LENGTH = 444  COMBINED P-VALUE = 2.05e-04  E-VALUE =      8.6
+  DIAGRAM: 121-[1]-293
+
+                                                   [1]
+                                                   4.9e-07
+                                                   YHTDWQNAFRTFDRNNDGMIDCNEFKQCM
+                                                     +++++++ ++++  +  +  ++ +
+76   MPTPAIAYLTESMRCDAGIMISASHNPFEDNGIKFFDNHGNKLNTTCEEEIENIFNDMDLMQSEQVTGRDIGSSK
+
+     
+     
+     R
+     +
+151  RIDDVIGRYIVAIKSSFPKNLTLKGLRIILDCANGAAYKVGPTILEELGADVITINNKPNGFNINENCGAMHPET
+
+
+sp|O67786|MTNC_AQUAE
+  Enolase-phosphatase E1 OS=Aquifex aeolicus (strain VF5) OX=224324 GN=mtnC 
+  PE=3 SV=1
+  LENGTH = 223  COMBINED P-VALUE = 2.11e-04  E-VALUE =      8.8
+  DIAGRAM: 39-[1]-154
+
+                                            [1]
+                                            1.1e-06
+                                            YHTDWQNAFRTFDRNNDGMIDCNEFKQCMR
+                                            ++ ++  +  ++ +    + + ++ ++ ++
+1    MVKAILLDIEGTIAPLSFVKEVMFPYSKKKLREFLEKNWEKPEIKKIVQEVEKIEGRELSLEEAVQLFSRWIDED
+
+
+sp|Q8KER7|ILVC_CHLTE
+  Ketol-acid reductoisomerase (NADP(+)) OS=Chlorobaculum tepidum (strain ATCC 
+  49652 / DSM 12025 / NBRC 103806 / TLS) OX=194439 GN=ilvC PE=3 SV=1
+  LENGTH = 330  COMBINED P-VALUE = 2.19e-04  E-VALUE =      9.2
+  DIAGRAM: 279-[1]-21
+
+                                                           [1]
+                                                           7.3e-07
+                                                           YHTDWQNAFRTFDRNNDGMID
+                                                           ++ + + +    +  ++++
+226  ECMHELKLIVDLYYEGGLSRMNYSVSDTAEYGGMTRGPRVVTSAAKAEMKKILEEIQDGRFAKEFIDECNSGYKK
+
+     
+     
+     CNEFKQCMR
+      +++++  +
+301  MNELRESNRNHPIEVVGAKLRGMMSWLKKK
+
+********************************************************************************
+
+
+CPU: yincp-GE72-2QF
+Time 0.726 secs.
+
+mast -oc /home/yincp/Desktop/Predictive_for_efhand/MY_OUTPUT -mt 0.0001 /home/yincp/Desktop/Predictive_for_efhand/output_meme.txt /home/yincp/Desktop/Predictive_for_efhand/mg_100_filtered.fasta

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>CisMapper - Submission form</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../doc/images/memesuite_icon.ico">
+    <link rel="icon" type="image/png" href="../doc/images/memesuite_icon.png">
+    <link href="../doc/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="../doc/js/menu-path.js"></script>
+    <script src="../doc/js/menu.js"></script>
+    <script src="../doc/js/utilities.js"></script>
+    <script src="../js/bedchecker.js"></script>
+    <script src="../js/component_loci.js"></script>
+    <script src="../js/cismapper.js"></script>
+  </head>
+  <body>
+    <div class="pop_content" id="pop_loci">
+      <p>The chromosome locations (loci) of potential regulatory elements in 
+	<a href=https://genome.ucsc.edu/FAQ/FAQformat.html#format1">BED format</a>.
+	Typically, these would be transcription factor (TF) peaks from a TF ChIP-seq 
+	experiment, output by a peak-caller such as MACS.
+      </p>
+      <div class="pop_close">[ <a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_cismapper_panel">
+      <p>Select the panel of tissues from the same genome and release
+	as your chromosome locations (loci).
+        CisMapper will correlate histone modifications at your loci
+	and gene expression across the panel of tissues to assign
+	a score to each potential regulatory link between a loci,
+	viewed as a potential regulatory element (RE), and the TSS of
+	a gene.
+	See the CisMapper 
+	<a style="color:red" href="../db/cismapper">tissue panel documentation</a>
+	for more information on the available promoter databases.
+       </p>
+       <div class="pop_close">[ <a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <!--{help/}-->
+    <div class="content_box">
+      <!--{header}-->
+      <p>
+      <!--{title}-->CisMapper<!--{/title}--> - <!--{subtitle}-->Prediction of Regulatory Links<!--{/subtitle}--><br>
+      <!--{logo}-->../doc/images/cismapper_icon.png<!--{/logo}-->: <!--{alt}-->CisMapper Logo<!--{/alt}--><br>
+      <!--{blurb}--><span class="blurb" data-id="cismapper"></span><!--{/blurb}-->
+      </p>
+      <!--{/header}-->
+      <form enctype="multipart/form-data" accept-charset="utf-8"
+      method="POST" action="cismapper" id="cismapper_form">
+        <fieldset>
+          <legend>Data Submission Form</legend>
+          <p class="meme">Predict regulatory links between genomic loci and genes.</p> 
+          <!--{loci}-->
+          <!--{prefix}-->loci<!--{/prefix}-->
+          <!--{title}-->Input genomic locations<!--{/title}-->
+          <!--{subtitle}-->Upload a BED file of genomic locations (loci) to analyze.<!--{/subtitle}-->
+          <!--{default}-->FILE<!--{/default}-->
+          <!--{register}-->register_component<!--{/register}-->
+          <!--{/loci}-->
+
+          <!--{cismapper_panel}-->
+          <!--{prefix}-->cismapper_panel<!--{/prefix}-->
+          <!--{title}-->Select the panel<!--{/title}-->
+          <!--{subtitle}-->Choose the panel of histone modifications and gene expression.<!--{/subtitle}-->
+          <!--{/cismapper_panel}-->
+
+          <!--{job_details/}-->
+          <div style="margin-top: 5px; margin-bottom: 5px; width: 80%">
+            <!--{advanced_options/}-->
+          </div>
+
+          <!--{submit_reset/}-->
+        </fieldset>
+      </form>
+      <!--{footer/}-->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<mast version="5.0.5" release="Mon Mar 18 20:12:19 2019 -0700">
+	<command_line><arg>mast</arg><arg>-oc</arg><arg>/home/yincp/Desktop/Predictive_for_efhand/MY_OUTPUT</arg><arg>-mt</arg><arg>0.0001</arg><arg>/home/yincp/Desktop/Predictive_for_efhand/output_meme.txt</arg><arg>/home/yincp/Desktop/Predictive_for_efhand/mg_100_filtered.fasta</arg></command_line>
+	<settings strand_handling="unstranded" max_correlation="0.60" remove_correlated="n" max_seq_evalue="10" adjust_hit="n" max_hit_pvalue="0.0001" max_weak_pvalue="0.0001"/>
+	<alphabet name="Protein" like="protein">
+		<letter id="A" symbol="A" name="Alanine" colour="0000CC"/>
+		<letter id="C" symbol="C" name="Cysteine" colour="0000CC"/>
+		<letter id="D" symbol="D" name="Aspartic acid" colour="FF00FF"/>
+		<letter id="E" symbol="E" name="Glutamic acid" colour="FF00FF"/>
+		<letter id="F" symbol="F" name="Phenylalanine" colour="0000CC"/>
+		<letter id="G" symbol="G" name="Glycine" colour="FFB300"/>
+		<letter id="H" symbol="H" name="Histidine" colour="FFCCCC"/>
+		<letter id="I" symbol="I" name="Isoleucine" colour="0000CC"/>
+		<letter id="K" symbol="K" name="Lysine" colour="CC0000"/>
+		<letter id="L" symbol="L" name="Leucine" colour="0000CC"/>
+		<letter id="M" symbol="M" name="Methionine" colour="0000CC"/>
+		<letter id="N" symbol="N" name="Asparagine" colour="008000"/>
+		<letter id="P" symbol="P" name="Proline" colour="FFFF00"/>
+		<letter id="Q" symbol="Q" name="Glutamine" colour="008000"/>
+		<letter id="R" symbol="R" name="Arginine" colour="CC0000"/>
+		<letter id="S" symbol="S" name="Serine" colour="008000"/>
+		<letter id="T" symbol="T" name="Threonine" colour="008000"/>
+		<letter id="V" symbol="V" name="Valine" colour="0000CC"/>
+		<letter id="W" symbol="W" name="Tryptophan" colour="0000CC"/>
+		<letter id="Y" symbol="Y" name="Tyrosine" colour="33E6CC"/>
+		<letter id="X" symbol="X" aliases="*." equals="ACDEFGHIKLMNPQRSTVWY" name="Any amino acid"/>
+		<letter id="B" symbol="B" equals="DN" name="Asparagine or Aspartic acid"/>
+		<letter id="Z" symbol="Z" equals="EQ" name="Glutamine or Glutamic acid"/>
+		<letter id="J" symbol="J" equals="IL" name="Leucine or Isoleucine"/>
+	</alphabet>
+	<background source="--nrdb--" A="0.0730919" C="0.0181455" D="0.051688" E="0.0622785" F="0.0402434" G="0.0692596" H="0.0224055" I="0.056227" K="0.058435" L="0.0916218" M="0.0230443" N="0.0460321" P="0.0506238" Q="0.0407153" R="0.0518462" S="0.073729" T="0.0593523" V="0.0642985" W="0.0133282" Y="0.0326497"/>
+	<motif_dbs>
+		<motif_db source="/home/yincp/Desktop/Predictive_for_efhand/output_meme.txt" last_mod_date="Fri Jul 19 17:53:08 2019">
+			<background A="0.0904905" C="0.0113992" D="0.0581941" E="0.0702928" F="0.0371964" G="0.0782919" H="0.0232979" I="0.0629936" K="0.0549945" L="0.0965899" M="0.0235979" N="0.0371964" P="0.0439957" Q="0.0355966" R="0.0554944" S="0.0569942" T="0.0524947" V="0.0722925" W="0.0100994" Y="0.0284974"/>
+		</motif_db>
+	</motif_dbs>
+	<motifs>
+		<motif db="0" id="MEME-1" length="30" nsites="10">
+			<pos A="-996.723" C="-996.723" D="-996.723" E="150.762" F="-996.723" G="235.191" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="81.0492" T="-996.723" V="-996.723" W="-996.723" Y="339.476"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="-996.723" G="-996.723" H="310.045" I="298.739" K="86.1993" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="146.716" W="-996.723" Y="-996.723"/>
+			<pos A="14.4024" C="-996.723" D="-996.723" E="150.762" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="186.16" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="184.854" S="-996.723" T="251.353" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="310.171" E="282.924" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="-996.723" G="-996.723" H="-996.723" I="166.574" K="-996.723" L="204.896" M="208.217" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="489.123" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="150.762" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="5.0007" M="-996.723" N="-996.723" P="-996.723" Q="307.388" R="284.834" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="178.003" E="282.924" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="301.046" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="214.305" C="-996.723" D="-996.723" E="-996.723" F="-996.723" G="-996.723" H="-996.723" I="166.574" K="86.1993" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="205.195" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="313.171" D="-996.723" E="-996.723" F="423.275" G="-996.723" H="-996.723" I="166.574" K="-996.723" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="417.015" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="178.003" E="250.736" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="208.217" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="251.353" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="342.546" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="208.217" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="146.716" W="-996.723" Y="339.476"/>
+			<pos A="-996.723" C="-996.723" D="410.163" E="-996.723" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="186.16" L="163.404" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="243.337" S="-996.723" T="192.869" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="310.171" E="-996.723" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="374.736" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="-996.723" G="267.378" H="-996.723" I="-996.723" K="186.16" L="-996.723" M="-996.723" N="301.046" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="358.709" E="-996.723" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="239.491" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="-996.723" G="367.366" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="150.762" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="86.1993" L="-996.723" M="366.69" N="-996.723" P="-996.723" Q="-996.723" R="184.854" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="280.986"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="-996.723" G="-996.723" H="-996.723" I="347.277" K="-996.723" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="205.195" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="336.472" E="-996.723" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="242.559" P="-996.723" Q="-996.723" R="-996.723" S="181.008" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="413.163" D="-996.723" E="-996.723" F="242.559" G="-996.723" H="-996.723" I="-996.723" K="244.643" L="5.0007" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="192.869" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="150.762" F="-996.723" G="-996.723" H="210.062" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="301.046" P="-996.723" Q="-996.723" R="184.854" S="181.008" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="178.003" E="350.724" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="301.046" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="285.617" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="-996.723" G="135.219" H="-996.723" I="-996.723" K="244.643" L="5.0007" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="184.854" S="-996.723" T="-996.723" V="146.716" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="209.241" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="242.559" P="-996.723" Q="307.388" R="184.854" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="272.79" C="413.163" D="-996.723" E="-996.723" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="308.2" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="142.586" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="163.404" M="466.685" N="-996.723" P="-996.723" Q="-996.723" R="-996.723" S="-996.723" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+			<pos A="-996.723" C="-996.723" D="-996.723" E="-996.723" F="-996.723" G="-996.723" H="-996.723" I="-996.723" K="-996.723" L="-996.723" M="-996.723" N="-996.723" P="-996.723" Q="-996.723" R="317.023" S="313.176" T="-996.723" V="-996.723" W="-996.723" Y="-996.723"/>
+		</motif>
+	</motifs>
+	<correlations>
+	</correlations>
+	<sequence_dbs>
+		<sequence_db source="/home/yincp/Desktop/Predictive_for_efhand/mg_100_filtered.fasta" last_mod_date="Fri Jul 19 17:43:46 2019" seq_count="41992" residue_count="17615462"/>
+	</sequence_dbs>
+	<sequences>
+		<sequence db="0" name="sp|P12815|PDCD6_MOUSE" comment="Programmed cell death protein 6 OS=Mus musculus OX=10090 GN=Pdcd6 PE=1 SV=2" length="191">
+			<score strand="both" combined_pvalue="5.42e-29" evalue="2.3e-24"/>
+			<seg start="1">
+				<data>
+MAAYSYRPGPGGGPGPAAGAALPDQSFLWNVFQRVDKDRSGVISDNELQQALSNGTWTPFNPVTVRSIISMFDRE
+NKAGVNFSEFTGVWKYITDWQNVFRTYDRDNSGMIDKNELKQALSGFGYRLSDQFHDILIRKFDRQGRGQIAFDD
+				</data>
+				<hit pos="24" idx="0" pvalue="1.1e-09" match="    + +++  ++++ ++ ++ +++ ++++"/>
+				<hit pos="61" idx="0" pvalue="4.0e-05" match="     + ++ ++++ +   ++++++     "/>
+				<hit pos="91" idx="0" pvalue="3.3e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O75340|PDCD6_HUMAN" comment="Programmed cell death protein 6 OS=Homo sapiens OX=9606 GN=PDCD6 PE=1 SV=1" length="191">
+			<score strand="both" combined_pvalue="5.42e-29" evalue="2.3e-24"/>
+			<seg start="1">
+				<data>
+MAAYSYRPGPGAGPGPAAGAALPDQSFLWNVFQRVDKDRSGVISDTELQQALSNGTWTPFNPVTVRSIISMFDRE
+NKAGVNFSEFTGVWKYITDWQNVFRTYDRDNSGMIDKNELKQALSGFGYRLSDQFHDILIRKFDRQGRGQIAFDD
+				</data>
+				<hit pos="24" idx="0" pvalue="1.1e-08" match="    + +++  ++++ ++ ++  ++ ++++"/>
+				<hit pos="61" idx="0" pvalue="4.0e-05" match="     + ++ ++++ +   ++++++     "/>
+				<hit pos="91" idx="0" pvalue="3.3e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|G3V7W1|PDCD6_RAT" comment="Programmed cell death protein 6 OS=Rattus norvegicus OX=10116 GN=Pdcd6 PE=2 SV=1" length="191">
+			<score strand="both" combined_pvalue="1.85e-28" evalue="7.8e-24"/>
+			<seg start="1">
+				<data>
+MAAYSYRPGPGAGPGPAAGAALPDQSFLWNVFQRVDKDRSGVISDNELQQALSNGTWTPFNPVTVRSIISMFDRE
+NKAGVNFSEFTGVWKYITDWQNVFRTYDRDNSGMIDKHELKQALSGFGYRLSDQFHDILIRKFDRQGRGQIAFDD
+				</data>
+				<hit pos="24" idx="0" pvalue="1.1e-09" match="    + +++  ++++ ++ ++ +++ ++++"/>
+				<hit pos="61" idx="0" pvalue="4.0e-05" match="     + ++ ++++ +   ++++++     "/>
+				<hit pos="91" idx="0" pvalue="1.1e-30" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9N1R0|CABP1_BOVIN" comment="Calcium-binding protein 1 OS=Bos taurus OX=9913 GN=CABP1 PE=1 SV=3" length="226">
+			<score strand="both" combined_pvalue="1.98e-25" evalue="8.3e-21"/>
+			<seg start="76">
+				<data>
+RSLRPEEIEELREAFREFDKDKDGYINCRDLGNCMRTMGYMPTEMELIELSQQINMNLGGHVDFDDFVELMGPKL
+				</data>
+				<hit pos="82" idx="0" pvalue="1.0e-27" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+			<seg start="151">
+				<data>
+LAETADMIGVKELRDAFREFDTNGDGEISTSELREAMRKLLGHQVGHRDIEEIIRDVDLNGDGRVDFEEFVRMMS
+				</data>
+				<hit pos="159" idx="0" pvalue="1.3e-26" match="++++++++++++++++++++++++++++++"/>
+				<hit pos="196" idx="0" pvalue="1.1e-25" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9NZU7|CABP1_HUMAN" comment="Calcium-binding protein 1 OS=Homo sapiens OX=9606 GN=CABP1 PE=1 SV=5" length="370">
+			<score strand="both" combined_pvalue="3.42e-25" evalue="1.4e-20"/>
+			<seg start="226">
+				<data>
+EIEELREAFREFDKDKDGYINCRDLGNCMRTMGYMPTEMELIELSQQINMNLGGHVDFDDFVELMGPKLLAETAD
+				</data>
+				<hit pos="226" idx="0" pvalue="1.0e-27" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+			<seg start="301">
+				<data>
+MIGVKELRDAFREFDTNGDGEISTSELREAMRKLLGHQVGHRDIEEIIRDVDLNGDGRVDFEEFVRMMSR
+				</data>
+				<hit pos="303" idx="0" pvalue="1.3e-26" match="++++++++++++++++++++++++++++++"/>
+				<hit pos="340" idx="0" pvalue="1.1e-25" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P40421|RDGC_DROME" comment="Serine/threonine-protein phosphatase rdgC OS=Drosophila melanogaster OX=7227 GN=rdgC PE=2 SV=1" length="661">
+			<score strand="both" combined_pvalue="9.85e-21" evalue="4.1e-16"/>
+			<seg start="376">
+				<data>
+ITIFSASNYYAIGSNKGAYIRLNNQLMPHFVQYISAASQTKRLSFKQRMGIVESSALKELAVRMRDHRDELEDEF
+RKYDPKDSGYISISHWCKVMENVTKLGLPWRLLRDKLAPGTDSQKVNYNRTLDLLDTDVILEAEADGMSVMDALY
+				</data>
+				<hit pos="442" idx="0" pvalue="3.9e-06" match="   ++++ ++ ++   +++++ +     + "/>
+			</seg>
+			<seg start="526">
+				<data>
+ANKASLVAIFNIIDADNSGEITLDEFETAIDLLVAHMPGAYSKAEMLEKCRMMDLNGDGKVDLNEFLEAFRLSDL
+				</data>
+				<hit pos="527" idx="0" pvalue="1.7e-06" match=" ++ +  ++   + ++++++   ++  +  "/>
+				<hit pos="567" idx="0" pvalue="1.6e-23" match="+++++ +++++++++++++++ +++ ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q3SWT6|PPE1_RAT" comment="Serine/threonine-protein phosphatase with EF-hands 1 OS=Rattus norvegicus OX=10116 GN=Ppef1 PE=2 SV=1" length="640">
+			<score strand="both" combined_pvalue="9.40e-07" evalue="0.039"/>
+			<seg start="451">
+				<data>
+PLYQRVNAMEFSAFRILKERMIARKTDLINAFELRDHSRTGKISLAQWAFSMESILGLNLPWRSLSSHLVSTDSS
+				</data>
+				<hit pos="474" idx="0" pvalue="3.8e-05" match=" ++++ +++   +    ++++       + "/>
+			</seg>
+			<seg start="526">
+				<data>
+GSVDYMSSFDDIHIEKPMKDMKSDLIETMYRYRSDLKIIFNIIDTDQSGLISMDEFRTMWKLFNAHYKVHIDDSQ
+IDELASTMDSNKDGNIDFNEFLRAFYVVHKYETPESPLNK
+				</data>
+				<hit pos="557" idx="0" pvalue="6.3e-07" match="+  ++  ++   +++ ++ ++  +++ +  "/>
+				<hit pos="597" idx="0" pvalue="1.5e-09" match="    + +   +++ ++++ ++++++ +++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O14829|PPE1_HUMAN" comment="Serine/threonine-protein phosphatase with EF-hands 1 OS=Homo sapiens OX=9606 GN=PPEF1 PE=1 SV=1" length="653">
+			<score strand="both" combined_pvalue="7.69e-06" evalue="0.32"/>
+			<seg start="451">
+				<data>
+YQVTKATCFQPLRQRVDTMENSAIKILRERVISRKSDLTRAFQLQDHRKSGKLSVSQWAFCMENILGLNLPWRSL
+				</data>
+				<hit pos="484" idx="0" pvalue="3.2e-05" match=" + ++  ++   +  ++++ + +    ++ "/>
+			</seg>
+			<seg start="526">
+				<data>
+SSNLVNIDQNGNVEYMSSFQNIRIEKPVQEAHSTLVETLYRYRSDLEIIFNAIDTDHSGLISVEEFRAMWKLFSS
+				</data>
+				<hit pos="567" idx="0" pvalue="1.2e-08" match="+  +++ ++   +++ ++ ++ ++++ +  "/>
+			</seg>
+			<seg start="601">
+				<data>
+HYNVHIDDSQVNKLANIMDLNKDGSIDFNEFLKAFYVVHRYEDLMKPDVTNLG
+				</data>
+				<hit pos="607" idx="0" pvalue="8.5e-07" match="           +++++++ ++++++  ++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q7MY25|PYRE_PHOLL" comment="Orotate phosphoribosyltransferase OS=Photorhabdus luminescens subsp. laumondii (strain DSM 15139 / CIP 105565 / TT01) OX=243265 GN=pyrE PE=3 SV=1" length="213">
+			<score strand="both" combined_pvalue="5.17e-05" evalue="2.2"/>
+			<seg start="151">
+				<data>
+MICLDRQERGNGEISAIQEVERDYGCKVFSIITLNDLINYLSGQPEMKDHLDAVKAYRAQYGI
+				</data>
+				<hit pos="163" idx="0" pvalue="2.8e-07" match="++  ++++ +++       +  +++ + ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O35655|PPE1_MOUSE" comment="Serine/threonine-protein phosphatase with EF-hands 1 OS=Mus musculus OX=10090 GN=Ppef1 PE=2 SV=2" length="650">
+			<score strand="both" combined_pvalue="7.50e-05" evalue="3.1"/>
+			<seg start="451">
+				<data>
+QYQVTSTSCLNPLHQRMNAMESSAFKILKEKMISRKTDLINAFELRDHSRSGRISLAEWAFSMENILGLNLPWRS
+				</data>
+				<hit pos="485" idx="0" pvalue="8.5e-07" match=" ++++ +++   +   +++++  +    + "/>
+			</seg>
+			<seg start="526">
+				<data>
+LSSHLVTIDSSGSVDYMSSFDDIRIEKPTKDMKSNLTETMYRYRSDLKIIFNIIDSDQSGLISMDEFRTMWKLFN
+				</data>
+				<hit pos="568" idx="0" pvalue="3.9e-06" match="+  ++  ++   + + ++ ++  +++ +  "/>
+			</seg>
+			<seg start="601">
+				<data>
+AHYKAHIDDSQIDELASIVDFNKDGNIDFNEFLKAFYVVHKYDKPGTSLA
+				</data>
+				<hit pos="608" idx="0" pvalue="1.2e-07" match="    + +    ++ ++++ ++++++  ++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9D9N5|CIB4_MOUSE" comment="Calcium and integrin-binding family member 4 OS=Mus musculus OX=10090 GN=Cib4 PE=2 SV=1" length="185">
+			<score strand="both" combined_pvalue="1.09e-04" evalue="4.6"/>
+			<seg start="76">
+				<data>
+HDNVFSFEDVLGMASVFSEQACPSLKIEYAFRIYDFNENGFIDEEDLEEIVLRLLKSDDASEDLLMDVMHHVLSE
+SDLDNDSMLSFSEFEHAMAKSPDFMNSFRIHFWGC
+				</data>
+				<hit pos="98" idx="0" pvalue="4.3e-06" match="    ++ +++ ++ +  + ++ +++ +   "/>
+				<hit pos="140" idx="0" pvalue="7.0e-07" match="    +  +  + +++++ + +++++  ++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q99828|CIB1_HUMAN" comment="Calcium and integrin-binding protein 1 OS=Homo sapiens OX=9606 GN=CIB1 PE=1 SV=4" length="191">
+			<score strand="both" combined_pvalue="1.90e-04" evalue="8"/>
+			<seg start="76">
+				<data>
+VFSTSPAKDSLSFEDFLDLLSVFSDTATPDIKSHYAFRIFDFDDDGTLNREDLSRLVNCLTGEGEDTRLSASEMK
+QLIDNILEESDIDRDGTINLSEFQHVISRSPDFASSFKIVL
+				</data>
+				<hit pos="149" idx="0" pvalue="1.2e-06" match=" +  + ++  + + + ++ ++ +++    +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9R010|CIB1_RAT" comment="Calcium and integrin-binding protein 1 OS=Rattus norvegicus OX=10116 GN=Cib1 PE=1 SV=3" length="191">
+			<score strand="both" combined_pvalue="1.90e-04" evalue="8"/>
+			<seg start="76">
+				<data>
+VFSTSPTRDSLSFEDFLDLLSVFSDTATPDIKSHYAFRIFDFDDDGTLDREDLSRLVNCLTGEGEDTRLSASEMK
+QLIDNILEESDIDRDGTINLSEFQHVISRSPDFASSFKIVL
+				</data>
+				<hit pos="149" idx="0" pvalue="1.2e-06" match=" +  + ++  + + + ++ ++ +++    +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9Z0F4|CIB1_MOUSE" comment="Calcium and integrin-binding protein 1 OS=Mus musculus OX=10090 GN=Cib1 PE=1 SV=3" length="191">
+			<score strand="both" combined_pvalue="1.90e-04" evalue="8"/>
+			<seg start="76">
+				<data>
+VFSTSPTRDSLSFEDFLDLLSVFSDTATPDIKSHYAFRIFDFDDDGTLDREDLSQLVNCLTGEGEDTRLSASEMK
+QLIDNILEESDIDRDGTINLSEFQHVISRSPDFASSFKIVL
+				</data>
+				<hit pos="104" idx="0" pvalue="9.5e-05" match="       +++ ++ + ++  + +++ +   "/>
+				<hit pos="149" idx="0" pvalue="1.2e-06" match=" +  + ++  + + + ++ ++ +++    +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q17QE5|CIB1_BOVIN" comment="Calcium and integrin-binding protein 1 OS=Bos taurus OX=9913 GN=CIB1 PE=2 SV=1" length="191">
+			<score strand="both" combined_pvalue="1.90e-04" evalue="8"/>
+			<seg start="76">
+				<data>
+VFSTSPSRDSLSFEDFLDLLSVFSDTATPDIKSHYAFRIFDFDDDGTLNREDLSQLVNCLTGESEDTRLSASEMK
+QLIDNILEESDIDRDGTINLSEFQHVISRSPDFASSFKIVL
+				</data>
+				<hit pos="149" idx="0" pvalue="1.2e-06" match=" +  + ++  + + + ++ ++ +++    +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|B1A8Z2|CIB1_SHEEP" comment="Calcium and integrin-binding protein 1 OS=Ovis aries OX=9940 GN=CIB1 PE=2 SV=1" length="191">
+			<score strand="both" combined_pvalue="1.90e-04" evalue="8"/>
+			<seg start="76">
+				<data>
+VFSTSPSRDSLSFEDFLDLLSVFSDTATPDIKSHYAFRIFDFDDDGTLNREDLSQLVNCLTGESEDTRLSASEMK
+QLIDNILEESDIDRDGTINLSEFQHVISRSPDFASSFKIVL
+				</data>
+				<hit pos="149" idx="0" pvalue="1.2e-06" match=" +  + ++  + + + ++ ++ +++    +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|A8EQZ2|GLMM_ARCB4" comment="Phosphoglucosamine mutase OS=Arcobacter butzleri (strain RM4018) OX=367737 GN=glmM PE=3 SV=1" length="444">
+			<score strand="both" combined_pvalue="2.05e-04" evalue="8.6"/>
+			<seg start="76">
+				<data>
+MPTPAIAYLTESMRCDAGIMISASHNPFEDNGIKFFDNHGNKLNTTCEEEIENIFNDMDLMQSEQVTGRDIGSSK
+RIDDVIGRYIVAIKSSFPKNLTLKGLRIILDCANGAAYKVGPTILEELGADVITINNKPNGFNINENCGAMHPET
+				</data>
+				<hit pos="122" idx="0" pvalue="4.9e-07" match="  +++++++ ++++  +  +  ++ +   +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O67786|MTNC_AQUAE" comment="Enolase-phosphatase E1 OS=Aquifex aeolicus (strain VF5) OX=224324 GN=mtnC PE=3 SV=1" length="223">
+			<score strand="both" combined_pvalue="2.11e-04" evalue="8.8"/>
+			<seg start="1">
+				<data>
+MVKAILLDIEGTIAPLSFVKEVMFPYSKKKLREFLEKNWEKPEIKKIVQEVEKIEGRELSLEEAVQLFSRWIDED
+				</data>
+				<hit pos="40" idx="0" pvalue="1.1e-06" match="++ ++  +  ++ +    + + ++ ++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8KER7|ILVC_CHLTE" comment="Ketol-acid reductoisomerase (NADP(+)) OS=Chlorobaculum tepidum (strain ATCC 49652 / DSM 12025 / NBRC 103806 / TLS) OX=194439 GN=ilvC PE=3 SV=1" length="330">
+			<score strand="both" combined_pvalue="2.19e-04" evalue="9.2"/>
+			<seg start="226">
+				<data>
+ECMHELKLIVDLYYEGGLSRMNYSVSDTAEYGGMTRGPRVVTSAAKAEMKKILEEIQDGRFAKEFIDECNSGYKK
+MNELRESNRNHPIEVVGAKLRGMMSWLKKK
+				</data>
+				<hit pos="280" idx="0" pvalue="7.3e-07" match="++ + + +    +  ++++   +++++  +"/>
+			</seg>
+		</sequence>
+	</sequences>
+	<runtime host="yincp-GE72-2QF" when="Fri Jul 19 17:54:14 2019" cycles="725809" seconds="0.726"/>
+</mast>

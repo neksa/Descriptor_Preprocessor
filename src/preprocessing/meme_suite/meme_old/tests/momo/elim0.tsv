@@ -1,0 +1,8 @@
+mod	motif	regexp	fg_matches
+S79.9	xxx_S79.9_xxx	[ACDEFGHILMNPRSTVWY][ACDEFGHILMNPQSTVY][ADEFGHILMNPQSTVWY]S[ACDEFGHIKLMNPQRSTVY][ADEFGHIKLMNPQRSTVWY].	218
+T79.9	xxx_T79.9_xxx	[ADEFGLMNPSTVWY][ADEFGIKLMNPQRSTVW][ACDEFGILMNPQSTVWY]T[ACDEFGHIKLNPQRSTVY][ADEFGHIKLNPQRSTVWY][ADEFGHIKLMPQRSTVY]	136
+Y79.9	xxx_Y79.9_xxx	[ADFGILMNPQSTV][EFGILNQSTV][ACDEFGILNPQSTVW]Y[AEFGHIKLNPRSTVWY][ADEFGHIKLNPQRSVY][AEFGKLNPRSVW]	81
+
+# MoMo (Modification Motifs): Version 5.0.4 compiled on Feb  6 2019 at 15:58:53
+# The format of this file is described at http://meme-suite.org/doc/momo-output-format.html.
+# momo simple --oc results/momo6 --psm-type tide --eliminate-repeats 0 momo/small-tide-mod.txt

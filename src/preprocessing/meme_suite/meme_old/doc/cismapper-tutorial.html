@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CisMapper Tutorial - MEME Suite</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/memesuite_icon.ico">
+    <link rel="icon" type="image/png" href="images/memesuite_icon.png">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/menu.js"></script>
+  </head>
+  <body>
+    <div class="memesuitelogo">
+      <h1>The MEME Suite</h1>
+      <h2>Motif-based sequence analysis tools</h2>
+    </div>
+    <h2>CisMapper Tutorial</h2>
+    <h3>What CisMapper does</h3>
+    <div class="indent">
+       <span class="tut blurb" data-id="cismapper"></span>
+    </div>
+    <h3>Typical CisMapper applications</h3>
+       <ul>
+         <li>Predicting which genes are regulated by a particular transcription factor (TF) using
+		ChIP-seq peaks for that TF.
+         <li>Predicting which ChIP-seq peak corresponds to the TF binding to regulate a particular gene.
+       </ul>
+    <h3>How CisMapper works</h3>
+    <p>
+	CisMapper uses histone modification and gene expression data for a panel of 'tissues'.
+	It computes the level of each histone modification for which it has data 
+	at each of the genomic loci (typically ChIP-seq peaks) that you provide.
+	It then for each locus, it computes the Pearson correlation between a histone modification
+	at the locus and each gene whose transcription start site (TSS) is located within
+	a specified maximum distance from the locus.  CisMapper reports a score for each
+	locus-TSS-histone trio.  The score is the <i>p</i>-value of the Pearson correlation 
+	coefficient.  CisMapper also computes a single score for each gene that is the mininum
+	score across all potential regulatory links (and histone modifications), adjusted for
+	multiple testing.
+    </p>
+    <h3>Loci</h3>
+    <p>
+    	You provide a set of genomic loci to CisMapper via a 'locus file' in 
+	<a href="https://genome.ucsc.edu/FAQ/FAQformat.html#format1">BED format</a>.
+	Each line in the locus file specifies a single locus
+	specified as three fields separated by tabs: &lt;chrom&gt; &lt;chromStart&gt; &lt;chromEnd&gt;.
+	Any additional fields on each line are ignored by CisMapper, as are comment lines, 
+	which must start with the '#' character.
+    </p>
+    <h3>CisMapper Web Server Histone + Expression Panels</h3>
+    <p>
+	You must choose a panel for the exact genome release (assembly) used by your loci file for
+	CisMapper to work correctly.  If a panel does not exist for your genome release,
+	you may be able to use the <a href="https://genome.ucsc.edu/cgi-bin/hgLiftOver">LiftOver</a>
+	tool to convert your loci to the correct coordinates.
+    </p>
+    <h3>Creating your own Histone + Expression Panels</h3>
+	Under construction...
+    <p>
+    </p>
+    <h3>FAQ</h3>
+      <ul>
+	<li> Under construction...
+      </ul>
+    <p>
+  </body>
+</html>

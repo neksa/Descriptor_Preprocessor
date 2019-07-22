@@ -1,0 +1,138 @@
+table.regulatory_links {
+  margin-top: 20px;
+  border-collapse:collapse;
+}
+table.regulatory_links * td, 
+table.regulatory_links * th {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+table.regulatory_links * td.col_distance, 
+table.regulatory_links * td.col_correlation, 
+table.regulatory_links * td.col_score, 
+table.regulatory_links * td.col_re_score, 
+table.regulatory_links * td.col_tss_score, 
+table.regulatory_links * td.col_gene_score,
+table.regulatory_links * td.col_loci_per_tss,
+table.regulatory_links * td.col_num_tsses,
+table.regulatory_links * td.col_tsses_per_gene,
+table.regulatory_links * td.col_num_genes
+{
+  text-align: right;
+  padding-right: 40px;
+}
+
+table.regulatory_links * td.col_correlation_sign,
+table.regulatory_links * td.col_strand,
+table.regulatory_links * td.col_best_re,
+table.regulatory_links * td.col_best_tss
+{
+  text-align: center;
+  padding-right: 40px;
+}
+
+table.inputs {
+  margin-top: 20px;
+  border-collapse:collapse;
+}
+
+table.inputs * td, table.inputs * th {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+table.hide_gene_id .col_gene_id {
+  display: none;
+}
+table.hide_gene_name .col_gene_name {
+  display: none;
+}
+table.hide_tss_id .col_tss_id {
+  display: none;
+}
+table.hide_tss_locus .col_tss_locus {
+  display: none;
+}
+table.hide_strand .col_strand {
+  display: none;
+}
+table.hide_re_locus .col_re_locus{
+  display: none;
+ }
+table.hide_distance .col_distance{
+  display: none;
+ }
+table.hide_histone .col_histone{
+  display: none;
+ }
+table.hide_correlation .col_correlation {
+  display: none;
+}
+table.hide_correlation_sign .col_correlation_sign {
+  display: none;
+}
+table.hide_score .col_score {
+  display: none;
+}
+table.hide_re_score .col_re_score {
+  display: none;
+}
+table.hide_best_re .col_best_re {
+  display: none;
+}
+table.hide_tss_score .col_tss_score {
+  display: none;
+}
+table.hide_best_tss .col_best_tss {
+  display: none;
+}
+table.hide_gene_score .col_gene_score {
+  display: none;
+}
+table.hide_loci_per_tss .col_loci_per_tss {
+  display: none;
+}
+table.hide_num_tsses .col_num_tsses {
+  display: none;
+}
+table.hide_tsses_per_gene .col_tsses_per_gene {
+  display: none;
+}
+table.hide_num_genes .col_num_genes {
+  display: none;
+}
+
+div.filter {
+  display: inline-block;
+  padding-right: 10px;
+}
+div.hide {
+  display: none;
+}
+
+div.pop_content {
+  position:absolute;
+  z-index:1;
+  width:300px;
+  padding: 5px;
+  background: #E4ECEC;
+  font-size: 12px;
+  font-family: Arial;
+  border-style: double;
+  border-width: 3px;
+  border-color: #AA2244;
+  display:none;
+}
+
+span.arrow {
+  font-size: larger;
+  color: red;
+}
+
+input.error:enabled {
+  background: #FF5555;
+}

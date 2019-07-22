@@ -1,0 +1,615 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>CisMapper</title>
+    <script src="cismapper_data.js"></script>
+    <script src="constants.js"></script>
+    <script src="utilities.js"></script>
+    <script src="cismapper_doc.js"></script>
+    <script src="simple-shared-doc.js"></script>
+    <script src="cismapper_template.js"></script>
+    <link rel="stylesheet" type="text/css" href="cismapper_template.css">
+    <link rel="stylesheet" type="text/css" href="meme.css">
+  </head>
+  <body onload="page_loaded()" onpageshow="page_shown(event)">
+    <!-- Popups -->
+    <!-- Help popups -->
+    <div class="pop_content" id="pop_gene_targets">
+      <script>print_cismapper_doc("pop_gene_targets", "gene-targets-tsv");</script>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_gene_elements">
+      <script>print_cismapper_doc("pop_gene_elements", "gene-elements-tsv");</script>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_tss_targets">
+      <script>print_cismapper_doc("pop_tss_targets", "tss-targets-tsv");</script>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_tss_elements">
+      <script>print_cismapper_doc("pop_tss_elements", "tss-elements-tsv");</script>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_links">
+      <script>print_cismapper_doc("pop_links", "links-tsv");</script> 
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+<!--
+    <div class="pop_content" id="pop_tracks">
+      <script>print_cismapper_doc("pop_tracks", "tracks-bed");</script>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+-->
+    <div class="pop_content" id="pop_gene_id">
+      <p><script>print_cismapper_doc_para("pop_gene_id", 'gene-id')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_gene_name">
+      <p><script>print_cismapper_doc_para("pop_gene_name", 'gene-name')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_tss_id">
+      <p><script>print_cismapper_doc_para("pop_tss_id", 'tss-id')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_tss_locus">
+      <p><script>print_cismapper_doc_para("pop_tss_locus", 'tss-locus')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_strand">
+      <p><script>print_cismapper_doc_para("pop_strand", 'strand')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_re_locus">
+      <p><script>print_cismapper_doc_para("pop_re_locus", 're-locus')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_distance">
+      <p><script>print_cismapper_doc_para("pop_distance", 'distance')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_histone">
+      <p><script>print_cismapper_doc_para("pop_histone", 'histone')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_correlation">
+      <p><script>print_cismapper_doc_para("pop_correlation", 'correlation')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_correlation_sign">
+      <p><script>print_cismapper_doc_para("pop_correlation_sign", 'correlation-sign')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_score">
+      <p><script>print_cismapper_doc_para("pop_score", 'score')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_re_score">
+      <p><script>print_cismapper_doc_para("pop_re_score", 're-score')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_tss_score">
+      <p><script>print_cismapper_doc_para("pop_tss_score", 'tss-score')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_gene_score">
+      <p><script>print_cismapper_doc_para("pop_gene_score", 'gene-score')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_loci_per_tss">
+      <p><script>print_cismapper_doc_para("pop_loci_per_tss", 'loci-per-tss')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_tsses_per_gene">
+      <p><script>print_cismapper_doc_para("pop_tsses_per_gene", 'tsses-per-gene')</script></p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+
+    <div class="pop_content" id="pop_filtering">
+      <p>List only potential regulatory links that meet the selected filter criteria below.</p>
+      <p>To filter on "Gene_ID", "Gene_Name", "TSS_ID", "TSS_Locus" or "RE_Locus", 
+      you can enter any Javascript regular
+      expression pattern.  See <a href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp">here</a>
+      for documentation on Javascript regular expression patterns.</p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+    <div class="pop_content" id="pop_sorting">
+      <p>Sort the potential regulatory links according to the criterion
+	selected in the menu below.
+	Sorting is applied after filtering where possible (the exception being
+        the "Top" filter) so the filters applied will affect the sort.
+      </p>
+      <div class="pop_close">[<a href="javascript:help_popup()">close</a> ]</div>
+    </div>
+
+    <!-- Page starts here -->
+    <div id="top" class="pad1">
+      <div class="prog_logo big">
+        <img src="cismapper_icon.png" alt="CisMapper Logo">
+        <h1>CisMapper</h1>
+        <h3>Prediction of Regulatory Links</h3>
+      </div>
+      <p>
+        For further information on how to interpret these results please access
+        <a href="http://meme-suite.org//doc/cismapper-output-format.html">http://meme-suite.org//doc/cismapper-output-format.html</a>.</br>
+        To get a copy of the MEME software please access 
+        <a href="http://meme-suite.org">http://meme-suite.org</a>. 
+      </p>
+      <p>If you use CisMapper in your research, please cite the following paper:<br />
+        <span class="citation">
+          Timothy O'Connor, Mikael Bod&eacute;n, Timothy L. Bailey,
+          &quot;CisMapper: Predicting regulatory interactions from transcription factor ChIP-seq data&quot;,
+          <i>Nucleic Acids Research</i>, <b>45</b>:e19, 2017.
+          <a href="https://academic.oup.com/nar/article/45/4/e19/2290926">[Abstract and Full Text]</a>
+        </span>
+      </p>
+    </div>
+    <!-- navigation -->
+    <table class="navigation" class="pad2">
+     <tr>
+      <td> <a class="jump" href="#regulatory_links_sec">Potential Regulatory Links</a></td>
+      <td> <a class="jump" href="#info_sec">Program information</a></td>
+      <td> <a class="jump" href="gene_targets.tsv">Gene Targets in TSV Format</a>&nbsp;<span id="gene_targets_help"></span></td>
+      <td> <a class="jump" href="gene_elements.tsv">Gene Elements in TSV Format</a>&nbsp;<span id="gene_elements_help"></span></td>
+      <td> <div id="tss_targets_tsv_file">
+	  <a class="jump" href="tss_targets.tsv">TSS Targets in TSV Format</a>&nbsp;<span id="tss_targets_help"></span></div></td>
+      <td>
+	<div id="tss_elements_tsv_file">
+	  <a id="tss_elements_tsv_file" class="jump" href="tss_elements.tsv">TSS Elements in TSV Format</a>&nbsp;<span id="tss_elements_help"></span></div></td>
+      <td> <a class="jump" href="links.tsv">Links in TSV Format</a>&nbsp;<span id="links_help"></span></td>
+      <!--<td> <a class="jump" href="tracks.bed">Browser Tracks in BED Format</a>&nbsp;<span id="tracks_help"></span></td>-->
+    </table>
+    <script>
+      make_help_button($("gene_targets_help"), "pop_gene_targets");
+      make_help_button($("gene_elements_help"), "pop_gene_elements");
+      make_help_button($("tss_targets_help"), "pop_tss_targets");
+      make_help_button($("tss_elements_help"), "pop_tss_elements");
+      make_help_button($("links_help"), "pop_links");
+      // make_help_button($("tracks_help"), "pop_tracks");
+    </script>
+
+    <!-- alert the user when their browser is not up to the task -->
+    <noscript><h1 style="color:red">Javascript is required to view these results!</h1></noscript>
+    <h1 id="html5_warning" style="color:red; display:none;">Your browser does not support canvas!</h1>
+    <script>
+      if (!window.HTMLCanvasElement) $("html5_warning").style.display = "block";
+    </script>
+    <h2 class="mainh pad2">Results</h2>
+    <div class="box">
+      <span id="ins_desc"></span>
+      <!-- write out the job description -->
+      <script>
+        if (data['description']) {
+          var node = $("ins_desc");
+          while (node.firstChild) node.removeChild(node.firstChild);
+          var header = document.createElement("h4");
+          header.id = "description";
+          header.appendChild(document.createTextNode("Description"));
+          node.appendChild(header);
+          var paragraphs = data['description'].split("\n\n");
+          for (var i = 0; i < paragraphs.length; i++) {
+            var p = document.createElement("p");
+            var lines = paragraphs[i].split("\n");
+            for (var j = 0; j < lines.length; j++) {
+              if (j != 0) p.appendChild(document.createElement('br'));
+              p.appendChild(document.createTextNode(lines[j]));
+            }
+            node.appendChild(p);
+          }
+        }
+      </script>
+      <div>
+        <div style="float:left; width:70%">
+          <h4 id="regulatory_links_sec">Potential Regulatory Links (score &le; <span id="ins_score"></span>)</h4>
+          <script>
+            $("ins_score").innerHTML = data['options']['max_html_score'];
+          </script>
+          <table class="regulatory_links hide_re_locus" id="regulatory_links">
+            <thead>
+            <tr align="center">
+              <th class="col_gene_id">Gene ID&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_gene_id')"></div></th>
+              <th class="col_gene_name">Gene Name&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_gene_name')"></div></th>
+              <th class='col_tss_id'>TSS ID&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_tss_id')"></div></th>
+              <th class='col_tss_locus'>TSS Locus&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_tss_locus')"></div></th>
+              <th class='col_strand'>Strand&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_strand')"></div></th>
+              <th class='col_re_locus'>RE Locus&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_re_locus')"></div></th>
+              <th class="col_distance">Distance&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_distance')"></div></th>
+              <th class="col_histone">Histone&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_histone')"></div></th>
+              <th class="col_correlation">Correlation&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_correlation')"></div></th>
+              <th class="col_correlation_sign">Corr.<br>Sign&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_correlation_sign')"></div></th>
+              <th class="col_score">Score&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_score')"></div></th>
+              <th class="col_re_score">RE Score&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_re_score')"></div></th>
+              <th class="col_best_re">Best RE?&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_best_re')"></div></th>
+              <th class="col_tss_score">TSS Score&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_tss_score')"></div></th>
+              <th class="col_best_tss">Best TSS?&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_best_tss')"></div></th>
+              <th class="col_gene_score">Gene Score&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_gene_score')"></div></th>
+              <th class="col_loci_per_tss">RE Loci per TSS&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_loci_per_tss')"></div></th>
+<!--
+              <th class="col_num_tsses">Num TSSes&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_num_tsses')"></div></th>
+-->
+              <th class="col_tsses_per_gene">TSSes per Gene&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_tsses_per_gene')"></div></th>
+<!--
+              <th class="col_num_genes">Num Genes&nbsp;<div class="help"
+                  onclick="help_popup(this, 'pop_num_genes')"></div></th>
+-->
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+        <div style="float:right; width:21%">
+          <h4>Filter &amp; Sort</h4>
+          <h5>Filters&nbsp;<div style="margin-top:5px;" class="help" 
+              onclick="help_popup(this, 'pop_filtering')" ></div></h5>
+          <div id="filters">
+            <div >
+              <input type="checkbox" id="filter_on_top" value="1" 
+              onclick="toggle_filter(this, 'filter_top')" checked>
+              <label for="filter_top" 
+                onclick="enable_filter('filter_on_top', 'filter_top')">Top</label>
+              <input type="number" id="filter_top" value="1000" size="5" min="1" step="1"
+              onkeypress="num_keys(event); update_filter(event)" disabled>
+            </div>
+            <div id="div_filter_on_best_tss">
+              <input type="checkbox" id="filter_on_best_tss" value="1" 
+              onclick="toggle_filter(this, 'filter_best_tss')" checked>
+              <label for="filter_best_tss" 
+                onclick="enable_filter('filter_on_best_tss', 'filter_best_tss')"
+                >Show only best TSS for each gene</label>
+              <input type="hidden" id="filter_best_tss" value="T">
+            </div>
+            <div id="div_filter_on_best_re">
+              <input type="checkbox" id="filter_on_best_re" value="1" 
+              onclick="toggle_filter(this, 'filter_best_re')" checked>
+              <label for="filter_best_re" 
+                onclick="enable_filter('filter_on_best_re', 'filter_best_re')"
+                >Show only best RE locus for each TSS</label>
+              <input type="hidden" id="filter_best_re" value="T">
+            </div>
+            <div >
+              <input type="checkbox" id="filter_on_gene_id" value="1" 
+              onclick="toggle_filter(this, 'filter_gene_id')">
+              <label for="filter_gene_id" 
+                onclick="enable_filter('filter_on_gene_id', 'filter_gene_id')"
+                >Gene ID matches</label>
+              <input type="text" id="filter_gene_id" value=".*" size="12" 
+              onkeypress="update_filter(event)" disabled>
+            </div>
+            <div >
+              <input type="checkbox" id="filter_on_gene_name" value="1" 
+              onclick="toggle_filter(this, 'filter_gene_name')">
+              <label for="filter_gene_name" 
+                onclick="enable_filter('filter_on_gene_name', 'filter_gene_id')"
+                >Gene Name matches</label>
+              <input type="text" id="filter_gene_name" value=".*" size="12" 
+              onkeypress="update_filter(event)" disabled>
+            </div>
+            <div id="div_filter_on_tss_id">
+              <input type="checkbox" id="filter_on_tss_id" value="1" 
+              onclick="toggle_filter(this, 'filter_tss_id')">
+              <label for="filter_tss_id" 
+                onclick="enable_filter('filter_on_tss_id', 'filter_tss_id')"
+                >TSS ID matches</label>
+              <input type="text" id="filter_tss_id" value=".*" size="12" 
+              onkeypress="update_filter(event)" disabled>
+            </div>
+            <div >
+              <input type="checkbox" id="filter_on_tss_locus" value="1" 
+              onclick="toggle_filter(this, 'filter_tss_locus')">
+              <label for="filter_tss_locus" 
+                onclick="enable_filter('filter_on_tss_locus', 'filter_tss_locus')"
+                >TSS Locus matches</label>
+              <input type="text" id="filter_tss_locus" value=".*" size="12" 
+              onkeypress="update_filter(event)" disabled>
+            </div>
+            <div >
+              <input type="checkbox" id="filter_on_re_locus" value="1" 
+              onclick="toggle_filter(this, 'filter_re_locus')">
+              <label for="filter_re_locus" 
+                onclick="enable_filter('filter_on_re_locus', 'filter_re_locus')"
+                >RE Locus matches</label>
+              <input type="text" id="filter_re_locus" value=".*" size="12" 
+              onkeypress="update_filter(event)" disabled>
+            </div>
+            <div >
+              <input type="checkbox" id="filter_on_absolute_distance" value="1" 
+              onclick="toggle_filter(this, 'filter_absolute_distance_le'); toggle_filter(this, 'filter_absolute_distance_ge')">
+              <input type="text" id="filter_absolute_distance_ge" value="0" size="7" 
+              onkeypress="update_filter(event)" disabled>
+              <label for="filter_absolute_distance"
+                onclick="enable_filter('filter_on_absolute_distance', 'filter_absolute_distance')"
+                >&le;|Distance|&le;</label>
+              <input type="text" id="filter_absolute_distance_le" value="1000000" size="7" 
+              onkeypress="update_filter(event)" disabled>
+            </div>
+            <div >
+              <input type="checkbox" id="filter_on_distance" value="1" 
+              onclick="toggle_filter(this, 'filter_distance_le'); toggle_filter(this, 'filter_distance_ge')">
+              <input type="text" id="filter_distance_ge" value="-1000000" size="7" 
+              onkeypress="update_filter(event)" disabled>
+              <label for="filter_distance"
+                onclick="enable_filter('filter_on_distance', 'filter_distance')"
+                >&le; Distance &le;</label>
+              <input type="text" id="filter_distance_le" value="1000000" size="7" 
+              onkeypress="update_filter(event)" disabled>
+            </div>
+            <div >
+              <input type="checkbox" id="filter_on_correlation_sign" value="1" 
+              onclick="toggle_filter(this, 'filter_correlation_sign')">
+              <label for="filter_on_correlation_sign"
+                onclick="enable_filter('filter_on_correlation_sign', 'filter_correlation_sign')"
+                >Correlation Sign</label>
+              <input type="text" id="filter_correlation_sign" value="+" size="1" 
+              onkeypress="update_filter(event)" disabled>
+            </div>
+            <div >
+              <input type="checkbox" id="filter_on_score" value="1" 
+              onclick="toggle_filter(this, 'filter_score')">
+              <label for="filter_score"
+                onclick="enable_filter('filter_on_score', 'filter_score')"
+                >Score &le;</label>
+              <input type="text" id="filter_score" value="1" size="7" 
+              onkeypress="update_filter(event)" disabled>
+            </div>
+            <div >
+              <input type="checkbox" id="filter_on_gene_score" value="1" 
+              onclick="toggle_filter(this, 'filter_gene_score')">
+              <label for="filter_gene_score"
+                onclick="enable_filter('filter_on_gene_score', 'filter_gene_score')"
+                >Gene Score &le;</label>
+              <input type="text" id="filter_gene_score" value="1" size="7" 
+              onkeypress="update_filter(event)" disabled>
+            </div>
+          </div>
+
+          <div style="margin: 5px 0;">
+            <h5>Sort&nbsp;<div class="help"
+                onclick="help_popup(this, 'pop_sorting')"></div></h5>
+            <div>
+              <label for="regulatory_link_sort"></label>
+              <select id="regulatory_link_sort"></select>
+            </div>
+            <script>populate_sort_lists();</script>
+          </div>
+          <div>
+            <input type="button" value="Update" onclick="make_regulatory_links_table()">
+          </div>
+          <h4>Columns to display</h4>
+          <div >
+            <input type="checkbox" id="show_gene_id" value="1" 
+            onclick="toggle_column('hide_gene_id')" checked>
+            <label for="show_gene_id">Show Gene ID</label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_gene_name" value="1" 
+            onclick="toggle_column('hide_gene_name')" checked>
+            <label for="show_gene_name">Show Gene Name</label>
+          </div>
+          <div id="div_show_tss_id">
+            <input type="checkbox" id="show_tss_id" value="1" 
+            onclick="toggle_column('hide_tss_id')" checked>
+            <label for="show_tss_id">Show TSS ID</label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_tss_locus" value="1" 
+            onclick="toggle_column('hide_tss_locus')" checked>
+            <label for="show_tss_locus">Show TSS Locus</label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_strand" value="1" 
+            onclick="toggle_column('hide_strand')" checked>
+            <label for="show_strand">Show Strand</label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_re_locus" value="1" 
+            onclick="toggle_column('hide_re_locus')" checked>
+            <label for="show_re_locus">Show RE Locus</label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_distance" value="1" 
+            onclick="toggle_column('hide_distance')" checked>
+            <label for="show_distance">Show Distance</label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_histone" value="1" 
+            onclick="toggle_column('hide_histone')" checked>
+            <label for="show_histone">Show Histone</label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_correlation" value="1" 
+            onclick="toggle_column('hide_correlation')" checked>
+            <label for="show_correlation">Show Correlation </label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_correlation_sign" value="1" 
+            onclick="toggle_column('hide_correlation_sign')" checked>
+            <label for="show_correlation_sign">Show Correlation Sign</label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_score" value="1" 
+            onclick="toggle_column('hide_score')" checked>
+            <label for="show_score">Show Score</label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_re_score" value="1" 
+            onclick="toggle_column('hide_re_score')" checked>
+            <label for="show_re_score">Show RE Score</label>
+          </div>
+          <div style="display:none;">
+            <input type="checkbox" id="show_best_re" value="1" 
+            onclick="toggle_column('hide_best_re')" checked>
+            <label for="show_best_re">Show best RE</label>
+          </div>
+          <div id="div_show_tss_score">
+            <input type="checkbox" id="show_tss_score" value="1" 
+            onclick="toggle_column('hide_tss_score')" checked>
+            <label for="show_tss_score">Show TSS Score</label>
+          </div>
+          <div style="display:none;">
+            <input type="checkbox" id="show_best_tss" value="1" 
+            onclick="toggle_column('hide_best_tss')" checked>
+            <label for="show_best_tss">Show best TSS</label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_gene_score" value="1" 
+            onclick="toggle_column('hide_gene_score')" checked>
+            <label for="show_gene_score">Show Gene Score</label>
+          </div>
+          <div >
+            <input type="checkbox" id="show_loci_per_tss" value="1" 
+            onclick="toggle_column('hide_loci_per_tss')" checked>
+            <label for="show_loci_per_tss">Show RE Loci per TSS</label>
+          </div>
+<!--
+          <div id="div_show_num_tsses">
+            <input type="checkbox" id="show_num_tsses" value="1" 
+            onclick="toggle_column('hide_num_tsses')" checked>
+            <label for="show_num_tsses">Show Num TSSes</label>
+          </div>
+-->
+          <div id="div_show_tsses_per_gene">
+            <input type="checkbox" id="show_tsses_per_gene" value="1" 
+            onclick="toggle_column('hide_tsses_per_gene')" checked>
+            <label for="show_tsses_per_gene">Show TSSes per Gene</label>
+          </div>
+<!--
+          <div >
+            <input type="checkbox" id="show_num_genes" value="1" 
+            onclick="toggle_column('hide_num_genes')" checked>
+            <label for="show_num_genes">Show Num Genes</label>
+          </div>
+-->
+        </div>
+        <div style="clear:both"></div>
+      </div>
+    </div>
+    <h2 id="inputs" class="mainh pad2">Input Files</h2>
+    <div class="box">
+      <h4>Locus File</h4>
+      <table class="inputs">
+      <table>
+        <tr> 
+          <th>File Name</th>
+        </tr>
+        <tr> 
+          <td id="ins_locus_file"></td> 
+        </tr>
+      </table>
+      <h4>Annotation File</h4>
+      <table class="inputs">
+        <tr> 
+          <th>File Name</th>
+          <th>File Type</th>
+          <th>Number of TSSes with Links</th>
+          <th>Number of Genes with Links</th> 
+        </tr>
+        <tr> 
+          <td id="ins_annotation_file_name"></td> 
+          <td id=ins_annotation_type></td> 
+          <td id="ins_num_tsses"></td>
+          <td id="ins_num_genes"></td>
+        </tr>
+      </table>
+      <script>
+      {
+        $("ins_locus_file").innerHTML = data['options']['locus_file'];
+        $("ins_annotation_file_name").innerHTML = data['options']['annotation_file_name'];
+        $("ins_annotation_type").innerHTML = data['options']['annotation_type'];
+        $("ins_num_tsses").innerHTML = data['num_tsses'];
+        $("ins_num_genes").innerHTML = data['num_genes'];
+      }
+      </script>
+
+      <h4>Other Settings</h4>
+      <table id="tbl_settings" class="inputs hide_advanced">
+	<tr>
+	  <th>RNA Source</th>
+	  <td id="opt_rna_source"></td>
+	</tr>
+	<tr>
+	  <th>Tissues </th>
+	  <td id="opt_tissues"></td>
+	</tr>
+	<tr>
+	  <th>Histone Root</th>
+	  <td id="opt_histone_root"></td>
+	</tr>
+	<tr>
+	  <th>Histone Names</th>
+	  <td id="opt_histone_names"></td>
+	</tr>
+	<tr>
+	  <th>Maximum Link Distances</th>
+	  <td id="opt_max_link_distances"></td>
+	</tr>
+	<tr>
+	  <th>Expression Root</th>
+	  <td id="opt_expression_root"></td>
+	</tr>
+	<tr>
+	  <th>Expression File Type</th>
+	  <td id="opt_expression_file_type"></td>
+	</tr>
+	<tr>
+	  <th>Transcript Types</th>
+	  <td id="opt_transcript_types"></td>
+	</tr>
+	<tr>
+	  <th>Minimum Feature Count</th>
+	  <td id="opt_min_feature_count"></td>
+	</tr>
+	<tr>
+	  <th>Minimum Maximum Expression</th>
+	  <td id="opt_min_max_expression"></td>
+	</tr>
+	<tr>
+	  <th>Maximum HTML Score</th>
+	  <td id="opt_max_html_score"></td>
+	</tr>
+      </table>
+      <script> make_other_settings(); </script>
+
+    </div>
+
+    <div id="info_sec" class="bar">
+      <div class="subsection">
+        <a name="version"/>
+        <h5>CisMapper version</h5>
+        <span id="ins_version"></span>
+        (Release date: <span id="ins_release"></span>)
+        <script>
+          $("ins_version").innerHTML = data["version"];
+          $("ins_release").innerHTML = data["release"];
+        </script> 
+      </div>
+      <div class="subsection">
+        <a name="command" />
+        <h5>Command line summary</h5>
+        <textarea id="cmd" rows="5" style="width:100%;" readonly="readonly">
+        </textarea>
+        <script>$("cmd").value = data["cmd"].join(" ");</script>
+      </div>
+    </div>
+  </body>
+</html>
