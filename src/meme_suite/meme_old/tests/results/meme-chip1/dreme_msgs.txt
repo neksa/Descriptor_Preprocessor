@@ -1,4 +1,0 @@
-  File "/home/yincp/Desktop/Predictive_for_efhand/src/preprocessing/meme_suite/meme/scripts/dreme", line 765
-    print "Finding secondary RE in left flank..."
-                                                ^
-SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Finding secondary RE in left flank...")?

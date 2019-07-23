@@ -1,4 +1,0 @@
-
-# FIMO (Find Individual Motif Occurrences): Version 5.0.2 compiled on Oct  4 2018 at 16:35:59
-# The format of this file is described at http://localhost:8080/meme_5.0.1/doc/fimo-output-format.html.
-# fimo --parse-genomic-coord --verbosity 1 --oc memechip_example_output_files/fimo_out_2 --bgfile memechip_example_output_files/background --motif TTATCW memechip_example_output_files/dreme_out/dreme.xml memechip_example_output_files/Klf1.fna

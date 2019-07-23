@@ -45,7 +45,6 @@ def setup_preprocessing():
 def main2():
     setup_meme_suite_mast()
 
-
 def setup_meme_suite_mast():
     debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
     mast_output_folder = os.path.join(debug_folder, "output_mast")
@@ -70,7 +69,6 @@ def setup_meme_suite_meme():
     counts = bio_interface.parse_meme_file(meme_txt_path)
     with open(counts_output, 'wb') as file:
         pickle.dump(counts, file, -1)
-    # shutil.rmtree(debug_folder)
 
 
 def setup_parse_extracts():
