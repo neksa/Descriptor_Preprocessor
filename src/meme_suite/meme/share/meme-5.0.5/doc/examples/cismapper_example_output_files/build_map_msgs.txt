@@ -1,0 +1,82 @@
+Omitting transcript filtering
+Getting annotation set
+	Loading expression file Expression/A549/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+	Loading expression file Expression/Bj/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+	Loading expression file Expression/H1hesc/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+	Loading expression file Expression/Hepg2/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+	Loading expression file Expression/K562/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+	Loading expression file Expression/Nhek/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+	Loading expression file Expression/Sknshra/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+	Loading expression file Expression/Ag04450/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+	Loading expression file Expression/Gm12878/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+	Loading expression file Expression/Helas3/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+	Loading expression file Expression/Huvec/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+	Loading expression file Expression/Mcf7/Cage.gtf ... 
+	transcript count: 1389
+	gene count: 465
+	transcript count: 1389
+Loading histone data from Histone/H1hesc/wgEncodeBroadHistoneH1hescH3k4me3StdPk.chr21.broadPeak
+Loading histone data from Histone/Hepg2/wgEncodeBroadHistoneHepg2H3k4me3StdPk.chr21.broadPeak
+Loading histone data from Histone/Hsmm/wgEncodeBroadHistoneHsmmH3k4me3StdPk.chr21.broadPeak
+Loading histone data from Histone/K562/wgEncodeBroadHistoneK562H3k4me3StdPk.chr21.broadPeak
+Loading histone data from Histone/Nhek/wgEncodeBroadHistoneNhekH3k4me3StdPk.chr21.broadPeak
+Loading histone data from Histone/Gm12878/wgEncodeBroadHistoneGm12878H3k4me3StdPk.chr21.broadPeak
+Loading histone data from Histone/Helas3/wgEncodeBroadHistoneHelas3H3k4me3StdPk.chr21.broadPeak
+Loading histone data from Histone/Hmec/wgEncodeBroadHistoneHmecH3k4me3StdPk.chr21.broadPeak
+Loading histone data from Histone/Huvec/wgEncodeBroadHistoneHuvecH3k4me3StdPk.chr21.broadPeak
+Loading histone data from Histone/Nhlf/wgEncodeBroadHistoneNhlfH3k4me3StdPk.chr21.broadPeak
+Building drm-tss pairs using histone H3k4me3, expression type Cage, and Tissues:
+	A549
+	Bj
+	H1hesc
+	Hepg2
+	Hsmm
+	K562
+	Nhek
+	Sknshra
+	Ag04450
+	Gm12878
+	Helas3
+	Hmec
+	Huvec
+	Mcf7
+	Nhlf
+Chromosome chr21
+
+Building correlation vectors chr21
+
+########
+	### 13 tss-drm pairs with valid data; 12 tsses; 9 drms

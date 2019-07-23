@@ -3,9 +3,10 @@ import os
 from config import paths
 from utils import generic
 
-def screen():
-    fasta_fname = "mg_50.fasta"
-    fasta_path = os.path.join(paths.ROOT, 'data', 'user', 'input', fasta_fname)
+def screen(fasta_path=None, output_path=None):
+    if not fasta_path:
+        fasta_fname = "mg_50.fasta"
+        fasta_path = os.path.join(paths.ROOT, 'data', 'user', 'input', fasta_fname)
     output = []
     alphabets = set(generic.AA3_to_AA1.values())
     to_keep = True
@@ -35,9 +36,13 @@ def screen():
         if to_keep:
             output.append(title)
             output.append(current_seq)
-    with open(fasta_path, 'w') as file:
+    if output_path is None:
+        output_path = fasta_path
+    with open(output_path, 'w') as file:
         file.writelines(output)
 
 if __name__ == "__main__":
-    screen()
+
+    screen(os.path.join(paths.ROOT, "mg_100.fasta"), os.path.join(paths.ROOT,
+                                                                  "mg_100_screened.fasta"))
 

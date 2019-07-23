@@ -1,2 +1,0 @@
-class Skip(Exception):
-    pass

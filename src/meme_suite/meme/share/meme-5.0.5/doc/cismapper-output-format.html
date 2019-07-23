@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CisMapper Output Formats - MEME Suite</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/memesuite_icon.ico">
+    <link rel="icon" type="image/png" href="images/memesuite_icon.png">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/menu.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/simple-shared-doc.js"></script>
+    <script src="js/cismapper_doc.js"></script>
+  </head>
+  <body>
+    <div class="memesuitelogo">
+      <h1>The MEME Suite</h1>
+      <h2>Motif-based sequence analysis tools</h2>
+    </div>
+
+    <h2>CisMapper Output Formats</h2>
+
+    <ul>
+      <h3><li><a href="#html_results">CisMapper Results HTML Format</a></li></h3>
+      <h3><li><a href="#gene_targets_tsv">CisMapper Gene Targets in TSV Format</a></li></h3>
+      <h3><li><a href="#gene_elements_tsv">CisMapper Gene Elements in TSV Format</a></li></h3>
+      <h3><li><a href="#tss_targets_tsv">CisMapper TSS Targets in TSV Format</a></li></h3>
+      <h3><li><a href="#tss_elements_tsv">CisMapper TSS Elements in TSV Format</a></li></h3>
+      <h3><li><a href="#links_tsv">CisMapper Links in TSV Format</a></li></h3>
+<!--
+      <h3><li><a href="#tracks_bed">CisMapper Browser Tracks in BED Format</a></li></h3>
+-->
+    </ul>
+
+    <div id="html_results">
+      <h3> CisMapper Results HTML Format</h3>
+      <p>See this self-documenting <a href="examples/cismapper_example_output_files/cismapper.html">sample HTML results file</a>.</p>
+    </div>
+
+    <div id="gene_targets_tsv">
+      <h3>CisMapper Gene Targets in TSV Format</h3>
+      <p>See this <a href="examples/cismapper_example_output_files/gene_targets.tsv">sample Gene Targets in TSV format file</a>.</p>
+      <script>print_cismapper_doc("gene_targets_tsv", "gene-targets-tsv");</script>
+    </div>
+    <div id="gene_elements_tsv">
+      <h3>CisMapper Gene Elements in TSV Format</h3>
+      <p>See this <a href="examples/cismapper_example_output_files/gene_elements.tsv">sample Gene Elements in TSV format file</a>.</p>
+      <script>print_cismapper_doc("gene_elements_tsv", "gene-elements-tsv");</script>
+    </div>
+
+    <div id="tss_targets_tsv">
+      <h3>CisMapper TSS Targets in TSV Format</h3>
+      <p>See this <a href="examples/cismapper_example_output_files/tss_targets.tsv">sample TSS Targets in TSV format file</a>.</p>
+      <script>print_cismapper_doc("tss_targets_tsv", "tss-targets-tsv");</script>
+    </div>
+    <div id="tss_elements_tsv">
+      <h3>CisMapper TSS Elements in TSV Format</h3>
+      <p>See this <a href="examples/cismapper_example_output_files/tss_elements.tsv">sample TSS Elements in TSV format file</a>.</p>
+      <script>print_cismapper_doc("tss_elements_tsv", "tss-elements-tsv");</script>
+    </div>
+
+    <div id="links_tsv">
+      <h3>CisMapper Links in TSV Format</h3>
+      <p>See this <a href="examples/cismapper_example_output_files/links.tsv">sample Links in TSV format file</a>.</p>
+      <script>print_cismapper_doc("links_tsv", "links-tsv");</script>
+    </div>
+
+<!--
+    <div id="tracks_bed">
+      <h3>CisMapper Genome Browser Tracks in BED Format</h3>
+      <p>See this <a href="examples/cismapper_example_output_files/tracks.bed">sample Genome Browser Tracks in BED format file</a>.</p>
+      <script>print_cismapper_doc("tracks_bed", "tracks-bed");</script>
+    </div>
+-->
+
+  </body>
+</html>

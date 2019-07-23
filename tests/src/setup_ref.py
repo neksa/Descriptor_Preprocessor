@@ -23,10 +23,16 @@ the pname+cid directly, so there's no need for a separate pdb_list.
 Run setup_parse_extracts() before anything else that requires
 pname_cid_map.
 """
+import pickle
 import os
+import shutil
 
-from preprocessing import preprocess
+import preprocess
+from converge import conv_interface
 from tests.src import paths_test
+from meme_suite import meme_interface
+from utils import generic
+from biopython_adapted import bio_interface
 
 
 # Preprocessing
@@ -35,6 +41,23 @@ def setup_preprocessing():
     setup_create_seq()
     setup_find_motif()
     setup_run_all()
+
+def main2():
+    setup_meme_suite_meme()
+
+def setup_meme_suite_meme():
+    debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
+    meme_output_folder = os.path.join(debug_folder, "output_meme")
+    input_seqfile = paths_test.MEME_TEST_SEQ
+    counts_output = paths_test.REF_MEME_COUNTS
+
+    meme_interface.run_meme(input_seqfile, 30, meme_output_folder, num_p=7)
+    meme_txt_path = os.path.join(meme_output_folder, "meme.txt")
+    counts = bio_interface.parse_meme_file(meme_txt_path)
+    with open(counts_output, 'wb') as file:
+        pickle.dump(counts, file, -1)
+    shutil.rmtree(debug_folder)
+
 
 def setup_parse_extracts():
     prosite_input = paths_test.PROSITE_EXTRACT
@@ -71,14 +94,15 @@ def setup_find_motif():
     output_1 = paths_test.REF_FIND_MOTIF_1
     output_2 = paths_test.REF_FIND_MOTIF_2
     preprocess.find_motifs('meme',
-                           pname_cid_path=input_1,
-                           ref_meme_txt=None,
-                           seq_file=seq_1,
-                           output=output_1,
-                           num_p=7)
+                     pname_cid_path=input_1,
+                     motif_len=13,
+                     ref_meme_txt=None,
+                     seq_file=seq_1,
+                     output=output_1,
+                     num_p=7)
     preprocess.find_motifs('mast',
-                           pname_cid_path=input_2,
-                           ref_meme_txt=paths_test.REF_MEME_TXT,
+                           pname_cid_path=input_2, motif_len=13,
+                     ref_meme_txt=paths_test.REF_MEME_TXT,
                            seq_file=seq_2,
                            output=output_2,
                            num_p=7)
@@ -93,48 +117,35 @@ def setup_run_all():
     output_2 = paths_test.REF_RUN_ALL_2
     output_3 = paths_test.REF_RUN_ALL_3
     ref_meme_txt = paths_test.REF_MEME_TXT
+
     preprocess.run_all(process='meme',
-                       source='prosite',
-                       num_p=7,
-                       extract_path=input_1,
-                       output=output_1,
-                       delete_intermediate=True)
+                 source='prosite',
+                 num_p=7,
+                 extract_path=input_1,
+                 output=output_1)
     preprocess.run_all(process='mast',
-                       source='prosite',
-                       extract_path=input_1,
-                       ref_meme_txt=ref_meme_txt,
-                       output=output_2,
-                       delete_intermediate=True)
+                 source='prosite',
+                 extract_path=input_1,
+                 ref_meme_txt=ref_meme_txt,
+                 output=output_2)
     preprocess.run_all(process='mast',
-                       source='ioncom',
-                       extract_path=input_2,
-                       ref_meme_txt=ref_meme_txt,
-                       output=output_3,
-                       delete_intermediate=True)
+                 source='ioncom',
+                 extract_path=input_2,
+                 ref_meme_txt=ref_meme_txt,
+                 output=output_3)
     assert os.path.isfile(output_1)
     assert os.path.isfile(output_2)
     assert os.path.isfile(output_3)
 
-def setup_meme_to_conv_full():
-    meme_file = paths_test.ORIG_MEME_FOR_CONVERT
+def setup_meme_to_conv():
+    meme_file_full = paths_test.ORIG_MEME_FOR_CONVERT
     ref_composition = paths_test.REF_CONV_COMPOSITION
     ref_matrix = paths_test.REF_CONV_MATRIX
-    preprocess.conv_interface.convert_meme_to_conv(meme_file, ref_composition,
-                                                   ref_matrix, minimal=False)
+    conv_interface.convert_meme_to_conv(meme_file_full, ref_composition,
+                                        ref_matrix, minimal=False)
     assert os.path.isfile(ref_composition)
     assert os.path.isfile(ref_matrix)
 
-def setup_conv_to_meme():
-    input_composition = paths_test.REF_CONV_COMPOSITION
-    input_matrix = paths_test.REF_CONV_MATRIX
-    ref_meme = paths_test.REF_MEME_FROM_CONV
-    preprocess.conv_interface.convert_conv_to_meme(input_matrix,
-                                                   input_composition,
-                                                   ref_meme)
-
-def setup_meme_conv_converters():
-    setup_meme_to_conv_full()
-    setup_conv_to_meme()
 
 def setup_meme_to_conv_minimal():
     """
@@ -145,10 +156,23 @@ def setup_meme_to_conv_minimal():
     meme_file = paths_test.REF_MEME_FROM_CONV
     ref_composition = paths_test.REF_CONV_COMPOSITION
     ref_matrix = paths_test.REF_CONV_MATRIX
-    preprocess.conv_interface.convert_meme_to_conv(meme_file, ref_composition,
-                                                   ref_matrix, minimal=False)
+    conv_interface.convert_meme_to_conv(meme_file, ref_composition,
+                                        ref_matrix, minimal=True)
     assert os.path.isfile(ref_composition)
     assert os.path.isfile(ref_matrix)
 
+def setup_conv_to_meme():
+    input_composition = paths_test.REF_CONV_COMPOSITION
+    input_matrix = paths_test.REF_CONV_MATRIX
+    ref_meme = paths_test.REF_MEME_FROM_CONV
+    conv_interface.convert_conv_to_meme(input_matrix, input_composition,
+                                        ref_meme)
+
+def setup_meme_conv_converters():
+    setup_meme_to_conv()
+    setup_conv_to_meme()
+
+
 if __name__ == "__main__":
-    setup_meme_conv_converters()
+    # setup_meme_conv_converters()
+    main2()

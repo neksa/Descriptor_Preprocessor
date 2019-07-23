@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>CisMapper verification</title>
+<link href="../css/status.css" rel="stylesheet" type="text/css" />
+<script src="../doc/js/utilities.js"></script>
+<script src="../js/status.js"></script>
+<script>
+var verify = 
+<!--{message}-->
+{
+  "items": [
+    {
+      "type": "loci",
+      "name": "Loci file",
+      "key": "source",
+      "any": "the loci "
+    }
+  ]
+}<!--{/message}-->;
+</script>
+
+</head>
+
+<body>
+<!--{title}-->CisMapper<!--{/title}--> - <!--{subtitle}-->Prediction of Regulatory Links<!--{/subtitle}--><br>
+<!--{logo}-->doc/images/cismapper_icon.png<!--{/logo}-->: <!--{alt}-->CisMapper Logo<!--{/alt}--><br>
+<div id="info"></div>
+<script>display_job_information($("info"), verify["items"], data);</script>
+</body>
+</html>

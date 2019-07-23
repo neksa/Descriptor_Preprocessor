@@ -1,0 +1,104 @@
+*******************************************************************************
+Test meme-chip1 ...
+meme-chip -oc results/meme-chip1 -db meme-chip/JASPAR_CORE_2014_vertebrates.meme meme-chip/Klf1.100.fa &> log
+Starting getsize: getsize results/meme-chip1/Klf1.100.fa 1> $metrics
+getsize ran successfully in 0.002918 seconds
+Starting fasta-most: fasta-most -min 50 < results/meme-chip1/Klf1.100.fa 1> $metrics
+fasta-most ran successfully in 0.039767 seconds
+Starting fasta-center: fasta-center -dna -len 100 < results/meme-chip1/Klf1.100.fa 1> results/meme-chip1/seqs-centered
+fasta-center ran successfully in 0.044496 seconds
+Starting fasta-shuffle-letters: fasta-shuffle-letters results/meme-chip1/seqs-centered results/meme-chip1/seqs-shuffled -kmer 2 -tag -dinuc -dna -seed 1
+fasta-shuffle-letters ran successfully in 0.002788 seconds
+Starting fasta-get-markov: fasta-get-markov -nostatus -nosummary -dna -m 1 results/meme-chip1/Klf1.100.fa results/meme-chip1/background
+fasta-get-markov ran successfully in 0.002923 seconds
+Starting meme: meme results/meme-chip1/seqs-centered -oc results/meme-chip1/meme_out -mod zoops -nmotifs 3 -minw 6 -maxw 30 -bfile results/meme-chip1/background -dna -revcomp -nostatus
+meme ran successfully in 23.42935 seconds
+Starting dreme: dreme -verbosity 1 -oc results/meme-chip1/dreme_out -png -dna -p results/meme-chip1/seqs-centered -n results/meme-chip1/seqs-shuffled
+  File "/home/yincp/Desktop/Predictive_for_efhand/src/preprocessing/meme_suite/meme/scripts/dreme", line 765
+    print "Finding secondary RE in left flank..."
+                                                ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Finding secondary RE in left flank...")?
+dreme exited with error code 1
+Starting centrimo: centrimo -seqlen 500 -verbosity 1 -oc results/meme-chip1/centrimo_out -bfile results/meme-chip1/background results/meme-chip1/Klf1.100.fa results/meme-chip1/meme_out/meme.xml meme-chip/JASPAR_CORE_2014_vertebrates.meme
+centrimo ran successfully in 0.468603 seconds
+Starting tomtom: tomtom -verbosity 1 -oc results/meme-chip1/meme_tomtom_out -min-overlap 5 -dist pearson -evalue -thresh 1 -no-ssc results/meme-chip1/meme_out/meme.xml meme-chip/JASPAR_CORE_2014_vertebrates.meme
+tomtom ran successfully in 1.434918 seconds
+Starting tomtom: tomtom -verbosity 1 -text -thresh 0.1 results/meme-chip1/combined.meme results/meme-chip1/combined.meme 1> results/meme-chip1/motif_alignment.txt
+tomtom ran successfully in 0.108963 seconds
+Starting spamo: spamo -verbosity 1 -oc results/meme-chip1/spamo_out_1 -bgfile results/meme-chip1/background -keepprimary -primary WGGGYGTGGY results/meme-chip1/Klf1.100.fa results/meme-chip1/meme_out/meme.xml results/meme-chip1/meme_out/meme.xml meme-chip/JASPAR_CORE_2014_vertebrates.meme
+spamo ran successfully in 0.711304 seconds
+Starting spamo: spamo -verbosity 1 -oc results/meme-chip1/spamo_out_2 -bgfile results/meme-chip1/background -keepprimary -primary WGCYYCHBCCCTCYC results/meme-chip1/Klf1.100.fa results/meme-chip1/meme_out/meme.xml results/meme-chip1/meme_out/meme.xml meme-chip/JASPAR_CORE_2014_vertebrates.meme
+spamo ran successfully in 0.709874 seconds
+Starting spamo: spamo -verbosity 1 -oc results/meme-chip1/spamo_out_3 -bgfile results/meme-chip1/background -keepprimary -primary MA0140.2 results/meme-chip1/Klf1.100.fa meme-chip/JASPAR_CORE_2014_vertebrates.meme results/meme-chip1/meme_out/meme.xml meme-chip/JASPAR_CORE_2014_vertebrates.meme
+spamo ran successfully in 0.596329 seconds
+Starting fimo: fimo --parse-genomic-coord --verbosity 1 --oc results/meme-chip1/fimo_out_1 --bgfile results/meme-chip1/background --motif WGGGYGTGGY results/meme-chip1/meme_out/meme.xml results/meme-chip1/Klf1.100.fa
+fimo ran successfully in 0.039556 seconds
+Starting fimo: fimo --parse-genomic-coord --verbosity 1 --oc results/meme-chip1/fimo_out_2 --bgfile results/meme-chip1/background --motif WGCYYCHBCCCTCYC results/meme-chip1/meme_out/meme.xml results/meme-chip1/Klf1.100.fa
+fimo ran successfully in 0.040853 seconds
+Starting fimo: fimo --parse-genomic-coord --verbosity 1 --oc results/meme-chip1/fimo_out_3 --bgfile results/meme-chip1/background --motif MA0140.2 meme-chip/JASPAR_CORE_2014_vertebrates.meme results/meme-chip1/Klf1.100.fa
+fimo ran successfully in 0.075896 seconds
+Starting meme-chip_html_to_tsv: meme-chip_html_to_tsv results/meme-chip1/meme-chip.html results/meme-chip1/summary.tsv "meme-chip -oc results/meme-chip1 -db meme-chip/JASPAR_CORE_2014_vertebrates.meme meme-chip/Klf1.100.fa" 5.0.5 "Mon Mar 18 20\:12\:19 2019 -0700"
+meme-chip_html_to_tsv ran successfully in 0.078255 seconds
+reference meme-chip/meme-chip.html output results/meme-chip1/meme-chip.html
+-------------------------------------------------------------------------------
+A difference was detected between the reference and tested json files.
+Got data:programs@7:status=0 but expected data:programs@7:status=256.
+reference meme-chip/summary.tsv output results/meme-chip1/summary.tsv
+4,11c4,10
+< 3	DREME	CACRCCC	DREME-1	CACRCCC	7	27	1.9e-006	DREME	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0493.1 (Klf1)	http://jaspar2014.genereg.net?ID=MA0493.1&rm=present&collection=CORE
+< 4	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0493.1	Klf1	RRCCACACCCW	11	70	6.7e-006	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0493.1&rm=present&collection=CORE
+< 5	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0599.1	KLF5	GCCCCDCCCH	10	74	6.9e-005	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0599.1&rm=present&collection=CORE
+< 6	MEME	WGCYYCHBCCCTCYC	MEME-2	WGCYYCHBCCCTCYC	15	30	6.4e-003	MEME	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0471.1 (E2F6)	http://jaspar2014.genereg.net?ID=MA0471.1&rm=present&collection=CORE
+< 7	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0140.2	TAL1::GATA1	MTTATCWSNNNNNHVCAG	18	50	1.9e-002	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0140.2&rm=present&collection=CORE
+< 8	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0079.3	SP1	GCCCCKCCCCC	11	56	2.1e-002	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0079.3&rm=present&collection=CORE
+< 9	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0035.3	Gata1	TYCTTATCTSY	11	56	2.9e-002	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0035.3&rm=present&collection=CORE
+< 10	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0036.2	GATA2	WRDTTCTTATCTSH	14	58	3.3e-002	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0036.2&rm=present&collection=CORE
+---
+> 3	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0493.1	Klf1	RRCCACACCCW	11	70	6.6e-006	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0493.1&rm=present&collection=CORE
+> 4	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0599.1	KLF5	GCCCCDCCCH	10	74	6.8e-005	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0599.1&rm=present&collection=CORE
+> 5	MEME	WGCYYCHBCCCTCYC	MEME-2	WGCYYCHBCCCTCYC	15	30	6.4e-003	MEME	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0471.1 (E2F6)	http://jaspar2014.genereg.net?ID=MA0471.1&rm=present&collection=CORE
+> 6	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0140.2	TAL1::GATA1	MTTATCWSNNNNNHVCAG	18	50	1.9e-002	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0140.2&rm=present&collection=CORE
+> 7	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0079.3	SP1	GCCCCKCCCCC	11	56	2.0e-002	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0079.3&rm=present&collection=CORE
+> 8	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0035.3	Gata1	TYCTTATCTSY	11	56	2.9e-002	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0035.3&rm=present&collection=CORE
+> 9	meme-chip/JASPAR_CORE_2014_vertebrates.meme	MA0036.2	GATA2	WRDTTCTTATCTSH	14	58	3.3e-002	CENTRIMO	 	 	http://jaspar2014.genereg.net?ID=MA0036.2&rm=present&collection=CORE
+reference meme-chip/combined.meme output results/meme-chip1/combined.meme
+38,49c38
+< MOTIF 3 CACRCCC-DREME-1
+< 
+< letter-probability matrix: alength= 4 w= 7 nsites= 27 E= 3.0e-003
+<   0.000000	  1.000000	  0.000000	  0.000000	
+<   1.000000	  0.000000	  0.000000	  0.000000	
+<   0.000000	  1.000000	  0.000000	  0.000000	
+<   0.666667	  0.000000	  0.333333	  0.000000	
+<   0.000000	  1.000000	  0.000000	  0.000000	
+<   0.000000	  1.000000	  0.000000	  0.000000	
+<   0.000000	  1.000000	  0.000000	  0.000000	
+< 
+< MOTIF 4 MA0493.1-Klf1
+---
+> MOTIF 3 MA0493.1-Klf1
+64c53
+< MOTIF 5 MA0599.1-KLF5
+---
+> MOTIF 4 MA0599.1-KLF5
+78c67
+< MOTIF 6 WGCYYCHBCCCTCYC-MEME-2
+---
+> MOTIF 5 WGCYYCHBCCCTCYC-MEME-2
+97c86
+< MOTIF 7 MA0140.2-TAL1::GATA1
+---
+> MOTIF 6 MA0140.2-TAL1::GATA1
+119c108
+< MOTIF 8 MA0079.3-SP1
+---
+> MOTIF 7 MA0079.3-SP1
+134c123
+< MOTIF 9 MA0035.3-Gata1
+---
+> MOTIF 8 MA0035.3-Gata1
+149c138
+< MOTIF 10 MA0036.2-GATA2
+---
+> MOTIF 9 MA0036.2-GATA2
+FAILED!

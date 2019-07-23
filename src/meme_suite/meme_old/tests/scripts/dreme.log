@@ -1,0 +1,38 @@
+*******************************************************************************
+Test dreme1 ...
+dreme -oc results/dreme1 -verbosity 1 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa &> log
+  File "/home/yincp/Desktop/Predictive_for_efhand/src/preprocessing/meme_suite/meme/scripts/dreme", line 765
+    print "Finding secondary RE in left flank..."
+                                                ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Finding secondary RE in left flank...")?
+-------------------------------------------------------------------------------
+dreme exited with value 1 indicating failure.
+FAILED!
+*******************************************************************************
+Test dreme2 ...
+dreme -norc -oc results/dreme2 -verbosity 1 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa &> log
+  File "/home/yincp/Desktop/Predictive_for_efhand/src/preprocessing/meme_suite/meme/scripts/dreme", line 765
+    print "Finding secondary RE in left flank..."
+                                                ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Finding secondary RE in left flank...")?
+-------------------------------------------------------------------------------
+dreme exited with value 1 indicating failure.
+FAILED!
+*******************************************************************************
+Test dreme3 ...
+dreme-py3 -oc results/dreme3 -verbosity 1 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa &> log
+/home/yincp/Desktop/Predictive_for_efhand/src/preprocessing/meme_suite/meme/scripts/dreme-py3:1783: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  start_clock = time.clock()
+/home/yincp/Desktop/Predictive_for_efhand/src/preprocessing/meme_suite/meme/scripts/dreme-py3:1446: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  cpu_elapsed = time.clock() - start_clock
+reference dreme/basic.xml output results/dreme3/dreme.xml
+PASSED!
+*******************************************************************************
+Test dreme4 ...
+dreme-py3 -norc -oc results/dreme4 -verbosity 1 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa &> log
+/home/yincp/Desktop/Predictive_for_efhand/src/preprocessing/meme_suite/meme/scripts/dreme-py3:1783: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  start_clock = time.clock()
+/home/yincp/Desktop/Predictive_for_efhand/src/preprocessing/meme_suite/meme/scripts/dreme-py3:1446: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  cpu_elapsed = time.clock() - start_clock
+reference dreme/norc.xml output results/dreme4/dreme.xml
+PASSED!

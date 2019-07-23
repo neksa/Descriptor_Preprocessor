@@ -1,0 +1,144 @@
+<appConfig xmlns="http://nbcr.sdsc.edu/opal/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata appName="CISMAPPER @SERVICE_VERSION@">
+    <usage>CisMapper: Prediction of Regulatory Links</usage>
+    <info xsd:type="xsd:string">
+    <![CDATA[
+      cismapper_webservice [options] <locus_file> <rna_source>
+
+      Options:
+
+        -tissues <tissues>              comma-separated list (no spaces) of tissue names
+        -histone-root <hrd>             histone root directory
+        -histone-names <hnames>         comma-separated list (no spaces) of histone names
+        -max-link-distances <mlds>      comma-separated list of maximum distances between an RE and its target
+        -expression-root <erd>          expression root directory
+        -expression-file-type <eft>     file type of expression files
+        -annotation-file-name <afile>   annotation file name
+        -annotation-type <atype>        type of annotation [Gencode|RefSeq]
+        -transcript-types <ttypes>      types of transcript to use from annotation file
+        -min-feature-count <mfc>        only consider links where there is both histone and
+                                              expression data for at least this many tissues: default: 7
+        -min-max-expression <mme>       maximum expression of a target must be at least <mme> for
+                                              the target to be included in the map; default: 2
+        -max-html-score <mhs>           only include links with this score or better in the HTML
+
+        Files present in the server cismapper databases can be specified by appending 'db/'
+        to the file name.
+    ]]>
+    </info>
+    <types>
+      <taggedParams>
+        <separator> </separator>
+        <param>
+          <id>tissues</id>
+          <tag>-tissues</tag>
+          <paramType>STRING</paramType>
+          <default></default>
+          <textDesc>comma-separated list (no spaces) of tissue names</textDesc>
+        </param>
+        <param>
+          <id>histone-root</id>
+          <tag>-histone-root</tag>
+          <paramType>STRING</paramType>
+          <default></default>
+          <textDesc>histone root directory</textDesc>
+        </param>
+        <param>
+          <id>histone-names</id>
+          <tag>-histone-names</tag>
+          <paramType>STRING</paramType>
+          <default></default>
+          <textDesc>comma-separated list (no spaces) of histone names</textDesc>
+        </param>
+        <param>
+          <id>max-link-distances</id>
+          <tag>-max-link-distances</tag>
+          <paramType>STRING</paramType>
+          <default></default>
+          <textDesc>comma-separated list of maximum distances between an RE and its target</textDesc>
+        </param>
+        <param>
+          <id>expression-root</id>
+          <tag>-expression-root</tag>
+          <paramType>STRING</paramType>
+          <default></default>
+          <textDesc>expression root directory</textDesc>
+        </param>
+        <param>
+          <id>expression-file-type</id>
+          <tag>-expression-file-type</tag>
+          <paramType>STRING</paramType>
+          <default></default>
+          <textDesc>file type of expression files</textDesc>
+        </param>
+        <param>
+          <id>annotation-file-name</id>
+          <tag>-annotation-file-name</tag>
+          <paramType>STRING</paramType>
+          <default></default>
+          <textDesc>annotation file name</textDesc>
+        </param>
+        <param>
+          <id>annotation-type</id>
+          <tag>-annotation-type</tag>
+          <paramType>STRING</paramType>
+          <default></default>
+          <textDesc>type of annotation [Gencode|RefSeq]</textDesc>
+        </param>
+        <param>
+          <id>transcript-types</id>
+          <tag>-transcript-types</tag>
+          <paramType>STRING</paramType>
+          <default></default>
+          <textDesc>types of transcript to use from annotation file</textDesc>
+        </param>
+        <param>
+          <id>min-feature-count</id>
+          <tag>-min-feature-count</tag>
+          <paramType>INT</paramType>
+          <default></default>
+          <textDesc>only consider links where there is both histone and expression data for at least this many tissues</textDesc>
+        </param>
+        <param>
+          <id>min-max-expression</id>
+          <tag>-min-max-expression</tag>
+          <paramType>INT</paramType>
+          <default></default>
+          <textDesc>maximum expression of a target must be at least this large for the target to be included in the map</textDesc>
+        </param>
+        <param>
+          <id>max-html-score</id>
+          <tag>-max-html-score</tag>
+          <paramType>FLOAT</paramType>
+          <default></default>
+          <textDesc>only include links with this score or better in the HTML</textDesc>
+        </param>
+        <param>
+          <id>desc</id>
+          <tag>-desc</tag>
+          <paramType>STRING</paramType>
+          <default></default>
+          <textDesc>plain text description of the job</textDesc>
+        </param>
+      </taggedParams>
+
+      <untaggedParams>
+        <param>
+          <id>locus_file</id>
+          <paramType>FILE</paramType>
+          <ioType>INPUT</ioType>
+          <required>true</required>
+          <textDesc>Upload Loci in BED format</textDesc>
+        </param>
+        <param>
+          <id>rna_source</id>
+          <paramType>STRING</paramType>
+          <required>true</required>
+          <textDesc>the type of RNA expression data from the list: LongPap LongPapMouse LongPam Short Cage</textDesc>
+        </param>
+      </untaggedParams>
+    </types>
+  </metadata>
+  <binaryLocation>@SERVICE_DIR@/cismapper_webservice</binaryLocation>
+  <parallel>false</parallel>
+</appConfig>

@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<mast version="5.0.5" release="Mon Mar 18 20:12:19 2019 -0700">
+	<command_line><arg>mast</arg><arg>-oc</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/data/internal/meme_mast</arg><arg>-mt</arg><arg>0.0001</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/tests/data/input/ref_meme.txt</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/tests/data/ref/create_seq_2.fasta</arg></command_line>
+	<settings strand_handling="unstranded" max_correlation="0.60" remove_correlated="n" max_seq_evalue="10" adjust_hit="n" max_hit_pvalue="0.0001" max_weak_pvalue="0.0001"/>
+	<alphabet name="Protein" like="protein">
+		<letter id="A" symbol="A" name="Alanine" colour="0000CC"/>
+		<letter id="C" symbol="C" name="Cysteine" colour="0000CC"/>
+		<letter id="D" symbol="D" name="Aspartic acid" colour="FF00FF"/>
+		<letter id="E" symbol="E" name="Glutamic acid" colour="FF00FF"/>
+		<letter id="F" symbol="F" name="Phenylalanine" colour="0000CC"/>
+		<letter id="G" symbol="G" name="Glycine" colour="FFB300"/>
+		<letter id="H" symbol="H" name="Histidine" colour="FFCCCC"/>
+		<letter id="I" symbol="I" name="Isoleucine" colour="0000CC"/>
+		<letter id="K" symbol="K" name="Lysine" colour="CC0000"/>
+		<letter id="L" symbol="L" name="Leucine" colour="0000CC"/>
+		<letter id="M" symbol="M" name="Methionine" colour="0000CC"/>
+		<letter id="N" symbol="N" name="Asparagine" colour="008000"/>
+		<letter id="P" symbol="P" name="Proline" colour="FFFF00"/>
+		<letter id="Q" symbol="Q" name="Glutamine" colour="008000"/>
+		<letter id="R" symbol="R" name="Arginine" colour="CC0000"/>
+		<letter id="S" symbol="S" name="Serine" colour="008000"/>
+		<letter id="T" symbol="T" name="Threonine" colour="008000"/>
+		<letter id="V" symbol="V" name="Valine" colour="0000CC"/>
+		<letter id="W" symbol="W" name="Tryptophan" colour="0000CC"/>
+		<letter id="Y" symbol="Y" name="Tyrosine" colour="33E6CC"/>
+		<letter id="X" symbol="X" aliases="*." equals="ACDEFGHIKLMNPQRSTVWY" name="Any amino acid"/>
+		<letter id="B" symbol="B" equals="DN" name="Asparagine or Aspartic acid"/>
+		<letter id="Z" symbol="Z" equals="EQ" name="Glutamine or Glutamic acid"/>
+		<letter id="J" symbol="J" equals="IL" name="Leucine or Isoleucine"/>
+	</alphabet>
+	<background source="--nrdb--" A="0.0730919" C="0.0181455" D="0.051688" E="0.0622785" F="0.0402434" G="0.0692596" H="0.0224055" I="0.056227" K="0.058435" L="0.0916218" M="0.0230443" N="0.0460321" P="0.0506238" Q="0.0407153" R="0.0518462" S="0.073729" T="0.0593523" V="0.0642985" W="0.0133282" Y="0.0326497"/>
+	<motif_dbs>
+		<motif_db source="/home/yincp/Desktop/Descriptor_Preprocessor/tests/data/input/ref_meme.txt" last_mod_date="Mon Jun 10 19:07:30 2019">
+			<background A="0.0651907" C="0.0121987" D="0.076389" E="0.0934865" F="0.0577918" G="0.0645908" H="0.0195976" I="0.0589917" K="0.0735895" L="0.0906869" M="0.0314958" N="0.0448938" P="0.0288962" Q="0.0399945" R="0.0441939" S="0.0525926" T="0.0528926" V="0.0544923" W="0.0086392" Y="0.0293961"/>
+		</motif_db>
+	</motif_dbs>
+	<motifs>
+		<motif db="0" id="DKDGBGTIDFEEF" alt="MEME-1" length="13" nsites="1600" evalue="3.6e-3449">
+			<pos A="-502" C="-629" D="368" E="-447" F="-700" G="-659" H="-578" I="-680" K="-533" L="-690" M="-682" N="-364" P="-667" Q="-645" R="-656" S="-613" T="-657" V="-454" W="-640" Y="-654"/>
+			<pos A="126" C="-313" D="-617" E="-67" F="-394" G="-627" H="-314" I="120" K="229" L="-147" M="-379" N="-157" P="-610" Q="-51" R="42" S="-33" T="-17" V="-8" W="-628" Y="-486"/>
+			<pos A="-579" C="-579" D="336" E="-278" F="-625" G="-599" H="-541" I="-613" K="-614" L="-619" M="-614" N="199" P="-605" Q="-248" R="-597" S="-395" T="-471" V="-523" W="-587" Y="-596"/>
+			<pos A="-93" C="-397" D="-385" E="-302" F="-654" G="348" H="-12" I="-649" K="-65" L="-652" M="-275" N="64" P="-487" Q="-113" R="-53" S="-150" T="-172" V="-638" W="-626" Y="-639"/>
+			<pos A="-607" C="-652" D="273" E="-488" F="-673" G="-223" H="-592" I="-560" K="-309" L="-658" M="-647" N="263" P="-630" Q="-579" R="-255" S="139" T="-73" V="-645" W="-32" Y="-644"/>
+			<pos A="-310" C="-664" D="-532" E="-558" F="-716" G="388" H="-234" I="-304" K="-310" L="-618" M="-392" N="-425" P="-679" Q="-227" R="-541" S="-538" T="-686" V="-694" W="-674" Y="-697"/>
+			<pos A="-139" C="-128" D="-200" E="-8" F="-38" G="-317" H="-161" I="-414" K="22" L="-251" M="-84" N="-680" P="-726" Q="187" R="-16" S="-233" T="261" V="-184" W="-772" Y="232"/>
+			<pos A="-651" C="120" D="-776" E="-780" F="-564" G="-765" H="-716" I="349" K="-735" L="-2" M="-158" N="-707" P="-717" Q="-718" R="-716" S="-666" T="-624" V="190" W="-653" Y="-650"/>
+			<pos A="-283" C="-169" D="209" E="-121" F="-870" G="-21" H="-288" I="-840" K="-593" L="-828" M="-799" N="176" P="-756" Q="-204" R="-693" S="214" T="166" V="-793" W="-808" Y="-789"/>
+			<pos A="101" C="-226" D="-239" E="-157" F="243" G="-428" H="-319" I="-179" K="-151" L="-29" M="-357" N="-437" P="-152" Q="-225" R="-118" S="-172" T="128" V="-28" W="-216" Y="237"/>
+			<pos A="91" C="-819" D="93" E="137" F="-898" G="-307" H="-176" I="-856" K="105" L="-504" M="-803" N="46" P="198" Q="87" R="-210" S="-16" T="-236" V="-471" W="-816" Y="-349"/>
+			<pos A="-421" C="-734" D="-216" E="336" F="-889" G="-754" H="-664" I="-309" K="-829" L="-856" M="-826" N="-491" P="-793" Q="-211" R="-769" S="-736" T="-759" V="-613" W="-740" Y="-802"/>
+			<pos A="-702" C="-672" D="-811" E="-800" F="313" G="-780" H="-331" I="-204" K="-786" L="200" M="-18" N="-772" P="-761" Q="-227" R="-763" S="-728" T="-701" V="-140" W="126" Y="15"/>
+		</motif>
+	</motifs>
+	<correlations>
+	</correlations>
+	<sequence_dbs>
+		<sequence_db source="/home/yincp/Desktop/Descriptor_Preprocessor/tests/data/ref/create_seq_2.fasta" last_mod_date="Mon Jul 22 18:19:59 2019" seq_count="103" residue_count="85143"/>
+	</sequence_dbs>
+	<sequences>
+		<sequence db="0" name="3hs0" comment="" length="740">
+			<score strand="both" combined_pvalue="1.26e-03" evalue="0.13"/>
+			<seg start="226">
+				<data>
+XXXXXXXKRKIVLDPSGSMNIYLVLDGSGSIGASDFTGAKKCLVNLIEKVASYGVKPRYGLVTYATYPKIWVKVS
+				</data>
+				<hit pos="249" idx="0" pvalue="1.7e-06" match="  ++++ + +  +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3k8k" comment="" length="692">
+			<score strand="both" combined_pvalue="6.20e-03" evalue="0.64"/>
+			<seg start="1">
+				<data>
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXQWTALTASPDTWDETKRADISYQLLLYSFADSD
+GDGYGDLNGVTQKLDYLNQLGVKALWLSPIHPCXSYHGYDVTDYTKVNPQLGTESDFDRLVTEAHNRGIKIYLDY
+				</data>
+				<hit pos="73" idx="0" pvalue="9.2e-06" match="+ +++++ + +  "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4neh" comment="" length="1084">
+			<score strand="both" combined_pvalue="1.23e-02" evalue="1.3"/>
+			<seg start="76">
+				<data>
+SLASTTSPSQLLACGPTVHHECGRNMYLTGLCFLLGPTQLTQRLPVSRQECPRQEQDIVFLIDGSGSISSRNFAT
+				</data>
+				<hit pos="136" idx="0" pvalue="1.2e-05" match=" +++++ ++   +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4c7y" comment="" length="907">
+			<score strand="both" combined_pvalue="1.48e-02" evalue="1.5"/>
+			<seg start="676">
+				<data>
+PEKIKFTWPNTATTPNSGPSGGSRQQVMTGNAIRVACENLLKACEKPGGGYYTYDELKAADKPTKITGNWTASGA
+				</data>
+				<hit pos="720" idx="0" pvalue="1.7e-05" match=" + + ++ +++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1wpg" comment="" length="994">
+			<score strand="both" combined_pvalue="1.70e-02" evalue="1.7"/>
+			<seg start="301">
+				<data>
+ALAVAAIPEGLPAVITTCLALGTRRMAKKNAIVRSLPSVETLGCTSVICSDKTGTLTTNQMSVCKMFIIDKVDGD
+FCSLNEFSITGSTYAPEGEVLKNDKPIRSGQFDGLVELATICALCNDSSLDFNETKGVYEKVGEATETALTTLVE
+				</data>
+				<hit pos="349" idx="0" pvalue="1.7e-05" match="  +  ++++++  "/>
+				<hit pos="370" idx="0" pvalue="7.0e-05" match="++     ++ +++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1we3" comment="" length="529">
+			<score strand="both" combined_pvalue="2.15e-02" evalue="2.2"/>
+			<seg start="76">
+				<data>
+EVASKTNDVAGDGTTTATVLAQAIVREGLKNVAAGANPLALKRGIEKAVEAAVEKIKALAIPVEDRKAIEEVATI
+				</data>
+				<hit pos="83" idx="0" pvalue="4.2e-05" match="+  ++++ ++  +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ww8" comment="" length="860">
+			<score strand="both" combined_pvalue="3.08e-02" evalue="3.2"/>
+			<seg start="676">
+				<data>
+LTYNVRLNDEFVSNKFYDTNGRTTLHPKEVEQNTVRDFPIPKIRDVRKYPEITISKEKKLGDIEFIKVNKNDKKP
+				</data>
+				<hit pos="693" idx="0" pvalue="3.7e-05" match="+ ++  ++  ++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2xj9" comment="" length="270">
+			<score strand="both" combined_pvalue="3.66e-02" evalue="3.8"/>
+		</sequence>
+		<sequence db="0" name="1g8x" comment="" length="1010">
+			<score strand="both" combined_pvalue="4.27e-02" evalue="4.4"/>
+			<seg start="151">
+				<data>
+VAPHIFAISDVAYRSMLDDRQNQSLLITGESGAGKTENTKKVIQYLASVAGRNQANGSGVLEQQILQANPILEAF
+				</data>
+				<hit pos="204" idx="0" pvalue="4.4e-05" match=" +++++ +  + +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3f2b" comment="" length="1444">
+			<score strand="both" combined_pvalue="5.83e-02" evalue="6"/>
+			<seg start="1126">
+				<data>
+DPDVMGIFSSTEPLGVTPEQIMCNVGTIGIPEFGTRFVRQMLEETRPKTFSELVQISGLSHGTDVWLGNAQELIQ
+NGTCTLSEVIGCRDDIMVYLIYRGLEPSLAFKIMESVRKGKGLTPEFEAEMRKHDVPEWYIDSCKKIKYMFPKAH
+				</data>
+				<hit pos="1197" idx="0" pvalue="4.2e-05" match="    +++++  + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3ahc" comment="" length="806">
+			<score strand="both" combined_pvalue="6.31e-02" evalue="6.5"/>
+			<seg start="676">
+				<data>
+DLLKLQSRENNDEALTDEEFTELFTADKPVLFAYHSYAQDVRGLIYDRPNHDNFHVVGYKEQGSTTTPFDMVRVN
+				</data>
+				<hit pos="683" idx="0" pvalue="8.2e-05" match="  +++  ++ +++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2xt6" comment="" length="1227">
+			<score strand="both" combined_pvalue="6.37e-02" evalue="6.6"/>
+			<seg start="226">
+				<data>
+QFIAAYEDIVRRARDGKLTAEDFSGVTISLTNPXXXXXXXXXXXXMQGQGAIIGAGAMEYPAEFQGASEERIADL
+				</data>
+				<hit pos="236" idx="0" pvalue="5.4e-05" match=" +  +++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3ufk" comment="" length="843">
+			<score strand="both" combined_pvalue="9.02e-02" evalue="9.3"/>
+		</sequence>
+		<sequence db="0" name="2hfz" comment="" length="899">
+			<score strand="both" combined_pvalue="9.23e-02" evalue="9.5"/>
+		</sequence>
+	</sequences>
+	<runtime host="yincp-GE72-2QF" when="Mon Jul 22 22:41:09 2019" cycles="23353" seconds="0.023"/>
+</mast>

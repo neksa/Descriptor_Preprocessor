@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CisMapper - MEME Suite</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/memesuite_icon.ico">
+    <link rel="icon" type="image/png" href="images/memesuite_icon.png">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/menu.js"></script>
+    <script src="js/shared-doc.js"></script>
+    <script src="js/cismapper_doc.js"></script>
+  </head>
+  <body>
+    <div class="memesuitelogo">
+      <h1>The MEME Suite</h1>
+      <h2>Motif-based sequence analysis tools</h2>
+    </div>
+    <div class="prog_logo">
+      <img src="images/cismapper_icon.png" alt="CisMapper Logo">
+      <h1>CisMapper</h1>
+      <h2>Prediction of Regulatory Links</h2>
+    </div>
+
+    <div style='display:inline' id='man_web_button'>
+      <p> <button onclick="toggle_man_display()">View Web Version</button> </p>
+    </div>
+
+    <div style='display:none' id='man_cmd_button'>
+      <p> <button onclick="toggle_man_display()">View Command-Line Version</button> </p>
+    </div>
+
+    <div style='display:inline' id='man_usage'>
+      <div class="usage">
+        <h3>Usage:</h3>
+        <code>cismapper [options] &lt;locus_file&gt; &lt;rna_source&gt;</code>
+      </div>
+    </div>
+
+    <h3>Description</h3>
+    <div class="indent">
+       <span class="man blurb" data-id="cismapper"></span>
+    </div>
+
+    <!-- Command Line Version Doc -->
+    <div style='display:inline' id='man_cmd'>
+      <h3>Input</h3>
+      <div class="indent">
+        <h4><span class='popt'>&lt;locus_file&gt;</span></h4>
+        <div class="indent">
+	  The name of a file containing chromosome locations (loci) of potential regulatory elements in
+	  <a href="https://genome.ucsc.edu/FAQ/FAQformat.html#format1">BED format</a>.
+	  Typically, these would be transcription factor (TF) peaks from a TF ChIP-seq experiment,
+	  output by a peak-caller such as MACS.
+        </div>
+      </div>
+      <div class="indent">
+        <h4><span class='popt'>&lt;rna_source&gt;</span></h4>
+        <div class="indent">
+	  The type of RNA expression data that you are providing. This
+	  must be one of "LongPap", "LongPapMouse", "LongPam", "Short" or "Cage".
+	  See below under option <span class='popt'>-expression-file-type</span> for
+	  more information.
+        </div>
+      </div>
+
+      <h3>Output</h3>
+      <div class="indent">
+        <p>
+          CisMapper writes its output to files in a directory named
+          <code>cismapper_out</code>, which it creates if necessary. You can change the
+          output directory using the <span class='popt'>-o</span> or <span class='popt'>-oc</span> options.
+          The directory will contain:
+        </p>
+        <ul>
+          <li id="html_file"><a href=examples/cismapper_example_output_files/cismapper.html><code>cismapper.html</code></a> -
+	    <script>print_cismapper_doc("html_file", "html-file-short");</script>
+          </li>
+          <li id="gene_targets_tsv">
+            <a href=examples/cismapper_example_output_files/gene_targets.tsv><code>gene_targets.tsv</code></a> - 
+	    <script>print_cismapper_doc("gene_targets_tsv", "gene-targets-tsv-short");</script>
+          </li>
+          <li id="gene_elements_tsv">
+            <a href=examples/cismapper_example_output_files/gene_elements.tsv><code>gene_elements.tsv</code></a> - 
+	    <script>print_cismapper_doc("gene_elements_tsv", "gene-elements-tsv-short");</script>
+          </li>
+          <li id="tss_targets_tsv">
+            <a href=examples/cismapper_example_output_files/tss_targets.tsv><code>tss_targets.tsv</code></a> - 
+	    <script>print_cismapper_doc("tss_targets_tsv", "tss-targets-tsv-short");</script>
+          </li>
+          <li id="tss_elements_tsv">
+            <a href=examples/cismapper_example_output_files/tss_elements.tsv><code>tss_elements.tsv</code></a> - 
+	    <script>print_cismapper_doc("tss_elements_tsv", "tss-elements-tsv-short");</script>
+          </li>
+          <li id="links_tsv">
+            <a href=examples/cismapper_example_output_files/links.tsv><code>links.tsv</code></a> - 
+	    <script>print_cismapper_doc("links_tsv", "links-tsv-short");</script>
+          </li>
+<!--
+          <li id="tracks_bed">
+            <a href=examples/cismapper_example_output_files/tracks.bed><code>tracks.bed</code></a> - 
+	    <script>print_cismapper_doc("tracks_bed", "tracks-bed-short");</script>
+          </li>
+-->
+         
+        </ul>
+        <p>
+	  <b>Note:</b> See this detailed description of the 
+	    <a href=cismapper-output-format.html>CisMapper output formats</a> for more information.
+        </p>
+        
+      </div>
+      <h3>Options</h3>
+      <div class="indent">
+        <table class="options">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Parameter</th>
+              <th>Description</th>
+              <th>Default Behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th colspan="4">General Options</th>
+            </tr>
+            <script>
+              wropt("all-o", {"dir": "cismapper_out"});
+              wropt("all-oc", {"dir": "cismapper_out"});
+            </script>
+            <tr>
+              <td class="popt">-tissues</td>
+              <td><span class="pdat">tissues</span></td>
+              <td>A comma-separated list (no spaces) of tissue names that are the
+		sources of the histone and expression data. These names are
+		assumed to also be the names of the subfolders where the
+		histone and expression data files are to be found by CisMapper.
+		See below under options <span class='popt'>-histone-root</span> and
+		<span class='popt'>-expression-root</span> for more information.
+	      </td>
+              <td>
+		The value of <span class="pdat">tissues</span> is set equal to
+		'<code>Ag04450,Gm12878,H1hesc,Helas3,Hepg2,Huvec,K562</code>'.
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-histone-root</td>
+              <td><span class="pdat">hrd</span></td>
+              <td>
+		The root directory containing the histone modification files.
+		The files are assumed to be in 
+		<a href="https://genome.ucsc.edu/FAQ/FAQformat.html#format13">ENCODE broadPeak format</a>.
+		The histone modification files should be subdirectories under 
+		the histone root directory, where each subfolder is named according
+		to the tissue from which the data is taken.  (See option <span class='popt'>-tissues</span>,
+		above.)  The subdirectories should be named 
+		'<code>&lt;hrd&gt;/&lt;t&gt;</code>', 
+		where <code>&lt;t&gt;</code>
+		is one of the tissue names in the comma-separated 
+		<span class="pdat">tissues</span> list.
+	      </td>
+              <td>
+		The value of <span class="pdat">hrd</span> is set to '<code>MappingData/Human/Histone</code>'.
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-histone-names</td>
+              <td><span class="pdat">hnames</span></td>
+              <td>
+		A comma-separated list (no spaces) of histone modification names.
+		The histone modification file names must match
+		'<code>&lt;hrd&gt;/&lt;t&gt;/*&lt;hname&gt;*broadPeak</code>', 
+		where &lt;t&gt;</code> is one of the tissue names in the 
+		comma-separated <span class="pdat">tissues</span> list, and
+		<code>&lt;hname&gt;</code> is one of the histone names in the
+		comma-separated <span class="pdat">hnames</span> list.
+	      </td>
+              <td>
+		The value of <span class="pdat">hnames</span> is set to '<code>H3k27ac,H3k4me3</code>'.
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-max-link-distances</td>
+              <td><span class="pdat">mlds</span></td>
+              <td>
+		A comma-separated list (no spaces) of maximum distances between a potential regulatory
+		element (RE) and its target. Note: there must be one distance for each histone
+		name in <span class="pdat">hnames</span>, and each distance is used with
+		the corresponding histone modification. 
+	      </td>
+              <td>
+		The value of <span class="pdat">mlds</span> is set to '<code>500000,1000</code>'.
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-expression-root</td>
+              <td><span class="pdat">erd</span></td>
+              <td>
+		The root directory containing the RNA expression files.
+		The files are assumed to be in 
+		The RNA expression files should be subdirectories under 
+		the expression root directory, where each subfolder is named according
+		to the tissue from which the data is taken.  (See option <span class='popt'>-tissues</span>,
+		above.)  The subdirectories should be named 
+		'<code>&lt;erd&gt;/&lt;t&gt;</code>', 
+		where <code>&lt;t&gt;</code>
+		is one of the tissue names in the comma-separated 
+		<span class="pdat">tissues</span> list.
+	      </td>
+              <td>
+		The value of <span class="pdat">erd</span> is set to '<code>MappingData/Human/Expression</code>'.
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-expression-file-type</td>
+              <td><span class="pdat">eft</span></td>
+              <td>
+		The file extension of the RNA expression files.
+		The files should be in 
+		<a href="https://genome.ucsc.edu/FAQ/FAQformat.html#format4"> GTF format</a>.
+		The RNA expression file names must match
+		'<code>&lt;erd&gt;/&lt;t&gt;/&lt;rna_source&gt;.&lt;eft&gt;</code>', 
+		where &lt;t&gt;</code> is one of the tissue names in the 
+		comma-separated <span class="pdat">tissues</span> list, and
+		<code>&lt;rna_source&gt;</code> was specified by you on the command line.
+	      </td>
+	      </td>
+              <td>
+		The value of <span class="pdat">eft</span> is set to '<code>gtf</code>'.
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-annotation-file-name</td>
+              <td><span class="pdat">afile</span></td>
+              <td>
+		The name of an annotation file containing information on each of the
+		genes and transcription start sites referenced in your RNA expression
+		files. The annotation file should be in the variety of
+		<a href="https://genome.ucsc.edu/FAQ/FAQformat.html#format4"> GTF format</a>
+		determined by option <span class="popt">-annotation-type</span>, below.
+	      </td>
+              <td>
+		The value of <span class="pdat">afile</span> is set to <br>
+		'<code>MappingData/Human/gencode.v7.transcripts.gtf</code>'.
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-annotation-type</td>
+              <td><span class="popt">GenCode</span>|&#8203;<span class="popt">RefSeq</span></td>
+              <td>
+		The type of annotation file that you are providing.
+	      </td>
+              <td>
+		<span class="popt">GenCode</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-transcript-types</td>
+              <td><span class="pdat">ttypes</span></td>
+              <td>
+		A comma-separated list (no spaces) of RNA transcript types.
+		Only RNA expression data for these types of transcript will be used
+		by CisMapper.
+	      </td>
+              <td>
+		The value of <span class="pdat">ttypes</span> is set to <br>
+		'<code>protein_coding,processed_transcript</code>'.
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-min-feature-count</td>
+              <td><span class="pdat">mfc</span></td>
+              <td>
+		CisMapper will only consider links where there is both histone and
+                expression data for at least this many tissues.
+	      </td>
+              <td>
+		7
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-min-max-expression</td>
+              <td><span class="pdat">mme</span></td>
+              <td>
+		CisMapper will only consider targets (genes or transcription start sites)
+		that have whose maximum expression across all tissues is at least 
+		<span class="pdat">mme</span>.  Furthermore, there must also be
+		at least a two-fold variation around the average expression of the target.
+	      </td>
+              <td>
+		2
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-max-html-score</td>
+              <td><span class="pdat">mhs</span></td>
+              <td>
+		Only links whose (unadjusted) score is less than or equal to 
+		<span class="pdat">mhs</span> will be included in the HTML output 
+		of CisMapper.  This threshold does not affect the other outputs
+		of CisMapper (e.g., the TSV files).
+	      </td>
+              <td>
+		0.05
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-desc</td>
+              <td><span class="pdat">text</span></td>
+              <td>
+		Plain text description of this run of CisMapper, which is
+		included in the HTML output file.
+	      </td>
+              <td>
+		No description is included in the HTML output file.
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-fdesc</td>
+              <td><span class="pdat">file</span></td>
+              <td>
+		A plain text file containing a description of this run of CisMapper.
+		This text will be included in the HTML output file.
+	      </td>
+              <td>
+		No description is included in the HTML output file.
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-noecho</td>
+              <td></td>
+              <td>
+		Do not echo commands as the are run.
+	      </td>
+              <td>
+		Echo commands as they are run.
+              </td>
+            </tr>
+            <tr>
+              <td class="popt">-nostatus</td>
+              <td></td>
+              <td>
+		Do not print progress reports to the terminal.
+	      </td>
+              <td>
+		Print progress reports to the terminal.
+              </td>
+            </tr>
+            <script>
+              wropt("all-help", {"short": true});
+              wropt("all-version");
+            </script>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <h3>Citing</h3>
+    <div class="indent">
+      <p>If you use CisMapper in your research, please cite the following paper:<br />
+        <span class="citation">
+          Timothy L. Bailey and Philip Machanick, 
+          &quot;Inferring direct DNA binding from ChIP-seq&quot;, 
+          <i>Nucleic Acids Research</i>, <b>40</b>:e128, 2012.
+          <a href="http://nar.oxfordjournals.org/content/40/17/e128">[full text]</a>
+        </span>
+      </p>
+    </div>
+
+    <script src="js/manual.js"></script>
+
+  </body>
+</html>
+

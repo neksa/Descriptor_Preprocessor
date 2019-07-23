@@ -3,6 +3,7 @@ import contextlib
 from urllib import request
 import logging
 import shutil
+import datetime
 
 def warn_if_exist(path, filetype='file', remove=True):
     assert filetype in ('file', 'folder')
@@ -27,6 +28,15 @@ def quit_if_missing(path, filetype='file'):
         if not os.path.isdir(path):
             logging.error(f"Folder in <{path}> missing, exiting.")
             raise Exception
+
+
+def setup_debug_folder(global_debug_folder=None):
+    quit_if_missing(global_debug_folder, filetype="folder")
+    timestamp = datetime.datetime.now().isoformat()
+    debug_folder = os.path.join(global_debug_folder, timestamp)
+    warn_if_exist(debug_folder, filetype="folder")
+    os.mkdir(debug_folder)
+    return debug_folder
 
 def download_pdb_files(seq_cid_map,
                         output_folder,

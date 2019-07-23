@@ -1,0 +1,112 @@
+*******************************************************************************
+Generating meme motifs...
+meme -oc results/motif.meme.crp0 -nostatus -p 5 -dna -nmotifs 3 common/crp0.s
+Option '-p' given but Parallel MEME not configured. Running Serial MEME.
+*******************************************************************************
+Test motif-in.meme.crp0.text ...
+meme2images -eps results/motif.meme.crp0/meme.txt results/motif-in.meme.crp0.text
+PASSED!
+*******************************************************************************
+Test motif-in.meme.crp0.xml ...
+meme2images -eps results/motif.meme.crp0/meme.xml results/motif-in.meme.crp0.xml
+PASSED!
+*******************************************************************************
+Test motif-in.meme.crp0.html ...
+meme2images -eps results/motif.meme.crp0/meme.html results/motif-in.meme.crp0.html
+PASSED!
+*******************************************************************************
+Generating meme motifs...
+meme -oc results/motif.meme.lipocalin -nostatus -p 5 -protein -nmotifs 3 common/lipocalin.s
+Option '-p' given but Parallel MEME not configured. Running Serial MEME.
+*******************************************************************************
+Test motif-in.meme.lipocalin.text ...
+meme2images -eps results/motif.meme.lipocalin/meme.txt results/motif-in.meme.lipocalin.text
+PASSED!
+*******************************************************************************
+Test motif-in.meme.lipocalin.xml ...
+meme2images -eps results/motif.meme.lipocalin/meme.xml results/motif-in.meme.lipocalin.xml
+PASSED!
+*******************************************************************************
+Test motif-in.meme.lipocalin.html ...
+meme2images -eps results/motif.meme.lipocalin/meme.html results/motif-in.meme.lipocalin.html
+PASSED!
+*******************************************************************************
+Generating meme motifs...
+meme -oc results/motif.meme.puf3p -nostatus -p 5 -rna -nmotifs 3 common/Puf3p-20.s
+Option '-p' given but Parallel MEME not configured. Running Serial MEME.
+*******************************************************************************
+Test motif-in.meme.puf3p.text ...
+meme2images -eps results/motif.meme.puf3p/meme.txt results/motif-in.meme.puf3p.text
+PASSED!
+*******************************************************************************
+Test motif-in.meme.puf3p.xml ...
+meme2images -eps results/motif.meme.puf3p/meme.xml results/motif-in.meme.puf3p.xml
+PASSED!
+*******************************************************************************
+Test motif-in.meme.puf3p.html ...
+meme2images -eps results/motif.meme.puf3p/meme.html results/motif-in.meme.puf3p.html
+PASSED!
+*******************************************************************************
+Generating meme motifs...
+meme -oc results/motif.meme.crp0.extdna -nostatus -p 5 -alph common/extended_dna.alph -nmotifs 3 common/crp0.s
+Option '-p' given but Parallel MEME not configured. Running Serial MEME.
+*******************************************************************************
+Test motif-in.meme.crp0.extdna.text ...
+meme2images -eps results/motif.meme.crp0.extdna/meme.txt results/motif-in.meme.crp0.extdna.text
+PASSED!
+*******************************************************************************
+Test motif-in.meme.crp0.extdna.xml ...
+meme2images -eps results/motif.meme.crp0.extdna/meme.xml results/motif-in.meme.crp0.extdna.xml
+PASSED!
+*******************************************************************************
+Test motif-in.meme.crp0.extdna.html ...
+meme2images -eps results/motif.meme.crp0.extdna/meme.html results/motif-in.meme.crp0.extdna.html
+PASSED!
+*******************************************************************************
+Generating dreme motifs...
+dreme -oc results/motif.dreme.klf1 -m 2 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa
+  File "/home/yincp/Desktop/Predictive_for_efhand/src/preprocessing/meme_suite/meme/scripts/dreme", line 765
+    print "Finding secondary RE in left flank..."
+                                                ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Finding secondary RE in left flank...")?
+*******************************************************************************
+Test motif-in.dreme.klf1.text ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.klf1.xml ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.klf1.html ...
+SKIPPED!
+*******************************************************************************
+Generating dreme motifs...
+dreme -oc results/motif.dreme.klf1.extdna -alph common/extended_dna.alph -m 2 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa
+  File "/home/yincp/Desktop/Predictive_for_efhand/src/preprocessing/meme_suite/meme/scripts/dreme", line 765
+    print "Finding secondary RE in left flank..."
+                                                ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Finding secondary RE in left flank...")?
+*******************************************************************************
+Test motif-in.dreme.klf1.extdna.text ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.klf1.extdna.xml ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.klf1.extdna.html ...
+SKIPPED!
+*******************************************************************************
+Generating dreme motifs...
+dreme -oc results/motif.dreme.puf3p -rna -m 3 -p common/Puf3p.s
+  File "/home/yincp/Desktop/Predictive_for_efhand/src/preprocessing/meme_suite/meme/scripts/dreme", line 765
+    print "Finding secondary RE in left flank..."
+                                                ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Finding secondary RE in left flank...")?
+*******************************************************************************
+Test motif-in.dreme.puf3p.text ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.puf3p.xml ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.puf3p.html ...
+SKIPPED!

@@ -1,0 +1,91 @@
+&test('cismapper1', 'cismapper P300 chr21',
+  'cismapper', '',
+  ['-oc', 'results/cismapper1', 'cismapper/P300.2x.bed', 'Cage',
+    '-histone-root', 'cismapper/Histone',
+    '-expression-root', 'cismapper/Expression',
+    '-annotation-file-name', 'cismapper/gencode.v7.transcripts.chr21.gtf',
+    '-min-feature-count', 6,
+    '-histone-names', 'H3k27ac,H3k4me3',
+    '-max-link-distances', '500000,1000',
+    '-tissues', 'A549,Bj,H1hesc,Hepg2,Hsmm,K562,Nhek,Sknshra,Ag04450,Gm12878,Helas3,Hmec,Huvec,Mcf7,Nhlf',
+    '-desc', 'Predicted links from P300 binding sites to genes on human chromosome 21',
+    '-remove-map', '-noecho', '-nostatus'
+  ],
+  [
+    {
+      output => 'results/cismapper1/gene_targets.tsv', 
+      reference => 'cismapper/p300_gene_targets.tsv', 
+      type => 'text', ignore => ['^#']
+    },
+    {
+      output => 'results/cismapper1/gene_elements.tsv', 
+      reference => 'cismapper/p300_gene_elements.tsv', 
+      type => 'text', ignore => ['^#']
+    },
+    {
+      output => 'results/cismapper1/tss_targets.tsv', 
+      reference => 'cismapper/p300_tss_targets.tsv', 
+      type => 'text', ignore => ['^#']
+    },
+    {
+      output => 'results/cismapper1/tss_elements.tsv', 
+      reference => 'cismapper/p300_tss_elements.tsv', 
+      type => 'text', ignore => ['^#']
+    },
+    {
+      output => 'results/cismapper1/cismapper.html', 
+      reference => 'cismapper/p300_cismapper.html', 
+      type => 'json', ignore => [
+        'data:(version|revision|release|cmd)',
+        'programs@.*:time'
+      ]
+    }
+  ],
+  'results/cismapper1'
+);
+
+&test('cismapper2', 'cismapper Rxra Chr21, no H3k4me3',
+  'cismapper', '',
+  ['-oc', 'results/cismapper2', 'cismapper/Rxra.bed', 'Cage',
+    '-histone-root', 'cismapper/Histone',
+    '-expression-root', 'cismapper/Expression',
+    '-annotation-file-name', 'cismapper/gencode.v7.transcripts.chr21.gtf',
+    '-min-feature-count', 6,
+    '-histone-names', 'H3k27ac',
+    '-max-link-distances', '500000',
+    '-tissues', 'A549,Bj,H1hesc,Hepg2,Hsmm,K562,Nhek,Sknshra,Ag04450,Gm12878,Helas3,Hmec,Huvec,Mcf7,Nhlf',
+    '-desc', 'Predicted links from Rxra binding sites to genes on human chromosome 21 usin H3k27ac only',
+    '-remove-map', '-noecho', '-nostatus'
+  ],
+  [
+    {
+      output => 'results/cismapper2/gene_targets.tsv', 
+      reference => 'cismapper/Rxra_gene_targets.tsv', 
+      type => 'text', ignore => ['^#']
+    },
+    {
+      output => 'results/cismapper2/gene_elements.tsv', 
+      reference => 'cismapper/Rxra_gene_elements.tsv', 
+      type => 'text', ignore => ['^#']
+    },
+    {
+      output => 'results/cismapper2/tss_targets.tsv', 
+      reference => 'cismapper/Rxra_tss_targets.tsv', 
+      type => 'text', ignore => ['^#']
+    },
+    {
+      output => 'results/cismapper2/tss_elements.tsv', 
+      reference => 'cismapper/Rxra_tss_elements.tsv', 
+      type => 'text', ignore => ['^#']
+    },
+    {
+      output => 'results/cismapper2/cismapper.html', 
+      reference => 'cismapper/Rxra_cismapper.html', 
+      type => 'json', ignore => [
+        'data:(version|revision|release|cmd)',
+        'programs@.*:time'
+      ]
+    }
+  ],
+  'results/cismapper2'
+);
