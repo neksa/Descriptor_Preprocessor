@@ -75,12 +75,12 @@ def setup_meme_suite_meme():
 def setup_parse_extracts():
     prosite_input = paths_test.PROSITE_EXTRACT
     prosite_ref = paths_test.REF_PROSITE_EXTRACT_PNAME_CID
-    preprocess.parse_extracts('prosite', prosite_input, prosite_ref)
+    preprocess.parse_extract_prosite(prosite_input, prosite_ref)
     assert os.path.isfile(prosite_ref)
 
     ioncom_input = paths_test.IONCOM_EXTRACT
     ioncom_ref = paths_test.REF_IONCOM_EXTRACT_PNAME_CID
-    preprocess.parse_extracts('ioncom', ioncom_input, ioncom_ref)
+    preprocess.parse_extract_ioncom(ioncom_input, ioncom_ref)
     assert os.path.isfile(ioncom_ref)
 
 
@@ -107,16 +107,14 @@ def setup_find_motif():
     output_1 = paths_test.REF_FIND_MOTIF_1
     output_2 = paths_test.REF_FIND_MOTIF_2
     meme_folder = os.path.join(paths_test.DEBUG, 'meme_folder')
-    preprocess.find_motifs('meme',
-                     pname_cid_path=input_1,
-                     motif_len=13,
-                     ref_meme_txt=None,
-                     seq_file=seq_1,
-                     output=output_1,
-                     meme_folder=meme_folder,
-                     num_p=7)
+    preprocess.find_motifs_meme(pname_cid_path=input_1,
+                                seq_file=seq_1,
+                                motif_len=13,
+                                output=output_1,
+                                meme_folder=meme_folder,
+                                num_p=7)
     shutil.move(meme_folder, paths.TRASH)
-    preprocess.find_motifs('mast',
+    preprocess.find_motifs_mast('mast',
                            pname_cid_path=input_2, motif_len=13,
                      ref_meme_txt=paths_test.REF_MEME_TXT,
                            seq_file=seq_2,

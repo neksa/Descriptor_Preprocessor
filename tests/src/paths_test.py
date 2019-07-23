@@ -37,9 +37,9 @@ REF_FIND_MOTIF_1 = os.path.join(REF, 'find_motif_1.pkl')
 REF_FIND_MOTIF_2 = os.path.join(REF, 'find_motif_2.pkl')
 
 # TestRunAll
-REF_RUN_ALL_1 = os.path.join(REF, 'run_all_1.pkl')
-REF_RUN_ALL_2 = os.path.join(REF, 'run_all_2.pkl')
-REF_RUN_ALL_3 = os.path.join(REF, 'run_all_3.pkl')
+REF_RUN_PROSITE_MEME = os.path.join(REF, 'run_prosite_meme.pkl')
+REF_RUN_PROSITE_MAST = os.path.join(REF, 'run_prosite_mast.pkl')
+REF_RUN_IONCOM_MAST = os.path.join(REF, 'run_ioncom_meme.pkl')
 
 # TestMemeConvConversion
 ORIG_MEME_FOR_CONVERT = os.path.join(USER_INPUT, 'orig_meme.txt')

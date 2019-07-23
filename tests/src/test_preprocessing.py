@@ -68,49 +68,46 @@ class TestRunAll(unittest.TestCase):
         self.ioncom_input = paths_test.IONCOM_EXTRACT
         self.output = os.path.join(self.debug_folder, "output_1.pkl")
         self.ref_meme_txt = paths_test.REF_MEME_TXT
-        self.ref_output_1 = paths_test.REF_RUN_ALL_1
-        self.ref_output_2 = paths_test.REF_RUN_ALL_2
-        self.ref_output_3 = paths_test.REF_RUN_ALL_3
-
+        self.ref_prosite_meme = paths_test.REF_RUN_PROSITE_MEME
+        self.ref_prosite_mast = paths_test.REF_RUN_PROSITE_MAST
+        self.ref_ioncom_mast = paths_test.REF_RUN_IONCOM_MAST
         self.success = False
 
-    def test_run_all_1(self):
-        preprocess.run_all(process='meme',
-                     source='prosite',
-                     num_p=7,
-                     extract_path=self.prosite_input,
-                     output=self.output, storage_path=self.debug_folder)
+    def test_run_prosite_meme(self):
+        preprocess.run_prosite_meme(extract_path=self.prosite_input,
+                                    motif_len=13,
+                                    output=self.output,
+                                    num_p=7,
+                                    storage_path=self.debug_folder)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
-        with open(self.ref_output_1, 'rb') as file:
+        with open(self.ref_prosite_meme, 'rb') as file:
             ref_output = pickle.load(file)
         self.assertDictEqual(act_output, ref_output)
         self.success = True
 
-    def test_run_all_2(self):
-        preprocess.run_all(process='mast',
-                           source='prosite',
-                           extract_path=self.prosite_input,
-                           ref_meme_txt=self.ref_meme_txt,
-                           output=self.output,
-                           storage_path=self.debug_folder)
+    def test_run_prosite_mast(self):
+        preprocess.run_prosite_mast(extract_path=self.prosite_input,
+                                    motif_len=13,
+                                    ref_meme_txt=self.ref_meme_txt,
+                                    output=self.output,
+                                    storage_path=self.debug_folder)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
-        with open(self.ref_output_2, 'rb') as file:
+        with open(self.ref_prosite_mast, 'rb') as file:
             ref_output = pickle.load(file)
         self.assertDictEqual(act_output, ref_output)
         self.success = True
 
-    def test_run_all_3(self):
-        preprocess.run_all(process='mast',
-                           source='ioncom',
-                           extract_path=self.ioncom_input,
-                           ref_meme_txt=self.ref_meme_txt,
-                           output=self.output,
-                           storage_path=self.debug_folder)
+    def test_run_ioncom_mast(self):
+        preprocess.run_ioncom_mast(extract_path=self.ioncom_input,
+                                   motif_len=13,
+                                   ref_meme_txt=self.ref_meme_txt,
+                                   output=self.output,
+                                   storage_path=self.debug_folder)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
-        with open(self.ref_output_3, 'rb') as file:
+        with open(self.ref_ioncom_mast, 'rb') as file:
             ref_output = pickle.load(file)
         self.assertDictEqual(act_output, ref_output)
         self.success = True
@@ -126,16 +123,13 @@ class TestParseExtract(unittest.TestCase):
         self.prosite_input = paths_test.PROSITE_EXTRACT
         self.ioncom_input = paths_test.IONCOM_EXTRACT
         self.output = os.path.join(self.debug_folder, "output_1.pkl")
-
         self.prosite_ref = paths_test.REF_PROSITE_EXTRACT_PNAME_CID
         self.ioncom_ref = paths_test.REF_IONCOM_EXTRACT_PNAME_CID
-
         self.success = False
 
     def test_prosite(self):
-        preprocess.parse_extracts(source='prosite',
-                                  input_file_path=self.prosite_input,
-                                  pname_cid_path=self.output)
+        preprocess.parse_extract_prosite(input_file=self.prosite_input,
+                                         pname_cid_path=self.output)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
         with open(self.prosite_ref, 'rb') as file:
@@ -144,9 +138,8 @@ class TestParseExtract(unittest.TestCase):
         self.success = True
 
     def test_ioncom(self):
-        preprocess.parse_extracts(source='ioncom',
-                                  input_file_path=self.ioncom_input,
-                                  pname_cid_path=self.output)
+        preprocess.parse_extract_ioncom(input_file=self.ioncom_input,
+                                        pname_cid_path=self.output)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
         with open(self.ioncom_ref, 'rb') as file:
