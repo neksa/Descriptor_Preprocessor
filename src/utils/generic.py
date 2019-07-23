@@ -5,18 +5,14 @@ import logging
 import shutil
 import datetime
 
-def warn_if_exist(path, filetype='file', remove=True):
+def warn_if_exist(path, filetype='file'):
     assert filetype in ('file', 'folder')
     if filetype == 'file':
         if os.path.isfile(path):
             logging.warning(f"File in <{path}> exists. Replacing.")
-            if remove:
-                os.remove(path)
     else:
         if os.path.isdir(path):
             logging.warning(f"Folder in <{path}> exists. Replacing.")
-            if remove:
-                shutil.rmtree(path)
 
 def quit_if_missing(path, filetype='file'):
     assert filetype in ('file', 'folder')

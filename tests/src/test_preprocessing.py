@@ -12,7 +12,30 @@ from meme_suite import meme_interface
 from biopython_adapted import bio_interface
 
 
-class TestMemeSuite(unittest.TestCase):
+class TestMemeSuiteMast(unittest.TestCase):
+    def setUp(self):
+        self.debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
+        self.input_seqfile = paths_test.MEME_TEST_SEQ
+        self.input_memefile = paths_test.REF_MEME_TXT
+        self.output = os.path.join(self.debug_folder, "output_meme")
+        self.ref_output = paths_test.REF_MAST_DIAGRAMS
+        self.success = False
+
+    def test_mast(self):
+        meme_interface.run_mast(self.input_memefile, self.input_seqfile,
+                                self.output)
+        mast_txt_path = os.path.join(self.output, "mast.txt")
+        act_diagrams = bio_interface.parse_mast_file(mast_txt_path)
+        with open(self.ref_output, 'rb') as file:
+            ref_diagrams = pickle.load(file)
+        self.assertDictEqual(act_diagrams, ref_diagrams)
+        self.success = True
+
+    def tearDown(self):
+        if self.success:
+            pass  # shutil.rmtree(self.debug_folder)
+
+class TestMemeSuiteMeme(unittest.TestCase):
     def setUp(self):
         self.debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
         self.input_seqfile = paths_test.MEME_TEST_SEQ
@@ -30,12 +53,10 @@ class TestMemeSuite(unittest.TestCase):
         np.testing.assert_array_equal(act_counts, ref_counts)
         self.success = True
 
-    def test_mast(self):
-        pass
-
     def tearDown(self):
         if self.success:
-            shutil.rmtree(self.debug_folder)
+            pass
+            # shutil.rmtree(self.debug_folder)
 
 
 class TestFindCid(unittest.TestCase):
@@ -96,7 +117,8 @@ class TestRunAll(unittest.TestCase):
 
     def tearDown(self):
         if self.success:
-            shutil.rmtree(self.debug_folder)
+            pass
+            # shutil.rmtree(self.debug_folder)
 
 
 class TestParseExtract(unittest.TestCase):
@@ -135,7 +157,8 @@ class TestParseExtract(unittest.TestCase):
 
     def tearDown(self):
         if self.success:
-            shutil.rmtree(self.debug_folder)
+            pass
+            # shutil.rmtree(self.debug_folder)
 
 
 class TestCreateSeq(unittest.TestCase):
@@ -175,7 +198,8 @@ class TestCreateSeq(unittest.TestCase):
 
     def tearDown(self):
         if self.success:
-            shutil.rmtree(self.debug_folder)
+            pass
+            # shutil.rmtree(self.debug_folder)
 
 
 class TestFindMotif(unittest.TestCase):
@@ -226,5 +250,6 @@ class TestFindMotif(unittest.TestCase):
 
     def tearDown(self):
         if self.success:
-            shutil.rmtree(self.debug_folder)
+            pass
+            # shutil.rmtree(self.debug_folder)
 

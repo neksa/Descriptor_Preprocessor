@@ -33,7 +33,7 @@ def run_meme(fasta_filename, motif_len, meme_output, num_p=1,
     assert motif_len >= 1
     assert isinstance(motif_len, int)
     generic.quit_if_missing(fasta_filename)
-    generic.warn_if_exist(meme_output, filetype='folder', remove=True)
+    generic.warn_if_exist(meme_output, filetype='folder')
     command = f"{meme_exec} -w {motif_len} -p {num_p} -protein -nmotifs 1 " \
         f"-mod anr -oc {meme_output} {fasta_filename}"
     subprocess.run(command, shell=True)
@@ -49,7 +49,7 @@ def _test_successful_meme(meme_out):
 def run_mast(meme_txt, fasta_filename, mast_output, mast_exec=paths.MAST_EXEC):
     generic.quit_if_missing(meme_txt)
     generic.quit_if_missing(fasta_filename)
-    generic.warn_if_exist(mast_output, filetype='folder', remove=True)
+    generic.warn_if_exist(mast_output, filetype='folder')
     command = f"{mast_exec} -oc {mast_output} -mt 0.0001 {meme_txt} " \
         f"{fasta_filename}"
     subprocess.run(command, shell=True)

@@ -49,6 +49,7 @@ REF_MEME_FROM_CONV = os.path.join(REF, 'converted_meme.txt')
 
 # TestMemeSuite
 MEME_TEST_SEQ = os.path.join(USER_INPUT, 'meme_test_seq.fasta')
+MAST_TEST_DIAG = os.path.join(USER_INPUT, 'mast_test_diagram.txt')
 REF_MEME_COUNTS = os.path.join(USER_INPUT, 'meme_counts.pkl')
 REF_MAST_DIAGRAMS = os.path.join(USER_INPUT, 'mast_diagrams.pkl')
 

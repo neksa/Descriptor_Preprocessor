@@ -43,7 +43,21 @@ def setup_preprocessing():
     setup_run_all()
 
 def main2():
-    setup_meme_suite_meme()
+    setup_meme_suite_mast()
+
+
+def setup_meme_suite_mast():
+    debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
+    mast_output_folder = os.path.join(debug_folder, "output_mast")
+    input_seqfile = paths_test.MEME_TEST_SEQ
+    input_memefile = paths_test.REF_MEME_TXT
+    diagrams_output = paths_test.REF_MAST_DIAGRAMS
+
+    meme_interface.run_mast(input_memefile, input_seqfile, mast_output_folder)
+    mast_txt_path = os.path.join(mast_output_folder, "mast.txt")
+    diagrams = bio_interface.parse_mast_file(mast_txt_path)
+    with open(diagrams_output, 'wb') as file:
+        pickle.dump(diagrams, file, -1)
 
 def setup_meme_suite_meme():
     debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
@@ -56,7 +70,7 @@ def setup_meme_suite_meme():
     counts = bio_interface.parse_meme_file(meme_txt_path)
     with open(counts_output, 'wb') as file:
         pickle.dump(counts, file, -1)
-    shutil.rmtree(debug_folder)
+    # shutil.rmtree(debug_folder)
 
 
 def setup_parse_extracts():
