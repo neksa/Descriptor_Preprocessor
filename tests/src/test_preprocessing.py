@@ -3,6 +3,7 @@ import pickle
 import unittest
 
 import numpy as np
+import pandas as pd
 
 from biopython_adapted import bio_interface
 import preprocess
@@ -57,10 +58,6 @@ class TestMemeSuiteMeme(unittest.TestCase):
             pass
 
 
-class TestFindCid(unittest.TestCase):
-    pass
-
-
 class TestRunAll(unittest.TestCase):
     def setUp(self):
         self.debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
@@ -83,7 +80,21 @@ class TestRunAll(unittest.TestCase):
             act_output = pickle.load(file)
         with open(self.ref_prosite_meme, 'rb') as file:
             ref_output = pickle.load(file)
-        self.assertDictEqual(act_output, ref_output)
+        self.assertEqual(len(ref_output), len(act_output))
+        for pdb_info, (ref_df1, ref_df2, ref_df3) in ref_output.items():
+            act_df1, act_df2, act_df3 = act_output[pdb_info]
+            if ref_df1 is None:
+                self.assertTrue(act_df1 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df1, act_df1)
+            if ref_df2 is None:
+                self.assertTrue(act_df2 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df2, act_df2)
+            if ref_df3 is None:
+                self.assertTrue(act_df3 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df3, act_df3)
         self.success = True
 
     def test_run_prosite_mast(self):
@@ -96,7 +107,21 @@ class TestRunAll(unittest.TestCase):
             act_output = pickle.load(file)
         with open(self.ref_prosite_mast, 'rb') as file:
             ref_output = pickle.load(file)
-        self.assertDictEqual(act_output, ref_output)
+        self.assertEqual(len(ref_output), len(act_output))
+        for pdb_info, (ref_df1, ref_df2, ref_df3) in ref_output.items():
+            act_df1, act_df2, act_df3 = act_output[pdb_info]
+            if ref_df1 is None:
+                self.assertTrue(act_df1 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df1, act_df1)
+            if ref_df2 is None:
+                self.assertTrue(act_df2 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df2, act_df2)
+            if ref_df3 is None:
+                self.assertTrue(act_df3 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df3, act_df3)
         self.success = True
 
     def test_run_ioncom_mast(self):
@@ -109,7 +134,21 @@ class TestRunAll(unittest.TestCase):
             act_output = pickle.load(file)
         with open(self.ref_ioncom_mast, 'rb') as file:
             ref_output = pickle.load(file)
-        self.assertDictEqual(act_output, ref_output)
+        self.assertEqual(len(ref_output), len(act_output))
+        for pdb_info, (ref_df1, ref_df2, ref_df3) in ref_output.items():
+            act_df1, act_df2, act_df3 = act_output[pdb_info]
+            if ref_df1 is None:
+                self.assertTrue(act_df1 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df1, act_df1)
+            if ref_df2 is None:
+                self.assertTrue(act_df2 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df2, act_df2)
+            if ref_df3 is None:
+                self.assertTrue(act_df3 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df3, act_df3)
         self.success = True
 
     def tearDown(self):
@@ -209,15 +248,14 @@ class TestFindMotif(unittest.TestCase):
 
         self.success = False
 
-    def test_find_motif_1(self):
-        preprocess.find_motifs('meme',
-                               13,
-                               pname_cid_path=self.input_1,
-                               ref_meme_txt=None,
-                               seq_file=self.seq_1,
-                               output=self.output,
-                               meme_folder=self.meme_folder,
-                               num_p=7)
+    def test_find_motif_meme(self):
+        preprocess.find_motifs_meme(pname_cid_path=self.input_1,
+                                    seq_file=self.seq_1,
+                                    motif_len=13,
+                                    output=self.output,
+                                    meme_folder=self.meme_folder,
+                                    num_p=7)
+
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
         with open(self.ref_output_1, 'rb') as file:
@@ -226,15 +264,14 @@ class TestFindMotif(unittest.TestCase):
         self.assertDictEqual(act_output, ref_output)
         self.success = True
 
-    def test_find_motif_2(self):
-        preprocess.find_motifs('mast',
-                               13,
-                               pname_cid_path=self.input_2,
-                               ref_meme_txt=self.meme_txt,
-                               seq_file=self.seq_2,
-                               output=self.output,
-                               meme_folder=self.meme_folder,
-                               num_p=7)
+    def test_find_motif_mast(self):
+        preprocess.find_motifs_mast(pname_cid_path=self.input_2,
+                                    seq_file=self.seq_2,
+                                    ref_meme_txt=self.meme_txt,
+                                    motif_len=13,
+                                    output=self.output,
+                                    meme_folder=self.meme_folder)
+
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
         with open(self.ref_output_2, 'rb') as file:

@@ -39,10 +39,12 @@ from utils import generic, logs
 def run_prosite_mast(extract_path, motif_len, ref_meme_txt, output,
                      pdb_folder=paths.PDB_FOLDER, storage_path=None):
     """
-    :param motif_len: 13
     :param extract_path: paths.IONCOM_EXTRACT
+    :param motif_len: 13
     :param ref_meme_txt: paths.REF_MEME_TXT
     :param output: paths.PID_PDB_MAP
+    :param pdb_folder:
+    :param storage_path:
     :return:
     """
     if storage_path is None:
@@ -73,12 +75,8 @@ def run_prosite_meme(extract_path, motif_len, output, num_p=7,
                      pdb_folder=paths.PDB_FOLDER, storage_path=None):
     """
     :param extract_path: paths.PROSITE_EXTRACT
-    :param motif_len:
+    :param motif_len: 13
     :param output: paths.PID_PDB_MAP
-    :param num_p:
-    :param pdb_folder:
-    :param storage_path:
-    :return:
     """
     assert isinstance(num_p, int)
     assert num_p >= 1
@@ -110,15 +108,11 @@ def run_prosite_meme(extract_path, motif_len, output, num_p=7,
 def run_ioncom_mast(extract_path, motif_len, ref_meme_txt, output,
                     pdb_folder=paths.PDB_FOLDER, storage_path=None):
     """
-    :param motif_len: 13
     :param extract_path: paths.IONCOM_EXTRACT
-    :param pdb_folder:
+    :param motif_len: 13
     :param ref_meme_txt: paths.REF_MEME_TXT
     :param output: paths.PID_PDB_MAP
-    :param storage_path:
-    :return:
     """
-
     if storage_path is None:
         pname_cid_path = paths.PNAME_CID
         seq_path = paths.FULL_SEQS
@@ -137,8 +131,8 @@ def run_ioncom_mast(extract_path, motif_len, ref_meme_txt, output,
     create_seq(pname_cid_path, seq_path, pdb_folder)
 
     filter_seq_file(seq_path, threshold=31)
-    find_motifs_mast(motif_len, pname_cid_path, seq_path, motif_pos_path,
-                     ref_meme_txt, meme_folder)
+    find_motifs_mast(pname_cid_path, seq_path, ref_meme_txt, motif_len,
+                     motif_pos_path, meme_folder)
     load_pdb_info(motif_pos_path, output)
 
 
@@ -148,8 +142,6 @@ def load_pdb_info(motif_pos_path, output):
     pid_pdb_map = loaders.load_pdb_info(motif_pos)
     with open(output, 'wb') as file:
         pickle.dump(pid_pdb_map, file, -1)
-
-
 
 
 
@@ -193,8 +185,7 @@ def load_pdb_info(motif_pos_path, output):
 def parse_extract_ioncom(input_file, pname_cid_path):
     """
     :param input_file: paths.IONCOM_EXTRACT
-    :param pname_cid_path:
-    :return:
+    :param pname_cid_path: paths.PNAME_CID
     """
     generic.quit_if_missing(input_file)
     pname_cid_map = extract_parser.parse_ioncom(input_file)
@@ -206,8 +197,7 @@ def parse_extract_ioncom(input_file, pname_cid_path):
 def parse_extract_prosite(input_file, pname_cid_path):
     """
     :param input_file: paths.PROSITE_EXTRACT
-    :param pname_cid_path:
-    :return:
+    :param pname_cid_path: paths.PNAME_CID
     """
     generic.quit_if_missing(input_file)
     pname_cid_map = extract_parser.parse_prosite(input_file,
@@ -218,36 +208,9 @@ def parse_extract_prosite(input_file, pname_cid_path):
         pickle.dump(pname_cid_map, file, -1)
 
 
-# def parse_extracts(source, input_file_path, pname_cid_path):
-#     """
-#     :param source: 'prosite'
-#     :param input_file_path: extract_path = paths.IONCOM_EXTRACT
-#     :param pname_cid_path: paths.PNAME_CID
-#     :return: pname_cid_path
-#     """
-#     assert source in ('prosite', 'ioncom')
-#     if input_file_path == None:
-#         if source == 'prosite':
-#             input_file_path = paths.PROSITE_EXTRACT
-#         else:
-#             input_file_path = paths.IONCOM_EXTRACT
-#     generic.quit_if_missing(input_file_path)
-#     if source == 'prosite':
-#         pname_cid_map = extract_parser.parse_prosite(input_file_path,
-#                                                      prosite_pdb_list.pdb_list)
-#     else:
-#         pname_cid_map = extract_parser.parse_ioncom(input_file_path)
-#     _test_seq_cid_map(pname_cid_map)
-#     generic.warn_if_exist(pname_cid_path)
-#     with open(pname_cid_path, 'wb') as file:
-#         pickle.dump(pname_cid_map, file, -1)
-
-
 def download_pdb(pname_cid_path, pdb_folder=paths.PDB_FOLDER):
     """
     :param pname_cid_path: paths.PNAME_CID
-    :param pdb_folder: paths.PDB_FOLDER
-    :return:
     """
     generic.quit_if_missing(pname_cid_path)
     with open(pname_cid_path, 'rb') as file:
@@ -263,7 +226,6 @@ def download_pdb(pname_cid_path, pdb_folder=paths.PDB_FOLDER):
 def trim_pnames_based_on_pdb(pname_cid_path, pdb_folder=paths.PDB_FOLDER):
     """
     :param pname_cid_path: paths.PNAME_CID
-    :param pdb_folder: paths.PDB_FOLDER
     """
     with open(pname_cid_path, 'rb') as file:
         pname_cid_map = pickle.load(file)
@@ -277,11 +239,8 @@ def trim_pnames_based_on_pdb(pname_cid_path, pdb_folder=paths.PDB_FOLDER):
 
 def create_seq(pname_cid_path, seq_path, pdb_folder=paths.PDB_FOLDER):
     """
-
     :param pname_cid_path: paths.PNAME_CID
     :param seq_path: paths.FULL_SEQS
-    :param pdb_folder:
-    :return: seq_path
     """
     generic.quit_if_missing(pname_cid_path)
     with open(pname_cid_path, 'rb') as file:
@@ -298,8 +257,6 @@ def create_seq(pname_cid_path, seq_path, pdb_folder=paths.PDB_FOLDER):
 def filter_seq_file(seq_path, threshold=30):
     """
     :param seq_path: paths.FULL_SEQS
-    :param threshold: 30
-    :return: seq_path
     """
     generic.quit_if_missing(seq_path)
     filter_seqs.delete_short_seqs(seq_path, threshold)
@@ -308,15 +265,10 @@ def filter_seq_file(seq_path, threshold=30):
 def find_motifs_meme(pname_cid_path, seq_file, motif_len, output,
                      meme_folder=paths.MEME_MAST_FOLDER, num_p=1):
     """
-    :param process: 'meme'
-    :param motif_len: 13
     :param pname_cid_path: paths.PNAME_CID
-    :param ref_meme_txt:
-    :param mast_meme_folder:
-    :param seq_file:
-    :param output:
-    :param num_p:
-    :return:
+    :param seq_file: paths.FULL_SEQS
+    :param motif_len: 13
+    :param output: paths.MOTIF_POS
     """
     assert motif_len >= 1
     assert isinstance(motif_len, int)
@@ -335,15 +287,11 @@ def find_motifs_meme(pname_cid_path, seq_file, motif_len, output,
 def find_motifs_mast(pname_cid_path, seq_file, ref_meme_txt, motif_len,
                      output, meme_folder=paths.MEME_MAST_FOLDER):
     """
-    :param process: 'meme'
-    :param motif_len: 13
     :param pname_cid_path: paths.PNAME_CID
-    :param ref_meme_txt:
-    :param mast_meme_folder:
-    :param seq_file:
-    :param output:
-    :param num_p:
-    :return:
+    :param seq_file: paths.FULL_SEQS
+    :param ref_meme_txt: paths.REF_MEME_TXT
+    :param motif_len: 13
+    :param output: paths.MOTIF_POS
     """
     assert motif_len >= 1
     assert isinstance(motif_len, int)
@@ -357,36 +305,6 @@ def find_motifs_mast(pname_cid_path, seq_file, ref_meme_txt, motif_len,
     generic.warn_if_exist(output)
     with open(output, 'wb') as file:
         pickle.dump(motif_pos, file, -1)
-
-
-# def find_motifs(process, motif_len, pname_cid_path, seq_file, output,
-#                 ref_meme_txt=None,
-#                 meme_folder=paths.MEME_MAST_FOLDER, num_p=1):
-#     """
-#     :param process: 'meme'
-#     :param motif_len: 13
-#     :param pname_cid_path: paths.PNAME_CID
-#     :param ref_meme_txt:
-#     :param mast_meme_folder:
-#     :param seq_file:
-#     :param output:
-#     :param num_p:
-#     :return:
-#     """
-#     assert motif_len >= 1
-#     assert isinstance(motif_len, int)
-#     assert process in ('mast', 'meme')
-#     generic.quit_if_missing(pname_cid_path)
-#     with open(pname_cid_path, 'rb') as file:
-#         pname_cid_map = pickle.load(file)
-#     _test_seq_cid_map(pname_cid_map)
-#     motif_pos = motif_finder.find(pname_cid_map, motif_len, process=process,
-#                                   num_p=num_p, ref_meme_txt=ref_meme_txt,
-#                                   meme_folder=meme_folder,
-#                                   seq_file=seq_file)
-#     generic.warn_if_exist(output)
-#     with open(output, 'wb') as file:
-#         pickle.dump(motif_pos, file, -1)
 
 
 def _test_seq_cid_map(seq_cid_map):

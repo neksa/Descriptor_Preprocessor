@@ -54,28 +54,6 @@ def find_mast(pname_cid_map, seq_file, ref_meme_txt, motif_len, meme_folder):
     motif_pos = _assemble_motif_pos(seq_motif_map, pname_cid_map)
     return motif_pos
 
-#
-# def find(pname_cid_map, motif_len, process,
-#          num_p, ref_meme_txt, meme_folder, seq_file):
-#     assert motif_len >= 1
-#     assert isinstance(motif_len, int)
-#     assert process in ('meme', 'mast')
-#     if process == 'mast':
-#         assert isinstance(ref_meme_txt, str)
-#         assert os.path.isfile(ref_meme_txt)
-#     if process == 'meme':
-#         meme_interface.run_meme(seq_file, motif_len, meme_folder, num_p)
-#         meme_txt_path = os.path.join(meme_folder, 'meme.txt')
-#         seq_motif_map = meme_interface.extract_motifs_meme(meme_txt_path,
-#                                                            motif_len)
-#     else:
-#         meme_interface.run_mast(ref_meme_txt, seq_file, meme_folder)
-#         mast_txt_path = os.path.join(meme_folder, 'mast.txt')
-#         seq_motif_map = meme_interface.extract_motifs_mast(mast_txt_path,
-#                                                            motif_len)
-#     seq_motif_map = _delete_gapped_motifs(seq_motif_map, seq_file)
-#     motif_pos = _assemble_motif_pos(seq_motif_map, pname_cid_map)
-#     return motif_pos
 
 def _delete_gapped_motifs(prev_map, fasta_fname):
     seq_motif_map = dict()
@@ -102,6 +80,7 @@ def _delete_gapped_motifs(prev_map, fasta_fname):
                 if screened_motif_pos:
                     seq_motif_map[pname] = screened_motif_pos
     return seq_motif_map
+
 
 def _build_seq_motif_map(process, tmp_output_folder, seq_file, motif_len,
                          num_p=1,

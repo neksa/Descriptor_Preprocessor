@@ -36,15 +36,16 @@ from biopython_adapted import bio_interface
 from config import paths
 
 
-# Preprocessing
-def setup_preprocessing():
+def setup_all():
     setup_parse_extracts()
     setup_create_seq()
     setup_find_motif()
     setup_run_all()
-
-def main2():
     setup_meme_suite_mast()
+    setup_meme_suite_meme()
+    setup_meme_to_conv()
+    setup_conv_to_meme()
+
 
 def setup_meme_suite_mast():
     debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
@@ -106,7 +107,8 @@ def setup_find_motif():
     seq_2 = paths_test.REF_CREATE_SEQ_2
     output_1 = paths_test.REF_FIND_MOTIF_1
     output_2 = paths_test.REF_FIND_MOTIF_2
-    meme_folder = os.path.join(paths_test.DEBUG, 'meme_folder')
+    meme_folder = os.path.join(paths_test.DEBUG, 'meme_folder',
+                               generic.get_timestamp())
     preprocess.find_motifs_meme(pname_cid_path=input_1,
                                 seq_file=seq_1,
                                 motif_len=13,
@@ -114,12 +116,16 @@ def setup_find_motif():
                                 meme_folder=meme_folder,
                                 num_p=7)
     shutil.move(meme_folder, paths.TRASH)
-    preprocess.find_motifs_mast('mast',
-                           pname_cid_path=input_2, motif_len=13,
-                     ref_meme_txt=paths_test.REF_MEME_TXT,
-                           seq_file=seq_2,
-                           output=output_2, meme_folder=meme_folder,
-                           num_p=7)
+
+    meme_folder = os.path.join(paths_test.DEBUG, 'meme_folder',
+                               generic.get_timestamp())
+
+    preprocess.find_motifs_mast(pname_cid_path=input_2,
+                                seq_file=seq_2,
+                                ref_meme_txt=paths_test.REF_MEME_TXT,
+                                motif_len=13,
+                                output=output_2,
+                                meme_folder=meme_folder)
     shutil.move(meme_folder, paths.TRASH)
     assert os.path.isfile(output_1)
     assert os.path.isfile(output_2)
@@ -128,26 +134,23 @@ def setup_find_motif():
 def setup_run_all():
     input_1 = paths_test.PROSITE_EXTRACT
     input_2 = paths_test.IONCOM_EXTRACT
-    output_1 = paths_test.REF_RUN_ALL_1
-    output_2 = paths_test.REF_RUN_ALL_2
-    output_3 = paths_test.REF_RUN_ALL_3
+    output_1 = paths_test.REF_RUN_PROSITE_MEME
+    output_2 = paths_test.REF_RUN_PROSITE_MAST
+    output_3 = paths_test.REF_RUN_IONCOM_MAST
     ref_meme_txt = paths_test.REF_MEME_TXT
 
-    preprocess.run_all(process='meme',
-                 source='prosite',
-                 num_p=7,
-                 extract_path=input_1,
-                 output=output_1)
-    preprocess.run_all(process='mast',
-                 source='prosite',
-                 extract_path=input_1,
-                 ref_meme_txt=ref_meme_txt,
-                 output=output_2)
-    preprocess.run_all(process='mast',
-                 source='ioncom',
-                 extract_path=input_2,
-                 ref_meme_txt=ref_meme_txt,
-                 output=output_3)
+    preprocess.run_prosite_meme(extract_path=input_1,
+                                motif_len=13,
+                                output=output_1,
+                                num_p=7)
+    preprocess.run_prosite_mast(extract_path=input_1,
+                                motif_len=13,
+                                ref_meme_txt=ref_meme_txt,
+                                output=output_2)
+    preprocess.run_ioncom_mast(extract_path=input_2,
+                               motif_len=13,
+                               ref_meme_txt=ref_meme_txt,
+                               output=output_3)
     assert os.path.isfile(output_1)
     assert os.path.isfile(output_2)
     assert os.path.isfile(output_3)
@@ -183,11 +186,6 @@ def setup_conv_to_meme():
     conv_interface.convert_conv_to_meme(input_matrix, input_composition,
                                         ref_meme)
 
-def setup_meme_conv_converters():
-    setup_meme_to_conv()
-    setup_conv_to_meme()
-
 
 if __name__ == "__main__":
-    # setup_meme_conv_converters()
-    main2()
+    setup_all()
