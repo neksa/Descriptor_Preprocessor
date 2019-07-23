@@ -25,7 +25,6 @@ def quit_if_missing(path, filetype='file'):
             logging.error(f"Folder in <{path}> missing, exiting.")
             raise Exception
 
-<<<<<<< HEAD
 
 def setup_debug_folder(global_debug_folder=None):
     quit_if_missing(global_debug_folder, filetype="folder")
@@ -55,8 +54,6 @@ def download_pdb_files(seq_cid_map,
                     # for line in contents:
                     #     output_file.write(line.decode("utf-8"))
 
-=======
->>>>>>> 33caafc687439f5b1af73ab3076d3c5730ce9486
 _aa_index = [('ALA', 'A'),
              ('CYS', 'C'),
              ('ASP', 'D'),

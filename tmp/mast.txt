@@ -1,0 +1,884 @@
+********************************************************************************
+MAST - Motif Alignment and Search Tool
+********************************************************************************
+	MAST version 5.0.5 (Release date: Mon Mar 18 20:12:19 2019 -0700)
+
+	For further information on how to interpret these results please access http://meme-suite.org/.
+	To get a copy of the MAST software please access http://meme-suite.org.
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+	If you use this program in your research, please cite:
+
+	Timothy L. Bailey and Michael Gribskov,
+	"Combining evidence using p-values: application to sequence homology
+	searches", Bioinformatics, 14(48-54), 1998.
+********************************************************************************
+
+
+********************************************************************************
+DATABASE AND MOTIFS
+********************************************************************************
+	DATABASE meme_test_seq.fasta (peptide)
+	Last updated on Tue Jul 23 13:15:08 2019
+	Database contains 41 sequences, 17616 residues
+
+	MOTIFS meme.txt (peptide)
+	MOTIF ID                             ALT ID WIDTH BEST POSSIBLE MATCH
+	----- ------------------------------ ------ ----- -------------------
+	    1 HRSGETEDTTIADLAVALNAGQIKTGAPCR MEME-1    30 HRSGETEDTFIADLAVGLCCGQIKTGSPCR
+
+	Random model letter frequencies (from non-redundant database):
+	A 0.073 C 0.018 D 0.052 E 0.062 F 0.040 G 0.069 H 0.022 I 0.056 K 0.058 
+	L 0.092 M 0.023 N 0.046 P 0.051 Q 0.041 R 0.052 S 0.074 T 0.059 V 0.064 
+	W 0.013 Y 0.033 
+********************************************************************************
+
+
+********************************************************************************
+SECTION I: HIGH-SCORING SEQUENCES
+********************************************************************************
+	- Each of the following 40 sequences has E-value less than 10.
+	- The E-value of a sequence is the expected number of sequences
+	  in a random database of the same size that would match the motifs as
+	  well as the sequence does and is equal to the combined p-value of the
+	  sequence times the number of sequences in the database.
+	- The combined p-value of a sequence measures the strength of the
+	  match of the sequence to all the motifs and is calculated by
+	    o finding the score of the single best match of each motif
+	      to the sequence (best matches may overlap),
+	    o calculating the sequence p-value of each score,
+	    o forming the product of the p-values,
+	    o taking the p-value of the product.
+	- The sequence p-value of a score is defined as the
+	  probability of a random sequence of the same length containing
+	  some match with as good or better a score.
+	- The score for the match of a position in a sequence to a motif
+	  is computed by by summing the appropriate entry from each column of
+	  the position-dependent scoring matrix that represents the motif.
+	- Sequences shorter than one or more of the motifs are skipped.
+	- The table is sorted by increasing E-value.
+********************************************************************************
+
+SEQUENCE NAME                      DESCRIPTION                   E-VALUE  LENGTH
+-------------                      -----------                   -------- ------
+Uniprot|P19140|EFDID|116|FULL      SEQUENCE full                  7.6e-33    434
+Uniprot|P06733|EFDID|117|FULL      SEQUENCE full                  7.6e-33    434
+Uniprot|Q9W7L0|EFDID|118|FULL      SEQUENCE full                  7.6e-33    434
+Uniprot|P17183|EFDID|122|FULL      SEQUENCE full                  7.6e-33    434
+Uniprot|Q27877|EFDID|148|FULL      SEQUENCE full                  7.6e-33    434
+Uniprot|P15429|EFDID|121|FULL      SEQUENCE full                  1.5e-30    434
+Uniprot|Q43321|EFDID|124|FULL      SEQUENCE full                  3.2e-30    440
+Uniprot|P42896|EFDID|147|FULL      SEQUENCE full                  3.3e-30    445
+Uniprot|A4QCV0|EFDID|132|FULL      SEQUENCE full                  4.2e-30    425
+Uniprot|P26301|EFDID|113|FULL      SEQUENCE full                  6.8e-30    446
+Uniprot|Q27727|EFDID|144|FULL      SEQUENCE full                    1e-29    446
+Uniprot|P00924|EFDID|114|FULL      SEQUENCE full                  1.4e-29    437
+Uniprot|Q9U615|EFDID|138|FULL      SEQUENCE full                  3.1e-29    439
+Uniprot|P75189|EFDID|141|FULL      SEQUENCE full                  4.7e-29    456
+Uniprot|P77972|EFDID|151|FULL      SEQUENCE full                  5.8e-29    432
+Uniprot|Q60173|EFDID|139|FULL      SEQUENCE full                  8.3e-29    423
+Uniprot|Q9F3P9|EFDID|115|FULL      SEQUENCE full                  8.5e-29    434
+Uniprot|P30575|EFDID|112|FULL      SEQUENCE full                  1.1e-28    440
+Uniprot|O51312|EFDID|127|FULL      SEQUENCE full                  1.6e-28    433
+Uniprot|Q8R967|EFDID|152|FULL      SEQUENCE full                  1.8e-28    429
+Uniprot|O32513|EFDID|133|FULL      SEQUENCE full                  2.6e-28    434
+Uniprot|Q8Y0B5|EFDID|146|FULL      SEQUENCE full                  7.5e-28    427
+Uniprot|Q9JU46|EFDID|142|FULL      SEQUENCE full                  1.1e-27    428
+Uniprot|P64075|EFDID|137|FULL      SEQUENCE full                  1.9e-27    430
+Uniprot|P42040|EFDID|131|FULL      SEQUENCE full                  2.7e-27    440
+Uniprot|Q9Z7A6|EFDID|130|FULL      SEQUENCE full                  3.7e-27    428
+Uniprot|Q12560|EFDID|126|FULL      SEQUENCE full                  4.8e-27    438
+Uniprot|P0DM31|EFDID|134|FULL      SEQUENCE full                  5.3e-27    432
+Uniprot|O85348|EFDID|143|FULL      SEQUENCE full                  5.8e-27    428
+Uniprot|P43806|EFDID|135|FULL      SEQUENCE full                  5.9e-27    436
+Uniprot|Q9XDS7|EFDID|149|FULL      SEQUENCE full                  9.2e-27    434
+Uniprot|O66778|EFDID|125|FULL      SEQUENCE full                  1.2e-26    426
+Uniprot|Q8K9E0|EFDID|128|FULL      SEQUENCE full                  1.7e-26    434
+Uniprot|P42448|EFDID|129|FULL      SEQUENCE full                  3.9e-26    414
+Uniprot|Q9CIT0|EFDID|120|FULL      SEQUENCE full                    3e-25    422
+Uniprot|Q9ZMS6|EFDID|136|FULL      SEQUENCE full                  1.6e-24    426
+Uniprot|O52191|EFDID|150|FULL      SEQUENCE full                  8.5e-24    422
+Uniprot|Q9Y927|EFDID|123|FULL      SEQUENCE full                    1e-23    432
+Uniprot|O26149|EFDID|140|FULL      SEQUENCE full                  2.9e-19    416
+Uniprot|Q8ZYE7|EFDID|145|FULL      SEQUENCE full                    1e-16    419
+
+********************************************************************************
+
+
+
+********************************************************************************
+SECTION II: MOTIF DIAGRAMS
+********************************************************************************
+	- The ordering and spacing of all non-overlapping motif occurrences
+	  are shown for each high-scoring sequence listed in Section I.
+	- A motif occurrence is defined as a position in the sequence whose
+	  match to the motif has POSITION p-value less than 0.0001.
+	- The POSITION p-value of a match is the probability of
+	  a single random subsequence of the length of the motif
+	  scoring at least as well as the observed match.
+	- For each sequence, all motif occurrences are shown unless there
+	  are overlaps.  In that case, a motif occurrence is shown only if its
+	  p-value is less than the product of the p-values of the other
+	  (lower-numbered) motif occurrences that it overlaps.
+	- The table also shows the E-value of each sequence.
+	- Spacers and motif occurences are indicated by
+	   o -d-    `d' residues separate the end of the preceding motif 
+		    occurrence and the start of the following motif occurrence
+	   o [n]  occurrence of motif `n' with p-value less than 0.0001.
+********************************************************************************
+
+SEQUENCE NAME                      E-VALUE   MOTIF DIAGRAM
+-------------                      --------  -------------
+Uniprot|P19140|EFDID|116|FULL       7.6e-33  370-[1]-34
+Uniprot|P06733|EFDID|117|FULL       7.6e-33  370-[1]-34
+Uniprot|Q9W7L0|EFDID|118|FULL       7.6e-33  370-[1]-34
+Uniprot|P17183|EFDID|122|FULL       7.6e-33  370-[1]-34
+Uniprot|Q27877|EFDID|148|FULL       7.6e-33  371-[1]-33
+Uniprot|P15429|EFDID|121|FULL       1.5e-30  370-[1]-34
+Uniprot|Q43321|EFDID|124|FULL       3.2e-30  375-[1]-35
+Uniprot|P42896|EFDID|147|FULL       3.3e-30  380-[1]-35
+Uniprot|A4QCV0|EFDID|132|FULL       4.2e-30  361-[1]-34
+Uniprot|P26301|EFDID|113|FULL       6.8e-30  381-[1]-35
+Uniprot|Q27727|EFDID|144|FULL         1e-29  383-[1]-33
+Uniprot|P00924|EFDID|114|FULL       1.4e-29  373-[1]-34
+Uniprot|Q9U615|EFDID|138|FULL       3.1e-29  376-[1]-33
+Uniprot|P75189|EFDID|141|FULL       4.7e-29  389-[1]-37
+Uniprot|P77972|EFDID|151|FULL       5.8e-29  368-[1]-34
+Uniprot|Q60173|EFDID|139|FULL       8.3e-29  362-[1]-31
+Uniprot|Q9F3P9|EFDID|115|FULL       8.5e-29  372-[1]-32
+Uniprot|P30575|EFDID|112|FULL       1.1e-28  376-[1]-34
+Uniprot|O51312|EFDID|127|FULL       1.6e-28  368-[1]-35
+Uniprot|Q8R967|EFDID|152|FULL       1.8e-28  365-[1]-34
+Uniprot|O32513|EFDID|133|FULL       2.6e-28  364-[1]-40
+Uniprot|Q8Y0B5|EFDID|146|FULL       7.5e-28  364-[1]-33
+Uniprot|Q9JU46|EFDID|142|FULL       1.1e-27  364-[1]-34
+Uniprot|P64075|EFDID|137|FULL       1.9e-27  366-[1]-34
+Uniprot|P42040|EFDID|131|FULL       2.7e-27  376-[1]-34
+Uniprot|Q9Z7A6|EFDID|130|FULL       3.7e-27  362-[1]-36
+Uniprot|Q12560|EFDID|126|FULL       4.8e-27  374-[1]-34
+Uniprot|P0DM31|EFDID|134|FULL       5.3e-27  367-[1]-35
+Uniprot|O85348|EFDID|143|FULL       5.8e-27  364-[1]-34
+Uniprot|P43806|EFDID|135|FULL       5.9e-27  370-[1]-36
+Uniprot|Q9XDS7|EFDID|149|FULL       9.2e-27  370-[1]-34
+Uniprot|O66778|EFDID|125|FULL       1.2e-26  362-[1]-34
+Uniprot|Q8K9E0|EFDID|128|FULL       1.7e-26  370-[1]-34
+Uniprot|P42448|EFDID|129|FULL       3.9e-26  359-[1]-25
+Uniprot|Q9CIT0|EFDID|120|FULL         3e-25  364-[1]-28
+Uniprot|Q9ZMS6|EFDID|136|FULL       1.6e-24  365-[1]-31
+Uniprot|O52191|EFDID|150|FULL       8.5e-24  364-[1]-28
+Uniprot|Q9Y927|EFDID|123|FULL         1e-23  367-[1]-35
+Uniprot|O26149|EFDID|140|FULL       2.9e-19  360-[1]-26
+Uniprot|Q8ZYE7|EFDID|145|FULL         1e-16  361-[1]-28
+
+********************************************************************************
+
+
+
+********************************************************************************
+SECTION III: ANNOTATED SEQUENCES
+********************************************************************************
+	- The positions and p-values of the non-overlapping motif occurrences
+	  are shown above the actual sequence for each of the high-scoring
+	  sequences from Section I.
+	- A motif occurrence is defined as a position in the sequence whose
+	  match to the motif has POSITION p-value less than 0.0001 as 
+	  defined in Section II.
+	- For each sequence, the first line specifies the name of the sequence.
+	- The second (and possibly more) lines give a description of the 
+	  sequence.
+	- Following the description line(s) is a line giving the length, 
+	  combined p-value, and E-value of the sequence as defined in Section I.
+	- The next line reproduces the motif diagram from Section II.
+	- The entire sequence is printed on the following lines.
+	- Motif occurrences are indicated directly above their positions in the
+	  sequence on lines showing
+	   o the motif number of the occurrence,
+	   o the position p-value of the occurrence,
+	   o the best possible match to the motif, and
+	   o columns whose match to the motif has a positive score (indicated 
+	     by a plus sign).
+********************************************************************************
+
+
+Uniprot|P19140|EFDID|116|FULL
+  SEQUENCE full
+  LENGTH = 434  COMBINED P-VALUE = 1.85e-34  E-VALUE =  7.6e-33
+  DIAGRAM: 370-[1]-34
+
+                                                                           [1]
+                                                                           4.6e-
+                                                                           HRSGE
+                                                                           +++++
+301  WGAWKKFTGSVGIQVVGDDLTVTNPKRIAKAVEEKACNCLLLKVNQIGSVTESLQACKLAQSNGWGVMVSHRSGE
+
+     
+     37
+     TEDTFIADLAVGLCCGQIKTGSPCR
+     +++++++++++++++++++++++++
+376  TEDTFIADLVVGLCTGQIKTGAPCRSERLAKYNQLLRIEEELGSKARFAGRNFRNPRIN
+
+
+Uniprot|P06733|EFDID|117|FULL
+  SEQUENCE full
+  LENGTH = 434  COMBINED P-VALUE = 1.85e-34  E-VALUE =  7.6e-33
+  DIAGRAM: 370-[1]-34
+
+                                                                           [1]
+                                                                           4.6e-
+                                                                           HRSGE
+                                                                           +++++
+301  WGAWQKFTASAGIQVVGDDLTVTNPKRIAKAVNEKSCNCLLLKVNQIGSVTESLQACKLAQANGWGVMVSHRSGE
+
+     
+     37
+     TEDTFIADLAVGLCCGQIKTGSPCR
+     +++++++++++++++++++++++++
+376  TEDTFIADLVVGLCTGQIKTGAPCRSERLAKYNQLLRIEEELGSKAKFAGRNFRNPLAK
+
+
+Uniprot|Q9W7L0|EFDID|118|FULL
+  SEQUENCE full
+  LENGTH = 434  COMBINED P-VALUE = 1.85e-34  E-VALUE =  7.6e-33
+  DIAGRAM: 370-[1]-34
+
+                                                                           [1]
+                                                                           4.6e-
+                                                                           HRSGE
+                                                                           +++++
+301  WPAWKKFTAESGIQVVGDDLTVTNPKRIAKAVQEKSCNCLLLKVNQIGSVTESLQACKLAQSNGWGVMVSHRSGE
+
+     
+     37
+     TEDTFIADLAVGLCCGQIKTGSPCR
+     +++++++++++++++++++++++++
+376  TEDTFIADLVVGLCTGQIKTGAPCRSERLAKYNQLLRIEEELGSKARFAGRNFRNPRVN
+
+
+Uniprot|P17183|EFDID|122|FULL
+  SEQUENCE full
+  LENGTH = 434  COMBINED P-VALUE = 1.85e-34  E-VALUE =  7.6e-33
+  DIAGRAM: 370-[1]-34
+
+                                                                           [1]
+                                                                           4.6e-
+                                                                           HRSGE
+                                                                           +++++
+301  WAAWSKFTANVGIQIVGDDLTVTNPKRIERAVEEKACNCLLLKVNQIGSVTEAIQACKLAQENGWGVMVSHRSGE
+
+     
+     37
+     TEDTFIADLAVGLCCGQIKTGSPCR
+     +++++++++++++++++++++++++
+376  TEDTFIADLVVGLCTGQIKTGAPCRSERLAKYNQLMRIEEELGDEARFAGHNFRNPSVL
+
+
+Uniprot|Q27877|EFDID|148|FULL
+  SEQUENCE full
+  LENGTH = 434  COMBINED P-VALUE = 1.85e-34  E-VALUE =  7.6e-33
+  DIAGRAM: 371-[1]-33
+
+                                                                            [1]
+                                                                            4.6e
+                                                                            HRSG
+                                                                            ++++
+301  DWETWPKLTSSTNIQIVGDDLTVTNPKRIKQAIASKACNCLLLKVNQIGSLTESIEACKLAQDSGWGVMVSHRSG
+
+     
+     -37
+     ETEDTFIADLAVGLCCGQIKTGSPCR
+     ++++++++++++++++++++++++++
+376  ETEDTFIADLVVGLCTGQIKTGAPCRSDRLAKYNQLLRIEEELGTAAKYAGKNFRHPKV
+
+
+Uniprot|P15429|EFDID|121|FULL
+  SEQUENCE full
+  LENGTH = 434  COMBINED P-VALUE = 3.58e-32  E-VALUE =  1.5e-30
+  DIAGRAM: 370-[1]-34
+
+                                                                           [1]
+                                                                           8.8e-
+                                                                           HRSGE
+                                                                           +++++
+301  WATWTSFLSGVDIQIVGDDLTVTNPKRIAQAVEKKACNCLLLKVNQIGSVTESILACKLAQSNGWGVMVSHRSGE
+
+     
+     35
+     TEDTFIADLAVGLCCGQIKTGSPCR
+     +++++ +++++++++++++++++++
+376  TEDTFVADLVVGLCTGQIKTGAPCRSERLAKYNQLMRIEEALGDKAVFAGRKFRNPKAK
+
+
+Uniprot|Q43321|EFDID|124|FULL
+  SEQUENCE full
+  LENGTH = 440  COMBINED P-VALUE = 7.85e-32  E-VALUE =  3.2e-30
+  DIAGRAM: 375-[1]-35
+
+     [1]
+     1.9e-34
+     HRSGETEDTFIADLAVGLCCGQIKTGSPCR
+     ++++++++++++++++++ +++++++++++
+376  HRSGETEDTFIADLSVGLATGQIKTGAPCRSERLAKYNQLLRIEEELGSEAVYAGANFRTPVEPY
+
+
+Uniprot|P42896|EFDID|147|FULL
+  SEQUENCE full
+  LENGTH = 445  COMBINED P-VALUE = 7.95e-32  E-VALUE =  3.3e-30
+  DIAGRAM: 380-[1]-35
+
+          [1]
+          1.9e-34
+          HRSGETEDTFIADLAVGLCCGQIKTGSPCR
+          ++++++++++++++++++ +++++++++++
+376  GVMASHRSGETEDTFIADLSVGLATGQIKTGAPCRSERLAKYNQLLRIEEELGAEAVYAGAKFRTPVEPY
+
+
+Uniprot|A4QCV0|EFDID|132|FULL
+  SEQUENCE full
+  LENGTH = 425  COMBINED P-VALUE = 1.02e-31  E-VALUE =  4.2e-30
+  DIAGRAM: 361-[1]-34
+
+                                                                  [1]
+                                                                  2.6e-34
+                                                                  HRSGETEDTFIADL
+                                                                  ++++++++++++++
+301  GDKVQIVGDDFFVTNPERLKEGIAKKAANSILVKVNQIGTLTETFDAVDMAHRAGYTSMMSHRSGETEDTTIADL
+
+     
+     
+     AVGLCCGQIKTGSPCR
+     ++++++++++++++++
+376  AVALNCGQIKTGAPARSDRVAKYNQLLRIEQLLGDAGVYAGRSAFPRFQG
+
+
+Uniprot|P26301|EFDID|113|FULL
+  SEQUENCE full
+  LENGTH = 446  COMBINED P-VALUE = 1.66e-31  E-VALUE =  6.8e-30
+  DIAGRAM: 381-[1]-35
+
+           [1]
+           4.0e-34
+           HRSGETEDTFIADLAVGLCCGQIKTGSPCR
+           ++++++++++++++++++ +++++++++++
+376  WGVMASHRSGETEDTFIADLSVGLSTGQIKTGAPCRSERLAKYNQLLRIEEELGDAAVYAGAKFRAPVEPY
+
+
+Uniprot|Q27727|EFDID|144|FULL
+  SEQUENCE full
+  LENGTH = 446  COMBINED P-VALUE = 2.54e-31  E-VALUE =    1e-29
+  DIAGRAM: 383-[1]-33
+
+             [1]
+             6.1e-34
+             HRSGETEDTFIADLAVGLCCGQIKTGSPCR
+             ++++++++ +++++++++++++++++++++
+376  NNWGVMVSHRSGETEDVFIADLVVALRTGQIKTGAPCRSERNAKYNQLLRIEESLGNNAVFAGEKFRLQLN
+
+
+Uniprot|P00924|EFDID|114|FULL
+  SEQUENCE full
+  LENGTH = 437  COMBINED P-VALUE = 3.30e-31  E-VALUE =  1.4e-29
+  DIAGRAM: 373-[1]-34
+
+                                                                              [1
+                                                                              8.
+                                                                              HR
+                                                                              ++
+301  EDDWEAWSHFFKTAGIQIVADDLTVTNPKRIATAIEKKAADALLLKVNQIGTLSESIKAAQDSFAAGWGVMVSHR
+
+     ]
+     1e-34
+     SGETEDTFIADLAVGLCCGQIKTGSPCR
+     ++++++++++++++++++++++++++++
+376  SGETEDTFIADLVVGLRTGQIKTGAPARSERLAKLNQLLRIEEELGDNAVFAGENFHHGDKL
+
+
+Uniprot|Q9U615|EFDID|138|FULL
+  SEQUENCE full
+  LENGTH = 439  COMBINED P-VALUE = 7.46e-31  E-VALUE =  3.1e-29
+  DIAGRAM: 376-[1]-33
+
+      [1]
+      1.8e-33
+      HRSGETEDTFIADLAVGLCCGQIKTGSPCR
+      ++++++++ +++++++++++++++++++++
+376  SHRSGETEDAFIADLVVGLGCGQIKTGAPCRSERLAKYNQLLRIEEELGANAHYAAKTLSGVGH
+
+
+Uniprot|P75189|EFDID|141|FULL
+  SEQUENCE full
+  LENGTH = 456  COMBINED P-VALUE = 1.15e-30  E-VALUE =  4.7e-29
+  DIAGRAM: 389-[1]-37
+
+                   [1]
+                   2.7e-33
+                   HRSGETEDTFIADLAVGLCCGQIKTGSPCR
+                   +++++++++++++++++ ++++++++++++
+376  INIAKDANWSQVISHRSGETEDTTIADLAVAACTGQIKTGSMSRSERIAKYNRLLQIELELGNNAKYLGWNTFKN
+
+
+Uniprot|P77972|EFDID|151|FULL
+  SEQUENCE full
+  LENGTH = 432  COMBINED P-VALUE = 1.41e-30  E-VALUE =  5.8e-29
+  DIAGRAM: 368-[1]-34
+
+                                                                         [1]
+                                                                         3.5e-33
+                                                                         HRSGETE
+                                                                         +++++++
+301  KGLTTSLGTKTQLVGDDLMVTNPVRLQKSIDLGVANAILIKLNQIGTLSETLETISLATRHSYRSVISHRSGETE
+
+     
+     
+     DTFIADLAVGLCCGQIKTGSPCR
+     ++++++++++++ ++++++++++
+376  DTTIADLAVATRVGQIKTGSLCRSERVAKYNRLLRIEDELGDRAVYAPKIGLGPKHS
+
+
+Uniprot|Q60173|EFDID|139|FULL
+  SEQUENCE full
+  LENGTH = 423  COMBINED P-VALUE = 2.02e-30  E-VALUE =  8.3e-29
+  DIAGRAM: 362-[1]-31
+
+                                                                   [1]
+                                                                   5.1e-33
+                                                                   HRSGETEDTFIAD
+                                                                   +++++++++++++
+301  KELDIQIVGDDLFVTNVERLRKGIEMKAANALLLKVNQIGTLSEAVDAAQLAFRNGYGVVVSHRSGETEDTTIAD
+
+     
+     
+     LAVGLCCGQIKTGSPCR
+     +++++++++++++++++
+376  LSVALNSGQIKTGAPARGERTAKYNQLIRIEQELGLSKYAGRNFRCPF
+
+
+Uniprot|Q9F3P9|EFDID|115|FULL
+  SEQUENCE full
+  LENGTH = 434  COMBINED P-VALUE = 2.08e-30  E-VALUE =  8.5e-29
+  DIAGRAM: 372-[1]-32
+
+                                                                             [1]
+                                                                             5.1
+                                                                             HRS
+                                                                             +++
+301  LDGWRELTDRVGDRCQLTGDDVFCTDEALVREGIRTGVGNSVLVKVNQIGTLTEALATVATAHEAGWTVVMSHRS
+
+     
+     e-33
+     GETEDTFIADLAVGLCCGQIKTGSPCR
+     +++++++++++++++++++++++++++
+376  GETEDTTIADLAVATGCGQIKTGSLSRSDRTAKYNRLIRIEEELGASARFAGRSALRRV
+
+
+Uniprot|P30575|EFDID|112|FULL
+  SEQUENCE full
+  LENGTH = 440  COMBINED P-VALUE = 2.72e-30  E-VALUE =  1.1e-28
+  DIAGRAM: 376-[1]-34
+
+      [1]
+      6.6e-33
+      HRSGETEDTFIADLAVGLCCGQIKTGSPCR
+      ++++++++++++++++++++++++++++++
+376  SHRSGETEDTFIADLSVGLRSGQIKTGAPARSERLAKLNQILRIEEELGSEAIYAGKDFQKASQL
+
+
+Uniprot|O51312|EFDID|127|FULL
+  SEQUENCE full
+  LENGTH = 433  COMBINED P-VALUE = 3.89e-30  E-VALUE =  1.6e-28
+  DIAGRAM: 368-[1]-35
+
+                                                                         [1]
+                                                                         9.6e-33
+                                                                         HRSGETE
+                                                                         +++++++
+301  KKLTDKIGNKIQLVGDDLFVTNTSFLKKGIEMGVANSILIKVNQIGTLTETFEAVEMAKKAGYTAIVSHRSGETE
+
+     
+     
+     DTFIADLAVGLCCGQIKTGSPCR
+     +++++++++++++++++++++++
+376  DTTIADLVVALGTGQIKTGSLSRTDRIAKYNQLIRIEEELETTAEYHGKSVFYSIKQK
+
+
+Uniprot|Q8R967|EFDID|152|FULL
+  SEQUENCE full
+  LENGTH = 429  COMBINED P-VALUE = 4.35e-30  E-VALUE =  1.8e-28
+  DIAGRAM: 365-[1]-34
+
+                                                                      [1]
+                                                                      1.1e-32
+                                                                      HRSGETEDTF
+                                                                      ++++++++++
+301  TERLGKKVQLVGDDLFVTNTERLSKGINMGVANSILIKLNQIGTLTETLDAIEMAKRAGYTAIVSHRSGETEDTT
+
+     
+     
+     IADLAVGLCCGQIKTGSPCR
+     +++++++++ ++++++++++
+376  IADLVVATNVGQIKTGAPARTDRVAKYNQLLRIEEALGSVAQYPGKNAFYNIRK
+
+
+Uniprot|O32513|EFDID|133|FULL
+  SEQUENCE full
+  LENGTH = 434  COMBINED P-VALUE = 6.37e-30  E-VALUE =  2.6e-28
+  DIAGRAM: 364-[1]-40
+
+                                                                     [1]
+                                                                     1.6e-32
+                                                                     HRSGETEDTFI
+                                                                     +++++++++++
+301  YKLGDTIQLVGDDIFVTNPDILAEGIDEGVANSILIKLNQIGTLTETLDTIEMAKQAAYTTVISHRSGETEDHFI
+
+     
+     
+     ADLAVGLCCGQIKTGSPCR
+     +++++++++++++++++++
+376  SDLAVGLNAGQIKTGSLCRSDRLAKYNQLLRIEEDLDDTGIYFGPMMSSHFGFEEEGEE
+
+
+Uniprot|Q8Y0B5|EFDID|146|FULL
+  SEQUENCE full
+  LENGTH = 427  COMBINED P-VALUE = 1.83e-29  E-VALUE =  7.5e-28
+  DIAGRAM: 364-[1]-33
+
+                                                                     [1]
+                                                                     4.6e-32
+                                                                     HRSGETEDTFI
+                                                                     +++++++++++
+301  EKLGNKVQLVGDDLFVTNTRILKEGIEKGIANSILIKINQIGTLTETFAAIEMAKRAGYTAVISHRSGETEDSTI
+
+     
+     
+     ADLAVGLCCGQIKTGSPCR
+     +++++++++++++++++++
+376  ADIAVGTNAGQIKTGSLSRSDRIAKYNQLLRIEEDLGDIASYPGKSAFYNLR
+
+
+Uniprot|Q9JU46|EFDID|142|FULL
+  SEQUENCE full
+  LENGTH = 428  COMBINED P-VALUE = 2.61e-29  E-VALUE =  1.1e-27
+  DIAGRAM: 364-[1]-34
+
+                                                                     [1]
+                                                                     6.5e-32
+                                                                     HRSGETEDTFI
+                                                                     +++++++++++
+301  EKLGGKVQLVGDDLFVTNPKILAEGIEKGVANALLVKVNQIGTLSETLKAVDLAKRNRYASVMSHRSGETEDSTI
+
+     
+     
+     ADLAVGLCCGQIKTGSPCR
+     +++++++++ +++++++++
+376  ADLAVATNCMQIKTGSLSRSDRMAKYNQLLRIEEELAEAADYPSKAAFYQLGK
+
+
+Uniprot|P64075|EFDID|137|FULL
+  SEQUENCE full
+  LENGTH = 430  COMBINED P-VALUE = 4.65e-29  E-VALUE =  1.9e-27
+  DIAGRAM: 366-[1]-34
+
+                                                                       [1]
+                                                                       1.2e-31
+                                                                       HRSGETEDT
+                                                                       +++++++++
+301  LTERIGDRVQLVGDDLFVTNTTKLKEGIEKGIANSILIKVNQIGTLTETLDAIEMAKRAGYTAVISHRSGETEDS
+
+     
+     
+     FIADLAVGLCCGQIKTGSPCR
+     +++++++++++++++++++ +
+376  TIADIAVATNAGQIKTGAPTRTDRVAKYNQLLRIEDNLADLAEYHGNDTFYNLKK
+
+
+Uniprot|P42040|EFDID|131|FULL
+  SEQUENCE full
+  LENGTH = 440  COMBINED P-VALUE = 6.70e-29  E-VALUE =  2.7e-27
+  DIAGRAM: 376-[1]-34
+
+      [1]
+      1.6e-31
+      HRSGETEDTFIADLAVGLCCGQIKTGSPCR
+      ++++++++ +++++++++++++++++++++
+376  SHRSGETEDVTIADIVVGLRAGQIKTGAPARSERLAKLNQILRIEEELGDKAVYAGDNFRTAINL
+
+
+Uniprot|Q9Z7A6|EFDID|130|FULL
+  SEQUENCE full
+  LENGTH = 428  COMBINED P-VALUE = 9.11e-29  E-VALUE =  3.7e-27
+  DIAGRAM: 362-[1]-36
+
+                                                                   [1]
+                                                                   2.3e-31
+                                                                   HRSGETEDTFIAD
+                                                                   ++++++ ++++++
+301  LGEKVQIVGDDLFVTNPELILEGISNGLANSVLIKPNQIGTLTETVYAIKLAQMAGYTTIISHRSGETTDTTIAD
+
+     
+     
+     LAVGLCCGQIKTGSPCR
+     +++++++++++++++++
+376  LAVAFNAGQIKTGSLSRSERVAKYNRLMEIEEELGSEAIFTDSNVFSYEDSEE
+
+
+Uniprot|Q12560|EFDID|126|FULL
+  SEQUENCE full
+  LENGTH = 438  COMBINED P-VALUE = 1.17e-28  E-VALUE =  4.8e-27
+  DIAGRAM: 374-[1]-34
+
+                                                                               [
+                                                                               2
+                                                                               H
+                                                                               +
+301  AEDDWEAWSYFYKTSDFQIVGDDLTVTNPLRIKKAIETKACNALLLKVNQIGTLTESIQAAKDSYADNWGVMVSH
+
+     1]
+     .9e-31
+     RSGETEDTFIADLAVGLCCGQIKTGSPCR
+     +++++++ +++++++++++++++++++++
+376  RSGETEDVTIADIAVGLRSGQIKTGAPARSERLAKLNQILRIEEELGNNAIYAGEKFRTSVNL
+
+
+Uniprot|P0DM31|EFDID|134|FULL
+  SEQUENCE full
+  LENGTH = 432  COMBINED P-VALUE = 1.28e-28  E-VALUE =  5.3e-27
+  DIAGRAM: 367-[1]-35
+
+                                                                        [1]
+                                                                        3.2e-31
+                                                                        HRSGETED
+                                                                        ++++++++
+301  KLTEVLGDKVQLVGDDLFVTNTTKLAEGIEKGIANSILIKVNQIGTLTETFEAIEMAKEAGYTAVVSHRSGETED
+
+     
+     
+     TFIADLAVGLCCGQIKTGSPCR
+     ++++++++++++++++++++++
+376  STISDIAVATNAGQIKTGSLSRTDRIAKYNQLLRIEDQLGDVAEYKGLKSFYNLKNK
+
+
+Uniprot|O85348|EFDID|143|FULL
+  SEQUENCE full
+  LENGTH = 428  COMBINED P-VALUE = 1.42e-28  E-VALUE =  5.8e-27
+  DIAGRAM: 364-[1]-34
+
+                                                                     [1]
+                                                                     3.6e-31
+                                                                     HRSGETEDTFI
+                                                                     +++++++++++
+301  ERLGKTVQLVGDDVFVTNTRILKEGISRNIANSILIKINQIGTLTETLNAIEMAKCAGYTAIVSHRSGETEDTTI
+
+     
+     
+     ADLAVGLCCGQIKTGSPCR
+     +++++++++ +++++++++
+376  ADIAVATNALQIKTGSLSRSDRLAKYNQLLRIEEDLGEMAQYAGRSAFYQLKP
+
+
+Uniprot|P43806|EFDID|135|FULL
+  SEQUENCE full
+  LENGTH = 436  COMBINED P-VALUE = 1.45e-28  E-VALUE =  5.9e-27
+  DIAGRAM: 370-[1]-36
+
+                                                                           [1]
+                                                                           3.6e-
+                                                                           HRSGE
+                                                                           +++++
+301  GFAYQTKVLGDRVQLVGDDLFVTNTKILKEGIEKGIANSILIKFNQIGSLTETLAAIKMAKDAGYTAVISHRSGE
+
+     
+     31
+     TEDTFIADLAVGLCCGQIKTGSPCR
+     +++ +++++++++ +++++++++++
+376  TEDATIADLAVGTAAGQIKTGSMSRSDRIAKYNQLIRIEEALERAGTPAAFPGLKAVKGQA
+
+
+Uniprot|Q9XDS7|EFDID|149|FULL
+  SEQUENCE full
+  LENGTH = 434  COMBINED P-VALUE = 2.23e-28  E-VALUE =  9.2e-27
+  DIAGRAM: 370-[1]-34
+
+                                                                           [1]
+                                                                           5.5e-
+                                                                           HRSGE
+                                                                           +++++
+301  GWKKLTERLGKKVQPVGDDFFVTNTSYLEKGINEACANSILIKVNQIGTLTETFDAIEMAKEAGYTAVVSHRSGE
+
+     
+     31
+     TEDTFIADLAVGLCCGQIKTGSPCR
+     ++++++++++++ ++++++++++++
+376  TEDSTIADIAVAANAGQIKTGSLSRTDRIAKYNQLLRIEDQLGEVAEYRGLKSFYNLSK
+
+
+Uniprot|O66778|EFDID|125|FULL
+  SEQUENCE full
+  LENGTH = 426  COMBINED P-VALUE = 3.03e-28  E-VALUE =  1.2e-26
+  DIAGRAM: 362-[1]-34
+
+                                                                   [1]
+                                                                   7.6e-31
+                                                                   HRSGETEDTFIAD
+                                                                   +++++++++++++
+301  LGDKVQLVGDDLFTTNPKILRKGIEEGVANAILVKLNQIGTVSETLDTVMLAKERNYSAIISHRSGETEDTFISH
+
+     
+     
+     LAVGLCCGQIKTGSPCR
+     ++++++++++++++ ++
+376  LAVATNAGQIKTGSASRTDRIAKYNELLRIEERLGNGAVFWGREEFYRFTS
+
+
+Uniprot|Q8K9E0|EFDID|128|FULL
+  SEQUENCE full
+  LENGTH = 434  COMBINED P-VALUE = 4.26e-28  E-VALUE =  1.7e-26
+  DIAGRAM: 370-[1]-34
+
+                                                                           [1]
+                                                                           1.1e-
+                                                                           HRSGE
+                                                                           +++++
+301  GFLYQTKELGNSLQLVGDDLFVTNKNILKKGIKKGVANAILIKLNQIGTLTETIETIKIAKKFNYGVIISHRSGE
+
+     
+     30
+     TEDTFIADLAVGLCCGQIKTGSPCR
+     ++++ ++++++++ +++++++++++
+376  TEDTSIADLSVGTASGQIKTGSMSRSDRTSKYNQLIRIEEILNKKRAPFYGLKEVKSSF
+
+
+Uniprot|P42448|EFDID|129|FULL
+  SEQUENCE full
+  LENGTH = 414  COMBINED P-VALUE = 9.43e-28  E-VALUE =  3.9e-26
+  DIAGRAM: 359-[1]-25
+
+                                                                [1]
+                                                                2.4e-30
+                                                                HRSGETEDTFIADLAV
+                                                                ++++++++ +++++++
+301  KIQLVGDDLFVTNEDILREGIIKKMANAVLIKPNQIGTITQTMRTVRLAQRNNYKCVMSHRSGESEDAFIADFAV
+
+     
+     
+     GLCCGQIKTGSPCR
+     ++++++++++++++
+376  ALNTGQIKTGALARGERTAKYNRLLEIEFESDEYLGEKL
+
+
+Uniprot|Q9CIT0|EFDID|120|FULL
+  SEQUENCE full
+  LENGTH = 422  COMBINED P-VALUE = 7.35e-27  E-VALUE =    3e-25
+  DIAGRAM: 364-[1]-28
+
+                                                                     [1]
+                                                                     1.9e-29
+                                                                     HRSGETEDTFI
+                                                                     ++++++ ++++
+301  KAQGQKIQLVGDDIFVTNPEIFKEGIKKGVANAILIKLNQIGTVTEAIEAISLARKAGYKTMISHRSGETVDSYI
+
+     
+     
+     ADLAVGLCCGQIKTGSPCR
+     +++++++++++++++++++
+376  ADFAVAMHAGQIKTGSMARSERVEKYNQFLRIEEELGKDVALASFPG
+
+
+Uniprot|Q9ZMS6|EFDID|136|FULL
+  SEQUENCE full
+  LENGTH = 426  COMBINED P-VALUE = 3.88e-26  E-VALUE =  1.6e-24
+  DIAGRAM: 365-[1]-31
+
+                                                                      [1]
+                                                                      9.8e-29
+                                                                      HRSGETEDTF
+                                                                      ++++++++++
+301  SKELGRQIQLVGDDLFVTNASILQKGIEKNVANAILIKPNQIGTISETLETIRLAKHHAYQCVISHRSGESEDSF
+
+     
+     
+     IADLAVGLCCGQIKTGSPCR
+     +++++++++++ +++++ ++
+376  IADFAVALNTGEIKTGSTARSERIAKYNRLLEIEHELKGGIYIGKELFKHG
+
+
+Uniprot|O52191|EFDID|150|FULL
+  SEQUENCE full
+  LENGTH = 422  COMBINED P-VALUE = 2.07e-25  E-VALUE =  8.5e-24
+  DIAGRAM: 364-[1]-28
+
+                                                                     [1]
+                                                                     5.3e-28
+                                                                     HRSGETEDTFI
+                                                                     ++++++ ++++
+301  KARGQKIQLVGDDIFVTNPTIFKEGIKKNVANAILIKLNQIGTVTETIETISLARKAGYKTMISHRSGETVDSYI
+
+     
+     
+     ADLAVGLCCGQIKTGSPCR
+     +++++++++++++ +++++
+376  ADFSVAMHAGQIKSGSMARSERVEKYNQLLRIEEDLGKDVALAQFPG
+
+
+Uniprot|Q9Y927|EFDID|123|FULL
+  SEQUENCE full
+  LENGTH = 432  COMBINED P-VALUE = 2.55e-25  E-VALUE =    1e-23
+  DIAGRAM: 367-[1]-35
+
+                                                                        [1]
+                                                                        6.3e-28
+                                                                        HRSGETED
+                                                                        ++++ +++
+301  AAVDALSTETIIVGDDLLVTNPQRVKEASALKAVTGLLVKVNQVGTLTEALEAIQAARDRGIVHIVSHRSGDTED
+
+     
+     
+     TFIADLAVGLCCGQIKTGSPCR
+     ++++++++++ +  ++++++++
+376  TFIADLAVATEALMIKTGAPARGERTSKYNRLLEIENILGYSAEYAGPELRGVMGRR
+
+
+Uniprot|O26149|EFDID|140|FULL
+  SEQUENCE full
+  LENGTH = 416  COMBINED P-VALUE = 7.01e-21  E-VALUE =  2.9e-19
+  DIAGRAM: 360-[1]-26
+
+                                                                 [1]
+                                                                 1.8e-23
+                                                                 HRSGETEDTFIADLA
+                                                                 ++++++ + ++++++
+301  DRCMICGDDIFVTNREILREGIEMGAANAIIIKPNQIGTLTDTYLTVKLALENRYTPVVSHRSGETTDDTIAHLA
+
+     
+     
+     VGLCCGQIKTGSPCR
+     +++++  +++++
+376  VAFGAPLIKTGAIGGERIAKLNELIRIQEEIPYSRMADLPF
+
+
+Uniprot|Q8ZYE7|EFDID|145|FULL
+  SEQUENCE full
+  LENGTH = 419  COMBINED P-VALUE = 2.55e-18  E-VALUE =    1e-16
+  DIAGRAM: 361-[1]-28
+
+                                                                  [1]
+                                                                  6.5e-21
+                                                                  HRSGETEDTFIADL
+                                                                  ++++ ++  + +++
+301  FKDRLIVGDDLFVTNPERIKKGGKIGAATGVIIKPDQIGTLLRAHQAVSAAREFGMRVIVSHRSGDTEYKTLAHI
+
+     
+     
+     AVGLCCGQIKTGSPCR
+     ++++++  ++++ +
+376  AVGFGAEVIKTGIMGGERTAKLNELIRIGDYLGKWATITQIRIH
+
+********************************************************************************
+
+
+CPU: yincp-GE72-2QF
+Time 0.024 secs.
+
+mast -oc /home/yincp/Desktop/Descriptor_Preprocessor/tmp -mt 0.0001 /home/yincp/Desktop/Descriptor_Preprocessor/tests/data/debug/2019-07-23T12:47:45.516219/output_meme/meme.txt /home/yincp/Desktop/Descriptor_Preprocessor/tests/data/input/meme_test_seq.fasta
