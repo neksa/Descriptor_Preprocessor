@@ -4,5 +4,3 @@
 hbonds/bin/
 *.pyc
 **/debug
-src/preprocessing/ss.py
-src/preprocessing/yy.py

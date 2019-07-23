@@ -211,6 +211,7 @@ class TestFindMotif(unittest.TestCase):
         self.seq_2 = paths_test.REF_CREATE_SEQ_2
         self.pdb_folder = paths_test.PDB_FOLDER
         self.output = os.path.join(self.debug_folder, "output_1.pkl")
+        self.meme_folder = os.path.join(self.debug_folder, "meme_folder")
         self.meme_txt = paths_test.REF_MEME_TXT
 
         self.ref_output_1 = paths_test.REF_FIND_MOTIF_1
@@ -224,6 +225,7 @@ class TestFindMotif(unittest.TestCase):
                                ref_meme_txt=None,
                                seq_file=self.seq_1,
                                output=self.output,
+                               meme_folder=self.meme_folder,
                                num_p=7)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)

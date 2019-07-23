@@ -54,13 +54,13 @@ def run_all(process='meme', source='prosite', motif_len=13, num_p=7,
     if storage_path is None:
         pname_cid_path = paths.PNAME_CID
         seq_path = paths.FULL_SEQS
-        meme_mast_folder = paths.MEME_MAST_FOLDER
+        meme_folder = paths.MEME_MAST_FOLDER
 
     else:
         generic.quit_if_missing(storage_path, filetype='folder')
         pname_cid_path = os.path.join(storage_path, 'pname_cid_map.pkl')
         seq_path = os.path.join(storage_path, 'seqs.fasta')
-        meme_mast_folder = paths.MEME_MAST_FOLDER
+        meme_folder = os.path.join(storage_path, 'meme_folder')
 
     parse_extracts(source, extract_path, pname_cid_path)
     download_pdb(pname_cid_path, pdb_folder)
@@ -69,7 +69,7 @@ def run_all(process='meme', source='prosite', motif_len=13, num_p=7,
 
     filter_seq_file(seq_path, threshold=31)
     find_motifs(process, motif_len, pname_cid_path, ref_meme_txt,
-                meme_mast_folder, seq_path, output, num_p)
+                meme_folder, seq_path, output, num_p)
 
 
 # def run_converge(seq_path=paths.FULL_SEQS, output_path=paths.MOTIF_POS,
@@ -198,7 +198,7 @@ def filter_seq_file(seq_path, threshold=30):
 
 def find_motifs(process, motif_len, pname_cid_path,
                 ref_meme_txt=paths.REF_MEME_TXT,
-                mast_meme_folder=paths.MEME_MAST_FOLDER,
+                meme_folder=paths.MEME_MAST_FOLDER,
                 seq_file=paths.FULL_SEQS, output=paths.MOTIF_POS, num_p=1):
     """
     :param process: 'meme'

@@ -33,6 +33,7 @@ from tests.src import paths_test
 from meme_suite import meme_interface
 from utils import generic
 from biopython_adapted import bio_interface
+from config import paths
 
 
 # Preprocessing
@@ -105,19 +106,23 @@ def setup_find_motif():
     seq_2 = paths_test.REF_CREATE_SEQ_2
     output_1 = paths_test.REF_FIND_MOTIF_1
     output_2 = paths_test.REF_FIND_MOTIF_2
+    meme_folder = os.path.join(paths_test.DEBUG, 'meme_folder')
     preprocess.find_motifs('meme',
                      pname_cid_path=input_1,
                      motif_len=13,
                      ref_meme_txt=None,
                      seq_file=seq_1,
                      output=output_1,
+                     meme_folder=meme_folder,
                      num_p=7)
+    shutil.move(meme_folder, paths.TRASH)
     preprocess.find_motifs('mast',
                            pname_cid_path=input_2, motif_len=13,
                      ref_meme_txt=paths_test.REF_MEME_TXT,
                            seq_file=seq_2,
-                           output=output_2,
+                           output=output_2, meme_folder=meme_folder,
                            num_p=7)
+    shutil.move(meme_folder, paths.TRASH)
     assert os.path.isfile(output_1)
     assert os.path.isfile(output_2)
 

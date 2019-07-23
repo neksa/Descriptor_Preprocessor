@@ -7,6 +7,7 @@ ROOT = "/home/yincp/Desktop/Descriptor_Preprocessor"
 DATA = os.path.join(ROOT, 'data')
 SRC = os.path.join(ROOT, 'src')
 EXTERNAL = os.path.join(ROOT, 'external')
+TRASH = os.path.join(ROOT, 'trash')
 
 USER_INPUT = os.path.join(DATA, 'input')
 USER_OUTPUT = os.path.join(DATA, 'output')
