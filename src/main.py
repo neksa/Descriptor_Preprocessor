@@ -12,8 +12,39 @@ from converge import conv_interface
 from utils import generic, logs
 
 
-def main():
-    pass
+# def main():
+#     logs.set_logging_level()
+#     # Prosite, meme
+#     timestamp = datetime.datetime.now().isoformat()
+#     store_folder = os.path.join(paths.DEBUG, timestamp)
+#     os.mkdir(store_folder)
+#     output_path = os.path.join(paths.USER_OUTPUT, "prosite_meme_motif_pos.pkl")
+#     run_all(process='meme', source='prosite', num_p=7,
+#             extract_path=paths.PROSITE_EXTRACT, output=output_path,
+#             storage_path=store_folder)
+#     assert os.path.isfile(output_path)
+#     assert os.path.isdir(store_folder)
+#
+#     # Prosite, mast
+#     timestamp = datetime.datetime.now().isoformat()
+#     store_folder = os.path.join(paths.DEBUG, timestamp)
+#     os.mkdir(store_folder)
+#     output_path = os.path.join(paths.USER_OUTPUT, "prosite_mast_motif_pos.pkl")
+#     run_all(process='mast', source='prosite',
+#             extract_path=paths.PROSITE_EXTRACT, output=output_path,
+#             storage_path=store_folder)
+#     assert os.path.isfile(output_path)
+#     assert os.path.isdir(store_folder)
+#
+#     # Ioncom, mast
+#     timestamp = datetime.datetime.now().isoformat()
+#     store_folder = os.path.join(paths.DEBUG, timestamp)
+#     os.mkdir(store_folder)
+#     output_path = os.path.join(paths.USER_OUTPUT, "ioncom_mast_motif_pos.pkl")
+#     run_all(process='mast', source='ioncom', extract_path=paths.IONCOM_EXTRACT,
+#             output=output_path, storage_path=store_folder)
+#     assert os.path.isfile(output_path)
+#     assert os.path.isdir(store_folder)
 
 
 # def main2():
@@ -163,7 +194,8 @@ def main():
 #
 #
 #
-# if __name__ == "__main__":
+if __name__ == "__main__":
+    main()
 #     logs.set_logging_level()
 #     from preprocessing.meme_suite import meme_interface
 #

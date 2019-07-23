@@ -33,6 +33,8 @@ CONV_SEED_SEQS = os.path.join(INTERNAL, 'seed_seqs.fasta')
 CONV_MEME_FILE = os.path.join(INTERNAL, 'cov_meme.txt')
 TEMPLATE_SEQFILE = os.path.join(INTERNAL, 'seq_template.fasta')
 
+PID_PDB_MAP = os.path.join(USER_OUTPUT, 'pid_pdb_map.pkl')
+
 
 
 # CONVERGE_EXEC = os.path.join(EXTERNAL, "converge")

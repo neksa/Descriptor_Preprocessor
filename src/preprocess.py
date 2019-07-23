@@ -6,7 +6,7 @@ import shutil
 
 from config import paths
 import extract_parser, download_pdb_files, create_seq_file, filter_seqs, \
-    motif_finder, prosite_pdb_list
+    motif_finder, prosite_pdb_list, loaders
 from meme_suite import meme_interface
 from converge import conv_interface
 from utils import generic, logs
@@ -38,7 +38,7 @@ from utils import generic, logs
 
 def run_all(process='meme', source='prosite', motif_len=13, num_p=7,
             extract_path=None, pdb_folder=paths.PDB_FOLDER,
-            ref_meme_txt=paths.REF_MEME_TXT, output=paths.MOTIF_POS,
+            ref_meme_txt=paths.REF_MEME_TXT, output=paths.PID_PDB_MAP,
             storage_path=None):
     assert isinstance(num_p, int)
     assert num_p >= 1
@@ -55,12 +55,13 @@ def run_all(process='meme', source='prosite', motif_len=13, num_p=7,
         pname_cid_path = paths.PNAME_CID
         seq_path = paths.FULL_SEQS
         meme_folder = paths.MEME_MAST_FOLDER
-
+        motif_pos_path = paths.MOTIF_POS
     else:
         generic.quit_if_missing(storage_path, filetype='folder')
         pname_cid_path = os.path.join(storage_path, 'pname_cid_map.pkl')
         seq_path = os.path.join(storage_path, 'seqs.fasta')
         meme_folder = os.path.join(storage_path, 'meme_folder')
+        motif_pos_path = os.path.join(storage_path, 'motif_pos.pkl')
 
     parse_extracts(source, extract_path, pname_cid_path)
     download_pdb(pname_cid_path, pdb_folder)
@@ -68,8 +69,20 @@ def run_all(process='meme', source='prosite', motif_len=13, num_p=7,
     create_seq(pname_cid_path, seq_path, pdb_folder)
 
     filter_seq_file(seq_path, threshold=31)
-    find_motifs(process, motif_len, pname_cid_path, ref_meme_txt,
-                meme_folder, seq_path, output, num_p)
+    find_motifs(process, motif_len, pname_cid_path, seq_path, motif_pos_path,
+                ref_meme_txt, meme_folder, num_p)
+    load_pdb_info(motif_pos_path, output)
+
+
+def load_pdb_info(motif_pos_path, output):
+    with open(motif_pos_path, 'rb') as file:
+        motif_pos = pickle.load(file)
+    pid_pdb_map = loaders.load_pdb_info(motif_pos)
+    with open(output, 'wb') as file:
+        pickle.dump(pid_pdb_map, file, -1)
+
+
+
 
 
 # def run_converge(seq_path=paths.FULL_SEQS, output_path=paths.MOTIF_POS,
@@ -196,10 +209,9 @@ def filter_seq_file(seq_path, threshold=30):
     filter_seqs.delete_short_seqs(seq_path, threshold)
 
 
-def find_motifs(process, motif_len, pname_cid_path,
-                ref_meme_txt=paths.REF_MEME_TXT,
-                meme_folder=paths.MEME_MAST_FOLDER,
-                seq_file=paths.FULL_SEQS, output=paths.MOTIF_POS, num_p=1):
+def find_motifs(process, motif_len, pname_cid_path, seq_file, output,
+                ref_meme_txt=None,
+                meme_folder=paths.MEME_MAST_FOLDER, num_p=1):
     """
     :param process: 'meme'
     :param motif_len: 13
@@ -220,7 +232,7 @@ def find_motifs(process, motif_len, pname_cid_path,
     _test_seq_cid_map(pname_cid_map)
     motif_pos = motif_finder.find(pname_cid_map, motif_len, process=process,
                                   num_p=num_p, ref_meme_txt=ref_meme_txt,
-                                  mast_meme_folder=mast_meme_folder,
+                                  meme_folder=meme_folder,
                                   seq_file=seq_file)
     generic.warn_if_exist(output)
     with open(output, 'wb') as file:
@@ -233,4 +245,3 @@ def _test_seq_cid_map(seq_cid_map):
         assert isinstance(cid, str)
         assert len(pname) == 4
         assert len(cid) == 1
-    return True

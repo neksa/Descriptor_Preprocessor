@@ -1,15 +1,14 @@
 import os
 import pickle
 import unittest
-import shutil
 
 import numpy as np
 
+from biopython_adapted import bio_interface
 import preprocess
 from tests.src import paths_test
 from utils import generic
 from meme_suite import meme_interface
-from biopython_adapted import bio_interface
 
 
 class TestMemeSuiteMast(unittest.TestCase):
@@ -33,7 +32,7 @@ class TestMemeSuiteMast(unittest.TestCase):
 
     def tearDown(self):
         if self.success:
-            pass  # shutil.rmtree(self.debug_folder)
+            pass
 
 class TestMemeSuiteMeme(unittest.TestCase):
     def setUp(self):
@@ -56,7 +55,6 @@ class TestMemeSuiteMeme(unittest.TestCase):
     def tearDown(self):
         if self.success:
             pass
-            # shutil.rmtree(self.debug_folder)
 
 
 class TestFindCid(unittest.TestCase):
@@ -91,10 +89,11 @@ class TestRunAll(unittest.TestCase):
 
     def test_run_all_2(self):
         preprocess.run_all(process='mast',
-                     source='prosite',
-                     extract_path=self.prosite_input,
-                     ref_meme_txt=self.ref_meme_txt,
-                     output=self.output, storage_path=self.debug_folder)
+                           source='prosite',
+                           extract_path=self.prosite_input,
+                           ref_meme_txt=self.ref_meme_txt,
+                           output=self.output,
+                           storage_path=self.debug_folder)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
         with open(self.ref_output_2, 'rb') as file:
@@ -104,10 +103,11 @@ class TestRunAll(unittest.TestCase):
 
     def test_run_all_3(self):
         preprocess.run_all(process='mast',
-                     source='ioncom',
-                     extract_path=self.ioncom_input,
-                     ref_meme_txt=self.ref_meme_txt,
-                     output=self.output, storage_path=self.debug_folder)
+                           source='ioncom',
+                           extract_path=self.ioncom_input,
+                           ref_meme_txt=self.ref_meme_txt,
+                           output=self.output,
+                           storage_path=self.debug_folder)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
         with open(self.ref_output_3, 'rb') as file:
@@ -118,7 +118,6 @@ class TestRunAll(unittest.TestCase):
     def tearDown(self):
         if self.success:
             pass
-            # shutil.rmtree(self.debug_folder)
 
 
 class TestParseExtract(unittest.TestCase):
@@ -146,8 +145,8 @@ class TestParseExtract(unittest.TestCase):
 
     def test_ioncom(self):
         preprocess.parse_extracts(source='ioncom',
-                            input_file_path=self.ioncom_input,
-                            pname_cid_path=self.output)
+                                  input_file_path=self.ioncom_input,
+                                  pname_cid_path=self.output)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
         with open(self.ioncom_ref, 'rb') as file:
@@ -158,7 +157,6 @@ class TestParseExtract(unittest.TestCase):
     def tearDown(self):
         if self.success:
             pass
-            # shutil.rmtree(self.debug_folder)
 
 
 class TestCreateSeq(unittest.TestCase):
@@ -176,8 +174,8 @@ class TestCreateSeq(unittest.TestCase):
 
     def test_create_seq_1(self):
         preprocess.create_seq(pname_cid_path=self.input_1,
-                        pdb_folder=self.pdb_folder,
-                        seq_path=self.output)
+                              pdb_folder=self.pdb_folder,
+                              seq_path=self.output)
         with open(self.output, 'r') as file:
             act_lines = file.readlines()
         with open(self.ref_output_1, 'r') as file:
@@ -199,7 +197,6 @@ class TestCreateSeq(unittest.TestCase):
     def tearDown(self):
         if self.success:
             pass
-            # shutil.rmtree(self.debug_folder)
 
 
 class TestFindMotif(unittest.TestCase):
@@ -220,7 +217,8 @@ class TestFindMotif(unittest.TestCase):
         self.success = False
 
     def test_find_motif_1(self):
-        preprocess.find_motifs('meme', 13,
+        preprocess.find_motifs('meme',
+                               13,
                                pname_cid_path=self.input_1,
                                ref_meme_txt=None,
                                seq_file=self.seq_1,
@@ -236,11 +234,13 @@ class TestFindMotif(unittest.TestCase):
         self.success = True
 
     def test_find_motif_2(self):
-        preprocess.find_motifs('mast', 13,
+        preprocess.find_motifs('mast',
+                               13,
                                pname_cid_path=self.input_2,
                                ref_meme_txt=self.meme_txt,
                                seq_file=self.seq_2,
                                output=self.output,
+                               meme_folder=self.meme_folder,
                                num_p=7)
         with open(self.output, 'rb') as file:
             act_output = pickle.load(file)
@@ -253,5 +253,4 @@ class TestFindMotif(unittest.TestCase):
     def tearDown(self):
         if self.success:
             pass
-            # shutil.rmtree(self.debug_folder)
 
