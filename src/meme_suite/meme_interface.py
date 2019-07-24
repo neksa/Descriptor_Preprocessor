@@ -57,17 +57,17 @@ def run_mast(meme_txt, fasta_filename, mast_output, mast_exec=paths.MAST_EXEC):
     return True
 
 def extract_motifs_meme(input_txt, motif_len):
-    seq_motifs_raw = _get_motif_diagram(input_txt, source='meme')
-    seq_motif_map = _adjust_motif_diagram(seq_motifs_raw, motif_len)
-    return seq_motif_map
+    pname_motif_raw = _get_motif_diagram(input_txt, source='meme')
+    pname_motif_map = _adjust_motif_diagram(pname_motif_raw, motif_len)
+    return pname_motif_map
 
 def extract_motifs_mast(input_txt, motif_len):
-    seq_motifs_raw = _get_motif_diagram(input_txt, source='mast')
-    seq_motif_map = _adjust_motif_diagram(seq_motifs_raw, motif_len)
-    return seq_motif_map
+    pname_motif_raw = _get_motif_diagram(input_txt, source='mast')
+    pname_motif_map = _adjust_motif_diagram(pname_motif_raw, motif_len)
+    return pname_motif_map
 
 def _adjust_motif_diagram(prev_map, motif_len):
-    seq_motif_map = dict()
+    pname_motif_map = dict()
     for pname, relative_motif_pos in prev_map.items():
         abs_motif_pos = []
         curr_count = 1
@@ -81,9 +81,9 @@ def _adjust_motif_diagram(prev_map, motif_len):
                 curr_count += pos
                 curr_count += motif_len
             abs_motif_pos.append(abs_pos)
-        seq_motif_map[pname] = abs_motif_pos
+        pname_motif_map[pname] = abs_motif_pos
         assert len(relative_motif_pos) == len(abs_motif_pos)
-    return seq_motif_map
+    return pname_motif_map
 
 
 def _test_successful_mast(mast_out):
@@ -102,7 +102,7 @@ def _get_motif_diagram(input_txt, source='meme'):
     subsequent descriptor code assumes a continuous sequence for the len-30
     analysis segment.
     """
-    seq_motif_map = dict()
+    pname_motif_map = dict()
     if source == 'meme':
         motif_diagram_sep = "_[1]_"
     elif source == "mast":
@@ -143,8 +143,8 @@ def _get_motif_diagram(input_txt, source='meme'):
                         motif_positions.append(0)
                     else:
                         motif_positions.append(int(pos))
-                seq_motif_map[pname] = motif_positions
-    return seq_motif_map
+                pname_motif_map[pname] = motif_positions
+    return pname_motif_map
 
 
 # func()

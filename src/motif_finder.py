@@ -34,10 +34,10 @@ def find_meme(pname_cid_map, motif_len, num_p, meme_folder, seq_file):
 
     meme_interface.run_meme(seq_file, motif_len, meme_folder, num_p)
     meme_txt_path = os.path.join(meme_folder, 'meme.txt')
-    seq_motif_map = meme_interface.extract_motifs_meme(meme_txt_path,
+    pname_motif_map = meme_interface.extract_motifs_meme(meme_txt_path,
                                                        motif_len)
-    seq_motif_map = _delete_gapped_motifs(seq_motif_map, seq_file)
-    motif_pos = _assemble_motif_pos(seq_motif_map, pname_cid_map)
+    pname_motif_map = _delete_gapped_motifs(pname_motif_map, seq_file)
+    motif_pos = _assemble_motif_pos(pname_motif_map, pname_cid_map)
     return motif_pos
 
 

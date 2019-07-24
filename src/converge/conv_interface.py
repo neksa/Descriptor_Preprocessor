@@ -6,23 +6,16 @@ from converge import make_seed_seqs, wrapper, meme_to_conv, conv_to_meme
 from utils import generic
 
 
-def run(seqs_path, output_path,
-        binding_site_file=None, bash_exec=paths.BASH_EXEC, num_p=7,
+def run(seqs_path, output_path, bash_exec=paths.BASH_EXEC, num_p=7,
         seed_seq_path=paths.CONV_SEED_SEQS,
         conv_folder="./"):
-    if binding_site_file:
-        os.remove(seed_seq_path)
-        make_seed_seqs.make(binding_site_file, seed_seq_path)
-        generic.quit_if_missing(seed_seq_path)
-    else:
-        if not os.path.isfile(seed_seq_path):
-            logging.error(f"Converge needs either a binding_site file, "
-                          f"or a seed_seq file. No seed_seq file in "
-                          f"<{seed_seq_path}>.")
-            raise Exception
+    generic.quit_if_missing(seed_seq_path)
     wrapper.run_conv(seed_seq_path, seqs_path, conv_folder, output_path,
                      bash_exec, num_p=num_p)
     return
+
+def make_seed_seq(binding_site_path, seed_seq_path):
+    return make_seed_seqs.make(binding_site_path, seed_seq_path)
 
 def convert_meme_to_conv(meme, composition, matrix, minimal=False):
     generic.quit_if_missing(meme)

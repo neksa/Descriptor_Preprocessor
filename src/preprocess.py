@@ -47,6 +47,9 @@ def run_prosite_mast(extract_path, motif_len, ref_meme_txt, output,
     :param storage_path:
     :return:
     """
+    generic.quit_if_missing(extract_path)
+    generic.quit_if_missing(ref_meme_txt)
+    generic.warn_if_exist(output)
     if storage_path is None:
         pname_cid_path = paths.PNAME_CID
         seq_path = paths.FULL_SEQS
@@ -77,7 +80,9 @@ def run_prosite_meme(extract_path, motif_len, output, num_p=7,
     :param extract_path: paths.PROSITE_EXTRACT
     :param motif_len: 13
     :param output: paths.PID_PDB_MAP
-    """
+    """''
+    generic.quit_if_missing(extract_path)
+    generic.warn_if_exist(output)
     assert isinstance(num_p, int)
     assert num_p >= 1
 
@@ -113,6 +118,9 @@ def run_ioncom_mast(extract_path, motif_len, ref_meme_txt, output,
     :param ref_meme_txt: paths.REF_MEME_TXT
     :param output: paths.PID_PDB_MAP
     """
+    generic.quit_if_missing(extract_path)
+    generic.quit_if_missing(ref_meme_txt)
+    generic.warn_if_exist(output)
     if storage_path is None:
         pname_cid_path = paths.PNAME_CID
         seq_path = paths.FULL_SEQS
@@ -144,42 +152,59 @@ def load_pdb_info(motif_pos_path, output):
         pickle.dump(pid_pdb_map, file, -1)
 
 
+def run_converge(seq_path,
+                 output,
+                 binding_sites=paths.IONCOM_BINDING_SITES,
+                 seed_seqs=paths.CONV_SEED_SEQS,
+                 bash_exec=paths.BASH_EXEC,
+                 num_p=7,
+                 storage_path=None):
+    """
+    :param seq_path: paths.FULL_SEQS
+    :param output: paths.MOTIF_POS
+    """
+    assert isinstance(num_p, int)
+    assert num_p >= 1
+    assert os.path.isfile(seq_path)
+    if storage_path is None:
+        conv_meme_file = paths.CONV_MEME_FILE
+        seq_path = paths.FULL_SEQS
+        meme_folder = paths.MEME_MAST_FOLDER
+    else:
+        generic.quit_if_missing(storage_path, filetype='folder')
+        conv_meme_file = os.path.join(storage_path, 'conv_meme.txt')
+        seq_path = os.path.join(storage_path, 'seqs.fasta')
+        meme_folder = os.path.join(storage_path, 'meme_folder')
 
-# def run_converge(seq_path=paths.FULL_SEQS, output_path=paths.MOTIF_POS,
-#                  binding_sites=paths.IONCOM_BINDING_SITES,
-#                  seed_seqs_path=paths.CONV_SEED_SEQS,
-#                  bash_exec=paths.BASH_EXEC,
-#                  num_p=7, conv_meme_file=paths.CONV_MEME_FILE,
-#                  mast_meme_folder=paths.MEME_MAST_FOLDER,
-#                  delete_intermediate=False, storage_path=None):
-#     assert isinstance(num_p, int)
-#     assert num_p >= 1
-#     assert os.path.isfile(seq_path)
-#     generic.warn_if_exist(conv_meme_file)
-#     filter_seq_file(seq_path)
-#     conv_interface.run(seq_path, conv_meme_file, binding_sites, bash_exec,
-#                        num_p, seed_seqs_path)
-#
-#     meme_interface.run_mast(conv_meme_file, seq_path, mast_meme_folder)
-#     mast_txt_path = os.path.join(mast_meme_folder, 'mast.txt')
-#     motif_len = 30
-#     seq_motif_map = meme_interface.extract_motifs_mast(mast_txt_path,
-#     motif_len)
-#
-#     generic.warn_if_exist(output_path)
-#     with open(output_path, 'wb') as file:
-#         pickle.dump(seq_motif_map, file, -1)
-#     assert os.path.isfile(output_path)
-#     if delete_intermediate:
-#         os.remove(conv_meme_file)
-#         shutil.rmtree(mast_meme_folder)
-#     elif storage_path:
-#         generic.warn_if_exist(storage_path, filetype='folder')
-#         if not os.path.isdir(storage_path):
-#             os.mkdir(storage_path)
-#         shutil.move(conv_meme_file, storage_path)
-#         shutil.move(mast_meme_folder, storage_path)
-#     return
+    generic.warn_if_exist(conv_meme_file)
+    filter_seq_file(seq_path)
+
+    if binding_sites:
+        generic.quit_if_missing(binding_sites)
+        generic.warn_if_exist(seed_seqs)
+        os.remove(seed_seqs)
+        conv_interface.make_seed_seq(binding_sites, seed_seqs)
+
+    generic.quit_if_missing(seed_seqs)
+    conv_interface.run(seq_path, conv_meme_file, bash_exec, num_p, seed_seqs)
+
+    meme_interface.run_mast(conv_meme_file, seq_path, meme_folder)
+    mast_txt_path = os.path.join(meme_folder, 'mast.txt')
+    motif_len = 30
+    pname_motif_map = meme_interface.extract_motifs_mast(mast_txt_path,
+    motif_len)
+
+    generic.warn_if_exist(output)
+    with open(output, 'wb') as file:
+        pickle.dump(pname_motif_map, file, -1)
+    assert os.path.isfile(output)
+    if storage_path:
+        generic.warn_if_exist(storage_path, filetype='folder')
+        if not os.path.isdir(storage_path):
+            os.mkdir(storage_path)
+        shutil.move(conv_meme_file, storage_path)
+        shutil.move(meme_folder, storage_path)
+    return
 
 
 def parse_extract_ioncom(input_file, pname_cid_path):
@@ -193,6 +218,7 @@ def parse_extract_ioncom(input_file, pname_cid_path):
     generic.warn_if_exist(pname_cid_path)
     with open(pname_cid_path, 'wb') as file:
         pickle.dump(pname_cid_map, file, -1)
+
 
 def parse_extract_prosite(input_file, pname_cid_path):
     """
@@ -276,8 +302,10 @@ def find_motifs_meme(pname_cid_path, seq_file, motif_len, output,
     with open(pname_cid_path, 'rb') as file:
         pname_cid_map = pickle.load(file)
     _test_seq_cid_map(pname_cid_map)
-    motif_pos = motif_finder.find_meme(pname_cid_map, motif_len,
-                                  num_p=num_p, meme_folder=meme_folder,
+    motif_pos = motif_finder.find_meme(pname_cid_map,
+                                       motif_len,
+                                       num_p=num_p,
+                                       meme_folder=meme_folder,
                                        seq_file=seq_file)
     generic.warn_if_exist(output)
     with open(output, 'wb') as file:
