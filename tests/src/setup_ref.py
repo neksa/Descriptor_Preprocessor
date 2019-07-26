@@ -19,9 +19,6 @@ and copy it into prosite_extract.txt.
 For ioncom, we download the dataset from:
 https://zhanglab.ccmb.med.umich.edu/IonCom/. This already provides us with
 the pname+cid directly, so there's no need for a separate pdb_list.
-
-Run setup_parse_extracts() before anything else that requires
-pname_cid_map.
 """
 import pickle
 import os
@@ -44,8 +41,9 @@ def setup_all():
     # setup_meme_suite_meme()
     # setup_meme_to_conv()
     # setup_conv_to_meme()
-    setup_run_converge()
+    # setup_run_converge()
     # setup_get_pname_seq()
+    pass
 
 # todo: the one that broke is id_to_pdb, query for gene_name gave some weird
 #  results apparently.
@@ -85,28 +83,28 @@ def setup_get_pname_seq(to_run_uniref=False):
         assert os.path.isfile(ref_uniref_pname_seq)
 
 
-def setup_run_converge():
-    debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
-    input_seqs = paths_test.UNIPROT_SEQ
-    binding_sites = paths_test.IONCOM_BINDING_SITES
-    seed_seqs = paths_test.INPUT_CONV_SEED_SEQS
-    ref_conv_bind = paths_test.REF_CONV_WITH_BIND
-    ref_conv_seed = paths_test.REF_CONV_WITH_SEED
-
-    preprocess.run_converge(input_seqs,
-                            ref_conv_bind,
-                            binding_sites=binding_sites,
-                            num_p=7,
-                            storage_path=debug_folder)
+# def setup_run_converge():
+#     debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
+#     input_seqs = paths_test.UNIPROT_SEQ
+#     binding_sites = paths_test.IONCOM_BINDING_SITES
+#     seed_seqs = paths_test.INPUT_CONV_SEED_SEQS
+#     ref_conv_bind = paths_test.REF_CONV_WITH_BIND
+#     ref_conv_seed = paths_test.REF_CONV_WITH_SEED
+#
+#     preprocess.run_converge(input_seqs,
+#                             ref_conv_bind,
+#                             binding_sites=binding_sites,
+#                             num_p=7,
+#                             storage_path=debug_folder)
     # preprocess.run_converge(input_seqs,
     #                         ref_conv_seed,
     #                         seed_seqs=seed_seqs,
     #                         num_p=7,
     #                         storage_path=debug_folder)
-    with open(ref_conv_seed, 'rb') as file:
-        print(pickle.load(file))
-    generic.quit_if_missing(ref_conv_bind)
-    generic.quit_if_missing(ref_conv_seed)
+#     with open(ref_conv_seed, 'rb') as file:
+#         print(pickle.load(file))
+#     generic.quit_if_missing(ref_conv_bind)
+#     generic.quit_if_missing(ref_conv_seed)
 
 
 def setup_meme_suite_mast():

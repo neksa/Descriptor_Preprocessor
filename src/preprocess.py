@@ -1,4 +1,3 @@
-import datetime
 import logging
 import os
 import pickle
@@ -10,30 +9,6 @@ import extract_parser, download_pdb_files, create_seq_file, filter_seqs, \
 from meme_suite import meme_interface
 from converge import conv_interface
 from utils import generic, logs, get_pname_seq
-
-# Using Converge
-#############################################################
-# First, we have to derive the converge seed sequences somehow. This should
-# be stored in paths.CONV_SEED_SEQS.
-
-# Possible ways are:
-# 1. Manually
-# 2. By random sampling of a sequence file
-# 3. Based on Ioncom binding site
-
-# Next, with a provided seqs_file, and seed_seqs_file, we run converge.
-
-# Given a set of pnames, we need to
-# 1. download the relevant .pdb files
-# 2. if not inside, say so. If inside, give the cid. 
-
-# Then, converge's output is converted to meme_format.
-
-# Then, we run mast on that meme file, on the same or a different set of
-# sequences
-
-# Finally, we identify the motif positions based on the mast output,
-# and pickle.dump that.
 
 
 def run_prosite_mast(extract_path, motif_len, ref_meme_txt, output,
@@ -158,15 +133,6 @@ def run_ioncom_mast(extract_path, motif_len, ref_meme_txt, output,
         shutil.move(meme_folder, paths.TRASH)
         shutil.move(motif_pos_path, paths.TRASH)
 
-
-def load_pdb_info(motif_pos_path, output):
-    with open(motif_pos_path, 'rb') as file:
-        motif_pos = pickle.load(file)
-    pid_pdb_map = loaders.load_pdb_info(motif_pos)
-    with open(output, 'wb') as file:
-        pickle.dump(pid_pdb_map, file, -1)
-
-
 def run_converge(seq_path,
                  output,
                  binding_sites=None,
@@ -217,28 +183,32 @@ def run_converge(seq_path,
     #                                                      motif_len)
     pname_seq_map = get_pname_seq.parse(seq_path)
     download_pdb_files.trim_pname_cid(pname_seq_map, paths.PDB_FOLDER)
-    print(pname_seq_map)
     pname_cid_map = find_cid_from_pname.find(pname_seq_map)
     generic.warn_if_exist(pname_cid_path)
-    print(pname_cid_map)
-    print(seq_path)
-    print("")
     with open(pname_cid_path, 'wb') as file:
         pickle.dump(pname_cid_map, file, -1)
 
-    # motif_finder.find_mast(pname_cid_map, seq_path, conv_meme_file, 30,
-    #                        meme_folder)
-    find_motifs_mast(pname_cid_path, seq_path, conv_meme_file, 30,
-                     motif_pos_path, meme_folder=paths.MEME_MAST_FOLDER)
-    with open(motif_pos_path, 'rb') as file:
-        print(pickle.load(file))
-    print("\n")
-    load_pdb_info(motif_pos_path, output)
-    if storage_path is None:
-        shutil.move(conv_meme_file, paths.TRASH)
-        shutil.move(meme_folder, paths.TRASH)
-        shutil.move(motif_pos_path, paths.TRASH)
+    # Converge does not work now because it has multiple profiles in its
+    # meme.txt file, but we're only looking for one, in mast.
 
+    # find_motifs_mast(pname_cid_path, seq_path, conv_meme_file, 30,
+    #                  motif_pos_path, meme_folder=paths.MEME_MAST_FOLDER)
+    # with open(motif_pos_path, 'rb') as file:
+    #     print(pickle.load(file))
+    # print("\n")
+    # load_pdb_info(motif_pos_path, output)
+    # if storage_path is None:
+    #     shutil.move(conv_meme_file, paths.TRASH)
+    #     shutil.move(meme_folder, paths.TRASH)
+    #     shutil.move(motif_pos_path, paths.TRASH)
+
+
+def load_pdb_info(motif_pos_path, output):
+    with open(motif_pos_path, 'rb') as file:
+        motif_pos = pickle.load(file)
+    pid_pdb_map = loaders.load_pdb_info(motif_pos)
+    with open(output, 'wb') as file:
+        pickle.dump(pid_pdb_map, file, -1)
 
 def parse_extract_ioncom(input_file, pname_cid_path):
     """

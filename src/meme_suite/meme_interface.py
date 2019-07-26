@@ -6,28 +6,6 @@ from config import paths
 from utils import generic
 
 
-from tests.src import paths_test
-
-def func():
-    debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
-    input_seqfile = paths_test.MEME_TEST_SEQ
-    output = os.path.join(debug_folder, "output_meme_files")
-    run_meme(input_seqfile, 30, output, num_p=7)
-    meme_txt = os.path.join(output, 'meme.txt')
-    from biopython_adapted import bio_interface
-    bio_interface.parse_meme_file(meme_txt)
-
-    # with open(meme_txt, 'r') as handle:
-    #     motifs = meme.read(handle)
-    # motif = motifs[0]meme_pathmeme_path
-    # print(motif.length)
-    # for i, j in motif.counts.items():
-    #     print(i)
-    #     print(j)
-    # print(motif.counts.values())
-    # print(type(motif.counts))
-
-
 def run_meme(fasta_filename, motif_len, meme_output, num_p=1,
              meme_exec=paths.MEME_EXEC):
     assert motif_len >= 1
