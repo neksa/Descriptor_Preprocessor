@@ -53,8 +53,12 @@ def run_conv(seed_seqs_path, seqs_path, conv_folder, output_path, bash_exec,
     command = f"cd {conv_folder} && " \
         f"mpirun -np {num_p} ./converge -B -E 1 -r 1 " \
         f"-f 1 -c ./composition.txt -i ./{seed_filename} -p ./{seqs_filename}"
-    shutil.move(seed_seqs_path, new_seed_path)
-    shutil.move(seqs_path, new_seqs_path)
+    if os.path.isfile(new_seed_path):
+        os.remove(new_seed_path)
+    if os.path.isfile(new_seqs_path):
+        os.remove(new_seqs_path)
+    shutil.copy(seed_seqs_path, new_seed_path)
+    shutil.copy(seqs_path, new_seqs_path)
     try:
         subprocess.run(command, shell=True, executable=bash_exec,
                        stdout=subprocess.DEVNULL)

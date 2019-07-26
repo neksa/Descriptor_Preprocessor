@@ -31,20 +31,82 @@ import preprocess
 from converge import conv_interface
 from tests.src import paths_test
 from meme_suite import meme_interface
-from utils import generic
+from utils import generic, get_pname_seq, download_fasta_given_pdb
 from biopython_adapted import bio_interface
 from config import paths
 
-
 def setup_all():
-    setup_parse_extracts()
-    setup_create_seq()
-    setup_find_motif()
-    setup_run_all()
-    setup_meme_suite_mast()
-    setup_meme_suite_meme()
-    setup_meme_to_conv()
-    setup_conv_to_meme()
+    # setup_parse_extracts()
+    # setup_create_seq()
+    # setup_find_motif()
+    # setup_run_all()
+    # setup_meme_suite_mast()
+    # setup_meme_suite_meme()
+    # setup_meme_to_conv()
+    # setup_conv_to_meme()
+    setup_run_converge()
+    # setup_get_pname_seq()
+
+# todo: the one that broke is id_to_pdb, query for gene_name gave some weird
+#  results apparently.
+
+# todo: we can skip uniref for now, and rely entirely on uniprot. But note
+#  that we also need to download pdb. So, test code need to change to calling
+#  from the original list, instead of the new one.
+
+def setup_get_pname_seq(to_run_uniref=False):
+    uniprot_template_seq = paths_test.UNIPROT_SEQ
+    if not os.path.isfile(uniprot_template_seq):
+        #     This is how the uniprot_template_seq is generated. We want a seq
+        #     for which the relevant .pdb files exist (so we don't have to
+        #     download those just for testing), and the easiest way is to use
+        #     the
+        #     prosite_extract ones. But, this takes ~5min to run.
+        prosite_input = paths.PROSITE_EXTRACT
+        prosite_output_full = paths_test.TMP_FILE_TEMPLATE.format(1)
+        preprocess.parse_extract_prosite(prosite_input, prosite_output_full)
+        with open(prosite_output_full, 'rb') as file:
+            pname_cid_map = pickle.load(file)
+        pnames = list(pname_cid_map.keys())
+        download_fasta_given_pdb.download(pnames, uniprot_template_seq)
+    ref_uniprot_pname_seq = paths_test.REF_UNIPROT_PNAME_SEQ
+    pname_seq_map = get_pname_seq.parse(uniprot_template_seq)
+    with open(ref_uniprot_pname_seq, 'wb') as file:
+        pickle.dump(pname_seq_map, file, -1)
+    assert os.path.isfile(ref_uniprot_pname_seq)
+    if to_run_uniref:
+        # Uniref disabled for now, until we can get the parse() working for
+        # uniref.
+        uniref_seq = paths_test.UNIREF_SEQ
+        ref_uniref_pname_seq = paths_test.REF_UNIREF_PNAME_SEQ
+        pname_seq_map = get_pname_seq.parse(uniref_seq)
+        with open(ref_uniref_pname_seq, 'wb') as file:
+            pickle.dump(pname_seq_map, file, -1)
+        assert os.path.isfile(ref_uniref_pname_seq)
+
+
+def setup_run_converge():
+    debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
+    input_seqs = paths_test.UNIPROT_SEQ
+    binding_sites = paths_test.IONCOM_BINDING_SITES
+    seed_seqs = paths_test.INPUT_CONV_SEED_SEQS
+    ref_conv_bind = paths_test.REF_CONV_WITH_BIND
+    ref_conv_seed = paths_test.REF_CONV_WITH_SEED
+
+    preprocess.run_converge(input_seqs,
+                            ref_conv_bind,
+                            binding_sites=binding_sites,
+                            num_p=7,
+                            storage_path=debug_folder)
+    # preprocess.run_converge(input_seqs,
+    #                         ref_conv_seed,
+    #                         seed_seqs=seed_seqs,
+    #                         num_p=7,
+    #                         storage_path=debug_folder)
+    with open(ref_conv_seed, 'rb') as file:
+        print(pickle.load(file))
+    generic.quit_if_missing(ref_conv_bind)
+    generic.quit_if_missing(ref_conv_seed)
 
 
 def setup_meme_suite_mast():

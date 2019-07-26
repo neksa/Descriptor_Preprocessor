@@ -45,6 +45,8 @@ SequenceVersion is the version number of the sequence.
 import urllib.parse
 import urllib.request
 
+from utils import uniprot_id_converter
+
 def query_genename(genenames):
     id_pdb_map = _query(genenames, "GENENAME")
     return id_pdb_map
@@ -56,28 +58,7 @@ def query_acc(acc_ids):
 
 
 def _query(input_names, tag):
-    assert isinstance(input_names, list)
-    query_line = " ".join(input_names)
-    url = 'https://www.uniprot.org/uploadlists/'
-
-    params = {'from': tag, 'to': 'PDB_ID', 'format': 'tab',
-              'query': query_line}
-    data = urllib.parse.urlencode(params)
-
-    data = data.encode('utf-8')
-    req = urllib.request.Request(url, data)
-    with urllib.request.urlopen(req) as f:
-        response = f.read()
-    parsed_response = response.decode('utf-8')
-    orig_id_pdb = parsed_response.strip().split("\n")
-    if len(orig_id_pdb) == 1: # Only header line
-        return []
-    # ['MSHA_SALTO\tmshA', 'NADE_STRCO\tnadE']
-    orig_id_pdb = orig_id_pdb[1:]
-    id_pdb_map = dict()
-    for line in orig_id_pdb:
-        input_id, pdb = line.split("\t")
-        id_pdb_map[input_id] = pdb
+    id_pdb_map = uniprot_id_converter.convert(tag, "PDB_ID", input_names)
     return id_pdb_map
 
 

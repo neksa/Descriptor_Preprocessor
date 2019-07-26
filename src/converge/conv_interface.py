@@ -8,7 +8,7 @@ from utils import generic
 
 def run(seqs_path, output_path, bash_exec=paths.BASH_EXEC, num_p=7,
         seed_seq_path=paths.CONV_SEED_SEQS,
-        conv_folder="./"):
+        conv_folder=paths.CONV_FOLDER):
     generic.quit_if_missing(seed_seq_path)
     wrapper.run_conv(seed_seq_path, seqs_path, conv_folder, output_path,
                      bash_exec, num_p=num_p)

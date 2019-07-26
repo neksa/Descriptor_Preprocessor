@@ -50,8 +50,21 @@ REF_MEME_FROM_CONV = os.path.join(REF, 'converted_meme.txt')
 # TestMemeSuite
 MEME_TEST_SEQ = os.path.join(USER_INPUT, 'meme_test_seq.fasta')
 MAST_TEST_DIAG = os.path.join(USER_INPUT, 'mast_test_diagram.txt')
-REF_MEME_COUNTS = os.path.join(USER_INPUT, 'meme_counts.pkl')
-REF_MAST_DIAGRAMS = os.path.join(USER_INPUT, 'mast_diagrams.pkl')
+REF_MEME_COUNTS = os.path.join(REF, 'meme_counts.pkl')
+REF_MAST_DIAGRAMS = os.path.join(REF, 'mast_diagrams.pkl')
+
+# TestConverge
+CONV_TEST_SEQ = os.path.join(USER_INPUT, 'conv_test_seq.fasta')
+INPUT_CONV_SEED_SEQS = os.path.join(USER_INPUT, 'input_conv_seed_seqs.fasta')
+REF_CONV_WITH_BIND = os.path.join(REF, 'run_conv_bind.pkl')
+REF_CONV_WITH_SEED = os.path.join(REF, 'run_conv_seed.pkl')
+
+# TestGetPnameSeq
+UNIPROT_SEQ = os.path.join(USER_INPUT, "uniprot_template_seq.fasta")
+UNIREF_SEQ = os.path.join(USER_INPUT, "uniref_template_seq.fasta")
+REF_UNIPROT_PNAME_SEQ = os.path.join(REF, 'uniprot_pname_seq.pkl')
+REF_UNIREF_PNAME_SEQ = os.path.join(REF, 'uniref_pname_seq.pkl')
+
 
 
 # PNAME_CID = os.path.join(INTERNAL, 'pname_cid_map.pkl')

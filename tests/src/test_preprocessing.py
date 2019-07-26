@@ -12,6 +12,74 @@ from utils import generic
 from meme_suite import meme_interface
 
 
+class TestConverge(unittest.TestCase):
+    def setUp(self):
+        self.debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
+        self.seq_path = paths_test.CONV_TEST_SEQ
+        self.output = os.path.join(self.debug_folder, "output_1.pkl")
+        self.binding_sites = paths_test.IONCOM_BINDING_SITES
+        self.seed_seqs = paths_test.INPUT_CONV_SEED_SEQS
+        self.ref_coverge_bind = paths_test.REF_CONV_WITH_BIND
+        self.ref_converge_seed = paths_test.REF_CONV_WITH_SEED
+        self.success = False
+
+    def test_run_converge_bind(self):
+        preprocess.run_converge(self.seq_path,
+                                self.output,
+                                binding_sites=self.binding_sites,
+                                num_p=7,
+                                storage_path=self.debug_folder)
+        with open(self.output, 'rb') as file:
+            act_output = pickle.load(file)
+        with open(self.ref_coverge_bind, 'rb') as file:
+            ref_output = pickle.load(file)
+        self.assertEqual(len(ref_output), len(act_output))
+        for pdb_info, (ref_df1, ref_df2, ref_df3) in ref_output.items():
+            act_df1, act_df2, act_df3 = act_output[pdb_info]
+            if ref_df1 is None:
+                self.assertTrue(act_df1 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df1, act_df1)
+            if ref_df2 is None:
+                self.assertTrue(act_df2 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df2, act_df2)
+            if ref_df3 is None:
+                self.assertTrue(act_df3 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df3, act_df3)
+        self.success = True
+
+    def test_run_converge_seed(self):
+        preprocess.run_converge(self.seq_path, self.output,
+                                seed_seqs=self.seed_seqs, num_p=7,
+                                storage_path=self.debug_folder)
+        with open(self.output, 'rb') as file:
+            act_output = pickle.load(file)
+        with open(self.ref_coverge_seed, 'rb') as file:
+            ref_output = pickle.load(file)
+        self.assertEqual(len(ref_output), len(act_output))
+        for pdb_info, (ref_df1, ref_df2, ref_df3) in ref_output.items():
+            act_df1, act_df2, act_df3 = act_output[pdb_info]
+            if ref_df1 is None:
+                self.assertTrue(act_df1 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df1, act_df1)
+            if ref_df2 is None:
+                self.assertTrue(act_df2 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df2, act_df2)
+            if ref_df3 is None:
+                self.assertTrue(act_df3 is None)
+            else:
+                pd.testing.assert_frame_equal(ref_df3, act_df3)
+        self.success = True
+
+    def tearDown(self):
+        if self.success:
+            pass
+
+
 class TestMemeSuiteMast(unittest.TestCase):
     def setUp(self):
         self.debug_folder = generic.setup_debug_folder(paths_test.DEBUG)

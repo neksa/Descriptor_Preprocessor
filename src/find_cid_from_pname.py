@@ -18,6 +18,7 @@ def find(pname_seq_map, pdb_folder=paths.PDB_FOLDER):
     # before calling this func.
     pname_cid_map = dict()
     for pname, seq in pname_seq_map.items():
+        pname = pname.lower()
         pdb_filepath = os.path.join(pdb_folder, pname+".pdb")
         cid_seq_map = _extract_seq_from_pdb(pdb_filepath)
         cids = list(cid_seq_map.keys())
@@ -42,7 +43,7 @@ def _get_seq_match_score(seq_1, seq_2):
     return leven.levenshtein(seq_1, seq_2)
 
 def _extract_seq_from_pdb(pdb_filepath, AA3_to_AA1=generic.AA3_to_AA1):
-    parser = PDB.PDBParser()
+    parser = PDB.PDBParser(QUIET=True)
     with open(pdb_filepath, 'r') as file:
         struct = parser.get_structure('placeholder', file)
     cid_seq_map = dict()

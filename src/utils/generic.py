@@ -11,12 +11,13 @@ def get_timestamp():
 
 def warn_if_exist(path, filetype='file'):
     assert filetype in ('file', 'folder')
-    if filetype == 'file':
-        if os.path.isfile(path):
-            logging.warning(f"File in <{path}> exists. Replacing.")
-    else:
-        if os.path.isdir(path):
-            logging.warning(f"Folder in <{path}> exists. Replacing.")
+    if path is not None:
+        if filetype == 'file':
+            if os.path.isfile(path):
+                logging.warning(f"File in <{path}> exists. Replacing.")
+        else:
+            if os.path.isdir(path):
+                logging.warning(f"Folder in <{path}> exists. Replacing.")
 
 def quit_if_missing(path, filetype='file'):
     assert filetype in ('file', 'folder')

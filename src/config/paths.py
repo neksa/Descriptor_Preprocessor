@@ -35,6 +35,8 @@ TEMPLATE_SEQFILE = os.path.join(INTERNAL, 'seq_template.fasta')
 
 PID_PDB_MAP = os.path.join(USER_OUTPUT, 'pid_pdb_map.pkl')
 
+CONV_FOLDER = os.path.join(SRC, 'converge')
+CONV_EXEC = os.path.join(CONV_FOLDER, 'converge')
 
 
 # CONVERGE_EXEC = os.path.join(EXTERNAL, "converge")

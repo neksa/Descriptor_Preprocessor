@@ -1,7 +1,38 @@
 """
-Obtain a pname/acc-seq map from sequence .fasta files
+Obtain a pdb_code-seq map from sequence .fasta files
 """
+import logging
+
 from utils import generic, id_to_pdb
+
+
+def parse(seq_path):
+    """
+    Figures out the sequence filetype automatically. Only distinguishes
+    between uniprot and uniref now.
+    """
+    generic.quit_if_missing(seq_path)
+    is_uniref = False
+    is_valid = False
+    with open(seq_path) as file:
+        for line in file:
+            if not line.startswith(">"):
+                continue
+            is_valid = True
+            if line[1:].startswith("UniRef"):
+                is_uniref = True
+                break
+            break
+    if not is_valid:
+        logging.error(f"Input Seq-file in {seq_path} is invalid, no header "
+                      f"lines with > found.")
+        raise Exception
+    if is_uniref:
+        pdb_seq_map = parse_uniref(seq_path)
+    else:
+        pdb_seq_map = parse_uniprot(seq_path)
+    return pdb_seq_map
+
 
 def parse_uniprot(seq_path):
     pdb_seq_map = _parse(seq_path, "uniprot")
@@ -14,7 +45,12 @@ def parse_uniref(seq_path):
 
 
 def _parse(seq_path, source):
+    """
+    Disable "uniref" for now, until we get the query to server for
+    GENENAME=>PDB_ID working.
+    """
     assert source in ("uniref", "uniprot")
+    assert source in ("uniprot")
     if source == "uniref":
         extractor = _extract_genename
         query_fn = id_to_pdb.query_genename
@@ -28,9 +64,10 @@ def _parse(seq_path, source):
     for orig_id, seq in id_seq_map.items():
         try:
             pdb_code = id_pdb_map[orig_id]
-        except IndexError:
+        except KeyError:
             # original_id does not have a corresponding pdb_code
             continue
+        pdb_code = pdb_code.lower()
         pdb_seq_map[pdb_code] = seq
     return pdb_seq_map
 
@@ -48,7 +85,7 @@ def _get_id_seq_map(seq_path, line_extractor):
                     id_seq_map[desired_id] = seq
                     current_seq = []
             else:
-                current_seq.append(line)
+                current_seq.append(line.strip())
     if current_seq:
         id_seq_map[desired_id] = seq
     return id_seq_map

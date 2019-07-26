@@ -6,10 +6,10 @@ import shutil
 
 from config import paths
 import extract_parser, download_pdb_files, create_seq_file, filter_seqs, \
-    motif_finder, prosite_pdb_list, loaders
+    motif_finder, prosite_pdb_list, loaders, find_cid_from_pname
 from meme_suite import meme_interface
 from converge import conv_interface
-from utils import generic, logs
+from utils import generic, logs, get_pname_seq
 
 # Using Converge
 #############################################################
@@ -72,6 +72,11 @@ def run_prosite_mast(extract_path, motif_len, ref_meme_txt, output,
                      motif_pos_path, meme_folder)
 
     load_pdb_info(motif_pos_path, output)
+    if storage_path is None:
+        shutil.move(pname_cid_path, paths.TRASH)
+        shutil.move(seq_path, paths.TRASH)
+        shutil.move(meme_folder, paths.TRASH)
+        shutil.move(motif_pos_path, paths.TRASH)
 
 
 def run_prosite_meme(extract_path, motif_len, output, num_p=7,
@@ -108,6 +113,11 @@ def run_prosite_meme(extract_path, motif_len, output, num_p=7,
     find_motifs_meme(pname_cid_path, seq_path, motif_len, motif_pos_path,
                      meme_folder, num_p)
     load_pdb_info(motif_pos_path, output)
+    if storage_path is None:
+        shutil.move(pname_cid_path, paths.TRASH)
+        shutil.move(seq_path, paths.TRASH)
+        shutil.move(meme_folder, paths.TRASH)
+        shutil.move(motif_pos_path, paths.TRASH)
 
 
 def run_ioncom_mast(extract_path, motif_len, ref_meme_txt, output,
@@ -142,6 +152,11 @@ def run_ioncom_mast(extract_path, motif_len, ref_meme_txt, output,
     find_motifs_mast(pname_cid_path, seq_path, ref_meme_txt, motif_len,
                      motif_pos_path, meme_folder)
     load_pdb_info(motif_pos_path, output)
+    if storage_path is None:
+        shutil.move(pname_cid_path, paths.TRASH)
+        shutil.move(seq_path, paths.TRASH)
+        shutil.move(meme_folder, paths.TRASH)
+        shutil.move(motif_pos_path, paths.TRASH)
 
 
 def load_pdb_info(motif_pos_path, output):
@@ -154,27 +169,35 @@ def load_pdb_info(motif_pos_path, output):
 
 def run_converge(seq_path,
                  output,
-                 binding_sites=paths.IONCOM_BINDING_SITES,
-                 seed_seqs=paths.CONV_SEED_SEQS,
+                 binding_sites=None,
+                 seed_seqs=None,
                  bash_exec=paths.BASH_EXEC,
                  num_p=7,
                  storage_path=None):
     """
     :param seq_path: paths.FULL_SEQS
     :param output: paths.MOTIF_POS
+    :param binding_sites: paths.IONCOM_BINDING_SITES
+    :param seed_seqs: paths.CONV_SEED_SEQS
     """
     assert isinstance(num_p, int)
     assert num_p >= 1
     assert os.path.isfile(seq_path)
     if storage_path is None:
+        pname_cid_path = paths.PNAME_CID
         conv_meme_file = paths.CONV_MEME_FILE
-        seq_path = paths.FULL_SEQS
         meme_folder = paths.MEME_MAST_FOLDER
+        motif_pos_path = paths.MOTIF_POS
+        if not seed_seqs:
+            seed_seqs = paths.CONV_SEED_SEQS
     else:
         generic.quit_if_missing(storage_path, filetype='folder')
+        pname_cid_path = os.path.join(storage_path, 'pname_cid_map.pkl')
         conv_meme_file = os.path.join(storage_path, 'conv_meme.txt')
-        seq_path = os.path.join(storage_path, 'seqs.fasta')
         meme_folder = os.path.join(storage_path, 'meme_folder')
+        motif_pos_path = os.path.join(storage_path, 'motif_pos.pkl')
+        if not seed_seqs:
+            seed_seqs = os.path.join(storage_path, 'seed_seqs.fasta')
 
     generic.warn_if_exist(conv_meme_file)
     filter_seq_file(seq_path)
@@ -182,29 +205,39 @@ def run_converge(seq_path,
     if binding_sites:
         generic.quit_if_missing(binding_sites)
         generic.warn_if_exist(seed_seqs)
-        os.remove(seed_seqs)
         conv_interface.make_seed_seq(binding_sites, seed_seqs)
 
     generic.quit_if_missing(seed_seqs)
     conv_interface.run(seq_path, conv_meme_file, bash_exec, num_p, seed_seqs)
 
-    meme_interface.run_mast(conv_meme_file, seq_path, meme_folder)
-    mast_txt_path = os.path.join(meme_folder, 'mast.txt')
-    motif_len = 30
-    pname_motif_map = meme_interface.extract_motifs_mast(mast_txt_path,
-    motif_len)
+    # meme_interface.run_mast(conv_meme_file, seq_path, meme_folder)
+    # mast_txt_path = os.path.join(meme_folder, 'mast.txt')
+    # motif_len = 30
+    # pname_motif_map = meme_interface.extract_motifs_mast(mast_txt_path,
+    #                                                      motif_len)
+    pname_seq_map = get_pname_seq.parse(seq_path)
+    download_pdb_files.trim_pname_cid(pname_seq_map, paths.PDB_FOLDER)
+    print(pname_seq_map)
+    pname_cid_map = find_cid_from_pname.find(pname_seq_map)
+    generic.warn_if_exist(pname_cid_path)
+    print(pname_cid_map)
+    print(seq_path)
+    print("")
+    with open(pname_cid_path, 'wb') as file:
+        pickle.dump(pname_cid_map, file, -1)
 
-    generic.warn_if_exist(output)
-    with open(output, 'wb') as file:
-        pickle.dump(pname_motif_map, file, -1)
-    assert os.path.isfile(output)
-    if storage_path:
-        generic.warn_if_exist(storage_path, filetype='folder')
-        if not os.path.isdir(storage_path):
-            os.mkdir(storage_path)
-        shutil.move(conv_meme_file, storage_path)
-        shutil.move(meme_folder, storage_path)
-    return
+    # motif_finder.find_mast(pname_cid_map, seq_path, conv_meme_file, 30,
+    #                        meme_folder)
+    find_motifs_mast(pname_cid_path, seq_path, conv_meme_file, 30,
+                     motif_pos_path, meme_folder=paths.MEME_MAST_FOLDER)
+    with open(motif_pos_path, 'rb') as file:
+        print(pickle.load(file))
+    print("\n")
+    load_pdb_info(motif_pos_path, output)
+    if storage_path is None:
+        shutil.move(conv_meme_file, paths.TRASH)
+        shutil.move(meme_folder, paths.TRASH)
+        shutil.move(motif_pos_path, paths.TRASH)
 
 
 def parse_extract_ioncom(input_file, pname_cid_path):
