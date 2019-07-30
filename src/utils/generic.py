@@ -56,6 +56,43 @@ def download_pdb_files(seq_cid_map,
                 with open(output_path, 'w') as output_file:
                     output_file.write(contents.read().decode("utf-8"))
 
+def read_fasta(seq_file):
+    with open(seq_file, 'r') as file:
+        seq_lines = file.readlines()
+    header_seq_map = dict()
+    header = None
+    current_seq = []
+    for line in seq_lines:
+        if line.startswith(">"):
+            if current_seq:
+                seq = "".join(current_seq)
+                header_seq_map[header] = seq
+                header = line[1:].strip()
+                current_seq = []
+            else:
+                header = line[1:].strip()
+        else:
+            current_seq.append(line.strip())
+    if header:
+        seq = "".join(current_seq)
+        header_seq_map[header] = seq
+    return header_seq_map
+
+def write_fasta(header_seq_map, output, line_len=60):
+    with open(output, 'w') as file:
+        for header, seq in header_seq_map.items():
+            file.write(">" + header+"\n")
+            while len(seq) > line_len:
+                file.write(seq[:60]+"\n")
+                seq = seq[60:]
+            else:
+                file.write(seq+"\n")
+
+
+
+
+
+
 
 _aa_index = [('ALA', 'A'),
              ('CYS', 'C'),

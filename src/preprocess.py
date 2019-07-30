@@ -5,10 +5,155 @@ import shutil
 
 from config import paths
 import extract_parser, download_pdb_files, create_seq_file, filter_seqs, \
-    motif_finder, prosite_pdb_list, loaders, find_cid_from_pname
+    motif_finder, prosite_pdb_list, find_cid_from_pname
 from meme_suite import meme_interface
 from converge import conv_interface
-from utils import generic, logs, get_pname_seq
+from utils import generic, logs, get_pname_seq, build_composition, \
+    build_meme_from_aligned, download_fasta_given_pdb, uniprot_id_converter
+from collections import defaultdict
+
+from pdb_component import pdb_interface
+
+import sys
+
+def keep_only_acc(acc_list, seq_file, output):
+    header_seq_map = generic.read_fasta(seq_file)
+    acc_list = set(acc_list)
+    headers = list(header_seq_map.keys())
+    for header in headers:
+        acc = header.split("|")[1]
+        if acc not in acc_list:
+            del header_seq_map[header]
+    generic.write_fasta(header_seq_map, output)
+
+
+
+def run_prosite_aligned(seq_file, aligned_seq_file, output, storage_path=None):
+    """
+    We start off with a seq_file, aligned_seq_file.
+
+    We derive matrix from aligned_seq_file
+    We derive composition from seq_file
+    We put both together into a meme.txt
+
+    We take seq_file, and extract from it the relevant .pdb files and the
+    corresponding cid. So acc+seq => pdb+cid
+
+    We therefore select the seq files for which a corresponding .pdb+cid
+    exists, and output it into a cropped_seqfile
+
+    We run mast on this cropped_seqfile, to obtain motif_pos.
+
+    Finally we output this motif_pos using the pdb+cid from before.
+
+    Desired intermediate files:
+    meme.txt from aligned_seq
+    acc=>pdb+cid map
+    cropped_seqfile.fasta
+    acc=>motif_pos
+    pdb+cid=>motif_pos
+    """
+    generic.quit_if_missing(seq_file)
+    generic.quit_if_missing(aligned_seq_file)
+    generic.warn_if_exist(output)
+    if storage_path is None:
+        composition_file = paths.TMP_FILE_TEMPLATE.format('composition')
+        meme_txt = paths.TMP_FILE_TEMPLATE.format('meme_from_aligned')
+        pdb_cid_path = paths.PNAME_CID
+        acc_seqs_path = paths.TMP_FILE_TEMPLATE.format('pdb_seqs.fasta')
+        motif_pos_path = paths.MOTIF_POS
+        meme_folder = paths.MEME_MAST_FOLDER
+        cropped_seq_file = paths.TMP_FILE_TEMPLATE.format('cropped_seqs.fasta')
+    else:
+        generic.quit_if_missing(storage_path, filetype='folder')
+        composition_file = os.path.join(storage_path, 'composition.txt')
+        meme_txt = os.path.join(storage_path, 'meme_from_aligned.txt')
+        pdb_cid_path = os.path.join(storage_path, 'pname_cid.pkl')
+        acc_seqs_path = os.path.join(storage_path, 'pdb_seqs.fasta')
+        motif_pos_path = os.path.join(storage_path, 'motif_pos.pkl')
+        meme_folder = os.path.join(storage_path, 'meme_mast_folder')
+        cropped_seq_file = os.path.join(storage_path, 'cropped_seqs.fasta')
+    if os.path.isfile(composition_file):
+        os.remove(composition_file)
+    build_composition.build(seq_file, composition_file)
+    build_meme_from_aligned.build(aligned_seq_file, meme_txt,
+                                  composition_file)
+
+    # sys.exit()
+    acc_seq_map = get_pname_seq.parse_raw(seq_file)
+    acc_ids = list(acc_seq_map.keys())
+    acc_pdb_map = uniprot_id_converter.convert("ACC", "PDB_ID", acc_ids)
+    # todo: need to make sure ACC and PDB_ID are unique, for this use case.
+    pdb_seq_map = dict()
+    for acc_id, seq in acc_seq_map.items():
+        if acc_id in acc_pdb_map:
+            pdb_id = acc_pdb_map[acc_id]
+            pdb_seq_map[pdb_id] = seq
+
+    pdb_acc_map = {pdb:acc for acc, pdb in acc_pdb_map.items()}
+    # for acc, pdb in acc_pdb_map.items():
+    # pdb_interface.download(list(pdb_acc_map.keys()))
+    # download_pdb_files.download(pdb_seq_map, pdb_folder)
+    # print(pdb_seq_map)
+    # download_pdb_files.trim_pname_cid(pdb_seq_map, pdb_folder)
+    # print(list(pdb_seq_map.keys()))
+    pdb_cid_map = find_cid_from_pname.find(pdb_seq_map)
+    print(list(pdb_cid_map.keys()))
+    print("mine")
+    with open(pdb_cid_path, "wb") as file:
+        pickle.dump(pdb_cid_map, file, -1)
+    # todo: motif_len should be derived from aligned
+    # todo: at this stage, seq_file should be the one derived from pname_cid,
+    #  so only the ones with matching .pdb files,
+    #  and not the orig seq_file with all 800+ seqs.
+    acc_pdb_and_cid_map = {pdb_acc_map[pdb]: (pdb, cid) for pdb, cid in
+                           pdb_cid_map.items()}
+    cropped_acc_list = list(acc_pdb_and_cid_map.keys())
+
+    keep_only_acc(cropped_acc_list, seq_file, cropped_seq_file)
+
+
+    # acc_cid_map = {pdb_acc_map[pdb]: cid for pdb, cid in pdb_cid_map.items()}
+    # acc_list = list(acc_cid_map.keys())
+    # why???
+    # download_fasta_given_pdb.download_no_convert(acc_list, acc_seqs_path)
+    # generic.quit_if_missing(acc_seqs_path)
+
+    meme_interface.run_mast(meme_txt, cropped_seq_file, meme_folder)
+    mast_txt_path = os.path.join(meme_folder, 'mast.txt')
+    acc_motif_map = meme_interface.extract_motifs_mast_uniprot(
+        mast_txt_path, 14)
+    acc_motif_map = motif_finder._delete_gapped_motifs_uniprot(acc_motif_map,
+                                                                   acc_seqs_path)
+    motif_positions = defaultdict(dict)
+    for acc, each_pname_motif_pos in acc_motif_map.items():
+        pdb_id, cid = acc_pdb_and_cid_map[acc]
+        motif_positions[pdb_id]['sno_markers'] = each_pname_motif_pos
+        motif_positions[pdb_id]['cid'] = cid
+    with open(output, 'wb') as file:
+        pickle.dump(motif_positions, file, -1)
+    # load_pdb_info(motif_pos_path, output)
+    print(f"motif_pos: {motif_positions}")
+
+    return
+    # # return motif_positions
+    # # motif_pos = motif_finder._assemble_motif_pos(pname_motif_map, pname_cid_map)
+    #
+    #
+    #
+    # find_motifs_mast_uniprot(pdb_cid_path, pdb_seqs_path, meme_txt, 14,
+    #                   motif_pos_path,
+    #                  meme_folder=meme_folder)
+    # with open(motif_pos_path, 'rb') as file:
+    #     print(pickle.load(file))
+    # load_pdb_info(motif_pos_path, output)
+    # if storage_path is None:
+    #     shutil.move(composition_file, paths.TRASH)
+    #     shutil.move(meme_txt, paths.TRASH)
+    #     shutil.move(pdb_cid_path, paths.TRASH)
+    #     shutil.move(motif_pos_path, paths.TRASH)
+
+
 
 
 def run_prosite_mast(extract_path, motif_len, ref_meme_txt, output,
@@ -41,17 +186,17 @@ def run_prosite_mast(extract_path, motif_len, ref_meme_txt, output,
     download_pdb(pname_cid_path, pdb_folder)
     trim_pnames_based_on_pdb(pname_cid_path, pdb_folder)
     create_seq(pname_cid_path, seq_path, pdb_folder)
-
     filter_seq_file(seq_path, threshold=31)
-    find_motifs_mast(pname_cid_path, seq_path, ref_meme_txt, motif_len,
-                     motif_pos_path, meme_folder)
+    find_motifs_mast(pname_cid_path, seq_path, ref_meme_txt, motif_len, output,
+                     meme_folder)
+    # print("pass")
+    # load_pdb_info(motif_pos_path, output)
 
-    load_pdb_info(motif_pos_path, output)
     if storage_path is None:
         shutil.move(pname_cid_path, paths.TRASH)
         shutil.move(seq_path, paths.TRASH)
         shutil.move(meme_folder, paths.TRASH)
-        shutil.move(motif_pos_path, paths.TRASH)
+        # shutil.move(motif_pos_path, paths.TRASH)
 
 
 def run_prosite_meme(extract_path, motif_len, output, num_p=7,
@@ -85,14 +230,14 @@ def run_prosite_meme(extract_path, motif_len, output, num_p=7,
 
     filter_seq_file(seq_path, threshold=31)
 
-    find_motifs_meme(pname_cid_path, seq_path, motif_len, motif_pos_path,
+    find_motifs_meme(pname_cid_path, seq_path, motif_len, output,
                      meme_folder, num_p)
-    load_pdb_info(motif_pos_path, output)
+    # load_pdb_info(motif_pos_path, output)
     if storage_path is None:
         shutil.move(pname_cid_path, paths.TRASH)
         shutil.move(seq_path, paths.TRASH)
         shutil.move(meme_folder, paths.TRASH)
-        shutil.move(motif_pos_path, paths.TRASH)
+        # shutil.move(motif_pos_path, paths.TRASH)
 
 
 def run_ioncom_mast(extract_path, motif_len, ref_meme_txt, output,
@@ -124,14 +269,13 @@ def run_ioncom_mast(extract_path, motif_len, ref_meme_txt, output,
     create_seq(pname_cid_path, seq_path, pdb_folder)
 
     filter_seq_file(seq_path, threshold=31)
-    find_motifs_mast(pname_cid_path, seq_path, ref_meme_txt, motif_len,
-                     motif_pos_path, meme_folder)
-    load_pdb_info(motif_pos_path, output)
+    find_motifs_mast(pname_cid_path, seq_path, ref_meme_txt, motif_len, output, meme_folder)
+    # load_pdb_info(motif_pos_path, output)
     if storage_path is None:
         shutil.move(pname_cid_path, paths.TRASH)
         shutil.move(seq_path, paths.TRASH)
         shutil.move(meme_folder, paths.TRASH)
-        shutil.move(motif_pos_path, paths.TRASH)
+        # shutil.move(motif_pos_path, paths.TRASH)
 
 def run_converge(seq_path,
                  output,
@@ -183,7 +327,7 @@ def run_converge(seq_path,
     #                                                      motif_len)
     pname_seq_map = get_pname_seq.parse(seq_path)
     download_pdb_files.trim_pname_cid(pname_seq_map, paths.PDB_FOLDER)
-    pname_cid_map = find_cid_from_pname.find(pname_seq_map)
+    pname_cid_map = find_cid_from_pname.find(pname_seq_map, paths.PDB_FOLDER)
     generic.warn_if_exist(pname_cid_path)
     with open(pname_cid_path, 'wb') as file:
         pickle.dump(pname_cid_map, file, -1)
@@ -310,6 +454,30 @@ def find_motifs_meme(pname_cid_path, seq_file, motif_len, output,
                                        num_p=num_p,
                                        meme_folder=meme_folder,
                                        seq_file=seq_file)
+    generic.warn_if_exist(output)
+    with open(output, 'wb') as file:
+        pickle.dump(motif_pos, file, -1)
+
+
+def find_motifs_mast_uniprot(pname_cid_path, seq_file, ref_meme_txt, motif_len,
+                       output,
+                     meme_folder=paths.MEME_MAST_FOLDER):
+    """
+    :param pname_cid_path: paths.PNAME_CID
+    :param seq_file: paths.FULL_SEQS
+    :param ref_meme_txt: paths.REF_MEME_TXT
+    :param motif_len: 13
+    :param output: paths.MOTIF_POS
+    """
+    assert motif_len >= 1
+    assert isinstance(motif_len, int)
+    generic.quit_if_missing(pname_cid_path)
+    with open(pname_cid_path, 'rb') as file:
+        pname_cid_map = pickle.load(file)
+    _test_seq_cid_map(pname_cid_map)
+    motif_pos = motif_finder.find_mast_uniprot(pname_cid_map, seq_file,
+                                           ref_meme_txt,
+                                       motif_len, meme_folder=meme_folder)
     generic.warn_if_exist(output)
     with open(output, 'wb') as file:
         pickle.dump(motif_pos, file, -1)

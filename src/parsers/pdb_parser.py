@@ -55,8 +55,8 @@ class BaseParser(abc.ABC):
         for line in file_data:
             if line.startswith(record_name):
                 splitted = self.split_line(line)
-                if not self.check_validity(splitted):
-                    continue
+                # if not self.check_validity(splitted):
+                #     continue
                 screened = self.remove_tmp_keys(splitted)
                 converted = self.convert_type(screened)
                 data_list.append(converted)
@@ -137,7 +137,7 @@ class ATOMParser(BaseParser):
 
         assert re.fullmatch("[0-9]+", line["ano"]) \
                and line["ano"] != "0"
-        assert re.fullmatch("[NCOSHP][ABGDEZH]?[XT]?([0-3][0-3]?)?",
+        assert re.fullmatch("[NCOSHP][ABGDEZH]?[XT]?[T]?([0-3][0-3]?)?",
                             line["aname"]), line
         assert line["res"] in amino_acids
         assert re.fullmatch("[A-Z0-9]", line["cid"]), line['cid']

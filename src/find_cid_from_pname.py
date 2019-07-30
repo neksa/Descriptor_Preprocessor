@@ -11,16 +11,16 @@ import numpy as np
 from Bio import PDB
 from config import paths
 from utils import generic
+from pdb_component import pdb_interface
 
-def find(pname_seq_map, pdb_folder=paths.PDB_FOLDER):
+def find(pdb_seq_map):
     # pname is pdb_code
     # all pnames should be present in pdb_folder by this stage, do a check
     # before calling this func.
-    pname_cid_map = dict()
-    for pname, seq in pname_seq_map.items():
-        pname = pname.lower()
-        pdb_filepath = os.path.join(pdb_folder, pname+".pdb")
-        cid_seq_map = _extract_seq_from_pdb(pdb_filepath)
+    pdb_cid_map = dict()
+    for pdb_code, seq in pdb_seq_map.items():
+        pdb_code = pdb_code.lower()
+        cid_seq_map = pdb_interface.get_seq_for(pdb_code)
         cids = list(cid_seq_map.keys())
         assert len(cids) >= 1
         if len(cids) == 1:
@@ -32,8 +32,8 @@ def find(pname_seq_map, pdb_folder=paths.PDB_FOLDER):
                 match_scores.append(score)
             match_i = np.argmin(match_scores)
         cid = cids[match_i]
-        pname_cid_map[pname] = cid
-    return pname_cid_map
+        pdb_cid_map[pdb_code] = cid
+    return pdb_cid_map
 
 def _get_seq_match_score(seq_1, seq_2):
     """

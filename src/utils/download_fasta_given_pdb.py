@@ -18,3 +18,16 @@ def download(pdb_list, output):
             except:
                 continue
 
+
+def download_no_convert(acc_list, output):
+    generic.warn_if_exist(output)
+    with open(output, 'w') as file:
+        for acc in acc_list:
+            url = f"https://www.uniprot.org/uniprot/{acc}.fasta"
+            try:
+                with contextlib.closing(request.urlopen(url)) as contents:
+                    output = contents.read().decode("utf-8")
+                    file.write(output)
+            except:
+                continue
+

@@ -14,9 +14,15 @@ USER_OUTPUT = os.path.join(DATA, 'output')
 INTERNAL = os.path.join(DATA, 'internal')
 DEBUG = os.path.join(DATA, 'debug')
 
+TMP_FILE_TEMPLATE = os.path.join(DEBUG, 'output_{}.txt')
+
 MEME_SUITE = os.path.join(SRC, 'meme_suite')
 MEME_EXEC = os.path.join(MEME_SUITE, 'meme', 'bin', 'meme')
 MAST_EXEC = os.path.join(MEME_SUITE, 'meme', 'bin', 'mast')
+FASTA_2_MARKOV_EXEC = os.path.join(MEME_SUITE, 'meme', 'src',
+                                   'fasta-get-markov')
+MATRIX_2_MEME_EXEC = os.path.join(MEME_SUITE, 'meme', 'scripts',
+                                  'matrix2meme')
 PDB_FOLDER = os.path.join(INTERNAL, 'pdb_files')
 
 PROSITE_EXTRACT = os.path.join(USER_INPUT, 'prosite_extract.txt')
@@ -38,6 +44,12 @@ PID_PDB_MAP = os.path.join(USER_OUTPUT, 'pid_pdb_map.pkl')
 CONV_FOLDER = os.path.join(SRC, 'converge')
 CONV_EXEC = os.path.join(CONV_FOLDER, 'converge')
 
+PROSITE_ALIGNED_SEQS = os.path.join(USER_INPUT,
+                                    'prosite_enolase_aligned_seqs.txt')
+PROSITE_ENOLASE_SEQS = os.path.join(USER_INPUT,
+                                    'uniprot_prosite_enolase_seqs.fasta')
+
+PRELOADED_PDB_FOLDER = os.path.join(INTERNAL, 'pdb_files_parsed')
 
 # CONVERGE_EXEC = os.path.join(EXTERNAL, "converge")
 #

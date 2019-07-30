@@ -5,6 +5,17 @@ import subprocess
 from config import paths
 from utils import generic
 
+def create_meme_from_aligned(fasta_filename, motif_len, meme_output, num_p=1,
+                             meme_exec=paths.MEME_EXEC):
+    assert motif_len >= 1
+    assert isinstance(motif_len, int)
+    generic.quit_if_missing(fasta_filename)
+    generic.warn_if_exist(meme_output, filetype='folder')
+    command = f"{meme_exec} -w {motif_len} -p {num_p} -protein -nmotifs 1 " \
+              f"-mod oops -oc {meme_output} {fasta_filename}"
+    subprocess.run(command, shell=True)
+    _test_successful_meme(meme_output)
+
 
 def run_meme(fasta_filename, motif_len, meme_output, num_p=1,
              meme_exec=paths.MEME_EXEC):
@@ -12,8 +23,12 @@ def run_meme(fasta_filename, motif_len, meme_output, num_p=1,
     assert isinstance(motif_len, int)
     generic.quit_if_missing(fasta_filename)
     generic.warn_if_exist(meme_output, filetype='folder')
+    # command = f"{meme_exec} -w {motif_len} -p {num_p} -protein -nmotifs " \
+    #           f"10 -mod anr -oc {meme_output} {fasta_filename}"
     command = f"{meme_exec} -w {motif_len} -p {num_p} -protein -nmotifs 1 " \
         f"-mod anr -oc {meme_output} {fasta_filename}"
+    # command = f"{meme_exec} -w {motif_len} -p {num_p} -protein -nmotifs 1 " \
+    #           f"-mod oops -oc {meme_output} {fasta_filename}"
     subprocess.run(command, shell=True)
     _test_successful_meme(meme_output)
     return True
@@ -30,17 +45,25 @@ def run_mast(meme_txt, fasta_filename, mast_output, mast_exec=paths.MAST_EXEC):
     generic.warn_if_exist(mast_output, filetype='folder')
     command = f"{mast_exec} -oc {mast_output} -mt 0.0001 {meme_txt} " \
         f"{fasta_filename}"
-    subprocess.run(command, shell=True)
+    return_code = subprocess.run(command, shell=True).returncode
+    if return_code != 0:
+        raise Exception
     _test_successful_mast(mast_output)
     return True
 
 def extract_motifs_meme(input_txt, motif_len):
-    pname_motif_raw = _get_motif_diagram(input_txt, source='meme')
+    pname_motif_raw = _get_motif_diagram_meme_pdb(input_txt)
     pname_motif_map = _adjust_motif_diagram(pname_motif_raw, motif_len)
     return pname_motif_map
 
 def extract_motifs_mast(input_txt, motif_len):
-    pname_motif_raw = _get_motif_diagram(input_txt, source='mast')
+    pname_motif_raw = _get_motif_diagram_mast_pdb(input_txt)
+    pname_motif_map = _adjust_motif_diagram(pname_motif_raw, motif_len)
+    return pname_motif_map
+
+
+def extract_motifs_mast_uniprot(input_txt, motif_len):
+    pname_motif_raw = _get_motif_diagram_mast_uniprot(input_txt)
     pname_motif_map = _adjust_motif_diagram(pname_motif_raw, motif_len)
     return pname_motif_map
 
@@ -70,7 +93,7 @@ def _test_successful_mast(mast_out):
     assert os.path.isfile(_mast_txt_path)
 
 
-def _get_motif_diagram(input_txt, source='meme'):
+def _get_motif_diagram_meme_pdb(input_txt):
     """
     We obtain from meme/mast output (meme.txt/mast.txt) the motif diagram,
     showing the location of the matched motifs for each pname sequence. We
@@ -81,32 +104,19 @@ def _get_motif_diagram(input_txt, source='meme'):
     analysis segment.
     """
     pname_motif_map = dict()
-    if source == 'meme':
-        motif_diagram_sep = "_[1]_"
-    elif source == "mast":
-        motif_diagram_sep = "-[1]-"
-    else:
-        raise Exception
+    motif_diagram_sep = "_[1]_"
     with open(input_txt, 'r') as rfile:
         correct_segment = False
         in_area = False
         for line in rfile:
-            if source == 'meme' and re.search("MEME-1 block diagrams", line):
-                correct_segment = True
-                continue
-            elif source == 'mast' and line.startswith(
-                    "SECTION II: MOTIF DIAGRAMS"):
+            if re.search("MEME-1 block diagrams", line):
                 correct_segment = True
                 continue
             if correct_segment and line.startswith("-------------   "):
                 in_area = True
                 continue
-            if source == 'meme':
-                if in_area and line.startswith("---------------------------"):
-                    break
-            else:
-                if in_area and not line.strip():
-                    break
+            if in_area and line.startswith("---------------------------"):
+                break
             if in_area:
                 pname, motif_diagram = line[:4], line[43:]
                 if motif_diagram_sep not in motif_diagram:
@@ -124,6 +134,91 @@ def _get_motif_diagram(input_txt, source='meme'):
                 pname_motif_map[pname] = motif_positions
     return pname_motif_map
 
+
+def _get_motif_diagram_mast_pdb(input_txt):
+    """
+    We obtain from meme/mast output (meme.txt/mast.txt) the motif diagram,
+    showing the location of the matched motifs for each pname sequence. We
+    then adjust it such that the locations are absolute, relative to the
+    start of the sequence rather than from the end of the previous motif.
+    Motifs with gaps in between are also deleted, mainly because the
+    subsequent descriptor code assumes a continuous sequence for the len-30
+    analysis segment.
+    """
+    pname_motif_map = dict()
+    motif_diagram_sep = "-[1]-"
+    with open(input_txt, 'r') as rfile:
+        correct_segment = False
+        in_area = False
+        for line in rfile:
+            if line.startswith("SECTION II: MOTIF DIAGRAMS"):
+                correct_segment = True
+                continue
+            if correct_segment and line.startswith("-------------   "):
+                in_area = True
+                continue
+            if in_area and not line.strip():
+                break
+            if in_area:
+                pname, motif_diagram = line[:4], line[43:]
+                if motif_diagram_sep not in motif_diagram:
+                    continue
+                # Remove [1]_5 if first motif is right at the front.
+                if motif_diagram.startswith("["):
+                    motif_diagram = motif_diagram[4:]
+                raw_motif_positions = motif_diagram.split(motif_diagram_sep)
+                motif_positions = []
+                for pos in raw_motif_positions[:-1]:
+                    if pos == "":
+                        motif_positions.append(0)
+                    else:
+                        motif_positions.append(int(pos))
+                pname_motif_map[pname] = motif_positions
+    return pname_motif_map
+
+
+def _get_motif_diagram_mast_uniprot(input_txt):
+    """
+    We obtain from meme/mast output (meme.txt/mast.txt) the motif diagram,
+    showing the location of the matched motifs for each pname sequence. We
+    then adjust it such that the locations are absolute, relative to the
+    start of the sequence rather than from the end of the previous motif.
+    Motifs with gaps in between are also deleted, mainly because the
+    subsequent descriptor code assumes a continuous sequence for the len-30
+    analysis segment.
+    """
+    pname_motif_map = dict()
+    motif_diagram_sep = "-[1]-"
+    with open(input_txt, 'r') as rfile:
+        correct_segment = False
+        in_area = False
+        for line in rfile:
+            if line.startswith("SECTION II: MOTIF DIAGRAMS"):
+                correct_segment = True
+                continue
+            if correct_segment and line.startswith("-------------   "):
+                in_area = True
+                continue
+            if in_area and not line.strip():
+                break
+            if in_area:
+                print(line)
+                pname = line.split("|")[1]
+                motif_diagram = line[45:].strip()
+                if motif_diagram_sep not in motif_diagram:
+                    continue
+                # Remove [1]_5 if first motif is right at the front.
+                if motif_diagram.startswith("["):
+                    motif_diagram = motif_diagram[4:]
+                raw_motif_positions = motif_diagram.split(motif_diagram_sep)
+                motif_positions = []
+                for pos in raw_motif_positions[:-1]:
+                    if pos == "":
+                        motif_positions.append(0)
+                    else:
+                        motif_positions.append(int(pos))
+                pname_motif_map[pname] = motif_positions
+    return pname_motif_map
 
 # func()
 # if __name__ == "__main__":

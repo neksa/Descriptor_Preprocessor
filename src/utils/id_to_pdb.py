@@ -53,7 +53,7 @@ def query_genename(genenames):
 
 
 def query_acc(acc_ids):
-    id_pdb_map = _query(acc_ids, "ACC+ID")
+    id_pdb_map = _query(acc_ids, "ACC")
     return id_pdb_map
 
 
