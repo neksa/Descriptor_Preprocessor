@@ -1,3 +1,4 @@
+import logging
 import os
 import re
 import subprocess
@@ -5,16 +6,20 @@ import subprocess
 from config import paths
 from utils import generic
 
-def create_meme_from_aligned(fasta_filename, motif_len, meme_output, num_p=1,
-                             meme_exec=paths.MEME_EXEC):
+
+def run_meme_single(fasta_filename, motif_len, meme_output, num_p=1,
+                    meme_exec=paths.MEME_EXEC):
     assert motif_len >= 1
     assert isinstance(motif_len, int)
     generic.quit_if_missing(fasta_filename)
     generic.warn_if_exist(meme_output, filetype='folder')
     command = f"{meme_exec} -w {motif_len} -p {num_p} -protein -nmotifs 1 " \
               f"-mod oops -oc {meme_output} {fasta_filename}"
-    subprocess.run(command, shell=True)
-    _test_successful_meme(meme_output)
+    return_code = subprocess.run(command, shell=True).returncode
+    if return_code != 0:
+        logging.error("run_meme_single() failed.")
+        logging.error(f"Command: <{command}>")
+        raise Exception
 
 
 def run_meme(fasta_filename, motif_len, meme_output, num_p=1,
@@ -23,21 +28,15 @@ def run_meme(fasta_filename, motif_len, meme_output, num_p=1,
     assert isinstance(motif_len, int)
     generic.quit_if_missing(fasta_filename)
     generic.warn_if_exist(meme_output, filetype='folder')
-    # command = f"{meme_exec} -w {motif_len} -p {num_p} -protein -nmotifs " \
-    #           f"10 -mod anr -oc {meme_output} {fasta_filename}"
     command = f"{meme_exec} -w {motif_len} -p {num_p} -protein -nmotifs 1 " \
         f"-mod anr -oc {meme_output} {fasta_filename}"
-    # command = f"{meme_exec} -w {motif_len} -p {num_p} -protein -nmotifs 1 " \
-    #           f"-mod oops -oc {meme_output} {fasta_filename}"
-    subprocess.run(command, shell=True)
-    _test_successful_meme(meme_output)
+    return_code = subprocess.run(command, shell=True).returncode
+    if return_code != 0:
+        logging.error("run_meme() failed.")
+        logging.error(f"Command: <{command}>")
+        raise Exception
     return True
 
-def _test_successful_meme(meme_out):
-    assert os.path.isdir(meme_out)
-    _meme_txt_path = os.path.join(meme_out, 'meme.txt')
-    assert os.path.isfile(_meme_txt_path)
-    return True
 
 def run_mast(meme_txt, fasta_filename, mast_output, mast_exec=paths.MAST_EXEC):
     generic.quit_if_missing(meme_txt)
@@ -47,14 +46,16 @@ def run_mast(meme_txt, fasta_filename, mast_output, mast_exec=paths.MAST_EXEC):
         f"{fasta_filename}"
     return_code = subprocess.run(command, shell=True).returncode
     if return_code != 0:
+        logging.error("run_mast() failed.")
+        logging.error(f"Command: <{command}>")
         raise Exception
-    _test_successful_mast(mast_output)
-    return True
+
 
 def extract_motifs_meme(input_txt, motif_len):
     pname_motif_raw = _get_motif_diagram_meme_pdb(input_txt)
     pname_motif_map = _adjust_motif_diagram(pname_motif_raw, motif_len)
     return pname_motif_map
+
 
 def extract_motifs_mast(input_txt, motif_len):
     pname_motif_raw = _get_motif_diagram_mast_pdb(input_txt)
@@ -66,6 +67,7 @@ def extract_motifs_mast_uniprot(input_txt, motif_len):
     pname_motif_raw = _get_motif_diagram_mast_uniprot(input_txt)
     pname_motif_map = _adjust_motif_diagram(pname_motif_raw, motif_len)
     return pname_motif_map
+
 
 def _adjust_motif_diagram(prev_map, motif_len):
     pname_motif_map = dict()
@@ -85,12 +87,6 @@ def _adjust_motif_diagram(prev_map, motif_len):
         pname_motif_map[pname] = abs_motif_pos
         assert len(relative_motif_pos) == len(abs_motif_pos)
     return pname_motif_map
-
-
-def _test_successful_mast(mast_out):
-    assert os.path.isdir(mast_out)
-    _mast_txt_path = os.path.join(mast_out, 'mast.txt')
-    assert os.path.isfile(_mast_txt_path)
 
 
 def _get_motif_diagram_meme_pdb(input_txt):

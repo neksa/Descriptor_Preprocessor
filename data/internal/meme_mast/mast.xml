@@ -30,7 +30,7 @@
 	</alphabet>
 	<background source="--nrdb--" A="0.0730919" C="0.0181455" D="0.051688" E="0.0622785" F="0.0402434" G="0.0692596" H="0.0224055" I="0.056227" K="0.058435" L="0.0916218" M="0.0230443" N="0.0460321" P="0.0506238" Q="0.0407153" R="0.0518462" S="0.073729" T="0.0593523" V="0.0642985" W="0.0133282" Y="0.0326497"/>
 	<motif_dbs>
-		<motif_db source="/home/yincp/Desktop/Descriptor_Preprocessor/data/debug/output_meme_from_aligned.txt" last_mod_date="Tue Jul 30 16:26:42 2019">
+		<motif_db source="/home/yincp/Desktop/Descriptor_Preprocessor/data/debug/output_meme_from_aligned.txt" last_mod_date="Wed Jul 31 14:05:53 2019">
 			<background A="0.113798" C="0.00547039" D="0.0637192" E="0.0783089" F="0.0294499" G="0.0982685" H="0.0143202" I="0.0702791" K="0.0609893" L="0.0880187" M="0.02366" N="0.0472796" P="0.0289899" Q="0.02714" R="0.0395797" S="0.0576093" T="0.0520095" V="0.0659892" W="0.00565039" Y="0.0294699"/>
 		</motif_db>
 	</motif_dbs>
@@ -55,7 +55,7 @@
 	<correlations>
 	</correlations>
 	<sequence_dbs>
-		<sequence_db source="/home/yincp/Desktop/Descriptor_Preprocessor/data/debug/output_cropped_seqs.fasta.txt" last_mod_date="Tue Jul 30 16:26:58 2019" seq_count="22" residue_count="9544"/>
+		<sequence_db source="/home/yincp/Desktop/Descriptor_Preprocessor/data/debug/output_cropped_seqs.fasta.txt" last_mod_date="Wed Jul 31 14:06:09 2019" seq_count="22" residue_count="9544"/>
 	</sequence_dbs>
 	<sequences>
 		<sequence db="0" name="sp|Q8GR70|ENO_ENTHR" comment="Enolase OS=Enterococcus hirae OX=1354 GN=eno PE=1 SV=1" length="432">
@@ -257,5 +257,5 @@ WAAWSKFTANVGIQIVGDDLTVTNPKRIERAVEEKACNCLLLKVNQIGSVTEAIQACKLAQENGWGVMVSHRSGE
 			</seg>
 		</sequence>
 	</sequences>
-	<runtime host="yincp-GE72-2QF" when="Tue Jul 30 16:26:58 2019" cycles="5626" seconds="0.006"/>
+	<runtime host="yincp-GE72-2QF" when="Wed Jul 31 14:06:09 2019" cycles="5620" seconds="0.006"/>
 </mast>

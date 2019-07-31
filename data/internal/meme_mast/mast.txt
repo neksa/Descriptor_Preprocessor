@@ -23,7 +23,7 @@ REFERENCE
 DATABASE AND MOTIFS
 ********************************************************************************
 	DATABASE output_cropped_seqs.fasta.txt (peptide)
-	Last updated on Tue Jul 30 16:26:58 2019
+	Last updated on Wed Jul 31 14:06:09 2019
 	Database contains 22 sequences, 9544 residues
 
 	MOTIFS output_meme_from_aligned.txt (peptide)

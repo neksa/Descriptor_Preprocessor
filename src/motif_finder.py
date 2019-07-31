@@ -151,8 +151,7 @@ def _delete_gapped_motifs_uniprot(prev_map, fasta_fname):
 
 
 def _build_seq_motif_map(process, tmp_output_folder, seq_file, motif_len,
-                         num_p=1,
-                         ref_meme_txt=None):
+                         num_p=1, ref_meme_txt=None):
     if process == 'meme':
         meme_interface.run_meme(seq_file, tmp_output_folder, num_p)
         meme_txt_path = os.path.join(tmp_output_folder, 'meme.txt')

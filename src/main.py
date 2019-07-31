@@ -17,6 +17,7 @@ from collections import Counter, OrderedDict
 # todo: need to build a composition file using the full seq first.
 
 import numpy as np
+import pickle
 
 from utils import generic, build_composition, build_meme_from_aligned, \
     get_pname_seq
@@ -103,15 +104,19 @@ def write_matrix_file(matrix_ordered, output):
 
 
 
-import pickle
-
 def main():
-    with open(os.path.join(paths.ROOT, "motif_pos.pkl"), 'rb') as file:
-        print(len(pickle.load(file)))
-    # preprocess.run_prosite_aligned(paths.PROSITE_ENOLASE_SEQS,
-    #                                paths.PROSITE_ALIGNED_SEQS,
-    #                                os.path.join(paths.ROOT,
-    #                                             "output_motif_pos_new.pkl"))
+    logs.set_logging_level()
+    # with open(os.path.join(paths.ROOT, "motif_pos.pkl"), 'rb') as file:
+    #     print(len(pickle.load(file)))
+    preprocess.run_prosite_aligned(paths.PROSITE_ENOLASE_SEQS,
+                                   paths.PROSITE_ALIGNED_SEQS,
+                                   os.path.join(paths.ROOT,
+                                                "output_motif_pos_new.pkl"))
+    with open(os.path.join(paths.ROOT, "output_motif_pos_new.pkl"), 'rb') as \
+            file:
+        output_motif_pos = pickle.load(file)
+    print(len(output_motif_pos))
+    print(list(output_motif_pos.keys()))
     # preprocess.run_prosite_mast(paths.PROSITE_EXTRACT, 30,
     #                             paths.REF_MEME_TXT,
     #                  os.path.join(paths.ROOT, "prosite_mast_motif_pos.pkl"))
@@ -137,18 +142,21 @@ def main():
     # meme_txt = os.path.join(paths.MEME_MAST_FOLDER, "meme.txt")
 
 
-    # logs.set_logging_level()
+    logs.set_logging_level()
     # extract_path = paths.PROSITE_EXTRACT
     # motif_len = 13
     # output = paths.PID_PDB_MAP
     # num_p = 7
     # preprocess.run_prosite_meme(extract_path, motif_len, output, num_p)
-    #
+
     # extract_path = paths.PROSITE_EXTRACT
     # motif_len = 13
     # ref_meme_txt = paths.REF_MEME_TXT
+    # print(ref_meme_txt)
     # output = paths.PID_PDB_MAP
     # preprocess.run_prosite_mast(extract_path, motif_len, ref_meme_txt, output)
+    # with open(output, 'rb') as file:
+    #     print(pickle.load(file))
     #
     # extract_path = paths.IONCOM_EXTRACT
     # motif_len = 13

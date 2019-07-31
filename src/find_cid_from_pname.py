@@ -21,6 +21,8 @@ def find(pdb_seq_map):
     for pdb_code, seq in pdb_seq_map.items():
         pdb_code = pdb_code.lower()
         cid_seq_map = pdb_interface.get_seq_for(pdb_code)
+        if cid_seq_map is None:
+            continue
         cids = list(cid_seq_map.keys())
         assert len(cids) >= 1
         if len(cids) == 1:

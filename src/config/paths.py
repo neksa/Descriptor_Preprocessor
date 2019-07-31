@@ -14,7 +14,7 @@ USER_OUTPUT = os.path.join(DATA, 'output')
 INTERNAL = os.path.join(DATA, 'internal')
 DEBUG = os.path.join(DATA, 'debug')
 
-TMP_FILE_TEMPLATE = os.path.join(DEBUG, 'output_{}.txt')
+TMP_FILE_TEMPLATE = os.path.join(DEBUG, 'tmp_{}')
 
 MEME_SUITE = os.path.join(SRC, 'meme_suite')
 MEME_EXEC = os.path.join(MEME_SUITE, 'meme', 'bin', 'meme')
