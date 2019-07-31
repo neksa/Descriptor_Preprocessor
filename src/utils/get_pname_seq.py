@@ -7,7 +7,7 @@ from utils import generic, id_to_pdb
 
 def parse_raw(seq_path):
     """
-    Only uniprot
+    For uniprot
     """
     generic.quit_if_missing(seq_path)
     id_seq_map = dict()
@@ -25,7 +25,6 @@ def parse_raw(seq_path):
     if current_seq:
         id_seq_map[desired_id] = seq
     return id_seq_map
-    pass
 
 
 def parse(seq_path):

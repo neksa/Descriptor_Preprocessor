@@ -27,14 +27,6 @@ def get_seq_for(pdb_code, cid=None):
         cid_seq_map[current_cid] = seq
     return cid_seq_map
 
-    # atom_type, res_id = residue.get_id()[:2]
-    # res_id should start from 1
-    # if res_id < len(seq) + 1:
-    #     continue
-    # while res_id > len(seq) + 1:
-    #     seq.append("X")
-    # if atom_type == " ":
-
 
 def get_info_for(pdb_code):
     pdb_suffix = pdb_code.lower().strip() + ".pkl"
