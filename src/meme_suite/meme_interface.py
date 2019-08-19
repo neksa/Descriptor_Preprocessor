@@ -198,7 +198,6 @@ def _get_motif_diagram_mast_uniprot(input_txt):
             if in_area and not line.strip():
                 break
             if in_area:
-                print(line)
                 pname = line.split("|")[1]
                 motif_diagram = line[45:].strip()
                 if motif_diagram_sep not in motif_diagram:

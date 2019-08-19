@@ -37,3 +37,15 @@ def convert_conv_to_meme(matrix, composition, meme):
     generic.warn_if_exist(meme)
     conv_to_meme.convert(matrix, composition, meme)
     generic.quit_if_missing(meme)
+
+def convert_conv_to_meme_full_num(matrix, composition, meme):
+    """
+    When using output.1.matrix instead, so we get full numbers instead of probs.
+    """
+    generic.quit_if_missing(composition)
+    generic.quit_if_missing(matrix)
+    generic.warn_if_exist(meme)
+    conv_to_meme.convert_fullnum(matrix, composition, meme)
+    generic.quit_if_missing(meme)
+
+# if __name__ == "__main__":

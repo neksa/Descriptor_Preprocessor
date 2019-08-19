@@ -15,6 +15,55 @@ def convert(input_conv_path, composition_path, output_path):
     return
 
 
+def convert_fullnum(input_conv_path, composition_path, output_path):
+    alphabets, matrices = _parse_converge_output_fullnum(input_conv_path)
+    composition_map = _parse_converge_composition(composition_path)
+    _format_minimal_from_conv(alphabets, composition_map, matrices, output_path)
+    return
+
+
+def _parse_converge_output_fullnum(filename):
+    alphabets = ""
+    length = 30
+    matrices = OrderedDict()
+    matrix = []
+    nsite = 0
+    matrix_count = 0
+    with open(filename, "r") as file:
+        for line in file:
+            if line.startswith("BEGIN") and matrix_count != 0:
+                assert len(matrix) == length, len(matrix)
+                motif_name = f"MEME-{matrix_count}"
+                matrices[motif_name] = (nsite, matrix)
+                assert nsite != 0
+                matrix = []
+                nsite = 0
+                continue
+            if line.startswith("MATRIX"):
+                matrix_count += 1
+                nsite_match = re.search(r"Kmatches=([0-9]+)", line)
+                assert nsite_match is not None
+                nsite = int(nsite_match[1])
+                continue
+            if (line.startswith("50") or line.startswith("30")):
+                if not alphabets:
+                    matched_alphabets = re.findall("[A-Z]", line)
+                    alphabets = "".join(matched_alphabets)
+                continue
+            if re.match(" [0-9]", line) or re.match("[0-9]+", line):
+                counts = re.findall(r"[0-9]+", line)[1:]
+                assert len(counts) == len(alphabets)
+                probs = []
+                assert nsite != 0
+                for count in counts:
+                    probs.append("{:.6f}".format(int(count)/nsite))
+                matrix.append(probs)
+                continue
+        if matrix:
+            motif_name = f"MEME-{matrix_count}"
+            matrices[motif_name] = (nsite, matrix)
+    return alphabets, matrices
+
 def _parse_converge_output(filename):
     alphabets = ""
     length = 30

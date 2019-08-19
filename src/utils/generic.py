@@ -5,9 +5,6 @@ import logging
 import shutil
 import datetime
 
-def get_timestamp():
-    timestamp = datetime.datetime.now().isoformat()
-    return timestamp
 
 def warn_if_exist(path, filetype='file'):
     assert filetype in ('file', 'folder')

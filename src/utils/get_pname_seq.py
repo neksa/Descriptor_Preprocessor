@@ -7,7 +7,7 @@ from utils import generic, id_to_pdb
 
 def parse_raw(seq_path):
     """
-    For uniprot
+    Only uniprot
     """
     generic.quit_if_missing(seq_path)
     id_seq_map = dict()
@@ -15,16 +15,17 @@ def parse_raw(seq_path):
         current_seq = []
         for line in file:
             if line.startswith(">"):
-                desired_id = line.strip().split("|")[1]
                 if current_seq:
                     seq = "".join(current_seq)
                     id_seq_map[desired_id] = seq
                     current_seq = []
+                desired_id = line.strip().split("|")[1]
             else:
                 current_seq.append(line.strip())
     if current_seq:
         id_seq_map[desired_id] = seq
     return id_seq_map
+    pass
 
 
 def parse(seq_path):
