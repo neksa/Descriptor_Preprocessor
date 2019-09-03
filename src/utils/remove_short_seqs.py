@@ -12,7 +12,7 @@ def remove(fasta_path=None, output_path=None):
         current_seq = ""
         for line in file:
             if line.startswith(">"):
-                if len(current_seq) > 30:
+                if len(current_seq) > 50:
                     output.append(title)
                     output.append(current_seq)
                     title = line
@@ -23,7 +23,7 @@ def remove(fasta_path=None, output_path=None):
                     current_seq = ""
                     continue
             current_seq += line
-        if len(current_seq) > 30:
+        if len(current_seq) > 50:
             output.append(title)
             output.append(current_seq)
     if output_path is None:

@@ -12,7 +12,10 @@ def build(seq_path, output):
     generic.quit_if_missing(seq_path)
     generic.warn_if_exist(output)
     if os.path.isfile(output):
-        shutil.move(output, paths.TRASH)
+        try:
+            shutil.move(output, paths.TRASH)
+        except shutil.Error:
+            os.remove(output)
     command = f"{paths.FASTA_2_MARKOV_EXEC} -protein < {seq_path} > {output}"
     subprocess.run(command, shell=True)
     generic.quit_if_missing(output)

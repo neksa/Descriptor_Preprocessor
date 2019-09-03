@@ -31,13 +31,14 @@ def get_seq_for(pdb_code, cid=None):
 def get_info_for(pdb_code):
     pdb_suffix = pdb_code.lower().strip() + ".pkl"
     if pdb_suffix not in pdb_paths.PDB_PARSED_SET:
-        if pdb_suffix in pdb_paths.PDB_FILES_SET:
+        if pdb_code.lower().strip() + ".pdb" in pdb_paths.PDB_FILES_SET:
             get_success = loaders.load_pdb_info(pdb_code)
         else:
-            get_success = download(pdb_code, silent=True)
+            get_success = download(pdb_code, silent=False)
             if get_success:
                 get_success = loaders.load_pdb_info(pdb_code)
         if not get_success:
+            print(f"get_info_for(pdb_code) failed for {pdb_code}")
             return None
     filepath = os.path.join(pdb_paths.PDB_PARSED, pdb_suffix)
     with open(filepath, 'rb') as file:
@@ -53,7 +54,9 @@ def preload_all():
 
 def download(pdb_code, silent=False):
     pdb_code = pdb_code.lower().strip()
+
     url = pdb_utils.PDB_URL_TEMPLATE.format(pdb_code)
+    print(url)
     output_path = os.path.join(pdb_paths.PDB_FILES, pdb_code+".pdb")
     try:
         with contextlib.closing(request.urlopen(url)) as contents:

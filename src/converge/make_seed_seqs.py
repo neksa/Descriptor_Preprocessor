@@ -25,7 +25,7 @@ def ioncom_parser(fname):
             else:
                 continue
         elif re.match('[A-Z]', line):
-            if len(line) > 30:
+            if len(line) > 50:
                 seq = line
         else:
             binding_site = line
@@ -41,13 +41,13 @@ def split_into_profiles(seq_binding_sites):
         length = len(seq)
         loc_of_matches = [i.span()[0] for i in re.finditer("1", binding_site)]
         for index in loc_of_matches:
-            if index < 15:
-                profile = seq[:30]
-            elif index + 15 >= length:
-                profile = seq[-30:]
+            if index < 25:
+                profile = seq[:50]
+            elif index + 25 >= length:
+                profile = seq[-50:]
             else:
-                profile = seq[index-15:index+15]
-            assert len(profile) == 30
+                profile = seq[index-25:index+25]
+            assert len(profile) == 50
             profiles.add(profile)
     return profiles
 

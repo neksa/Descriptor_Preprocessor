@@ -24,7 +24,7 @@ def convert_fullnum(input_conv_path, composition_path, output_path):
 
 def _parse_converge_output_fullnum(filename):
     alphabets = ""
-    length = 30
+    length = 50
     matrices = OrderedDict()
     matrix = []
     nsite = 0
@@ -45,7 +45,7 @@ def _parse_converge_output_fullnum(filename):
                 assert nsite_match is not None
                 nsite = int(nsite_match[1])
                 continue
-            if (line.startswith("50") or line.startswith("30")):
+            if line.startswith("50"):
                 if not alphabets:
                     matched_alphabets = re.findall("[A-Z]", line)
                     alphabets = "".join(matched_alphabets)
@@ -60,13 +60,14 @@ def _parse_converge_output_fullnum(filename):
                 matrix.append(probs)
                 continue
         if matrix:
+            assert len(matrix) == length, len(matrix)
             motif_name = f"MEME-{matrix_count}"
             matrices[motif_name] = (nsite, matrix)
     return alphabets, matrices
 
 def _parse_converge_output(filename):
     alphabets = ""
-    length = 30
+    length = 50
     matrices = OrderedDict()
     matrix = []
     nsite = 0
@@ -142,7 +143,7 @@ def _format_minimal_from_conv(alphabets, composition_map, matrices, output):
             m_count += 1
             file.write(f"MOTIF {motif_name}")
             file.write("\n")
-            file.write(f"letter-probability matrix: alength= 20 w= 30 "
+            file.write(f"letter-probability matrix: alength= 20 w= 50 "
                        f"nsites= {nsite} E= 0.000")  # alength = len(alphabets)
             # E is just some random number, filled in by subsequent eval calc.
             # w = width of motif

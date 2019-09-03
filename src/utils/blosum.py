@@ -45,3 +45,23 @@ for i in range(len(full_matrix)):
         assert value == full_matrix[j][i]
 
 assert len(list(blosum.keys())) == len(set(blosum.keys()))
+
+# Edit blosum
+from utils import generic
+from collections import defaultdict
+AA_values = sorted(set(generic.AA3_to_AA1.values()))
+blosum_20 = defaultdict(list)
+for AA_1 in AA_values:
+    summed_count = 0.
+    for AA_2 in AA_values:
+        if AA_1 == AA_2:
+            continue
+        desired_key = frozenset([AA_1, AA_2])
+        prob = blosum[desired_key]
+        summed_count += prob
+    for AA_2 in AA_values:
+        if AA_1 == AA_2:
+            continue
+        desired_key = frozenset([AA_1, AA_2])
+        prob = blosum[desired_key]
+        blosum_20[AA_1].append(prob / summed_count)

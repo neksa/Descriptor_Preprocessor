@@ -29,6 +29,16 @@ from collections import defaultdict
 from pdb_component import pdb_interface
 
 import sys
+import re
+from collections import OrderedDict
+import random
+
+
+def _get_motif_len_from_aligned(aligned_file):
+    with open(aligned_file, 'r') as file:
+        for line in file:
+            if not line.startswith(">"):
+                return len(line.strip())
 
 def keep_only_acc(acc_list, seq_file, output):
     header_seq_map = generic.read_fasta(seq_file)
@@ -75,11 +85,12 @@ def run_prosite_aligned_cropped(seq_file, aligned_seq_file, output,
     if os.path.isfile(composition_file):
         os.remove(composition_file)
     build_composition.build(seq_file, composition_file)
+    motif_len = _get_motif_len_from_aligned(aligned_seq_file)
     build_meme_from_aligned.build(aligned_seq_file, meme_txt, composition_file)
     meme_interface.run_mast(meme_txt, seq_file, meme_folder)
     mast_txt_path = os.path.join(meme_folder, 'mast.txt')
     acc_motif_map = meme_interface.extract_motifs_mast_uniprot(mast_txt_path,
-                                                               14)
+                                                               motif_len)
 
     acc_seq_map = get_pname_seq.parse_raw(seq_file)
     aligned_sequences = []
@@ -87,12 +98,17 @@ def run_prosite_aligned_cropped(seq_file, aligned_seq_file, output,
         if acc not in acc_seq_map:
             continue
         seq = acc_seq_map[acc]
+        if motif_len > 49:
+            print("motif_len bigger than 50. Exiting.")
+            raise Exception
+        left_spacing = 25 - motif_len//2
+        right_spacing = 25 + motif_len // 2
         for motif in motifs:
-            if len(seq) < motif + 15:
+            if len(seq) < motif + right_spacing:
                 continue
-            if motif < 15:
+            if motif < left_spacing:
                 continue
-            aligned_seq = seq[motif-12:motif+18]
+            aligned_seq = seq[motif-left_spacing:motif+right_spacing]
             aligned_sequences.append(aligned_seq)
     with open("aligned_seq_mine.txt", "w") as file:
         for seq in aligned_sequences:
@@ -109,7 +125,7 @@ def run_prosite_aligned_cropped(seq_file, aligned_seq_file, output,
     assert len(AA_values) == 20
     for i, AA in enumerate(AA_values):
         alphabets[AA] = i
-    output_matrix = np.zeros((30, 20), dtype=int)
+    output_matrix = np.zeros((50, 20), dtype=int)
     for seq in aligned_sequences:
         for i, char in enumerate(seq):
             if char in alphabets:
@@ -121,49 +137,97 @@ def run_prosite_aligned_cropped(seq_file, aligned_seq_file, output,
                 file.write(str(value) + " ")
             file.write("\n")
     print(f"Kmatches is {len(aligned_sequences)}.")
+    return
 
 
 
+def run_prosite_aligned_cropped_flat(seq_file, aligned_seq_file, output,
+                                storage_path=None):
+    """
+    15/8/2019
+    Flatten the areas outside the aligned portions.
+    :return:
+    """
 
+    generic.quit_if_missing(seq_file)
+    generic.quit_if_missing(aligned_seq_file)
+    generic.warn_if_exist(output)
+    if storage_path is None:
+        composition_file = paths.TMP_FILE_TEMPLATE.format('composition.txt')
+        meme_txt = paths.TMP_FILE_TEMPLATE.format('meme_from_aligned.txt')
+        meme_folder = paths.MEME_MAST_FOLDER
+        cropped_seq_file = paths.TMP_FILE_TEMPLATE.format('cropped_seqs.fasta')
+    else:
+        generic.quit_if_missing(storage_path, filetype='folder')
+        composition_file = os.path.join(storage_path, 'composition.txt')
+        meme_txt = os.path.join(storage_path, 'meme_from_aligned.txt')
+        meme_folder = os.path.join(storage_path, 'meme_mast_folder')
+        cropped_seq_file = os.path.join(storage_path, 'cropped_seqs.fasta')
+    if os.path.isfile(composition_file):
+        os.remove(composition_file)
+    build_composition.build(seq_file, composition_file)
+    composition_alphabets = []
+    composition_probs = []
 
+    with open(composition_file, 'r') as file:
+        for line in file:
+            if re.match("[A-Z] ", line):
+                composition_alphabets.append(line[0])
+                composition_probs.append(float(line[2:]))
 
+    build_meme_from_aligned.build(aligned_seq_file, meme_txt, composition_file)
+    motif_len = _get_motif_len_from_aligned(aligned_seq_file)
+    meme_interface.run_mast(meme_txt, seq_file, meme_folder)
+    mast_txt_path = os.path.join(meme_folder, 'mast.txt')
+    acc_motif_map = meme_interface.extract_motifs_mast_uniprot(mast_txt_path,
+                                                               motif_len)
 
-    # acc_ids = list(acc_seq_map.keys())
-    # acc_pdb_map = uniprot_id_converter.convert("ACC", "PDB_ID", acc_ids)
-    #
-    # pdb_seq_map = dict()
-    # # because pdb => acc mapping may not be 1-1, we retain the original maps
-    # mapped_pdb_acc = dict()
-    # for acc_id, seq in acc_seq_map.items():
-    #     if acc_id in acc_pdb_map:
-    #         pdb_id = acc_pdb_map[acc_id]
-    #         mapped_pdb_acc[pdb_id] = acc_id
-    #         pdb_seq_map[pdb_id] = seq
-    #
-    # pdb_cid_map = find_cid_from_pname.find(pdb_seq_map)
-    # acc_pdb_cid_map = {mapped_pdb_acc[pdb]: (pdb, cid) for pdb, cid in
-    #                    pdb_cid_map.items()}
-    # cropped_acc_list = list(acc_pdb_cid_map.keys())
-    #
-    # keep_only_acc(cropped_acc_list, seq_file, cropped_seq_file)
-    # meme_interface.run_mast(meme_txt, cropped_seq_file, meme_folder)
-    # mast_txt_path = os.path.join(meme_folder, 'mast.txt')
-    # acc_motif_map = meme_interface.extract_motifs_mast_uniprot(mast_txt_path,
-    #                                                            14)
-    # acc_motif_map = motif_finder._delete_gapped_motifs_uniprot(acc_motif_map,
-    #                                                            cropped_seq_file)
-    # pdb_motif_pos = defaultdict(dict)
-    # for acc, motif_pos in acc_motif_map.items():
-    #     pdb_id, cid = acc_pdb_cid_map[acc]
-    #     pdb_motif_pos[pdb_id]['sno_markers'] = motif_pos
-    #     pdb_motif_pos[pdb_id]['cid'] = cid
-    # with open(output, 'wb') as file:
-    #     pickle.dump(pdb_motif_pos, file, -1)
-    # if storage_path is None:
-    #     shutil.move(composition_file, paths.TRASH)
-    #     shutil.move(meme_txt, paths.TRASH)
-    #     shutil.move(meme_folder, paths.TRASH)
-    #     shutil.move(cropped_seq_file, paths.TRASH)
+    acc_seq_map = get_pname_seq.parse_raw(seq_file)
+    aligned_sequences = []
+    for acc, motifs in acc_motif_map.items():
+        if acc not in acc_seq_map:
+            continue
+        seq = acc_seq_map[acc]
+        for motif in motifs:
+            if len(seq) < motif + 25:
+                continue
+            if motif < 25:
+                continue
+            aligned_seq = seq[motif:motif+motif_len]
+            # replace the others with composition at random
+            padding = random.choices(composition_alphabets,
+                                     weights=composition_probs, k=50-motif_len)
+            aligned_seq = "".join(padding[:15]) + aligned_seq \
+                          + "".join(padding[15:])
+            assert len(aligned_seq) == 50
+            aligned_sequences.append(aligned_seq)
+    # with open("aligned_seq_mine.txt", "w") as file:
+    #     for seq in aligned_sequences:
+    #         file.write(">RAND\n")
+    #         file.write(seq + "\n")
+    # build_meme_from_aligned.build("aligned_seq_mine.txt",
+    #                               "output_meme_mine.txt", composition_file)
+    # to check logo of this, run ./meme/ceqlogo -i1 output_meme_mine.txt -o
+    # logo.eps -f EPS
+    # output as matrix, and number of Kmatches.
+    # Number of Kmatches is approximately number of aligned seqs
+    alphabets = dict()
+    AA_values = sorted(set(generic.AA3_to_AA1.values()))
+    assert len(AA_values) == 20
+    for i, AA in enumerate(AA_values):
+        alphabets[AA] = i
+    output_matrix = np.zeros((50, 20), dtype=int)
+    for seq in aligned_sequences:
+        for i, char in enumerate(seq):
+            if char in alphabets:
+                output_matrix[i][alphabets[char]] += 1
+    # print(output_matrix)
+    with open(output, 'w') as file:
+        for line in output_matrix:
+            for value in line:
+                file.write(str(value) + " ")
+            file.write("\n")
+    print(f"Kmatches is {len(aligned_sequences)}.")
     return
 
 
@@ -435,7 +499,7 @@ def create_seq(pname_cid_path, seq_path, pdb_folder=paths.PDB_FOLDER):
                                          generic.AA3_to_AA1)
 
 
-def filter_seq_file(seq_path, threshold=30):
+def filter_seq_file(seq_path, threshold=50):
     """
     :param seq_path: paths.FULL_SEQS
     """

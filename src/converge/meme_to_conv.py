@@ -64,7 +64,7 @@ def _parse_minimal_meme_input(input_path):
         counts_in_str = line.strip().split(" ")
         assert len(counts_in_str) == 20
         all_counts.append(list(float(i) for i in counts_in_str))
-    assert len(all_counts) == 30
+    assert len(all_counts) == 50
 
     # Extract composition
     alphabet_probs = dict()
@@ -104,8 +104,9 @@ def _write_matrix(matrices, n_sites, output_path):
     formatted_lines.append("PROFILE 4\n")
     formatted_lines.append("BEGIN\n")
     formatted_lines.append("ORIGIN\n")
-    formatted_lines.append(f"MATRIX ID=0 K={n_sites} L=30\n")
-    formatted_lines.append("30        " + "        ".join(list(ALPHABETS)) + "\n")
+    formatted_lines.append(f"MATRIX ID=0 K={n_sites} L=50\n")
+    formatted_lines.append("50        " + "        ".join(list(ALPHABETS)) +
+                           "\n")
     for i, probs in enumerate(matrices):
         line = ""
         if i <= 9:
@@ -139,7 +140,7 @@ def _parse_full_meme_input(path):
         counts_in_str = line.split("  ")
         assert len(counts_in_str) == 20
         all_counts.append(list(float(i) for i in counts_in_str))
-    assert len(all_counts) == 30
+    assert len(all_counts) == 50
     # Extract composition
     alphabet_probs = dict()
     start_composition = False

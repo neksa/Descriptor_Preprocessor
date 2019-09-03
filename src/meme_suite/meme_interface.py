@@ -198,21 +198,25 @@ def _get_motif_diagram_mast_uniprot(input_txt):
             if in_area and not line.strip():
                 break
             if in_area:
-                pname = line.split("|")[1]
-                motif_diagram = line[45:].strip()
-                if motif_diagram_sep not in motif_diagram:
+                try:
+                    pname = line.split("|")[1]
+                    motif_diagram = line[45:].strip()
+                    if motif_diagram_sep not in motif_diagram:
+                        continue
+                    # Remove [1]_5 if first motif is right at the front.
+                    if motif_diagram.startswith("["):
+                        motif_diagram = motif_diagram[4:]
+                    raw_motif_positions = motif_diagram.split(motif_diagram_sep)
+                    motif_positions = []
+                    for pos in raw_motif_positions[:-1]:
+                        if pos == "":
+                            motif_positions.append(0)
+                        else:
+                            motif_positions.append(int(pos))
+                    pname_motif_map[pname] = motif_positions
+                except:
+                    print(line)
                     continue
-                # Remove [1]_5 if first motif is right at the front.
-                if motif_diagram.startswith("["):
-                    motif_diagram = motif_diagram[4:]
-                raw_motif_positions = motif_diagram.split(motif_diagram_sep)
-                motif_positions = []
-                for pos in raw_motif_positions[:-1]:
-                    if pos == "":
-                        motif_positions.append(0)
-                    else:
-                        motif_positions.append(int(pos))
-                pname_motif_map[pname] = motif_positions
     return pname_motif_map
 
 # func()

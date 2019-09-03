@@ -36,7 +36,7 @@ Pain points:
 2. Suggestion to do a c++ rewrite of converge?
 
 """
-# todo:
+# todo: preprocess, in run_prosite_aligned_cropped_flat(), settle todo.
 # 2. send matrix in as seed alignment
 # 3
 
@@ -122,7 +122,7 @@ def write_matrix_file(matrix_ordered, output):
 
 
 def convert_nbdb_matrix_to_conv_encoder(nbdb_file, num_seqs):
-    matrix = [[] for __ in range(30)]
+    matrix = [[] for __ in range(50)]
     with open(nbdb_file, 'r') as file:
         for i, line in enumerate(file):
             probs = line.split(" ")[:20]
@@ -181,13 +181,26 @@ def main():
     #         file.write("\n")
 
 
-    file_folder = os.path.join(paths.ROOT, "Reports", "19082019", "PS01331")
+    file_folder = os.path.join(paths.ROOT, "Reports", "19082019", "PDOC00706")
 
     full_seq_path = os.path.join(file_folder, "full_seq.fasta")
     aligned_seq_path = os.path.join(file_folder, "aligner.txt")
-    # output_matrix_path = os.path.join(file_folder, "output_matrix.txt")
-    # preprocess.run_prosite_aligned_cropped(full_seq_path, aligned_seq_path,
+    output_matrix_path = os.path.join(file_folder, "output_matrix.txt")
+    # preprocess.run_prosite_aligned_cropped_flat(full_seq_path, aligned_seq_path,
     #                                        output_matrix_path)
+    # preprocess.run_prosite_aligned_cropped(full_seq_path, aligned_seq_path,
+    #                                             output_matrix_path)
+    # import sys
+    # sys.exit()
+
+    # 1. move output_matrix.txt to converge_encoder. Run converge_encoder.
+    # 2. Move input_matrix_binary into conv_rewrite. Take note of Kmatches
+    # here, and edit in single_Kmatches in conv_rewrite. Run conv_rewrite.
+    # 3. Move output.1.matrix and composition.txt back to Reports folder,
+    # run the rest below.
+
+
+
 
     # After that
     from converge.conv_interface import convert_conv_to_meme_full_num
@@ -201,8 +214,8 @@ def main():
     import subprocess
     ceqlogo_exec = os.path.join(paths.ROOT, "src", "meme_suite", "meme",
                                 "ceqlogo")
-    # command = f"{ceqlogo_exec} -i1 {output_meme_path} -o {logo_path} -f EPS"
-    # subprocess.run(command, shell=True)
+    command = f"{ceqlogo_exec} -i1 {output_meme_path} -o {logo_path} -f EPS"
+    subprocess.run(command, shell=True)
 
     tmp_composition_path = os.path.join(file_folder, "compos_align.txt")
     aligned_meme_path = os.path.join(file_folder, "aligned_meme.txt")

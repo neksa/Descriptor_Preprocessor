@@ -109,7 +109,7 @@ def _delete_gapped_motifs(prev_map, fasta_fname):
                 motif_pos = prev_map[pname]
                 for pos in motif_pos:
                     try:
-                        motif = line[pos-8:pos+22]
+                        motif = line[pos-25:pos+25]
                     except IndexError:
                         logging.info(
                             f"{pos} in {pname} has IndexError when obtaining "

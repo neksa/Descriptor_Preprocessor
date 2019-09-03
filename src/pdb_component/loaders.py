@@ -65,7 +65,7 @@ def _MODRES_sub(main_res, MODRES_res, MODRES_std_res_name):
 
 def load_pdb_info(pdb_code):
     pdb_code = pdb_code.lower().strip()
-    filepath = os.path.join(pdb_paths.PDB_FILES, pdb_code + ".pkl")
+    filepath = os.path.join(pdb_paths.PDB_FILES, pdb_code + ".pdb")
     try:
         file_data = _load_data(filepath)
     except Exception as e:
