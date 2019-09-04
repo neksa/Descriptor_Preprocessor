@@ -1,3 +1,4 @@
+import sys
 import find_cid_from_pname
 from utils import logs
 
@@ -35,7 +36,38 @@ Pain points:
 1. How long will running conv on uniprot take?
 2. Suggestion to do a c++ rewrite of converge?
 
+
+Path 1:
+Prosite_extract
+
+# todo: just rewrite conv such that its output actually make sense...? It's 
+kind of lame to have to parse it separately. 
+
 """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # todo: preprocess, in run_prosite_aligned_cropped_flat(), settle todo.
 # 2. send matrix in as seed alignment
 # 3
@@ -140,6 +172,390 @@ def convert_nbdb_matrix_to_conv_encoder(nbdb_file, num_seqs):
         assert sum(i) == num_seqs
     return matrix
 
+from utils import clean_fasta_alphabet
+
+from meme_suite import meme_interface
+import filter_seqs
+
+
+def extract_subseq_from_seqs(motif, seq, init_motif_len, final_motif_len):
+    left_spacing = final_motif_len // 2 - init_motif_len // 2
+    right_spacing = final_motif_len // 2 + init_motif_len // 2
+    if len(seq) < motif + right_spacing:
+        return None
+    if motif < left_spacing:
+        return None
+    aligned_seq = seq[motif - left_spacing:motif + right_spacing]
+    assert len(aligned_seq) == final_motif_len
+    return aligned_seq
+
+def parse_conv_output(conv_output):
+    """
+    Pending conv_rewrite rewrite.
+    Essentially, we only need 1. nsites, and 2. a single matrix, and 3.
+    length of matrix. (aka width).
+    alphabet is standardised across entire project so.
+    :return:
+    """
+    # conv_output is conv_output path
+    nsite = 1
+    matrix_length = 50
+    matrix = np.zeros((matrix_length, 20), dtype=float)
+    return matrix_length, nsite, matrix
+from pdb_component import pdb_interface
+
+
+def post_meme():
+    PDB_SEQ_FILE = os.path.join(paths.ROOT, 'whatever.fasta')
+    MEME_TXT = 'whatever.txt'
+    # For uniprot, not pdb_seq. Because converge/meme generation is based on
+    # uniprot.
+    COMPOSITION_FILE = os.path.join(paths.ROOT, 'whatever.fasta')
+    MOTIF_POS_OUTPUT = os.path.join(paths.USER_OUTPUT, "motif_pos.pkl")
+    # composition_file should be provided, can be generated as below:
+
+    # Intermediate paths
+    MEME_FOLDER = paths.MEME_MAST_FOLDER
+    # can someone do the cleaning in advance?
+    CLEANED_SEQ = paths.TMP_FILE_TEMPLATE.format(2)
+    PDB_SEQ_FROM_PDB_FILES = paths.TMP_FILE_TEMPLATE.format(3)
+
+    meme_interface.run_mast(MEME_TXT, PDB_SEQ_FILE, MEME_FOLDER)
+    mast_txt_path = os.path.join(MEME_FOLDER, 'mast.txt')
+    # this should give me both cid, and pdb_id. It doesn't now.
+    pdb_motif_map = meme_interface.extract_motifs_mast(mast_txt_path,
+                                                       matrix_length)
+    pdb_seqs = dict()
+    for pdb_id, (cid, _motif) in pdb_motif_map.items():
+        seq = pdb_interface.get_seq_for(pdb_id, cid)
+        pdb_seqs[(pdb_id, cid)] = seq
+    write_as_seq(pdb_seqs, PDB_SEQ_FROM_PDB_FILES)
+    meme_interface.run_mast(MEME_TXT, PDB_SEQ_FROM_PDB_FILES, MEME_FOLDER)
+    mast_txt_path = os.path.join(MEME_FOLDER, 'mast.txt')
+    # this should give me both cid, and pdb_id. It doesn't now.
+    pdb_motif_map = meme_interface.extract_motifs_mast(mast_txt_path,
+                                                       matrix_length)
+    output_motif_pos(pdb_motif_map, MOTIF_POS_OUTPUT)
+
+def post_conv():
+    """
+    I need to take converge output,
+    1. convert it to meme format
+    2. run it on pdb_seqs
+    3. Collect all pdb_id, cid that match
+    4. Download relevant pdb files
+    5. Rebuild another seq_file based on collected pdb files, and cid.
+    6. Run mast again
+    7. Collect the correct motif_pos, cid, pdb_id
+    8. Output as motif_pos.pkl, for descr_calculator to take over
+
+    Reason for this is:
+    Order of sequences in pdb_seqs.fasta may not correspond to that in .pdb
+    files. So, running mast on the recompiled seq_file is safest.
+    """
+    PDB_SEQ_FILE = os.path.join(paths.ROOT, 'whatever.fasta')
+    # For uniprot, not pdb_seq. Because converge/meme generation is based on
+    # uniprot.
+    COMPOSITION_FILE = os.path.join(paths.ROOT, 'whatever.fasta')
+    MOTIF_POS_OUTPUT = os.path.join(paths.USER_OUTPUT, "motif_pos.pkl")
+    # composition_file should be provided, can be generated as below:
+
+    # Intermediate paths
+    MEME_FOLDER = paths.MEME_MAST_FOLDER
+    MEME_TXT = paths.TMP_FILE_TEMPLATE.format(1)
+    # can someone do the cleaning in advance?
+    CLEANED_SEQ = paths.TMP_FILE_TEMPLATE.format(2)
+    PDB_SEQ_FROM_PDB_FILES = paths.TMP_FILE_TEMPLATE.format(3)
+
+    matrix_length, nsite, matrix = parse_conv_output(CONV_OUTPUT)
+    write_to_meme(MEME_TXT, matrix_length, nsite, matrix)
+    meme_interface.run_mast(MEME_TXT, PDB_SEQ_FILE, MEME_FOLDER)
+    mast_txt_path = os.path.join(MEME_FOLDER, 'mast.txt')
+    # this should give me both cid, and pdb_id. It doesn't now.
+    pdb_motif_map = meme_interface.extract_motifs_mast(mast_txt_path,
+                                                       matrix_length)
+    pdb_seqs = dict()
+    for pdb_id, (cid, _motif) in pdb_motif_map.items():
+        seq = pdb_interface.get_seq_for(pdb_id, cid)
+        pdb_seqs[(pdb_id, cid)] = seq
+    write_as_seq(pdb_seqs, PDB_SEQ_FROM_PDB_FILES)
+    meme_interface.run_mast(MEME_TXT, PDB_SEQ_FROM_PDB_FILES, MEME_FOLDER)
+    mast_txt_path = os.path.join(MEME_FOLDER, 'mast.txt')
+    # this should give me both cid, and pdb_id. It doesn't now.
+    pdb_motif_map = meme_interface.extract_motifs_mast(mast_txt_path,
+                                                       matrix_length)
+    output_motif_pos(pdb_motif_map, MOTIF_POS_OUTPUT)
+
+
+
+def seq_aligned_meme():
+    # aligned sequences need to have no gap
+    # todo: test for that?
+
+    # Known matched sequences
+    SEQ_FILE = os.path.join(paths.ROOT, 'MG_dxdxxd_seqs.fasta')
+    ALIGNED_SEQ_FILE = os.path.join(paths.ROOT, 'MG_dxdxxd_aligned.fasta')
+    # Length of actual motif
+    FINAL_MOTIF_LEN = 50
+    OUTPUT_MEME = os.path.join(paths.USER_OUTPUT, "seq_aligned_meme.txt")
+    # composition_file should be provided, can be generated as below:
+    COMPOSITION_FILE = os.path.join(paths.ROOT, "uniprot_full_composition.txt")
+    build_composition.build("uniprot_full.fasta", COMPOSITION_FILE)
+
+    # Intermediate paths
+    MEME_FOLDER = paths.MEME_MAST_FOLDER
+    MEME_TXT = paths.TMP_FILE_TEMPLATE.format(1)
+    CLEANED_SEQ = paths.TMP_FILE_TEMPLATE.format(2)
+    TMP_ALIGNED_SEQS = paths.TMP_FILE_TEMPLATE.format(3)
+
+    INIT_MOTIF_LEN = preprocess._get_motif_len_from_aligned(ALIGNED_SEQ_FILE)
+    clean_fasta_alphabet.screen(fasta_path=SEQ_FILE, output_path=CLEANED_SEQ)
+    filter_seqs.delete_short_seqs(CLEANED_SEQ, threshold=FINAL_MOTIF_LEN)
+
+    build_meme_from_aligned.build(ALIGNED_SEQ_FILE, MEME_TXT, COMPOSITION_FILE)
+
+    meme_interface.run_mast(MEME_TXT, CLEANED_SEQ, MEME_FOLDER)
+    mast_txt_path = os.path.join(MEME_FOLDER, 'mast.txt')
+    acc_motif_map = meme_interface.extract_motifs_mast_uniprot(mast_txt_path,
+                                                               INIT_MOTIF_LEN)
+
+    acc_seq_map = get_pname_seq.parse_raw(CLEANED_SEQ)
+    aligned_sequences = []
+    for acc, motifs in acc_motif_map.items():
+        if acc not in acc_seq_map:
+            continue
+        for motif in motifs:
+            subseq = extract_subseq_from_seqs(motif, acc_seq_map[acc],
+                                              INIT_MOTIF_LEN, FINAL_MOTIF_LEN)
+            if subseq:
+                aligned_sequences.append(subseq)
+
+    with open(TMP_ALIGNED_SEQS, "w") as file:
+        for seq in aligned_sequences:
+            file.write(">RAND\n")
+            file.write(seq + "\n")
+
+    build_meme_from_aligned.build(TMP_ALIGNED_SEQS, OUTPUT_MEME, COMPOSITION_FILE)
+
+    # end
+    # to check logo of this, run ./meme/ceqlogo -i1 output_meme_mine.txt -o
+    # logo.eps -f EPS
+    # output as matrix, and number of Kmatches.
+    # Number of Kmatches is approximately number of aligned seqs
+
+
+def seq_aligned_converge():
+    # aligned sequences need to have no gap
+    # todo: test for that?
+
+    # Known matched sequences
+    SEQ_FILE = os.path.join(paths.ROOT, 'MG_dxdxxd_seqs.fasta')
+    ALIGNED_SEQ_FILE = os.path.join(paths.ROOT, 'MG_dxdxxd_aligned.fasta')
+    # Length of actual motif
+    FINAL_MOTIF_LEN = 50
+    OUTPUT_MATRIX = os.path.join(paths.USER_OUTPUT,
+                                 "seq_aligned_converge_output.txt")
+    # composition_file should be provided, can be generated as below:
+    COMPOSITION_FILE = os.path.join(paths.ROOT, "uniprot_full_composition.txt")
+    build_composition.build("uniprot_full.fasta", COMPOSITION_FILE)
+
+    # Intermediate paths
+    MEME_FOLDER = paths.MEME_MAST_FOLDER
+    MEME_TXT = paths.TMP_FILE_TEMPLATE.format(1)
+    CLEANED_SEQ = paths.TMP_FILE_TEMPLATE.format(2)
+
+    INIT_MOTIF_LEN = preprocess._get_motif_len_from_aligned(ALIGNED_SEQ_FILE)
+    clean_fasta_alphabet.screen(fasta_path=SEQ_FILE, output_path=CLEANED_SEQ)
+    filter_seqs.delete_short_seqs(CLEANED_SEQ, threshold=FINAL_MOTIF_LEN)
+
+    build_meme_from_aligned.build(ALIGNED_SEQ_FILE, MEME_TXT, COMPOSITION_FILE)
+
+    meme_interface.run_mast(MEME_TXT, CLEANED_SEQ, MEME_FOLDER)
+    mast_txt_path = os.path.join(MEME_FOLDER, 'mast.txt')
+    acc_motif_map = meme_interface.extract_motifs_mast_uniprot(mast_txt_path,
+                                                               INIT_MOTIF_LEN)
+
+    acc_seq_map = get_pname_seq.parse_raw(CLEANED_SEQ)
+    aligned_sequences = []
+    for acc, motifs in acc_motif_map.items():
+        if acc not in acc_seq_map:
+            continue
+        for motif in motifs:
+            subseq = extract_subseq_from_seqs(motif, acc_seq_map[acc],
+                                              INIT_MOTIF_LEN, FINAL_MOTIF_LEN)
+            if subseq:
+                aligned_sequences.append(subseq)
+
+    output_matrix = np.zeros((FINAL_MOTIF_LEN, 20), dtype=int)
+    for seq in aligned_sequences:
+        for i, char in enumerate(seq):
+            if char in generic.AA1_TO_I:
+                output_matrix[i][generic.AA1_TO_I[char]] += 1
+
+    with open(OUTPUT_MATRIX, 'w') as file:
+        for line in output_matrix:
+            for value in line:
+                file.write(str(value) + " ")
+            file.write("\n")
+    print(f"Kmatches is {len(aligned_sequences)}.")
+
+
+
+def seq_only_converge():
+    """
+    04/09/2019
+
+    Starting from only sequences that match. Uses the first match from meme
+    as seed_motif. Align back to known sequences, expand flanks, use as
+    seed_matrix, output as conv_matrix for converge_encoder to convert to
+    serialised format for converge.
+
+    Single match from meme may not correspond to desired motif, need to
+    manually verify.
+    """
+    # Known matched sequences
+    SEQ_FILE = os.path.join(paths.ROOT, 'efhand_seq.fasta')
+    # Length of initial motif in SEQ_FILE, keep it short so match to motif is
+    # correct
+    INIT_MOTIF_LEN = 15
+    # Number of processors for initial meme run
+    NUM_P = 7
+    # Length of actual motif
+    FINAL_MOTIF_LEN = 50
+    OUTPUT_MATRIX = os.path.join(paths.USER_OUTPUT,
+                                 "seq_only_converge_output.txt")
+
+    # Intermediate paths
+    MEME_FOLDER = paths.MEME_MAST_FOLDER
+    CLEANED_SEQ = paths.TMP_FILE_TEMPLATE.format(1)
+
+    # Remove extraneous symbols that would cause meme or converge_encoder
+    # to fail.
+    clean_fasta_alphabet.screen(fasta_path=SEQ_FILE, output_path=CLEANED_SEQ)
+    filter_seqs.delete_short_seqs(CLEANED_SEQ, threshold=FINAL_MOTIF_LEN)
+    meme_interface.run_meme(CLEANED_SEQ, INIT_MOTIF_LEN, MEME_FOLDER, NUM_P)
+    meme_txt = os.path.join(MEME_FOLDER, "meme.txt")
+    # This meme_txt is for finding motifs in matched_sequences
+    # To verify, run make_logo_meme().
+    # todo: build single function for making ceqlogo, add here.
+
+    # Matches meme to matched_sequences, for deriving of final motif later
+    meme_interface.run_mast(meme_txt, CLEANED_SEQ, MEME_FOLDER)
+    mast_txt_path = os.path.join(MEME_FOLDER, 'mast.txt')
+    acc_motif_map = meme_interface.extract_motifs_mast_uniprot(mast_txt_path,
+                                                               INIT_MOTIF_LEN)
+
+    acc_seq_map = get_pname_seq.parse_raw(CLEANED_SEQ)
+    aligned_sequences = []
+    for acc, motifs in acc_motif_map.items():
+        if acc not in acc_seq_map:
+            continue
+        for motif in motifs:
+            subseq = extract_subseq_from_seqs(motif, acc_seq_map[acc],
+                                              INIT_MOTIF_LEN, FINAL_MOTIF_LEN)
+            if subseq:
+                aligned_sequences.append(subseq)
+
+    output_matrix = np.zeros((FINAL_MOTIF_LEN, 20), dtype=int)
+    for seq in aligned_sequences:
+        for i, char in enumerate(seq):
+            if char in generic.AA1_TO_I:
+                output_matrix[i][generic.AA1_TO_I[char]] += 1
+
+    with open(OUTPUT_MATRIX, 'w') as file:
+        for line in output_matrix:
+            for value in line:
+                file.write(str(value) + " ")
+            file.write("\n")
+    print(f"Kmatches is {len(aligned_sequences)}.")
+    return
+
+
+def seq_only_meme():
+    """
+    04/09/2019
+
+    Starting from only sequences that match. Uses the first match from meme
+    as seed_motif. Align back to known sequences, expand flanks, use as
+    seed_matrix, output as conv_matrix for converge_encoder to convert to
+    serialised format for converge.
+
+    Single match from meme may not correspond to desired motif, need to
+    manually verify.
+    """
+    # Known matched sequences
+    SEQ_FILE = os.path.join(paths.ROOT, 'efhand_seq.fasta')
+    # Length of initial motif in SEQ_FILE, keep it short so match to motif is
+    # correct
+    INIT_MOTIF_LEN = 15
+    # Number of processors for initial meme run
+    NUM_P = 7
+    # Length of actual motif
+    FINAL_MOTIF_LEN = 50
+    OUTPUT_MEME = os.path.join(paths.USER_OUTPUT,
+                                 "seq_only_meme.txt")
+    # composition_file should be provided, can be generated as below:
+    COMPOSITION_FILE = os.path.join(paths.ROOT, "uniprot_full_composition.txt")
+    build_composition.build("uniprot_full.fasta", COMPOSITION_FILE)
+
+    # Intermediate paths
+    MEME_FOLDER = paths.MEME_MAST_FOLDER
+    CLEANED_SEQ = paths.TMP_FILE_TEMPLATE.format(1)
+    ALIGNED_SEQS = paths.TMP_FILE_TEMPLATE.format(2)
+
+    # Remove extraneous symbols that would cause meme or converge_encoder
+    # to fail.
+    clean_fasta_alphabet.screen(fasta_path=SEQ_FILE, output_path=CLEANED_SEQ)
+    filter_seqs.delete_short_seqs(CLEANED_SEQ, threshold=INIT_MOTIF_LEN)
+    meme_interface.run_meme(CLEANED_SEQ, INIT_MOTIF_LEN, MEME_FOLDER, NUM_P)
+    meme_txt = os.path.join(MEME_FOLDER, "meme.txt")
+    # This meme_txt is for finding motifs in matched_sequences
+    # To verify, run make_logo_meme().
+    # todo: build single function for making ceqlogo, add here.
+
+    # Matches meme to matched_sequences, for deriving of final motif later
+    meme_interface.run_mast(meme_txt, CLEANED_SEQ, MEME_FOLDER)
+    mast_txt_path = os.path.join(MEME_FOLDER, 'mast.txt')
+    acc_motif_map = meme_interface.extract_motifs_mast_uniprot(mast_txt_path,
+                                                               INIT_MOTIF_LEN)
+
+    acc_seq_map = get_pname_seq.parse_raw(CLEANED_SEQ)
+    aligned_sequences = []
+    for acc, motifs in acc_motif_map.items():
+        if acc not in acc_seq_map:
+            continue
+        for motif in motifs:
+            subseq = extract_subseq_from_seqs(motif, acc_seq_map[acc],
+                                              INIT_MOTIF_LEN, FINAL_MOTIF_LEN)
+            if subseq:
+                assert len(subseq) == FINAL_MOTIF_LEN
+                aligned_sequences.append(subseq)
+
+    matrix_counter = np.zeros([FINAL_MOTIF_LEN, 20], dtype=int)
+    for subseq in aligned_sequences:
+        if matrix_counter is None:
+        for i, char in enumerate(subseq):
+            try:
+                AA_index = generic.AA1_TO_I[char]
+            except KeyError:
+                # Key not found for some reason
+                continue
+            matrix_counter[i, AA_index] += 1
+
+    build_meme_from_aligned._write_matrix_file(matrix_counter, matrix_file)
+    generic.quit_if_missing(matrix_file)
+    generic.quit_if_missing(composition)
+    command = f"{paths.MATRIX_2_MEME_EXEC} -protein -bg" \
+              f" {composition} < {matrix_file} > {output}"
+    subprocess.run(command, shell=True)
+    generic.quit_if_missing(output)
+    # end
+    # to check logo of this, run ./meme/ceqlogo -i1 output_meme_mine.txt -o
+    # logo.eps -f EPS
+    # output as matrix, and number of Kmatches.
+    # Number of Kmatches is approximately number of aligned seqs
+    return
+
 
 def main():
     """
@@ -165,6 +581,11 @@ def main():
     3. todo: remember that igor also wants one that's wider, at length 50.
     One for flat pssm for the outer region, and one for included region.
     """
+    # todo: build a composition file based on uniprot, then just use that.
+
+
+
+
     # For GxGGxG: 2602
     # For GxGxxG: 4077
     # For GxxGxG: 4872
@@ -179,8 +600,83 @@ def main():
     #         for value in line:
     #             file.write(str(value) + " ")
     #         file.write("\n")
+    from meme_suite import meme_interface
+    seq_file = os.path.join(paths.ROOT, 'efhand_seq.fasta')
+    motif_len = 15
+    meme_folder = paths.MEME_MAST_FOLDER
+    num_p = 7
+    from utils.clean_fasta_alphabet import screen
+    screen(fasta_path=seq_file, output_path=seq_file)
+    import filter_seqs
+    filter_seqs.delete_short_seqs(seq_file, threshold=15)
+    meme_interface.run_meme(seq_file, motif_len, meme_folder, num_p)
+    meme_txt = os.path.join(meme_folder, "meme.txt")
+
+    meme_interface.run_mast(meme_txt, seq_file, meme_folder)
+    mast_txt_path = os.path.join(meme_folder, 'mast.txt')
+    acc_motif_map = meme_interface.extract_motifs_mast_uniprot(mast_txt_path,
+                                                               motif_len)
+
+    acc_seq_map = get_pname_seq.parse_raw(seq_file)
+    aligned_sequences = []
+    for acc, motifs in acc_motif_map.items():
+        if acc not in acc_seq_map:
+            continue
+        seq = acc_seq_map[acc]
+        if motif_len > 49:
+            print("motif_len bigger than 50. Exiting.")
+            raise Exception
+        left_spacing = 25 - motif_len // 2
+        right_spacing = 25 + motif_len // 2
+        for motif in motifs:
+            if len(seq) < motif + right_spacing:
+                continue
+            if motif < left_spacing:
+                continue
+            aligned_seq = seq[motif - left_spacing:motif + right_spacing]
+            assert len(aligned_seq) == 50
+            aligned_sequences.append(aligned_seq)
+
+    # if using meme and we need meme.txt, then run this:
+    # with open("aligned_seq_mine.txt", "w") as file:
+    #     for seq in aligned_sequences:
+    #         file.write(">RAND\n")
+    #         file.write(seq + "\n")
+    # composition_file = os.path.join(paths.ROOT, "uniprot_full_composition.txt")
+    # build_composition.build("uniprot_full.fasta", composition_file)
+    # build_meme_from_aligned.build("aligned_seq_mine.txt",
+    #                               "output_meme_mine.txt", composition_file)
+    # end
+
+    # to check logo of this, run ./meme/ceqlogo -i1 output_meme_mine.txt -o
+    # logo.eps -f EPS
+    # output as matrix, and number of Kmatches.
+    # Number of Kmatches is approximately number of aligned seqs
+    file_folder = os.path.join(paths.ROOT, "Reports", "19082019", "PDOC00706")
+
+    alphabets = dict()
+    AA_values = sorted(set(generic.AA3_to_AA1.values()))
+    assert len(AA_values) == 20
+    for i, AA in enumerate(AA_values):
+        alphabets[AA] = i
+    output_matrix = np.zeros((50, 20), dtype=int)
+    for seq in aligned_sequences:
+        for i, char in enumerate(seq):
+            if char in alphabets:
+                output_matrix[i][alphabets[char]] += 1
+    # print(output_matrix)
+    output_matrix_path = os.path.join(file_folder, "output_matrix.txt")
+
+    with open(output_matrix_path, 'w') as file:
+        for line in output_matrix:
+            for value in line:
+                file.write(str(value) + " ")
+            file.write("\n")
+    print(f"Kmatches is {len(aligned_sequences)}.")
+    return
 
 
+    sys.exit()
     file_folder = os.path.join(paths.ROOT, "Reports", "19082019", "PDOC00706")
 
     full_seq_path = os.path.join(file_folder, "full_seq.fasta")
@@ -236,13 +732,13 @@ def main():
 
 
 
-    # preprocess.run_prosite_mast(paths.PROSITE_EXTRACT, 30,
-    #                             paths.REF_MEME_TXT,
-    #                  os.path.join(paths.ROOT, "prosite_mast_motif_pos.pkl"))
-    # preprocess.run_prosite_aligned(paths.PROSITE_ENOLASE_SEQS,
-    #                                paths.PROSITE_ALIGNED_SEQS,
-    #                                os.path.join(paths.ROOT,
-    #                                             "output_motif_pos.pkl"))
+    preprocess.run_prosite_mast(paths.PROSITE_EXTRACT, 30,
+                                paths.REF_MEME_TXT,
+                     os.path.join(paths.ROOT, "prosite_mast_motif_pos.pkl"))
+    preprocess.run_prosite_aligned(paths.PROSITE_ENOLASE_SEQS,
+                                   paths.PROSITE_ALIGNED_SEQS,
+                                   os.path.join(paths.ROOT,
+                                                "output_motif_pos.pkl"))
 
     # seq_path = os.path.join(paths.USER_INPUT, "aligner.txt")
     # matrix_ordered = matrix_builder(seq_path)

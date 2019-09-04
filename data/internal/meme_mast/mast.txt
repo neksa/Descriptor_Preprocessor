@@ -23,7 +23,7 @@ REFERENCE
 DATABASE AND MOTIFS
 ********************************************************************************
 	DATABASE tmp_pdb_fasta.fasta (peptide)
-	Last updated on Tue Sep  3 16:33:06 2019
+	Last updated on Tue Sep  3 17:37:55 2019
 	Database contains 14 sequences, 3754 residues
 
 	MOTIFS meme.txt (peptide)
@@ -381,6 +381,6 @@ SECTION III: ANNOTATED SEQUENCES
 
 
 CPU: yincp-GE72-2QF
-Time 0.015 secs.
+Time 0.016 secs.
 
 mast -oc /home/yincp/Desktop/Descriptor_Preprocessor/data/internal/meme_mast -mt 0.0001 /home/yincp/Desktop/Descriptor_Preprocessor/Reports/19082019/PDOC00325/meme.txt /home/yincp/Desktop/Descriptor_Preprocessor/Reports/19082019/PDOC00325/tmp_pdb_fasta.fasta

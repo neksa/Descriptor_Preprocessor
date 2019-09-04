@@ -87,11 +87,12 @@ def run_prosite_aligned_cropped(seq_file, aligned_seq_file, output,
     build_composition.build(seq_file, composition_file)
     motif_len = _get_motif_len_from_aligned(aligned_seq_file)
     build_meme_from_aligned.build(aligned_seq_file, meme_txt, composition_file)
+
+
     meme_interface.run_mast(meme_txt, seq_file, meme_folder)
     mast_txt_path = os.path.join(meme_folder, 'mast.txt')
     acc_motif_map = meme_interface.extract_motifs_mast_uniprot(mast_txt_path,
                                                                motif_len)
-
     acc_seq_map = get_pname_seq.parse_raw(seq_file)
     aligned_sequences = []
     for acc, motifs in acc_motif_map.items():

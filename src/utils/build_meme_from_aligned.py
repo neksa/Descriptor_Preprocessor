@@ -43,20 +43,6 @@ def _matrix_builder(aligned_path):
                     # Key not found for some reason
                     continue
                 matrix_counter[i, AA_index] += 1
-
-    # matrix_counter = None
-    # with open(aligned_path, 'r') as file:
-    #     for line in file:
-    #         if line.startswith(">"):
-    #             continue
-    #         line = line.strip().upper()
-    #         if matrix_counter is None:
-    #             matrix_counter = [Counter() for __ in range(len(line))]
-    #         for i, char in enumerate(line):
-    #             matrix_counter[i].update([char])
-    # matrix_ordered = []
-    # for counter in matrix_counter:
-    #     matrix_ordered.append(OrderedDict(sorted(counter.items())))
     return matrix_counter
 
 

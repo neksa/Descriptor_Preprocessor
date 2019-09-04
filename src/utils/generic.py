@@ -116,3 +116,9 @@ _aa_index = [('ALA', 'A'),
              ('TYR', 'Y')]
 
 AA3_to_AA1 = dict(_aa_index)
+
+AA1_TO_I = dict()
+AA_values = sorted(set(AA3_to_AA1.values()))
+assert len(AA_values) == 20
+for i, AA in enumerate(AA_values):
+    AA1_TO_I[AA] = i

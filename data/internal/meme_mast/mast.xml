@@ -91,7 +91,7 @@
 	<correlations>
 	</correlations>
 	<sequence_dbs>
-		<sequence_db source="/home/yincp/Desktop/Descriptor_Preprocessor/Reports/19082019/PDOC00325/tmp_pdb_fasta.fasta" last_mod_date="Tue Sep  3 16:33:06 2019" seq_count="14" residue_count="3754"/>
+		<sequence_db source="/home/yincp/Desktop/Descriptor_Preprocessor/Reports/19082019/PDOC00325/tmp_pdb_fasta.fasta" last_mod_date="Tue Sep  3 17:37:55 2019" seq_count="14" residue_count="3754"/>
 	</sequence_dbs>
 	<sequences>
 		<sequence db="0" name="1faj" comment="" length="173">
@@ -233,5 +233,5 @@ FTLIDEGELDWKIIAINKEDKHYEDINSLSDIEKYYPHTLSLLLEWFRSYKXADTKKLNLISKQLYDKKESEDLI
 			</seg>
 		</sequence>
 	</sequences>
-	<runtime host="yincp-GE72-2QF" when="Tue Sep  3 16:33:06 2019" cycles="15068" seconds="0.015"/>
+	<runtime host="yincp-GE72-2QF" when="Tue Sep  3 17:37:55 2019" cycles="15794" seconds="0.016"/>
 </mast>
