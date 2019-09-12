@@ -36,10 +36,12 @@ def get_info_for(pdb_code):
         else:
             get_success = download(pdb_code, silent=False)
             if get_success:
+                pdb_paths.PDB_FILES_SET = set(os.listdir(pdb_paths.PDB_FILES))
                 get_success = loaders.load_pdb_info(pdb_code)
         if not get_success:
             print(f"get_info_for(pdb_code) failed for {pdb_code}")
             return None
+        pdb_paths.PDB_PARSED_SET = set(os.listdir(pdb_paths.PDB_PARSED))
     filepath = os.path.join(pdb_paths.PDB_PARSED, pdb_suffix)
     with open(filepath, 'rb') as file:
         output = pickle.load(file)

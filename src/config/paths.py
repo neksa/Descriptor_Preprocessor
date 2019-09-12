@@ -42,7 +42,8 @@ TEMPLATE_SEQFILE = os.path.join(INTERNAL, 'seq_template.fasta')
 PID_PDB_MAP = os.path.join(USER_OUTPUT, 'pid_pdb_map.pkl')
 
 CONV_FOLDER = os.path.join(SRC, 'converge')
-CONV_EXEC = os.path.join(CONV_FOLDER, 'converge')
+UNIPROT_BINARY = os.path.join(INTERNAL, 'uniprot_reviewed_all.binary')
+RCSB_SEQS_FASTA = os.path.join(USER_INPUT, "rcsb_seqs_full.txt")
 
 PROSITE_ALIGNED_SEQS = os.path.join(USER_INPUT,
                                     'prosite_enolase_aligned_seqs.txt')

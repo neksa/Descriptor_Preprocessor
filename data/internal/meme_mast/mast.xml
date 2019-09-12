@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <mast version="5.0.5" release="Mon Mar 18 20:12:19 2019 -0700">
-	<command_line><arg>mast</arg><arg>-oc</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/data/internal/meme_mast</arg><arg>-mt</arg><arg>0.0001</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/Reports/19082019/PDOC00325/meme.txt</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/Reports/19082019/PDOC00325/tmp_pdb_fasta.fasta</arg></command_line>
+	<command_line><arg>mast</arg><arg>-oc</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/data/internal/meme_mast</arg><arg>-mt</arg><arg>0.0001</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/data/debug/tmp_1</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/data/debug/tmp_2</arg></command_line>
 	<settings strand_handling="unstranded" max_correlation="0.60" remove_correlated="n" max_seq_evalue="10" adjust_hit="n" max_hit_pvalue="0.0001" max_weak_pvalue="0.0001"/>
 	<alphabet name="Protein" like="protein">
 		<letter id="A" symbol="A" name="Alanine" colour="0000CC"/>
@@ -30,208 +30,1181 @@
 	</alphabet>
 	<background source="--nrdb--" A="0.0730919" C="0.0181455" D="0.051688" E="0.0622785" F="0.0402434" G="0.0692596" H="0.0224055" I="0.056227" K="0.058435" L="0.0916218" M="0.0230443" N="0.0460321" P="0.0506238" Q="0.0407153" R="0.0518462" S="0.073729" T="0.0593523" V="0.0642985" W="0.0133282" Y="0.0326497"/>
 	<motif_dbs>
-		<motif_db source="/home/yincp/Desktop/Descriptor_Preprocessor/Reports/19082019/PDOC00325/meme.txt" last_mod_date="Tue Sep  3 14:57:28 2019">
-			<background A="0.0825832" C="0.0137976" D="0.054589" E="0.0672864" F="0.0386924" G="0.0707856" H="0.0227957" I="0.0591881" K="0.0581883" L="0.0965802" M="0.0241954" N="0.040592" P="0.0472906" Q="0.0392922" R="0.0553889" S="0.0662866" T="0.0535892" V="0.0686861" W="0.0109982" Y="0.0291944"/>
+		<motif_db source="/home/yincp/Desktop/Descriptor_Preprocessor/data/debug/tmp_1" last_mod_date="Thu Sep 12 10:20:16 2019">
+			<background A="0.0825997" C="0.0138304" D="0.05462" E="0.0673298" F="0.0386601" G="0.0707898" H="0.0227603" I="0.0592399" K="0.0581499" L="0.0965595" M="0.0241503" N="0.0406001" P="0.04733" Q="0.0393301" R="0.0553499" S="0.0662998" T="0.05355" V="0.0686598" W="0.0109904" Y="0.0292002"/>
 		</motif_db>
 	</motif_dbs>
 	<motifs>
-		<motif db="0" id="MEME-1" length="50" nsites="139">
-			<pos A="-1376.29" C="-1376.29" D="-1376.29" E="-1376.29" F="289.471" G="134.525" H="-1376.29" I="112.947" K="-1376.29" L="-216.147" M="-74.9797" N="-1376.29" P="-1376.29" Q="-244.892" R="-294.403" S="-1376.29" T="-1376.29" V="183.228" W="-1376.29" Y="188.604"/>
-			<pos A="100.258" C="186.779" D="-1376.29" E="-164.02" F="-1376.29" G="-229.818" H="-1376.29" I="-45.5406" K="-1376.29" L="238.239" M="277.366" N="-1376.29" P="-271.611" Q="-1376.29" R="-1376.29" S="-320.3" T="-189.679" V="-325.426" W="-1376.29" Y="-1376.29"/>
-			<pos A="-119.888" C="-1376.29" D="-1376.29" E="-1376.29" F="227.322" G="-29.8517" H="92.105" I="-71.8405" K="-301.513" L="-74.6741" M="-1376.29" N="-1376.29" P="45.3255" Q="-12.7401" R="-294.403" S="96.6068" T="-131.189" V="-1376.29" W="-61.2345" Y="340.54"/>
-			<pos A="-71.3503" C="-1376.29" D="-60.1723" E="-222.507" F="-1376.29" G="-12.8611" H="-166.367" I="-204.012" K="-1376.29" L="-1376.29" M="-1376.29" N="-1376.29" P="192.714" Q="-244.892" R="-1376.29" S="179.613" T="283.08" V="-225.476" W="-1376.29" Y="-1376.29"/>
-			<pos A="100.258" C="-1376.29" D="-192.346" E="-1376.29" F="-1376.29" G="-329.767" H="-1376.29" I="-104.028" K="-1376.29" L="-116.174" M="-1376.29" N="-49.6236" P="245.32" Q="225.103" R="-1376.29" S="170.301" T="-8.96586" V="-1376.29" W="-1376.29" Y="-1376.29"/>
-			<pos A="-1376.29" C="-1376.29" D="-1376.29" E="-164.02" F="127.324" G="-1376.29" H="-1376.29" I="-145.523" K="-1376.29" L="-274.627" M="415.697" N="-1376.29" P="-271.611" Q="-86.4264" R="-1376.29" S="-39.6406" T="180.333" V="83.2313" W="-61.2345" Y="-43.5758"/>
-			<pos A="-6.14907" C="-1376.29" D="-1376.29" E="-322.458" F="257.278" G="-49.1136" H="92.105" I="-1376.29" K="-301.513" L="-1376.29" M="-1376.29" N="-91.1208" P="-271.611" Q="-144.92" R="5.53162" S="-3.38787" T="-31.2056" V="126.84" W="397.252" Y="30.1125"/>
-			<pos A="-1376.29" C="-1376.29" D="-292.306" E="168.142" F="-1376.29" G="-1376.29" H="-1376.29" I="-303.969" K="-101.571" L="-274.627" M="-1376.29" N="-149.614" P="-1376.29" Q="-1376.29" R="-1376.29" S="-1376.29" T="-1376.29" V="-1376.29" W="-1376.29" Y="460.848"/>
-			<pos A="-1376.29" C="6.04442" D="159.98" E="-322.458" F="-1376.29" G="-1376.29" H="-1376.29" I="-1376.29" K="-301.513" L="-1376.29" M="-1376.29" N="-149.614" P="395.569" Q="-1376.29" R="-1376.29" S="-320.3" T="-1376.29" V="-1376.29" W="-1376.29" Y="78.6545"/>
-			<pos A="87.1337" C="376.084" D="-1376.29" E="-222.507" F="15.7802" G="-29.8517" H="203.651" I="-1376.29" K="-1376.29" L="-174.657" M="-1376.29" N="-1376.29" P="192.714" Q="-86.4264" R="-1376.29" S="25.5619" T="27.2874" V="-67.0094" W="-1376.29" Y="30.1125"/>
-			<pos A="-351.989" C="-1376.29" D="166.12" E="-64.0394" F="-1376.29" G="50.8777" H="33.6132" I="-1376.29" K="-201.555" L="-1376.29" M="-1376.29" N="392.989" P="-1376.29" Q="-144.92" R="-1376.29" S="-1376.29" T="-1376.29" V="-1376.29" W="-1376.29" Y="-1376.29"/>
-			<pos A="-351.989" C="-1376.29" D="-1376.29" E="-41.8001" F="-242.673" G="-1376.29" H="165.8" I="-1376.29" K="-301.513" L="-274.627" M="-1376.29" N="-1376.29" P="-1376.29" Q="55.0639" R="-1376.29" S="-320.3" T="-1376.29" V="-44.7702" W="-1376.29" Y="463.734"/>
-			<pos A="-351.989" C="-1376.29" D="-1376.29" E="-1376.29" F="-1376.29" G="337.379" H="-1376.29" I="-145.523" K="-301.513" L="-1376.29" M="-1376.29" N="8.86612" P="-1376.29" Q="35.8011" R="-135.954" S="-120.367" T="-89.6938" V="-25.5081" W="-1376.29" Y="-1376.29"/>
-			<pos A="-1376.29" C="-1376.29" D="66.1229" E="-322.458" F="366.023" G="-1376.29" H="203.651" I="-45.5406" K="-201.555" L="-274.627" M="-1376.29" N="-1376.29" P="-271.611" Q="-1376.29" R="-1376.29" S="-39.6406" T="-289.641" V="-325.426" W="-1376.29" Y="262.299"/>
-			<pos A="-152.074" C="-93.9456" D="-1376.29" E="-222.507" F="-84.2072" G="-1376.29" H="-1376.29" I="306.804" K="-20.8434" L="-142.472" M="-1376.29" N="-17.4347" P="119.02" Q="-1376.29" R="-194.443" S="-320.3" T="-1376.29" V="138.869" W="-1376.29" Y="-1376.29"/>
-			<pos A="-193.566" C="-1376.29" D="-33.8722" E="109.647" F="-1376.29" G="-1376.29" H="92.105" I="-1376.29" K="-101.571" L="-374.557" M="-1376.29" N="150.365" P="334.936" Q="-144.92" R="-13.7307" S="-120.367" T="-189.679" V="-325.426" W="-1376.29" Y="-1376.29"/>
-			<pos A="-1376.29" C="-1376.29" D="53.5709" E="58.1915" F="-1376.29" G="-129.839" H="297.992" I="-1376.29" K="-201.555" L="-274.627" M="-1376.29" N="220.408" P="-1376.29" Q="125.105" R="105.527" S="-320.3" T="168.786" V="-325.426" W="-1376.29" Y="-1376.29"/>
-			<pos A="-152.074" C="-1376.29" D="-292.306" E="-222.507" F="-1376.29" G="28.6403" H="-1376.29" I="-1376.29" K="68.4584" L="-374.557" M="-1376.29" N="50.3691" P="-1376.29" Q="-1376.29" R="-1376.29" S="-161.861" T="367.273" V="-1376.29" W="-1376.29" Y="-1376.29"/>
-			<pos A="47.9039" C="223.034" D="-1376.29" E="-222.507" F="-242.673" G="-1376.29" H="-1376.29" I="12.952" K="-301.513" L="272.883" M="-174.962" N="-1376.29" P="-1376.29" Q="-1376.29" R="-294.403" S="-1376.29" T="-1376.29" V="-1376.29" W="170.95" Y="30.1125"/>
-			<pos A="80.0952" C="358.397" D="7.62996" E="-90.339" F="-142.701" G="16.0885" H="-1376.29" I="-1376.29" K="107.159" L="-1376.29" M="-1376.29" N="-1376.29" P="-1376.29" Q="-144.92" R="-135.954" S="175.032" T="-289.641" V="-125.496" W="-1376.29" Y="156.412"/>
-			<pos A="-351.989" C="-1376.29" D="183.112" E="168.142" F="-1376.29" G="212.765" H="-1376.29" I="-1376.29" K="-301.513" L="50.1088" M="-1376.29" N="8.86612" P="-1376.29" Q="-1376.29" R="-194.443" S="-120.367" T="-1376.29" V="-1376.29" W="138.759" Y="-102.072"/>
-			<pos A="-1376.29" C="-1376.29" D="419.515" E="-1376.29" F="-1376.29" G="-1376.29" H="-1376.29" I="-1376.29" K="-1376.29" L="-1376.29" M="-1376.29" N="-1376.29" P="-1376.29" Q="-1376.29" R="-1376.29" S="-1376.29" T="-1376.29" V="-1376.29" W="-1376.29" Y="-1376.29"/>
-			<pos A="-1376.29" C="-1376.29" D="-33.8722" E="-322.458" F="-1376.29" G="324.053" H="-1376.29" I="-1376.29" K="-301.513" L="-1376.29" M="-1376.29" N="250.364" P="-1376.29" Q="-144.92" R="-1376.29" S="-120.367" T="-1376.29" V="-1376.29" W="-1376.29" Y="-1376.29"/>
-			<pos A="-1376.29" C="-1376.29" D="419.515" E="-1376.29" F="-1376.29" G="-1376.29" H="-1376.29" I="-1376.29" K="-1376.29" L="-1376.29" M="-1376.29" N="-1376.29" P="-1376.29" Q="-1376.29" R="-1376.29" S="-1376.29" T="-1376.29" V="-1376.29" W="-1376.29" Y="-1376.29"/>
-			<pos A="-1376.29" C="-1376.29" D="-1376.29" E="9.65133" F="-1376.29" G="-1376.29" H="-1376.29" I="-1376.29" K="-1376.29" L="-1376.29" M="-1376.29" N="-1376.29" P="429.449" Q="-1376.29" R="-1376.29" S="-1376.29" T="-1376.29" V="-1376.29" W="-1376.29" Y="-1376.29"/>
-			<pos A="-152.074" C="-93.9456" D="-1376.29" E="-1376.29" F="38.0205" G="-1376.29" H="-1376.29" I="128.148" K="-1376.29" L="225.311" M="170.955" N="-1376.29" P="-1376.29" Q="-1376.29" R="-1376.29" S="-1376.29" T="-1376.29" V="174.483" W="-1376.29" Y="-1376.29"/>
-			<pos A="-1376.29" C="-1376.29" D="419.515" E="-1376.29" F="-1376.29" G="-1376.29" H="-1376.29" I="-1376.29" K="-1376.29" L="-1376.29" M="-1376.29" N="-1376.29" P="-1376.29" Q="-1376.29" R="-1376.29" S="-1376.29" T="-1376.29" V="-1376.29" W="-1376.29" Y="-1376.29"/>
-			<pos A="38.5938" C="64.544" D="-1376.29" E="-1376.29" F="-1376.29" G="-97.6522" H="-1376.29" I="135.186" K="-1376.29" L="-1376.29" M="-1376.29" N="-1376.29" P="-1376.29" Q="-1376.29" R="-1376.29" S="-1376.29" T="-1376.29" V="331.466" W="-1376.29" Y="-1376.29"/>
-			<pos A="-1376.29" C="364.537" D="-1376.29" E="-222.507" F="-142.701" G="-1376.29" H="-1376.29" I="-145.523" K="-1376.29" L="276.089" M="215.7" N="-1376.29" P="-1376.29" Q="-1376.29" R="-1376.29" S="-1376.29" T="-1376.29" V="-225.476" W="-1376.29" Y="-1376.29"/>
-			<pos A="-1376.29" C="-1376.29" D="-292.306" E="152.942" F="-1376.29" G="-1376.29" H="-1376.29" I="-71.8405" K="-1376.29" L="-216.147" M="-1376.29" N="-1376.29" P="-1376.29" Q="-1376.29" R="-1376.29" S="-1376.29" T="-1376.29" V="343.13" W="-1376.29" Y="-1376.29"/>
-			<pos A="-1376.29" C="164.537" D="-1376.29" E="-222.507" F="-10.5207" G="-1376.29" H="-166.367" I="276.688" K="-1376.29" L="134.059" M="-174.962" N="-1376.29" P="119.02" Q="-1376.29" R="-1376.29" S="-1376.29" T="-1376.29" V="91.4769" W="-1376.29" Y="-202.051"/>
-			<pos A="-52.0886" C="-93.9456" D="-1376.29" E="-1376.29" F="-1376.29" G="165.559" H="-1376.29" I="-204.012" K="-201.555" L="-16.1837" M="277.366" N="50.3691" P="-1376.29" Q="-1376.29" R="-1376.29" S="60.3512" T="223.218" V="-166.99" W="-1376.29" Y="-1376.29"/>
-			<pos A="-351.989" C="-1376.29" D="53.5709" E="152.942" F="-1376.29" G="-329.767" H="92.105" I="-1376.29" K="-1376.29" L="-1376.29" M="-1376.29" N="-91.1208" P="232.767" Q="145.75" R="75.5714" S="70.3053" T="42.4864" V="-325.426" W="38.7575" Y="-202.051"/>
-			<pos A="-152.074" C="-1376.29" D="-92.3602" E="168.142" F="-84.2072" G="-329.767" H="65.8034" I="-303.969" K="107.159" L="-116.174" M="-1376.29" N="-91.1208" P="-271.611" Q="145.75" R="22.5225" S="-320.3" T="-8.96586" V="-67.0094" W="-1376.29" Y="267.957"/>
-			<pos A="-52.0886" C="-93.9456" D="-1376.29" E="-222.507" F="-1376.29" G="-1376.29" H="-1376.29" I="-45.5406" K="-301.513" L="-274.627" M="-1376.29" N="31.1064" P="362.312" Q="35.8011" R="-194.443" S="-39.6406" T="-1376.29" V="65.1755" W="-1376.29" Y="-1376.29"/>
-			<pos A="-71.3503" C="138.235" D="-1376.29" E="-1376.29" F="38.0205" G="-12.8611" H="-1376.29" I="66.0008" K="-301.513" L="153.852" M="-1376.29" N="-1376.29" P="-113.153" Q="-1376.29" R="-294.403" S="-1376.29" T="127.283" V="187.411" W="-1376.29" Y="-202.051"/>
-			<pos A="17.9492" C="-1376.29" D="-1376.29" E="-122.526" F="203.222" G="-329.767" H="-166.367" I="-4.03873" K="-69.383" L="16.0072" M="25.0166" N="-249.585" P="-1376.29" Q="125.105" R="-1376.29" S="-161.861" T="27.2874" V="120.427" W="-1376.29" Y="214.907"/>
-			<pos A="-193.566" C="-93.9456" D="-1376.29" E="-1376.29" F="-142.701" G="-329.767" H="33.6132" I="-145.523" K="-1376.29" L="-1376.29" M="-174.962" N="-1376.29" P="377.512" Q="-12.7401" R="22.5225" S="-161.861" T="80.3364" V="-125.496" W="-1376.29" Y="-1376.29"/>
-			<pos A="-252.049" C="-1376.29" D="-1376.29" E="-1376.29" F="-1376.29" G="365.556" H="-1376.29" I="-1376.29" K="-1376.29" L="-74.6741" M="-174.962" N="-149.614" P="-1376.29" Q="-244.892" R="-1376.29" S="-320.3" T="-1376.29" V="-1376.29" W="-1376.29" Y="-1376.29"/>
-			<pos A="-35.0983" C="401.46" D="-133.856" E="-5.54746" F="-1376.29" G="-329.767" H="-1376.29" I="-145.523" K="-1376.29" L="-1376.29" M="-1376.29" N="31.1064" P="-171.645" Q="113.558" R="-1376.29" S="196.605" T="10.2966" V="91.4769" W="-1376.29" Y="-1376.29"/>
-			<pos A="-252.049" C="-1376.29" D="-1376.29" E="-1376.29" F="147.969" G="-329.767" H="-1376.29" I="171.443" K="-101.571" L="-57.6841" M="-1376.29" N="-1376.29" P="-1376.29" Q="-1376.29" R="-1376.29" S="-320.3" T="-1376.29" V="304.859" W="-1376.29" Y="-202.051"/>
-			<pos A="-1376.29" C="-1376.29" D="-1376.29" E="-1376.29" F="-1376.29" G="-1376.29" H="-1376.29" I="300.391" K="79.1492" L="95.3574" M="57.2066" N="-1376.29" P="-1376.29" Q="-244.892" R="-1376.29" S="-1376.29" T="-289.641" V="132.98" W="-1376.29" Y="-102.072"/>
-			<pos A="-119.888" C="-1376.29" D="-60.1723" E="94.4471" F="-1376.29" G="-171.332" H="-7.88613" I="-204.012" K="115.405" L="-93.9354" M="-1376.29" N="50.3691" P="9.07195" Q="145.75" R="251.467" S="-220.348" T="-289.641" V="-325.426" W="-1376.29" Y="-1376.29"/>
-			<pos A="197.084" C="418.968" D="-1376.29" E="-1376.29" F="-1376.29" G="-1376.29" H="-1376.29" I="-303.969" K="-301.513" L="-1376.29" M="-1376.29" N="-1376.29" P="-1376.29" Q="35.8011" R="-294.403" S="-120.367" T="-57.5058" V="206.675" W="-1376.29" Y="-1376.29"/>
-			<pos A="-52.0886" C="-1376.29" D="-1376.29" E="-1376.29" F="-1376.29" G="-1376.29" H="-66.3836" I="-1376.29" K="226.951" L="-1376.29" M="-1376.29" N="-249.585" P="-271.611" Q="-1376.29" R="346.462" S="-1376.29" T="-1376.29" V="-166.99" W="-1376.29" Y="-1376.29"/>
-			<pos A="72.6958" C="-1376.29" D="-1376.29" E="-1376.29" F="-1376.29" G="-1376.29" H="-1376.29" I="41.902" K="-1376.29" L="-174.657" M="-1376.29" N="-1376.29" P="330.564" Q="-1376.29" R="-13.7307" S="-1376.29" T="-289.641" V="174.483" W="-1376.29" Y="-1376.29"/>
-			<pos A="-1376.29" C="-1376.29" D="-1376.29" E="-1376.29" F="-1376.29" G="-229.818" H="-1376.29" I="271.441" K="-1376.29" L="111.111" M="-1376.29" N="-1376.29" P="9.07195" Q="-1376.29" R="-1376.29" S="-1376.29" T="-189.679" V="223.667" W="-1376.29" Y="-1376.29"/>
-			<pos A="-93.5891" C="-1376.29" D="-1376.29" E="-1376.29" F="-1376.29" G="363.21" H="-1376.29" I="-23.301" K="-201.555" L="-1376.29" M="-174.962" N="-1376.29" P="-1376.29" Q="-1376.29" R="-1376.29" S="-1376.29" T="-1376.29" V="-325.426" W="-1376.29" Y="-1376.29"/>
-			<pos A="-35.0983" C="-1376.29" D="-1376.29" E="-1376.29" F="-142.701" G="-49.1136" H="-1376.29" I="86.6457" K="-201.555" L="64.5466" M="233.756" N="-1376.29" P="-1376.29" Q="-1376.29" R="-1376.29" S="-220.348" T="-89.6938" V="260.279" W="-1376.29" Y="-102.072"/>
-			<pos A="-252.049" C="6.04442" D="-1376.29" E="-1376.29" F="127.324" G="-49.1136" H="-1376.29" I="-145.523" K="-1376.29" L="242.303" M="353.549" N="-1376.29" P="-1376.29" Q="-244.892" R="-1376.29" S="-1376.29" T="-1376.29" V="-1376.29" W="-1376.29" Y="-1376.29"/>
+		<motif db="0" id="1" alt="DXDPJDX" length="7" nsites="255">
+			<pos A="-1463.83" C="-1463.83" D="419.437" E="-1463.83" F="-1463.83" G="-1463.83" H="-1463.83" I="-1463.83" K="-1463.83" L="-1463.83" M="-1463.83" N="-1463.83" P="-1463.83" Q="-1463.83" R="-1463.83" S="-1463.83" T="-1463.83" V="-1463.83" W="-1463.83" Y="-1463.83"/>
+			<pos A="-1463.83" C="-1463.83" D="181.475" E="-1463.83" F="-1463.83" G="285.933" H="-1463.83" I="-1463.83" K="-1463.83" L="-1463.83" M="-1463.83" N="240.933" P="-1463.83" Q="-1463.83" R="-1463.83" S="24.241" T="-1463.83" V="-1463.83" W="-1463.83" Y="-1463.83"/>
+			<pos A="-1463.83" C="-1463.83" D="419.437" E="-1463.83" F="-1463.83" G="-1463.83" H="-1463.83" I="-1463.83" K="-1463.83" L="-1463.83" M="-1463.83" N="-1463.83" P="-1463.83" Q="-1463.83" R="-1463.83" S="-1463.83" T="-1463.83" V="-1463.83" W="-1463.83" Y="-1463.83"/>
+			<pos A="-1463.83" C="-1463.83" D="-1463.83" E="267.957" F="-1463.83" G="-1463.83" H="-1463.83" I="-1463.83" K="-1463.83" L="-1463.83" M="-1463.83" N="-1463.83" P="358.66" Q="-1463.83" R="-1463.83" S="-1463.83" T="-1463.83" V="-1463.83" W="-1463.83" Y="-1463.83"/>
+			<pos A="-1463.83" C="-1463.83" D="-1463.83" E="-1463.83" F="69.8633" G="-1463.83" H="-1463.83" I="175.532" K="-1463.83" L="203.625" M="183.686" N="-1463.83" P="-1463.83" Q="-1463.83" R="-1463.83" S="-1463.83" T="-1463.83" V="189.236" W="-1463.83" Y="-1463.83"/>
+			<pos A="-1463.83" C="-1463.83" D="419.437" E="-1463.83" F="-1463.83" G="-1463.83" H="-1463.83" I="-1463.83" K="-1463.83" L="-1463.83" M="-1463.83" N="-1463.83" P="-1463.83" Q="-1463.83" R="-1463.83" S="-1463.83" T="-1463.83" V="-1463.83" W="-1463.83" Y="-1463.83"/>
+			<pos A="85.1273" C="-23.3328" D="-1463.83" E="-1463.83" F="-1463.83" G="14.7877" H="-1463.83" I="166.785" K="-1463.83" L="7.85238" M="-62.2531" N="-1463.83" P="-1463.83" Q="-1463.83" R="-1463.83" S="-1463.83" T="-1463.83" V="272.797" W="-1463.83" Y="-1463.83"/>
 		</motif>
 	</motifs>
 	<correlations>
 	</correlations>
 	<sequence_dbs>
-		<sequence_db source="/home/yincp/Desktop/Descriptor_Preprocessor/Reports/19082019/PDOC00325/tmp_pdb_fasta.fasta" last_mod_date="Tue Sep  3 17:37:55 2019" seq_count="14" residue_count="3754"/>
+		<sequence_db source="/home/yincp/Desktop/Descriptor_Preprocessor/data/debug/tmp_2" last_mod_date="Thu Sep 12 10:20:16 2019" seq_count="128" residue_count="26366"/>
 	</sequence_dbs>
 	<sequences>
-		<sequence db="0" name="1faj" comment="" length="173">
-			<score strand="both" combined_pvalue="9.56e-48" evalue="1.3e-46"/>
+		<sequence db="0" name="sp|Q74MY6|IPYR_NANEQ" comment="Inorganic pyrophosphatase OS=Nanoarchaeum equitans (strain Kin4-M) OX=228908 GN=ppa PE=3 SV=1" length="160">
+			<score strand="both" combined_pvalue="4.39e-07" evalue="5.6e-05"/>
 			<seg start="1">
 				<data>
-SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
-PYPLQPGSVIRCRPVGVLKMTDXXGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEXXXWV
+MEVYAFIEVPKGSNVKYEYEDGKLKVDRILYGAMFYPYNYGFIPETLEEDGDPLDVLVITEEPLVPGSYIKVKPI
 				</data>
-				<hit pos="44" idx="0" pvalue="7.7e-50" match="++++++++++++++++++++++++++++++++++++++++++++++++++"/>
+				<hit pos="50" idx="0" pvalue="2.9e-09" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="4xel" comment="" length="175">
-			<score strand="both" combined_pvalue="8.26e-46" evalue="1.2e-44"/>
+		<sequence db="0" name="sp|Q9KCG7|IPYR_BACHD" comment="Inorganic pyrophosphatase OS=Bacillus halodurans (strain ATCC BAA-125 / DSM 18197 / FERM 7344 / JCM 9153 / C-125) OX=272558 GN=ppa PE=3 SV=1" length="163">
+			<score strand="both" combined_pvalue="4.48e-07" evalue="5.7e-05"/>
 			<seg start="1">
 				<data>
-XSYSKIPAGKDLPNDIYVAIEIPANHAPIKYEIDKDTDCLFVDRFMATPMFYPANYGFIPNTLADDGDPLDVLVV
-TPYPVAPGSVIRARPVGVLHMTDEAGGDAKLIAVPHDKLSVLYKDVKEYTDLPALLLEQIKHFFENYKDLEKGXX
+MAIEPKVIEAFIEIPTGSQNKYEYDKERGVFKLDRVLFSPMFYPAEYGYIENTLALDGDPLDVLVIVSNPTFPGC
 				</data>
-				<hit pos="45" idx="0" pvalue="6.6e-48" match="++ +++++++++++++++++++++++++++++++++++++++++++++++"/>
+				<hit pos="57" idx="0" pvalue="2.9e-09" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="4lug" comment="" length="208">
-			<score strand="both" combined_pvalue="9.21e-42" evalue="1.3e-40"/>
+		<sequence db="0" name="sp|Q6ACP7|IPYR_LEIXX" comment="Inorganic pyrophosphatase OS=Leifsonia xyli subsp. xyli (strain CTCB07) OX=281090 GN=ppa PE=3 SV=1" length="163">
+			<score strand="both" combined_pvalue="4.48e-07" evalue="5.7e-05"/>
+			<seg start="1">
+				<data>
+MTAYDVVIEIPKGSRNKYEVDHETGRVYLDRVLFTAFVYPADYGFFENTLGDDGDPLDVLVLLEYPVFPGVGIKV
+				</data>
+				<hit pos="53" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q979E6|IPYR_THEVO" comment="Inorganic pyrophosphatase OS=Thermoplasma volcanium (strain ATCC 51530 / DSM 4299 / JCM 9571 / NBRC 15438 / GSS1) OX=273116 GN=ppa PE=3 SV=1" length="169">
+			<score strand="both" combined_pvalue="4.65e-07" evalue="6e-05"/>
+			<seg start="1">
+				<data>
+MKNKQTEDFPESFYVMIEIPMGSNCKYEYKEELDNIVLDRVLFTAMTYPANYGFALDTRGKDGDPLDVLVFSSVS
+				</data>
+				<hit pos="62" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q974Y8|IPYR_SULTO" comment="Inorganic pyrophosphatase OS=Sulfurisphaera tokodaii (strain DSM 16993 / JCM 10545 / NBRC 100140 / 7) OX=273063 GN=ppa PE=1 SV=2" length="172">
+			<score strand="both" combined_pvalue="4.73e-07" evalue="6.1e-05"/>
+			<seg start="1">
+				<data>
+MKLSPGKKAPDEVNVLIEIPLGSNIKYEYDEEEEVVKVDRILYTSMVYPFNYGFIPGTLEEDGDPLDVLVISNYP
+				</data>
+				<hit pos="62" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q97W51|IPYR_SACS2" comment="Inorganic pyrophosphatase OS=Saccharolobus solfataricus (strain ATCC 35092 / DSM 1617 / JCM 11322 / P2) OX=273057 GN=ppa PE=3 SV=1" length="172">
+			<score strand="both" combined_pvalue="4.73e-07" evalue="6.1e-05"/>
+			<seg start="1">
+				<data>
+MKLGPGKKAPDEINVFIEIPMGSNIKYEYDEEEDIIKVDRVLYTSMVYPFNYGFIPETLEEDGDPLDVLVLGNYS
+				</data>
+				<hit pos="62" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P50308|IPYR_SULAC" comment="Inorganic pyrophosphatase OS=Sulfolobus acidocaldarius (strain ATCC 33909 / DSM 639 / JCM 8929 / NBRC 15157 / NCIMB 11770) OX=330779 GN=ppa PE=1 SV=1" length="173">
+			<score strand="both" combined_pvalue="4.76e-07" evalue="6.1e-05"/>
+			<seg start="1">
+				<data>
+MKLSPGKNAPDVVNVLVEIPQGSNIKYEYDDEEGVIKVDRVLYTSMNYPFNYGFIPGTLEEDGDPLDVLVITNYQ
+				</data>
+				<hit pos="62" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9HWZ6|IPYR_PSEAE" comment="Inorganic pyrophosphatase OS=Pseudomonas aeruginosa (strain ATCC 15692 / DSM 22644 / CIP 104116 / JCM 14847 / LMG 12228 / 1C / PRS 101 / PAO1) OX=208964 GN=ppa PE=1 SV=1" length="175">
+			<score strand="both" combined_pvalue="4.82e-07" evalue="6.2e-05"/>
+			<seg start="1">
+				<data>
+MSYSKIPAGKDLPNDIYVAIEIPANHAPIKYEIDKDTDCLFVDRFMATPMFYPANYGFIPNTLADDGDPLDVLVV
+				</data>
+				<hit pos="66" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q88QF6|IPYR_PSEPK" comment="Inorganic pyrophosphatase OS=Pseudomonas putida (strain ATCC 47054 / DSM 6125 / NCIMB 11950 / KT2440) OX=160488 GN=ppa PE=3 SV=1" length="175">
+			<score strand="both" combined_pvalue="4.82e-07" evalue="6.2e-05"/>
+			<seg start="1">
+				<data>
+MSYSKIPAGKDLPNDIYVAIEIPANHAPIKYEIDKDSDTLFVDRFMATPMFYPANYGFIPNTLADDGDPLDVLVV
+				</data>
+				<hit pos="66" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P59417|IPYR_BUCBP" comment="Inorganic pyrophosphatase OS=Buchnera aphidicola subsp. Baizongia pistaciae (strain Bp) OX=224915 GN=ppa PE=3 SV=1" length="175">
+			<score strand="both" combined_pvalue="4.82e-07" evalue="6.2e-05"/>
+			<seg start="1">
+				<data>
+MTLNTVLSGKNIPEDIYVIIEISAHSNPIKYEVNKDLGLLFVDRFIPVPMFYPCNYGFINKTKSNDGDPLDVLVH
+				</data>
+				<hit pos="66" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q889M7|IPYR1_PSESM" comment="Inorganic pyrophosphatase 1 OS=Pseudomonas syringae pv. tomato (strain ATCC BAA-871 / DC3000) OX=223283 GN=ppa1 PE=3 SV=1" length="175">
+			<score strand="both" combined_pvalue="4.82e-07" evalue="6.2e-05"/>
+			<seg start="1">
+				<data>
+MSYSKIPAGKDLPNDIYVAIEIPANHAPIKYEIDKDTDCLFVDRFMATPMFYPANYGFIPNTLADDGDPLDVLVV
+				</data>
+				<hit pos="66" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8KA31|IPYR_BUCAP" comment="Inorganic pyrophosphatase OS=Buchnera aphidicola subsp. Schizaphis graminum (strain Sg) OX=198804 GN=ppa PE=3 SV=1" length="180">
+			<score strand="both" combined_pvalue="4.96e-07" evalue="6.4e-05"/>
+			<seg start="1">
+				<data>
+MNLNLIKAGNNIPSDIYVIIEISSNSSPIKYEVDKQSGVLFVDRFIPTPMFYPCNYGYINETLSLDGDPLDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q87WD6|IPYR2_PSESM" comment="Inorganic pyrophosphatase 2 OS=Pseudomonas syringae pv. tomato (strain ATCC BAA-871 / DC3000) OX=223283 GN=ppa2 PE=3 SV=1" length="181">
+			<score strand="both" combined_pvalue="4.99e-07" evalue="6.4e-05"/>
+			<seg start="1">
+				<data>
+MSYTDIPAGNAIPDDFFTVIEIPANHSPIKYEVDKPSGQIFVDRFLSTPMFYPANYGFIPNTLSDDGDPLDVLVI
+				</data>
+				<hit pos="66" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P57190|IPYR_BUCAI" comment="Inorganic pyrophosphatase OS=Buchnera aphidicola subsp. Acyrthosiphon pisum (strain APS) OX=107806 GN=ppa PE=3 SV=1" length="182">
+			<score strand="both" combined_pvalue="5.02e-07" evalue="6.4e-05"/>
+			<seg start="1">
+				<data>
+MNLNKIVAGDDIPNDIYVIIEISSNSSPIKYEVDKKSGMLFVDRFIPTPMFYPCNYGYINHTLSLDGDPLDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q949J1|IPYR2_CHLRE" comment="Soluble inorganic pyrophosphatase 2 OS=Chlamydomonas reinhardtii OX=3055 GN=ppa2 PE=1 SV=1" length="192">
+			<score strand="both" combined_pvalue="5.31e-07" evalue="6.8e-05"/>
+			<seg start="1">
+				<data>
+MSFYRGTASHPWHDLHPGNDAPNFVSCVIEIPRGSKVKYELDKDTGLCFVDRILYSSVVYPHNYGFVPKTLCEDG
+DPLDVLVLMQEPVVPMCFLRAKPIGVMQMLDQGERDDKLIAVHADDPEYKGFTDISQLPPHRLAEIKRFFEDYKK
+				</data>
+				<hit pos="74" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P87118|IPYR2_SCHPO" comment="Putative inorganic pyrophosphatase C3A12.02 OS=Schizosaccharomyces pombe (strain 972 / ATCC 24843) OX=284812 GN=SPAC3A12.02 PE=3 SV=1" length="286">
+			<score strand="both" combined_pvalue="7.99e-07" evalue="0.0001"/>
+			<seg start="76">
+				<data>
+KQDLKNGKLRYVANSFPYHGFIWNYGALPQTWEDPNVIDSRTKMKGDGDPLDVCEIGGSIGYIGQIKQVKVLGAL
+				</data>
+				<hit pos="122" idx="0" pvalue="2.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9ZCW5|IPYR_RICPR" comment="Inorganic pyrophosphatase OS=Rickettsia prowazekii (strain Madrid E) OX=272947 GN=ppa PE=1 SV=1" length="172">
+			<score strand="both" combined_pvalue="8.06e-07" evalue="0.0001"/>
+			<seg start="1">
+				<data>
+MFIKKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+				</data>
+				<hit pos="65" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q4UKW0|IPYR_RICFE" comment="Inorganic pyrophosphatase OS=Rickettsia felis (strain ATCC VR-1525 / URRWXCal2) OX=315456 GN=ppa PE=3 SV=2" length="173">
+			<score strand="both" combined_pvalue="8.11e-07" evalue="0.0001"/>
+			<seg start="1">
+				<data>
+MFIDKIKAKANNDEINVIIEIPMNIGPIKYEFDKESGAVFVDRFMQTTMSYPCNYGFIPHTLSNDGDPVDVLVVA
+				</data>
+				<hit pos="65" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q92H74|IPYR_RICCN" comment="Inorganic pyrophosphatase OS=Rickettsia conorii (strain ATCC VR-613 / Malish 7) OX=272944 GN=ppa PE=3 SV=1" length="173">
+			<score strand="both" combined_pvalue="8.11e-07" evalue="0.0001"/>
+			<seg start="1">
+				<data>
+MFIDKIKAKANNYEINVIIEIPMNSGPIKYEFDKESGAIFVDRFMQTTMSYPCNYGFIPHTLSNDGDPVDVLVVA
+				</data>
+				<hit pos="65" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q1RIN6|IPYR_RICBR" comment="Inorganic pyrophosphatase OS=Rickettsia bellii (strain RML369-C) OX=336407 GN=ppa PE=3 SV=1" length="175">
+			<score strand="both" combined_pvalue="8.20e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MFIDKIKAKANNDEINVIIEIPMNSGPIKYEFDKESGAVFVDRFMQTTMSYPCNYGFIPHTLSNDGDPVDVLVVS
+				</data>
+				<hit pos="65" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8ZB98|IPYR_YERPE" comment="Inorganic pyrophosphatase OS=Yersinia pestis OX=632 GN=ppa PE=3 SV=1" length="175">
+			<score strand="both" combined_pvalue="8.20e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSLNQVPAGKDLPEDIYVVIEIPANADPIKYEIDKETGSLFVDRFMSTAMFYPCNYGYINNTLSLDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q7VPC0|IPYR_HAEDU" comment="Inorganic pyrophosphatase OS=Haemophilus ducreyi (strain 35000HP / ATCC 700724) OX=233412 GN=ppa PE=3 SV=1" length="175">
+			<score strand="both" combined_pvalue="8.20e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MGLENVPAGKALPDDIYVVIEIPANSDPIKYEVDKESGSLFVDRFMSTAMFYPANYGYVNHTLSSDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8XWX1|IPYR_RALSO" comment="Inorganic pyrophosphatase OS=Ralstonia solanacearum (strain GMI1000) OX=267608 GN=ppa PE=3 SV=1" length="175">
+			<score strand="both" combined_pvalue="8.20e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSFNNVSPGKDIPNDFNVIIEIPAQSDPVKYEADKETGLLHVDRFVGTGMRYPANYGFIPQTLAGDGDPVDVLVV
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P57918|IPYR_PASMU" comment="Inorganic pyrophosphatase OS=Pasteurella multocida (strain Pm70) OX=272843 GN=ppa PE=3 SV=1" length="175">
+			<score strand="both" combined_pvalue="8.20e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MGLETVPAGKALPDDIYVVIEIPANSDPIKYEVDKESGALFVDRFMATAMFYPANYGYVNNTLSLDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P0A7A9|IPYR_ECOLI" comment="Inorganic pyrophosphatase OS=Escherichia coli (strain K12) OX=83333 GN=ppa PE=1 SV=2" length="176">
+			<score strand="both" combined_pvalue="8.25e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q7MPD2|IPYR_VIBVY" comment="Inorganic pyrophosphatase OS=Vibrio vulnificus (strain YJ016) OX=196600 GN=ppa PE=3 SV=1" length="176">
+			<score strand="both" combined_pvalue="8.25e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSLNNVPAGKSLPDDLYVVIEIPANADPIKYEVDKESGAVFVDRFMSAPMFYPCNYGYVNHTLSLDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8DE89|IPYR_VIBVU" comment="Inorganic pyrophosphatase OS=Vibrio vulnificus (strain CMCP6) OX=216895 GN=ppa PE=3 SV=1" length="176">
+			<score strand="both" combined_pvalue="8.25e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSLNNVPAGKSLPDDLYVVIEIPANADPIKYEVDKESGAVFVDRFMSAPMFYPCNYGYVNHTLSLDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8FAG0|IPYR_ECOL6" comment="Inorganic pyrophosphatase OS=Escherichia coli O6:H1 (strain CFT073 / ATCC 700928 / UPEC) OX=199310 GN=ppa PE=3 SV=3" length="176">
+			<score strand="both" combined_pvalue="8.25e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P0A7B0|IPYR_ECO57" comment="Inorganic pyrophosphatase OS=Escherichia coli O157:H7 OX=83334 GN=ppa PE=3 SV=2" length="176">
+			<score strand="both" combined_pvalue="8.25e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P65748|IPYR_SALTY" comment="Inorganic pyrophosphatase OS=Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720) OX=99287 GN=ppa PE=3 SV=2" length="176">
+			<score strand="both" combined_pvalue="8.25e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSLLNVPAGKELPEDIYVVIEIPANADPIKYEVDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9YBA5|IPYR_AERPE" comment="Inorganic pyrophosphatase OS=Aeropyrum pernix (strain ATCC 700893 / DSM 11879 / JCM 9820 / NBRC 100138 / K1) OX=272557 GN=ppa PE=3 SV=2" length="176">
+			<score strand="both" combined_pvalue="8.25e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MTGCLKIGPGDEAPDVVNVVIEIPMNSSVKYEFDKEACIVKVDRFLYTSMVYPFNYGFIPGTLEEDGDPVDVLVI
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q87SW1|IPYR_VIBPA" comment="Inorganic pyrophosphatase OS=Vibrio parahaemolyticus serotype O3:K6 (strain RIMD 2210633) OX=223926 GN=ppa PE=3 SV=1" length="176">
+			<score strand="both" combined_pvalue="8.25e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSLNHVPAGKSLPEDIYVVIEIPANADPIKYEVDKDSGAVFVDRFMSAPMFYPCNYGYVNNTLSLDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P65749|IPYR_SALTI" comment="Inorganic pyrophosphatase OS=Salmonella typhi OX=90370 GN=ppa PE=3 SV=2" length="176">
+			<score strand="both" combined_pvalue="8.25e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSLLNVPAGKELPEDIYVVIEIPANADPIKYEVDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9KP34|IPYR_VIBCH" comment="Inorganic pyrophosphatase OS=Vibrio cholerae serotype O1 (strain ATCC 39315 / El Tor Inaba N16961) OX=243277 GN=ppa PE=3 SV=1" length="176">
+			<score strand="both" combined_pvalue="8.25e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSLNNVPAGKSLPDDIYVVIEIPANADPIKYEVDKESGAVFVDRFMSAPMFYPCNYGYVNHTLSLDGDPVDVLVP
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8GQS5|IPYR_AQUPY" comment="Inorganic pyrophosphatase OS=Aquifex pyrophilus OX=2714 GN=ppa PE=3 SV=1" length="177">
+			<score strand="both" combined_pvalue="8.30e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MGYKDLPPGKNPPEDIYVVIEIPQGSGIKYELDKDTGVIFVDRFLFTAMYYPFNYGFIPQTLADDGDPVDVLVIS
+				</data>
+				<hit pos="65" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P65751|IPYR_XYLFT" comment="Inorganic pyrophosphatase OS=Xylella fastidiosa (strain Temecula1 / ATCC 700964) OX=183190 GN=ppa PE=3 SV=1" length="178">
+			<score strand="both" combined_pvalue="8.35e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MGLELVNAGNNLPEEINVIIEIPKDSEPVKYEVDKASGAIFVDRILSTPMRYPCNYGYVPNTLCGDGDPVDVMVV
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P65750|IPYR_XYLFA" comment="Inorganic pyrophosphatase OS=Xylella fastidiosa (strain 9a5c) OX=160492 GN=ppa PE=3 SV=1" length="178">
+			<score strand="both" combined_pvalue="8.35e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MGLELVNAGNNLPEEINVIIEIPKDSEPVKYEVDKASGAIFVDRILSTPMRYPCNYGYVPNTLCGDGDPVDVMVV
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O67501|IPYR_AQUAE" comment="Inorganic pyrophosphatase OS=Aquifex aeolicus (strain VF5) OX=224324 GN=ppa PE=3 SV=1" length="178">
+			<score strand="both" combined_pvalue="8.35e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MGYDQLPPGKNPPEDIYVVIEIPQGSAVKYELDKDTGVIFVDRFLFTAMYYPFNYGFVPQTLADDGDPVDVLVIS
+				</data>
+				<hit pos="65" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q68WE9|IPYR_RICTY" comment="Inorganic pyrophosphatase OS=Rickettsia typhi (strain ATCC VR-144 / Wilmington) OX=257363 GN=ppa PE=3 SV=1" length="178">
+			<score strand="both" combined_pvalue="8.35e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MFIDKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGAIFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+				</data>
+				<hit pos="65" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O34955|IPYR_LEGPN" comment="Inorganic pyrophosphatase OS=Legionella pneumophila OX=446 GN=ppa PE=3 SV=1" length="178">
+			<score strand="both" combined_pvalue="8.35e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MSLMEIPSGRDVPNEVNVIIEIPMHGEPVKYEVDKKTGALFVDRFMTTAMFYPTNYGYIPNTLSEDGDPVDVLVI
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9RGQ1|IPYR_RHORT" comment="Inorganic pyrophosphatase OS=Rhodospirillum rubrum (strain ATCC 11170 / ATH 1.1.1 / DSM 467 / LMG 4362 / NCIB 8255 / S1) OX=269796 GN=ppa PE=3 SV=1" length="179">
+			<score strand="both" combined_pvalue="8.40e-07" evalue="0.00011"/>
+			<seg start="1">
+				<data>
+MDIKKIPVGKNPPQDVNVIIEIPLLADPVKYEVDKESGAMFVDRFLHTAMHYPCNYGFVPHTLSDDGDPVDVMVV
+				</data>
+				<hit pos="66" idx="0" pvalue="4.9e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P65745|IPYR_BRUSU" comment="Inorganic pyrophosphatase OS=Brucella suis biovar 1 (strain 1330) OX=204722 GN=ppa PE=3 SV=1" length="176">
+			<score strand="both" combined_pvalue="1.57e-06" evalue="0.0002"/>
+			<seg start="1">
+				<data>
+MNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+				</data>
+				<hit pos="66" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P65744|IPYR_BRUME" comment="Inorganic pyrophosphatase OS=Brucella melitensis biotype 1 (strain 16M / ATCC 23456 / NCTC 10094) OX=224914 GN=ppa PE=3 SV=1" length="176">
+			<score strand="both" combined_pvalue="1.57e-06" evalue="0.0002"/>
+			<seg start="1">
+				<data>
+MNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+				</data>
+				<hit pos="66" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q92LH1|IPYR_RHIME" comment="Inorganic pyrophosphatase OS=Rhizobium meliloti (strain 1021) OX=266834 GN=ppa PE=3 SV=1" length="177">
+			<score strand="both" combined_pvalue="1.58e-06" evalue="0.0002"/>
+			<seg start="1">
+				<data>
+MRIDAISIGKNPPEDVNVIVEVPVGGHPIKYEMDKEAGTLVVDRFLYTPMTYPGNYGFVPHTLSDDGDPIDVLIC
+				</data>
+				<hit pos="66" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8UC37|IPYR_AGRFC" comment="Inorganic pyrophosphatase OS=Agrobacterium fabrum (strain C58 / ATCC 33970) OX=176299 GN=ppa PE=3 SV=1" length="177">
+			<score strand="both" combined_pvalue="1.58e-06" evalue="0.0002"/>
+			<seg start="1">
+				<data>
+MRIDAISIGKNPPDDINVIVEVPVGGHPIKYEMDKDAGALIVDRFLYTPMTYPGNYGFVPHTLSDDGDPIDVLIC
+				</data>
+				<hit pos="66" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q98ER2|IPYR_RHILO" comment="Inorganic pyrophosphatase OS=Mesorhizobium japonicum (strain LMG 29417 / CECT 9101 / MAFF 303099) OX=266835 GN=ppa PE=3 SV=1" length="177">
+			<score strand="both" combined_pvalue="1.58e-06" evalue="0.0002"/>
+			<seg start="1">
+				<data>
+MRIEAIATGKNPPEDVNVIIEVPIGGEPIKYEMDKEAGTLFVDRFLHTSMRYPGNYGFVPHTLSGDGDPIDVLVC
+				</data>
+				<hit pos="66" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P37981|IPYR_THEAC" comment="Inorganic pyrophosphatase OS=Thermoplasma acidophilum (strain ATCC 25905 / DSM 1728 / JCM 9062 / NBRC 15155 / AMRC-C165) OX=273075 GN=ppa PE=1 SV=1" length="179">
+			<score strand="both" combined_pvalue="1.59e-06" evalue="0.0002"/>
+			<seg start="1">
+				<data>
+MESFYHSVPVGPKPPEEVYVIVEIPRGSRVKYEIAKDFPGMLVDRVLYSSVVYPVDYGLIPRTLYYDGDPMDVMV
+				</data>
+				<hit pos="67" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|A2X8Q3|IPYR_ORYSI" comment="Soluble inorganic pyrophosphatase OS=Oryza sativa subsp. indica OX=39946 GN=IPP PE=2 SV=1" length="214">
+			<score strand="both" combined_pvalue="1.92e-06" evalue="0.00025"/>
+			<seg start="76">
+				<data>
+VDRVLYSSVVYPHNYGFIPRTLCEDGDPMDVLVLMQEQVVPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEY
+				</data>
+				<hit pos="100" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q0DYB1|IPYR_ORYSJ" comment="Soluble inorganic pyrophosphatase OS=Oryza sativa subsp. japonica OX=39947 GN=IPP PE=2 SV=1" length="214">
+			<score strand="both" combined_pvalue="1.92e-06" evalue="0.00025"/>
+			<seg start="76">
+				<data>
+VDRVLYSSVVYPHNYGFIPRTLCEDGDPMDVLVLMQEQVVPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEY
+				</data>
+				<hit pos="100" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O82793|IPYR3_ARATH" comment="Soluble inorganic pyrophosphatase 3 OS=Arabidopsis thaliana OX=3702 GN=PPA3 PE=2 SV=1" length="216">
+			<score strand="both" combined_pvalue="1.94e-06" evalue="0.00025"/>
+			<seg start="76">
+				<data>
+IKVDRILYSSVVYPHNYGFIPRTLCEDNDPLDVLVLMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDP
+				</data>
+				<hit pos="102" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8SR69|IPYR_ENCCU" comment="Inorganic pyrophosphatase OS=Encephalitozoon cuniculi (strain GB-M1) OX=284813 GN=IPP1 PE=1 SV=1" length="277">
+			<score strand="both" combined_pvalue="2.50e-06" evalue="0.00032"/>
+			<seg start="76">
+				<data>
+KGWPRFVKNVFPMKGYLWNYGALPQTWENPHEVDRHTGARGDNDPLDVIEIGRKRKEVGEVYQAKVLGSIALVDE
+				</data>
+				<hit pos="117" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q43187|IPYR_SOLTU" comment="Soluble inorganic pyrophosphatase PPA1 OS=Solanum tuberosum OX=4113 GN=PPA1 PE=1 SV=1" length="211">
+			<score strand="both" combined_pvalue="2.50e-06" evalue="0.00032"/>
+			<seg start="76">
+				<data>
+ILYSSVVYPQNYGFIPRTLCEDNDPMDVLVLMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEYRHY
+				</data>
+				<hit pos="97" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q93V56|IPYR1_ARATH" comment="Soluble inorganic pyrophosphatase 1 OS=Arabidopsis thaliana OX=3702 GN=PPA1 PE=1 SV=1" length="212">
+			<score strand="both" combined_pvalue="2.51e-06" evalue="0.00032"/>
 			<seg start="76">
 				<data>
 RILYSSVVYPHNYGFVPRTLCEDNDPIDVLVIMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCVDDPEYKH
 				</data>
-				<hit pos="77" idx="0" pvalue="5.8e-44" match="++++++++++++++++++++++++++++++++++++++++++++++++++"/>
+				<hit pos="98" idx="0" pvalue="1.2e-08" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="3d53" comment="" length="172">
-			<score strand="both" combined_pvalue="9.66e-41" evalue="1.4e-39"/>
+		<sequence db="0" name="sp|O48556|IPYR_MAIZE" comment="Soluble inorganic pyrophosphatase OS=Zea mays OX=4577 GN=IPP PE=2 SV=1" length="214">
+			<score strand="both" combined_pvalue="2.54e-06" evalue="0.00032"/>
+			<seg start="76">
+				<data>
+VDRVLYSSVVYPHNYGFVPRTLCEDNDPMDVLVLMQEPVVPGSFLRARAIGLMPMIDQGEKDDKIIAVCADDPEY
+				</data>
+				<hit pos="100" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O23979|IPYR_HORVV" comment="Soluble inorganic pyrophosphatase OS=Hordeum vulgare subsp. vulgare OX=112509 GN=IPP PE=2 SV=1" length="215">
+			<score strand="both" combined_pvalue="2.55e-06" evalue="0.00033"/>
+			<seg start="76">
+				<data>
+LIKVDRVLYSSVVYPHNYGFIPRTLCEDNDPMDVLVLMQEPVIPGSFLRARAIGLMPMIDQGEKDDKIIAVCADD
+				</data>
+				<hit pos="103" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O82597|IPYR5_ARATH" comment="Soluble inorganic pyrophosphatase 5 OS=Arabidopsis thaliana OX=3702 GN=PPA5 PE=2 SV=1" length="216">
+			<score strand="both" combined_pvalue="2.56e-06" evalue="0.00033"/>
+			<seg start="76">
+				<data>
+IKVDRILYSSVVYPHNYGFVPRTLCEDNDPIDVLVIMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCVDDP
+				</data>
+				<hit pos="102" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O13505|IPYR_PICPA" comment="Inorganic pyrophosphatase OS=Komagataella pastoris OX=4922 GN=IPP1 PE=3 SV=3" length="285">
+			<score strand="both" combined_pvalue="2.57e-06" evalue="0.00033"/>
+			<seg start="76">
+				<data>
+GKLRFVRNCFPHHGYIHNYGAFPQTWEDPNVTHPETKAKGDNDPLDVCEIGERSYTGQVKQVKVLGVMALLDEGE
+				</data>
+				<hit pos="116" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q5B912|IPYR_EMENI" comment="Inorganic pyrophosphatase OS=Emericella nidulans (strain FGSC A4 / ATCC 38163 / CBS 112.46 / NRRL 194 / M139) OX=227321 GN=ipp1 PE=1 SV=2" length="287">
+			<score strand="both" combined_pvalue="2.59e-06" evalue="0.00033"/>
+			<seg start="76">
+				<data>
+GKLRFVRNCFPHKGYLWNYGAFPQTWEDPNVVHPETKAKGDNDPLDVCEIGELVGYPGQVKQVKVLGVMALLDEE
+				</data>
+				<hit pos="116" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P13998|IPYR_KLULA" comment="Inorganic pyrophosphatase OS=Kluyveromyces lactis (strain ATCC 8585 / CBS 2359 / DSM 70799 / NBRC 1267 / NRRL Y-1140 / WM37) OX=284590 GN=IPP1 PE=3 SV=2" length="287">
+			<score strand="both" combined_pvalue="2.59e-06" evalue="0.00033"/>
+			<seg start="76">
+				<data>
+GKLRFVRNCFPHHGYIHNYGAFPQTWEDPNESHPETKAVGDNDPLDVLEIGEQVAYTGQVKQVKVLGVMALLDEG
+				</data>
+				<hit pos="116" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q757J8|IPYR_ASHGO" comment="Inorganic pyrophosphatase OS=Ashbya gossypii (strain ATCC 10895 / CBS 109.51 / FGSC 9923 / NRRL Y-1056) OX=284811 GN=IPP1 PE=3 SV=1" length="287">
+			<score strand="both" combined_pvalue="2.59e-06" evalue="0.00033"/>
+			<seg start="76">
+				<data>
+GKLRYVRNCFPHHGYIHNYGAFPQTWEDPNVAHPETKAYGDNDPLDVLEIGETIAYTGQVKQVKVLGVMALLDEG
+				</data>
+				<hit pos="116" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q6BWA5|IPYR_DEBHA" comment="Inorganic pyrophosphatase OS=Debaryomyces hansenii (strain ATCC 36239 / CBS 767 / JCM 1990 / NBRC 0083 / IGC 2968) OX=284592 GN=IPP1 PE=3 SV=1" length="287">
+			<score strand="both" combined_pvalue="2.59e-06" evalue="0.00033"/>
+			<seg start="76">
+				<data>
+GKLRFVRNCFPHHGYIHNYGAFPQTWEDPNQVHPETKAKGDNDPLDVCEIGEQVGYVGQVKQVKVLGVMALLDEG
+				</data>
+				<hit pos="116" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q6C1T4|IPYR_YARLI" comment="Inorganic pyrophosphatase OS=Yarrowia lipolytica (strain CLIB 122 / E 150) OX=284591 GN=IPP1 PE=3 SV=1" length="287">
+			<score strand="both" combined_pvalue="2.59e-06" evalue="0.00033"/>
+			<seg start="76">
+				<data>
+KGKLRFVRNCFPHHGYIHNYGAFPQTWEDPNHVHPETKAKGDNDPLDVCEIGETVGYTGQVKQVKVLGVMALLDE
+				</data>
+				<hit pos="117" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P83777|IPYR_CANAL" comment="Inorganic pyrophosphatase OS=Candida albicans (strain SC5314 / ATCC MYA-2876) OX=237561 GN=IPP1 PE=1 SV=3" length="288">
+			<score strand="both" combined_pvalue="2.60e-06" evalue="0.00033"/>
+			<seg start="76">
+				<data>
+KGKLRFVRNCFPHHGYIHNYGAFPQTWEDPNQSHPETKAKGDNDPLDVCEIGEKVATVGEVKQVKVLGVMALLDE
+				</data>
+				<hit pos="117" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q6MVH7|IPYR_NEUCR" comment="Inorganic pyrophosphatase OS=Neurospora crassa (strain ATCC 24698 / 74-OR23-1A / CBS 708.71 / DSM 1257 / FGSC 987) OX=367110 GN=ipp-1 PE=3 SV=1" length="290">
+			<score strand="both" combined_pvalue="2.62e-06" evalue="0.00034"/>
+			<seg start="76">
+				<data>
+KKGKLRFVRNCFPHKGYLWNYGAFPQTWEDPNSIHPETKAKGDNDPLDVCEIGELVGYTGQVKQVKVLGVMALLD
+				</data>
+				<hit pos="118" idx="0" pvalue="9.2e-09" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q93Y52|IPYR1_CHLRE" comment="Soluble inorganic pyrophosphatase 1, chloroplastic OS=Chlamydomonas reinhardtii OX=3055 GN=ppa1 PE=1 SV=1" length="280">
+			<score strand="both" combined_pvalue="2.89e-06" evalue="0.00037"/>
+			<seg start="151">
+				<data>
+GDNDPVDVVEIGAAAAKRGGVYKVKPVGVLAMIDDGELDWKVIAISADDPKAALCNDVEDVEKHFPGEIQKVLEW
+				</data>
+				<hit pos="152" idx="0" pvalue="1.1e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P19514|IPYR_BACP3" comment="Inorganic pyrophosphatase OS=Bacillus sp. (strain PS3) OX=2334 GN=ppa PE=1 SV=2" length="165">
+			<score strand="both" combined_pvalue="2.89e-06" evalue="0.00037"/>
 			<seg start="1">
 				<data>
-XFIKKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
-HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+MAFENKIVEAFIEIPTGSQNKYEFDKERGIFKLDRVLYSPMFYPAEYGYLQNTLALDGDPLDILVITTNPPFPGC
 				</data>
-				<hit pos="44" idx="0" pvalue="7.9e-43" match="++ + ++++++++++++++++++++++++++ ++++++++++++++++++"/>
+				<hit pos="57" idx="0" pvalue="1.8e-08" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="1qez" comment="" length="1171">
-			<score strand="both" combined_pvalue="6.30e-39" evalue="8.8e-38"/>
-			<seg start="976">
-				<data>
-XXXXXXXXXXXXXXXXXXXXXXXXXXKLSPGKNAPDVVNVLVEIPQGSNIKYEYDDEEGVIKVDRVLYTSMNYPF
-NYGFIPGTLEEDGDPLDVLVITNYQLYPGSVIEVRPIGILYMKDEEGEDAKIVAVPKDKTDPSFSNIKDINDLPQ
-				</data>
-				<hit pos="1041" idx="0" pvalue="5.6e-42" match="++++++ +++++++++ ++ ++++++++++++ +++++++++++++++++"/>
-			</seg>
-		</sequence>
-		<sequence db="0" name="4ecp" comment="" length="161">
-			<score strand="both" combined_pvalue="6.44e-37" evalue="9e-36"/>
+		<sequence db="0" name="sp|O05724|IPYR_GEOSE" comment="Inorganic pyrophosphatase OS=Geobacillus stearothermophilus OX=1422 GN=ppa PE=1 SV=2" length="165">
+			<score strand="both" combined_pvalue="2.89e-06" evalue="0.00037"/>
 			<seg start="1">
 				<data>
-VQFDVTIEIPKGQRNKYEVDHKTGRVRLDRYLYTPMAYPTDYGFIEDTLGEDGDPLDALVLLPEPLFPGVLVEAR
-PVGMFRMVDEHGGDDKVLCVPVNDHRWDHIHGIIDVPTFELDAIKHFFVHYKDLEPGKFVKAADWVGRDEAEAEV
+MAFENKIVEAFIEIPTGSQNKYEFDKERGIFKLDRVLYSPMFYPAEYGYLQNTLALDGDPLDILVITTNPTFPGC
 				</data>
-				<hit pos="31" idx="0" pvalue="5.7e-39" match="++++++ ++++++++++++++++++++++++ ++++++++ +++++++++"/>
+				<hit pos="57" idx="0" pvalue="1.8e-08" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="1sxv" comment="" length="159">
-			<score strand="both" combined_pvalue="2.92e-36" evalue="4.1e-35"/>
+		<sequence db="0" name="sp|Q9C0T9|IPYR_ZYGBA" comment="Inorganic pyrophosphatase OS=Zygosaccharomyces bailii OX=4954 GN=IPP1 PE=3 SV=1" length="287">
+			<score strand="both" combined_pvalue="2.96e-06" evalue="0.00038"/>
+			<seg start="76">
+				<data>
+GKLRYVRNCFPHHGYIHNYGAFPQTWEDPNVVHPETKAVGDNDPVDVLEIGETIGYTGQVKQVKVLGIMALLDEG
+				</data>
+				<hit pos="116" idx="0" pvalue="1.1e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q6FRB7|IPYR_CANGA" comment="Inorganic pyrophosphatase OS=Candida glabrata (strain ATCC 2001 / CBS 138 / JCM 3761 / NBRC 0622 / NRRL Y-65) OX=284593 GN=IPP1 PE=3 SV=1" length="287">
+			<score strand="both" combined_pvalue="2.96e-06" evalue="0.00038"/>
+			<seg start="76">
+				<data>
+GKLRYVRNCFPHHGYIHNYGAFPQTWEDPNQTHPETKAVGDNDPVDVLEIGETIGYTGQVKQVKVLGIMALLDEG
+				</data>
+				<hit pos="116" idx="0" pvalue="1.1e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P44529|IPYR_HAEIN" comment="Inorganic pyrophosphatase OS=Haemophilus influenzae (strain ATCC 51907 / DSM 11121 / KW20 / Rd) OX=71421 GN=ppa PE=3 SV=1" length="176">
+			<score strand="both" combined_pvalue="3.09e-06" evalue="0.0004"/>
 			<seg start="1">
 				<data>
-MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
-PVGMFRMVDEHGGDDKVLCVPAGDPRWDHVQDIGDVPAFELDAIKHFFVHYKDLEPGKFVKAADWVDRAEAEAEV
+MADFNQILTPGDVDAGIINVVNEIPEGSCHKIEWNRKVAAFQLDRVEPAIFAKPTNYGFIPQTLDEDGDELDVLL
 				</data>
-				<hit pos="31" idx="0" pvalue="2.7e-38" match="++++++ ++++++++++++++++++++++++ ++++++++ + +++++++"/>
+				<hit pos="67" idx="0" pvalue="1.8e-08" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="1ude" comment="" length="172">
-			<score strand="both" combined_pvalue="5.34e-35" evalue="7.5e-34"/>
+		<sequence db="0" name="sp|Q8TVE2|IPYR_METKA" comment="Inorganic pyrophosphatase OS=Methanopyrus kandleri (strain AV19 / DSM 6324 / JCM 9639 / NBRC 100938) OX=190192 GN=ppa PE=3 SV=1" length="176">
+			<score strand="both" combined_pvalue="3.09e-06" evalue="0.0004"/>
 			<seg start="1">
 				<data>
-XXXFHDLEPGPNVPEVVYALIEIPKGSRNKYELDKETGLLKLDRVLYTPFHYPVDYGIIPRTWYEDGDPFDIMVI
-MREPTYPLTIIEARPIGLFKMIDSGDKDYKVLAVPVEDPYFKDWKDISDVPKAFLDEIAHFFKRYKELEXGKEII
+MMNLWKDLEPGPNPPDVVYAVIEIPRGSRNKYEYDEERGFFKLDRVLYSPFHYPLDYGFIPRTLYDDGDPLDILV
 				</data>
-				<hit pos="45" idx="0" pvalue="4.3e-37" match="+++++++++ +++ ++++++++++++++++++++++++ +++++++++++"/>
+				<hit pos="67" idx="0" pvalue="1.8e-08" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="2prd" comment="" length="174">
-			<score strand="both" combined_pvalue="2.39e-32" evalue="3.3e-31"/>
+		<sequence db="0" name="sp|Q9LXC9|IPYR6_ARATH" comment="Soluble inorganic pyrophosphatase 6, chloroplastic OS=Arabidopsis thaliana OX=3702 GN=PPA6 PE=1 SV=1" length="300">
+			<score strand="both" combined_pvalue="3.10e-06" evalue="0.0004"/>
+			<seg start="151">
+				<data>
+GLLPQTWEDPSHANSEVEGCFGDNDPVDVVEIGETQRKIGDILKIKPLAALAMIDEGELDWKIVAISLDDPKAHL
+				</data>
+				<hit pos="173" idx="0" pvalue="1.1e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9K0G4|IPYR_NEIMB" comment="Inorganic pyrophosphatase OS=Neisseria meningitidis serogroup B (strain MC58) OX=122586 GN=ppa PE=1 SV=1" length="177">
+			<score strand="both" combined_pvalue="3.11e-06" evalue="0.0004"/>
 			<seg start="1">
 				<data>
-ANLKSLPVGDKAPEVVHMVIEVPRGSGNKYEYDPDLGAIKLDRVLPGAQFYPGDYGFIPSTLAEDGDPLDGLVLS
-TYPLLPGVVVEVRVVGLLLMEDEKGGDAKVIGVVAEDQRLDHIQDIGDVPEGVKQEIQHFFETYKALEAKKGKWV
+MADFNQILTPGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRVEPAIFAKPTNYGFIPQTLDEDGDELDVLL
 				</data>
-				<hit pos="44" idx="0" pvalue="1.9e-34" match="+++ + +++ ++++++ ++++++++++ ++++++++++++++++++++++"/>
+				<hit pos="67" idx="0" pvalue="1.8e-08" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="1ygz" comment="" length="172">
-			<score strand="both" combined_pvalue="8.48e-30" evalue="1.2e-28"/>
+		<sequence db="0" name="sp|Q9JVG3|IPYR_NEIMA" comment="Inorganic pyrophosphatase OS=Neisseria meningitidis serogroup A / serotype 4A (strain Z2491) OX=122587 GN=ppa PE=3 SV=1" length="177">
+			<score strand="both" combined_pvalue="3.11e-06" evalue="0.0004"/>
 			<seg start="1">
 				<data>
-XNLEKLEVSHDADSLCVVIEISKHSNIKYELDKESGALXVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
-VAFQAGSVVKARLVGVLNXEDESGXDEKLIALPIDKIDPTHSYVKDIDDLSKHTLDKIKHFFETYKDLEPNKWVK
+MADFNQILTTGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRVEPAIFAKPTNYGFIPQTLDEDGDELDVLL
 				</data>
-				<hit pos="43" idx="0" pvalue="6.9e-32" match="+++ +  +++++++++++++ ++++++++++++  ++ +++++++ ++++"/>
+				<hit pos="67" idx="0" pvalue="1.8e-08" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="1twl" comment="" length="174">
-			<score strand="both" combined_pvalue="2.94e-29" evalue="4.1e-28"/>
+		<sequence db="0" name="sp|Q8D274|IPYR_WIGBR" comment="Inorganic pyrophosphatase OS=Wigglesworthia glossinidia brevipalpis OX=36870 GN=ppa PE=3 SV=1" length="179">
+			<score strand="both" combined_pvalue="3.15e-06" evalue="0.0004"/>
 			<seg start="1">
 				<data>
-XNPFHDLEPGPDVPEVVYAIIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPRTWYEXDDPFDIMVI
-MREPVYPLTIIEARPIGLFKMIDSGDKDYKVLAVPVEDPYFKDWKDIDDVPKAFLDEIAHFFKRYKELQGKEIIV
+MNLNSVPAGEKLPNDIYAIIEIPTNSNPIKYEVDKKTGILFVNRFIPTSMFYPCNYGYINHTISLDGDPLDILVP
 				</data>
-				<hit pos="45" idx="0" pvalue="2.4e-31" match="+++++++++ +++ +++++++  +++++++++++++++ +++++++++++"/>
+				<hit pos="66" idx="0" pvalue="1.8e-08" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="5tea" comment="" length="176">
-			<score strand="both" combined_pvalue="5.76e-29" evalue="8.1e-28"/>
+		<sequence db="0" name="sp|Q9PQH6|IPYR_UREPA" comment="Inorganic pyrophosphatase OS=Ureaplasma parvum serovar 3 (strain ATCC 700970) OX=273119 GN=ppa PE=3 SV=1" length="181">
+			<score strand="both" combined_pvalue="3.18e-06" evalue="0.00041"/>
 			<seg start="1">
 				<data>
-XXDFNQILTPGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRIEPAIFAKPTNYGFIPQTLDEDGDELDVLL
-VTEQPLATGVFLEARVIGVMKFVDDGEVDDKIVCVPADDRNNGNAYKTLSDLPQQLIKQIEFHFNHYKDLKKAGT
+MKLNVTIEIPKNSNIKYEYDRATKEIMVDRILHGSMVYPHNYGFLKEALDYDGDELDVLVFADQAFQPGIKVPAR
 				</data>
-				<hit pos="46" idx="0" pvalue="4.5e-31" match="+ +  +  +++++++++++++++++++++ ++++++++++++++++++++"/>
+				<hit pos="52" idx="0" pvalue="1.8e-08" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="6c45" comment="" length="288">
-			<score strand="both" combined_pvalue="7.55e-27" evalue="1.1e-25"/>
+		<sequence db="0" name="sp|Q98Q96|IPYR_MYCPU" comment="Inorganic pyrophosphatase OS=Mycoplasma pulmonis (strain UAB CTIP) OX=272635 GN=ppa PE=3 SV=1" length="183">
+			<score strand="both" combined_pvalue="3.22e-06" evalue="0.00041"/>
+			<seg start="1">
+				<data>
+MSKIVVNIEIQKDSNIKYEYDRKRGKIVVDRILRGDFRYPANYGYLEDALDWDGDELDVLVYSQEKFLPGTSLNA
+				</data>
+				<hit pos="53" idx="0" pvalue="1.8e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P00817|IPYR_YEAST" comment="Inorganic pyrophosphatase OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=IPP1 PE=1 SV=4" length="287">
+			<score strand="both" combined_pvalue="3.42e-06" evalue="0.00044"/>
+			<seg start="76">
+				<data>
+GKLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEG
+				</data>
+				<hit pos="116" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q15181|IPYR_HUMAN" comment="Inorganic pyrophosphatase OS=Homo sapiens OX=9606 GN=PPA1 PE=1 SV=2" length="289">
+			<score strand="both" combined_pvalue="3.45e-06" evalue="0.00044"/>
 			<seg start="76">
 				<data>
 GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIGVKVLGILAMIDEG
 				</data>
-				<hit pos="95" idx="0" pvalue="3.2e-29" match="++ +++++++++++ ++++++++++++++++++++++++ ++ +++++++"/>
+				<hit pos="116" idx="0" pvalue="1.2e-08" match="+++++++"/>
 			</seg>
 		</sequence>
-		<sequence db="0" name="5wru" comment="" length="379">
-			<score strand="both" combined_pvalue="2.26e-12" evalue="3.2e-11"/>
+		<sequence db="0" name="sp|P37980|IPYR_BOVIN" comment="Inorganic pyrophosphatase OS=Bos taurus OX=9913 GN=PPA1 PE=1 SV=2" length="289">
+			<score strand="both" combined_pvalue="3.45e-06" evalue="0.00044"/>
+			<seg start="76">
+				<data>
+GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIRVKVLGILAMIDEG
+				</data>
+				<hit pos="116" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9D819|IPYR_MOUSE" comment="Inorganic pyrophosphatase OS=Mus musculus OX=10090 GN=Ppa1 PE=1 SV=1" length="289">
+			<score strand="both" combined_pvalue="3.45e-06" evalue="0.00044"/>
+			<seg start="76">
+				<data>
+GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHSDKHTGCCGDNDPIDVCEIGSKVCARGEIIRVKVLGILAMIDEG
+				</data>
+				<hit pos="116" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q5R8T6|IPYR_PONAB" comment="Inorganic pyrophosphatase OS=Pongo abelii OX=9601 GN=PPA1 PE=2 SV=1" length="289">
+			<score strand="both" combined_pvalue="3.45e-06" evalue="0.00044"/>
+			<seg start="76">
+				<data>
+RKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIGVKVLGILAMIDEG
+				</data>
+				<hit pos="116" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q4R543|IPYR_MACFA" comment="Inorganic pyrophosphatase OS=Macaca fascicularis OX=9541 GN=PPA1 PE=2 SV=2" length="289">
+			<score strand="both" combined_pvalue="3.45e-06" evalue="0.00044"/>
+			<seg start="76">
+				<data>
+GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIGVKVLGILAMIDEG
+				</data>
+				<hit pos="116" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O84777|IPYR_CHLTR" comment="Inorganic pyrophosphatase OS=Chlamydia trachomatis (strain D/UW-3/Cx) OX=272561 GN=ppa PE=3 SV=1" length="209">
+			<score strand="both" combined_pvalue="3.69e-06" evalue="0.00047"/>
+			<seg start="76">
+				<data>
+SGEYSGQQSNRENIKGDGDPLDICVLTEKNITQGNILLQARPIGGIRILDSEEADDKIIAVLEDDLVYGNIEDIS
+				</data>
+				<hit pos="92" idx="0" pvalue="1.8e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9PLF1|IPYR_CHLMU" comment="Inorganic pyrophosphatase OS=Chlamydia muridarum (strain MoPn / Nigg) OX=243161 GN=ppa PE=3 SV=1" length="209">
+			<score strand="both" combined_pvalue="3.69e-06" evalue="0.00047"/>
+			<seg start="76">
+				<data>
+SGEYSGQQSNRDNIKGDGDPLDICVLTEKNITQGNILLQARPIGGIRILDSGEADDKIIAVLEDDLVYGAMEDIS
+				</data>
+				<hit pos="92" idx="0" pvalue="1.8e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|B0BAM7|IPYR_CHLTB" comment="Inorganic pyrophosphatase OS=Chlamydia trachomatis serovar L2b (strain UCH-1/proctitis) OX=471473 GN=ppa PE=3 SV=1" length="209">
+			<score strand="both" combined_pvalue="3.69e-06" evalue="0.00047"/>
+			<seg start="76">
+				<data>
+SGEYSGQQSNRENIKGDGDPLDICVLTEKNITQGNILLQARPIGGIRILDSEEADDKIIAVLEDDLVYGNIEDIS
+				</data>
+				<hit pos="92" idx="0" pvalue="1.8e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q3KKS0|IPYR_CHLTA" comment="Inorganic pyrophosphatase OS=Chlamydia trachomatis serovar A (strain ATCC VR-571B / DSM 19440 / HAR-13) OX=315277 GN=ppa PE=3 SV=1" length="209">
+			<score strand="both" combined_pvalue="3.69e-06" evalue="0.00047"/>
+			<seg start="76">
+				<data>
+SGEYSGQQSNRENIKGDGDPLDICVLTEKNITQGNILLQARPIGGIRILDSEEADDKIIAVLEDDLVYGNIEDIS
+				</data>
+				<hit pos="92" idx="0" pvalue="1.8e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|B0B8Z8|IPYR_CHLT2" comment="Inorganic pyrophosphatase OS=Chlamydia trachomatis serovar L2 (strain 434/Bu / ATCC VR-902B) OX=471472 GN=ppa PE=3 SV=1" length="209">
+			<score strand="both" combined_pvalue="3.69e-06" evalue="0.00047"/>
+			<seg start="76">
+				<data>
+SGEYSGQQSNRENIKGDGDPLDICVLTEKNITQGNILLQARPIGGIRILDSEEADDKIIAVLEDDLVYGNIEDIS
+				</data>
+				<hit pos="92" idx="0" pvalue="1.8e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q91VM9|IPYR2_MOUSE" comment="Inorganic pyrophosphatase 2, mitochondrial OS=Mus musculus OX=10090 GN=Ppa2 PE=1 SV=1" length="330">
+			<score strand="both" combined_pvalue="3.95e-06" evalue="0.00051"/>
 			<seg start="151">
 				<data>
-DKKKGKLRYYHNSIYWNYGALPQTYEYPKHIYQNKXXXXXEALLFTGDNDPLDILDIGSACLKIGQVVPVKILGA
-FTLIDEGELDWKIIAINKEDKHYEDINSLSDIEKYYPHTLSLLLEWFRSYKXADTKKLNLISKQLYDKKESEDLI
+DKSTDCCGDNDPIDVCEIGSKVLSRGDVVHVKILGTLALIDQSETDWKIIAINVNDPEAEKFHDIDDVKKFKPGY
 				</data>
-				<hit pos="177" idx="0" pvalue="6.9e-15" match="+                   +++++++++ +++  +  ++++++++++ +"/>
+				<hit pos="159" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9H2U2|IPYR2_HUMAN" comment="Inorganic pyrophosphatase 2, mitochondrial OS=Homo sapiens OX=9606 GN=PPA2 PE=1 SV=2" length="334">
+			<score strand="both" combined_pvalue="4.00e-06" evalue="0.00051"/>
+			<seg start="151">
+				<data>
+DPHEKDKSTNCFGDNDPIDVCEIGSKILSCGEVIHVKILGILALIDEGETDWKLIAINANDPEASKFHDIDDVKK
+				</data>
+				<hit pos="164" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O77460|IPYR_DROME" comment="Inorganic pyrophosphatase OS=Drosophila melanogaster OX=7227 GN=Nurf-38 PE=1 SV=3" length="338">
+			<score strand="both" combined_pvalue="4.05e-06" evalue="0.00052"/>
+			<seg start="151">
+				<data>
+WENPDHIEPSTGCKGDNDPIDVIEIGYRVAKRGDVLKVKVLGTIALIDEGETDWKIIAIDVNDPLASKVNDIADV
+				</data>
+				<hit pos="166" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9PHM9|IPYR_CAMJE" comment="Inorganic pyrophosphatase OS=Campylobacter jejuni subsp. jejuni serotype O:2 (strain ATCC 700819 / NCTC 11168) OX=192222 GN=ppa PE=3 SV=1" length="172">
+			<score strand="both" combined_pvalue="4.07e-06" evalue="0.00052"/>
+			<seg start="1">
+				<data>
+MNLSKIKIGDIPNKINAVIEIPYGSNIKYEIDKDSGAIMVDRVMASAIFYPANYGFIANTLADDGDPVDILVLNE
+				</data>
+				<hit pos="64" idx="0" pvalue="2.5e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|K7ZGS2|JD1_AMOJI" comment="Jingdongin-1 OS=Amolops jingdongensis OX=1077530 PE=1 SV=1" length="63">
+			<score strand="both" combined_pvalue="4.90e-06" evalue="0.00063"/>
+			<seg start="1">
+				<data>
+MLTLKKSMLLLFFLGTINLSLCEQERDADEEERRDDDEMDVEVEKRFLPLFLPKIICVITKKC
+				</data>
+				<hit pos="35" idx="0" pvalue="8.6e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q18680|IPYR_CAEEL" comment="Inorganic pyrophosphatase 1 OS=Caenorhabditis elegans OX=6239 GN=pyp-1 PE=1 SV=5" length="427">
+			<score strand="both" combined_pvalue="5.13e-06" evalue="0.00066"/>
+			<seg start="226">
+				<data>
+NIFPHKGYIWNYGALPQTWEDPNHVVPDTGAKGDNDPIDVIEVGSKVAGRGAVLQVKVLGTLALIDEGETDWKLV
+				</data>
+				<hit pos="259" idx="0" pvalue="1.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O26363|IPYR_METTH" comment="Inorganic pyrophosphatase OS=Methanothermobacter thermautotrophicus (strain ATCC 29096 / DSM 1053 / JCM 10044 / NBRC 100330 / Delta H) OX=187420 GN=ppa PE=3 SV=1" length="176">
+			<score strand="both" combined_pvalue="5.99e-06" evalue="0.00077"/>
+			<seg start="1">
+				<data>
+MNLWKDIEPGPSVPEVVYAVVEIPKGSRNKYEYHKDLQAFALDRVLYSAVFYPAEYGIIPRTLYDDGDPMDILVL
+				</data>
+				<hit pos="66" idx="0" pvalue="3.5e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9HSF3|IPYR_HALSA" comment="Inorganic pyrophosphatase OS=Halobacterium salinarum (strain ATCC 700922 / JCM 11081 / NRC-1) OX=64091 GN=ppa PE=3 SV=1" length="177">
+			<score strand="both" combined_pvalue="7.03e-06" evalue="0.0009"/>
+			<seg start="1">
+				<data>
+MANLWEDLETGPDAPDVIYAVVECLKGERNKYEYDKDIPGVVLDRVLHSNVHYPSDYGFIPQSYYDDGDPFDVLV
+				</data>
+				<hit pos="67" idx="0" pvalue="4.1e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8NM79|IPYR_CORGL" comment="Inorganic pyrophosphatase OS=Corynebacterium glutamicum (strain ATCC 13032 / DSM 20300 / JCM 1318 / LMG 3730 / NCIMB 10025) OX=196627 GN=ppa PE=3 SV=1" length="158">
+			<score strand="both" combined_pvalue="7.86e-06" evalue="0.001"/>
+			<seg start="1">
+				<data>
+MSIEVTVEIPKGSRNKYEIDHETGKVYLDRYLFTPMAYPLDYGYIDHTLGEDGDPLDALVILPESVFPAVVVKSR
+				</data>
+				<hit pos="52" idx="0" pvalue="5.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P9WI55|IPYR_MYCTU" comment="Inorganic pyrophosphatase OS=Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv) OX=83332 GN=ppa PE=1 SV=1" length="162">
+			<score strand="both" combined_pvalue="8.07e-06" evalue="0.001"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="52" idx="0" pvalue="5.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P9WI54|IPYR_MYCTO" comment="Inorganic pyrophosphatase OS=Mycobacterium tuberculosis (strain CDC 1551 / Oshkosh) OX=83331 GN=ppa PE=3 SV=1" length="162">
+			<score strand="both" combined_pvalue="8.07e-06" evalue="0.001"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="52" idx="0" pvalue="5.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O69540|IPYR_MYCLE" comment="Inorganic pyrophosphatase OS=Mycobacterium leprae (strain TN) OX=272631 GN=ppa PE=1 SV=1" length="162">
+			<score strand="both" combined_pvalue="8.07e-06" evalue="0.001"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHKTGRVRLDRYLYTPMAYPTDYGFIEDTLGEDGDPLDALVLLPEPLFPGVLVEAR
+				</data>
+				<hit pos="52" idx="0" pvalue="5.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P65747|IPYR_MYCBO" comment="Inorganic pyrophosphatase OS=Mycobacterium bovis (strain ATCC BAA-935 / AF2122/97) OX=233413 GN=ppa PE=3 SV=1" length="162">
+			<score strand="both" combined_pvalue="8.07e-06" evalue="0.001"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="52" idx="0" pvalue="5.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9X8I9|IPYR_STRCO" comment="Inorganic pyrophosphatase OS=Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145) OX=100226 GN=ppa PE=3 SV=1" length="163">
+			<score strand="both" combined_pvalue="8.12e-06" evalue="0.001"/>
+			<seg start="1">
+				<data>
+MEFDVTIEIPKGSRNKYEVDHETGRIRLDRRLFTSTAYPTDYGFVENTLGEDGDPLDALVILDEPTFPGCLIRCR
+				</data>
+				<hit pos="52" idx="0" pvalue="5.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8TMI3|IPYR_METAC" comment="Inorganic pyrophosphatase OS=Methanosarcina acetivorans (strain ATCC 35395 / DSM 2834 / JCM 12185 / C2A) OX=188937 GN=ppa PE=3 SV=1" length="168">
+			<score strand="both" combined_pvalue="8.38e-06" evalue="0.0011"/>
+			<seg start="1">
+				<data>
+MLDMTERQVESVLIEIPKGSRNKYEYDKEKKVIKFDRMLFSSMVYPCDYGFFPDTLALDGDPLDALVLTWEPTFP
+				</data>
+				<hit pos="59" idx="0" pvalue="5.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8PWY5|IPYR_METMA" comment="Inorganic pyrophosphatase OS=Methanosarcina mazei (strain ATCC BAA-159 / DSM 3647 / Goe1 / Go1 / JCM 11833 / OCM 88) OX=192952 GN=ppa PE=3 SV=2" length="169">
+			<score strand="both" combined_pvalue="8.43e-06" evalue="0.0011"/>
+			<seg start="1">
+				<data>
+MTERQVECVLIEIPQGSRNKYEYDKERKVIRFDRMLFSSIVYPCDYGFFPDTLALDGDPLDAMVLMWEPTFPGCV
+				</data>
+				<hit pos="56" idx="0" pvalue="5.2e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P56153|IPYR_HELPY" comment="Inorganic pyrophosphatase OS=Helicobacter pylori (strain ATCC 700392 / 26695) OX=85962 GN=ppa PE=1 SV=1" length="173">
+			<score strand="both" combined_pvalue="1.01e-05" evalue="0.0013"/>
+			<seg start="1">
+				<data>
+MNLEKLEVSHDADSLCVVIEISKHSNIKYELDKESGALMVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+				</data>
+				<hit pos="64" idx="0" pvalue="6.1e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9ZLL5|IPYR_HELPJ" comment="Inorganic pyrophosphatase OS=Helicobacter pylori (strain J99 / ATCC 700824) OX=85963 GN=ppa PE=3 SV=1" length="173">
+			<score strand="both" combined_pvalue="1.01e-05" evalue="0.0013"/>
+			<seg start="1">
+				<data>
+MNLDQLEVSHDADSLCVVIEISKHSNIKYELDKESGALMVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+				</data>
+				<hit pos="64" idx="0" pvalue="6.1e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8FMF8|IPYR_COREF" comment="Inorganic pyrophosphatase OS=Corynebacterium efficiens (strain DSM 44549 / YS-314 / AJ 12310 / JCM 11189 / NBRC 100395) OX=196164 GN=ppa PE=3 SV=1" length="158">
+			<score strand="both" combined_pvalue="1.12e-05" evalue="0.0014"/>
+			<seg start="1">
+				<data>
+MSVEVTVEIPKGSRNKYEIDHETGKVYLDRYLFTPMAYPLDYGFIDHTLGEDGDPMDALVILPESVFPNVIVKSR
+				</data>
+				<hit pos="52" idx="0" pvalue="7.3e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q6KZB3|IPYR_PICTO" comment="Inorganic pyrophosphatase OS=Picrophilus torridus (strain ATCC 700027 / DSM 9790 / JCM 10055 / NBRC 100828) OX=263820 GN=ppa PE=3 SV=1" length="177">
+			<score strand="both" combined_pvalue="1.26e-05" evalue="0.0016"/>
+			<seg start="1">
+				<data>
+MEKNMSYWHQVPPGPNPPDEVYVVVEIPKGERNKYEIAKEFPGIKLDRIIYSSYVYPLEYGLIPQTYYSDGDPID
+AMVFMSQSTYPGVILRAKPVGMMNMVDSGDVDNKIICVCLDDPVYSKINNYREIPEHVLKETENFFETYKKLQNK
+				</data>
+				<hit pos="70" idx="0" pvalue="7.3e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q821T4|IPYR_CHLCV" comment="Inorganic pyrophosphatase OS=Chlamydophila caviae (strain GPIC) OX=227941 GN=ppa PE=3 SV=1" length="216">
+			<score strand="both" combined_pvalue="1.27e-05" evalue="0.0016"/>
+			<seg start="76">
+				<data>
+LSGKYSGEQSLKENIQGDDDPLDICVLTEKNITHGNILLQARPIGGLRIIDSGEADDKIIAVLEDDLVFSEIQDI
+				</data>
+				<hit pos="93" idx="0" pvalue="6.1e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O77392|IPYR_PLAF7" comment="Probable inorganic pyrophosphatase OS=Plasmodium falciparum (isolate 3D7) OX=36329 GN=MAL3P6.3 PE=1 SV=1" length="380">
+			<score strand="both" combined_pvalue="1.32e-05" evalue="0.0017"/>
+			<seg start="151">
+				<data>
+DKKKGKLRYYHNSIYWNYGALPQTYEYPKHIYQNKSKKNKEALLFTGDNDPLDILDIGSACLKIGQVVPVKILGA
+				</data>
+				<hit pos="198" idx="0" pvalue="3.5e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P80507|IPYR_SYNY3" comment="Inorganic pyrophosphatase OS=Synechocystis sp. (strain PCC 6803 / Kazusa) OX=1111708 GN=ppa PE=1 SV=2" length="169">
+			<score strand="both" combined_pvalue="1.40e-05" evalue="0.0018"/>
+			<seg start="1">
+				<data>
+MDLSRIPAQPKAGLINVLIEIPAGSKNKYEFDKDMNCFALDRVLYSSVQYPYDYGFIPNTLADDGDPLDGMVIMD
+				</data>
+				<hit pos="64" idx="0" pvalue="8.6e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P80562|IPYR_NOSS1" comment="Inorganic pyrophosphatase OS=Nostoc sp. (strain PCC 7120 / SAG 25.82 / UTEX 2576) OX=103690 GN=ppa PE=1 SV=1" length="169">
+			<score strand="both" combined_pvalue="1.40e-05" evalue="0.0018"/>
+			<seg start="1">
+				<data>
+MDLSRIPAQPKPGVINILIEIAGGSQNKYEFDKDLEAFALDRVLYSSVKYPYDYGFVPNTLADDGDPLDGMVIID
+				</data>
+				<hit pos="64" idx="0" pvalue="8.6e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8DHR2|IPYR_THEEB" comment="Inorganic pyrophosphatase OS=Thermosynechococcus elongatus (strain BP-1) OX=197221 GN=ppa PE=3 SV=2" length="172">
+			<score strand="both" combined_pvalue="1.43e-05" evalue="0.0018"/>
+			<seg start="1">
+				<data>
+MSIDLSRIPAQPKPGVVNVLVEIAGGSRNKYEFDKEMKVFALDRVLYSAVVYPYDYGFIPNTLADDGDPLDGLVM
+				</data>
+				<hit pos="66" idx="0" pvalue="8.6e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P38576|IPYR_THET8" comment="Inorganic pyrophosphatase OS=Thermus thermophilus (strain HB8 / ATCC 27634 / DSM 579) OX=300852 GN=ppa PE=1 SV=2" length="175">
+			<score strand="both" combined_pvalue="1.45e-05" evalue="0.0019"/>
+			<seg start="1">
+				<data>
+MANLKSLPVGDKAPEVVHMVIEVPRGSGNKYEYDPDLGAIKLDRVLPGAQFYPGDYGFIPSTLAEDGDPLDGLVL
+				</data>
+				<hit pos="66" idx="0" pvalue="8.6e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|O59570|IPYR_PYRHO" comment="Inorganic pyrophosphatase OS=Pyrococcus horikoshii (strain ATCC 700860 / DSM 12428 / JCM 9974 / NBRC 100139 / OT-3) OX=70601 GN=ppa PE=1 SV=1" length="178">
+			<score strand="both" combined_pvalue="1.48e-05" evalue="0.0019"/>
+			<seg start="1">
+				<data>
+MNPFHDLEPGPNVPEVVYALIEIPKGSRNKYELDKETGLLKLDRVLYTPFHYPVDYGIIPRTWYEDGDPFDIMVI
+				</data>
+				<hit pos="66" idx="0" pvalue="8.6e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q5JIY3|IPYR_THEKO" comment="Inorganic pyrophosphatase OS=Thermococcus kodakarensis (strain ATCC BAA-918 / JCM 12380 / KOD1) OX=69014 GN=ppa PE=3 SV=1" length="178">
+			<score strand="both" combined_pvalue="1.48e-05" evalue="0.0019"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+				</data>
+				<hit pos="66" idx="0" pvalue="8.6e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P58733|IPYR_PSEAO" comment="Inorganic pyrophosphatase OS=Pseudanabaena sp. (strain PCC 6903) OX=102126 GN=ppa PE=1 SV=1" length="180">
+			<score strand="both" combined_pvalue="1.50e-05" evalue="0.0019"/>
+			<seg start="1">
+				<data>
+MDLSRIPPQPKAGILNVLIEIPAGSKNKYEFDKDLNAFALDRVLYSSVQYPYDYGFVPITNNLADDGDPLDGMVI
+				</data>
+				<hit pos="66" idx="0" pvalue="8.6e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q54PV8|IPYR_DICDI" comment="Inorganic pyrophosphatase OS=Dictyostelium discoideum OX=44689 GN=ppa1 PE=1 SV=1" length="279">
+			<score strand="both" combined_pvalue="2.00e-05" evalue="0.0026"/>
+			<seg start="76">
+				<data>
+NAKLEIATKEYMNPIKQDVKDGKLRFVHDKYPFNYGALPQTWESPEHTHPSTGAKGDNDPLDACEIGSGQGVTGE
+				</data>
+				<hit pos="132" idx="0" pvalue="7.3e-08" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8EVW9|IPYR_MYCPE" comment="Inorganic pyrophosphatase OS=Mycoplasma penetrans (strain HF-2) OX=272633 GN=ppa PE=3 SV=1" length="181">
+			<score strand="both" combined_pvalue="2.02e-05" evalue="0.0026"/>
+			<seg start="1">
+				<data>
+MKLNVTIEIPKKSNVKYEYDRKTNQISVDRILFGTEVYPHNYGFIKEALDWDGDELDALVIADQSFLPGIIVPAK
+				</data>
+				<hit pos="52" idx="0" pvalue="1.2e-07" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P51064|IPYR_BARBK" comment="Inorganic pyrophosphatase OS=Bartonella bacilliformis (strain ATCC 35685 / NCTC 12138 / KC583) OX=360095 GN=ppa PE=3 SV=1" length="177">
+			<score strand="both" combined_pvalue="2.29e-05" evalue="0.0029"/>
+			<seg start="1">
+				<data>
+MNIKEIPIGNNPPEDVNVIIEVPVDSQPVKYEMDKKSGSLFVDRFISTSMVYPGNYGFIPHTLSEDSDPIDVLVC
+				</data>
+				<hit pos="66" idx="0" pvalue="1.3e-07" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9LFF9|IPYR4_ARATH" comment="Soluble inorganic pyrophosphatase 4 OS=Arabidopsis thaliana OX=3702 GN=PPA4 PE=1 SV=1" length="216">
+			<score strand="both" combined_pvalue="2.81e-05" evalue="0.0036"/>
+			<seg start="76">
+				<data>
+IKVDRILYSSVVYPHNYGFIPRTLCEDSDPIDVLVIMQEPVIPGCFLRAKAIGLMPMIDQGEKDDKIIAVCADDP
+				</data>
+				<hit pos="102" idx="0" pvalue="1.3e-07" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P19117|IPYR_SCHPO" comment="Inorganic pyrophosphatase OS=Schizosaccharomyces pombe (strain 972 / ATCC 24843) OX=284812 GN=ppa1 PE=3 SV=2" length="289">
+			<score strand="both" combined_pvalue="2.82e-05" evalue="0.0036"/>
+			<seg start="76">
+				<data>
+KGKLRFVRNCFPHHGYIWNYGAFPQTYEDPNVVHPETKAKGDSDPLDVCEIGEARGYTGQVKQVKVLGVMALLDE
+				</data>
+				<hit pos="117" idx="0" pvalue="1.0e-07" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P21216|IPYR2_ARATH" comment="Soluble inorganic pyrophosphatase 2 OS=Arabidopsis thaliana OX=3702 GN=PPA2 PE=2 SV=2" length="218">
+			<score strand="both" combined_pvalue="2.84e-05" evalue="0.0036"/>
+			<seg start="76">
+				<data>
+GLIKVDRVLYSSIVYPHNYGFIPRTICEDSDPMDVLVLMQEPVLTGSFLRARAIGLMPMIDQGEKDDKIIAVCAD
+				</data>
+				<hit pos="104" idx="0" pvalue="1.3e-07" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q9UY24|IPYR_PYRAB" comment="Inorganic pyrophosphatase OS=Pyrococcus abyssi (strain GE5 / Orsay) OX=272844 GN=ppa PE=3 SV=1" length="178">
+			<score strand="both" combined_pvalue="3.20e-05" evalue="0.0041"/>
+			<seg start="1">
+				<data>
+MNPFHDLEPGPNVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPRTWYDDDDPFDIMVI
+				</data>
+				<hit pos="66" idx="0" pvalue="1.9e-07" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|Q8U438|IPYR_PYRFU" comment="Inorganic pyrophosphatase OS=Pyrococcus furiosus (strain ATCC 43587 / DSM 3638 / JCM 8422 / Vc1) OX=186497 GN=ppa PE=1 SV=1" length="178">
+			<score strand="both" combined_pvalue="3.20e-05" evalue="0.0041"/>
+			<seg start="1">
+				<data>
+MNPFHDLEPGPDVPEVVYAIIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPRTWYEDDDPFDIMVI
+				</data>
+				<hit pos="66" idx="0" pvalue="1.9e-07" match="+++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P47593|IPYR_MYCGE" comment="Inorganic pyrophosphatase OS=Mycoplasma genitalium (strain ATCC 33530 / G-37 / NCTC 10195) OX=243273 GN=ppa PE=3 SV=1" length="184">
+			<score strand="both" combined_pvalue="4.15e-05" evalue="0.0053"/>
+			<seg start="1">
+				<data>
+MDKFLIDVIVEIPKNSKIKYEYDRQTGQIRVDRILFGSESYPQNYGFIKNTLDWDGDELDCFIFADQPFLPATVV
+				</data>
+				<hit pos="55" idx="0" pvalue="2.3e-07" match="++++++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P75250|IPYR_MYCPN" comment="Inorganic pyrophosphatase OS=Mycoplasma pneumoniae (strain ATCC 29342 / M129) OX=272634 GN=ppa PE=3 SV=1" length="184">
+			<score strand="both" combined_pvalue="4.15e-05" evalue="0.0053"/>
+			<seg start="1">
+				<data>
+MDKFLIDVTVEIPKSSKIKYEYDRKTSQIRVDRILFGSESYPQNYGFIANTLDWDGDELDCFIFADQAFLPGVVV
+				</data>
+				<hit pos="55" idx="0" pvalue="2.3e-07" match="++++++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="sp|P28239|IPYR2_YEAST" comment="Inorganic pyrophosphatase, mitochondrial OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=PPA2 PE=1 SV=1" length="310">
+			<score strand="both" combined_pvalue="5.00e-05" evalue="0.0064"/>
+			<seg start="151">
+				<data>
+GDNDPLDCCEIGSDVLEMGSIKKVKVLGSLALIDDGELDWKVIVIDVNDPLSSKIDDLEKIEEYFPGILDTTREW
+				</data>
+				<hit pos="152" idx="0" pvalue="1.6e-07" match="++++++ "/>
 			</seg>
 		</sequence>
 	</sequences>
-	<runtime host="yincp-GE72-2QF" when="Tue Sep  3 17:37:55 2019" cycles="15794" seconds="0.016"/>
+	<runtime host="yincp-GE72-2QF" when="Thu Sep 12 10:20:16 2019" cycles="5527" seconds="0.006"/>
 </mast>

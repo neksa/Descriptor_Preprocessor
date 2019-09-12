@@ -22,14 +22,14 @@ REFERENCE
 ********************************************************************************
 DATABASE AND MOTIFS
 ********************************************************************************
-	DATABASE tmp_pdb_fasta.fasta (peptide)
-	Last updated on Tue Sep  3 17:37:55 2019
-	Database contains 14 sequences, 3754 residues
+	DATABASE tmp_2 (peptide)
+	Last updated on Thu Sep 12 10:20:16 2019
+	Database contains 128 sequences, 26366 residues
 
-	MOTIFS meme.txt (peptide)
-	MOTIF ID     ALT ID WIDTH BEST POSSIBLE MATCH
-	----- ------ ------ ----- -------------------
-	    1 MEME-1 -         50 FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVIMPYPVYPGCVIRCRPIGVM
+	MOTIFS tmp_1 (peptide)
+	MOTIF ID ALT ID  WIDTH BEST POSSIBLE MATCH
+	----- -- ------- ----- -------------------
+	    1 1  DXDPJDX     7 DGDPLDV
 
 	Random model letter frequencies (from non-redundant database):
 	A 0.073 C 0.018 D 0.052 E 0.062 F 0.040 G 0.069 H 0.022 I 0.056 K 0.058 
@@ -41,7 +41,7 @@ DATABASE AND MOTIFS
 ********************************************************************************
 SECTION I: HIGH-SCORING SEQUENCES
 ********************************************************************************
-	- Each of the following 14 sequences has E-value less than 10.
+	- Each of the following 128 sequences has E-value less than 10.
 	- The E-value of a sequence is the expected number of sequences
 	  in a random database of the same size that would match the motifs as
 	  well as the sequence does and is equal to the combined p-value of the
@@ -65,20 +65,134 @@ SECTION I: HIGH-SCORING SEQUENCES
 
 SEQUENCE NAME                      DESCRIPTION                   E-VALUE  LENGTH
 -------------                      -----------                   -------- ------
-1faj                                                              1.3e-46    173
-4xel                                                              1.2e-44    175
-4lug                                                              1.3e-40    208
-3d53                                                              1.4e-39    172
-1qez                                                              8.8e-38   1171
-4ecp                                                                9e-36    161
-1sxv                                                              4.1e-35    159
-1ude                                                              7.5e-34    172
-2prd                                                              3.3e-31    174
-1ygz                                                              1.2e-28    172
-1twl                                                              4.1e-28    174
-5tea                                                              8.1e-28    176
-6c45                                                              1.1e-25    288
-5wru                                                              3.2e-11    379
+sp|Q74MY6|IPYR_NANEQ               Inorganic pyrophosphatase ...  5.6e-05    160
+sp|Q9KCG7|IPYR_BACHD               Inorganic pyrophosphatase ...  5.7e-05    163
+sp|Q6ACP7|IPYR_LEIXX               Inorganic pyrophosphatase ...  5.7e-05    163
+sp|Q979E6|IPYR_THEVO               Inorganic pyrophosphatase ...    6e-05    169
+sp|Q974Y8|IPYR_SULTO               Inorganic pyrophosphatase ...  6.1e-05    172
+sp|Q97W51|IPYR_SACS2               Inorganic pyrophosphatase ...  6.1e-05    172
+sp|P50308|IPYR_SULAC               Inorganic pyrophosphatase ...  6.1e-05    173
+sp|Q9HWZ6|IPYR_PSEAE               Inorganic pyrophosphatase ...  6.2e-05    175
+sp|Q88QF6|IPYR_PSEPK               Inorganic pyrophosphatase ...  6.2e-05    175
+sp|P59417|IPYR_BUCBP               Inorganic pyrophosphatase ...  6.2e-05    175
+sp|Q889M7|IPYR1_PSESM              Inorganic pyrophosphatase ...  6.2e-05    175
+sp|Q8KA31|IPYR_BUCAP               Inorganic pyrophosphatase ...  6.4e-05    180
+sp|Q87WD6|IPYR2_PSESM              Inorganic pyrophosphatase ...  6.4e-05    181
+sp|P57190|IPYR_BUCAI               Inorganic pyrophosphatase ...  6.4e-05    182
+sp|Q949J1|IPYR2_CHLRE              Soluble inorganic pyrophos...  6.8e-05    192
+sp|P87118|IPYR2_SCHPO              Putative inorganic pyropho...   0.0001    286
+sp|Q9ZCW5|IPYR_RICPR               Inorganic pyrophosphatase ...   0.0001    172
+sp|Q4UKW0|IPYR_RICFE               Inorganic pyrophosphatase ...   0.0001    173
+sp|Q92H74|IPYR_RICCN               Inorganic pyrophosphatase ...   0.0001    173
+sp|Q1RIN6|IPYR_RICBR               Inorganic pyrophosphatase ...  0.00011    175
+sp|Q8ZB98|IPYR_YERPE               Inorganic pyrophosphatase ...  0.00011    175
+sp|Q7VPC0|IPYR_HAEDU               Inorganic pyrophosphatase ...  0.00011    175
+sp|Q8XWX1|IPYR_RALSO               Inorganic pyrophosphatase ...  0.00011    175
+sp|P57918|IPYR_PASMU               Inorganic pyrophosphatase ...  0.00011    175
+sp|P0A7A9|IPYR_ECOLI               Inorganic pyrophosphatase ...  0.00011    176
+sp|Q7MPD2|IPYR_VIBVY               Inorganic pyrophosphatase ...  0.00011    176
+sp|Q8DE89|IPYR_VIBVU               Inorganic pyrophosphatase ...  0.00011    176
+sp|Q8FAG0|IPYR_ECOL6               Inorganic pyrophosphatase ...  0.00011    176
+sp|P0A7B0|IPYR_ECO57               Inorganic pyrophosphatase ...  0.00011    176
+sp|P65748|IPYR_SALTY               Inorganic pyrophosphatase ...  0.00011    176
+sp|Q9YBA5|IPYR_AERPE               Inorganic pyrophosphatase ...  0.00011    176
+sp|Q87SW1|IPYR_VIBPA               Inorganic pyrophosphatase ...  0.00011    176
+sp|P65749|IPYR_SALTI               Inorganic pyrophosphatase ...  0.00011    176
+sp|Q9KP34|IPYR_VIBCH               Inorganic pyrophosphatase ...  0.00011    176
+sp|Q8GQS5|IPYR_AQUPY               Inorganic pyrophosphatase ...  0.00011    177
+sp|P65751|IPYR_XYLFT               Inorganic pyrophosphatase ...  0.00011    178
+sp|P65750|IPYR_XYLFA               Inorganic pyrophosphatase ...  0.00011    178
+sp|O67501|IPYR_AQUAE               Inorganic pyrophosphatase ...  0.00011    178
+sp|Q68WE9|IPYR_RICTY               Inorganic pyrophosphatase ...  0.00011    178
+sp|O34955|IPYR_LEGPN               Inorganic pyrophosphatase ...  0.00011    178
+sp|Q9RGQ1|IPYR_RHORT               Inorganic pyrophosphatase ...  0.00011    179
+sp|P65745|IPYR_BRUSU               Inorganic pyrophosphatase ...   0.0002    176
+sp|P65744|IPYR_BRUME               Inorganic pyrophosphatase ...   0.0002    176
+sp|Q92LH1|IPYR_RHIME               Inorganic pyrophosphatase ...   0.0002    177
+sp|Q8UC37|IPYR_AGRFC               Inorganic pyrophosphatase ...   0.0002    177
+sp|Q98ER2|IPYR_RHILO               Inorganic pyrophosphatase ...   0.0002    177
+sp|P37981|IPYR_THEAC               Inorganic pyrophosphatase ...   0.0002    179
+sp|A2X8Q3|IPYR_ORYSI               Soluble inorganic pyrophos...  0.00025    214
+sp|Q0DYB1|IPYR_ORYSJ               Soluble inorganic pyrophos...  0.00025    214
+sp|O82793|IPYR3_ARATH              Soluble inorganic pyrophos...  0.00025    216
+sp|Q8SR69|IPYR_ENCCU               Inorganic pyrophosphatase ...  0.00032    277
+sp|Q43187|IPYR_SOLTU               Soluble inorganic pyrophos...  0.00032    211
+sp|Q93V56|IPYR1_ARATH              Soluble inorganic pyrophos...  0.00032    212
+sp|O48556|IPYR_MAIZE               Soluble inorganic pyrophos...  0.00032    214
+sp|O23979|IPYR_HORVV               Soluble inorganic pyrophos...  0.00033    215
+sp|O82597|IPYR5_ARATH              Soluble inorganic pyrophos...  0.00033    216
+sp|O13505|IPYR_PICPA               Inorganic pyrophosphatase ...  0.00033    285
+sp|Q5B912|IPYR_EMENI               Inorganic pyrophosphatase ...  0.00033    287
+sp|P13998|IPYR_KLULA               Inorganic pyrophosphatase ...  0.00033    287
+sp|Q757J8|IPYR_ASHGO               Inorganic pyrophosphatase ...  0.00033    287
+sp|Q6BWA5|IPYR_DEBHA               Inorganic pyrophosphatase ...  0.00033    287
+sp|Q6C1T4|IPYR_YARLI               Inorganic pyrophosphatase ...  0.00033    287
+sp|P83777|IPYR_CANAL               Inorganic pyrophosphatase ...  0.00033    288
+sp|Q6MVH7|IPYR_NEUCR               Inorganic pyrophosphatase ...  0.00034    290
+sp|Q93Y52|IPYR1_CHLRE              Soluble inorganic pyrophos...  0.00037    280
+sp|P19514|IPYR_BACP3               Inorganic pyrophosphatase ...  0.00037    165
+sp|O05724|IPYR_GEOSE               Inorganic pyrophosphatase ...  0.00037    165
+sp|Q9C0T9|IPYR_ZYGBA               Inorganic pyrophosphatase ...  0.00038    287
+sp|Q6FRB7|IPYR_CANGA               Inorganic pyrophosphatase ...  0.00038    287
+sp|P44529|IPYR_HAEIN               Inorganic pyrophosphatase ...   0.0004    176
+sp|Q8TVE2|IPYR_METKA               Inorganic pyrophosphatase ...   0.0004    176
+sp|Q9LXC9|IPYR6_ARATH              Soluble inorganic pyrophos...   0.0004    300
+sp|Q9K0G4|IPYR_NEIMB               Inorganic pyrophosphatase ...   0.0004    177
+sp|Q9JVG3|IPYR_NEIMA               Inorganic pyrophosphatase ...   0.0004    177
+sp|Q8D274|IPYR_WIGBR               Inorganic pyrophosphatase ...   0.0004    179
+sp|Q9PQH6|IPYR_UREPA               Inorganic pyrophosphatase ...  0.00041    181
+sp|Q98Q96|IPYR_MYCPU               Inorganic pyrophosphatase ...  0.00041    183
+sp|P00817|IPYR_YEAST               Inorganic pyrophosphatase ...  0.00044    287
+sp|Q15181|IPYR_HUMAN               Inorganic pyrophosphatase ...  0.00044    289
+sp|P37980|IPYR_BOVIN               Inorganic pyrophosphatase ...  0.00044    289
+sp|Q9D819|IPYR_MOUSE               Inorganic pyrophosphatase ...  0.00044    289
+sp|Q5R8T6|IPYR_PONAB               Inorganic pyrophosphatase ...  0.00044    289
+sp|Q4R543|IPYR_MACFA               Inorganic pyrophosphatase ...  0.00044    289
+sp|O84777|IPYR_CHLTR               Inorganic pyrophosphatase ...  0.00047    209
+sp|Q9PLF1|IPYR_CHLMU               Inorganic pyrophosphatase ...  0.00047    209
+sp|B0BAM7|IPYR_CHLTB               Inorganic pyrophosphatase ...  0.00047    209
+sp|Q3KKS0|IPYR_CHLTA               Inorganic pyrophosphatase ...  0.00047    209
+sp|B0B8Z8|IPYR_CHLT2               Inorganic pyrophosphatase ...  0.00047    209
+sp|Q91VM9|IPYR2_MOUSE              Inorganic pyrophosphatase ...  0.00051    330
+sp|Q9H2U2|IPYR2_HUMAN              Inorganic pyrophosphatase ...  0.00051    334
+sp|O77460|IPYR_DROME               Inorganic pyrophosphatase ...  0.00052    338
+sp|Q9PHM9|IPYR_CAMJE               Inorganic pyrophosphatase ...  0.00052    172
+sp|K7ZGS2|JD1_AMOJI                Jingdongin-1 OS=Amolops ji...  0.00063     63
+sp|Q18680|IPYR_CAEEL               Inorganic pyrophosphatase ...  0.00066    427
+sp|O26363|IPYR_METTH               Inorganic pyrophosphatase ...  0.00077    176
+sp|Q9HSF3|IPYR_HALSA               Inorganic pyrophosphatase ...   0.0009    177
+sp|Q8NM79|IPYR_CORGL               Inorganic pyrophosphatase ...    0.001    158
+sp|P9WI55|IPYR_MYCTU               Inorganic pyrophosphatase ...    0.001    162
+sp|P9WI54|IPYR_MYCTO               Inorganic pyrophosphatase ...    0.001    162
+sp|O69540|IPYR_MYCLE               Inorganic pyrophosphatase ...    0.001    162
+sp|P65747|IPYR_MYCBO               Inorganic pyrophosphatase ...    0.001    162
+sp|Q9X8I9|IPYR_STRCO               Inorganic pyrophosphatase ...    0.001    163
+sp|Q8TMI3|IPYR_METAC               Inorganic pyrophosphatase ...   0.0011    168
+sp|Q8PWY5|IPYR_METMA               Inorganic pyrophosphatase ...   0.0011    169
+sp|P56153|IPYR_HELPY               Inorganic pyrophosphatase ...   0.0013    173
+sp|Q9ZLL5|IPYR_HELPJ               Inorganic pyrophosphatase ...   0.0013    173
+sp|Q8FMF8|IPYR_COREF               Inorganic pyrophosphatase ...   0.0014    158
+sp|Q6KZB3|IPYR_PICTO               Inorganic pyrophosphatase ...   0.0016    177
+sp|Q821T4|IPYR_CHLCV               Inorganic pyrophosphatase ...   0.0016    216
+sp|O77392|IPYR_PLAF7               Probable inorganic pyropho...   0.0017    380
+sp|P80507|IPYR_SYNY3               Inorganic pyrophosphatase ...   0.0018    169
+sp|P80562|IPYR_NOSS1               Inorganic pyrophosphatase ...   0.0018    169
+sp|Q8DHR2|IPYR_THEEB               Inorganic pyrophosphatase ...   0.0018    172
+sp|P38576|IPYR_THET8               Inorganic pyrophosphatase ...   0.0019    175
+sp|O59570|IPYR_PYRHO               Inorganic pyrophosphatase ...   0.0019    178
+sp|Q5JIY3|IPYR_THEKO               Inorganic pyrophosphatase ...   0.0019    178
+sp|P58733|IPYR_PSEAO               Inorganic pyrophosphatase ...   0.0019    180
+sp|Q54PV8|IPYR_DICDI               Inorganic pyrophosphatase ...   0.0026    279
+sp|Q8EVW9|IPYR_MYCPE               Inorganic pyrophosphatase ...   0.0026    181
+sp|P51064|IPYR_BARBK               Inorganic pyrophosphatase ...   0.0029    177
+sp|Q9LFF9|IPYR4_ARATH              Soluble inorganic pyrophos...   0.0036    216
+sp|P19117|IPYR_SCHPO               Inorganic pyrophosphatase ...   0.0036    289
+sp|P21216|IPYR2_ARATH              Soluble inorganic pyrophos...   0.0036    218
+sp|Q9UY24|IPYR_PYRAB               Inorganic pyrophosphatase ...   0.0041    178
+sp|Q8U438|IPYR_PYRFU               Inorganic pyrophosphatase ...   0.0041    178
+sp|P47593|IPYR_MYCGE               Inorganic pyrophosphatase ...   0.0053    184
+sp|P75250|IPYR_MYCPN               Inorganic pyrophosphatase ...   0.0053    184
+sp|P28239|IPYR2_YEAST              Inorganic pyrophosphatase,...   0.0064    310
 
 ********************************************************************************
 
@@ -107,20 +221,134 @@ SECTION II: MOTIF DIAGRAMS
 
 SEQUENCE NAME                      E-VALUE   MOTIF DIAGRAM
 -------------                      --------  -------------
-1faj                                1.3e-46  43-[1]-80
-4xel                                1.2e-44  44-[1]-81
-4lug                                1.3e-40  76-[1]-82
-3d53                                1.4e-39  43-[1]-79
-1qez                                8.8e-38  1040-[1]-81
-4ecp                                  9e-36  30-[1]-81
-1sxv                                4.1e-35  30-[1]-79
-1ude                                7.5e-34  44-[1]-78
-2prd                                3.3e-31  43-[1]-81
-1ygz                                1.2e-28  42-[1]-80
-1twl                                4.1e-28  44-[1]-80
-5tea                                8.1e-28  45-[1]-81
-6c45                                1.1e-25  94-[1]-144
-5wru                                3.2e-11  176-[1]-153
+sp|Q74MY6|IPYR_NANEQ                5.6e-05  49-[1]-104
+sp|Q9KCG7|IPYR_BACHD                5.7e-05  56-[1]-100
+sp|Q6ACP7|IPYR_LEIXX                5.7e-05  52-[1]-104
+sp|Q979E6|IPYR_THEVO                  6e-05  61-[1]-101
+sp|Q974Y8|IPYR_SULTO                6.1e-05  61-[1]-104
+sp|Q97W51|IPYR_SACS2                6.1e-05  61-[1]-104
+sp|P50308|IPYR_SULAC                6.1e-05  61-[1]-105
+sp|Q9HWZ6|IPYR_PSEAE                6.2e-05  65-[1]-103
+sp|Q88QF6|IPYR_PSEPK                6.2e-05  65-[1]-103
+sp|P59417|IPYR_BUCBP                6.2e-05  65-[1]-103
+sp|Q889M7|IPYR1_PSESM               6.2e-05  65-[1]-103
+sp|Q8KA31|IPYR_BUCAP                6.4e-05  65-[1]-108
+sp|Q87WD6|IPYR2_PSESM               6.4e-05  65-[1]-109
+sp|P57190|IPYR_BUCAI                6.4e-05  65-[1]-110
+sp|Q949J1|IPYR2_CHLRE               6.8e-05  73-[1]-112
+sp|P87118|IPYR2_SCHPO                0.0001  121-[1]-158
+sp|Q9ZCW5|IPYR_RICPR                 0.0001  64-[1]-101
+sp|Q4UKW0|IPYR_RICFE                 0.0001  64-[1]-102
+sp|Q92H74|IPYR_RICCN                 0.0001  64-[1]-102
+sp|Q1RIN6|IPYR_RICBR                0.00011  64-[1]-104
+sp|Q8ZB98|IPYR_YERPE                0.00011  65-[1]-103
+sp|Q7VPC0|IPYR_HAEDU                0.00011  65-[1]-103
+sp|Q8XWX1|IPYR_RALSO                0.00011  65-[1]-103
+sp|P57918|IPYR_PASMU                0.00011  65-[1]-103
+sp|P0A7A9|IPYR_ECOLI                0.00011  65-[1]-104
+sp|Q7MPD2|IPYR_VIBVY                0.00011  65-[1]-104
+sp|Q8DE89|IPYR_VIBVU                0.00011  65-[1]-104
+sp|Q8FAG0|IPYR_ECOL6                0.00011  65-[1]-104
+sp|P0A7B0|IPYR_ECO57                0.00011  65-[1]-104
+sp|P65748|IPYR_SALTY                0.00011  65-[1]-104
+sp|Q9YBA5|IPYR_AERPE                0.00011  65-[1]-104
+sp|Q87SW1|IPYR_VIBPA                0.00011  65-[1]-104
+sp|P65749|IPYR_SALTI                0.00011  65-[1]-104
+sp|Q9KP34|IPYR_VIBCH                0.00011  65-[1]-104
+sp|Q8GQS5|IPYR_AQUPY                0.00011  64-[1]-106
+sp|P65751|IPYR_XYLFT                0.00011  65-[1]-106
+sp|P65750|IPYR_XYLFA                0.00011  65-[1]-106
+sp|O67501|IPYR_AQUAE                0.00011  64-[1]-107
+sp|Q68WE9|IPYR_RICTY                0.00011  64-[1]-107
+sp|O34955|IPYR_LEGPN                0.00011  65-[1]-106
+sp|Q9RGQ1|IPYR_RHORT                0.00011  65-[1]-107
+sp|P65745|IPYR_BRUSU                 0.0002  65-[1]-104
+sp|P65744|IPYR_BRUME                 0.0002  65-[1]-104
+sp|Q92LH1|IPYR_RHIME                 0.0002  65-[1]-105
+sp|Q8UC37|IPYR_AGRFC                 0.0002  65-[1]-105
+sp|Q98ER2|IPYR_RHILO                 0.0002  65-[1]-105
+sp|P37981|IPYR_THEAC                 0.0002  66-[1]-106
+sp|A2X8Q3|IPYR_ORYSI                0.00025  99-[1]-108
+sp|Q0DYB1|IPYR_ORYSJ                0.00025  99-[1]-108
+sp|O82793|IPYR3_ARATH               0.00025  101-[1]-108
+sp|Q8SR69|IPYR_ENCCU                0.00032  116-[1]-154
+sp|Q43187|IPYR_SOLTU                0.00032  96-[1]-108
+sp|Q93V56|IPYR1_ARATH               0.00032  97-[1]-108
+sp|O48556|IPYR_MAIZE                0.00032  99-[1]-108
+sp|O23979|IPYR_HORVV                0.00033  102-[1]-106
+sp|O82597|IPYR5_ARATH               0.00033  101-[1]-108
+sp|O13505|IPYR_PICPA                0.00033  115-[1]-163
+sp|Q5B912|IPYR_EMENI                0.00033  115-[1]-165
+sp|P13998|IPYR_KLULA                0.00033  115-[1]-165
+sp|Q757J8|IPYR_ASHGO                0.00033  115-[1]-165
+sp|Q6BWA5|IPYR_DEBHA                0.00033  115-[1]-165
+sp|Q6C1T4|IPYR_YARLI                0.00033  116-[1]-164
+sp|P83777|IPYR_CANAL                0.00033  116-[1]-165
+sp|Q6MVH7|IPYR_NEUCR                0.00034  117-[1]-166
+sp|Q93Y52|IPYR1_CHLRE               0.00037  151-[1]-122
+sp|P19514|IPYR_BACP3                0.00037  56-[1]-102
+sp|O05724|IPYR_GEOSE                0.00037  56-[1]-102
+sp|Q9C0T9|IPYR_ZYGBA                0.00038  115-[1]-165
+sp|Q6FRB7|IPYR_CANGA                0.00038  115-[1]-165
+sp|P44529|IPYR_HAEIN                 0.0004  66-[1]-103
+sp|Q8TVE2|IPYR_METKA                 0.0004  66-[1]-103
+sp|Q9LXC9|IPYR6_ARATH                0.0004  172-[1]-121
+sp|Q9K0G4|IPYR_NEIMB                 0.0004  66-[1]-104
+sp|Q9JVG3|IPYR_NEIMA                 0.0004  66-[1]-104
+sp|Q8D274|IPYR_WIGBR                 0.0004  65-[1]-107
+sp|Q9PQH6|IPYR_UREPA                0.00041  51-[1]-123
+sp|Q98Q96|IPYR_MYCPU                0.00041  52-[1]-124
+sp|P00817|IPYR_YEAST                0.00044  115-[1]-165
+sp|Q15181|IPYR_HUMAN                0.00044  115-[1]-167
+sp|P37980|IPYR_BOVIN                0.00044  115-[1]-167
+sp|Q9D819|IPYR_MOUSE                0.00044  115-[1]-167
+sp|Q5R8T6|IPYR_PONAB                0.00044  115-[1]-167
+sp|Q4R543|IPYR_MACFA                0.00044  115-[1]-167
+sp|O84777|IPYR_CHLTR                0.00047  91-[1]-111
+sp|Q9PLF1|IPYR_CHLMU                0.00047  91-[1]-111
+sp|B0BAM7|IPYR_CHLTB                0.00047  91-[1]-111
+sp|Q3KKS0|IPYR_CHLTA                0.00047  91-[1]-111
+sp|B0B8Z8|IPYR_CHLT2                0.00047  91-[1]-111
+sp|Q91VM9|IPYR2_MOUSE               0.00051  158-[1]-165
+sp|Q9H2U2|IPYR2_HUMAN               0.00051  163-[1]-164
+sp|O77460|IPYR_DROME                0.00052  165-[1]-166
+sp|Q9PHM9|IPYR_CAMJE                0.00052  63-[1]-102
+sp|K7ZGS2|JD1_AMOJI                 0.00063  34-[1]-22
+sp|Q18680|IPYR_CAEEL                0.00066  258-[1]-162
+sp|O26363|IPYR_METTH                0.00077  65-[1]-104
+sp|Q9HSF3|IPYR_HALSA                 0.0009  66-[1]-104
+sp|Q8NM79|IPYR_CORGL                  0.001  51-[1]-100
+sp|P9WI55|IPYR_MYCTU                  0.001  51-[1]-104
+sp|P9WI54|IPYR_MYCTO                  0.001  51-[1]-104
+sp|O69540|IPYR_MYCLE                  0.001  51-[1]-104
+sp|P65747|IPYR_MYCBO                  0.001  51-[1]-104
+sp|Q9X8I9|IPYR_STRCO                  0.001  51-[1]-105
+sp|Q8TMI3|IPYR_METAC                 0.0011  58-[1]-103
+sp|Q8PWY5|IPYR_METMA                 0.0011  55-[1]-107
+sp|P56153|IPYR_HELPY                 0.0013  63-[1]-103
+sp|Q9ZLL5|IPYR_HELPJ                 0.0013  63-[1]-103
+sp|Q8FMF8|IPYR_COREF                 0.0014  51-[1]-100
+sp|Q6KZB3|IPYR_PICTO                 0.0016  69-[1]-101
+sp|Q821T4|IPYR_CHLCV                 0.0016  92-[1]-117
+sp|O77392|IPYR_PLAF7                 0.0017  197-[1]-176
+sp|P80507|IPYR_SYNY3                 0.0018  63-[1]-99
+sp|P80562|IPYR_NOSS1                 0.0018  63-[1]-99
+sp|Q8DHR2|IPYR_THEEB                 0.0018  65-[1]-100
+sp|P38576|IPYR_THET8                 0.0019  65-[1]-103
+sp|O59570|IPYR_PYRHO                 0.0019  65-[1]-106
+sp|Q5JIY3|IPYR_THEKO                 0.0019  65-[1]-106
+sp|P58733|IPYR_PSEAO                 0.0019  65-[1]-108
+sp|Q54PV8|IPYR_DICDI                 0.0026  131-[1]-141
+sp|Q8EVW9|IPYR_MYCPE                 0.0026  51-[1]-123
+sp|P51064|IPYR_BARBK                 0.0029  65-[1]-105
+sp|Q9LFF9|IPYR4_ARATH                0.0036  101-[1]-108
+sp|P19117|IPYR_SCHPO                 0.0036  116-[1]-166
+sp|P21216|IPYR2_ARATH                0.0036  103-[1]-108
+sp|Q9UY24|IPYR_PYRAB                 0.0041  65-[1]-106
+sp|Q8U438|IPYR_PYRFU                 0.0041  65-[1]-106
+sp|P47593|IPYR_MYCGE                 0.0053  54-[1]-123
+sp|P75250|IPYR_MYCPN                 0.0053  54-[1]-123
+sp|P28239|IPYR2_YEAST                0.0064  151-[1]-152
 
 ********************************************************************************
 
@@ -152,235 +380,1676 @@ SECTION III: ANNOTATED SEQUENCES
 ********************************************************************************
 
 
-1faj
-  LENGTH = 173  COMBINED P-VALUE = 9.56e-48  E-VALUE =  1.3e-46
-  DIAGRAM: 43-[1]-80
+sp|Q74MY6|IPYR_NANEQ
+  Inorganic pyrophosphatase OS=Nanoarchaeum equitans (strain Kin4-M) OX=228908 
+  GN=ppa PE=3 SV=1
+  LENGTH = 160  COMBINED P-VALUE = 4.39e-07  E-VALUE =  5.6e-05
+  DIAGRAM: 49-[1]-104
 
-                                                [1]
-                                                7.7e-50
-                                                FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVIM
-                                                ++++++++++++++++++++++++++++++++
-1    SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
-
-     
-     
-     PYPVYPGCVIRCRPIGVM
-     ++++++++++++++++++
-76   PYPLQPGSVIRCRPVGVLKMTDXXGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEXXXWV
+                                                      [1]
+                                                      2.9e-09
+                                                      DGDPLDV
+                                                      +++++++
+1    MEVYAFIEVPKGSNVKYEYEDGKLKVDRILYGAMFYPYNYGFIPETLEEDGDPLDVLVITEEPLVPGSYIKVKPI
 
 
-4xel
-  LENGTH = 175  COMBINED P-VALUE = 8.26e-46  E-VALUE =  1.2e-44
-  DIAGRAM: 44-[1]-81
+sp|Q9KCG7|IPYR_BACHD
+  Inorganic pyrophosphatase OS=Bacillus halodurans (strain ATCC BAA-125 / DSM 
+  18197 / FERM 7344 / JCM 9153 / C-125) OX=272558 GN=ppa PE=3 SV=1
+  LENGTH = 163  COMBINED P-VALUE = 4.48e-07  E-VALUE =  5.7e-05
+  DIAGRAM: 56-[1]-100
 
-                                                 [1]
-                                                 6.6e-48
-                                                 FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVI
-                                                 ++ ++++++++++++++++++++++++++++
-1    XSYSKIPAGKDLPNDIYVAIEIPANHAPIKYEIDKDTDCLFVDRFMATPMFYPANYGFIPNTLADDGDPLDVLVV
-
-     
-     
-     MPYPVYPGCVIRCRPIGVM
-     +++++++++++++++++++
-76   TPYPVAPGSVIRARPVGVLHMTDEAGGDAKLIAVPHDKLSVLYKDVKEYTDLPALLLEQIKHFFENYKDLEKGXX
+                                                             [1]
+                                                             2.9e-09
+                                                             DGDPLDV
+                                                             +++++++
+1    MAIEPKVIEAFIEIPTGSQNKYEYDKERGVFKLDRVLFSPMFYPAEYGYIENTLALDGDPLDVLVIVSNPTFPGC
 
 
-4lug
-  LENGTH = 208  COMBINED P-VALUE = 9.21e-42  E-VALUE =  1.3e-40
-  DIAGRAM: 76-[1]-82
+sp|Q6ACP7|IPYR_LEIXX
+  Inorganic pyrophosphatase OS=Leifsonia xyli subsp. xyli (strain CTCB07) 
+  OX=281090 GN=ppa PE=3 SV=1
+  LENGTH = 163  COMBINED P-VALUE = 4.48e-07  E-VALUE =  5.7e-05
+  DIAGRAM: 52-[1]-104
 
-      [1]
-      5.8e-44
-      FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVIMPYPVYPGCVIRCRPIGVM
-      ++++++++++++++++++++++++++++++++++++++++++++++++++
+                                                         [1]
+                                                         2.9e-09
+                                                         DGDPLDV
+                                                         +++++++
+1    MTAYDVVIEIPKGSRNKYEVDHETGRVYLDRVLFTAFVYPADYGFFENTLGDDGDPLDVLVLLEYPVFPGVGIKV
+
+
+sp|Q979E6|IPYR_THEVO
+  Inorganic pyrophosphatase OS=Thermoplasma volcanium (strain ATCC 51530 / DSM 
+  4299 / JCM 9571 / NBRC 15438 / GSS1) OX=273116 GN=ppa PE=3 SV=1
+  LENGTH = 169  COMBINED P-VALUE = 4.65e-07  E-VALUE =    6e-05
+  DIAGRAM: 61-[1]-101
+
+                                                                  [1]
+                                                                  2.9e-09
+                                                                  DGDPLDV
+                                                                  +++++++
+1    MKNKQTEDFPESFYVMIEIPMGSNCKYEYKEELDNIVLDRVLFTAMTYPANYGFALDTRGKDGDPLDVLVFSSVS
+
+
+sp|Q974Y8|IPYR_SULTO
+  Inorganic pyrophosphatase OS=Sulfurisphaera tokodaii (strain DSM 16993 / JCM 
+  10545 / NBRC 100140 / 7) OX=273063 GN=ppa PE=1 SV=2
+  LENGTH = 172  COMBINED P-VALUE = 4.73e-07  E-VALUE =  6.1e-05
+  DIAGRAM: 61-[1]-104
+
+                                                                  [1]
+                                                                  2.9e-09
+                                                                  DGDPLDV
+                                                                  +++++++
+1    MKLSPGKKAPDEVNVLIEIPLGSNIKYEYDEEEEVVKVDRILYTSMVYPFNYGFIPGTLEEDGDPLDVLVISNYP
+
+
+sp|Q97W51|IPYR_SACS2
+  Inorganic pyrophosphatase OS=Saccharolobus solfataricus (strain ATCC 35092 / 
+  DSM 1617 / JCM 11322 / P2) OX=273057 GN=ppa PE=3 SV=1
+  LENGTH = 172  COMBINED P-VALUE = 4.73e-07  E-VALUE =  6.1e-05
+  DIAGRAM: 61-[1]-104
+
+                                                                  [1]
+                                                                  2.9e-09
+                                                                  DGDPLDV
+                                                                  +++++++
+1    MKLGPGKKAPDEINVFIEIPMGSNIKYEYDEEEDIIKVDRVLYTSMVYPFNYGFIPETLEEDGDPLDVLVLGNYS
+
+
+sp|P50308|IPYR_SULAC
+  Inorganic pyrophosphatase OS=Sulfolobus acidocaldarius (strain ATCC 33909 / 
+  DSM 639 / JCM 8929 / NBRC 15157 / NCIMB 11770) OX=330779 GN=ppa PE=1 SV=1
+  LENGTH = 173  COMBINED P-VALUE = 4.76e-07  E-VALUE =  6.1e-05
+  DIAGRAM: 61-[1]-105
+
+                                                                  [1]
+                                                                  2.9e-09
+                                                                  DGDPLDV
+                                                                  +++++++
+1    MKLSPGKNAPDVVNVLVEIPQGSNIKYEYDDEEGVIKVDRVLYTSMNYPFNYGFIPGTLEEDGDPLDVLVITNYQ
+
+
+sp|Q9HWZ6|IPYR_PSEAE
+  Inorganic pyrophosphatase OS=Pseudomonas aeruginosa (strain ATCC 15692 / DSM 
+  22644 / CIP 104116 / JCM 14847 / LMG 12228 / 1C / PRS 101 / PAO1) OX=208964 
+  GN=ppa PE=1 SV=1
+  LENGTH = 175  COMBINED P-VALUE = 4.82e-07  E-VALUE =  6.2e-05
+  DIAGRAM: 65-[1]-103
+
+                                                                      [1]
+                                                                      2.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSYSKIPAGKDLPNDIYVAIEIPANHAPIKYEIDKDTDCLFVDRFMATPMFYPANYGFIPNTLADDGDPLDVLVV
+
+
+sp|Q88QF6|IPYR_PSEPK
+  Inorganic pyrophosphatase OS=Pseudomonas putida (strain ATCC 47054 / DSM 6125 
+  / NCIMB 11950 / KT2440) OX=160488 GN=ppa PE=3 SV=1
+  LENGTH = 175  COMBINED P-VALUE = 4.82e-07  E-VALUE =  6.2e-05
+  DIAGRAM: 65-[1]-103
+
+                                                                      [1]
+                                                                      2.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSYSKIPAGKDLPNDIYVAIEIPANHAPIKYEIDKDSDTLFVDRFMATPMFYPANYGFIPNTLADDGDPLDVLVV
+
+
+sp|P59417|IPYR_BUCBP
+  Inorganic pyrophosphatase OS=Buchnera aphidicola subsp. Baizongia pistaciae 
+  (strain Bp) OX=224915 GN=ppa PE=3 SV=1
+  LENGTH = 175  COMBINED P-VALUE = 4.82e-07  E-VALUE =  6.2e-05
+  DIAGRAM: 65-[1]-103
+
+                                                                      [1]
+                                                                      2.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MTLNTVLSGKNIPEDIYVIIEISAHSNPIKYEVNKDLGLLFVDRFIPVPMFYPCNYGFINKTKSNDGDPLDVLVH
+
+
+sp|Q889M7|IPYR1_PSESM
+  Inorganic pyrophosphatase 1 OS=Pseudomonas syringae pv. tomato (strain ATCC 
+  BAA-871 / DC3000) OX=223283 GN=ppa1 PE=3 SV=1
+  LENGTH = 175  COMBINED P-VALUE = 4.82e-07  E-VALUE =  6.2e-05
+  DIAGRAM: 65-[1]-103
+
+                                                                      [1]
+                                                                      2.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSYSKIPAGKDLPNDIYVAIEIPANHAPIKYEIDKDTDCLFVDRFMATPMFYPANYGFIPNTLADDGDPLDVLVV
+
+
+sp|Q8KA31|IPYR_BUCAP
+  Inorganic pyrophosphatase OS=Buchnera aphidicola subsp. Schizaphis graminum 
+  (strain Sg) OX=198804 GN=ppa PE=3 SV=1
+  LENGTH = 180  COMBINED P-VALUE = 4.96e-07  E-VALUE =  6.4e-05
+  DIAGRAM: 65-[1]-108
+
+                                                                      [1]
+                                                                      2.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MNLNLIKAGNNIPSDIYVIIEISSNSSPIKYEVDKQSGVLFVDRFIPTPMFYPCNYGYINETLSLDGDPLDVLVP
+
+
+sp|Q87WD6|IPYR2_PSESM
+  Inorganic pyrophosphatase 2 OS=Pseudomonas syringae pv. tomato (strain ATCC 
+  BAA-871 / DC3000) OX=223283 GN=ppa2 PE=3 SV=1
+  LENGTH = 181  COMBINED P-VALUE = 4.99e-07  E-VALUE =  6.4e-05
+  DIAGRAM: 65-[1]-109
+
+                                                                      [1]
+                                                                      2.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSYTDIPAGNAIPDDFFTVIEIPANHSPIKYEVDKPSGQIFVDRFLSTPMFYPANYGFIPNTLSDDGDPLDVLVI
+
+
+sp|P57190|IPYR_BUCAI
+  Inorganic pyrophosphatase OS=Buchnera aphidicola subsp. Acyrthosiphon pisum 
+  (strain APS) OX=107806 GN=ppa PE=3 SV=1
+  LENGTH = 182  COMBINED P-VALUE = 5.02e-07  E-VALUE =  6.4e-05
+  DIAGRAM: 65-[1]-110
+
+                                                                      [1]
+                                                                      2.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MNLNKIVAGDDIPNDIYVIIEISSNSSPIKYEVDKKSGMLFVDRFIPTPMFYPCNYGYINHTLSLDGDPLDVLVP
+
+
+sp|Q949J1|IPYR2_CHLRE
+  Soluble inorganic pyrophosphatase 2 OS=Chlamydomonas reinhardtii OX=3055 
+  GN=ppa2 PE=1 SV=1
+  LENGTH = 192  COMBINED P-VALUE = 5.31e-07  E-VALUE =  6.8e-05
+  DIAGRAM: 73-[1]-112
+
+                                                                              [1
+                                                                              2.
+                                                                              DG
+                                                                              ++
+1    MSFYRGTASHPWHDLHPGNDAPNFVSCVIEIPRGSKVKYELDKDTGLCFVDRILYSSVVYPHNYGFVPKTLCEDG
+
+     ]
+     9e-09
+     DPLDV
+     +++++
+76   DPLDVLVLMQEPVVPMCFLRAKPIGVMQMLDQGERDDKLIAVHADDPEYKGFTDISQLPPHRLAEIKRFFEDYKK
+
+
+sp|P87118|IPYR2_SCHPO
+  Putative inorganic pyrophosphatase C3A12.02 OS=Schizosaccharomyces pombe 
+  (strain 972 / ATCC 24843) OX=284812 GN=SPAC3A12.02 PE=3 SV=1
+  LENGTH = 286  COMBINED P-VALUE = 7.99e-07  E-VALUE =   0.0001
+  DIAGRAM: 121-[1]-158
+
+                                                   [1]
+                                                   2.9e-09
+                                                   DGDPLDV
+                                                   +++++++
+76   KQDLKNGKLRYVANSFPYHGFIWNYGALPQTWEDPNVIDSRTKMKGDGDPLDVCEIGGSIGYIGQIKQVKVLGAL
+
+
+sp|Q9ZCW5|IPYR_RICPR
+  Inorganic pyrophosphatase OS=Rickettsia prowazekii (strain Madrid E) 
+  OX=272947 GN=ppa PE=1 SV=1
+  LENGTH = 172  COMBINED P-VALUE = 8.06e-07  E-VALUE =   0.0001
+  DIAGRAM: 64-[1]-101
+
+                                                                     [1]
+                                                                     4.9e-09
+                                                                     DGDPLDV
+                                                                     +++++++
+1    MFIKKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+
+
+sp|Q4UKW0|IPYR_RICFE
+  Inorganic pyrophosphatase OS=Rickettsia felis (strain ATCC VR-1525 / 
+  URRWXCal2) OX=315456 GN=ppa PE=3 SV=2
+  LENGTH = 173  COMBINED P-VALUE = 8.11e-07  E-VALUE =   0.0001
+  DIAGRAM: 64-[1]-102
+
+                                                                     [1]
+                                                                     4.9e-09
+                                                                     DGDPLDV
+                                                                     +++++++
+1    MFIDKIKAKANNDEINVIIEIPMNIGPIKYEFDKESGAVFVDRFMQTTMSYPCNYGFIPHTLSNDGDPVDVLVVA
+
+
+sp|Q92H74|IPYR_RICCN
+  Inorganic pyrophosphatase OS=Rickettsia conorii (strain ATCC VR-613 / Malish 
+  7) OX=272944 GN=ppa PE=3 SV=1
+  LENGTH = 173  COMBINED P-VALUE = 8.11e-07  E-VALUE =   0.0001
+  DIAGRAM: 64-[1]-102
+
+                                                                     [1]
+                                                                     4.9e-09
+                                                                     DGDPLDV
+                                                                     +++++++
+1    MFIDKIKAKANNYEINVIIEIPMNSGPIKYEFDKESGAIFVDRFMQTTMSYPCNYGFIPHTLSNDGDPVDVLVVA
+
+
+sp|Q1RIN6|IPYR_RICBR
+  Inorganic pyrophosphatase OS=Rickettsia bellii (strain RML369-C) OX=336407 
+  GN=ppa PE=3 SV=1
+  LENGTH = 175  COMBINED P-VALUE = 8.20e-07  E-VALUE =  0.00011
+  DIAGRAM: 64-[1]-104
+
+                                                                     [1]
+                                                                     4.9e-09
+                                                                     DGDPLDV
+                                                                     +++++++
+1    MFIDKIKAKANNDEINVIIEIPMNSGPIKYEFDKESGAVFVDRFMQTTMSYPCNYGFIPHTLSNDGDPVDVLVVS
+
+
+sp|Q8ZB98|IPYR_YERPE
+  Inorganic pyrophosphatase OS=Yersinia pestis OX=632 GN=ppa PE=3 SV=1
+  LENGTH = 175  COMBINED P-VALUE = 8.20e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-103
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSLNQVPAGKDLPEDIYVVIEIPANADPIKYEIDKETGSLFVDRFMSTAMFYPCNYGYINNTLSLDGDPVDVLVP
+
+
+sp|Q7VPC0|IPYR_HAEDU
+  Inorganic pyrophosphatase OS=Haemophilus ducreyi (strain 35000HP / ATCC 
+  700724) OX=233412 GN=ppa PE=3 SV=1
+  LENGTH = 175  COMBINED P-VALUE = 8.20e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-103
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MGLENVPAGKALPDDIYVVIEIPANSDPIKYEVDKESGSLFVDRFMSTAMFYPANYGYVNHTLSSDGDPVDVLVP
+
+
+sp|Q8XWX1|IPYR_RALSO
+  Inorganic pyrophosphatase OS=Ralstonia solanacearum (strain GMI1000) 
+  OX=267608 GN=ppa PE=3 SV=1
+  LENGTH = 175  COMBINED P-VALUE = 8.20e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-103
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSFNNVSPGKDIPNDFNVIIEIPAQSDPVKYEADKETGLLHVDRFVGTGMRYPANYGFIPQTLAGDGDPVDVLVV
+
+
+sp|P57918|IPYR_PASMU
+  Inorganic pyrophosphatase OS=Pasteurella multocida (strain Pm70) OX=272843 
+  GN=ppa PE=3 SV=1
+  LENGTH = 175  COMBINED P-VALUE = 8.20e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-103
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MGLETVPAGKALPDDIYVVIEIPANSDPIKYEVDKESGALFVDRFMATAMFYPANYGYVNNTLSLDGDPVDVLVP
+
+
+sp|P0A7A9|IPYR_ECOLI
+  Inorganic pyrophosphatase OS=Escherichia coli (strain K12) OX=83333 GN=ppa 
+  PE=1 SV=2
+  LENGTH = 176  COMBINED P-VALUE = 8.25e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVP
+
+
+sp|Q7MPD2|IPYR_VIBVY
+  Inorganic pyrophosphatase OS=Vibrio vulnificus (strain YJ016) OX=196600 
+  GN=ppa PE=3 SV=1
+  LENGTH = 176  COMBINED P-VALUE = 8.25e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSLNNVPAGKSLPDDLYVVIEIPANADPIKYEVDKESGAVFVDRFMSAPMFYPCNYGYVNHTLSLDGDPVDVLVP
+
+
+sp|Q8DE89|IPYR_VIBVU
+  Inorganic pyrophosphatase OS=Vibrio vulnificus (strain CMCP6) OX=216895 
+  GN=ppa PE=3 SV=1
+  LENGTH = 176  COMBINED P-VALUE = 8.25e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSLNNVPAGKSLPDDLYVVIEIPANADPIKYEVDKESGAVFVDRFMSAPMFYPCNYGYVNHTLSLDGDPVDVLVP
+
+
+sp|Q8FAG0|IPYR_ECOL6
+  Inorganic pyrophosphatase OS=Escherichia coli O6:H1 (strain CFT073 / ATCC 
+  700928 / UPEC) OX=199310 GN=ppa PE=3 SV=3
+  LENGTH = 176  COMBINED P-VALUE = 8.25e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVP
+
+
+sp|P0A7B0|IPYR_ECO57
+  Inorganic pyrophosphatase OS=Escherichia coli O157:H7 OX=83334 GN=ppa PE=3 
+  SV=2
+  LENGTH = 176  COMBINED P-VALUE = 8.25e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVP
+
+
+sp|P65748|IPYR_SALTY
+  Inorganic pyrophosphatase OS=Salmonella typhimurium (strain LT2 / SGSC1412 / 
+  ATCC 700720) OX=99287 GN=ppa PE=3 SV=2
+  LENGTH = 176  COMBINED P-VALUE = 8.25e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSLLNVPAGKELPEDIYVVIEIPANADPIKYEVDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVP
+
+
+sp|Q9YBA5|IPYR_AERPE
+  Inorganic pyrophosphatase OS=Aeropyrum pernix (strain ATCC 700893 / DSM 11879 
+  / JCM 9820 / NBRC 100138 / K1) OX=272557 GN=ppa PE=3 SV=2
+  LENGTH = 176  COMBINED P-VALUE = 8.25e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MTGCLKIGPGDEAPDVVNVVIEIPMNSSVKYEFDKEACIVKVDRFLYTSMVYPFNYGFIPGTLEEDGDPVDVLVI
+
+
+sp|Q87SW1|IPYR_VIBPA
+  Inorganic pyrophosphatase OS=Vibrio parahaemolyticus serotype O3:K6 (strain 
+  RIMD 2210633) OX=223926 GN=ppa PE=3 SV=1
+  LENGTH = 176  COMBINED P-VALUE = 8.25e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSLNHVPAGKSLPEDIYVVIEIPANADPIKYEVDKDSGAVFVDRFMSAPMFYPCNYGYVNNTLSLDGDPVDVLVP
+
+
+sp|P65749|IPYR_SALTI
+  Inorganic pyrophosphatase OS=Salmonella typhi OX=90370 GN=ppa PE=3 SV=2
+  LENGTH = 176  COMBINED P-VALUE = 8.25e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSLLNVPAGKELPEDIYVVIEIPANADPIKYEVDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVP
+
+
+sp|Q9KP34|IPYR_VIBCH
+  Inorganic pyrophosphatase OS=Vibrio cholerae serotype O1 (strain ATCC 39315 / 
+  El Tor Inaba N16961) OX=243277 GN=ppa PE=3 SV=1
+  LENGTH = 176  COMBINED P-VALUE = 8.25e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSLNNVPAGKSLPDDIYVVIEIPANADPIKYEVDKESGAVFVDRFMSAPMFYPCNYGYVNHTLSLDGDPVDVLVP
+
+
+sp|Q8GQS5|IPYR_AQUPY
+  Inorganic pyrophosphatase OS=Aquifex pyrophilus OX=2714 GN=ppa PE=3 SV=1
+  LENGTH = 177  COMBINED P-VALUE = 8.30e-07  E-VALUE =  0.00011
+  DIAGRAM: 64-[1]-106
+
+                                                                     [1]
+                                                                     4.9e-09
+                                                                     DGDPLDV
+                                                                     +++++++
+1    MGYKDLPPGKNPPEDIYVVIEIPQGSGIKYELDKDTGVIFVDRFLFTAMYYPFNYGFIPQTLADDGDPVDVLVIS
+
+
+sp|P65751|IPYR_XYLFT
+  Inorganic pyrophosphatase OS=Xylella fastidiosa (strain Temecula1 / ATCC 
+  700964) OX=183190 GN=ppa PE=3 SV=1
+  LENGTH = 178  COMBINED P-VALUE = 8.35e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-106
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MGLELVNAGNNLPEEINVIIEIPKDSEPVKYEVDKASGAIFVDRILSTPMRYPCNYGYVPNTLCGDGDPVDVMVV
+
+
+sp|P65750|IPYR_XYLFA
+  Inorganic pyrophosphatase OS=Xylella fastidiosa (strain 9a5c) OX=160492 
+  GN=ppa PE=3 SV=1
+  LENGTH = 178  COMBINED P-VALUE = 8.35e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-106
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MGLELVNAGNNLPEEINVIIEIPKDSEPVKYEVDKASGAIFVDRILSTPMRYPCNYGYVPNTLCGDGDPVDVMVV
+
+
+sp|O67501|IPYR_AQUAE
+  Inorganic pyrophosphatase OS=Aquifex aeolicus (strain VF5) OX=224324 GN=ppa 
+  PE=3 SV=1
+  LENGTH = 178  COMBINED P-VALUE = 8.35e-07  E-VALUE =  0.00011
+  DIAGRAM: 64-[1]-107
+
+                                                                     [1]
+                                                                     4.9e-09
+                                                                     DGDPLDV
+                                                                     +++++++
+1    MGYDQLPPGKNPPEDIYVVIEIPQGSAVKYELDKDTGVIFVDRFLFTAMYYPFNYGFVPQTLADDGDPVDVLVIS
+
+
+sp|Q68WE9|IPYR_RICTY
+  Inorganic pyrophosphatase OS=Rickettsia typhi (strain ATCC VR-144 / 
+  Wilmington) OX=257363 GN=ppa PE=3 SV=1
+  LENGTH = 178  COMBINED P-VALUE = 8.35e-07  E-VALUE =  0.00011
+  DIAGRAM: 64-[1]-107
+
+                                                                     [1]
+                                                                     4.9e-09
+                                                                     DGDPLDV
+                                                                     +++++++
+1    MFIDKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGAIFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+
+
+sp|O34955|IPYR_LEGPN
+  Inorganic pyrophosphatase OS=Legionella pneumophila OX=446 GN=ppa PE=3 SV=1
+  LENGTH = 178  COMBINED P-VALUE = 8.35e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-106
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSLMEIPSGRDVPNEVNVIIEIPMHGEPVKYEVDKKTGALFVDRFMTTAMFYPTNYGYIPNTLSEDGDPVDVLVI
+
+
+sp|Q9RGQ1|IPYR_RHORT
+  Inorganic pyrophosphatase OS=Rhodospirillum rubrum (strain ATCC 11170 / ATH 
+  1.1.1 / DSM 467 / LMG 4362 / NCIB 8255 / S1) OX=269796 GN=ppa PE=3 SV=1
+  LENGTH = 179  COMBINED P-VALUE = 8.40e-07  E-VALUE =  0.00011
+  DIAGRAM: 65-[1]-107
+
+                                                                      [1]
+                                                                      4.9e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MDIKKIPVGKNPPQDVNVIIEIPLLADPVKYEVDKESGAMFVDRFLHTAMHYPCNYGFVPHTLSDDGDPVDVMVV
+
+
+sp|P65745|IPYR_BRUSU
+  Inorganic pyrophosphatase OS=Brucella suis biovar 1 (strain 1330) OX=204722 
+  GN=ppa PE=3 SV=1
+  LENGTH = 176  COMBINED P-VALUE = 1.57e-06  E-VALUE =   0.0002
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      9.2e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+
+
+sp|P65744|IPYR_BRUME
+  Inorganic pyrophosphatase OS=Brucella melitensis biotype 1 (strain 16M / ATCC 
+  23456 / NCTC 10094) OX=224914 GN=ppa PE=3 SV=1
+  LENGTH = 176  COMBINED P-VALUE = 1.57e-06  E-VALUE =   0.0002
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      9.2e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+
+
+sp|Q92LH1|IPYR_RHIME
+  Inorganic pyrophosphatase OS=Rhizobium meliloti (strain 1021) OX=266834 
+  GN=ppa PE=3 SV=1
+  LENGTH = 177  COMBINED P-VALUE = 1.58e-06  E-VALUE =   0.0002
+  DIAGRAM: 65-[1]-105
+
+                                                                      [1]
+                                                                      9.2e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MRIDAISIGKNPPEDVNVIVEVPVGGHPIKYEMDKEAGTLVVDRFLYTPMTYPGNYGFVPHTLSDDGDPIDVLIC
+
+
+sp|Q8UC37|IPYR_AGRFC
+  Inorganic pyrophosphatase OS=Agrobacterium fabrum (strain C58 / ATCC 33970) 
+  OX=176299 GN=ppa PE=3 SV=1
+  LENGTH = 177  COMBINED P-VALUE = 1.58e-06  E-VALUE =   0.0002
+  DIAGRAM: 65-[1]-105
+
+                                                                      [1]
+                                                                      9.2e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MRIDAISIGKNPPDDINVIVEVPVGGHPIKYEMDKDAGALIVDRFLYTPMTYPGNYGFVPHTLSDDGDPIDVLIC
+
+
+sp|Q98ER2|IPYR_RHILO
+  Inorganic pyrophosphatase OS=Mesorhizobium japonicum (strain LMG 29417 / CECT 
+  9101 / MAFF 303099) OX=266835 GN=ppa PE=3 SV=1
+  LENGTH = 177  COMBINED P-VALUE = 1.58e-06  E-VALUE =   0.0002
+  DIAGRAM: 65-[1]-105
+
+                                                                      [1]
+                                                                      9.2e-09
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MRIEAIATGKNPPEDVNVIIEVPIGGEPIKYEMDKEAGTLFVDRFLHTSMRYPGNYGFVPHTLSGDGDPIDVLVC
+
+
+sp|P37981|IPYR_THEAC
+  Inorganic pyrophosphatase OS=Thermoplasma acidophilum (strain ATCC 25905 / 
+  DSM 1728 / JCM 9062 / NBRC 15155 / AMRC-C165) OX=273075 GN=ppa PE=1 SV=1
+  LENGTH = 179  COMBINED P-VALUE = 1.59e-06  E-VALUE =   0.0002
+  DIAGRAM: 66-[1]-106
+
+                                                                       [1]
+                                                                       9.2e-09
+                                                                       DGDPLDV
+                                                                       +++++++
+1    MESFYHSVPVGPKPPEEVYVIVEIPRGSRVKYEIAKDFPGMLVDRVLYSSVVYPVDYGLIPRTLYYDGDPMDVMV
+
+
+sp|A2X8Q3|IPYR_ORYSI
+  Soluble inorganic pyrophosphatase OS=Oryza sativa subsp. indica OX=39946 
+  GN=IPP PE=2 SV=1
+  LENGTH = 214  COMBINED P-VALUE = 1.92e-06  E-VALUE =  0.00025
+  DIAGRAM: 99-[1]-108
+
+                             [1]
+                             9.2e-09
+                             DGDPLDV
+                             +++++++
+76   VDRVLYSSVVYPHNYGFIPRTLCEDGDPMDVLVLMQEQVVPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEY
+
+
+sp|Q0DYB1|IPYR_ORYSJ
+  Soluble inorganic pyrophosphatase OS=Oryza sativa subsp. japonica OX=39947 
+  GN=IPP PE=2 SV=1
+  LENGTH = 214  COMBINED P-VALUE = 1.92e-06  E-VALUE =  0.00025
+  DIAGRAM: 99-[1]-108
+
+                             [1]
+                             9.2e-09
+                             DGDPLDV
+                             +++++++
+76   VDRVLYSSVVYPHNYGFIPRTLCEDGDPMDVLVLMQEQVVPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEY
+
+
+sp|O82793|IPYR3_ARATH
+  Soluble inorganic pyrophosphatase 3 OS=Arabidopsis thaliana OX=3702 GN=PPA3 
+  PE=2 SV=1
+  LENGTH = 216  COMBINED P-VALUE = 1.94e-06  E-VALUE =  0.00025
+  DIAGRAM: 101-[1]-108
+
+                               [1]
+                               9.2e-09
+                               DGDPLDV
+                               +++++++
+76   IKVDRILYSSVVYPHNYGFIPRTLCEDNDPLDVLVLMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDP
+
+
+sp|Q8SR69|IPYR_ENCCU
+  Inorganic pyrophosphatase OS=Encephalitozoon cuniculi (strain GB-M1) 
+  OX=284813 GN=IPP1 PE=1 SV=1
+  LENGTH = 277  COMBINED P-VALUE = 2.50e-06  E-VALUE =  0.00032
+  DIAGRAM: 116-[1]-154
+
+                                              [1]
+                                              9.2e-09
+                                              DGDPLDV
+                                              +++++++
+76   KGWPRFVKNVFPMKGYLWNYGALPQTWENPHEVDRHTGARGDNDPLDVIEIGRKRKEVGEVYQAKVLGSIALVDE
+
+
+sp|Q43187|IPYR_SOLTU
+  Soluble inorganic pyrophosphatase PPA1 OS=Solanum tuberosum OX=4113 GN=PPA1 
+  PE=1 SV=1
+  LENGTH = 211  COMBINED P-VALUE = 2.50e-06  E-VALUE =  0.00032
+  DIAGRAM: 96-[1]-108
+
+                          [1]
+                          1.2e-08
+                          DGDPLDV
+                          +++++++
+76   ILYSSVVYPQNYGFIPRTLCEDNDPMDVLVLMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEYRHY
+
+
+sp|Q93V56|IPYR1_ARATH
+  Soluble inorganic pyrophosphatase 1 OS=Arabidopsis thaliana OX=3702 GN=PPA1 
+  PE=1 SV=1
+  LENGTH = 212  COMBINED P-VALUE = 2.51e-06  E-VALUE =  0.00032
+  DIAGRAM: 97-[1]-108
+
+                           [1]
+                           1.2e-08
+                           DGDPLDV
+                           +++++++
 76   RILYSSVVYPHNYGFVPRTLCEDNDPIDVLVIMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCVDDPEYKH
 
 
-3d53
-  LENGTH = 172  COMBINED P-VALUE = 9.66e-41  E-VALUE =  1.4e-39
-  DIAGRAM: 43-[1]-79
+sp|O48556|IPYR_MAIZE
+  Soluble inorganic pyrophosphatase OS=Zea mays OX=4577 GN=IPP PE=2 SV=1
+  LENGTH = 214  COMBINED P-VALUE = 2.54e-06  E-VALUE =  0.00032
+  DIAGRAM: 99-[1]-108
 
-                                                [1]
-                                                7.9e-43
-                                                FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVIM
-                                                ++ + ++++++++++++++++++++++++++
-1    XFIKKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
-
-     
-     
-     PYPVYPGCVIRCRPIGVM
-     ++++++++++++++++++
-76   HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+                             [1]
+                             1.2e-08
+                             DGDPLDV
+                             +++++++
+76   VDRVLYSSVVYPHNYGFVPRTLCEDNDPMDVLVLMQEPVVPGSFLRARAIGLMPMIDQGEKDDKIIAVCADDPEY
 
 
-1qez
-  LENGTH = 1171  COMBINED P-VALUE = 6.30e-39  E-VALUE =  8.8e-38
-  DIAGRAM: 1040-[1]-81
+sp|O23979|IPYR_HORVV
+  Soluble inorganic pyrophosphatase OS=Hordeum vulgare subsp. vulgare OX=112509 
+  GN=IPP PE=2 SV=1
+  LENGTH = 215  COMBINED P-VALUE = 2.55e-06  E-VALUE =  0.00033
+  DIAGRAM: 102-[1]-106
 
-                                                                      [1]
-                                                                      5.6e-42
-                                                                      FMYTPMWYPC
-                                                                      ++++++ +++
-976  XXXXXXXXXXXXXXXXXXXXXXXXXXKLSPGKNAPDVVNVLVEIPQGSNIKYEYDDEEGVIKVDRVLYTSMNYPF
-
-     
-     
-     NYGFIPHTLCGDGDPLDVCVIMPYPVYPGCVIRCRPIGVM
-     ++++++ ++ ++++++++++++ +++++++++++++++++
-1051 NYGFIPGTLEEDGDPLDVLVITNYQLYPGSVIEVRPIGILYMKDEEGEDAKIVAVPKDKTDPSFSNIKDINDLPQ
+                                [1]
+                                1.2e-08
+                                DGDPLDV
+                                +++++++
+76   LIKVDRVLYSSVVYPHNYGFIPRTLCEDNDPMDVLVLMQEPVIPGSFLRARAIGLMPMIDQGEKDDKIIAVCADD
 
 
-4ecp
-  LENGTH = 161  COMBINED P-VALUE = 6.44e-37  E-VALUE =    9e-36
-  DIAGRAM: 30-[1]-81
+sp|O82597|IPYR5_ARATH
+  Soluble inorganic pyrophosphatase 5 OS=Arabidopsis thaliana OX=3702 GN=PPA5 
+  PE=2 SV=1
+  LENGTH = 216  COMBINED P-VALUE = 2.56e-06  E-VALUE =  0.00033
+  DIAGRAM: 101-[1]-108
 
-                                   [1]
-                                   5.7e-39
-                                   FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVIMPYPVYPGCVIRCR
-                                   ++++++ ++++++++++++++++++++++++ ++++++++ ++++
-1    VQFDVTIEIPKGQRNKYEVDHKTGRVRLDRYLYTPMAYPTDYGFIEDTLGEDGDPLDALVLLPEPLFPGVLVEAR
-
-     
-     
-     PIGVM
-     +++++
-76   PVGMFRMVDEHGGDDKVLCVPVNDHRWDHIHGIIDVPTFELDAIKHFFVHYKDLEPGKFVKAADWVGRDEAEAEV
+                               [1]
+                               1.2e-08
+                               DGDPLDV
+                               +++++++
+76   IKVDRILYSSVVYPHNYGFVPRTLCEDNDPIDVLVIMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCVDDP
 
 
-1sxv
-  LENGTH = 159  COMBINED P-VALUE = 2.92e-36  E-VALUE =  4.1e-35
-  DIAGRAM: 30-[1]-79
+sp|O13505|IPYR_PICPA
+  Inorganic pyrophosphatase OS=Komagataella pastoris OX=4922 GN=IPP1 PE=3 SV=3
+  LENGTH = 285  COMBINED P-VALUE = 2.57e-06  E-VALUE =  0.00033
+  DIAGRAM: 115-[1]-163
 
-                                   [1]
-                                   2.7e-38
-                                   FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVIMPYPVYPGCVIRCR
-                                   ++++++ ++++++++++++++++++++++++ ++++++++ + ++
-1    MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
-
-     
-     
-     PIGVM
-     +++++
-76   PVGMFRMVDEHGGDDKVLCVPAGDPRWDHVQDIGDVPAFELDAIKHFFVHYKDLEPGKFVKAADWVDRAEAEAEV
+                                             [1]
+                                             9.2e-09
+                                             DGDPLDV
+                                             +++++++
+76   GKLRFVRNCFPHHGYIHNYGAFPQTWEDPNVTHPETKAKGDNDPLDVCEIGERSYTGQVKQVKVLGVMALLDEGE
 
 
-1ude
-  LENGTH = 172  COMBINED P-VALUE = 5.34e-35  E-VALUE =  7.5e-34
-  DIAGRAM: 44-[1]-78
+sp|Q5B912|IPYR_EMENI
+  Inorganic pyrophosphatase OS=Emericella nidulans (strain FGSC A4 / ATCC 38163 
+  / CBS 112.46 / NRRL 194 / M139) OX=227321 GN=ipp1 PE=1 SV=2
+  LENGTH = 287  COMBINED P-VALUE = 2.59e-06  E-VALUE =  0.00033
+  DIAGRAM: 115-[1]-165
 
-                                                 [1]
-                                                 4.3e-37
-                                                 FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVI
-                                                 +++++++++ +++ +++++++++++++++++
-1    XXXFHDLEPGPNVPEVVYALIEIPKGSRNKYELDKETGLLKLDRVLYTPFHYPVDYGIIPRTWYEDGDPFDIMVI
-
-     
-     
-     MPYPVYPGCVIRCRPIGVM
-     +++++++ +++++++++++
-76   MREPTYPLTIIEARPIGLFKMIDSGDKDYKVLAVPVEDPYFKDWKDISDVPKAFLDEIAHFFKRYKELEXGKEII
+                                             [1]
+                                             9.2e-09
+                                             DGDPLDV
+                                             +++++++
+76   GKLRFVRNCFPHKGYLWNYGAFPQTWEDPNVVHPETKAKGDNDPLDVCEIGELVGYPGQVKQVKVLGVMALLDEE
 
 
-2prd
-  LENGTH = 174  COMBINED P-VALUE = 2.39e-32  E-VALUE =  3.3e-31
-  DIAGRAM: 43-[1]-81
+sp|P13998|IPYR_KLULA
+  Inorganic pyrophosphatase OS=Kluyveromyces lactis (strain ATCC 8585 / CBS 
+  2359 / DSM 70799 / NBRC 1267 / NRRL Y-1140 / WM37) OX=284590 GN=IPP1 PE=3 
+  SV=2
+  LENGTH = 287  COMBINED P-VALUE = 2.59e-06  E-VALUE =  0.00033
+  DIAGRAM: 115-[1]-165
 
-                                                [1]
-                                                1.9e-34
-                                                FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVIM
-                                                +++ + +++ ++++++ ++++++++++ ++++
-1    ANLKSLPVGDKAPEVVHMVIEVPRGSGNKYEYDPDLGAIKLDRVLPGAQFYPGDYGFIPSTLAEDGDPLDGLVLS
-
-     
-     
-     PYPVYPGCVIRCRPIGVM
-     ++++++++++++++++++
-76   TYPLLPGVVVEVRVVGLLLMEDEKGGDAKVIGVVAEDQRLDHIQDIGDVPEGVKQEIQHFFETYKALEAKKGKWV
+                                             [1]
+                                             9.2e-09
+                                             DGDPLDV
+                                             +++++++
+76   GKLRFVRNCFPHHGYIHNYGAFPQTWEDPNESHPETKAVGDNDPLDVLEIGEQVAYTGQVKQVKVLGVMALLDEG
 
 
-1ygz
-  LENGTH = 172  COMBINED P-VALUE = 8.48e-30  E-VALUE =  1.2e-28
-  DIAGRAM: 42-[1]-80
+sp|Q757J8|IPYR_ASHGO
+  Inorganic pyrophosphatase OS=Ashbya gossypii (strain ATCC 10895 / CBS 109.51 
+  / FGSC 9923 / NRRL Y-1056) OX=284811 GN=IPP1 PE=3 SV=1
+  LENGTH = 287  COMBINED P-VALUE = 2.59e-06  E-VALUE =  0.00033
+  DIAGRAM: 115-[1]-165
+
+                                             [1]
+                                             9.2e-09
+                                             DGDPLDV
+                                             +++++++
+76   GKLRYVRNCFPHHGYIHNYGAFPQTWEDPNVAHPETKAYGDNDPLDVLEIGETIAYTGQVKQVKVLGVMALLDEG
+
+
+sp|Q6BWA5|IPYR_DEBHA
+  Inorganic pyrophosphatase OS=Debaryomyces hansenii (strain ATCC 36239 / CBS 
+  767 / JCM 1990 / NBRC 0083 / IGC 2968) OX=284592 GN=IPP1 PE=3 SV=1
+  LENGTH = 287  COMBINED P-VALUE = 2.59e-06  E-VALUE =  0.00033
+  DIAGRAM: 115-[1]-165
+
+                                             [1]
+                                             9.2e-09
+                                             DGDPLDV
+                                             +++++++
+76   GKLRFVRNCFPHHGYIHNYGAFPQTWEDPNQVHPETKAKGDNDPLDVCEIGEQVGYVGQVKQVKVLGVMALLDEG
+
+
+sp|Q6C1T4|IPYR_YARLI
+  Inorganic pyrophosphatase OS=Yarrowia lipolytica (strain CLIB 122 / E 150) 
+  OX=284591 GN=IPP1 PE=3 SV=1
+  LENGTH = 287  COMBINED P-VALUE = 2.59e-06  E-VALUE =  0.00033
+  DIAGRAM: 116-[1]-164
+
+                                              [1]
+                                              9.2e-09
+                                              DGDPLDV
+                                              +++++++
+76   KGKLRFVRNCFPHHGYIHNYGAFPQTWEDPNHVHPETKAKGDNDPLDVCEIGETVGYTGQVKQVKVLGVMALLDE
+
+
+sp|P83777|IPYR_CANAL
+  Inorganic pyrophosphatase OS=Candida albicans (strain SC5314 / ATCC MYA-2876) 
+  OX=237561 GN=IPP1 PE=1 SV=3
+  LENGTH = 288  COMBINED P-VALUE = 2.60e-06  E-VALUE =  0.00033
+  DIAGRAM: 116-[1]-165
+
+                                              [1]
+                                              9.2e-09
+                                              DGDPLDV
+                                              +++++++
+76   KGKLRFVRNCFPHHGYIHNYGAFPQTWEDPNQSHPETKAKGDNDPLDVCEIGEKVATVGEVKQVKVLGVMALLDE
+
+
+sp|Q6MVH7|IPYR_NEUCR
+  Inorganic pyrophosphatase OS=Neurospora crassa (strain ATCC 24698 / 
+  74-OR23-1A / CBS 708.71 / DSM 1257 / FGSC 987) OX=367110 GN=ipp-1 PE=3 SV=1
+  LENGTH = 290  COMBINED P-VALUE = 2.62e-06  E-VALUE =  0.00034
+  DIAGRAM: 117-[1]-166
 
                                                [1]
-                                               6.9e-32
-                                               FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVIMP
-                                               +++ +  +++++++++++++ ++++++++++++
-1    XNLEKLEVSHDADSLCVVIEISKHSNIKYELDKESGALXVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
-
-     
-     
-     YPVYPGCVIRCRPIGVM
-       ++ +++++++ ++++
-76   VAFQAGSVVKARLVGVLNXEDESGXDEKLIALPIDKIDPTHSYVKDIDDLSKHTLDKIKHFFETYKDLEPNKWVK
+                                               9.2e-09
+                                               DGDPLDV
+                                               +++++++
+76   KKGKLRFVRNCFPHKGYLWNYGAFPQTWEDPNSIHPETKAKGDNDPLDVCEIGELVGYTGQVKQVKVLGVMALLD
 
 
-1twl
-  LENGTH = 174  COMBINED P-VALUE = 2.94e-29  E-VALUE =  4.1e-28
-  DIAGRAM: 44-[1]-80
+sp|Q93Y52|IPYR1_CHLRE
+  Soluble inorganic pyrophosphatase 1, chloroplastic OS=Chlamydomonas 
+  reinhardtii OX=3055 GN=ppa1 PE=1 SV=1
+  LENGTH = 280  COMBINED P-VALUE = 2.89e-06  E-VALUE =  0.00037
+  DIAGRAM: 151-[1]-122
 
-                                                 [1]
-                                                 2.4e-31
-                                                 FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVI
-                                                 +++++++++ +++ +++++++  ++++++++
-1    XNPFHDLEPGPDVPEVVYAIIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPRTWYEXDDPFDIMVI
-
-     
-     
-     MPYPVYPGCVIRCRPIGVM
-     +++++++ +++++++++++
-76   MREPVYPLTIIEARPIGLFKMIDSGDKDYKVLAVPVEDPYFKDWKDIDDVPKAFLDEIAHFFKRYKELQGKEIIV
+      [1]
+      1.1e-08
+      DGDPLDV
+      +++++++
+151  GDNDPVDVVEIGAAAAKRGGVYKVKPVGVLAMIDDGELDWKVIAISADDPKAALCNDVEDVEKHFPGEIQKVLEW
 
 
-5tea
-  LENGTH = 176  COMBINED P-VALUE = 5.76e-29  E-VALUE =  8.1e-28
-  DIAGRAM: 45-[1]-81
+sp|P19514|IPYR_BACP3
+  Inorganic pyrophosphatase OS=Bacillus sp. (strain PS3) OX=2334 GN=ppa PE=1 
+  SV=2
+  LENGTH = 165  COMBINED P-VALUE = 2.89e-06  E-VALUE =  0.00037
+  DIAGRAM: 56-[1]-102
 
-                                                  [1]
-                                                  4.5e-31
-                                                  FMYTPMWYPCNYGFIPHTLCGDGDPLDVCV
-                                                  + +  +  +++++++++++++++++++++
-1    XXDFNQILTPGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRIEPAIFAKPTNYGFIPQTLDEDGDELDVLL
-
-     
-     
-     IMPYPVYPGCVIRCRPIGVM
-     ++++++++++++++++++++
-76   VTEQPLATGVFLEARVIGVMKFVDDGEVDDKIVCVPADDRNNGNAYKTLSDLPQQLIKQIEFHFNHYKDLKKAGT
+                                                             [1]
+                                                             1.8e-08
+                                                             DGDPLDV
+                                                             +++++++
+1    MAFENKIVEAFIEIPTGSQNKYEFDKERGIFKLDRVLYSPMFYPAEYGYLQNTLALDGDPLDILVITTNPPFPGC
 
 
-6c45
-  LENGTH = 288  COMBINED P-VALUE = 7.55e-27  E-VALUE =  1.1e-25
-  DIAGRAM: 94-[1]-144
+sp|O05724|IPYR_GEOSE
+  Inorganic pyrophosphatase OS=Geobacillus stearothermophilus OX=1422 GN=ppa 
+  PE=1 SV=2
+  LENGTH = 165  COMBINED P-VALUE = 2.89e-06  E-VALUE =  0.00037
+  DIAGRAM: 56-[1]-102
 
-                        [1]
-                        3.2e-29
-                        FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVIMPYPVYPGCVIRCRPIGVM
-                        ++ +++++++++++ ++++++++++++++++++++++++ ++ +++++++
+                                                             [1]
+                                                             1.8e-08
+                                                             DGDPLDV
+                                                             +++++++
+1    MAFENKIVEAFIEIPTGSQNKYEFDKERGIFKLDRVLYSPMFYPAEYGYLQNTLALDGDPLDILVITTNPTFPGC
+
+
+sp|Q9C0T9|IPYR_ZYGBA
+  Inorganic pyrophosphatase OS=Zygosaccharomyces bailii OX=4954 GN=IPP1 PE=3 
+  SV=1
+  LENGTH = 287  COMBINED P-VALUE = 2.96e-06  E-VALUE =  0.00038
+  DIAGRAM: 115-[1]-165
+
+                                             [1]
+                                             1.1e-08
+                                             DGDPLDV
+                                             +++++++
+76   GKLRYVRNCFPHHGYIHNYGAFPQTWEDPNVVHPETKAVGDNDPVDVLEIGETIGYTGQVKQVKVLGIMALLDEG
+
+
+sp|Q6FRB7|IPYR_CANGA
+  Inorganic pyrophosphatase OS=Candida glabrata (strain ATCC 2001 / CBS 138 / 
+  JCM 3761 / NBRC 0622 / NRRL Y-65) OX=284593 GN=IPP1 PE=3 SV=1
+  LENGTH = 287  COMBINED P-VALUE = 2.96e-06  E-VALUE =  0.00038
+  DIAGRAM: 115-[1]-165
+
+                                             [1]
+                                             1.1e-08
+                                             DGDPLDV
+                                             +++++++
+76   GKLRYVRNCFPHHGYIHNYGAFPQTWEDPNQTHPETKAVGDNDPVDVLEIGETIGYTGQVKQVKVLGIMALLDEG
+
+
+sp|P44529|IPYR_HAEIN
+  Inorganic pyrophosphatase OS=Haemophilus influenzae (strain ATCC 51907 / DSM 
+  11121 / KW20 / Rd) OX=71421 GN=ppa PE=3 SV=1
+  LENGTH = 176  COMBINED P-VALUE = 3.09e-06  E-VALUE =   0.0004
+  DIAGRAM: 66-[1]-103
+
+                                                                       [1]
+                                                                       1.8e-08
+                                                                       DGDPLDV
+                                                                       +++++++
+1    MADFNQILTPGDVDAGIINVVNEIPEGSCHKIEWNRKVAAFQLDRVEPAIFAKPTNYGFIPQTLDEDGDELDVLL
+
+
+sp|Q8TVE2|IPYR_METKA
+  Inorganic pyrophosphatase OS=Methanopyrus kandleri (strain AV19 / DSM 6324 / 
+  JCM 9639 / NBRC 100938) OX=190192 GN=ppa PE=3 SV=1
+  LENGTH = 176  COMBINED P-VALUE = 3.09e-06  E-VALUE =   0.0004
+  DIAGRAM: 66-[1]-103
+
+                                                                       [1]
+                                                                       1.8e-08
+                                                                       DGDPLDV
+                                                                       +++++++
+1    MMNLWKDLEPGPNPPDVVYAVIEIPRGSRNKYEYDEERGFFKLDRVLYSPFHYPLDYGFIPRTLYDDGDPLDILV
+
+
+sp|Q9LXC9|IPYR6_ARATH
+  Soluble inorganic pyrophosphatase 6, chloroplastic OS=Arabidopsis thaliana 
+  OX=3702 GN=PPA6 PE=1 SV=1
+  LENGTH = 300  COMBINED P-VALUE = 3.10e-06  E-VALUE =   0.0004
+  DIAGRAM: 172-[1]-121
+
+                           [1]
+                           1.1e-08
+                           DGDPLDV
+                           +++++++
+151  GLLPQTWEDPSHANSEVEGCFGDNDPVDVVEIGETQRKIGDILKIKPLAALAMIDEGELDWKIVAISLDDPKAHL
+
+
+sp|Q9K0G4|IPYR_NEIMB
+  Inorganic pyrophosphatase OS=Neisseria meningitidis serogroup B (strain MC58) 
+  OX=122586 GN=ppa PE=1 SV=1
+  LENGTH = 177  COMBINED P-VALUE = 3.11e-06  E-VALUE =   0.0004
+  DIAGRAM: 66-[1]-104
+
+                                                                       [1]
+                                                                       1.8e-08
+                                                                       DGDPLDV
+                                                                       +++++++
+1    MADFNQILTPGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRVEPAIFAKPTNYGFIPQTLDEDGDELDVLL
+
+
+sp|Q9JVG3|IPYR_NEIMA
+  Inorganic pyrophosphatase OS=Neisseria meningitidis serogroup A / serotype 4A 
+  (strain Z2491) OX=122587 GN=ppa PE=3 SV=1
+  LENGTH = 177  COMBINED P-VALUE = 3.11e-06  E-VALUE =   0.0004
+  DIAGRAM: 66-[1]-104
+
+                                                                       [1]
+                                                                       1.8e-08
+                                                                       DGDPLDV
+                                                                       +++++++
+1    MADFNQILTTGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRVEPAIFAKPTNYGFIPQTLDEDGDELDVLL
+
+
+sp|Q8D274|IPYR_WIGBR
+  Inorganic pyrophosphatase OS=Wigglesworthia glossinidia brevipalpis OX=36870 
+  GN=ppa PE=3 SV=1
+  LENGTH = 179  COMBINED P-VALUE = 3.15e-06  E-VALUE =   0.0004
+  DIAGRAM: 65-[1]-107
+
+                                                                      [1]
+                                                                      1.8e-08
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MNLNSVPAGEKLPNDIYAIIEIPTNSNPIKYEVDKKTGILFVNRFIPTSMFYPCNYGYINHTISLDGDPLDILVP
+
+
+sp|Q9PQH6|IPYR_UREPA
+  Inorganic pyrophosphatase OS=Ureaplasma parvum serovar 3 (strain ATCC 700970) 
+  OX=273119 GN=ppa PE=3 SV=1
+  LENGTH = 181  COMBINED P-VALUE = 3.18e-06  E-VALUE =  0.00041
+  DIAGRAM: 51-[1]-123
+
+                                                        [1]
+                                                        1.8e-08
+                                                        DGDPLDV
+                                                        +++++++
+1    MKLNVTIEIPKNSNIKYEYDRATKEIMVDRILHGSMVYPHNYGFLKEALDYDGDELDVLVFADQAFQPGIKVPAR
+
+
+sp|Q98Q96|IPYR_MYCPU
+  Inorganic pyrophosphatase OS=Mycoplasma pulmonis (strain UAB CTIP) OX=272635 
+  GN=ppa PE=3 SV=1
+  LENGTH = 183  COMBINED P-VALUE = 3.22e-06  E-VALUE =  0.00041
+  DIAGRAM: 52-[1]-124
+
+                                                         [1]
+                                                         1.8e-08
+                                                         DGDPLDV
+                                                         +++++++
+1    MSKIVVNIEIQKDSNIKYEYDRKRGKIVVDRILRGDFRYPANYGYLEDALDWDGDELDVLVYSQEKFLPGTSLNA
+
+
+sp|P00817|IPYR_YEAST
+  Inorganic pyrophosphatase OS=Saccharomyces cerevisiae (strain ATCC 204508 / 
+  S288c) OX=559292 GN=IPP1 PE=1 SV=4
+  LENGTH = 287  COMBINED P-VALUE = 3.42e-06  E-VALUE =  0.00044
+  DIAGRAM: 115-[1]-165
+
+                                             [1]
+                                             1.2e-08
+                                             DGDPLDV
+                                             +++++++
+76   GKLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEG
+
+
+sp|Q15181|IPYR_HUMAN
+  Inorganic pyrophosphatase OS=Homo sapiens OX=9606 GN=PPA1 PE=1 SV=2
+  LENGTH = 289  COMBINED P-VALUE = 3.45e-06  E-VALUE =  0.00044
+  DIAGRAM: 115-[1]-167
+
+                                             [1]
+                                             1.2e-08
+                                             DGDPLDV
+                                             +++++++
 76   GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIGVKVLGILAMIDEG
 
 
-5wru
-  LENGTH = 379  COMBINED P-VALUE = 2.26e-12  E-VALUE =  3.2e-11
-  DIAGRAM: 176-[1]-153
+sp|P37980|IPYR_BOVIN
+  Inorganic pyrophosphatase OS=Bos taurus OX=9913 GN=PPA1 PE=1 SV=2
+  LENGTH = 289  COMBINED P-VALUE = 3.45e-06  E-VALUE =  0.00044
+  DIAGRAM: 115-[1]-167
+
+                                             [1]
+                                             1.2e-08
+                                             DGDPLDV
+                                             +++++++
+76   GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIRVKVLGILAMIDEG
+
+
+sp|Q9D819|IPYR_MOUSE
+  Inorganic pyrophosphatase OS=Mus musculus OX=10090 GN=Ppa1 PE=1 SV=1
+  LENGTH = 289  COMBINED P-VALUE = 3.45e-06  E-VALUE =  0.00044
+  DIAGRAM: 115-[1]-167
+
+                                             [1]
+                                             1.2e-08
+                                             DGDPLDV
+                                             +++++++
+76   GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHSDKHTGCCGDNDPIDVCEIGSKVCARGEIIRVKVLGILAMIDEG
+
+
+sp|Q5R8T6|IPYR_PONAB
+  Inorganic pyrophosphatase OS=Pongo abelii OX=9601 GN=PPA1 PE=2 SV=1
+  LENGTH = 289  COMBINED P-VALUE = 3.45e-06  E-VALUE =  0.00044
+  DIAGRAM: 115-[1]-167
+
+                                             [1]
+                                             1.2e-08
+                                             DGDPLDV
+                                             +++++++
+76   RKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIGVKVLGILAMIDEG
+
+
+sp|Q4R543|IPYR_MACFA
+  Inorganic pyrophosphatase OS=Macaca fascicularis OX=9541 GN=PPA1 PE=2 SV=2
+  LENGTH = 289  COMBINED P-VALUE = 3.45e-06  E-VALUE =  0.00044
+  DIAGRAM: 115-[1]-167
+
+                                             [1]
+                                             1.2e-08
+                                             DGDPLDV
+                                             +++++++
+76   GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIGVKVLGILAMIDEG
+
+
+sp|O84777|IPYR_CHLTR
+  Inorganic pyrophosphatase OS=Chlamydia trachomatis (strain D/UW-3/Cx) 
+  OX=272561 GN=ppa PE=3 SV=1
+  LENGTH = 209  COMBINED P-VALUE = 3.69e-06  E-VALUE =  0.00047
+  DIAGRAM: 91-[1]-111
+
+                     [1]
+                     1.8e-08
+                     DGDPLDV
+                     +++++++
+76   SGEYSGQQSNRENIKGDGDPLDICVLTEKNITQGNILLQARPIGGIRILDSEEADDKIIAVLEDDLVYGNIEDIS
+
+
+sp|Q9PLF1|IPYR_CHLMU
+  Inorganic pyrophosphatase OS=Chlamydia muridarum (strain MoPn / Nigg) 
+  OX=243161 GN=ppa PE=3 SV=1
+  LENGTH = 209  COMBINED P-VALUE = 3.69e-06  E-VALUE =  0.00047
+  DIAGRAM: 91-[1]-111
+
+                     [1]
+                     1.8e-08
+                     DGDPLDV
+                     +++++++
+76   SGEYSGQQSNRDNIKGDGDPLDICVLTEKNITQGNILLQARPIGGIRILDSGEADDKIIAVLEDDLVYGAMEDIS
+
+
+sp|B0BAM7|IPYR_CHLTB
+  Inorganic pyrophosphatase OS=Chlamydia trachomatis serovar L2b (strain 
+  UCH-1/proctitis) OX=471473 GN=ppa PE=3 SV=1
+  LENGTH = 209  COMBINED P-VALUE = 3.69e-06  E-VALUE =  0.00047
+  DIAGRAM: 91-[1]-111
+
+                     [1]
+                     1.8e-08
+                     DGDPLDV
+                     +++++++
+76   SGEYSGQQSNRENIKGDGDPLDICVLTEKNITQGNILLQARPIGGIRILDSEEADDKIIAVLEDDLVYGNIEDIS
+
+
+sp|Q3KKS0|IPYR_CHLTA
+  Inorganic pyrophosphatase OS=Chlamydia trachomatis serovar A (strain ATCC 
+  VR-571B / DSM 19440 / HAR-13) OX=315277 GN=ppa PE=3 SV=1
+  LENGTH = 209  COMBINED P-VALUE = 3.69e-06  E-VALUE =  0.00047
+  DIAGRAM: 91-[1]-111
+
+                     [1]
+                     1.8e-08
+                     DGDPLDV
+                     +++++++
+76   SGEYSGQQSNRENIKGDGDPLDICVLTEKNITQGNILLQARPIGGIRILDSEEADDKIIAVLEDDLVYGNIEDIS
+
+
+sp|B0B8Z8|IPYR_CHLT2
+  Inorganic pyrophosphatase OS=Chlamydia trachomatis serovar L2 (strain 434/Bu 
+  / ATCC VR-902B) OX=471472 GN=ppa PE=3 SV=1
+  LENGTH = 209  COMBINED P-VALUE = 3.69e-06  E-VALUE =  0.00047
+  DIAGRAM: 91-[1]-111
+
+                     [1]
+                     1.8e-08
+                     DGDPLDV
+                     +++++++
+76   SGEYSGQQSNRENIKGDGDPLDICVLTEKNITQGNILLQARPIGGIRILDSEEADDKIIAVLEDDLVYGNIEDIS
+
+
+sp|Q91VM9|IPYR2_MOUSE
+  Inorganic pyrophosphatase 2, mitochondrial OS=Mus musculus OX=10090 GN=Ppa2 
+  PE=1 SV=1
+  LENGTH = 330  COMBINED P-VALUE = 3.95e-06  E-VALUE =  0.00051
+  DIAGRAM: 158-[1]-165
+
+             [1]
+             1.2e-08
+             DGDPLDV
+             +++++++
+151  DKSTDCCGDNDPIDVCEIGSKVLSRGDVVHVKILGTLALIDQSETDWKIIAINVNDPEAEKFHDIDDVKKFKPGY
+
+
+sp|Q9H2U2|IPYR2_HUMAN
+  Inorganic pyrophosphatase 2, mitochondrial OS=Homo sapiens OX=9606 GN=PPA2 
+  PE=1 SV=2
+  LENGTH = 334  COMBINED P-VALUE = 4.00e-06  E-VALUE =  0.00051
+  DIAGRAM: 163-[1]-164
+
+                  [1]
+                  1.2e-08
+                  DGDPLDV
+                  +++++++
+151  DPHEKDKSTNCFGDNDPIDVCEIGSKILSCGEVIHVKILGILALIDEGETDWKLIAINANDPEASKFHDIDDVKK
+
+
+sp|O77460|IPYR_DROME
+  Inorganic pyrophosphatase OS=Drosophila melanogaster OX=7227 GN=Nurf-38 PE=1 
+  SV=3
+  LENGTH = 338  COMBINED P-VALUE = 4.05e-06  E-VALUE =  0.00052
+  DIAGRAM: 165-[1]-166
+
+                    [1]
+                    1.2e-08
+                    DGDPLDV
+                    +++++++
+151  WENPDHIEPSTGCKGDNDPIDVIEIGYRVAKRGDVLKVKVLGTIALIDEGETDWKIIAIDVNDPLASKVNDIADV
+
+
+sp|Q9PHM9|IPYR_CAMJE
+  Inorganic pyrophosphatase OS=Campylobacter jejuni subsp. jejuni serotype O:2 
+  (strain ATCC 700819 / NCTC 11168) OX=192222 GN=ppa PE=3 SV=1
+  LENGTH = 172  COMBINED P-VALUE = 4.07e-06  E-VALUE =  0.00052
+  DIAGRAM: 63-[1]-102
+
+                                                                    [1]
+                                                                    2.5e-08
+                                                                    DGDPLDV
+                                                                    +++++++
+1    MNLSKIKIGDIPNKINAVIEIPYGSNIKYEIDKDSGAIMVDRVMASAIFYPANYGFIANTLADDGDPVDILVLNE
+
+
+sp|K7ZGS2|JD1_AMOJI
+  Jingdongin-1 OS=Amolops jingdongensis OX=1077530 PE=1 SV=1
+  LENGTH = 63  COMBINED P-VALUE = 4.90e-06  E-VALUE =  0.00063
+  DIAGRAM: 34-[1]-22
+
+                                       [1]
+                                       8.6e-08
+                                       DGDPLDV
+                                       +++++++
+1    MLTLKKSMLLLFFLGTINLSLCEQERDADEEERRDDDEMDVEVEKRFLPLFLPKIICVITKKC
+
+
+sp|Q18680|IPYR_CAEEL
+  Inorganic pyrophosphatase 1 OS=Caenorhabditis elegans OX=6239 GN=pyp-1 PE=1 
+  SV=5
+  LENGTH = 427  COMBINED P-VALUE = 5.13e-06  E-VALUE =  0.00066
+  DIAGRAM: 258-[1]-162
+
+                                      [1]
+                                      1.2e-08
+                                      DGDPLDV
+                                      +++++++
+226  NIFPHKGYIWNYGALPQTWEDPNHVVPDTGAKGDNDPIDVIEVGSKVAGRGAVLQVKVLGTLALIDEGETDWKLV
+
+
+sp|O26363|IPYR_METTH
+  Inorganic pyrophosphatase OS=Methanothermobacter thermautotrophicus (strain 
+  ATCC 29096 / DSM 1053 / JCM 10044 / NBRC 100330 / Delta H) OX=187420 GN=ppa 
+  PE=3 SV=1
+  LENGTH = 176  COMBINED P-VALUE = 5.99e-06  E-VALUE =  0.00077
+  DIAGRAM: 65-[1]-104
+
+                                                                      [1]
+                                                                      3.5e-08
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MNLWKDIEPGPSVPEVVYAVVEIPKGSRNKYEYHKDLQAFALDRVLYSAVFYPAEYGIIPRTLYDDGDPMDILVL
+
+
+sp|Q9HSF3|IPYR_HALSA
+  Inorganic pyrophosphatase OS=Halobacterium salinarum (strain ATCC 700922 / 
+  JCM 11081 / NRC-1) OX=64091 GN=ppa PE=3 SV=1
+  LENGTH = 177  COMBINED P-VALUE = 7.03e-06  E-VALUE =   0.0009
+  DIAGRAM: 66-[1]-104
+
+                                                                       [1]
+                                                                       4.1e-08
+                                                                       DGDPLDV
+                                                                       +++++++
+1    MANLWEDLETGPDAPDVIYAVVECLKGERNKYEYDKDIPGVVLDRVLHSNVHYPSDYGFIPQSYYDDGDPFDVLV
+
+
+sp|Q8NM79|IPYR_CORGL
+  Inorganic pyrophosphatase OS=Corynebacterium glutamicum (strain ATCC 13032 / 
+  DSM 20300 / JCM 1318 / LMG 3730 / NCIMB 10025) OX=196627 GN=ppa PE=3 SV=1
+  LENGTH = 158  COMBINED P-VALUE = 7.86e-06  E-VALUE =    0.001
+  DIAGRAM: 51-[1]-100
+
+                                                        [1]
+                                                        5.2e-08
+                                                        DGDPLDV
+                                                        +++++++
+1    MSIEVTVEIPKGSRNKYEIDHETGKVYLDRYLFTPMAYPLDYGYIDHTLGEDGDPLDALVILPESVFPAVVVKSR
+
+
+sp|P9WI55|IPYR_MYCTU
+  Inorganic pyrophosphatase OS=Mycobacterium tuberculosis (strain ATCC 25618 / 
+  H37Rv) OX=83332 GN=ppa PE=1 SV=1
+  LENGTH = 162  COMBINED P-VALUE = 8.07e-06  E-VALUE =    0.001
+  DIAGRAM: 51-[1]-104
+
+                                                        [1]
+                                                        5.2e-08
+                                                        DGDPLDV
+                                                        +++++++
+1    MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+
+
+sp|P9WI54|IPYR_MYCTO
+  Inorganic pyrophosphatase OS=Mycobacterium tuberculosis (strain CDC 1551 / 
+  Oshkosh) OX=83331 GN=ppa PE=3 SV=1
+  LENGTH = 162  COMBINED P-VALUE = 8.07e-06  E-VALUE =    0.001
+  DIAGRAM: 51-[1]-104
+
+                                                        [1]
+                                                        5.2e-08
+                                                        DGDPLDV
+                                                        +++++++
+1    MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+
+
+sp|O69540|IPYR_MYCLE
+  Inorganic pyrophosphatase OS=Mycobacterium leprae (strain TN) OX=272631 
+  GN=ppa PE=1 SV=1
+  LENGTH = 162  COMBINED P-VALUE = 8.07e-06  E-VALUE =    0.001
+  DIAGRAM: 51-[1]-104
+
+                                                        [1]
+                                                        5.2e-08
+                                                        DGDPLDV
+                                                        +++++++
+1    MQFDVTIEIPKGQRNKYEVDHKTGRVRLDRYLYTPMAYPTDYGFIEDTLGEDGDPLDALVLLPEPLFPGVLVEAR
+
+
+sp|P65747|IPYR_MYCBO
+  Inorganic pyrophosphatase OS=Mycobacterium bovis (strain ATCC BAA-935 / 
+  AF2122/97) OX=233413 GN=ppa PE=3 SV=1
+  LENGTH = 162  COMBINED P-VALUE = 8.07e-06  E-VALUE =    0.001
+  DIAGRAM: 51-[1]-104
+
+                                                        [1]
+                                                        5.2e-08
+                                                        DGDPLDV
+                                                        +++++++
+1    MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+
+
+sp|Q9X8I9|IPYR_STRCO
+  Inorganic pyrophosphatase OS=Streptomyces coelicolor (strain ATCC BAA-471 / 
+  A3(2) / M145) OX=100226 GN=ppa PE=3 SV=1
+  LENGTH = 163  COMBINED P-VALUE = 8.12e-06  E-VALUE =    0.001
+  DIAGRAM: 51-[1]-105
+
+                                                        [1]
+                                                        5.2e-08
+                                                        DGDPLDV
+                                                        +++++++
+1    MEFDVTIEIPKGSRNKYEVDHETGRIRLDRRLFTSTAYPTDYGFVENTLGEDGDPLDALVILDEPTFPGCLIRCR
+
+
+sp|Q8TMI3|IPYR_METAC
+  Inorganic pyrophosphatase OS=Methanosarcina acetivorans (strain ATCC 35395 / 
+  DSM 2834 / JCM 12185 / C2A) OX=188937 GN=ppa PE=3 SV=1
+  LENGTH = 168  COMBINED P-VALUE = 8.38e-06  E-VALUE =   0.0011
+  DIAGRAM: 58-[1]-103
+
+                                                               [1]
+                                                               5.2e-08
+                                                               DGDPLDV
+                                                               +++++++
+1    MLDMTERQVESVLIEIPKGSRNKYEYDKEKKVIKFDRMLFSSMVYPCDYGFFPDTLALDGDPLDALVLTWEPTFP
+
+
+sp|Q8PWY5|IPYR_METMA
+  Inorganic pyrophosphatase OS=Methanosarcina mazei (strain ATCC BAA-159 / DSM 
+  3647 / Goe1 / Go1 / JCM 11833 / OCM 88) OX=192952 GN=ppa PE=3 SV=2
+  LENGTH = 169  COMBINED P-VALUE = 8.43e-06  E-VALUE =   0.0011
+  DIAGRAM: 55-[1]-107
+
+                                                            [1]
+                                                            5.2e-08
+                                                            DGDPLDV
+                                                            +++++++
+1    MTERQVECVLIEIPQGSRNKYEYDKERKVIRFDRMLFSSIVYPCDYGFFPDTLALDGDPLDAMVLMWEPTFPGCV
+
+
+sp|P56153|IPYR_HELPY
+  Inorganic pyrophosphatase OS=Helicobacter pylori (strain ATCC 700392 / 26695) 
+  OX=85962 GN=ppa PE=1 SV=1
+  LENGTH = 173  COMBINED P-VALUE = 1.01e-05  E-VALUE =   0.0013
+  DIAGRAM: 63-[1]-103
+
+                                                                    [1]
+                                                                    6.1e-08
+                                                                    DGDPLDV
+                                                                    +++++++
+1    MNLEKLEVSHDADSLCVVIEISKHSNIKYELDKESGALMVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+
+
+sp|Q9ZLL5|IPYR_HELPJ
+  Inorganic pyrophosphatase OS=Helicobacter pylori (strain J99 / ATCC 700824) 
+  OX=85963 GN=ppa PE=3 SV=1
+  LENGTH = 173  COMBINED P-VALUE = 1.01e-05  E-VALUE =   0.0013
+  DIAGRAM: 63-[1]-103
+
+                                                                    [1]
+                                                                    6.1e-08
+                                                                    DGDPLDV
+                                                                    +++++++
+1    MNLDQLEVSHDADSLCVVIEISKHSNIKYELDKESGALMVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+
+
+sp|Q8FMF8|IPYR_COREF
+  Inorganic pyrophosphatase OS=Corynebacterium efficiens (strain DSM 44549 / 
+  YS-314 / AJ 12310 / JCM 11189 / NBRC 100395) OX=196164 GN=ppa PE=3 SV=1
+  LENGTH = 158  COMBINED P-VALUE = 1.12e-05  E-VALUE =   0.0014
+  DIAGRAM: 51-[1]-100
+
+                                                        [1]
+                                                        7.3e-08
+                                                        DGDPLDV
+                                                        +++++++
+1    MSVEVTVEIPKGSRNKYEIDHETGKVYLDRYLFTPMAYPLDYGFIDHTLGEDGDPMDALVILPESVFPNVIVKSR
+
+
+sp|Q6KZB3|IPYR_PICTO
+  Inorganic pyrophosphatase OS=Picrophilus torridus (strain ATCC 700027 / DSM 
+  9790 / JCM 10055 / NBRC 100828) OX=263820 GN=ppa PE=3 SV=1
+  LENGTH = 177  COMBINED P-VALUE = 1.26e-05  E-VALUE =   0.0016
+  DIAGRAM: 69-[1]-101
+
+                                                                          [1]
+                                                                          7.3e-0
+                                                                          DGDPLD
+                                                                          ++++++
+1    MEKNMSYWHQVPPGPNPPDEVYVVVEIPKGERNKYEIAKEFPGIKLDRIIYSSYVYPLEYGLIPQTYYSDGDPID
+
+     
+     8
+     V
+     +
+76   AMVFMSQSTYPGVILRAKPVGMMNMVDSGDVDNKIICVCLDDPVYSKINNYREIPEHVLKETENFFETYKKLQNK
+
+
+sp|Q821T4|IPYR_CHLCV
+  Inorganic pyrophosphatase OS=Chlamydophila caviae (strain GPIC) OX=227941 
+  GN=ppa PE=3 SV=1
+  LENGTH = 216  COMBINED P-VALUE = 1.27e-05  E-VALUE =   0.0016
+  DIAGRAM: 92-[1]-117
+
+                      [1]
+                      6.1e-08
+                      DGDPLDV
+                      +++++++
+76   LSGKYSGEQSLKENIQGDDDPLDICVLTEKNITHGNILLQARPIGGLRIIDSGEADDKIIAVLEDDLVFSEIQDI
+
+
+sp|O77392|IPYR_PLAF7
+  Probable inorganic pyrophosphatase OS=Plasmodium falciparum (isolate 3D7) 
+  OX=36329 GN=MAL3P6.3 PE=1 SV=1
+  LENGTH = 380  COMBINED P-VALUE = 1.32e-05  E-VALUE =   0.0017
+  DIAGRAM: 197-[1]-176
+
+                                                    [1]
+                                                    3.5e-08
+                                                    DGDPLDV
+                                                    +++++++
+151  DKKKGKLRYYHNSIYWNYGALPQTYEYPKHIYQNKSKKNKEALLFTGDNDPLDILDIGSACLKIGQVVPVKILGA
+
+
+sp|P80507|IPYR_SYNY3
+  Inorganic pyrophosphatase OS=Synechocystis sp. (strain PCC 6803 / Kazusa) 
+  OX=1111708 GN=ppa PE=1 SV=2
+  LENGTH = 169  COMBINED P-VALUE = 1.40e-05  E-VALUE =   0.0018
+  DIAGRAM: 63-[1]-99
+
+                                                                    [1]
+                                                                    8.6e-08
+                                                                    DGDPLDV
+                                                                    +++++++
+1    MDLSRIPAQPKAGLINVLIEIPAGSKNKYEFDKDMNCFALDRVLYSSVQYPYDYGFIPNTLADDGDPLDGMVIMD
+
+
+sp|P80562|IPYR_NOSS1
+  Inorganic pyrophosphatase OS=Nostoc sp. (strain PCC 7120 / SAG 25.82 / UTEX 
+  2576) OX=103690 GN=ppa PE=1 SV=1
+  LENGTH = 169  COMBINED P-VALUE = 1.40e-05  E-VALUE =   0.0018
+  DIAGRAM: 63-[1]-99
+
+                                                                    [1]
+                                                                    8.6e-08
+                                                                    DGDPLDV
+                                                                    +++++++
+1    MDLSRIPAQPKPGVINILIEIAGGSQNKYEFDKDLEAFALDRVLYSSVKYPYDYGFVPNTLADDGDPLDGMVIID
+
+
+sp|Q8DHR2|IPYR_THEEB
+  Inorganic pyrophosphatase OS=Thermosynechococcus elongatus (strain BP-1) 
+  OX=197221 GN=ppa PE=3 SV=2
+  LENGTH = 172  COMBINED P-VALUE = 1.43e-05  E-VALUE =   0.0018
+  DIAGRAM: 65-[1]-100
+
+                                                                      [1]
+                                                                      8.6e-08
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MSIDLSRIPAQPKPGVVNVLVEIAGGSRNKYEFDKEMKVFALDRVLYSAVVYPYDYGFIPNTLADDGDPLDGLVM
+
+
+sp|P38576|IPYR_THET8
+  Inorganic pyrophosphatase OS=Thermus thermophilus (strain HB8 / ATCC 27634 / 
+  DSM 579) OX=300852 GN=ppa PE=1 SV=2
+  LENGTH = 175  COMBINED P-VALUE = 1.45e-05  E-VALUE =   0.0019
+  DIAGRAM: 65-[1]-103
+
+                                                                      [1]
+                                                                      8.6e-08
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MANLKSLPVGDKAPEVVHMVIEVPRGSGNKYEYDPDLGAIKLDRVLPGAQFYPGDYGFIPSTLAEDGDPLDGLVL
+
+
+sp|O59570|IPYR_PYRHO
+  Inorganic pyrophosphatase OS=Pyrococcus horikoshii (strain ATCC 700860 / DSM 
+  12428 / JCM 9974 / NBRC 100139 / OT-3) OX=70601 GN=ppa PE=1 SV=1
+  LENGTH = 178  COMBINED P-VALUE = 1.48e-05  E-VALUE =   0.0019
+  DIAGRAM: 65-[1]-106
+
+                                                                      [1]
+                                                                      8.6e-08
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MNPFHDLEPGPNVPEVVYALIEIPKGSRNKYELDKETGLLKLDRVLYTPFHYPVDYGIIPRTWYEDGDPFDIMVI
+
+
+sp|Q5JIY3|IPYR_THEKO
+  Inorganic pyrophosphatase OS=Thermococcus kodakarensis (strain ATCC BAA-918 / 
+  JCM 12380 / KOD1) OX=69014 GN=ppa PE=3 SV=1
+  LENGTH = 178  COMBINED P-VALUE = 1.48e-05  E-VALUE =   0.0019
+  DIAGRAM: 65-[1]-106
+
+                                                                      [1]
+                                                                      8.6e-08
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+
+
+sp|P58733|IPYR_PSEAO
+  Inorganic pyrophosphatase OS=Pseudanabaena sp. (strain PCC 6903) OX=102126 
+  GN=ppa PE=1 SV=1
+  LENGTH = 180  COMBINED P-VALUE = 1.50e-05  E-VALUE =   0.0019
+  DIAGRAM: 65-[1]-108
+
+                                                                      [1]
+                                                                      8.6e-08
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MDLSRIPPQPKAGILNVLIEIPAGSKNKYEFDKDLNAFALDRVLYSSVQYPYDYGFVPITNNLADDGDPLDGMVI
+
+
+sp|Q54PV8|IPYR_DICDI
+  Inorganic pyrophosphatase OS=Dictyostelium discoideum OX=44689 GN=ppa1 PE=1 
+  SV=1
+  LENGTH = 279  COMBINED P-VALUE = 2.00e-05  E-VALUE =   0.0026
+  DIAGRAM: 131-[1]-141
+
+                                                             [1]
+                                                             7.3e-08
+                                                             DGDPLDV
+                                                             +++++++
+76   NAKLEIATKEYMNPIKQDVKDGKLRFVHDKYPFNYGALPQTWESPEHTHPSTGAKGDNDPLDACEIGSGQGVTGE
+
+
+sp|Q8EVW9|IPYR_MYCPE
+  Inorganic pyrophosphatase OS=Mycoplasma penetrans (strain HF-2) OX=272633 
+  GN=ppa PE=3 SV=1
+  LENGTH = 181  COMBINED P-VALUE = 2.02e-05  E-VALUE =   0.0026
+  DIAGRAM: 51-[1]-123
+
+                                                        [1]
+                                                        1.2e-07
+                                                        DGDPLDV
+                                                        +++++++
+1    MKLNVTIEIPKKSNVKYEYDRKTNQISVDRILFGTEVYPHNYGFIKEALDWDGDELDALVIADQSFLPGIIVPAK
+
+
+sp|P51064|IPYR_BARBK
+  Inorganic pyrophosphatase OS=Bartonella bacilliformis (strain ATCC 35685 / 
+  NCTC 12138 / KC583) OX=360095 GN=ppa PE=3 SV=1
+  LENGTH = 177  COMBINED P-VALUE = 2.29e-05  E-VALUE =   0.0029
+  DIAGRAM: 65-[1]-105
+
+                                                                      [1]
+                                                                      1.3e-07
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MNIKEIPIGNNPPEDVNVIIEVPVDSQPVKYEMDKKSGSLFVDRFISTSMVYPGNYGFIPHTLSEDSDPIDVLVC
+
+
+sp|Q9LFF9|IPYR4_ARATH
+  Soluble inorganic pyrophosphatase 4 OS=Arabidopsis thaliana OX=3702 GN=PPA4 
+  PE=1 SV=1
+  LENGTH = 216  COMBINED P-VALUE = 2.81e-05  E-VALUE =   0.0036
+  DIAGRAM: 101-[1]-108
 
                                [1]
-                               6.9e-15
-                               FMYTPMWYPCNYGFIPHTLCGDGDPLDVCVIMPYPVYPGCVIRCRPIGV
-                               +                   +++++++++ +++  +  ++++++++++
-151  DKKKGKLRYYHNSIYWNYGALPQTYEYPKHIYQNKXXXXXEALLFTGDNDPLDILDIGSACLKIGQVVPVKILGA
+                               1.3e-07
+                               DGDPLDV
+                               +++++++
+76   IKVDRILYSSVVYPHNYGFIPRTLCEDSDPIDVLVIMQEPVIPGCFLRAKAIGLMPMIDQGEKDDKIIAVCADDP
 
-     
-     
-     M
-     +
-226  FTLIDEGELDWKIIAINKEDKHYEDINSLSDIEKYYPHTLSLLLEWFRSYKXADTKKLNLISKQLYDKKESEDLI
+
+sp|P19117|IPYR_SCHPO
+  Inorganic pyrophosphatase OS=Schizosaccharomyces pombe (strain 972 / ATCC 
+  24843) OX=284812 GN=ppa1 PE=3 SV=2
+  LENGTH = 289  COMBINED P-VALUE = 2.82e-05  E-VALUE =   0.0036
+  DIAGRAM: 116-[1]-166
+
+                                              [1]
+                                              1.0e-07
+                                              DGDPLDV
+                                              +++++++
+76   KGKLRFVRNCFPHHGYIWNYGAFPQTYEDPNVVHPETKAKGDSDPLDVCEIGEARGYTGQVKQVKVLGVMALLDE
+
+
+sp|P21216|IPYR2_ARATH
+  Soluble inorganic pyrophosphatase 2 OS=Arabidopsis thaliana OX=3702 GN=PPA2 
+  PE=2 SV=2
+  LENGTH = 218  COMBINED P-VALUE = 2.84e-05  E-VALUE =   0.0036
+  DIAGRAM: 103-[1]-108
+
+                                 [1]
+                                 1.3e-07
+                                 DGDPLDV
+                                 +++++++
+76   GLIKVDRVLYSSIVYPHNYGFIPRTICEDSDPMDVLVLMQEPVLTGSFLRARAIGLMPMIDQGEKDDKIIAVCAD
+
+
+sp|Q9UY24|IPYR_PYRAB
+  Inorganic pyrophosphatase OS=Pyrococcus abyssi (strain GE5 / Orsay) OX=272844 
+  GN=ppa PE=3 SV=1
+  LENGTH = 178  COMBINED P-VALUE = 3.20e-05  E-VALUE =   0.0041
+  DIAGRAM: 65-[1]-106
+
+                                                                      [1]
+                                                                      1.9e-07
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MNPFHDLEPGPNVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPRTWYDDDDPFDIMVI
+
+
+sp|Q8U438|IPYR_PYRFU
+  Inorganic pyrophosphatase OS=Pyrococcus furiosus (strain ATCC 43587 / DSM 
+  3638 / JCM 8422 / Vc1) OX=186497 GN=ppa PE=1 SV=1
+  LENGTH = 178  COMBINED P-VALUE = 3.20e-05  E-VALUE =   0.0041
+  DIAGRAM: 65-[1]-106
+
+                                                                      [1]
+                                                                      1.9e-07
+                                                                      DGDPLDV
+                                                                      +++++++
+1    MNPFHDLEPGPDVPEVVYAIIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPRTWYEDDDPFDIMVI
+
+
+sp|P47593|IPYR_MYCGE
+  Inorganic pyrophosphatase OS=Mycoplasma genitalium (strain ATCC 33530 / G-37 
+  / NCTC 10195) OX=243273 GN=ppa PE=3 SV=1
+  LENGTH = 184  COMBINED P-VALUE = 4.15e-05  E-VALUE =   0.0053
+  DIAGRAM: 54-[1]-123
+
+                                                           [1]
+                                                           2.3e-07
+                                                           DGDPLDV
+                                                           ++++++
+1    MDKFLIDVIVEIPKNSKIKYEYDRQTGQIRVDRILFGSESYPQNYGFIKNTLDWDGDELDCFIFADQPFLPATVV
+
+
+sp|P75250|IPYR_MYCPN
+  Inorganic pyrophosphatase OS=Mycoplasma pneumoniae (strain ATCC 29342 / M129) 
+  OX=272634 GN=ppa PE=3 SV=1
+  LENGTH = 184  COMBINED P-VALUE = 4.15e-05  E-VALUE =   0.0053
+  DIAGRAM: 54-[1]-123
+
+                                                           [1]
+                                                           2.3e-07
+                                                           DGDPLDV
+                                                           ++++++
+1    MDKFLIDVTVEIPKSSKIKYEYDRKTSQIRVDRILFGSESYPQNYGFIANTLDWDGDELDCFIFADQAFLPGVVV
+
+
+sp|P28239|IPYR2_YEAST
+  Inorganic pyrophosphatase, mitochondrial OS=Saccharomyces cerevisiae (strain 
+  ATCC 204508 / S288c) OX=559292 GN=PPA2 PE=1 SV=1
+  LENGTH = 310  COMBINED P-VALUE = 5.00e-05  E-VALUE =   0.0064
+  DIAGRAM: 151-[1]-152
+
+      [1]
+      1.6e-07
+      DGDPLDV
+      ++++++
+151  GDNDPLDCCEIGSDVLEMGSIKKVKVLGSLALIDDGELDWKVIVIDVNDPLSSKIDDLEKIEEYFPGILDTTREW
 
 ********************************************************************************
 
 
 CPU: yincp-GE72-2QF
-Time 0.016 secs.
+Time 0.006 secs.
 
-mast -oc /home/yincp/Desktop/Descriptor_Preprocessor/data/internal/meme_mast -mt 0.0001 /home/yincp/Desktop/Descriptor_Preprocessor/Reports/19082019/PDOC00325/meme.txt /home/yincp/Desktop/Descriptor_Preprocessor/Reports/19082019/PDOC00325/tmp_pdb_fasta.fasta
+mast -oc /home/yincp/Desktop/Descriptor_Preprocessor/data/internal/meme_mast -mt 0.0001 /home/yincp/Desktop/Descriptor_Preprocessor/data/debug/tmp_1 /home/yincp/Desktop/Descriptor_Preprocessor/data/debug/tmp_2
