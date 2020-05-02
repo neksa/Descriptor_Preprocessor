@@ -22,8 +22,7 @@ import extract_parser, download_pdb_files, create_seq_file, filter_seqs, \
     motif_finder, prosite_pdb_list, find_cid_from_pname
 from meme_suite import meme_interface
 from converge import conv_interface
-from utils import generic, logs, get_pname_seq, build_composition, \
-    build_meme_from_aligned, download_fasta_given_pdb, uniprot_id_converter
+from utils import generic, logs, get_pname_seq, build_meme_from_aligned, download_fasta_given_pdb, uniprot_id_converter
 from collections import defaultdict
 
 from pdb_component import pdb_interface

@@ -1,5 +1,9 @@
-from collections import OrderedDict
 import re
+
+import numpy as np
+
+from utils import generic
+
 
 def convert(input_conv_path, composition_path, output_path):
     # Converge output to minimal
@@ -9,99 +13,27 @@ def convert(input_conv_path, composition_path, output_path):
     # input_conv=''output.4.matrix.0''
     # composition='composition.txt'
     # output="meme_format.txt"
-    alphabets, matrices = _parse_converge_output(input_conv_path)
+    num_matches, pssm = _parse_converge_output(input_conv_path)
     composition_map = _parse_converge_composition(composition_path)
-    _format_minimal_from_conv(alphabets, composition_map, matrices, output_path)
+    _format_minimal_from_conv(num_matches, pssm, composition_map, output_path)
     return
 
-
-def convert_fullnum(input_conv_path, composition_path, output_path):
-    alphabets, matrices = _parse_converge_output_fullnum(input_conv_path)
-    composition_map = _parse_converge_composition(composition_path)
-    _format_minimal_from_conv(alphabets, composition_map, matrices, output_path)
-    return
-
-
-def _parse_converge_output_fullnum(filename):
-    alphabets = ""
-    length = 50
-    matrices = OrderedDict()
-    matrix = []
-    nsite = 0
-    matrix_count = 0
-    with open(filename, "r") as file:
-        for line in file:
-            if line.startswith("BEGIN") and matrix_count != 0:
-                assert len(matrix) == length, len(matrix)
-                motif_name = f"MEME-{matrix_count}"
-                matrices[motif_name] = (nsite, matrix)
-                assert nsite != 0
-                matrix = []
-                nsite = 0
-                continue
-            if line.startswith("MATRIX"):
-                matrix_count += 1
-                nsite_match = re.search(r"Kmatches=([0-9]+)", line)
-                assert nsite_match is not None
-                nsite = int(nsite_match[1])
-                continue
-            if line.startswith("50"):
-                if not alphabets:
-                    matched_alphabets = re.findall("[A-Z]", line)
-                    alphabets = "".join(matched_alphabets)
-                continue
-            if re.match(" [0-9]", line) or re.match("[0-9]+", line):
-                counts = re.findall(r"[0-9]+", line)[1:]
-                assert len(counts) == len(alphabets)
-                probs = []
-                assert nsite != 0
-                for count in counts:
-                    probs.append("{:.6f}".format(int(count)/nsite))
-                matrix.append(probs)
-                continue
-        if matrix:
-            assert len(matrix) == length, len(matrix)
-            motif_name = f"MEME-{matrix_count}"
-            matrices[motif_name] = (nsite, matrix)
-    return alphabets, matrices
 
 def _parse_converge_output(filename):
-    alphabets = ""
-    length = 50
-    matrices = OrderedDict()
-    matrix = []
-    nsite = 0
-    matrix_count = 0
+    pssm = []
+    num_matches = None
     with open(filename, "r") as file:
         for line in file:
-            if line.startswith("BEGIN") and matrix_count != 0:
-                assert len(matrix) == length, len(matrix)
-                motif_name = f"MEME-{matrix_count}"
-                matrices[motif_name] = (nsite, matrix)
-                assert nsite != 0
-                matrix = []
-                nsite = 0
+            if num_matches is None:
+                num_matches = int(line)
                 continue
-            if line.startswith("MATRIX"):
-                matrix_count += 1
-                nsite_match = re.search(r"K=([0-9]+)", line)
-                assert nsite_match is not None
-                nsite = int(nsite_match[1])
-                continue
-            if (line.startswith("50") or line.startswith("30")):
-                if not alphabets:
-                    matched_alphabets = re.findall("[A-Z]", line)
-                    alphabets = "".join(matched_alphabets)
-                continue
-            if re.match(" [0-9]", line) or re.match("[0-9]+", line):
-                probs = re.findall(r"[0-1]\.[0-9]+", line)
-                assert len(probs) == len(alphabets)
-                matrix.append(probs)
-                continue
-        if matrix:
-            motif_name = f"MEME-{matrix_count}"
-            matrices[motif_name] = (nsite, matrix)
-    return alphabets, matrices
+            if not line.strip():
+                break
+            values = re.findall("[0-9]+", line)
+            matrix_line = np.array(list(map(int, values)), dtype=int)
+            pssm.append(matrix_line)
+    pssm = np.array(pssm, dtype=int)
+    return num_matches, pssm
 
 
 def _parse_converge_composition(filename):
@@ -119,15 +51,15 @@ def _parse_converge_composition(filename):
     return composition_map
 
 
-def _format_minimal_from_conv(alphabets, composition_map, matrices, output):
-    m_to_write = list(range(len(matrices)))
+def _format_minimal_from_conv(num_matches, pssm, composition_map, output):
+    alphabet_str = "".join(generic.AA_values)
     with open(output, 'w') as file:
         file.write("MEME version 4\n")
         file.write("\n")
-        file.write("ALPHABET= " + alphabets + "\n")
+        file.write("ALPHABET= " + alphabet_str + "\n")
         file.write("\n")
         file.write("Background letter frequencies\n")
-        for i, alphabet in enumerate(alphabets):
+        for i, alphabet in enumerate(generic.AA_values):
             composition = round(composition_map[alphabet], 4)
             file.write(f"{alphabet} {composition} ")
             if (i != 0) and (i % 9 == 0):
@@ -135,33 +67,26 @@ def _format_minimal_from_conv(alphabets, composition_map, matrices, output):
         file.write("\n")
         file.write("\n")
         m_count = 0
-        while matrices:
-            motif_name, (nsite, matrix) = matrices.popitem(last=False)
-            if m_count not in m_to_write:
-                m_count += 1
-                continue
-            m_count += 1
-            file.write(f"MOTIF {motif_name}")
+
+        m_count += 1
+        file.write(f"MOTIF MEME-1\n")
+        file.write(f"letter-probability matrix: alength= 20 w= {len(pssm)} "
+                   f"nsites= {num_matches} E= 0.000\n")
+        # E is just some random number, filled in by subsequent eval calc.
+        for line in pssm:
+            total_counts = sum(line)
+            for count in line:
+                file.write("{:.6f} ".format(count/total_counts))
             file.write("\n")
-            file.write(f"letter-probability matrix: alength= 20 w= 50 "
-                       f"nsites= {nsite} E= 0.000")  # alength = len(alphabets)
-            # E is just some random number, filled in by subsequent eval calc.
-            # w = width of motif
-            file.write("\n")
-            for line in matrix:
-                to_write = ""
-                for prob in line:
-                    to_write += prob + " "
-                file.write(to_write)
-                file.write("\n")
-            file.write("\n")
+        file.write("\n")
     return
 
-if __name__ == "__main__":
-    import os
-    from config import paths
 
-    input_conv_path = os.path.join(paths.ROOT, "output.4.matrix.0")
-    composition_path = os.path.join(paths.ROOT, "composition.txt")
-    output_path = os.path.join(paths.ROOT, "output_meme.txt")
-    convert(input_conv_path, composition_path, output_path)
+# if __name__ == "__main__":
+#     import os
+#     from config import paths
+#
+#     input_conv_path = os.path.join(paths.ROOT, "output_mine")
+#     composition_path = os.path.join(paths.ROOT, "composition.txt")
+#     output_path = os.path.join(paths.ROOT, "output_meme.txt")
+#     convert(input_conv_path, composition_path, output_path)

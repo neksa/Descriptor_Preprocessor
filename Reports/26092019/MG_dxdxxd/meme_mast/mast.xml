@@ -1,0 +1,2917 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<mast version="5.0.5" release="Mon Mar 18 20:12:19 2019 -0700">
+	<command_line><arg>mast</arg><arg>-oc</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/data/internal/meme_mast</arg><arg>-mt</arg><arg>0.0001</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/output_meme.txt</arg><arg>/home/yincp/Desktop/Descriptor_Preprocessor/data/debug/tmp_12</arg></command_line>
+	<settings strand_handling="unstranded" max_correlation="0.60" remove_correlated="n" max_seq_evalue="10" adjust_hit="n" max_hit_pvalue="0.0001" max_weak_pvalue="0.0001"/>
+	<alphabet name="Protein" like="protein">
+		<letter id="A" symbol="A" name="Alanine" colour="0000CC"/>
+		<letter id="C" symbol="C" name="Cysteine" colour="0000CC"/>
+		<letter id="D" symbol="D" name="Aspartic acid" colour="FF00FF"/>
+		<letter id="E" symbol="E" name="Glutamic acid" colour="FF00FF"/>
+		<letter id="F" symbol="F" name="Phenylalanine" colour="0000CC"/>
+		<letter id="G" symbol="G" name="Glycine" colour="FFB300"/>
+		<letter id="H" symbol="H" name="Histidine" colour="FFCCCC"/>
+		<letter id="I" symbol="I" name="Isoleucine" colour="0000CC"/>
+		<letter id="K" symbol="K" name="Lysine" colour="CC0000"/>
+		<letter id="L" symbol="L" name="Leucine" colour="0000CC"/>
+		<letter id="M" symbol="M" name="Methionine" colour="0000CC"/>
+		<letter id="N" symbol="N" name="Asparagine" colour="008000"/>
+		<letter id="P" symbol="P" name="Proline" colour="FFFF00"/>
+		<letter id="Q" symbol="Q" name="Glutamine" colour="008000"/>
+		<letter id="R" symbol="R" name="Arginine" colour="CC0000"/>
+		<letter id="S" symbol="S" name="Serine" colour="008000"/>
+		<letter id="T" symbol="T" name="Threonine" colour="008000"/>
+		<letter id="V" symbol="V" name="Valine" colour="0000CC"/>
+		<letter id="W" symbol="W" name="Tryptophan" colour="0000CC"/>
+		<letter id="Y" symbol="Y" name="Tyrosine" colour="33E6CC"/>
+		<letter id="X" symbol="X" aliases="*." equals="ACDEFGHIKLMNPQRSTVWY" name="Any amino acid"/>
+		<letter id="B" symbol="B" equals="DN" name="Asparagine or Aspartic acid"/>
+		<letter id="Z" symbol="Z" equals="EQ" name="Glutamine or Glutamic acid"/>
+		<letter id="J" symbol="J" equals="IL" name="Leucine or Isoleucine"/>
+	</alphabet>
+	<background source="--nrdb--" A="0.0730919" C="0.0181455" D="0.051688" E="0.0622785" F="0.0402434" G="0.0692596" H="0.0224055" I="0.056227" K="0.058435" L="0.0916218" M="0.0230443" N="0.0460321" P="0.0506238" Q="0.0407153" R="0.0518462" S="0.073729" T="0.0593523" V="0.0642985" W="0.0133282" Y="0.0326497"/>
+	<motif_dbs>
+		<motif_db source="/home/yincp/Desktop/Descriptor_Preprocessor/output_meme.txt" last_mod_date="Thu Sep 26 10:43:37 2019">
+			<background A="0.0825832" C="0.0137976" D="0.054589" E="0.0672864" F="0.0386924" G="0.0707856" H="0.0227957" I="0.0591881" K="0.0581883" L="0.0965802" M="0.0241954" N="0.040592" P="0.0472906" Q="0.0392922" R="0.0553889" S="0.0662866" T="0.0535892" V="0.0686861" W="0.0109982" Y="0.0291944"/>
+		</motif_db>
+	</motif_dbs>
+	<motifs>
+		<motif db="0" id="MEME-1" length="30" nsites="137">
+			<pos A="-349.899" C="-1374.2" D="168.21" E="-61.9459" F="-1374.2" G="52.9693" H="35.7035" I="-1374.2" K="-199.454" L="-1374.2" M="-1374.2" N="395.08" P="-1374.2" Q="-1374.2" R="-1374.2" S="-1374.2" T="-1374.2" V="-1374.2" W="-1374.2" Y="-1374.2"/>
+			<pos A="-349.899" C="-1374.2" D="-1374.2" E="-88.2487" F="-240.583" G="-1374.2" H="167.892" I="-1374.2" K="-299.422" L="-272.527" M="-1374.2" N="-1374.2" P="-1374.2" Q="57.1541" R="-1374.2" S="-318.21" T="-1374.2" V="-42.6799" W="-1374.2" Y="465.824"/>
+			<pos A="-349.899" C="-1374.2" D="-1374.2" E="-1374.2" F="-1374.2" G="339.47" H="-1374.2" I="-143.433" K="-299.422" L="-1374.2" M="-1374.2" N="10.9597" P="-1374.2" Q="37.8913" R="-292.313" S="-118.276" T="-87.6035" V="-23.4179" W="-1374.2" Y="-1374.2"/>
+			<pos A="-1374.2" C="-1374.2" D="41.912" E="-320.368" F="368.114" G="-1374.2" H="205.743" I="-43.447" K="-199.454" L="-272.527" M="-1374.2" N="-1374.2" P="-269.52" Q="-1374.2" R="-1374.2" S="-37.5503" T="-287.551" V="-323.336" W="-1374.2" Y="264.39"/>
+			<pos A="-249.949" C="-91.8553" D="-1374.2" E="-220.406" F="-82.1169" G="-1374.2" H="-1374.2" I="308.895" K="-18.7532" L="-140.382" M="-1374.2" N="-15.3444" P="121.11" Q="-1374.2" R="-192.343" S="-318.21" T="-1374.2" V="140.96" W="-1374.2" Y="-1374.2"/>
+			<pos A="-191.476" C="-1374.2" D="-90.27" E="111.738" F="-1374.2" G="-1374.2" H="94.1986" I="-1374.2" K="-99.4804" L="-372.467" M="-1374.2" N="152.456" P="337.027" Q="-142.82" R="-11.6405" S="-118.276" T="-187.579" V="-323.336" W="-1374.2" Y="-1374.2"/>
+			<pos A="-1374.2" C="-1374.2" D="55.6611" E="38.0444" F="-1374.2" G="-127.749" H="300.083" I="-1374.2" K="-199.454" L="-272.527" M="-1374.2" N="222.499" P="-1374.2" Q="127.196" R="107.617" S="-318.21" T="170.877" V="-323.336" W="-1374.2" Y="-1374.2"/>
+			<pos A="-149.983" C="-1374.2" D="-290.216" E="-1374.2" F="-1374.2" G="30.7306" H="-1374.2" I="-1374.2" K="70.5502" L="-372.467" M="-1374.2" N="52.4593" P="-1374.2" Q="-1374.2" R="-1374.2" S="-159.77" T="369.364" V="-1374.2" W="-1374.2" Y="-1374.2"/>
+			<pos A="49.9942" C="225.124" D="-1374.2" E="-1374.2" F="-240.583" G="-1374.2" H="-1374.2" I="15.0423" K="-299.422" L="274.974" M="-172.872" N="-1374.2" P="-1374.2" Q="-1374.2" R="-292.313" S="-1374.2" T="-1374.2" V="-1374.2" W="173.04" Y="32.2027"/>
+			<pos A="82.1855" C="360.487" D="9.7202" E="-88.2487" F="-140.601" G="18.1787" H="-1374.2" I="-1374.2" K="109.251" L="-1374.2" M="-1374.2" N="-1374.2" P="-1374.2" Q="-142.82" R="-292.313" S="177.123" T="-287.551" V="-123.406" W="-1374.2" Y="158.502"/>
+			<pos A="-349.899" C="-1374.2" D="185.202" E="170.233" F="-1374.2" G="214.855" H="-1374.2" I="-1374.2" K="-299.422" L="52.1991" M="-1374.2" N="10.9597" P="-1374.2" Q="-1374.2" R="-1374.2" S="-118.276" T="-1374.2" V="-1374.2" W="140.849" Y="-99.9715"/>
+			<pos A="-1374.2" C="-1374.2" D="419.515" E="-1374.2" F="-1374.2" G="-1374.2" H="-1374.2" I="-1374.2" K="-1374.2" L="-1374.2" M="-1374.2" N="-1374.2" P="-1374.2" Q="-1374.2" R="-1374.2" S="-1374.2" T="-1374.2" V="-1374.2" W="-1374.2" Y="-1374.2"/>
+			<pos A="-1374.2" C="-1374.2" D="-90.27" E="-320.368" F="-1374.2" G="326.143" H="-1374.2" I="-1374.2" K="-299.422" L="-1374.2" M="-1374.2" N="252.454" P="-1374.2" Q="-142.82" R="-1374.2" S="-118.276" T="-1374.2" V="-1374.2" W="-1374.2" Y="-1374.2"/>
+			<pos A="-1374.2" C="-1374.2" D="419.515" E="-1374.2" F="-1374.2" G="-1374.2" H="-1374.2" I="-1374.2" K="-1374.2" L="-1374.2" M="-1374.2" N="-1374.2" P="-1374.2" Q="-1374.2" R="-1374.2" S="-1374.2" T="-1374.2" V="-1374.2" W="-1374.2" Y="-1374.2"/>
+			<pos A="-1374.2" C="-1374.2" D="-1374.2" E="-20.4478" F="-1374.2" G="-1374.2" H="-1374.2" I="-1374.2" K="-1374.2" L="-1374.2" M="-1374.2" N="-1374.2" P="431.54" Q="-1374.2" R="-1374.2" S="-1374.2" T="-1374.2" V="-1374.2" W="-1374.2" Y="-1374.2"/>
+			<pos A="-149.983" C="-91.8553" D="-1374.2" E="-1374.2" F="40.1107" G="-1374.2" H="-1374.2" I="130.238" K="-1374.2" L="227.401" M="144.094" N="-1374.2" P="-1374.2" Q="-1374.2" R="-1374.2" S="-1374.2" T="-1374.2" V="176.573" W="-1374.2" Y="-1374.2"/>
+			<pos A="-1374.2" C="-1374.2" D="419.515" E="-1374.2" F="-1374.2" G="-1374.2" H="-1374.2" I="-1374.2" K="-1374.2" L="-1374.2" M="-1374.2" N="-1374.2" P="-1374.2" Q="-1374.2" R="-1374.2" S="-1374.2" T="-1374.2" V="-1374.2" W="-1374.2" Y="-1374.2"/>
+			<pos A="40.6841" C="66.6343" D="-1374.2" E="-1374.2" F="-1374.2" G="-95.5619" H="-1374.2" I="137.277" K="-1374.2" L="-1374.2" M="-1374.2" N="-1374.2" P="-1374.2" Q="-1374.2" R="-1374.2" S="-1374.2" T="-1374.2" V="330.487" W="-1374.2" Y="-1374.2"/>
+			<pos A="-1374.2" C="366.627" D="-1374.2" E="-1374.2" F="-140.601" G="-1374.2" H="-1374.2" I="-143.433" K="-1374.2" L="278.18" M="217.79" N="-1374.2" P="-1374.2" Q="-1374.2" R="-1374.2" S="-1374.2" T="-1374.2" V="-223.376" W="-1374.2" Y="-1374.2"/>
+			<pos A="-1374.2" C="-1374.2" D="-290.216" E="155.033" F="-1374.2" G="-1374.2" H="-1374.2" I="-69.7503" K="-1374.2" L="-214.057" M="-1374.2" N="-1374.2" P="-1374.2" Q="-1374.2" R="-1374.2" S="-1374.2" T="-1374.2" V="342.392" W="-1374.2" Y="-1374.2"/>
+			<pos A="-1374.2" C="166.631" D="-1374.2" E="-1374.2" F="-8.43046" G="-1374.2" H="-164.277" I="278.778" K="-1374.2" L="136.149" M="-172.872" N="-1374.2" P="121.11" Q="-1374.2" R="-1374.2" S="-1374.2" T="-1374.2" V="93.5683" W="-1374.2" Y="-199.96"/>
+			<pos A="-49.9984" C="-91.8553" D="-1374.2" E="-1374.2" F="-1374.2" G="167.649" H="-1374.2" I="-201.912" K="-1374.2" L="-14.0934" M="279.456" N="52.4593" P="-1374.2" Q="-1374.2" R="-1374.2" S="62.4428" T="225.308" V="-164.899" W="-1374.2" Y="-1374.2"/>
+			<pos A="-349.899" C="-1374.2" D="55.6611" E="155.033" F="-1374.2" G="-327.677" H="94.1986" I="-1374.2" K="-1374.2" L="-1374.2" M="-1374.2" N="-89.0306" P="234.858" Q="147.84" R="53.5628" S="72.3956" T="44.5787" V="-323.336" W="40.8577" Y="-199.96"/>
+			<pos A="-149.983" C="-1374.2" D="-90.27" E="170.233" F="-240.583" G="-327.677" H="67.8936" I="-301.879" K="109.251" L="-114.08" M="-1374.2" N="-89.0306" P="-269.52" Q="147.84" R="24.6127" S="-318.21" T="-6.87563" V="-64.9159" W="-1374.2" Y="270.048"/>
+			<pos A="-49.9984" C="-91.8553" D="-1374.2" E="-220.406" F="-1374.2" G="-1374.2" H="-1374.2" I="-43.447" K="-299.422" L="-1374.2" M="-1374.2" N="33.1966" P="364.403" Q="37.8913" R="-192.343" S="-37.5503" T="-1374.2" V="67.2657" W="-1374.2" Y="-1374.2"/>
+			<pos A="-69.2601" C="140.326" D="-1374.2" E="-1374.2" F="40.1107" G="-10.7709" H="-1374.2" I="68.0925" K="-299.422" L="155.943" M="-1374.2" N="-1374.2" P="-269.52" Q="-1374.2" R="-292.313" S="-1374.2" T="129.374" V="189.501" W="-1374.2" Y="-199.96"/>
+			<pos A="20.041" C="-1374.2" D="-1374.2" E="-120.436" F="205.313" G="-327.677" H="-164.277" I="-1.94849" K="-67.2928" L="-2.54546" M="27.1068" N="-247.494" P="-1374.2" Q="127.196" R="-1374.2" S="-159.77" T="29.3777" V="122.518" W="-1374.2" Y="216.998"/>
+			<pos A="-191.476" C="-91.8553" D="-1374.2" E="-1374.2" F="-1374.2" G="-327.677" H="35.7035" I="-143.433" K="-1374.2" L="-1374.2" M="-172.872" N="-1374.2" P="379.603" Q="-10.6498" R="24.6127" S="-159.77" T="82.4282" V="-123.406" W="-1374.2" Y="-1374.2"/>
+			<pos A="-249.949" C="-1374.2" D="-1374.2" E="-1374.2" F="-1374.2" G="367.647" H="-1374.2" I="-1374.2" K="-1374.2" L="-114.08" M="-172.872" N="-147.514" P="-1374.2" Q="-242.801" R="-1374.2" S="-318.21" T="-1374.2" V="-1374.2" W="-1374.2" Y="-1374.2"/>
+			<pos A="-33.0081" C="403.55" D="-131.765" E="-3.45721" F="-1374.2" G="-327.677" H="-1374.2" I="-143.433" K="-1374.2" L="-1374.2" M="-1374.2" N="33.1966" P="-1374.2" Q="115.648" R="-1374.2" S="198.696" T="12.3868" V="93.5683" W="-1374.2" Y="-1374.2"/>
+		</motif>
+	</motifs>
+	<correlations>
+	</correlations>
+	<sequence_dbs>
+		<sequence_db source="/home/yincp/Desktop/Descriptor_Preprocessor/data/debug/tmp_12" last_mod_date="Thu Sep 26 10:44:36 2019" seq_count="295" residue_count="92129"/>
+	</sequence_dbs>
+	<sequences>
+		<sequence db="0" name="6mt2_A" comment="" length="207">
+			<score strand="both" combined_pvalue="2.47e-29" evalue="7.3e-27"/>
+			<seg start="76">
+				<data>
+RILYSSVVYPHNYGFIPRTLCEDNDPLDVLVLMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEYKH
+				</data>
+				<hit pos="87" idx="0" pvalue="1.4e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6mt1_A" comment="" length="208">
+			<score strand="both" combined_pvalue="2.48e-29" evalue="7.3e-27"/>
+			<seg start="76">
+				<data>
+RILYSSVVYPHNYGFIPRTLCEDNDPLDVLVLMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEYKH
+				</data>
+				<hit pos="87" idx="0" pvalue="1.4e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6mt1_B" comment="" length="208">
+			<score strand="both" combined_pvalue="2.48e-29" evalue="7.3e-27"/>
+			<seg start="76">
+				<data>
+RILYSSVVYPHNYGFIPRTLCEDNDPLDVLVLMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEYKH
+				</data>
+				<hit pos="87" idx="0" pvalue="1.4e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6mt2_C" comment="" length="208">
+			<score strand="both" combined_pvalue="2.48e-29" evalue="7.3e-27"/>
+			<seg start="76">
+				<data>
+RILYSSVVYPHNYGFIPRTLCEDNDPLDVLVLMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEYKH
+				</data>
+				<hit pos="87" idx="0" pvalue="1.4e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6mt2_B" comment="" length="209">
+			<score strand="both" combined_pvalue="2.50e-29" evalue="7.4e-27"/>
+			<seg start="76">
+				<data>
+RILYSSVVYPHNYGFIPRTLCEDNDPLDVLVLMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEYKH
+				</data>
+				<hit pos="87" idx="0" pvalue="1.4e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6mt2_D" comment="" length="209">
+			<score strand="both" combined_pvalue="2.50e-29" evalue="7.4e-27"/>
+			<seg start="76">
+				<data>
+RILYSSVVYPHNYGFIPRTLCEDNDPLDVLVLMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCADDPEYKH
+				</data>
+				<hit pos="87" idx="0" pvalue="1.4e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4lug_A" comment="" length="206">
+			<score strand="both" combined_pvalue="1.13e-28" evalue="3.3e-26"/>
+			<seg start="76">
+				<data>
+RILYSSVVYPHNYGFVPRTLCEDNDPIDVLVIMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCVDDPEYKH
+				</data>
+				<hit pos="87" idx="0" pvalue="6.4e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ls0_A" comment="" length="206">
+			<score strand="both" combined_pvalue="1.13e-28" evalue="3.3e-26"/>
+			<seg start="76">
+				<data>
+RILYSSVVYPHNYGFVPRTLCEDNDPIDVLVIMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCVDDPEYKH
+				</data>
+				<hit pos="87" idx="0" pvalue="6.4e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4lug_B" comment="" length="207">
+			<score strand="both" combined_pvalue="1.13e-28" evalue="3.3e-26"/>
+			<seg start="76">
+				<data>
+RILYSSVVYPHNYGFVPRTLCEDNDPIDVLVIMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCVDDPEYKH
+				</data>
+				<hit pos="87" idx="0" pvalue="6.4e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ls0_B" comment="" length="207">
+			<score strand="both" combined_pvalue="1.13e-28" evalue="3.3e-26"/>
+			<seg start="76">
+				<data>
+RILYSSVVYPHNYGFVPRTLCEDNDPIDVLVIMQEPVLPGCFLRARAIGLMPMIDQGEKDDKIIAVCVDDPEYKH
+				</data>
+				<hit pos="87" idx="0" pvalue="6.4e-31" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4xel_A" comment="" length="174">
+			<score strand="both" combined_pvalue="3.08e-28" evalue="9.1e-26"/>
+			<seg start="1">
+				<data>
+XSYSKIPAGKDLPNDIYVAIEIPANHAPIKYEIDKDTDCLFVDRFMATPMFYPANYGFIPNTLADDGDPLDVLVV
+TPYPVAPGSVIRARPVGVLHMTDEAGGDAKLIAVPHDKLSVLYKDVKEYTDLPALLLEQIKHFFENYKDLEKGXX
+				</data>
+				<hit pos="55" idx="0" pvalue="2.1e-30" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4xel_B" comment="" length="174">
+			<score strand="both" combined_pvalue="3.08e-28" evalue="9.1e-26"/>
+			<seg start="1">
+				<data>
+XSYSKIPAGKDLPNDIYVAIEIPANHAPIKYEIDKDTDCLFVDRFMATPMFYPANYGFIPNTLADDGDPLDVLVV
+TPYPVAPGSVIRARPVGVLHMTDEAGGDAKLIAVPHDKLSVLYKDVKEYTDLPALLLEQIKHFFENYKDLEXXXX
+				</data>
+				<hit pos="55" idx="0" pvalue="2.1e-30" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5h4f_B" comment="" length="171">
+			<score strand="both" combined_pvalue="4.45e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1faj_A" comment="" length="172">
+			<score strand="both" combined_pvalue="4.48e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDXXGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEXXXWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ipw_A" comment="" length="172">
+			<score strand="both" combined_pvalue="4.48e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDXXXEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEXXKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ipw_B" comment="" length="172">
+			<score strand="both" combined_pvalue="4.48e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2eip_A" comment="" length="172">
+			<score strand="both" combined_pvalue="4.48e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDXXGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEXXXWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2eip_B" comment="" length="172">
+			<score strand="both" combined_pvalue="4.48e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1i40_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1i6t_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1igp_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ino_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1jfd_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1jfd_B" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1mjw_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVNRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1mjw_B" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVNRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1mjz_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTNEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1obw_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1obw_B" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1obw_C" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2au6_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2au7_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDQFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2au8_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2au9_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2auu_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4um4_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4um4_B" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4um4_C" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5h4f_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.54e-27" evalue="1.3e-24"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="3.1e-29" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_A" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+MNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_B" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+MNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_C" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+XNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_D" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+XNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_E" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+MNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_F" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+XNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_G" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+MNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_H" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+XNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_I" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+MNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_J" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+MNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_K" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+MNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3fq3_L" comment="" length="173">
+			<score strand="both" combined_pvalue="6.42e-26" evalue="1.9e-23"/>
+			<seg start="1">
+				<data>
+XNIDAISIGSNPPEDVNVIIEVPVGGQPIKYEMDKKAGALIVDRFLYTPMTYPGNYGFVPHTLSEDGDPIDVLVC
+NTRPLIPGCVINVRPIGVLVMEDNSGKDEKIIAVPSPHLTRRYEKIHDYTDMPEITLKQIAHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="4.5e-28" match="++++++++++++++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3d53_A" comment="" length="170">
+			<score strand="both" combined_pvalue="2.47e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XFIKKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3d53_B" comment="" length="170">
+			<score strand="both" combined_pvalue="2.47e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XFIKKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3d53_E" comment="" length="170">
+			<score strand="both" combined_pvalue="2.47e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3d53_F" comment="" length="170">
+			<score strand="both" combined_pvalue="2.47e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_B" comment="" length="170">
+			<score strand="both" combined_pvalue="2.47e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXXIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_D" comment="" length="170">
+			<score strand="both" combined_pvalue="2.47e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XFIKKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_E" comment="" length="170">
+			<score strand="both" combined_pvalue="2.47e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXXXXXXXXXXEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_G" comment="" length="170">
+			<score strand="both" combined_pvalue="2.47e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXXIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_H" comment="" length="170">
+			<score strand="both" combined_pvalue="2.47e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XFIKKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_L" comment="" length="170">
+			<score strand="both" combined_pvalue="2.47e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXXXXXXXXXXEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3d53_C" comment="" length="171">
+			<score strand="both" combined_pvalue="2.48e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XFIKKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3d53_D" comment="" length="171">
+			<score strand="both" combined_pvalue="2.48e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XFIKKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_A" comment="" length="171">
+			<score strand="both" combined_pvalue="2.48e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXXIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_C" comment="" length="171">
+			<score strand="both" combined_pvalue="2.48e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_F" comment="" length="171">
+			<score strand="both" combined_pvalue="2.48e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXXXXXXXXXNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_I" comment="" length="171">
+			<score strand="both" combined_pvalue="2.48e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXXXXXXXXXNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_J" comment="" length="171">
+			<score strand="both" combined_pvalue="2.48e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXXIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3emj_K" comment="" length="171">
+			<score strand="both" combined_pvalue="2.48e-24" evalue="7.3e-22"/>
+			<seg start="1">
+				<data>
+XXXXKIKAKANNNEINVIIEIPMNSGPIKYEFDKESGALFVDRFMQTTMSYPCNYGFIPDTLSNDGDPVDVLVVA
+HHPVVPGSVIKCRAIGVLMMEDESGLDEKIIAVPTSKLDITFDHIKELDDLCEMLKKRIVHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="1.7e-26" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3sw5_A" comment="" length="173">
+			<score strand="both" combined_pvalue="3.55e-24" evalue="1e-21"/>
+			<seg start="1">
+				<data>
+XNIKEIAVGKNPPEDVNVIVEVSLGGQPIKYEMDKKSGALFVDRFLYTSMVYPGNYGFVPHTLSEDGDPIDVLIC
+NTRPLLPGCVINVYPIGALIMEDDGGKDEKIIAIPTPKLTQRYNNIHDYTDLPEITLKQIEHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="2.5e-26" match="+++++++++++++++++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3sw5_B" comment="" length="173">
+			<score strand="both" combined_pvalue="3.55e-24" evalue="1e-21"/>
+			<seg start="1">
+				<data>
+XXIKEIAVGKNPPEDVNVIVEVSLGGQPIKYEMDKKSGALFVDRFLYTSMVYPGNYGFVPHTLSEDGDPIDVLIC
+NTRPLLPGCVINVYPIGALIMEDDGGKDEKIIAIPTPKLTQRYNNIHDYTDLPEITLKQIEHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="2.5e-26" match="+++++++++++++++++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3sw5_C" comment="" length="173">
+			<score strand="both" combined_pvalue="3.55e-24" evalue="1e-21"/>
+			<seg start="1">
+				<data>
+XXIKEIAVGKNPPEDVNVIVEVSLGGQPIKYEMDKKSGALFVDRFLYTSMVYPGNYGFVPHTLSEDGDPIDVLIC
+NTRPLLPGCVINVYPIGALIMEDDGGKDEKIIAIPTPKLTQRYNNIHDYTDLPEITLKQIEHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="2.5e-26" match="+++++++++++++++++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3sw5_D" comment="" length="173">
+			<score strand="both" combined_pvalue="3.55e-24" evalue="1e-21"/>
+			<seg start="1">
+				<data>
+XXIKEIAVGKNPPEDVNVIVEVSLGGQPIKYEMDKKSGALFVDRFLYTSMVYPGNYGFVPHTLSEDGDPIDVLIC
+NTRPLLPGCVINVYPIGALIMEDDGGKDEKIIAIPTPKLTQRYNNIHDYTDLPEITLKQIEHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="2.5e-26" match="+++++++++++++++++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3sw5_E" comment="" length="173">
+			<score strand="both" combined_pvalue="3.55e-24" evalue="1e-21"/>
+			<seg start="1">
+				<data>
+XXIKEIAVGKNPPEDVNVIVEVSLGGQPIKYEMDKKSGALFVDRFLYTSMVYPGNYGFVPHTLSEDGDPIDVLIC
+NTRPLLPGCVINVYPIGALIMEDDGGKDEKIIAIPTPKLTQRYNNIHDYTDLPEITLKQIEHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="2.5e-26" match="+++++++++++++++++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3sw5_F" comment="" length="173">
+			<score strand="both" combined_pvalue="3.55e-24" evalue="1e-21"/>
+			<seg start="1">
+				<data>
+XXIKEIAVGKNPPEDVNVIVEVSLGGQPIKYEMDKKSGALFVDRFLYTSMVYPGNYGFVPHTLSEDGDPIDVLIC
+NTRPLLPGCVINVYPIGALIMEDDGGKDEKIIAIPTPKLTQRYNNIHDYTDLPEITLKQIEHFFEHYKDLEPGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="2.5e-26" match="+++++++++++++++++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3d63_A" comment="" length="174">
+			<score strand="both" combined_pvalue="9.80e-24" evalue="2.9e-21"/>
+			<seg start="1">
+				<data>
+XXFSNVPAGKDLPQDFNVIIEIPAQSEPVKYEADKALGLLVVDRFIGTGMRYPVNYGFIPQTLSGDGDPVDVLVI
+TPFPLLAGSVVRARALGMLKMTDESGVDAKLVAVPHDKVCPMTANLKSIDDVPAYLKDQIKHFFEQYKALEKGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="6.8e-26" match="+++++++++++++++++++++++ +++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3d63_B" comment="" length="174">
+			<score strand="both" combined_pvalue="9.80e-24" evalue="2.9e-21"/>
+			<seg start="1">
+				<data>
+XXFSNVPAGKDLPQDFNVIIEIPAQSEPVKYEADKALGLLVVDRFIGTGMRYPVNYGFIPQTLSGDGDPVDVLVI
+TPFPLLAGSVVRARALGMLKMTDESGVDAKLVAVPHDKVCPMTANLKSIDDVPAYLKDQIKHFFEQYKALEKGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="6.8e-26" match="+++++++++++++++++++++++ +++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3d63_C" comment="" length="174">
+			<score strand="both" combined_pvalue="9.80e-24" evalue="2.9e-21"/>
+			<seg start="1">
+				<data>
+XXXSNVPAGKDLPQDFNVIIEIPAQSEPVKYEADKALGLLVVDRFIGTGMRYPVNYGFIPQTLSGDGDPVDVLVI
+TPFPLLAGSVVRARALGMLKMTDESGVDAKLVAVPHDKVCPMTANLKSIDDVPAYLKDQIKHFFEQYKALEKGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="6.8e-26" match="+++++++++++++++++++++++ +++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3eiy_A" comment="" length="174">
+			<score strand="both" combined_pvalue="9.80e-24" evalue="2.9e-21"/>
+			<seg start="1">
+				<data>
+XSFSNVPAGKDLPQDFNVIIEIPAQSEPVKYEADKALGLLVVDRFIGTGMRYPVNYGFIPQTLSGDGDPVDVLVI
+TPFPLLAGSVVRARALGMLKMTDESGVDAKLVAVPHDKVCPMTANLKSIDDVPAYLKDQIKHFFEQYKALEKGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="6.8e-26" match="+++++++++++++++++++++++ +++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3eiz_A" comment="" length="174">
+			<score strand="both" combined_pvalue="9.80e-24" evalue="2.9e-21"/>
+			<seg start="1">
+				<data>
+XSFSNVPAGKDLPQDFNVIIEIPAQSEPVKYEADKALGLLVVDRFIGTGMRYPVNYGFIPQTLSGDGDPVDVLVI
+TPFPLLAGSVVRARALGMLKMTDESGVDAKLVAVPHDKVCPMTANLKSIDDVPAYLKDQIKHFFEQYKALEKGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="6.8e-26" match="+++++++++++++++++++++++ +++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3ej0_A" comment="" length="174">
+			<score strand="both" combined_pvalue="9.80e-24" evalue="2.9e-21"/>
+			<seg start="1">
+				<data>
+XXFSNVPAGKDLPQDFNVIIEIPAQSEPVKYEADKALGLLVVDRFIGTGMRYPVNYGFIPQTLSGDGDPVDVLVI
+TPFPLLAGSVVRARALGMLKMTDESGVDAKLVAVPHDKVCPMTANLKSIDDVPAYLKDQIKHFFEQYKALEKGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="6.8e-26" match="+++++++++++++++++++++++ +++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3ej2_A" comment="" length="174">
+			<score strand="both" combined_pvalue="9.80e-24" evalue="2.9e-21"/>
+			<seg start="1">
+				<data>
+MSFSNVPAGKDLPQDFNVIIEIPAQSEPVKYEADKALGLLVVDRFIGTGMRYPVNYGFIPQTLSGDGDPVDVLVI
+TPFPLLAGSVVRARALGMLKMTDESGVDAKLVAVPHDKVCPMTANLKSIDDVPAYLKDQIKHFFEQYKALEKGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="6.8e-26" match="+++++++++++++++++++++++ +++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3gvf_A" comment="" length="174">
+			<score strand="both" combined_pvalue="9.80e-24" evalue="2.9e-21"/>
+			<seg start="1">
+				<data>
+XSFSNVPAGKDLPQDFNVIIEIPAQSEPVKYEADKALGLLVVDRFIGTGMRYPVNYGFIPQTLSGDGDPVDVLVI
+TPFPLLAGSVVRARALGMLKMTDESGVDAKLVAVPHDKVCPMTANLKSIDDVPAYLKDQIKHFFEQYKALEKGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="6.8e-26" match="+++++++++++++++++++++++ +++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6n1c_B" comment="" length="174">
+			<score strand="both" combined_pvalue="1.88e-23" evalue="5.6e-21"/>
+			<seg start="1">
+				<data>
+XXXXEIQSGRDVPNEVNVIIEIPMHGEPVKYEVDKKTGALFVDRFMTTAMFYPTNYGYIPNTLSEDGDPVDVLVI
+TPVPLISGAVISCRAVGMLKMTDESGVDAKILAVPTTKLSKMYQSMQTYQDIPQHLLLSIEHFFKHYKDLEEGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="1.3e-25" match="+++++++++++++++++++++++ +++ + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6n1c_D" comment="" length="175">
+			<score strand="both" combined_pvalue="1.90e-23" evalue="5.6e-21"/>
+			<seg start="1">
+				<data>
+XXXXXIQSGRDVPNEVNVIIEIPMHGEPVKYEVDKKTGALFVDRFMTTAMFYPTNYGYIPNTLSEDGDPVDVLVI
+TPVPLISGAVISCRAVGMLKMTDESGVDAKILAVPTTKLSKMYQSMQTYQDIPQHLLLSIEHFFKHYKDLEEGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="1.3e-25" match="+++++++++++++++++++++++ +++ + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6n1c_F" comment="" length="175">
+			<score strand="both" combined_pvalue="1.90e-23" evalue="5.6e-21"/>
+			<seg start="1">
+				<data>
+XXXXXIQSGRDVPNEVNVIIEIPMHGEPVKYEVDKKTGALFVDRFMTTAMFYPTNYGYIPNTLSEDGDPVDVLVI
+TPVPLISGAVISCRAVGMLKMTDESGVDAKILAVPTTKLSKMYQSMQTYQDIPQHLLLSIEHFFKHYKDLEEGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="1.3e-25" match="+++++++++++++++++++++++ +++ + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6n1c_C" comment="" length="176">
+			<score strand="both" combined_pvalue="1.91e-23" evalue="5.6e-21"/>
+			<seg start="1">
+				<data>
+XXXXXXXXXXDVPNEVNVIIEIPMHGEPVKYEVDKKTGALFVDRFMTTAMFYPTNYGYIPNTLSEDGDPVDVLVI
+TPVPLISGAVISCRAVGMLKMTDESGVDAKILAVPTTKLSKMYQSMQTYQDIPQHLLLSIEHFFKHYKDLEEGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="1.3e-25" match="+++++++++++++++++++++++ +++ + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6n1c_E" comment="" length="176">
+			<score strand="both" combined_pvalue="1.91e-23" evalue="5.6e-21"/>
+			<seg start="1">
+				<data>
+XXXMEIQSGRDVPNEVNVIIEIPMHGEPVKYEVDKKTGALFVDRFMTTAMFYPTNYGYIPNTLSEDGDPVDVLVI
+TPVPLISGAVISCRAVGMLKMTDESGVDAKILAVPTTKLSKMYQSMQTYQDIPQHLLLSIEHFFKHYKDLEEGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="1.3e-25" match="+++++++++++++++++++++++ +++ + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6n1c_A" comment="" length="177">
+			<score strand="both" combined_pvalue="1.92e-23" evalue="5.7e-21"/>
+			<seg start="1">
+				<data>
+XXXMEIQSGRDVPNEVNVIIEIPMHGEPVKYEVDKKTGALFVDRFMTTAMFYPTNYGYIPNTLSEDGDPVDVLVI
+TPVPLISGAVISCRAVGMLKMTDESGVDAKILAVPTTKLSKMYQSMQTYQDIPQHLLLSIEHFFKHYKDLEEGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="1.3e-25" match="+++++++++++++++++++++++ +++ + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1qez_A" comment="" length="1170">
+			<score strand="both" combined_pvalue="2.00e-23" evalue="5.9e-21"/>
+			<seg start="1051">
+				<data>
+NYGFIPGTLEEDGDPLDVLVITNYQLYPGSVIEVRPIGILYMKDEEGEDAKIVAVPKDKTDPSFSNIKDINDLPQ
+				</data>
+				<hit pos="1051" idx="0" pvalue="1.7e-26" match="++++++ ++ ++++++++++++ +++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1qez_B" comment="" length="2170">
+			<score strand="both" combined_pvalue="3.75e-23" evalue="1.1e-20"/>
+			<seg start="2026">
+				<data>
+KYEYDDEEGVIKVDRVLYTSMNYPFNYGFIPGTLEEDGDPLDVLVITNYQLYPGSVIEVRPIGILYMKDEEGEDA
+				</data>
+				<hit pos="2051" idx="0" pvalue="1.7e-26" match="++++++ ++ ++++++++++++ +++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1sxv_A" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z70_A" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z70_B" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z70_C" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z71_A" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z71_B" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z71_C" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z72_A" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_A" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_B" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_C" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_D" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_E" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_F" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_G" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_H" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_I" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_J" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_K" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z73_L" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_A" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_B" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_C" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_D" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_E" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_F" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_G" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_H" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_I" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_J" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_K" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4z74_L" comment="" length="158">
+			<score strand="both" combined_pvalue="5.09e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5kde_A" comment="" length="159">
+			<score strand="both" combined_pvalue="5.13e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5kdf_A" comment="" length="159">
+			<score strand="both" combined_pvalue="5.13e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1wcf_A" comment="" length="160">
+			<score strand="both" combined_pvalue="5.17e-23" evalue="1.5e-20"/>
+			<seg start="1">
+				<data>
+MQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFPGVLVAAR
+				</data>
+				<hit pos="41" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2uxs_A" comment="" length="165">
+			<score strand="both" combined_pvalue="5.37e-23" evalue="1.6e-20"/>
+			<seg start="1">
+				<data>
+XXXXXXGVQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFP
+GVLVAARPVGMFRMVDEHGGDDKVLCVPAGDPRWDHVQDIGDVPAFELDAIKHFFVHYKDLEPGKFVKAADWVDR
+				</data>
+				<hit pos="48" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2uxs_B" comment="" length="165">
+			<score strand="both" combined_pvalue="5.37e-23" evalue="1.6e-20"/>
+			<seg start="1">
+				<data>
+XXXXXXGVQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFP
+GVLVAARPVGMFRMVDEHGGDDKVLCVPAGDPRWDHVQDIGDVPAFELDAIKHFFVHYKDLEPGKFVKAADWVDR
+				</data>
+				<hit pos="48" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2uxs_C" comment="" length="165">
+			<score strand="both" combined_pvalue="5.37e-23" evalue="1.6e-20"/>
+			<seg start="1">
+				<data>
+XXXXXXGVQFDVTIEIPKGQRNKYEVDHETGRVRLDRYLYTPMAYPTDYGFIEDTLGDDGDPLDALVLLPQPVFP
+GVLVAARPVGMFRMVDEHGGDDKVLCVPAGDPRWDHVQDIGDVPAFELDAIKHFFVHYKDLEPGKFVKAADWVDR
+				</data>
+				<hit pos="48" idx="0" pvalue="3.9e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1qez_C" comment="" length="3170">
+			<score strand="both" combined_pvalue="5.49e-23" evalue="1.6e-20"/>
+			<seg start="3001">
+				<data>
+XKLSPGKNAPDVVNVLVEIPQGSNIKYEYDDEEGVIKVDRVLYTSMNYPFNYGFIPGTLEEDGDPLDVLVITNYQ
+LYPGSVIEVRPIGILYMKDEEGEDAKIVAVPKDKTDPSFSNIKDINDLPQATKNKIVHFFEHYKELEPGKYVKIS
+				</data>
+				<hit pos="3051" idx="0" pvalue="1.7e-26" match="++++++ ++ ++++++++++++ +++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4ecp_A" comment="" length="158">
+			<score strand="both" combined_pvalue="6.94e-23" evalue="2e-20"/>
+			<seg start="1">
+				<data>
+VQFDVTIEIPKGQRNKYEVDHKTGRVRLDRYLYTPMAYPTDYGFIEDTLGEDGDPLDALVLLPEPLFPGVLVEAR
+				</data>
+				<hit pos="41" idx="0" pvalue="5.4e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4ecp_B" comment="" length="160">
+			<score strand="both" combined_pvalue="7.05e-23" evalue="2.1e-20"/>
+			<seg start="1">
+				<data>
+VQFDVTIEIPKGQRNKYEVDHKTGRVRLDRYLYTPMAYPTDYGFIEDTLGEDGDPLDALVLLPEPLFPGVLVEAR
+				</data>
+				<hit pos="41" idx="0" pvalue="5.4e-25" match="+++++++++++++++++++++ ++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1qez_D" comment="" length="4170">
+			<score strand="both" combined_pvalue="7.24e-23" evalue="2.1e-20"/>
+			<seg start="4051">
+				<data>
+NYGFIPGTLEEDGDPLDVLVITNYQLYPGSVIEVRPIGILYMKDEEGEDAKIVAVPKDKTDPSFSNIKDINDLPQ
+				</data>
+				<hit pos="4051" idx="0" pvalue="1.7e-26" match="++++++ ++ ++++++++++++ +++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1qez_E" comment="" length="5170">
+			<score strand="both" combined_pvalue="8.99e-23" evalue="2.7e-20"/>
+			<seg start="5026">
+				<data>
+KYEYDDEEGVIKVDRVLYTSMNYPFNYGFIPGTLEEDGDPLDVLVITNYQLYPGSVIEVRPIGILYMKDEEGEDA
+				</data>
+				<hit pos="5051" idx="0" pvalue="1.7e-26" match="++++++ ++ ++++++++++++ +++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1qez_F" comment="" length="6170">
+			<score strand="both" combined_pvalue="1.07e-22" evalue="3.2e-20"/>
+			<seg start="6001">
+				<data>
+XKLSPGKNAPDVVNVLVEIPQGSNIKYEYDDEEGVIKVDRVLYTSMNYPFNYGFIPGTLEEDGDPLDVLVITNYQ
+LYPGSVIEVRPIGILYMKDEEGEDAKIVAVPKDKTDPSFSNIKDINDLPQATKNKIVHFFEHYKELEPGKYVKIS
+				</data>
+				<hit pos="6051" idx="0" pvalue="1.7e-26" match="++++++ ++ ++++++++++++ +++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3ld3_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.07e-22" evalue="1.2e-19"/>
+			<seg start="1">
+				<data>
+XXXXDIGSGSNAPEEVNVVIEVSQDSHPVKYEFDEKNGALWVDRFLPTAMYYPCNYGFIPNTIAGDGDPVDVLVL
+ARFPVMPGAVICVRPVGVLMMNDEKGEDAKVLAVPATKVDQYYGNIVNYSDLPSSFLDSISHFFSFYKKLEKDKF
+				</data>
+				<hit pos="55" idx="0" pvalue="2.8e-24" match="+++++++++++++++++++++ + +++++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3ld3_B" comment="" length="174">
+			<score strand="both" combined_pvalue="4.07e-22" evalue="1.2e-19"/>
+			<seg start="1">
+				<data>
+XXXXDIGSGSNAPEEVNVVIEVSQDSHPVKYEFDEKNGALWVDRFLPTAMYYPCNYGFIPNTIAGDGDPVDVLVL
+ARFPVMPGAVICVRPVGVLMMNDEKGEDAKVLAVPATKVDQYYGNIVNYSDLPSSFLDSISHFFSFYKKLEKDKF
+				</data>
+				<hit pos="55" idx="0" pvalue="2.8e-24" match="+++++++++++++++++++++ + +++++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2prd_A" comment="" length="173">
+			<score strand="both" combined_pvalue="3.36e-21" evalue="9.9e-19"/>
+			<seg start="1">
+				<data>
+ANLKSLPVGDKAPEVVHMVIEVPRGSGNKYEYDPDLGAIKLDRVLPGAQFYPGDYGFIPSTLAEDGDPLDGLVLS
+TYPLLPGVVVEVRVVGLLLMEDEKGGDAKVIGVVAEDQRLDHIQDIGDVPEGVKQEIQHFFETYKALEAKKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="2.3e-23" match="++++++ ++++++++++ ++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r5v_D" comment="" length="173">
+			<score strand="both" combined_pvalue="4.40e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r5v_E" comment="" length="173">
+			<score strand="both" combined_pvalue="4.40e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r5v_F" comment="" length="173">
+			<score strand="both" combined_pvalue="4.40e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ty5_C" comment="" length="173">
+			<score strand="both" combined_pvalue="4.40e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ty5_E" comment="" length="173">
+			<score strand="both" combined_pvalue="4.40e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ty5_F" comment="" length="173">
+			<score strand="both" combined_pvalue="4.40e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+XNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3i98_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3i98_B" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3i98_C" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3i98_D" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3i98_E" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+XNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3i98_F" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3q3l_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3q3l_B" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3q3l_C" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3q3l_D" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3q3l_E" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+XNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3q3l_F" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3q4w_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r5u_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r5u_B" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r5v_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r5v_B" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r5v_C" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ty5_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+XNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ty5_B" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ty5_D" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+XNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ucq_A" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ucq_C" comment="" length="174">
+			<score strand="both" combined_pvalue="4.43e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3q5v_B" comment="" length="175">
+			<score strand="both" combined_pvalue="4.46e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ucq_B" comment="" length="175">
+			<score strand="both" combined_pvalue="4.46e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3q46_A" comment="" length="177">
+			<score strand="both" combined_pvalue="4.52e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKATGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3q5v_A" comment="" length="177">
+			<score strand="both" combined_pvalue="4.52e-21" evalue="1.3e-18"/>
+			<seg start="1">
+				<data>
+MNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIMVI
+MREPVYPLTIIEARPIGIMKMEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="3.1e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5tea_E" comment="" length="174">
+			<score strand="both" combined_pvalue="6.62e-21" evalue="2e-18"/>
+			<seg start="1">
+				<data>
+XXDFNQILTPGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRIEPAIFAKPTNYGFIPQTLDEDGDELDVLL
+VTEQPLATGVFLEARVIGVMKFVDDGEVDDKIVCVPADDRNNGNAYKTLSDLPQQLIKQIEFHFNHYKDLKKAGT
+				</data>
+				<hit pos="56" idx="0" pvalue="4.6e-23" match="++++++++++++++ ++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5tea_A" comment="" length="175">
+			<score strand="both" combined_pvalue="6.67e-21" evalue="2e-18"/>
+			<seg start="1">
+				<data>
+XXXFNQILTPGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRIEPAIFAKPTNYGFIPQTLDEDGDELDVLL
+VTEQPLATGVFLEARVIGVMKFVDDGEVDDKIVCVPADDRNNGNAYKTLSDLPQQLIKQIEFHFNHYKDLKKAGT
+				</data>
+				<hit pos="56" idx="0" pvalue="4.6e-23" match="++++++++++++++ ++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5tea_B" comment="" length="175">
+			<score strand="both" combined_pvalue="6.67e-21" evalue="2e-18"/>
+			<seg start="1">
+				<data>
+XXDFNQILTPGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRIEPAIFAKPTNYGFIPQTLDEDGDELDVLL
+VTEQPLATGVFLEARVIGVMKFVDDGEVDDKIVCVPADDRNNGNAYKTLSDLPQQLIKQIEFHFNHYKDLKKAGT
+				</data>
+				<hit pos="56" idx="0" pvalue="4.6e-23" match="++++++++++++++ ++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5tea_C" comment="" length="175">
+			<score strand="both" combined_pvalue="6.67e-21" evalue="2e-18"/>
+			<seg start="1">
+				<data>
+XXDFNQILTPGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRIEPAIFAKPTNYGFIPQTLDEDGDELDVLL
+VTEQPLATGVFLEARVIGVMKFVDDGEVDDKIVCVPADDRNNGNAYKTLSDLPQQLIKQIEFHFNHYKDLKKAGT
+				</data>
+				<hit pos="56" idx="0" pvalue="4.6e-23" match="++++++++++++++ ++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5tea_D" comment="" length="175">
+			<score strand="both" combined_pvalue="6.67e-21" evalue="2e-18"/>
+			<seg start="1">
+				<data>
+XXDFNQILTPGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRIEPAIFAKPTNYGFIPQTLDEDGDELDVLL
+VTEQPLATGVFLEARVIGVMKFVDDGEVDDKIVCVPADDRNNGNAYKTLSDLPQQLIKQIEFHFNHYKDLKKAGT
+				</data>
+				<hit pos="56" idx="0" pvalue="4.6e-23" match="++++++++++++++ ++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5tea_F" comment="" length="175">
+			<score strand="both" combined_pvalue="6.67e-21" evalue="2e-18"/>
+			<seg start="1">
+				<data>
+XXDFNQILTPGDVDGGIINVVNEIPAGSNHKIEWNRKLAAFQLDRIEPAIFAKPTNYGFIPQTLDEDGDELDVLL
+VTEQPLATGVFLEARVIGVMKFVDDGEVDDKIVCVPADDRNNGNAYKTLSDLPQQLIKQIEFHFNHYKDLKKAGT
+				</data>
+				<hit pos="56" idx="0" pvalue="4.6e-23" match="++++++++++++++ ++++ ++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ude_B" comment="" length="170">
+			<score strand="both" combined_pvalue="8.40e-21" evalue="2.5e-18"/>
+			<seg start="1">
+				<data>
+XXXFHDLEPGPNVPEVVYALIEIPKGSRNKYELDKETGLLKLDRVLYTPFHYPVDYGIIPRTWYEDGDPFDIMVI
+MREPTYPLTIIEARPIGLFKMIDSGDKDYKVLAVPVEDPYFKDWKDISDVPKAFLDEIAHFFKRYKELEXGKEII
+				</data>
+				<hit pos="55" idx="0" pvalue="6.0e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ude_C" comment="" length="170">
+			<score strand="both" combined_pvalue="8.40e-21" evalue="2.5e-18"/>
+			<seg start="1">
+				<data>
+XXXFHDLEPGPNVPEVVYALIEIPKGSRNKYELDKETGLLKLDRVLYTPFHYPVDYGIIPRTWYEDGDPFDIMVI
+MREPTYPLTIIEARPIGLFKMIDSGDKDYKVLAVPVEDPYFKDWKDISDVPKAFLDEIAHFFKRYKELEXGKEII
+				</data>
+				<hit pos="55" idx="0" pvalue="6.0e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ude_A" comment="" length="171">
+			<score strand="both" combined_pvalue="8.46e-21" evalue="2.5e-18"/>
+			<seg start="1">
+				<data>
+XXXFHDLEPGPNVPEVVYALIEIPKGSRNKYELDKETGLLKLDRVLYTPFHYPVDYGIIPRTWYEDGDPFDIMVI
+MREPTYPLTIIEARPIGLFKMIDSGDKDYKVLAVPVEDPYFKDWKDISDVPKAFLDEIAHFFKRYKELEXGKEII
+				</data>
+				<hit pos="55" idx="0" pvalue="6.0e-23" match="+++ ++++++++++++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3i4q_A" comment="" length="174">
+			<score strand="both" combined_pvalue="1.66e-20" evalue="4.9e-18"/>
+			<seg start="1">
+				<data>
+XXYNTIPAGKDLPNDIYVAIEIPANASPIKYEIDXXXDALLVDRFXATPXFYPANYGYINNTLADDGDALDVLVI
+TPYPVAPGSVIRARPVGVLKXSDEAGGDEKLLAVPHEKLTQLYNDIHDIDDVPQLLKDQIVHFFEHYKDLEXGKW
+				</data>
+				<hit pos="55" idx="0" pvalue="1.1e-22" match="++++++++++++++ +++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1mjx_A" comment="" length="174">
+			<score strand="both" combined_pvalue="3.14e-20" evalue="9.3e-18"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLNGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="2.2e-22" match="+++++++++++ ++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1mjx_B" comment="" length="174">
+			<score strand="both" combined_pvalue="3.14e-20" evalue="9.3e-18"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLNGDPVDVLVPT
+PYPLQPGSVIRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="2.2e-22" match="+++++++++++ ++++++++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1mjy_A" comment="" length="174">
+			<score strand="both" combined_pvalue="3.14e-20" evalue="9.3e-18"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVNVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="2.2e-22" match="++++++++++++++++ +++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1mjy_B" comment="" length="174">
+			<score strand="both" combined_pvalue="3.14e-20" evalue="9.3e-18"/>
+			<seg start="1">
+				<data>
+SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVNVLVPT
+PYPLQPGSVTRCRPVGVLKMTDEAGEDAKLVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLEKGKWV
+				</data>
+				<hit pos="54" idx="0" pvalue="2.2e-22" match="++++++++++++++++ +++++++++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ygz_A" comment="" length="171">
+			<score strand="both" combined_pvalue="8.60e-19" evalue="2.5e-16"/>
+			<seg start="1">
+				<data>
+XNLEKLEVSHDADSLCVVIEISKHSNIKYELDKESGALXVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+VAFQAGSVVKARLVGVLNXEDESGXDEKLIALPIDKIDPTHSYVKDIDDLSKHTLDKIKHFFETYKDLEPNKWVK
+				</data>
+				<hit pos="53" idx="0" pvalue="6.1e-21" match="++++++++++ ++++++++++++  ++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ygz_B" comment="" length="171">
+			<score strand="both" combined_pvalue="8.60e-19" evalue="2.5e-16"/>
+			<seg start="1">
+				<data>
+XNLEKLEVSHDADSLCVVIEISKHSNIKYELDKESGALXVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+VAFQAGSVVKARLVGVLNXEDESGXDEKLIALPIDKIDPTHSYVKDIDDLSKHTLDKIKHFFETYKDLEPNKWVK
+				</data>
+				<hit pos="53" idx="0" pvalue="6.1e-21" match="++++++++++ ++++++++++++  ++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ygz_C" comment="" length="171">
+			<score strand="both" combined_pvalue="8.60e-19" evalue="2.5e-16"/>
+			<seg start="1">
+				<data>
+XNLEKLEVSHDADSLCVVIEISKHSNIKYELDKESGALXVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+VAFQAGSVVKARLVGVLNXEDESGXDEKLIALPIDKIDPTHSYVKDIDDLSKHTLDKIKHFFETYKDLEPNKWVK
+				</data>
+				<hit pos="53" idx="0" pvalue="6.1e-21" match="++++++++++ ++++++++++++  ++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ygz_D" comment="" length="171">
+			<score strand="both" combined_pvalue="8.60e-19" evalue="2.5e-16"/>
+			<seg start="1">
+				<data>
+XNLEKLEVSHDADSLCVVIEISKHSNIKYELDKESGALXVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+VAFQAGSVVKARLVGVLNXEDESGXDEKLIALPIDKIDPTHSYVKDIDDLSKHTLDKIKHFFETYKDLEPNKWVK
+				</data>
+				<hit pos="53" idx="0" pvalue="6.1e-21" match="++++++++++ ++++++++++++  ++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ygz_E" comment="" length="171">
+			<score strand="both" combined_pvalue="8.60e-19" evalue="2.5e-16"/>
+			<seg start="1">
+				<data>
+XNLEKLEVSHDADSLCVVIEISKHSNIKYELDKESGALXVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+VAFQAGSVVKARLVGVLNXEDESGXDEKLIALPIDKIDPTHSYVKDIDDLSKHTLDKIKHFFETYKDLEPNKWVK
+				</data>
+				<hit pos="53" idx="0" pvalue="6.1e-21" match="++++++++++ ++++++++++++  ++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ygz_F" comment="" length="171">
+			<score strand="both" combined_pvalue="8.60e-19" evalue="2.5e-16"/>
+			<seg start="1">
+				<data>
+XNLEKLEVSHDADSLCVVIEISKHSNIKYELDKESGALXVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+VAFQAGSVVKARLVGVLNXEDESGXDEKLIALPIDKIDPTHSYVKDIDDLSKHTLDKIKHFFETYKDLEPNKWVK
+				</data>
+				<hit pos="53" idx="0" pvalue="6.1e-21" match="++++++++++ ++++++++++++  ++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2bqx_A" comment="" length="171">
+			<score strand="both" combined_pvalue="8.60e-19" evalue="2.5e-16"/>
+			<seg start="1">
+				<data>
+XXXXXXEVSHDADSLCVVIEISKHSNIKYELDKESGALMVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+VAFQAGSVVKARLVGVLNMEDESGMDEKLIALPIDKIDPTHSYVKDIDDLSKHTLDKIKHFFETYKDLEPNKWVK
+				</data>
+				<hit pos="53" idx="0" pvalue="6.1e-21" match="++++++++++ ++++++++++++  ++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2bqy_A" comment="" length="172">
+			<score strand="both" combined_pvalue="8.66e-19" evalue="2.6e-16"/>
+			<seg start="1">
+				<data>
+XXXEKLEVSHDADSLCVVIEISKHSNIKYELDKESGALMVDRVLYGAQNYPANYGFVPNTLGSDGDPVDALVLSD
+VAFQAGSVVKARLVGVLNMEDESGMDEKLIALPIDKIDPTHSYVKDIDDLSKHTLDKIKHFFETYKDLEPNKWVK
+				</data>
+				<hit pos="53" idx="0" pvalue="6.1e-21" match="++++++++++ ++++++++++++  ++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3tr4_C" comment="" length="170">
+			<score strand="both" combined_pvalue="1.07e-18" evalue="3.1e-16"/>
+			<seg start="1">
+				<data>
+XXXLVSAGKGIDDFNVIIEIPANGGEVKYEYDKELGFLTVDRFXPTSXRYPCNYGFVPSTLAQDGDPLDVLVLTP
+VPVQPGVLXRVRALGIXKXEDEAGEDSKVLAVPVVKACRAYEAIQSLKDISSLLLDAISHFFERYKDLEPNKWAK
+				</data>
+				<hit pos="53" idx="0" pvalue="7.6e-21" match="++++++ +++ ++++++++++++ ++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3tr4_D" comment="" length="171">
+			<score strand="both" combined_pvalue="1.07e-18" evalue="3.2e-16"/>
+			<seg start="1">
+				<data>
+XXXXVSAGKGIDDFNVIIEIPANGGEVKYEYDKELGFLTVDRFXPTSXRYPCNYGFVPSTLAQDGDPLDVLVLTP
+VPVQPGVLXRVRALGIXKXEDEAGEDSKVLAVPVVKACRAYEAIQSLKDISSLLLDAISHFFERYKDLEPNKWAK
+				</data>
+				<hit pos="53" idx="0" pvalue="7.6e-21" match="++++++ +++ ++++++++++++ ++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3tr4_A" comment="" length="172">
+			<score strand="both" combined_pvalue="1.08e-18" evalue="3.2e-16"/>
+			<seg start="1">
+				<data>
+XXXXVSAGKGIDDFNVIIEIPANGGEVKYEYDKELGFLTVDRFXPTSXRYPCNYGFVPSTLAQDGDPLDVLVLTP
+VPVQPGVLXRVRALGIXKXEDEAGEDSKVLAVPVVKACRAYEAIQSLKDISSLLLDAISHFFERYKDLEPNKWAK
+				</data>
+				<hit pos="53" idx="0" pvalue="7.6e-21" match="++++++ +++ ++++++++++++ ++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3tr4_F" comment="" length="172">
+			<score strand="both" combined_pvalue="1.08e-18" evalue="3.2e-16"/>
+			<seg start="1">
+				<data>
+XXXLVSAGKGIDDFNVIIEIPANGGEVKYEYDKELGFLTVDRFXPTSXRYPCNYGFVPSTLAQDGDPLDVLVLTP
+VPVQPGVLXRVRALGIXKXEDEAGEDSKVLAVPVVKACRAYEAIQSLKDISSLLLDAISHFFERYKDLEPNKWAK
+				</data>
+				<hit pos="53" idx="0" pvalue="7.6e-21" match="++++++ +++ ++++++++++++ ++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3tr4_B" comment="" length="173">
+			<score strand="both" combined_pvalue="1.09e-18" evalue="3.2e-16"/>
+			<seg start="1">
+				<data>
+XXXLVSAGKGIDDFNVIIEIPANGGEVKYEYDKELGFLTVDRFXPTSXRYPCNYGFVPSTLAQDGDPLDVLVLTP
+VPVQPGVLXRVRALGIXKXEDEAGEDSKVLAVPVVKACRAYEAIQSLKDISSLLLDAISHFFERYKDLEPNKWAK
+				</data>
+				<hit pos="53" idx="0" pvalue="7.6e-21" match="++++++ +++ ++++++++++++ ++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3tr4_E" comment="" length="173">
+			<score strand="both" combined_pvalue="1.09e-18" evalue="3.2e-16"/>
+			<seg start="1">
+				<data>
+XXXLVSAGKGIDDFNVIIEIPANGGEVKYEYDKELGFLTVDRFXPTSXRYPCNYGFVPSTLAQDGDPLDVLVLTP
+VPVQPGVLXRVRALGIXKXEDEAGEDSKVLAVPVVKACRAYEAIQSLKDISSLLLDAISHFFERYKDLEPNKWAK
+				</data>
+				<hit pos="53" idx="0" pvalue="7.6e-21" match="++++++ +++ ++++++++++++ ++++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3lo0_A" comment="" length="169">
+			<score strand="both" combined_pvalue="2.00e-17" evalue="5.9e-15"/>
+			<seg start="1">
+				<data>
+XXXDNVTGGDNVPKEINVIIEISQNSCPVKYEFDKEKNLFCVDRFLPTSMYYPCNYGFIPHTCAGDGDPVDVLVA
+SRFPVMSGAVIRARPVGVLVMHDXXXEDVKILAVPTHKVDQYYNNIKDYSDFPVSFLNSISHFFTFYXXXXXXXX
+				</data>
+				<hit pos="55" idx="0" pvalue="1.4e-19" match="++++++++++++++++++++ ++ +++ + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6c45_B" comment="" length="284">
+			<score strand="both" combined_pvalue="1.41e-16" evalue="4.2e-14"/>
+			<seg start="76">
+				<data>
+GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIGVKVLGILAMIDEG
+				</data>
+				<hit pos="105" idx="0" pvalue="5.5e-19" match="++++ ++++++++++++++++++++++++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6c45_D" comment="" length="284">
+			<score strand="both" combined_pvalue="1.41e-16" evalue="4.2e-14"/>
+			<seg start="76">
+				<data>
+GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIGVKVLGILAMIDEG
+				</data>
+				<hit pos="105" idx="0" pvalue="5.5e-19" match="++++ ++++++++++++++++++++++++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6c45_C" comment="" length="286">
+			<score strand="both" combined_pvalue="1.42e-16" evalue="4.2e-14"/>
+			<seg start="76">
+				<data>
+GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIGVKVLGILAMIDEG
+				</data>
+				<hit pos="105" idx="0" pvalue="5.5e-19" match="++++ ++++++++++++++++++++++++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="6c45_A" comment="" length="287">
+			<score strand="both" combined_pvalue="1.42e-16" evalue="4.2e-14"/>
+			<seg start="76">
+				<data>
+GKLRYVANLFPYKGYIWNYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIGVKVLGILAMIDEG
+				</data>
+				<hit pos="105" idx="0" pvalue="5.5e-19" match="++++ ++++++++++++++++++++++++ "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r6e_A" comment="" length="174">
+			<score strand="both" combined_pvalue="6.83e-16" evalue="2e-13"/>
+			<seg start="1">
+				<data>
+XNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIXVI
+XREPVYPLTIIEARPIGIXKXEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="4.7e-18" match="+++ ++++++++++++++ ++ ++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r6e_B" comment="" length="174">
+			<score strand="both" combined_pvalue="6.83e-16" evalue="2e-13"/>
+			<seg start="1">
+				<data>
+XNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIXVI
+XREPVYPLTIIEARPIGIXKXEXXXDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="4.7e-18" match="+++ ++++++++++++++ ++ ++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r6e_C" comment="" length="174">
+			<score strand="both" combined_pvalue="6.83e-16" evalue="2e-13"/>
+			<seg start="1">
+				<data>
+XNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIXVI
+XREPVYPLTIIEARPIGIXKXEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="4.7e-18" match="+++ ++++++++++++++ ++ ++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r6e_D" comment="" length="174">
+			<score strand="both" combined_pvalue="6.83e-16" evalue="2e-13"/>
+			<seg start="1">
+				<data>
+XNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIXVI
+XREPVYPLTIIEARPIGIXKXEDXXDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="4.7e-18" match="+++ ++++++++++++++ ++ ++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r6e_E" comment="" length="174">
+			<score strand="both" combined_pvalue="6.83e-16" evalue="2e-13"/>
+			<seg start="1">
+				<data>
+XNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIXVI
+XREPVYPLTIIEARPIGIXKXXXXXXKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="4.7e-18" match="+++ ++++++++++++++ ++ ++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="3r6e_F" comment="" length="174">
+			<score strand="both" combined_pvalue="6.83e-16" evalue="2e-13"/>
+			<seg start="1">
+				<data>
+XNPFHELEPGPEVPEVVYALIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPQTWYDDGDPFDIXVI
+XREPVYPLTIIEARPIGIXKXEDSGDKDWKVLAVPVEDPYFNDWKDISDVPKAFLDEIAHFFQRYKELQGKTTKI
+				</data>
+				<hit pos="55" idx="0" pvalue="4.7e-18" match="+++ ++++++++++++++ ++ ++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1huj_A" comment="" length="280">
+			<score strand="both" combined_pvalue="9.96e-16" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1huj_B" comment="" length="280">
+			<score strand="both" combined_pvalue="9.96e-16" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1huk_A" comment="" length="280">
+			<score strand="both" combined_pvalue="9.96e-16" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1huk_B" comment="" length="280">
+			<score strand="both" combined_pvalue="9.96e-16" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1m38_A" comment="" length="281">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1m38_B" comment="" length="281">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1wgi_B" comment="" length="281">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1wgj_A" comment="" length="281">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1wgj_B" comment="" length="281">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ypp_A" comment="" length="281">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1ypp_B" comment="" length="281">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="8prk_A" comment="" length="281">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="2.9e-13"/>
+			<seg start="76">
+				<data>
+KLKFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1e9g_B" comment="" length="282">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="3e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1wgi_A" comment="" length="282">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="3e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ihp_B" comment="" length="282">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="3e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik1_B" comment="" length="282">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="3e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNFGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik9_B" comment="" length="282">
+			<score strand="both" combined_pvalue="1.00e-15" evalue="3e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1e6a_A" comment="" length="283">
+			<score strand="both" combined_pvalue="1.01e-15" evalue="3e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1e9g_A" comment="" length="283">
+			<score strand="both" combined_pvalue="1.01e-15" evalue="3e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik0_B" comment="" length="285">
+			<score strand="both" combined_pvalue="1.02e-15" evalue="3e-13"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1twl_A" comment="" length="173">
+			<score strand="both" combined_pvalue="1.03e-15" evalue="3e-13"/>
+			<seg start="1">
+				<data>
+XNPFHDLEPGPDVPEVVYAIIEIPKGSRNKYELDKKTGLLKLDRVLYSPFFYPVDYGIIPRTWYEXDDPFDIMVI
+MREPVYPLTIIEARPIGLFKMIDSGDKDYKVLAVPVEDPYFKDWKDIDDVPKAFLDEIAHFFKRYKELQGKEIIV
+				</data>
+				<hit pos="55" idx="0" pvalue="7.2e-18" match="+++ +++++++  +++++++++++++++ +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1e6a_B" comment="" length="1281">
+			<score strand="both" combined_pvalue="4.97e-15" evalue="1.5e-12"/>
+			<seg start="1051">
+				<data>
+RWTNAKLEITKEETLNPIIQDTKKGKLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIDVLEIG
+ETIAYTGQVKQVKALGIMALLDEGETDWKVIAIDINDPLAPKLNDIEDVEKYFPGLLRATNEWFRIYKIPDGKPE
+				</data>
+				<hit pos="1104" idx="0" pvalue="4.0e-18" match="+  ++++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik7_A" comment="" length="280">
+			<score strand="both" combined_pvalue="1.02e-12" evalue="3e-10"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPINVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.1e-15" match="+  ++++++ ++++++ ++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="117e_A" comment="" length="281">
+			<score strand="both" combined_pvalue="1.02e-12" evalue="3e-10"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNEPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.1e-15" match="+  ++++++ +++ +++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik2_B" comment="" length="281">
+			<score strand="both" combined_pvalue="1.02e-12" evalue="3e-10"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGENDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.1e-15" match="+  ++++++ + +++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik6_B" comment="" length="281">
+			<score strand="both" combined_pvalue="1.02e-12" evalue="3e-10"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPIEVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.1e-15" match="+  ++++++ ++++++ ++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik7_B" comment="" length="281">
+			<score strand="both" combined_pvalue="1.02e-12" evalue="3e-10"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNDPINVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.1e-15" match="+  ++++++ ++++++ ++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik4_B" comment="" length="283">
+			<score strand="both" combined_pvalue="1.03e-12" evalue="3e-10"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNEPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="4.1e-15" match="+  ++++++ +++ +++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="117e_B" comment="" length="1281">
+			<score strand="both" combined_pvalue="5.08e-12" evalue="1.5e-09"/>
+			<seg start="1051">
+				<data>
+RWTNAKLEITKEETLNPIIQDTKKGKLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNEPIDVLEIG
+ETIAYTGQVKQVKALGIMALLDEGETDWKVIAIDINDPLAPKLNDIEDVEKYFPGLLRATNEWFRIYKIPDGKPE
+				</data>
+				<hit pos="1104" idx="0" pvalue="4.1e-15" match="+  ++++++ +++ +++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik9_A" comment="" length="281">
+			<score strand="both" combined_pvalue="9.31e-12" evalue="2.7e-09"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNXXXXETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="3.7e-14" match="+    ++++ +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1pyp_A" comment="" length="280">
+			<score strand="both" combined_pvalue="9.02e-11" evalue="2.7e-08"/>
+			<seg start="76">
+				<data>
+LRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNNPIDVLQIGETIAYTGQVKEVKALGIMALLDEGET
+				</data>
+				<hit pos="103" idx="0" pvalue="3.6e-13" match="+  ++++++ +++ +++++ +++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="1pyp_B" comment="" length="280">
+			<score strand="both" combined_pvalue="9.02e-11" evalue="2.7e-08"/>
+			<seg start="76">
+				<data>
+LRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNNPIDVLQIGETIAYTGQVKEVKALGIMALLDEGET
+				</data>
+				<hit pos="103" idx="0" pvalue="3.6e-13" match="+  ++++++ +++ +++++ +++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ihp_A" comment="" length="281">
+			<score strand="both" combined_pvalue="1.67e-09" evalue="4.9e-07"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNXXXXXXXAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="6.6e-12" match="+       + +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4qlz_B" comment="" length="282">
+			<score strand="both" combined_pvalue="2.00e-09" evalue="5.9e-07"/>
+			<seg start="76">
+				<data>
+RYIYNVFPHKGYIWNYGALPQTWEDPSYVDEDTKAKGDNDPIDVCEIGSKIWPSGSVIPVKVLGILGMIDEGETD
+				</data>
+				<hit pos="102" idx="0" pvalue="7.9e-12" match=" + +  ++++++++++++++++++    ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4qmb_B" comment="" length="282">
+			<score strand="both" combined_pvalue="2.00e-09" evalue="5.9e-07"/>
+			<seg start="76">
+				<data>
+RYIYNVFPHKGYIWNYGALPQTWEDPSYVDEDTKAKGDNDPIDVCEIGSKIWPSGSVIPVKVLGILGMIDEGETD
+				</data>
+				<hit pos="102" idx="0" pvalue="7.9e-12" match=" + +  ++++++++++++++++++    ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4qlz_A" comment="" length="283">
+			<score strand="both" combined_pvalue="2.01e-09" evalue="5.9e-07"/>
+			<seg start="76">
+				<data>
+RYIYNVFPHKGYIWNYGALPQTWEDPSYVDEDTKAKGDNDPIDVCEIGSKIWPSGSVIPVKVLGILGMIDEGETD
+				</data>
+				<hit pos="102" idx="0" pvalue="7.9e-12" match=" + +  ++++++++++++++++++    ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="4qmb_A" comment="" length="283">
+			<score strand="both" combined_pvalue="2.01e-09" evalue="5.9e-07"/>
+			<seg start="76">
+				<data>
+RYIYNVFPHKGYIWNYGALPQTWEDPSYVDEDTKAKGDNDPIDVCEIGSKIWPSGSVIPVKVLGILGMIDEGETD
+				</data>
+				<hit pos="102" idx="0" pvalue="7.9e-12" match=" + +  ++++++++++++++++++    ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik2_A" comment="" length="281">
+			<score strand="both" combined_pvalue="1.68e-08" evalue="5e-06"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHXXXXXXGENDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="6.7e-11" match="+  +      + +++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik1_A" comment="" length="281">
+			<score strand="both" combined_pvalue="2.15e-08" evalue="6.3e-06"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNFGAFPQTWEDPNXXXXXXXXXGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="8.5e-11" match="+         +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5cuv_B" comment="" length="409">
+			<score strand="both" combined_pvalue="4.30e-08" evalue="1.3e-05"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGEPFNPIKQDIKNGVPRFYKHGDXXWNYGALPQTWESTDVVFEGGYVGDNDPIDAIEI
+GXTQFKVGQVGAVKVLGILGXIDDGQXDWKVICISHNDPICRFLKDIHDVPKFLPGCLDAIHEWFRVYKICQGGV
+				</data>
+				<hit pos="280" idx="0" pvalue="1.1e-10" match="     + ++ ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5cuv_A" comment="" length="413">
+			<score strand="both" combined_pvalue="4.35e-08" evalue="1.3e-05"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGEPFNPIKQDIKNGVPRFYKHGDXXWNYGALPQTWESTDVVFEGGYVGDNDPIDAIEI
+GXTQFKVGQVGAVKVLGILGXIDDGQXDWKVICISHNDPICRFLKDIHDVPKFLPGCLDAIHEWFRVYKICQGGV
+				</data>
+				<hit pos="280" idx="0" pvalue="1.1e-10" match="     + ++ ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wru_A" comment="" length="379">
+			<score strand="both" combined_pvalue="5.69e-08" evalue="1.7e-05"/>
+			<seg start="151">
+				<data>
+DKKKGKLRYYHNSIYWNYGALPQTYEYPKHIYQNXXXXXKEALLFTGDNDPLDILDIGSACLKIGQVVPVKILGA
+				</data>
+				<hit pos="187" idx="0" pvalue="1.6e-10" match="          +++++++++ +++  +  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wru_C" comment="" length="378">
+			<score strand="both" combined_pvalue="1.20e-07" evalue="3.5e-05"/>
+			<seg start="151">
+				<data>
+DKKKGKLRYYHNSIYWNYGALPQTYEYPKHIYQNXXXXXXEALLFTGDNDPLDILDIGSACLKIGQVVPVKILGA
+				</data>
+				<hit pos="187" idx="0" pvalue="3.4e-10" match="          +++++++++ +++  +  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wru_E" comment="" length="378">
+			<score strand="both" combined_pvalue="1.20e-07" evalue="3.5e-05"/>
+			<seg start="151">
+				<data>
+DKKKGKLRYYHNSIYWNYGALPQTYEYPKHIYQNKXXXXXEALLFTGDNDPLDILDIGSACLKIGQVVPVKILGA
+				</data>
+				<hit pos="187" idx="0" pvalue="3.4e-10" match="          +++++++++ +++  +  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik0_A" comment="" length="282">
+			<score strand="both" combined_pvalue="1.60e-07" evalue="4.7e-05"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPXXXXXXXXXVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEXE
+				</data>
+				<hit pos="104" idx="0" pvalue="6.3e-10" match="          +++++++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wru_B" comment="" length="379">
+			<score strand="both" combined_pvalue="2.14e-07" evalue="6.3e-05"/>
+			<seg start="151">
+				<data>
+DKKKGKLRYYHNSIYWNYGALPQTYEYPKHIYQNXXXXXXXALLFTGDNDPLDILDIGSACLKIGQVVPVKILGA
+				</data>
+				<hit pos="187" idx="0" pvalue="6.1e-10" match="          +++++++++ +++  +  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wru_D" comment="" length="379">
+			<score strand="both" combined_pvalue="2.14e-07" evalue="6.3e-05"/>
+			<seg start="151">
+				<data>
+DKKKGKLRYYHNSIYWNYGALPQTYEYPKHIYQNXXXXXXXALLFTGDNDPLDILDIGSACLKIGQVVPVKILGA
+				</data>
+				<hit pos="187" idx="0" pvalue="6.1e-10" match="          +++++++++ +++  +  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5cux_A" comment="" length="407">
+			<score strand="both" combined_pvalue="3.12e-07" evalue="9.2e-05"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGEPFNPIKQDIKNGVPRFYKHGDMMWNYGALPQTWESTDVVFEGGYVGDNDPIDAIEI
+GMTQFKVGQVGAVKVLGILGMIDDGQMDWKVICISHNDPICRFLKDIHDVPKFLPGCLDAIHEWFRVYKICQGGV
+				</data>
+				<hit pos="280" idx="0" pvalue="8.3e-10" match="     + ++ ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5cux_B" comment="" length="407">
+			<score strand="both" combined_pvalue="3.12e-07" evalue="9.2e-05"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGEPFNPIKQDIKNGVPRFYKHGDMMWNYGALPQTWESTDVVFEGGYVGDNDPIDAIEI
+GMTQFKVGQVGAVKVLGILGMIDDGQMDWKVICISHNDPICRFLKDIHDVPKFLPGCLDAIHEWFRVYKICQGGV
+				</data>
+				<hit pos="280" idx="0" pvalue="8.3e-10" match="     + ++ ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5cuu_A" comment="" length="409">
+			<score strand="both" combined_pvalue="3.14e-07" evalue="9.3e-05"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGEPFNPIKQDIKNGVPRFYKHGDMMWNYGALPQTWESTDVVFEGGYVGDNDPIDAIEI
+GMTQFKVGQVGAVKVLGILGMIDDGQMDWKVICISHNDPICRFLKDIHDVPKFLPGCLDAIHEWFRVYKICQGGV
+				</data>
+				<hit pos="280" idx="0" pvalue="8.3e-10" match="     + ++ ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5cuu_B" comment="" length="409">
+			<score strand="both" combined_pvalue="3.14e-07" evalue="9.3e-05"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGEPFNPIKQDIKNGVPRFYKHGDMMWNYGALPQTWESTDVVFEGGYVGDNDPIDAIEI
+GMTQFKVGQVGAVKVLGILGMIDDGQMDWKVICISHNDPICRFLKDIHDVPKFLPGCLDAIHEWFRVYKICQGGV
+				</data>
+				<hit pos="280" idx="0" pvalue="8.3e-10" match="     + ++ ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wta_A" comment="" length="585">
+			<score strand="both" combined_pvalue="2.37e-06" evalue="0.0007"/>
+			<seg start="301">
+				<data>
+GKDIEYDTEFTIDNKVKKGDTMTINYDKNVIPSDLTDKNDPIDITDPSGEVIAKGTFDKATKQITYTFTDYVDKY
+				</data>
+				<hit pos="327" idx="0" pvalue="4.3e-09" match="+ + ++  + + ++++++  ++ ++++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wta_B" comment="" length="585">
+			<score strand="both" combined_pvalue="2.37e-06" evalue="0.0007"/>
+			<seg start="301">
+				<data>
+GKDIEYDTEFTIDNKVKKGDTMTINYDKNVIPSDLTDKNDPIDITDPSGEVIAKGTFDKATKQITYTFTDYVDKY
+				</data>
+				<hit pos="327" idx="0" pvalue="4.3e-09" match="+ + ++  + + ++++++  ++ ++++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wta_C" comment="" length="585">
+			<score strand="both" combined_pvalue="2.37e-06" evalue="0.0007"/>
+			<seg start="301">
+				<data>
+GKDIEYDTEFTIDNKVKKGDTMTINYDKNVIPSDLTDKNDPIDITDPSGEVIAKGTFDKATKQITYTFTDYVDKY
+				</data>
+				<hit pos="327" idx="0" pvalue="4.3e-09" match="+ + ++  + + ++++++  ++ ++++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wta_D" comment="" length="585">
+			<score strand="both" combined_pvalue="2.37e-06" evalue="0.0007"/>
+			<seg start="301">
+				<data>
+GKDIEYDTEFTIDNKVKKGDTMTINYDKNVIPSDLTDKNDPIDITDPSGEVIAKGTFDKATKQITYTFTDYVDKY
+				</data>
+				<hit pos="327" idx="0" pvalue="4.3e-09" match="+ + ++  + + ++++++  ++ ++++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5ihw_A" comment="" length="590">
+			<score strand="both" combined_pvalue="2.40e-06" evalue="0.00071"/>
+			<seg start="301">
+				<data>
+AAAHDGKDIEYDTEFTIDNKVKKGDTMTINYDKNVIPSDLTDKNDPIDITDPSGEVIAKGTFDKATKQITYTFTD
+				</data>
+				<hit pos="332" idx="0" pvalue="4.3e-09" match="+ + ++  + + ++++++  ++ ++++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wtb_A" comment="" length="597">
+			<score strand="both" combined_pvalue="2.43e-06" evalue="0.00072"/>
+			<seg start="301">
+				<data>
+GKDIEYDTEFTIDNKVKKGDTMTINYDKNVIPSDLTDKNDPIDITDPSGEVIAKGTFDKATKQITYTFTDYVDKY
+				</data>
+				<hit pos="327" idx="0" pvalue="4.3e-09" match="+ + ++  + + ++++++  ++ ++++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wtb_B" comment="" length="597">
+			<score strand="both" combined_pvalue="2.43e-06" evalue="0.00072"/>
+			<seg start="301">
+				<data>
+GKDIEYDTEFTIDNKVKKGDTMTINYDKNVIPSDLTDKNDPIDITDPSGEVIAKGTFDKATKQITYTFTDYVDKY
+				</data>
+				<hit pos="327" idx="0" pvalue="4.3e-09" match="+ + ++  + + ++++++  ++ ++++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wtb_C" comment="" length="597">
+			<score strand="both" combined_pvalue="2.43e-06" evalue="0.00072"/>
+			<seg start="301">
+				<data>
+GKDIEYDTEFTIDNKVKKGDTMTINYDKNVIPSDLTDKNDPIDITDPSGEVIAKGTFDKATKQITYTFTDYVDKY
+				</data>
+				<hit pos="327" idx="0" pvalue="4.3e-09" match="+ + ++  + + ++++++  ++ ++++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5wtb_D" comment="" length="597">
+			<score strand="both" combined_pvalue="2.43e-06" evalue="0.00072"/>
+			<seg start="301">
+				<data>
+GKDIEYDTEFTIDNKVKKGDTMTINYDKNVIPSDLTDKNDPIDITDPSGEVIAKGTFDKATKQITYTFTDYVDKY
+				</data>
+				<hit pos="327" idx="0" pvalue="4.3e-09" match="+ + ++  + + ++++++  ++ ++++ ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2nxx_A" comment="" length="402">
+			<score strand="both" combined_pvalue="3.56e-06" evalue="0.001"/>
+			<seg start="151">
+				<data>
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXDMPLERIIEAEKRVECNDPLVALVVNENNTTVNNICQATHKQLFQL
+				</data>
+				<hit pos="184" idx="0" pvalue="9.5e-09" match="      ++  + ++++ ++++++ +++  +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2nxx_C" comment="" length="403">
+			<score strand="both" combined_pvalue="3.57e-06" evalue="0.0011"/>
+			<seg start="151">
+				<data>
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXDMPLERIIEAEKRVECNDPLVALVVNENNTTVNNICQATHKQLFQL
+				</data>
+				<hit pos="184" idx="0" pvalue="9.5e-09" match="      ++  + ++++ ++++++ +++  +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2nxx_B" comment="" length="404">
+			<score strand="both" combined_pvalue="3.58e-06" evalue="0.0011"/>
+			<seg start="151">
+				<data>
+XXXXXXXXXXXXXXXXXXXXXXXXXXXQADMPLERIIEAEKRVECNDPLVALVVNENNTTVNNICQATHKQLFQL
+				</data>
+				<hit pos="184" idx="0" pvalue="9.5e-09" match="      ++  + ++++ ++++++ +++  +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2nxx_D" comment="" length="405">
+			<score strand="both" combined_pvalue="3.59e-06" evalue="0.0011"/>
+			<seg start="151">
+				<data>
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXDMPLERIIEAEKRVECNDPLVALVVNENNTTVNNICQATHKQLFQL
+				</data>
+				<hit pos="184" idx="0" pvalue="9.5e-09" match="      ++  + ++++ ++++++ +++  +"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik4_A" comment="" length="281">
+			<score strand="both" combined_pvalue="5.07e-06" evalue="0.0015"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPXXXXXXXXXVGDNEPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="2.0e-08" match="          +++ +++++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5cuy_A" comment="" length="408">
+			<score strand="both" combined_pvalue="5.83e-06" evalue="0.0017"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGESFNPIKQDIKNGVPRFYKHGDMMWNYGAFPQTWESTEVLFEAGVTGDNDPVDAVEI
+GMTQFKVGQVSAVKVLGVLGMIDEGEMDWKVVCISHSDPICHFLRDIHDVPKFLPGCLDAIREWFRVYKICQGGE
+				</data>
+				<hit pos="280" idx="0" pvalue="1.5e-08" match="     + +  ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5cuy_C" comment="" length="410">
+			<score strand="both" combined_pvalue="5.86e-06" evalue="0.0017"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGESFNPIKQDIKNGVPRFYKHGDMMWNYGAFPQTWESTEVLFEAGVTGDNDPVDAVEI
+GMTQFKVGQVSAVKVLGVLGMIDEGEMDWKVVCISHSDPICHFLRDIHDVPKFLPGCLDAIREWFRVYKICQGGE
+				</data>
+				<hit pos="280" idx="0" pvalue="1.5e-08" match="     + +  ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5cuy_D" comment="" length="411">
+			<score strand="both" combined_pvalue="5.87e-06" evalue="0.0017"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGESFNPIKQDIKNGVPRFYKHGDMMWNYGAFPQTWESTEVLFEAGVTGDNDPVDAVEI
+GMTQFKVGQVSAVKVLGVLGMIDEGEMDWKVVCISHSDPICHFLRDIHDVPKFLPGCLDAIREWFRVYKICQGGE
+				</data>
+				<hit pos="280" idx="0" pvalue="1.5e-08" match="     + +  ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5c5v_A" comment="" length="413">
+			<score strand="both" combined_pvalue="5.90e-06" evalue="0.0017"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGESFNPIKQDIKNGVPRFYKHGDMMWNYGAFPQTWESTEVLFEAGVTGDNDPVDAVEI
+GMTQFKVGQVSAVKVLGVLGMIDEGKMDWKVVCISHNDPICRFMKDIHDVPKFLPGCLDAIREWFRVYKICQGGE
+				</data>
+				<hit pos="280" idx="0" pvalue="1.5e-08" match="     + +  ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5c5v_B" comment="" length="413">
+			<score strand="both" combined_pvalue="5.90e-06" evalue="0.0017"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGESFNPIKQDIKNGVPRFYKHGDMMWNYGAFPQTWESTEVLFEAGVTGDNDPVDAVEI
+GMTQFKVGQVSAVKVLGVLGMIDEGKMDWKVVCISHNDPICRFMKDIHDVPKFLPGCLDAIREWFRVYKICQGGE
+				</data>
+				<hit pos="280" idx="0" pvalue="1.5e-08" match="     + +  ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2ik6_A" comment="" length="281">
+			<score strand="both" combined_pvalue="8.89e-06" evalue="0.0026"/>
+			<seg start="76">
+				<data>
+KLRFVRNCFPHHGYIHNYGAFPQTWEDPXXXXXXXXXXGDNDPIEVLEIGETIAYTGQVKQVKALGIMALLDEGE
+				</data>
+				<hit pos="104" idx="0" pvalue="3.5e-08" match="          ++++++ ++++++   ++++"/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fty_A" comment="" length="540">
+			<score strand="both" combined_pvalue="1.92e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fty_B" comment="" length="540">
+			<score strand="both" combined_pvalue="1.92e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fty_C" comment="" length="540">
+			<score strand="both" combined_pvalue="1.92e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fty_D" comment="" length="540">
+			<score strand="both" combined_pvalue="1.92e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fvk_A" comment="" length="540">
+			<score strand="both" combined_pvalue="1.92e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fvk_B" comment="" length="540">
+			<score strand="both" combined_pvalue="1.92e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fvk_C" comment="" length="540">
+			<score strand="both" combined_pvalue="1.92e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fvm_A" comment="" length="540">
+			<score strand="both" combined_pvalue="1.92e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fvm_B" comment="" length="540">
+			<score strand="both" combined_pvalue="1.92e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fvm_C" comment="" length="540">
+			<score strand="both" combined_pvalue="1.92e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fvk_D" comment="" length="541">
+			<score strand="both" combined_pvalue="1.93e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="2fvm_D" comment="" length="541">
+			<score strand="both" combined_pvalue="1.93e-05" evalue="0.0057"/>
+			<seg start="1">
+				<data>
+XPIYDLIIKNGIICTASDIYAAEIAVNNGKVQLIAASIDPSLGSEVIDAEGAFITPGGIDAHVHVDEPLKLLGDV
+VDTMEHATRSAVAGGTTTVVAFSTQDVSKKGPSALAESVKLDVDEYSEQTLYCDYGLHLILFQIEKPSVEARELL
+				</data>
+				<hit pos="61" idx="0" pvalue="3.8e-08" match=" + ++ + +++ ++ ++ ++  ++  + + "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5lxz_B" comment="" length="644">
+			<score strand="both" combined_pvalue="2.17e-05" evalue="0.0064"/>
+			<seg start="526">
+				<data>
+ANTKPGKFEQRIEIYTPPYLYRDSRPDLSGGPQTIARGGSGTFTSRAASTVKKVRLIRPSASTHVTDVDQRSIAL
+DFKADGDKLTVTVPSGKNLVQSGWYMMFVTDGEGTPSKAEWVRV
+				</data>
+				<hit pos="594" idx="0" pvalue="3.5e-08" match="++  +    + +++ + + +++ ++++   "/>
+			</seg>
+		</sequence>
+		<sequence db="0" name="5cuy_B" comment="" length="409">
+			<score strand="both" combined_pvalue="5.43e-05" evalue="0.016"/>
+			<seg start="226">
+				<data>
+FICEIPKWTRAKFEIATGESFNPIKQDIKNGVPRFYKHGDMMWNYGAFPQTWESTEXXXEAGVTGDNDPVDAVEI
+GMTQFKVGQVSAVKVLGVLGMIDEGEMDWKVVCISHSDPICHFLRDIHDVPKFLPGCLDAIREWFRVYKICQGGE
+				</data>
+				<hit pos="280" idx="0" pvalue="1.4e-07" match="     + +  ++++++++ +++  ++  ++"/>
+			</seg>
+		</sequence>
+	</sequences>
+	<runtime host="yincp-GE72-2QF" when="Thu Sep 26 10:44:36 2019" cycles="19188" seconds="0.019"/>
+</mast>

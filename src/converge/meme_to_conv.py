@@ -31,14 +31,6 @@ def convert_full(input_meme_path, output_composition, output_matrix):
 
 
 def convert_minimal(input_meme_path, output_composition, output_matrix):
-    # Converge output to minimal
-    # Converts converge motif format to minimal meme format
-    # see http://meme-suite.org/doc/examples/sample-protein-motif.meme
-
-    # input_conv=''output.4.matrix.0''
-    # composition='composition.txt'
-    # output="meme_format.txt"
-
     composition_map, n_sites, matrices = _parse_minimal_meme_input(
         input_meme_path)
     _write_composition(composition_map, output_composition)
@@ -62,9 +54,9 @@ def _parse_minimal_meme_input(input_path):
         if not line.strip():
             break
         counts_in_str = line.strip().split(" ")
-        assert len(counts_in_str) == 20
+        assert len(counts_in_str) == 20, counts_in_str
         all_counts.append(list(float(i) for i in counts_in_str))
-    assert len(all_counts) == 50
+    assert len(all_counts) == 30
 
     # Extract composition
     alphabet_probs = dict()
@@ -84,6 +76,7 @@ def _parse_minimal_meme_input(input_path):
             alphabet, prob = split_line[i * 2], split_line[i * 2 + 1]
             prob = float(prob)
             alphabet_probs[alphabet] = prob
+    print(alphabet_probs)
     assert len(alphabet_probs) == len(ALPHABETS)
 
     # Extract n_sites

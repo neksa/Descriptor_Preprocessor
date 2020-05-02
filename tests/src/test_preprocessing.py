@@ -115,6 +115,7 @@ class TestMemeSuiteMeme(unittest.TestCase):
     def test_meme(self):
         meme_interface.run_meme(self.input_seqfile, 30, self.output, num_p=7)
         meme_txt_path = os.path.join(self.output, "meme.txt")
+        # deprecated, replace with other.
         act_counts = bio_interface.parse_meme_file(meme_txt_path)
         with open(self.ref_output, 'rb') as file:
             ref_counts = pickle.load(file)

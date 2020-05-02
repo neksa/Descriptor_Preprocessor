@@ -186,6 +186,121 @@ def plot_dihedral(descr_full, remove_labels=True, add_filename=False):
                 filename_str = str(filename) + " " + str(seq_marker)
                 ax.text(phi, psi, filename_str)
 
+
+def plot_dihedral_allpos(descr_full, remove_labels=True, add_filename=False):
+    descr_grouped = descr_full.groupby('relative_sno')
+
+    num_plots = len(descr_grouped) - 2
+    num_col = math.ceil(math.sqrt(num_plots))
+    num_row = math.ceil(num_plots / num_col)
+
+    plt.figure()
+    plt.suptitle("Dihedrals across different relative sno position")
+    for ax_count, (relative_sno, df_per_sno) in enumerate(descr_grouped):
+        if ax_count in (0, len(descr_grouped) - 1):
+            # Screen off first, last position, invalid dihedral values
+            continue
+        phis = df_per_sno.phi.values
+        psis = df_per_sno.psi.values
+        filenames = df_per_sno.filename.values
+        seq_markers = df_per_sno.seq_marker.values
+        selected_1yru = None
+        selected_1a29 = None
+        for i, filename in enumerate(filenames):
+            if filename == "1yru":
+                selected_1yru = i
+            if filename == '1a29':
+                selected_1a29 = i
+        assert selected_1yru is not None
+        assert selected_1a29 is not None
+
+
+        ax = plt.subplot(num_row, num_col, ax_count)
+        ax.set_title(str(relative_sno))
+        ax.scatter(phis, psis, marker='x', s=1)
+        ax.set_xlabel("phi")
+        ax.set_ylabel('psi')
+        ax.set_xlim([-180, 180])
+        ax.set_ylim([-180, 180])
+
+        ax.scatter([phis[selected_1yru]], [psis[[selected_1yru]]], marker='x',
+                   s=20, color='k')
+        ax.scatter([phis[selected_1a29]], [psis[[selected_1a29]]], marker='x',
+                   s=20, color='r')
+
+        if remove_labels:
+            ax.set_xlabel("")
+            ax.set_ylabel('')
+            ax.set_xticklabels([])
+            ax.set_yticklabels([])
+            ax.set_xticks([])
+            ax.set_yticks([])
+
+        if add_filename:
+            for phi, psi, filename, seq_marker in zip(phis, psis, filenames,
+                                                      seq_markers):
+                filename_str = str(filename) + " " + str(seq_marker)
+                ax.text(phi, psi, filename_str)
+
+
+def plot_dihedral_4pos(descr_full, remove_labels=True, add_filename=False):
+    descr_grouped = descr_full.groupby('relative_sno')
+
+    num_plots = len(descr_grouped) - 2
+    num_col = math.ceil(math.sqrt(num_plots))
+    num_row = math.ceil(num_plots / num_col)
+
+    plt.figure()
+    plt.suptitle("Dihedrals across different relative sno position")
+    count = 0
+    for ax_count, (relative_sno, df_per_sno) in enumerate(descr_grouped):
+        if ax_count in (0, len(descr_grouped) - 1):
+            # Screen off first, last position, invalid dihedral values
+            continue
+        if ax_count not in (7, 8, 9, 10):
+            continue
+
+        phis = df_per_sno.phi.values
+        psis = df_per_sno.psi.values
+        filenames = df_per_sno.filename.values
+        seq_markers = df_per_sno.seq_marker.values
+        selected_1yru = None
+        selected_1a29 = None
+        for i, filename in enumerate(filenames):
+            if filename == "1yru":
+                selected_1yru = i
+            if filename == '1a29':
+                selected_1a29 = i
+        assert selected_1yru is not None
+        assert selected_1a29 is not None
+        count += 1
+        ax = plt.subplot(2, 2, count)
+        ax.set_title(str(relative_sno))
+        ax.scatter(phis, psis, marker='x', s=1)
+        ax.set_xlabel("phi")
+        ax.set_ylabel('psi')
+        ax.set_xlim([-180, 180])
+        ax.set_ylim([-180, 180])
+
+        ax.scatter([phis[selected_1yru]], [psis[[selected_1yru]]], marker='x',
+                   s=20, color='k')
+        ax.scatter([phis[selected_1a29]], [psis[[selected_1a29]]], marker='x',
+                   s=20, color='r')
+
+        if remove_labels:
+            ax.set_xlabel("")
+            ax.set_ylabel('')
+            ax.set_xticklabels([])
+            ax.set_yticklabels([])
+            ax.set_xticks([])
+            ax.set_yticks([])
+
+        if add_filename:
+            for phi, psi, filename, seq_marker in zip(phis, psis, filenames,
+                                                      seq_markers):
+                filename_str = str(filename) + " " + str(seq_marker)
+                ax.text(phi, psi, filename_str)
+
 def plot_hbonds_raw(descr):
     """
     Convert to heatmap eventually, maybe.
@@ -269,7 +384,8 @@ def main():
     ['sno', 'contact', 'covalent', 'phi', 'psi', 'region', 'ss', 'ext', 'role',
      'category', 'donor', 'acc', 'res', 'CA', 'filename', 'seq_marker', 'cid']
     """
-    with open(os.path.join(paths.store_dir, "descrs.pkl"),
+    # with open(os.path.join(paths.ROOT, "GxGxxG_descr.pkl"),
+    with open(os.path.join(paths.ROOT, "efhand_descr.pkl"),
               "rb") as pklfile:
         df = pkl.load(pklfile)
     # df.sort_index(inplace=True)
@@ -277,14 +393,17 @@ def main():
     # plot_signature_bar(df)
     # plot_CA(df)
     plot_dihedral(df)
-    plot_hbonds_raw(df)
+    # plot_hbonds_raw(df)
     # plot_hbonds_percentage(df)
-    plot_contacts(df)
-    plot_covalents(df)
+    # plot_contacts(df)
+    # plot_covalents(df)
     # plot_h_contacts(df)
     # plot_dihedral_for_diff_res(df, 0)
     plt.show()
 
-
+import pickle
 if __name__ == '__main__':
+    # with open(os.path.join(paths.ROOT, "efhand_descr.pkl"), 'rb') as \
+    #         file:
+    #     print(pickle.load(file))
     main()

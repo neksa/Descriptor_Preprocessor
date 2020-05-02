@@ -96,6 +96,40 @@ def find_mast(pname_cid_map, seq_file, ref_meme_txt, motif_len, meme_folder):
 #     return seq_motif_map
 
 
+# def _delete_gapped_motifs_pair_pname(prev_map, fasta_fname):
+#     pname_seq_map = dict()
+#     pname = None
+#     seq = []
+#     with open(fasta_fname, 'r') as file:
+#         for line in file:
+#             if line.startswith(">"):
+#                 if
+#                 pname = line[1:].strip()[:4]
+#                 seq = []
+#                 continue
+#             assert pname is not None
+#             seq.append(line.strip())
+#             pname_seq_map[pname] = line.strip()
+#
+#
+#             if pname and pname in prev_map:
+#                 screened_motif_pos = []
+#                 motif_pos = prev_map[pname]
+#                 for pos in motif_pos:
+#                     try:
+#                         motif = line[pos - 25:pos + 25]
+#                     except IndexError:
+#                         logging.info(
+#                             f"{pos} in {pname} has IndexError when obtaining "
+#                             f"motif from -8 to 22, skipping.\n")
+#                         continue
+#                     else:
+#                         if "X" not in motif:  # It's a continuous seq
+#                             screened_motif_pos.append(pos)
+#                 if screened_motif_pos:
+#                     seq_motif_map[pname] = screened_motif_pos
+#     return seq_motif_map
+
 def _delete_gapped_motifs(prev_map, fasta_fname):
     seq_motif_map = dict()
     pname = None

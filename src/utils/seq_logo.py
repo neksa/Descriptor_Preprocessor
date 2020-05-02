@@ -140,3 +140,157 @@ def _to_align():
     plot.axvline(-1.478)
     plot.axvline(-0.499)
     plt.show()
+import re
+
+
+
+
+def build_logo(filename):
+    AA3_to_AA1 = dict(ALA='A', CYS='C', ASP='D', GLU='E', PHE='F', GLY='G',
+                      HIS='H', ILE='I', LYS='K', LEU='L', MET='M', ASN='N',
+                      PRO='P', GLN='Q', ARG='R', SER='S', THR='T', VAL='V',
+                      TRP='W', TYR='Y')
+    AA1_to_AA3 = dict()
+    for key, value in AA3_to_AA1.items():
+        AA1_to_AA3[value] = key
+    data = []
+    num_matches = None
+    alphabet_list = None
+    with open(filename, 'r') as file:
+        for line in file:
+            if num_matches is None:
+                num_matches = int(line.strip())
+                continue
+            if alphabet_list is None:
+                alphabet_list = list(line.strip().split(","))
+                assert len(alphabet_list) == len(AA3_to_AA1)
+                continue
+            current_row_str = line.strip().split(",")
+            current_row = []
+            total_count = 0
+            for i, key in enumerate(alphabet_list):
+                current_row.append([AA1_to_AA3[key], int(current_row_str[i])])
+                total_count += int(current_row_str[i])
+            for i, term in enumerate(current_row):
+                current_row[i] = [term[0], term[1] / total_count]
+            data.append(current_row)
+    plot = Logo(data, -1, (5, 20)).plot
+    plot.legend().remove()
+    plt.show()
+
+
+def build_logo_mine(filename):
+    AA3_to_AA1 = dict(ALA='A', CYS='C', ASP='D', GLU='E', PHE='F', GLY='G',
+                      HIS='H', ILE='I', LYS='K', LEU='L', MET='M', ASN='N',
+                      PRO='P', GLN='Q', ARG='R', SER='S', THR='T', VAL='V',
+                      TRP='W', TYR='Y')
+    AA1_to_AA3 = dict()
+    for key, value in AA3_to_AA1.items():
+        AA1_to_AA3[value] = key
+    data = []
+    alphabet_list = list(sorted(list(AA3_to_AA1.values())))
+    with open(filename, 'r') as file:
+        for line in file:
+            current_row_str = line.strip().split(",")
+            current_row = []
+            total_count = 0
+            for i, key in enumerate(alphabet_list):
+                current_row.append([AA1_to_AA3[key], int(current_row_str[i])])
+                total_count += int(current_row_str[i])
+            for i, term in enumerate(current_row):
+                current_row[i] = [term[0], term[1] / total_count]
+            data.append(current_row)
+    plot = Logo(data, -1, (5, 20)).plot
+    plot.legend().remove()
+    plt.show()
+
+
+def build_logo_nbdb(filename):
+    AA3_to_AA1 = dict(ALA='A', CYS='C', ASP='D', GLU='E', PHE='F', GLY='G',
+                      HIS='H', ILE='I', LYS='K', LEU='L', MET='M', ASN='N',
+                      PRO='P', GLN='Q', ARG='R', SER='S', THR='T', VAL='V',
+                      TRP='W', TYR='Y')
+    AA1_to_AA3 = dict()
+    for key, value in AA3_to_AA1.items():
+        AA1_to_AA3[value] = key
+    data = []
+    alphabet_list = list(sorted(list(AA3_to_AA1.values())))
+    with open(filename, 'r') as file:
+        for line in file:
+            current_row_str = line.strip().split(" ")
+            current_row = []
+            for i, key in enumerate(alphabet_list):
+                current_row.append([AA1_to_AA3[key], float(current_row_str[i])])
+            data.append(current_row)
+
+    plot = Logo(data, -1, (5, 20)).plot
+    plot.legend().remove()
+    plt.show()
+
+import os
+from config import paths
+import math
+
+with open(os.path.join(paths.ROOT, "output_tmp.txt"), 'r') as file:
+    matrix = []
+    for line in file:
+        row = []
+        for term in line.strip().split(" "):
+            row.append(int(math.ceil(float(term) * 2932)))
+        matrix.append(row)
+print(matrix)
+with open(os.path.join(paths.ROOT, "test_this.txt"), 'w') as file:
+    for row in matrix:
+        output_str = ""
+        for term in row:
+            output_str += str(term) + ","
+        file.write(output_str[:-1] + "\n")
+
+
+
+
+build_logo_mine(os.path.join(paths.ROOT, "test_this.txt"))
+# build_logo(os.path.join(paths.ROOT, "converged_matrix.txt"))
+# build_logo_mine(os.path.join(paths.ROOT, "test_input.txt"))
+# build_logo_nbdb(os.path.join(paths.ROOT, "GxGxxG_pssm.txt"))
+
+# def build_logo(filename):
+#     AA3_to_AA1 = dict(ALA='A', CYS='C', ASP='D', GLU='E', PHE='F', GLY='G',
+#                       HIS='H', ILE='I', LYS='K', LEU='L',
+#                       MET='M', ASN='N', PRO='P', GLN='Q', ARG='R',
+#                       SER='S', THR='T', VAL='V', TRP='W', TYR='Y')
+#     AA1_to_AA3 = dict()
+#     for key, value in AA3_to_AA1.items():
+#         AA1_to_AA3[value] = key
+#     data = []
+#     with open(filename, 'r') as file:
+#         for line in file:
+#             if line[0] not in (' ', '1', '2', '3'):
+#                 continue
+#             current_row_str = re.findall("[0-9]+", line)
+#             if len(current_row_str) == 1:
+#                 continue
+#             current_row_str = current_row_str[1:]
+#
+#             if current_row_str[0] == 'A':
+#                 continue
+#             current_row = []
+#             total_count = 0
+#             assert len(current_row_str) == len(AA3_to_AA1)
+#             displacement = 0
+#             for i, key in enumerate(AA3_to_AA1.keys()):
+#                 i += displacement
+#                 current_row.append([key, int(current_row_str[i])])
+#                 total_count += int(current_row_str[i])
+#             for i, term in enumerate(current_row):
+#                 current_row[i] = [term[0], term[1] / total_count]
+#             data.append(current_row)
+#
+#     plot = Logo(data, -1, (5, 20)).plot
+#     plot.legend().remove()
+#     plt.show()
+# import os
+# from config import paths
+# filename = os.path.join(paths.ROOT, "output.1.matrix")
+# build_logo(filename)
+

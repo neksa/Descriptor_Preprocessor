@@ -120,17 +120,17 @@ def setup_meme_suite_mast():
     with open(diagrams_output, 'wb') as file:
         pickle.dump(diagrams, file, -1)
 
-def setup_meme_suite_meme():
-    debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
-    meme_output_folder = os.path.join(debug_folder, "output_meme")
-    input_seqfile = paths_test.MEME_TEST_SEQ
-    counts_output = paths_test.REF_MEME_COUNTS
-
-    meme_interface.run_meme(input_seqfile, 30, meme_output_folder, num_p=7)
-    meme_txt_path = os.path.join(meme_output_folder, "meme.txt")
-    counts = bio_interface.parse_meme_file(meme_txt_path)
-    with open(counts_output, 'wb') as file:
-        pickle.dump(counts, file, -1)
+# def setup_meme_suite_meme():
+#     debug_folder = generic.setup_debug_folder(paths_test.DEBUG)
+#     meme_output_folder = os.path.join(debug_folder, "output_meme")
+#     input_seqfile = paths_test.MEME_TEST_SEQ
+#     counts_output = paths_test.REF_MEME_COUNTS
+#
+#     meme_interface.run_meme(input_seqfile, 30, meme_output_folder, num_p=7)
+#     meme_txt_path = os.path.join(meme_output_folder, "meme.txt")
+#     counts = bio_interface.parse_meme_file(meme_txt_path)
+#     with open(counts_output, 'wb') as file:
+#         pickle.dump(counts, file, -1)
 
 
 def setup_parse_extracts():

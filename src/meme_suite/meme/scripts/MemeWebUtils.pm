@@ -20,7 +20,7 @@ use HTML::Template;
 use Sys::Hostname;
 use Time::HiRes qw(gettimeofday tv_interval);
 
-use lib qw(/home/yincp/Desktop/Descriptor_Preprocessor/src/meme_suite/meme/lib/meme-5.0.5/perl);
+use lib qw(/Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/lib/meme-5.0.5/perl);
 use ExecUtils qw(invoke stringify_args);
 
 # Setup logging
@@ -30,17 +30,17 @@ eval {
   Log::Log4perl->import();
 };
 unless ($@) {
-  Log::Log4perl::init('/home/yincp/Desktop/Descriptor_Preprocessor/src/meme_suite/meme/share/meme-5.0.5/logging.conf');
+  Log::Log4perl::init('/Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/share/meme-5.0.5/logging.conf');
   $logger = Log::Log4perl->get_logger('meme.service.utils');
 }
 
-my $service_invocation_log_dir = '/home/yincp/Desktop/Descriptor_Preprocessor/src/meme_suite/meme/var/meme-5.0.5/LOGS';
+my $service_invocation_log_dir = '/Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/var/meme-5.0.5/LOGS';
 my $tmpdir = '';
 # use the perl default if none is supplied or the replace fails
 $tmpdir = &tmpdir() if ($tmpdir eq '' || $tmpdir =~ m/^\@TMP[_]DIR\@$/);
 my @gs_version_nums = ();
-my $GHOSTSCRIPT = '/usr/bin/gs';
-my $CONVERT = '/usr/bin/convert';
+my $GHOSTSCRIPT = '';
+my $CONVERT = '';
 ##############################################################################
 #          Functions
 ##############################################################################
@@ -100,7 +100,7 @@ sub update_status {
 
   my $fh;
   sysopen($fh, $output_file, O_CREAT | O_WRONLY | O_TRUNC) or log_and_die("Failed to open \"$output_file\".");
-  my $template = HTML::Template->new(filename => '/home/yincp/Desktop/Descriptor_Preprocessor/src/meme_suite/meme/share/meme-5.0.5/job_status.tmpl');
+  my $template = HTML::Template->new(filename => '/Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/share/meme-5.0.5/job_status.tmpl');
   $template->param(program => $program, files => \@found_files, msgs => $msg_list, status => $status);
   print $fh $template->output;
   close($fh) or log_and_die("Failed to close \"$output_file\".");

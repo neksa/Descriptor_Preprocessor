@@ -29,7 +29,7 @@ use HTML::Template;
 use Sys::Hostname;
 use Time::HiRes;
 
-use lib qw(/home/yincp/Desktop/Descriptor_Preprocessor/src/meme_suite/meme/lib/meme-5.0.5/perl);
+use lib qw(/Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/lib/meme-5.0.5/perl);
 use Alphabet qw(dna rna protein);
 use ExecUtils qw(invoke stringify_args stringify_args_noesc);
 use Globals;
@@ -41,7 +41,7 @@ eval {
   Log::Log4perl->import();
 };
 unless ($@) {
-  Log::Log4perl::init('/home/yincp/Desktop/Descriptor_Preprocessor/src/meme_suite/meme/share/meme-5.0.5/logging.conf');
+  Log::Log4perl::init('/Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/share/meme-5.0.5/logging.conf');
   $logger = Log::Log4perl->get_logger('meme.service.utils');
 }
 
@@ -563,7 +563,7 @@ sub update {
   my $fh;
   sysopen($fh, $self->{page}, O_CREAT | O_WRONLY | O_TRUNC) 
       or _log_and_die("Failed to open \"" . $self->{page} . "\".");
-  my $template = HTML::Template->new(filename => '/home/yincp/Desktop/Descriptor_Preprocessor/src/meme_suite/meme/share/meme-5.0.5/job_status.tmpl');
+  my $template = HTML::Template->new(filename => '/Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/share/meme-5.0.5/job_status.tmpl');
   $template->param(
     program => $self->{program},
     files => \@found_files,
@@ -699,7 +699,7 @@ sub write_log {
   # the end time (now)
   my $end_time = &_format_log_date(&Time::HiRes::gettimeofday());
   # create the path to the log file
-  my $logfile = catfile('/home/yincp/Desktop/Descriptor_Preprocessor/src/meme_suite/meme/var/meme-5.0.5/LOGS', $self->{log});
+  my $logfile = catfile('/Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/var/meme-5.0.5/LOGS', $self->{log});
   # open the log file for appending
   my $logfh;
   sysopen($logfh, $logfile, O_CREAT | O_APPEND | O_WRONLY) 

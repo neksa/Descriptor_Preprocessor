@@ -1,81 +1,88 @@
-from collections import OrderedDict
 import logging
 import os
-import re
 import shutil
 import subprocess
 
 from converge import conv_to_meme
+from config import paths
 
-def run_conv(seed_seqs_path, seqs_path, conv_folder, output_path, bash_exec,
-             num_p=7):
-    # Input as conv seed seqs, and seqs file paths
-    # ioncom_binding_sites.txt to seed need to run separately
-    # Output as conv, in meme format.
-    # Also need dir for conv folder, where I can assert presence of
-    # conv_exec, and blosum file, and assert absence of composition,
-    # conv output file, and final output file dir.
-
-    # Check, set up paths
-    assert os.path.isfile(seed_seqs_path)
-    assert os.path.isfile(seqs_path)
+def encode_proteome(proteome_fname, output, conv_folder, bash_exec):
+    assert os.path.isfile(proteome_fname)
     assert os.path.isdir(conv_folder)
-    if os.path.isfile(output_path):
-        logging.warning(f"In run_conv(), output <{output_path}> is not "
+    if os.path.isfile(output):
+        logging.warning(f"In encode_proteome(), output <{output}> is not "
                         f"empty. Deleting.\n")
-        os.remove(output_path)
-    conv_exec = os.path.join(conv_folder, 'converge')
+        os.remove(output)
+    conv_exec = os.path.join(conv_folder, 'converge_encoder')
     assert os.path.isfile(conv_exec)
-    blosum_path = os.path.join(conv_folder, 'BLOSUM62')
-    assert os.path.isfile(blosum_path)
-    composition_path = os.path.join(conv_folder, 'composition.txt')
-    output_1_path = os.path.join(conv_folder, 'output.1.matrix.0')
-    if os.path.isfile(output_1_path):
-        logging.warning(f"In run_conv(), conv_output_1 <{output_1_path}> "
-                        f"is not empty. Deleting.\n")
-        os.remove(output_1_path)
-    output_4_path = os.path.join(conv_folder, 'output.4.matrix.0')
-    if os.path.isfile(output_4_path):
-        logging.warning(f"In run_conv(), conv_output_4 <{output_4_path}> "
-                        f"is not empty. Deleting.\n")
-        os.remove(output_4_path)
-    if os.path.isfile(composition_path):
-        logging.warning(f"In run_conv(), composition <{composition_path}>"
-                        f" is not empty. Deleting.\n")
-        os.remove(composition_path)
-    # Converge requires files to be in converge folder (I think).
-    seed_filename = seed_seqs_path.rsplit("/", maxsplit=1)[-1]
-    new_seed_path = os.path.join(conv_folder, seed_filename)
-    seqs_filename = seqs_path.rsplit("/", maxsplit=1)[-1]
-    new_seqs_path = os.path.join(conv_folder, seqs_filename)
-    # End
-
-    command = f"cd {conv_folder} && " \
-        f"mpirun -np {num_p} ./converge -B -E 1 -r 1 " \
-        f"-f 1 -c ./composition.txt -i ./{seed_filename} -p ./{seqs_filename}"
-    if os.path.isfile(new_seed_path):
-        os.remove(new_seed_path)
-    if os.path.isfile(new_seqs_path):
-        os.remove(new_seqs_path)
-    shutil.copy(seed_seqs_path, new_seed_path)
-    shutil.copy(seqs_path, new_seqs_path)
-    try:
-        subprocess.run(command, shell=True, executable=bash_exec,
-                       stdout=subprocess.DEVNULL)
-    except Exception as e:
-        raise e
-    finally:
-        shutil.move(new_seed_path, seed_seqs_path)
-        shutil.move(new_seqs_path, seqs_path)
-    if (not os.path.isfile(output_1_path) or
-        not os.path.isfile(output_4_path) or
-        not os.path.isfile(composition_path)):
-        logging.error(f"In folder {conv_folder}, converge failed to produce "
-                      f"output files. ")
+    command = f"{conv_exec} -pi {proteome_fname} -po {output} -silent"
+    return_code = subprocess.run(command, shell=True, executable=bash_exec)
+    if return_code != 0:
         raise Exception
 
-    conv_to_meme.convert(output_4_path, composition_path, output_path)
-    assert os.path.isfile(output_path)
-    os.remove(output_1_path)
-    os.remove(output_4_path)
-    os.remove(composition_path)
+
+def encode_blosum(output, conv_folder, bash_exec):
+    assert os.path.isdir(conv_folder)
+    if os.path.isfile(output):
+        logging.warning(f"In encode_blosum(), output <{output}> is not "
+                        f"empty. Deleting.\n")
+        os.remove(output)
+    conv_exec = os.path.join(conv_folder, 'converge_encoder')
+    assert os.path.isfile(conv_exec)
+    command = f"{conv_exec} -bo {output} -silent"
+    return_code = subprocess.run(command, shell=True, executable=bash_exec)
+    if return_code != 0:
+        raise Exception
+
+
+def encode_matrix(input_matrix, output, conv_folder, bash_exec):
+    assert os.path.isfile(input_matrix)
+    assert os.path.isdir(conv_folder)
+    if os.path.isfile(output):
+        logging.warning(f"In encode_matrix(), output <{output}> is not "
+                        f"empty. Deleting.\n")
+        os.remove(output)
+    conv_exec = os.path.join(conv_folder, 'converge_encoder')
+    assert os.path.isfile(conv_exec)
+    command = f"{conv_exec} -mi {input_matrix} -mo {output}"
+    return_code = subprocess.run(command, shell=True, executable=bash_exec).returncode
+    if return_code != 0:
+        print(return_code)
+        raise Exception
+
+
+def converge_calculate(profile_length, kmatches, iteration=5,
+                       maxS_start_factor=1, min_match_percent=0.7,
+                       maxS_factor_decrement=0.7):
+    assert iteration >= 1
+    assert profile_length >= 1
+    assert kmatches >= 1
+    assert os.path.isfile(paths.CONV_INPUT_MATRIX)
+    if os.path.isfile(paths.CONV_OUTPUT):
+        logging.warning(f"In converge_calculate(), output <{paths.CONV_OUTPUT}> is not "
+                        f"empty. Deleting.\n")
+        os.remove(paths.CONV_OUTPUT)
+    if os.path.isfile(paths.CONV_COMPOSITION):
+        logging.warning(
+            f"In converge_calculate(), output <{paths.CONV_COMPOSITION}> is not "
+            f"empty. Deleting.\n")
+        os.remove(paths.CONV_COMPOSITION)
+    assert os.path.isfile(paths.CONV_EXEC)
+    min_matches = min_match_percent * kmatches
+    # todo: need to call converge_encoder first, then converge
+
+    command = f"{paths.CONV_EXEC} {profile_length} {kmatches} {min_matches} " \
+              f"{maxS_start_factor}"
+    while iteration != 0:
+        return_code = subprocess.run(command, shell=True,
+                                     executable=paths.BASH_EXEC).returncode
+        if return_code == 2:
+            iteration -= 1
+            maxS_start_factor *= maxS_factor_decrement
+            command = f"{paths.CONV_EXEC} {profile_length} {kmatches} " \
+                      f"{min_matches} {maxS_start_factor}"
+            continue
+        if return_code == 0:
+            break
+        else:
+            raise Exception

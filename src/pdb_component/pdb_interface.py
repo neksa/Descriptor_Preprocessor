@@ -11,6 +11,7 @@ from pdb_component import pdb_utils, pdb_paths, loaders
 
 
 def get_seq_for(pdb_code, cid=None):
+    # print(f"{pdb_code}: {cid}")
     filedata = get_info_for(pdb_code)
     if filedata is None:
         return None
@@ -36,10 +37,12 @@ def get_info_for(pdb_code):
         else:
             get_success = download(pdb_code, silent=False)
             if get_success:
+                pdb_paths.PDB_FILES_SET = set(os.listdir(pdb_paths.PDB_FILES))
                 get_success = loaders.load_pdb_info(pdb_code)
         if not get_success:
             print(f"get_info_for(pdb_code) failed for {pdb_code}")
             return None
+        pdb_paths.PDB_PARSED_SET = set(os.listdir(pdb_paths.PDB_PARSED))
     filepath = os.path.join(pdb_paths.PDB_PARSED, pdb_suffix)
     with open(filepath, 'rb') as file:
         output = pickle.load(file)
@@ -52,11 +55,30 @@ def preload_all():
         loaders.load_pdb_info(pdb_code)
 
 
+def download_new(pdb_code, silent=False):
+    pdb_code = pdb_code.lower().strip()
+
+    url = f"https://files.rcsb.org/download/{pdb_code}.pdb"
+
+    output_path = os.path.join(pdb_paths.PDB_FILES, pdb_code + ".pdb")
+    try:
+        with contextlib.closing(request.urlopen(url)) as contents:
+            with open(output_path, 'w') as output_file:
+                output_file.write(contents.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        if not silent:
+            logging.info(f"download() fails for file {output_path}. Probably "
+                         f"invalid pdb_code.")
+            logging.info(f"Traceback: <{traceback.format_exc()}>")
+            logging.info(f"Error_msg: <{e}>\n")
+        return False
+    assert os.path.isfile(output_path)
+    return True
+
 def download(pdb_code, silent=False):
     pdb_code = pdb_code.lower().strip()
 
     url = pdb_utils.PDB_URL_TEMPLATE.format(pdb_code)
-    print(url)
     output_path = os.path.join(pdb_paths.PDB_FILES, pdb_code+".pdb")
     try:
         with contextlib.closing(request.urlopen(url)) as contents:

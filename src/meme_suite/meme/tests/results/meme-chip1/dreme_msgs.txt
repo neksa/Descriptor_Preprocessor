@@ -1,0 +1,1 @@
+sh: /Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/scripts/dreme: /home/yincp/anaconda3/bin/python: bad interpreter: No such file or directory

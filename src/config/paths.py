@@ -1,9 +1,10 @@
 import os
 
-# src = os.path.dirname(__file__)
+
+ROOT = "/".join(os.path.dirname(__file__).split("/")[:-2])
 BASH_EXEC = "/bin/bash"
 
-ROOT = "/home/yincp/Desktop/Descriptor_Preprocessor"
+# ROOT = "/home/yincp/Desktop/work/Descriptor_Preprocessor"
 DATA = os.path.join(ROOT, 'data')
 SRC = os.path.join(ROOT, 'src')
 EXTERNAL = os.path.join(ROOT, 'external')
@@ -42,7 +43,12 @@ TEMPLATE_SEQFILE = os.path.join(INTERNAL, 'seq_template.fasta')
 PID_PDB_MAP = os.path.join(USER_OUTPUT, 'pid_pdb_map.pkl')
 
 CONV_FOLDER = os.path.join(SRC, 'converge')
-CONV_EXEC = os.path.join(CONV_FOLDER, 'converge')
+UNIPROT_BINARY = os.path.join(INTERNAL, 'uniprot_reviewed_all.binary')
+RCSB_SEQS_FASTA = os.path.join(USER_INPUT, "rcsb_seqs_full.txt")
+CONV_INPUT_MATRIX = os.path.join(CONV_FOLDER, 'input_matrix.txt')
+CONV_OUTPUT = os.path.join(CONV_FOLDER, 'converged_matrix.txt')
+CONV_COMPOSITION = os.path.join(CONV_FOLDER, 'composition.txt')
+CONV_EXEC = os.path.join(CONV_FOLDER, 'calculator')
 
 PROSITE_ALIGNED_SEQS = os.path.join(USER_INPUT,
                                     'prosite_enolase_aligned_seqs.txt')
