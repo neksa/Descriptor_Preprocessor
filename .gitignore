@@ -4,3 +4,10 @@
 hbonds/bin/
 *.pyc
 **/debug
+**/rcsb_seqs_full.txt
+**/uniprot_reviewed_all.binary
+**/uniprot-reviewed_yes.fasta
+**/uniprot_full.fasta
+**/**.pdb
+**.pdb
+*.pdb
