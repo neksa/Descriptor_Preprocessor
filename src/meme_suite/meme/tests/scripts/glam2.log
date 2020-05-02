@@ -1,0 +1,24 @@
+*******************************************************************************
+Test glam2_1 ...
+glam2 -M -r 3 -n 100 -O results/glam2_1 p common/At.s &> log
+The output directory 'results/glam2_1' already exists.
+Its contents will be overwritten.
+Run 1... 406 iterations
+Run 2... 445 iterations
+Run 3... 400 iterations
+
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+sh: /Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/src/glam2html: /home/yincp/anaconda3/bin/python: bad interpreter: No such file or directory
+Program glam2html exited with value 126
+Warning: failed to convert output to HTML!
+sh: /Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/src/glam2psfm: /home/yincp/anaconda3/bin/python: bad interpreter: No such file or directory
+Program glam2psfm exited with value 126
+Warning: failed to convert output to MEME format motif!
+-------------------------------------------------------------------------------
+glam2 exited with value 1 indicating failure.
+FAILED!

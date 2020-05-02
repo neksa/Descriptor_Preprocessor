@@ -1,0 +1,7 @@
+*******************************************************************************
+Test fasta-dinucleotide-shuffle1 ...
+fasta-dinucleotide-shuffle -f common/Klf1-200-100.fa -t -dinuc 1> results/fasta-dinucleotide-shuffle1/fasta-dinucleotide-shuffle_Scvvk_stdout 2> log
+sh: /Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/scripts/fasta-dinucleotide-shuffle: /home/yincp/anaconda3/bin/python: bad interpreter: No such file or directory
+-------------------------------------------------------------------------------
+fasta-dinucleotide-shuffle exited with value 126 indicating failure.
+FAILED!

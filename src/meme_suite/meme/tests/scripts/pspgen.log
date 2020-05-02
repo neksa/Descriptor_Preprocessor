@@ -1,0 +1,15 @@
+*******************************************************************************
+Test psp-gen1 ...
+psp-gen -revcomp -pos psp-gen/one-peak-dna.fasta -neg psp-gen/all-A.fasta 1> results/pspgen1/psp-gen_080_k_stdout 2> log
+reference psp-gen/one-peak-dna-revcomp.psp output results/pspgen1/psp-gen_080_k_stdout
+PASSED!
+*******************************************************************************
+Test psp-gen2 ...
+psp-gen -protein -maxrange -triples -pos psp-gen/one-peak-protein.fasta -neg psp-gen/all-A.fasta 1> results/pspgen2/psp-gen_lsrKG_stdout 2> log
+reference psp-gen/one-peak-protein.psp output results/pspgen2/psp-gen_lsrKG_stdout
+PASSED!
+*******************************************************************************
+Test psp-gen3 ...
+psp-gen -alph common/extended_dna.alph -revcomp -pos psp-gen/one-peak-dna.fasta -neg psp-gen/all-A.fasta 1> results/pspgen1/psp-gen_usEoD_stdout 2> log
+reference psp-gen/one-peak-dna-revcomp.psp output results/pspgen1/psp-gen_usEoD_stdout
+PASSED!

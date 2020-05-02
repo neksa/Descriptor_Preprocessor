@@ -1,0 +1,424 @@
+********************************************************************************
+MAST - Motif Alignment and Search Tool
+********************************************************************************
+	MAST version 5.0.5 (Release date: Mon Mar 18 20:12:19 2019 -0700)
+
+	For further information on how to interpret these results please access http://meme-suite.org/.
+	To get a copy of the MAST software please access http://meme-suite.org.
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+	If you use this program in your research, please cite:
+
+	Timothy L. Bailey and Michael Gribskov,
+	"Combining evidence using p-values: application to sequence homology
+	searches", Bioinformatics, 14(48-54), 1998.
+********************************************************************************
+
+
+********************************************************************************
+DATABASE AND MOTIFS
+********************************************************************************
+	DATABASE rcsb_seqs_full.txt (peptide)
+	Last updated on Tue Sep  3 17:23:56 2019
+	Database contains 841 sequences, 186771 residues
+
+	MOTIFS output_meme.txt (peptide)
+	MOTIF ID     ALT ID WIDTH BEST POSSIBLE MATCH
+	----- ------ ------ ----- -------------------
+	    1 MEME-1 -         50 FMYTPMWYPCNYGFIPHTLCDDGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+
+	Random model letter frequencies (from non-redundant database):
+	A 0.073 C 0.018 D 0.052 E 0.062 F 0.040 G 0.069 H 0.022 I 0.056 K 0.058 
+	L 0.092 M 0.023 N 0.046 P 0.051 Q 0.041 R 0.052 S 0.074 T 0.059 V 0.064 
+	W 0.013 Y 0.033 
+********************************************************************************
+
+
+********************************************************************************
+SECTION I: HIGH-SCORING SEQUENCES
+********************************************************************************
+	- Each of the following 19 sequences has E-value less than 10.
+	- The E-value of a sequence is the expected number of sequences
+	  in a random database of the same size that would match the motifs as
+	  well as the sequence does and is equal to the combined p-value of the
+	  sequence times the number of sequences in the database.
+	- The combined p-value of a sequence measures the strength of the
+	  match of the sequence to all the motifs and is calculated by
+	    o finding the score of the single best match of each motif
+	      to the sequence (best matches may overlap),
+	    o calculating the sequence p-value of each score,
+	    o forming the product of the p-values,
+	    o taking the p-value of the product.
+	- The sequence p-value of a score is defined as the
+	  probability of a random sequence of the same length containing
+	  some match with as good or better a score.
+	- The score for the match of a position in a sequence to a motif
+	  is computed by by summing the appropriate entry from each column of
+	  the position-dependent scoring matrix that represents the motif.
+	- Sequences shorter than one or more of the motifs are skipped.
+	- The table is sorted by increasing E-value.
+********************************************************************************
+
+SEQUENCE NAME                      DESCRIPTION                   E-VALUE  LENGTH
+-------------                      -----------                   -------- ------
+117e_A                             mol:protein length:286  PR...  2.4e-22    286
+117e_B                             mol:protein length:286  PR...  2.4e-22    286
+1a4i_A                             mol:protein length:301  ME...     0.08    301
+1a4i_B                             mol:protein length:301  ME...     0.08    301
+132l_A                             mol:protein length:129  HE...      1.4    129
+193l_A                             mol:protein length:129  LY...      1.4    129
+194l_A                             mol:protein length:129  LY...      1.4    129
+1a2y_C                             mol:protein length:129  LY...      1.4    129
+135l_A                             mol:protein length:129  TU...      3.6    129
+1a69_A                             mol:protein length:238  PU...      5.6    238
+1a69_B                             mol:protein length:238  PU...      5.6    238
+1a69_C                             mol:protein length:238  PU...      5.6    238
+1a27_A                             mol:protein length:289  17...      7.1    289
+1a3z_A                             mol:protein length:155  RU...      7.5    155
+1a5k_A                             mol:protein length:100  UR...      9.6    100
+1a5l_A                             mol:protein length:100  UR...      9.6    100
+1a5m_A                             mol:protein length:100  UR...      9.6    100
+1a5n_A                             mol:protein length:100  UR...      9.6    100
+1a5o_A                             mol:protein length:100  UR...      9.6    100
+
+********************************************************************************
+
+
+
+********************************************************************************
+SECTION II: MOTIF DIAGRAMS
+********************************************************************************
+	- The ordering and spacing of all non-overlapping motif occurrences
+	  are shown for each high-scoring sequence listed in Section I.
+	- A motif occurrence is defined as a position in the sequence whose
+	  match to the motif has POSITION p-value less than 0.0001.
+	- The POSITION p-value of a match is the probability of
+	  a single random subsequence of the length of the motif
+	  scoring at least as well as the observed match.
+	- For each sequence, all motif occurrences are shown unless there
+	  are overlaps.  In that case, a motif occurrence is shown only if its
+	  p-value is less than the product of the p-values of the other
+	  (lower-numbered) motif occurrences that it overlaps.
+	- The table also shows the E-value of each sequence.
+	- Spacers and motif occurences are indicated by
+	   o -d-    `d' residues separate the end of the preceding motif 
+		    occurrence and the start of the following motif occurrence
+	   o [n]  occurrence of motif `n' with p-value less than 0.0001.
+********************************************************************************
+
+SEQUENCE NAME                      E-VALUE   MOTIF DIAGRAM
+-------------                      --------  -------------
+117e_A                              2.4e-22  93-[1]-143
+117e_B                              2.4e-22  93-[1]-143
+1a4i_A                                 0.08  226-[1]-25
+1a4i_B                                 0.08  226-[1]-25
+132l_A                                  1.4  54-[1]-25
+193l_A                                  1.4  54-[1]-25
+194l_A                                  1.4  54-[1]-25
+1a2y_C                                  1.4  54-[1]-25
+135l_A                                  3.6  54-[1]-25
+1a69_A                                  5.6  58-[1]-130
+1a69_B                                  5.6  58-[1]-130
+1a69_C                                  5.6  58-[1]-130
+1a27_A                                  7.1  141-[1]-98
+1a3z_A                                  7.5  25-[1]-80
+1a5k_A                                  9.6  100
+1a5l_A                                  9.6  100
+1a5m_A                                  9.6  100
+1a5n_A                                  9.6  100
+1a5o_A                                  9.6  100
+
+********************************************************************************
+
+
+
+********************************************************************************
+SECTION III: ANNOTATED SEQUENCES
+********************************************************************************
+	- The positions and p-values of the non-overlapping motif occurrences
+	  are shown above the actual sequence for each of the high-scoring
+	  sequences from Section I.
+	- A motif occurrence is defined as a position in the sequence whose
+	  match to the motif has POSITION p-value less than 0.0001 as 
+	  defined in Section II.
+	- For each sequence, the first line specifies the name of the sequence.
+	- The second (and possibly more) lines give a description of the 
+	  sequence.
+	- Following the description line(s) is a line giving the length, 
+	  combined p-value, and E-value of the sequence as defined in Section I.
+	- The next line reproduces the motif diagram from Section II.
+	- The entire sequence is printed on the following lines.
+	- Motif occurrences are indicated directly above their positions in the
+	  sequence on lines showing
+	   o the motif number of the occurrence,
+	   o the position p-value of the occurrence,
+	   o the best possible match to the motif, and
+	   o columns whose match to the motif has a positive score (indicated 
+	     by a plus sign).
+********************************************************************************
+
+
+117e_A
+  mol:protein length:286  PROTEIN (INORGANIC PYROPHOSPHATASE)
+  LENGTH = 286  COMBINED P-VALUE = 2.83e-25  E-VALUE =  2.4e-22
+  DIAGRAM: 93-[1]-143
+
+                       [1]
+                       1.2e-27
+                       FMYTPMWYPCNYGFIPHTLCDDGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+                       +++++++++++  ++++++ +++ +++++++++   ++++++++++++++
+76   KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNEPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+
+
+117e_B
+  mol:protein length:286  PROTEIN (INORGANIC PYROPHOSPHATASE)
+  LENGTH = 286  COMBINED P-VALUE = 2.83e-25  E-VALUE =  2.4e-22
+  DIAGRAM: 93-[1]-143
+
+                       [1]
+                       1.2e-27
+                       FMYTPMWYPCNYGFIPHTLCDDGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+                       +++++++++++  ++++++ +++ +++++++++   ++++++++++++++
+76   KLRFVRNCFPHHGYIHNYGAFPQTWEDPNVSHPETKAVGDNEPIDVLEIGETIAYTGQVKQVKALGIMALLDEGE
+
+
+1a4i_A
+  mol:protein length:301  METHYLENETETRAHYDROFOLATE DEHYDROGENASE / 
+  METHENYLTETRAHYDROFOLATE CYCLOHYDROLASE
+  LENGTH = 301  COMBINED P-VALUE = 9.51e-05  E-VALUE =     0.08
+  DIAGRAM: 226-[1]-25
+
+      [1]
+      3.8e-07
+      FMYTPMWYPCNYGFIPHTLCDDGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+      + +++ + ++   ++++     +  +   +  ++     +++   + ++
+226  WIKPGAIVIDCGINYVPDDKKPNGRKVVGDVAYDEAKERASFITPVPGGVGPMTVAMLMQSTVESAKRFLEKFKP
+
+
+1a4i_B
+  mol:protein length:301  METHYLENETETRAHYDROFOLATE DEHYDROGENASE / 
+  METHENYLTETRAHYDROFOLATE CYCLOHYDROLASE
+  LENGTH = 301  COMBINED P-VALUE = 9.51e-05  E-VALUE =     0.08
+  DIAGRAM: 226-[1]-25
+
+      [1]
+      3.8e-07
+      FMYTPMWYPCNYGFIPHTLCDDGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+      + +++ + ++   ++++     +  +   +  ++     +++   + ++
+226  WIKPGAIVIDCGINYVPDDKKPNGRKVVGDVAYDEAKERASFITPVPGGVGPMTVAMLMQSTVESAKRFLEKFKP
+
+
+132l_A
+  mol:protein length:129  HEN EGG WHITE LYSOZYME
+  LENGTH = 129  COMBINED P-VALUE = 1.68e-03  E-VALUE =      1.4
+  DIAGRAM: 54-[1]-25
+
+                                                           [1]
+                                                           2.1e-05
+                                                           FMYTPMWYPCNYGFIPHTLCD
+                                                           +++   +  ++ +  +    +
+1    KVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNL
+
+     
+     
+     DGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+      + +  ++  ++      + ++    +
+76   CNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL
+
+
+193l_A
+  mol:protein length:129  LYSOZYME
+  LENGTH = 129  COMBINED P-VALUE = 1.68e-03  E-VALUE =      1.4
+  DIAGRAM: 54-[1]-25
+
+                                                           [1]
+                                                           2.1e-05
+                                                           FMYTPMWYPCNYGFIPHTLCD
+                                                           +++   +  ++ +  +    +
+1    KVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNL
+
+     
+     
+     DGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+      + +  ++  ++      + ++    +
+76   CNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL
+
+
+194l_A
+  mol:protein length:129  LYSOZYME
+  LENGTH = 129  COMBINED P-VALUE = 1.68e-03  E-VALUE =      1.4
+  DIAGRAM: 54-[1]-25
+
+                                                           [1]
+                                                           2.1e-05
+                                                           FMYTPMWYPCNYGFIPHTLCD
+                                                           +++   +  ++ +  +    +
+1    KVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNL
+
+     
+     
+     DGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+      + +  ++  ++      + ++    +
+76   CNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL
+
+
+1a2y_C
+  mol:protein length:129  LYSOZYME
+  LENGTH = 129  COMBINED P-VALUE = 1.68e-03  E-VALUE =      1.4
+  DIAGRAM: 54-[1]-25
+
+                                                           [1]
+                                                           2.1e-05
+                                                           FMYTPMWYPCNYGFIPHTLCD
+                                                           +++   +  ++ +  +    +
+1    KVFGRCELAAAMKRHGLANYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNL
+
+     
+     
+     DGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+      + +  ++  ++      + ++    +
+76   CNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL
+
+
+135l_A
+  mol:protein length:129  TURKEY EGG WHITE LYSOZYME
+  LENGTH = 129  COMBINED P-VALUE = 4.34e-03  E-VALUE =      3.6
+  DIAGRAM: 54-[1]-25
+
+                                                           [1]
+                                                           5.4e-05
+                                                           FMYTPMWYPCNYGFIPHTLCD
+                                                           +++   +  ++ +  +    +
+1    KVYGRCELAAAMKRLGLDNYRGYSLGNWVCAAKFESNFNTHATNRNTDGSTDYGILQINSRWWCNDGRTPGSKNL
+
+     
+     
+     DGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+      + +  ++  ++      + ++    +
+76   CNIPCSALLSSDITASVNCAKKIASGGNGMNAWVAWRNRCKGTDVHAWIRGCRL
+
+
+1a69_A
+  mol:protein length:238  PURINE NUCLEOSIDE PHOSPHORYLASE
+  LENGTH = 238  COMBINED P-VALUE = 6.62e-03  E-VALUE =      5.6
+  DIAGRAM: 58-[1]-130
+
+                                                               [1]
+                                                               3.5e-05
+                                                               FMYTPMWYPCNYGFIPH
+                                                               ++   +  +    +
+1    ATPHINAEMGDFADVVLMPGDPLRAKYIAETFLEDAREVNNVRGMLGFTGTYKGRKISVMGHGMGIPSCSIYTKE
+
+     
+     
+     TLCDDGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+        + +    + + +   +++ + ++  ++++
+76   LITDFGVKKIIRVGSCGAVLPHVKLRDVVIGMGACTDSKVNRIRFKDHDFAAIADFDMVRNAVDAAKALGIDARV
+
+
+1a69_B
+  mol:protein length:238  PURINE NUCLEOSIDE PHOSPHORYLASE
+  LENGTH = 238  COMBINED P-VALUE = 6.62e-03  E-VALUE =      5.6
+  DIAGRAM: 58-[1]-130
+
+                                                               [1]
+                                                               3.5e-05
+                                                               FMYTPMWYPCNYGFIPH
+                                                               ++   +  +    +
+1    ATPHINAEMGDFADVVLMPGDPLRAKYIAETFLEDAREVNNVRGMLGFTGTYKGRKISVMGHGMGIPSCSIYTKE
+
+     
+     
+     TLCDDGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+        + +    + + +   +++ + ++  ++++
+76   LITDFGVKKIIRVGSCGAVLPHVKLRDVVIGMGACTDSKVNRIRFKDHDFAAIADFDMVRNAVDAAKALGIDARV
+
+
+1a69_C
+  mol:protein length:238  PURINE NUCLEOSIDE PHOSPHORYLASE
+  LENGTH = 238  COMBINED P-VALUE = 6.62e-03  E-VALUE =      5.6
+  DIAGRAM: 58-[1]-130
+
+                                                               [1]
+                                                               3.5e-05
+                                                               FMYTPMWYPCNYGFIPH
+                                                               ++   +  +    +
+1    ATPHINAEMGDFADVVLMPGDPLRAKYIAETFLEDAREVNNVRGMLGFTGTYKGRKISVMGHGMGIPSCSIYTKE
+
+     
+     
+     TLCDDGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+        + +    + + +   +++ + ++  ++++
+76   LITDFGVKKIIRVGSCGAVLPHVKLRDVVIGMGACTDSKVNRIRFKDHDFAAIADFDMVRNAVDAAKALGIDARV
+
+
+1a27_A
+  mol:protein length:289  17-BETA-HYDROXYSTEROID-DEHYDROGENASE
+  LENGTH = 289  COMBINED P-VALUE = 8.40e-03  E-VALUE =      7.1
+  DIAGRAM: 141-[1]-98
+
+                                                                       [1]
+                                                                       3.5e-05
+                                                                       FMYTPMWYP
+                                                                          + +  +
+76   RERVTEGRVDVLVCNAGLGLLGPLEALGEDAVASVLDVNVVGTVRMLQAFLPDMKRRGSGRVLVTGSVGGLMGLP
+
+     
+     
+     CNYGFIPHTLCDDGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+     ++  +   + ++ +      +++    +  + +++ ++
+151  FNDVYCASKFALEGLCESLAVLLLPFGVHLSLIECGPVHTAFMEKVLGSPEEVLDRTDIHTFHRFYQYLAHSKQV
+
+
+1a3z_A
+  mol:protein length:155  RUSTICYANIN
+  LENGTH = 155  COMBINED P-VALUE = 8.91e-03  E-VALUE =      7.5
+  DIAGRAM: 25-[1]-80
+
+                              [1]
+                              8.4e-05
+                              FMYTPMWYPCNYGFIPHTLCDDGDPLDVLVIMPYPVYPGCVIRCRPIGVM
+                              +    + +     ++   + + + ++   ++ +    +  +     + +
+1    GTLDSTWKEATLPQVKAMLEKDDGKVSGDTVTYSGKTVHVVAAAVLPGFPFPSFEVHDKKNPTLEIPAGATVDVT
+
+
+1a5k_A
+  mol:protein length:100  UREASE (GAMMA SUBUNIT)
+  LENGTH = 100  COMBINED P-VALUE = 1.14e-02  E-VALUE =      9.6
+  DIAGRAM: 100
+
+
+1a5l_A
+  mol:protein length:100  UREASE (GAMMA SUBUNIT)
+  LENGTH = 100  COMBINED P-VALUE = 1.14e-02  E-VALUE =      9.6
+  DIAGRAM: 100
+
+
+1a5m_A
+  mol:protein length:100  UREASE (GAMMA SUBUNIT)
+  LENGTH = 100  COMBINED P-VALUE = 1.14e-02  E-VALUE =      9.6
+  DIAGRAM: 100
+
+
+1a5n_A
+  mol:protein length:100  UREASE (GAMMA SUBUNIT)
+  LENGTH = 100  COMBINED P-VALUE = 1.14e-02  E-VALUE =      9.6
+  DIAGRAM: 100
+
+
+1a5o_A
+  mol:protein length:100  UREASE (GAMMA SUBUNIT)
+  LENGTH = 100  COMBINED P-VALUE = 1.14e-02  E-VALUE =      9.6
+  DIAGRAM: 100
+
+********************************************************************************
+
+
+CPU: yincp-GE72-2QF
+Time 0.025 secs.
+
+mast -oc /home/yincp/Desktop/Descriptor_Preprocessor/data/internal/meme_mast -mt 0.0001 /home/yincp/Desktop/Descriptor_Preprocessor/output_meme.txt /home/yincp/Desktop/Descriptor_Preprocessor/data/input/rcsb_seqs_full.txt

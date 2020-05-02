@@ -1,0 +1,32 @@
+*******************************************************************************
+Test create-priors1 ...
+create-priors -oc results/create-priors1 create-priors/chrX.fa create-priors/DNaseHS_gm12878.wig &> log
+Creating priors with alpha=1.0 and beta=10000
+Sequence size is 0 bases.
+Scores were observed for 4140 bases.
+Minimum score is 1
+Median score is 1
+Maximum score is 3.97638
+Sum of scores is 7156.07
+Sum of un-normalized priors is 4.63908e+18
+FATAL: Sequence chrX in the input wiggle file is not present in the input FASTA file.
+
+-------------------------------------------------------------------------------
+create-priors exited with value 1 indicating failure.
+FAILED!
+*******************************************************************************
+Test create-priors2 ...
+create-priors -oc results/create-priors2 create-priors/chrX.fa create-priors/DNaseHS_gm12878.wig &> log
+Creating priors with alpha=1.0 and beta=10000
+Sequence size is 0 bases.
+Scores were observed for 4140 bases.
+Minimum score is 1
+Median score is 1
+Maximum score is 3.97638
+Sum of scores is 7156.07
+Sum of un-normalized priors is 4.63908e+18
+FATAL: Sequence chrX in the input wiggle file is not present in the input FASTA file.
+
+-------------------------------------------------------------------------------
+create-priors exited with value 1 indicating failure.
+FAILED!

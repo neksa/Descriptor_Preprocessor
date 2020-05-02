@@ -1,0 +1,137 @@
+*******************************************************************************
+Generating meme motifs...
+meme -oc results/motif.meme.crp0 -nostatus -p 5 -dna -nmotifs 3 common/crp0.s
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+[Melvins-Mini:20932] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:20933] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:20936] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:20934] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:20930] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+*******************************************************************************
+Test motif-in.meme.crp0.text ...
+meme2images -eps results/motif.meme.crp0/meme.txt results/motif-in.meme.crp0.text
+PASSED!
+*******************************************************************************
+Test motif-in.meme.crp0.xml ...
+meme2images -eps results/motif.meme.crp0/meme.xml results/motif-in.meme.crp0.xml
+PASSED!
+*******************************************************************************
+Test motif-in.meme.crp0.html ...
+meme2images -eps results/motif.meme.crp0/meme.html results/motif-in.meme.crp0.html
+PASSED!
+*******************************************************************************
+Generating meme motifs...
+meme -oc results/motif.meme.lipocalin -nostatus -p 5 -protein -nmotifs 3 common/lipocalin.s
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+[Melvins-Mini:20966] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:20964] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:20967] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:20968] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:20962] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+*******************************************************************************
+Test motif-in.meme.lipocalin.text ...
+meme2images -eps results/motif.meme.lipocalin/meme.txt results/motif-in.meme.lipocalin.text
+PASSED!
+*******************************************************************************
+Test motif-in.meme.lipocalin.xml ...
+meme2images -eps results/motif.meme.lipocalin/meme.xml results/motif-in.meme.lipocalin.xml
+PASSED!
+*******************************************************************************
+Test motif-in.meme.lipocalin.html ...
+meme2images -eps results/motif.meme.lipocalin/meme.html results/motif-in.meme.lipocalin.html
+PASSED!
+*******************************************************************************
+Generating meme motifs...
+meme -oc results/motif.meme.puf3p -nostatus -p 5 -rna -nmotifs 3 common/Puf3p-20.s
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+[Melvins-Mini:21003] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:20999] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:21001] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:21002] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:20997] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+*******************************************************************************
+Test motif-in.meme.puf3p.text ...
+meme2images -eps results/motif.meme.puf3p/meme.txt results/motif-in.meme.puf3p.text
+PASSED!
+*******************************************************************************
+Test motif-in.meme.puf3p.xml ...
+meme2images -eps results/motif.meme.puf3p/meme.xml results/motif-in.meme.puf3p.xml
+PASSED!
+*******************************************************************************
+Test motif-in.meme.puf3p.html ...
+meme2images -eps results/motif.meme.puf3p/meme.html results/motif-in.meme.puf3p.html
+PASSED!
+*******************************************************************************
+Generating meme motifs...
+meme -oc results/motif.meme.crp0.extdna -nostatus -p 5 -alph common/extended_dna.alph -nmotifs 3 common/crp0.s
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+Warning: Cannot convert EPS file to PNG as no install of Image Magick or Ghostscript is usable.
+[Melvins-Mini:21032] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:21035] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:21034] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:21033] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+[Melvins-Mini:21029] PMIX ERROR: ERROR in file gds_ds12_lock_pthread.c at line 206
+*******************************************************************************
+Test motif-in.meme.crp0.extdna.text ...
+meme2images -eps results/motif.meme.crp0.extdna/meme.txt results/motif-in.meme.crp0.extdna.text
+PASSED!
+*******************************************************************************
+Test motif-in.meme.crp0.extdna.xml ...
+meme2images -eps results/motif.meme.crp0.extdna/meme.xml results/motif-in.meme.crp0.extdna.xml
+PASSED!
+*******************************************************************************
+Test motif-in.meme.crp0.extdna.html ...
+meme2images -eps results/motif.meme.crp0.extdna/meme.html results/motif-in.meme.crp0.extdna.html
+PASSED!
+*******************************************************************************
+Generating dreme motifs...
+dreme -oc results/motif.dreme.klf1 -m 2 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa
+sh: /Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/scripts/dreme: /home/yincp/anaconda3/bin/python: bad interpreter: No such file or directory
+*******************************************************************************
+Test motif-in.dreme.klf1.text ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.klf1.xml ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.klf1.html ...
+SKIPPED!
+*******************************************************************************
+Generating dreme motifs...
+dreme -oc results/motif.dreme.klf1.extdna -alph common/extended_dna.alph -m 2 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa
+sh: /Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/scripts/dreme: /home/yincp/anaconda3/bin/python: bad interpreter: No such file or directory
+*******************************************************************************
+Test motif-in.dreme.klf1.extdna.text ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.klf1.extdna.xml ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.klf1.extdna.html ...
+SKIPPED!
+*******************************************************************************
+Generating dreme motifs...
+dreme -oc results/motif.dreme.puf3p -rna -m 3 -p common/Puf3p.s
+sh: /Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/scripts/dreme: /home/yincp/anaconda3/bin/python: bad interpreter: No such file or directory
+*******************************************************************************
+Test motif-in.dreme.puf3p.text ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.puf3p.xml ...
+SKIPPED!
+*******************************************************************************
+Test motif-in.dreme.puf3p.html ...
+SKIPPED!

@@ -1,0 +1,28 @@
+*******************************************************************************
+Test dreme1 ...
+dreme -oc results/dreme1 -verbosity 1 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa &> log
+sh: /Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/scripts/dreme: /home/yincp/anaconda3/bin/python: bad interpreter: No such file or directory
+-------------------------------------------------------------------------------
+dreme exited with value 126 indicating failure.
+FAILED!
+*******************************************************************************
+Test dreme2 ...
+dreme -norc -oc results/dreme2 -verbosity 1 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa &> log
+sh: /Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/scripts/dreme: /home/yincp/anaconda3/bin/python: bad interpreter: No such file or directory
+-------------------------------------------------------------------------------
+dreme exited with value 126 indicating failure.
+FAILED!
+*******************************************************************************
+Test dreme3 ...
+dreme-py3 -oc results/dreme3 -verbosity 1 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa &> log
+sh: /Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/scripts/dreme-py3: /home/yincp/anaconda3/bin/python3: bad interpreter: No such file or directory
+-------------------------------------------------------------------------------
+dreme-py3 exited with value 126 indicating failure.
+FAILED!
+*******************************************************************************
+Test dreme4 ...
+dreme-py3 -norc -oc results/dreme4 -verbosity 1 -p common/Klf1-200-100.fa -n common/Klf1-200-100-shuffled.fa &> log
+sh: /Users/melvinyin/Desktop/work/Descriptor_Preprocessor/src/meme_suite/meme/scripts/dreme-py3: /home/yincp/anaconda3/bin/python3: bad interpreter: No such file or directory
+-------------------------------------------------------------------------------
+dreme-py3 exited with value 126 indicating failure.
+FAILED!
