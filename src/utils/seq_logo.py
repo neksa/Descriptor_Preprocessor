@@ -227,29 +227,263 @@ def build_logo_nbdb(filename):
     plot.legend().remove()
     plt.show()
 
+def build_logo_from_converge_output(input_fname, output):
+    """
+    Takes in converge output, build from ceqlogo. Note that it's better this
+    way, instead of using our Logo() method.
+
+    input_fname = os.path.join(paths.ROOT, "output_tmp.txt")
+    """
+    nsites = None
+    matrix = []
+    with open(input_fname, 'r') as file:
+        count = 0
+        for line in file:
+            if nsites is None:
+                nsites = int(line)
+                count += 1
+                continue
+            if count == 1:
+                # Alphabet row
+                count += 1
+                continue
+            row = [int(i) for i in line.strip().split(",")]
+            summed = sum(row)
+            row = [i/summed for i in row]
+            matrix.append(row)
+
+    with open(input_fname, 'w') as file:
+        for row in matrix:
+            output_str = ""
+            for term in row:
+                output_str += str(term) + ","
+            file.write(output_str[:-1] + "\n")
+
+            for term in line.strip().split(" "):
+                row.append(int(math.ceil(float(term) * 2932)))
+            matrix.append(row)
+    # with open(os.path.join(paths.ROOT, "test_this.txt"), 'w') as file:
+
+from utils import generic
+
+# def _meme_minimal_formatter(matrix, output):
+#     output_str = ""
+#     output_str +=
+
+
+def _format_minimal_from_conv(alphabets, composition_map, matrices, output):
+    m_to_write = list(range(len(matrices)))
+    with open(output, 'w') as file:
+        file.write("MEME version 4\n")
+        file.write("\n")
+        file.write("ALPHABET= " + alphabets + "\n")
+        file.write("\n")
+        file.write("Background letter frequencies\n")
+        for i, alphabet in enumerate(alphabets):
+            composition = round(composition_map[alphabet], 4)
+            file.write(f"{alphabet} {composition} ")
+            if (i != 0) and (i % 9 == 0):
+                file.write("\n")
+        file.write("\n")
+        file.write("\n")
+        m_count = 0
+        while matrices:
+            motif_name, (nsite, matrix) = matrices.popitem(last=False)
+            if m_count not in m_to_write:
+                m_count += 1
+                continue
+            m_count += 1
+            file.write(f"MOTIF {motif_name}")
+            file.write("\n")
+            alength = len(alphabets)
+            assert alength == 20
+            file.write(f"letter-probability matrix: alength= {alength} w= 30 "
+                       f"nsites= {nsite} E= 0.000")
+
+            # E is just some random number, filled in by subsequent eval calc.
+            # w = width of motif
+            file.write("\n")
+            for line in matrix:
+                to_write = ""
+                for prob in line:
+                    to_write += prob + " "
+                file.write(to_write)
+                file.write("\n")
+            file.write("\n")
+    return
+
+def _write_matrix_file(matrix_ordered, output):
+    """
+    For meme_suite matrix2meme
+    """
+    output_lines = []
+    for AA_counts in matrix_ordered:
+        output_lines.append(" ".join(str(i) for i in AA_counts))
+    single_str_line = "\n".join(output_lines)
+    generic.warn_if_exist(output)
+    with open(output, 'w') as file:
+        file.write(single_str_line)
+
 import os
 from config import paths
-import math
 
-with open(os.path.join(paths.ROOT, "output_tmp.txt"), 'r') as file:
-    matrix = []
-    for line in file:
-        row = []
-        for term in line.strip().split(" "):
-            row.append(int(math.ceil(float(term) * 2932)))
-        matrix.append(row)
-print(matrix)
-with open(os.path.join(paths.ROOT, "test_this.txt"), 'w') as file:
-    for row in matrix:
-        output_str = ""
-        for term in row:
-            output_str += str(term) + ","
-        file.write(output_str[:-1] + "\n")
+# input_fname = os.path.join(paths.ROOT, "converged_matrix.txt")
+# matrix = []
+# nsites = None
+# with open(input_fname, 'r') as file:
+#     count = 0
+#     for line in file:
+#         if nsites is None:
+#             nsites = int(line)
+#             count += 1
+#             continue
+#         if count == 1:
+#             # Alphabet row
+#             count += 1
+#             continue
+#         row = [int(i) for i in line.strip().split(",")]
+#         # summed = sum(row)
+#         # row = [i / summed for i in row]
+#         matrix.append(row)
+# _write_matrix_file(matrix, os.path.join(paths.ROOT, "test_this.txt"))
+
+
+def plot_signature_logo(descr_full, num_res_considered=4, title=None):
+    descr_filtered = descr_full.filter(['relative_sno', 'res'])
+    min_sno = min(descr_filtered.relative_sno)
+    descr_sno_grouped = descr_filtered.groupby('relative_sno')
+    to_logo = [[] for _ in range(len(descr_sno_grouped))]
+    for i, (sno, descr_per_sno) in enumerate(descr_sno_grouped):
+        del sno
+        res_unsorted = descr_per_sno.res.values
+        res_unique = list(np.unique(res_unsorted, return_counts=True))
+        num_seqs = sum(res_unique[1])
+        res_sorted = list(zip(*sorted(zip(*res_unique), key=_for_sort)))
+        res_names, res_counts = res_sorted[0], \
+                                res_sorted[1]
+        print(res_names)
+        print(res_counts)
+        print("")
+        res_names = res_names[::-1]
+        res_counts = res_counts[::-1]
+        res_percents = list([i / num_seqs for i in res_counts])
+        for name, percent in zip(res_names, res_percents):
+            to_logo[i].append((name, percent))
+    seq_logo.Logo(to_logo, min_sno, title=title)
+
+import pickle
+import numpy as np
+from converge import conv_to_meme
+
+
+AA3_to_AA1 = dict(ALA='A', CYS='C', ASP='D', GLU='E', PHE='F', GLY='G',
+                  HIS='H', ILE='I', LYS='K', LEU='L',
+                  MET='M', ASN='N', PRO='P', GLN='Q', ARG='R',
+                  SER='S', THR='T', VAL='V', TRP='W', TYR='Y')
+
+
+def build_ceqlogo_input_from_descr(descr_filename, output_fname):
+    alphabets = "".join(sorted(AA3_to_AA1.values()))
+    with open(descr_filename, 'rb') as file:
+        descr_full = pickle.load(file)
+        descr_filtered = descr_full.filter(['relative_sno', 'res'])
+        descr_sno_grouped = descr_filtered.groupby('relative_sno')
+        to_logo = []
+        for i, (sno, descr_per_sno) in enumerate(descr_sno_grouped):
+            del sno
+            res_unsorted = descr_per_sno.res.values
+            res_unique = list(np.unique(res_unsorted, return_counts=True))
+            res_names, res_counts = res_unique
+            num_seqs = sum(res_unique[1])
+            res_map = dict()
+            res_names = np.array([AA3_to_AA1[name] for name in res_names])
+            for name, count in zip(res_names, res_counts):
+                if name in res_map:
+                    res_map[name] += count
+                else:
+                    res_map[name] = count
+
+            output = []
+
+            for alphabet in alphabets:
+                if alphabet in res_map:
+                    output.append(res_map[alphabet])
+                else:
+                    output.append(0)
+            matrix = []
+
+            for term in output:
+                prob_in_str = "{:.6f}".format(term / num_seqs)
+                matrix.append(prob_in_str)
+            to_logo.append(matrix)
+
+    COMPOSITION_FILE = os.path.join(paths.ROOT, "uniprot_full_composition.txt")
+    composition_map = conv_to_meme._parse_converge_composition(COMPOSITION_FILE)
+
+    with open(output_fname, 'w') as file:
+        file.write("MEME version 4\n")
+        file.write("\n")
+        file.write("ALPHABET= " + alphabets + "\n")
+        file.write("\n")
+        file.write("Background letter frequencies\n")
+        for i, alphabet in enumerate(alphabets):
+            composition = round(composition_map[alphabet], 4)
+            file.write(f"{alphabet} {composition} ")
+            if (i != 0) and (i % 9 == 0):
+                file.write("\n")
+        file.write("\n")
+        file.write("\n")
+        motif_name = 'motif_name'
+        nsite = num_seqs
+        matrix = to_logo
+
+        file.write(f"MOTIF {motif_name}")
+        file.write("\n")
+        alength = len(alphabets)
+        assert alength == 20
+        file.write(f"letter-probability matrix: alength= {alength} w= 30 "
+                   f"nsites= {nsite} E= 0.000")
+
+        # E is just some random number, filled in by subsequent eval calc.
+        # w = width of motif
+        file.write("\n")
+        for line in matrix:
+            to_write = ""
+            for prob in line:
+                to_write += prob + " "
+            file.write(to_write)
+            file.write("\n")
+        file.write("\n")
+
+
+def build():
+    build_ceqlogo_input_from_descr(os.path.join(paths.ROOT, "gxxgxg_descr.pkl"),
+                                   os.path.join(paths.ROOT, "gxxgxg_descr.txt"))
+    build_ceqlogo_input_from_descr(os.path.join(paths.ROOT, "gxggxg_descr.pkl"),
+                                   os.path.join(paths.ROOT, "gxggxg_descr.txt"))
+# import os
+# from config import paths
+# import math
+#
+# with open(os.path.join(paths.ROOT, "output_tmp.txt"), 'r') as file:
+#     matrix = []
+#     for line in file:
+#         row = []
+#         for term in line.strip().split(" "):
+#             row.append(int(math.ceil(float(term) * 2932)))
+#         matrix.append(row)
+# print(matrix)
+# with open(os.path.join(paths.ROOT, "test_this.txt"), 'w') as file:
+#     for row in matrix:
+#         output_str = ""
+#         for term in row:
+#             output_str += str(term) + ","
+#         file.write(output_str[:-1] + "\n")
 
 
 
 
-build_logo_mine(os.path.join(paths.ROOT, "test_this.txt"))
+# build_logo_mine(os.path.join(paths.ROOT, "test_this.txt"))
 # build_logo(os.path.join(paths.ROOT, "converged_matrix.txt"))
 # build_logo_mine(os.path.join(paths.ROOT, "test_input.txt"))
 # build_logo_nbdb(os.path.join(paths.ROOT, "GxGxxG_pssm.txt"))

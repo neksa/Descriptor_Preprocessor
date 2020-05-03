@@ -563,37 +563,37 @@ def main():
     # num_seqs don't really matter here because of normalisation
     # we cannot use numseq from NBDB file, cos it's too big. So just use a
     # random number, it doesn't really matter.
-    print("Start GxGGxG")
-    timestamp = time.time()
-    GxGGxG_pssm = os.path.join(paths.ROOT, "GxGGxG_pssm.txt")
-    GxGGxG_numseq = 2000
-    GxGGxG_output_matrix = os.path.join(paths.ROOT, 'GxGGxG_output_matrix.txt')
-    build_output_matrix_from_pssm(GxGGxG_pssm, GxGGxG_numseq, GxGGxG_output_matrix)
-    GxGGxG_motif_pos = os.path.join(paths.ROOT, "GxGGxG_motif_pos.txt")
-    get_motif_pos_from_output_matrix(GxGGxG_output_matrix, GxGGxG_numseq,
-                                     pdb_seq_file, GxGGxG_motif_pos)
-    print("End GxGGxG: {}".format(time.time() - timestamp))
-
-    print("Start GxGxxG")
-    GxGxxG_pssm = os.path.join(paths.ROOT, "GxGxxG_pssm.txt")
-    GxGxxG_numseq = 2000
-    GxGxxG_output_matrix = os.path.join(paths.ROOT, 'GxGxxG_output_matrix.txt')
-    build_output_matrix_from_pssm(GxGxxG_pssm, GxGxxG_numseq, GxGxxG_output_matrix)
-    GxGxxG_motif_pos = os.path.join(paths.ROOT, "GxGxxG_motif_pos.txt")
-    get_motif_pos_from_output_matrix(GxGxxG_output_matrix, GxGxxG_numseq,
-                                     pdb_seq_file, GxGxxG_motif_pos)
-    print("End GxGxxG: {}".format(time.time() - timestamp))
-
-    print("Start GxxGxG")
-    timestamp = time.time()
-    GxxGxG_pssm = os.path.join(paths.ROOT, "GxxGxG_pssm.txt")
-    GxxGxG_numseq = 2000
-    GxxGxG_output_matrix = os.path.join(paths.ROOT, 'GxxGxG_output_matrix.txt')
-    build_output_matrix_from_pssm(GxxGxG_pssm, GxxGxG_numseq, GxxGxG_output_matrix)
-    GxxGxG_motif_pos = os.path.join(paths.ROOT, "GxxGxG_motif_pos.txt")
-    get_motif_pos_from_output_matrix(GxxGxG_output_matrix, GxxGxG_numseq,
-                                     pdb_seq_file, GxxGxG_motif_pos)
-    print("End GxxGxG: {}".format(time.time() - timestamp))
+    # print("Start GxGGxG")
+    # timestamp = time.time()
+    # GxGGxG_pssm = os.path.join(paths.ROOT, "GxGGxG_pssm.txt")
+    # GxGGxG_numseq = 2000
+    # GxGGxG_output_matrix = os.path.join(paths.ROOT, 'GxGGxG_output_matrix.txt')
+    # build_output_matrix_from_pssm(GxGGxG_pssm, GxGGxG_numseq, GxGGxG_output_matrix)
+    # GxGGxG_motif_pos = os.path.join(paths.ROOT, "GxGGxG_motif_pos.txt")
+    # get_motif_pos_from_output_matrix(GxGGxG_output_matrix, GxGGxG_numseq,
+    #                                  pdb_seq_file, GxGGxG_motif_pos)
+    # print("End GxGGxG: {}".format(time.time() - timestamp))
+    # 
+    # print("Start GxGxxG")
+    # GxGxxG_pssm = os.path.join(paths.ROOT, "GxGxxG_pssm.txt")
+    # GxGxxG_numseq = 2000
+    # GxGxxG_output_matrix = os.path.join(paths.ROOT, 'GxGxxG_output_matrix.txt')
+    # build_output_matrix_from_pssm(GxGxxG_pssm, GxGxxG_numseq, GxGxxG_output_matrix)
+    # GxGxxG_motif_pos = os.path.join(paths.ROOT, "GxGxxG_motif_pos.txt")
+    # get_motif_pos_from_output_matrix(GxGxxG_output_matrix, GxGxxG_numseq,
+    #                                  pdb_seq_file, GxGxxG_motif_pos)
+    # print("End GxGxxG: {}".format(time.time() - timestamp))
+    # 
+    # print("Start GxxGxG")
+    # timestamp = time.time()
+    # GxxGxG_pssm = os.path.join(paths.ROOT, "GxxGxG_pssm.txt")
+    # GxxGxG_numseq = 2000
+    # GxxGxG_output_matrix = os.path.join(paths.ROOT, 'GxxGxG_output_matrix.txt')
+    # build_output_matrix_from_pssm(GxxGxG_pssm, GxxGxG_numseq, GxxGxG_output_matrix)
+    # GxxGxG_motif_pos = os.path.join(paths.ROOT, "GxxGxG_motif_pos.txt")
+    # get_motif_pos_from_output_matrix(GxxGxG_output_matrix, GxxGxG_numseq,
+    #                                  pdb_seq_file, GxxGxG_motif_pos)
+    # print("End GxxGxG: {}".format(time.time() - timestamp))
 
 
 def build_output_matrix_from_aligned(selected_seqs, aligned_seqs, output,

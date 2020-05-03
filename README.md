@@ -137,5 +137,13 @@ Linter
 - `pylint`, mostly following google style guide with some additional disabled
  clauses. 
  
+To build sequence logo for final UI, take the descr.pkl from
+ Descriptor_Calculator, and see build() in seq_logo.py. After that is done, run 
+ `./src/meme_suite/meme/src/ceqlogo -i ./gxggxg_descr.txt -m motif_name 
+ -o gxggxg_logo.eps` to generate the logo figure in .eps format. Finally, go to 
+ https://www.epsconverter.com/ to convert it into .png form with white
+  background. Move to Descriptor_Calculator/src/ui/static with the
+   appropriate filename (see IndividualFigure for that) to load it in. 
+ 
  Todo:
  1. Add compilation instructions for `converge` and `meme-suite`. 
